@@ -1,0 +1,23 @@
+.App {
+  font-family: "Courier New", Courier, monospace;
+  font-size: clamp(2rem, 1rem + 8vw, 4rem);
+  border-radius: 0.4em;
+  outline: 4px dashed #e76d6d;
+  transition: transform 1000ms;
+}
+
+.hello {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  padding: 2rem;
+  border-radius: 0.4em 0.4em 0 0;
+  text-align: center;
+}
+
+.react {
+  background-color: #f0f0f0;
+  color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 0 0 0.4em 0.4em;
+  text-align: center;
+}/*# sourceMappingURL=App.css.map */
