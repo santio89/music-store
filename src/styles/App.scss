@@ -58,14 +58,14 @@ button {
 
 /* FIN CSS RESET */
 
-body{
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 100vh;
-    background: rgb(50, 50, 50);
+#root{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  min-height: 100vh;
+  background: rgb(50, 50, 50);
 }
 
 .App{
@@ -74,6 +74,8 @@ body{
     border-radius: .4em;
     outline: 4px dashed rgb(231, 109, 109);
     transition: transform 1000ms;
+    max-width: 800px;
+    margin: auto;
 }
 
 .hello{

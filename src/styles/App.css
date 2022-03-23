@@ -58,11 +58,11 @@ button {
 
 /*# sourceMappingURL=main.css.map */
 /* FIN CSS RESET */
-body {
+#root {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   width: 100%;
   min-height: 100vh;
   background: #323232;
@@ -74,6 +74,8 @@ body {
   border-radius: 0.4em;
   outline: 4px dashed #e76d6d;
   transition: transform 1000ms;
+  max-width: 800px;
+  margin: auto;
 }
 
 .hello {
