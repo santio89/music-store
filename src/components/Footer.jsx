@@ -1,9 +1,14 @@
 import React from "react";
+import '../../src/styles/footer.css';
 
 export default function Footer(){
     return(
         <>
-        i am footer
+        <footer>
+            <p>
+                footer
+            </p>
+        </footer>
         </>
     )
 }
