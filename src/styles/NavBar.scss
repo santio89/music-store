@@ -1,0 +1,18 @@
+.nav{
+    &__logo{
+        font-weight: 800;
+    }
+
+    &__span{
+        width: 20px;
+        height: 4px;
+    }
+}
+
+.navbar-brand{
+    overflow: hidden;
+}
+
+.navbar-burger.is-large {
+    transform: scale(2.4) translateX(-20%) translateY(12%);
+}
