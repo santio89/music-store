@@ -89,3 +89,8 @@ body {
     background: var(--color-two);
   }
 
+  ::selection{
+    background: var(--color-one-dark);
+    color: var(--color-three);
+}
+
