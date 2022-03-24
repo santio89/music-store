@@ -1,0 +1,25 @@
+.tabs {
+  margin-top: 108px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin-left: auto;
+}
+.tabs li a {
+  color: white;
+  border-bottom: 2px solid var(--color-three-dark);
+}
+.tabs li a:hover {
+  color: var(--color-one);
+  border-bottom: 2px solid var(--color-three);
+}
+.tabs li.is-active a {
+  color: var(--color-one);
+  border-bottom: 2px solid var(--color-three);
+}
+
+@media (max-width: 1023px) {
+  .tabs {
+    margin-top: 76px;
+  }
+}/*# sourceMappingURL=CategorySelector.css.map */

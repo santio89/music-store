@@ -1,19 +1,19 @@
+import 'bulma/css/bulma.min.css';
 import '../src/styles/App.css';
+import CategorySelector from './components/CategorySelector';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
-import 'bulma/css/bulma.min.css';
 
 
 function App() {
-  let hello = "hello world";
-  let app = "react app";
-  
-
+  let hello = "OPEN...";
+  let app = "...SOON";
 
   return (
     <>
     
     <NavBar />
+    <CategorySelector />
     <div className="App">
       <div className="hello">{hello}</div>
       <div className="react">{app}</div>

@@ -1,7 +1,7 @@
 import React from "react";
 import '../../src/styles/NavBar.css';
 
-/* burger nav toggle */
+/* burger nav toggle //bulma framework*/
 document.addEventListener('DOMContentLoaded', () => {
 
     // Get all "navbar-burger" elements
