@@ -72,7 +72,7 @@ button {
   font-family: "Courier New", Courier, monospace;
   font-size: clamp(2rem, 1rem + 8vw, 4rem);
   border-radius: 0.4em;
-  outline: 4px dashed #e76d6d;
+  outline: 4px dashed var(--color-one);
   transition: transform 1000ms;
   max-width: 800px;
   margin: auto;
