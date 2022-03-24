@@ -60,8 +60,8 @@
 .searchBar__wrapper {
   background: none !important;
 }
-.searchBar__wrapper:hover {
-  background: none;
+.searchBar:hover, .searchBar:focus-visible, .searchBar:active {
+  background: #ef2e55;
 }
 .searchBar__input {
   background: none;

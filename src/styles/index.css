@@ -71,9 +71,10 @@ button {
 /* FIN CSS RESET */
 
 :root{
-  --color-one: hsl(348, 100%, 61%);
-  --color-one-dark: hsl(348, 49%, 47%);
-  --color-two: hsl(0, 0%, 21%);
+  --color-one: rgb(241, 70, 104);
+  --color-one-hover: rgb(239, 46, 85);
+  --color-one-dark: rgb(179, 61, 85);
+  --color-two: rgb(54, 54, 54);
   --color-three: rgb(255, 255, 255);
   --color-three-dark: rgb(100, 100, 100);
 }

@@ -62,14 +62,15 @@
     padding: .2em;
     padding-left: .4em;
     padding-right: .4em;
-
+   
     &__wrapper{
         background: none !important /* reemplaza estilo de bulma para este caso */;
- 
-        &:hover{
-            background: none;
-        }
     }
+
+    &:hover, &:focus-visible, &:active{
+        background: #ef2e55;
+    }
+
 
     &__input{
         background: none;
