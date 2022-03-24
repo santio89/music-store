@@ -112,6 +112,7 @@
   }
   .searchBar__icon {
     margin-right: 3.1vw;
+    color: var(--color-two);
   }
   .searchBar__icon:hover, .searchBar__icon:focus {
     color: var(--color-one-dark);
