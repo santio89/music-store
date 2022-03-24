@@ -56,12 +56,12 @@ export default function NavBar({brand}){
                     <div className="navbar-item searchBar__wrapper">
                         <div className="searchBar">
                             <input type="text" placeholder="Buscar" className="searchBar__input"></input>
-                            <button className="searchBar__icon"><i class="bi bi-search"></i></button>
+                            <button className="searchBar__icon"><i className="bi bi-search"></i></button>
                         </div>
                     </div>
 
                     <a className="navbar-item" href="">
-                        <i class="bi bi-cart-fill is-size-3-widescreen is-size-4-desktop is-size-3-touch"></i>
+                        <i className="bi bi-cart-fill is-size-3-widescreen is-size-4-desktop is-size-3-touch"></i>
                     </a>
                 </div>
 
