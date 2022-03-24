@@ -2,7 +2,7 @@ import React from "react";
 import '../../src/styles/NavBar.css';
 
 
-export default function NavBar(){
+export default function NavBar({brand}){
     /* burger nav mobile toggle //bulma framework*/
     document.addEventListener('DOMContentLoaded', () => {
 
@@ -37,7 +37,7 @@ export default function NavBar(){
         <nav className="navbar is-fixed-top is-danger has-shadow is-spaced nav" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
                 <a className="navbar-item is-size-2 nav__logo" href="index.html">
-                    MusicStore
+                    {brand}
                 </a>
 
                 <a role="button" className="navbar-burger is-large" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">

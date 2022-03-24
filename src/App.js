@@ -6,13 +6,14 @@ import NavBar from './components/NavBar';
 
 
 function App() {
+  let brand = "MusicStore";
   let hello = "OPEN...";
   let app = "...SOON";
 
   return (
     <>
     
-    <NavBar />
+    <NavBar brand={brand} />
     <CategorySelector />
     <div className="App">
       <div className="hello">{hello}</div>
