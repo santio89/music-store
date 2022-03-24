@@ -58,7 +58,7 @@
 }
 .searchBar__icon {
   font-size: 1.1em;
-  color: var(--color-two);
+  color: var(--color-three);
 }
 .searchBar__icon:hover, .searchBar__icon:focus {
   color: var(--color-one-dark);

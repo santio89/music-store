@@ -59,9 +59,9 @@ export default function NavBar(){
                         </div>
                     </div>
 
-                    <button className="navbar-item">
+                    <a className="navbar-item" href="">
                         <i class="bi bi-cart-fill is-size-3-widescreen is-size-4-desktop is-size-3-touch"></i>
-                    </button>
+                    </a>
                 </div>
 
                 <div className="navbar-end">
