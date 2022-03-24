@@ -55,3 +55,35 @@
         pointer-events: auto;
     }    
 }
+
+.searchBar{
+    border: 4px dashed var(--color-three);
+    border-radius: 1em;
+    padding: .2em;
+    padding-left: .4em;
+    padding-right: .4em;
+
+    &__wrapper{
+        background: none !important /* reemplaza estilo de bulma para este caso */;
+ 
+        &:hover{
+            background: none;
+        }
+    }
+
+    &__input{
+        background: none;
+        border: none;
+        outline: none;
+        font-family: inherit;
+        color: var(--color-three);
+
+        &::placeholder{
+            color: var(--color-one-dark);
+        }
+    }
+
+    &__icon{
+        font-size: 1.1em;
+    }
+}

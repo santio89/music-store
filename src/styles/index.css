@@ -72,6 +72,7 @@ button {
 
 :root{
   --color-one: hsl(348, 100%, 61%);
+  --color-one-dark: hsl(348, 49%, 47%);
   --color-two: hsl(0, 0%, 21%);
   --color-three: rgb(255, 255, 255);
   --color-three-dark: rgb(100, 100, 100);

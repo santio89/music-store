@@ -52,8 +52,11 @@ export default function NavBar(){
                     Inicio
                 </a>
 
-                <a className="navbar-item">
-                    Nuevos Lanzamientos
+                <a className="navbar-item searchBar__wrapper">
+                    <div className="searchBar">
+                        <input type="search" placeholder="Buscar" className="searchBar__input"></input>
+                        <i class="bi bi-search searchBar__icon"></i>
+                    </div>
                 </a>
 
                 <a className="navbar-item">
