@@ -59,29 +59,6 @@ export default function NavBar(){
                 <a className="navbar-item">
                     <i class="bi bi-cart-fill is-size-3-widescreen is-size-4-desktop is-size-3-touch"></i>
                 </a>
-
-            {/* MENU DESPLEGABLE, POR EL MOMENTO NO LO USARE
-                <div className="navbar-item has-dropdown is-hoverable">
-                    <a className="navbar-link">
-                    More
-                    </a>
-
-                    <div className="navbar-dropdown">
-                    <a className="navbar-item">
-                        About
-                    </a>
-                    <a className="navbar-item">
-                        Jobs
-                    </a>
-                    <a className="navbar-item">
-                        Contact
-                    </a>
-                    <hr className="navbar-divider"/>
-                    <a className="navbar-item">
-                        Report an issue
-                    </a>
-                    </div>
-                </div> */}
             </div>
 
             <div className="navbar-end">

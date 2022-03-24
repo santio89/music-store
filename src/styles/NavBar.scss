@@ -8,12 +8,37 @@
         width: 20px;
         height: 4px;
     }
+    z-index: 1;
+
+    span{
+        transition: transform 400ms, opacity 400ms !important;
+    }
 }
 
 .navbar-brand{
     overflow: hidden;
+    background: var(--color-one);
 }
 
 .navbar-burger.is-large {
     transform: scale(2.4) translateX(-20%) translateY(12%);
+}
+
+/* media query para transition nav bulma */
+@media (max-width: 1023px){
+    .navbar-menu {
+        display: block !important;
+        position: absolute;
+        left: 0;
+        right: 0;
+        transform: translateY(-100%);
+        transition: transform 400ms ease-in-out;
+        pointer-events: none;
+        z-index: -1;
+    }
+    
+    .navbar-menu.is-active {
+        transform: translateY(0);
+        pointer-events: auto;
+    }    
 }
