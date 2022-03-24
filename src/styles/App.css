@@ -14,10 +14,12 @@
   border-radius: 0.4em;
   outline: 4px dashed var(--color-one);
   transition: transform 1000ms;
-  max-width: 800px;
   margin: auto;
-  min-width: 300px;
-  width: 40%;
+  min-width: 280px;
+  transform: translateX(-100%);
+  opacity: 0;
+  -webkit-animation: fadeTranslateIn 1s forwards;
+          animation: fadeTranslateIn 1s forwards;
 }
 
 .hello {
@@ -36,4 +38,26 @@
   border-radius: 0 0 0.4em 0.4em;
   text-align: right;
   width: 100%;
+}
+
+@-webkit-keyframes fadeTranslateIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeTranslateIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }/*# sourceMappingURL=App.css.map */
