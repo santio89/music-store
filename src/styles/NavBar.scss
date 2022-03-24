@@ -4,6 +4,11 @@
     &__logo{
         font-weight: 800;
         text-shadow: 2px 2px 0 var(--color-two);
+
+        &:focus{
+            outline: 2px dashed var(--color-three);
+            outline-offset: -2px;
+        }
     }
 
     &__span{
@@ -16,6 +21,11 @@
         transition: transform 400ms, opacity 400ms;
     }
 
+    &__home, &__cart{
+        &:focus-visible{
+            outline: 1px dashed var(--color-three);
+        }
+    }
     &__ingresar{
         font-family: inherit;
     }
@@ -23,9 +33,6 @@
 
 .navbar-brand{
     min-height: inherit;
-}
-
-.navbar-brand{
     overflow: hidden;
     background: var(--color-one);
 }

@@ -6,6 +6,10 @@
   font-weight: 800;
   text-shadow: 2px 2px 0 var(--color-two);
 }
+.nav__logo:focus {
+  outline: 2px dashed var(--color-three);
+  outline-offset: -2px;
+}
 .nav__span {
   width: 20px;
   height: 4px;
@@ -13,15 +17,15 @@
 .nav span {
   transition: transform 400ms, opacity 400ms;
 }
+.nav__home:focus-visible, .nav__cart:focus-visible {
+  outline: 1px dashed var(--color-three);
+}
 .nav__ingresar {
   font-family: inherit;
 }
 
 .navbar-brand {
   min-height: inherit;
-}
-
-.navbar-brand {
   overflow: hidden;
   background: var(--color-one);
 }

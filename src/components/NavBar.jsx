@@ -50,7 +50,7 @@ export default function NavBar({brand}){
 
             <div id="navbarBasicExample" className="navbar-menu">
                 <div className="navbar-end is-size-4-widescreen is-size-5-desktop is-size-4-touch">
-                    <a className="navbar-item" role="button" tabindex="0">
+                    <a className="navbar-item nav__home" role="button" tabindex="0">
                         Inicio
                     </a>
 
@@ -61,7 +61,7 @@ export default function NavBar({brand}){
                         </div>
                     </div>
 
-                    <a className="navbar-item" role="button" tabindex="0">
+                    <a className="navbar-item nav__cart" role="button" tabindex="0">
                         <i className="bi bi-cart-fill is-size-3-widescreen is-size-4-desktop is-size-3-touch"></i>
                     </a>
                 </div>
