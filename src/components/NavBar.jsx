@@ -68,10 +68,7 @@ export default function NavBar(){
                     <div className="navbar-item">
                         <div className="buttons">
                             <a className="button is-dark is-size-5-widescreen is-size-6-desktop is-size-5-touch">
-                                <strong>Crear Cuenta</strong>
-                            </a>
-                            <a className="button is-light is-size-5-widescreen is-size-6-desktop is-size-5-touch">
-                                Entrar
+                                <strong>Ingresar</strong>
                             </a>
                         </div>
                     </div>
