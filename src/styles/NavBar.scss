@@ -116,7 +116,4 @@
     .nav__logo{
         font-size: 2rem !important /* important para remplazar el size de bulma (que tambien usa important) */;
     }
-    .navbar-menu{
-        top: -310%; /* pequeño fix para el transition del nav en tamaños chicos */
-    }
 }
