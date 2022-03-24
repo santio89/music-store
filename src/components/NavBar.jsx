@@ -48,28 +48,28 @@ export default function NavBar(){
 
             <div id="navbarBasicExample" className="navbar-menu">
                 <div className="navbar-end is-size-4-widescreen is-size-5-desktop is-size-4-touch">
-                    <a className="navbar-item">
+                    <a className="navbar-item" href="">
                         Inicio
                     </a>
 
-                    <a className="navbar-item searchBar__wrapper">
+                    <div className="navbar-item searchBar__wrapper">
                         <div className="searchBar">
-                            <input type="search" placeholder="Buscar" className="searchBar__input"></input>
-                            <i class="bi bi-search searchBar__icon"></i>
+                            <input type="text" placeholder="Buscar" className="searchBar__input"></input>
+                            <button className="searchBar__icon"><i class="bi bi-search"></i></button>
                         </div>
-                    </a>
+                    </div>
 
-                    <a className="navbar-item">
+                    <button className="navbar-item">
                         <i class="bi bi-cart-fill is-size-3-widescreen is-size-4-desktop is-size-3-touch"></i>
-                    </a>
+                    </button>
                 </div>
 
                 <div className="navbar-end">
                     <div className="navbar-item">
                         <div className="buttons">
-                            <a className="button is-dark is-size-5-widescreen is-size-6-desktop is-size-5-touch">
+                            <button className="button is-dark is-size-5-widescreen is-size-6-desktop is-size-5-touch nav__ingresar">
                                 <strong>Ingresar</strong>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>

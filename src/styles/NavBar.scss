@@ -15,6 +15,10 @@
     span{
         transition: transform 400ms, opacity 400ms;
     }
+
+    &__ingresar{
+        font-family: inherit;
+    }
 }
 
 .navbar-brand{
@@ -36,10 +40,6 @@
     padding: .2em;
     padding-left: .4em;
     padding-right: .4em;
-   
-    &__wrapper{
-        background: none !important /* reemplaza estilo de bulma para este caso */;
-    }
 
     &:hover, &:focus-visible, &:active{
         background: #ef2e55;
@@ -60,11 +60,21 @@
 
     &__icon{
         font-size: 1.1em;
+        color: var(--color-two);
+
+        &:hover, &:focus{
+            color: var(--color-one-dark);
+        }
     }
 }
 
 
 @media(max-width: 1023px){
+    .nav{
+        &__searchIcon{
+            color: var(--color-two);
+        }
+    }
     /* media query para transition nav bulma */
     .navbar-menu {
         display: block;
@@ -74,6 +84,7 @@
         top: -250%;
         transition: top 400ms ease-in-out;
         pointer-events: none;
+        padding-top: 0;
         z-index: -1;
     }
     
@@ -87,6 +98,7 @@
         padding: 0;
         border: none;
         width: 100%;
+        display: flex;
 
         &:hover, &:focus-visible, &:active{
             background: none;
@@ -94,17 +106,24 @@
 
         &__input{
             color: var(--color-two);
-            max-width: 80%;
+            width: 100%;
 
             &::placeholder{
                 color: var(--color-one-dark);
             }
         }
 
+        &__icon{
+            margin-right: 3.1vw;
+
+            &:hover, &:focus{
+                color: var(--color-one-dark);
+            }
+        }
     }
 
     .navbar-item{
-        &:hover{
+        &:hover, &:focus{
             color: var(--color-one-dark) !important /* override bulma */;
         }
     }

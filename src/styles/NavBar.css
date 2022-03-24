@@ -13,6 +13,9 @@
 .nav span {
   transition: transform 400ms, opacity 400ms;
 }
+.nav__ingresar {
+  font-family: inherit;
+}
 
 .navbar-brand {
   min-height: inherit;
@@ -33,9 +36,6 @@
   padding: 0.2em;
   padding-left: 0.4em;
   padding-right: 0.4em;
-}
-.searchBar__wrapper {
-  background: none !important;
 }
 .searchBar:hover, .searchBar:focus-visible, .searchBar:active {
   background: #ef2e55;
@@ -58,9 +58,17 @@
 }
 .searchBar__icon {
   font-size: 1.1em;
+  color: var(--color-two);
+}
+.searchBar__icon:hover, .searchBar__icon:focus {
+  color: var(--color-one-dark);
 }
 
 @media (max-width: 1023px) {
+  .nav__searchIcon {
+    color: var(--color-two);
+  }
+
   /* media query para transition nav bulma */
   .navbar-menu {
     display: block;
@@ -70,6 +78,7 @@
     top: -250%;
     transition: top 400ms ease-in-out;
     pointer-events: none;
+    padding-top: 0;
     z-index: -1;
   }
 
@@ -83,13 +92,14 @@
     padding: 0;
     border: none;
     width: 100%;
+    display: flex;
   }
   .searchBar:hover, .searchBar:focus-visible, .searchBar:active {
     background: none;
   }
   .searchBar__input {
     color: var(--color-two);
-    max-width: 80%;
+    width: 100%;
   }
   .searchBar__input::-moz-placeholder {
     color: var(--color-one-dark);
@@ -100,8 +110,14 @@
   .searchBar__input::placeholder {
     color: var(--color-one-dark);
   }
+  .searchBar__icon {
+    margin-right: 3.1vw;
+  }
+  .searchBar__icon:hover, .searchBar__icon:focus {
+    color: var(--color-one-dark);
+  }
 
-  .navbar-item:hover {
+  .navbar-item:hover, .navbar-item:focus {
     color: var(--color-one-dark) !important;
   }
 }
