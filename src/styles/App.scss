@@ -1,15 +1,6 @@
-#root{
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: start;
-  align-items: stretch;
-  min-height: 100vh;
-  background: var(--color-back);
-  margin: auto;
-}
-
 .App{
     font-family: 'Courier New', Courier, monospace;
+    font-family: var(--font-primary);
     font-size: clamp(2rem, 1rem + 8vw, 4rem);
     border-radius: .4em;
     outline: 4px dashed var(--color-one);
@@ -25,21 +16,23 @@
 
 
 .coming{
-  background-color: rgb(30, 30, 30);
-  color: rgb(240, 240, 240);
+  background-color: var(--color-back-dark);
+  color: var(--color-three);
   padding: 2rem;
   border-radius: .4em .4em 0 0;
   text-align: left;
   width: 100%;
+  text-shadow: 2px 2px 0 var(--color-back-dark), 3px 3px 0 var(--color-one);
 }
 
 .soon{
-    background-color: rgb(240, 240, 240);
+    background-color: var(--color-three);
     color: rgb(30, 30, 30);
     padding: 2rem;
     border-radius: 0 0 .4em .4em;
     text-align: right;
     width: 100%;
+    text-shadow: 2px 2px 0 var(--color-three), 3px 3px 0 var(--color-one);
 }
 
 @keyframes fadeTranslateIn{
