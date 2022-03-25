@@ -116,7 +116,7 @@
         width: 100%;
         display: flex;
 
-        &:hover, &:focus-visible, &:active{
+        &:hover, &:focus, &:focus-within{
             background: none;
         }
 

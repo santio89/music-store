@@ -106,7 +106,7 @@
     width: 100%;
     display: flex;
   }
-  .searchBar:hover, .searchBar:focus-visible, .searchBar:active {
+  .searchBar:hover, .searchBar:focus, .searchBar:focus-within {
     background: none;
   }
   .searchBar__input {
