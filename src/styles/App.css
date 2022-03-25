@@ -1,13 +1,13 @@
 .App {
   font-family: "Courier New", Courier, monospace;
   font-family: var(--font-primary);
-  font-size: clamp(2rem, 1rem + 8vw, 4rem);
+  font-size: clamp(1.4rem, 1rem + 8vw, 6rem);
   border-radius: 0.4em;
   outline: 4px dashed var(--color-one);
   transition: transform 1000ms;
   margin: auto;
-  min-width: 280px;
-  max-width: 400px;
+  min-width: 240px;
+  max-width: 600px;
   margin: auto;
   transform: translateX(-100%);
   opacity: 0;
