@@ -41,7 +41,7 @@
   padding-left: 0.4em;
   padding-right: 0.4em;
 }
-.searchBar:hover, .searchBar:focus-visible, .searchBar:active {
+.searchBar:hover, .searchBar:focus, .searchBar:focus-within {
   background: var(--color-one-hover);
 }
 .searchBar__input {

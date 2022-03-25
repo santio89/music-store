@@ -48,7 +48,7 @@
     padding-left: .4em;
     padding-right: .4em;
 
-    &:hover, &:focus-visible, &:active{
+    &:hover, &:focus, &:focus-within{
         background: var(--color-one-hover);
     }
 
