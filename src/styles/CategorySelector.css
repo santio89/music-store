@@ -7,7 +7,7 @@
   margin-right: 5%;
 }
 .tabs li a {
-  color: white;
+  color: var(--color-three-dark);
   border-bottom: 2px solid var(--color-three-dark);
 }
 .tabs li a:hover {

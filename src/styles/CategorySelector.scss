@@ -6,7 +6,7 @@
 
     li{
         a{
-            color: white;
+            color: var(--color-three-dark);
             border-bottom: 2px solid var(--color-three-dark);
 
             &:hover{
