@@ -10,13 +10,6 @@
   outline: 2px dashed var(--color-three);
   outline-offset: -2px;
 }
-.nav__span {
-  width: 20px;
-  height: 4px;
-}
-.nav span {
-  transition: transform 400ms, opacity 400ms;
-}
 .nav__home:hover, .nav__home:focus {
   outline: 1px dashed var(--color-three);
 }
@@ -30,6 +23,10 @@
   background: var(--color-one);
 }
 
+.navbar-burger span {
+  border-radius: 1em;
+  transition: transform 400ms, opacity 400ms;
+}
 .navbar-burger:hover {
   background: none;
 }

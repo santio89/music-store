@@ -11,15 +11,7 @@
         }
     }
 
-    &__span{
-        width: 20px;
-        height: 4px;
-    }
     z-index: 1;
-
-    span{
-        transition: transform 400ms, opacity 400ms;
-    }
 
     &__home{
         &:hover, &:focus{
@@ -38,9 +30,15 @@
 }
 
 .navbar-burger{
+    span{
+        border-radius: 1em;
+        transition: transform 400ms, opacity 400ms;
+    }
+
    &:hover{
        background: none;
    }
+
    &:focus-visible span{
        background: var(--color-one-dark);
    }
