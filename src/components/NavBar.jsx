@@ -68,28 +68,29 @@ export default function NavBar({brand}){
         )
     }
 
-    const HomeButton = ()=>{
-        return(
-            <a className="navbar-item nav__home" role="button" tabIndex="0">
-                Inicio
-            </a>
-        )
-    }
-
-    const SearchBar = ()=>{
-        return(
-            <div className="navbar-item searchBar__wrapper">
-                <div className="searchBar">
-                    <input type="text" placeholder="Buscar" className="searchBar__input"></input>
-                    <button className="searchBar__icon"><i className="bi bi-search"></i></button>
-                </div>
-        </div>
-        )
-    }
 
     const NavContent = ()=>{
         let itemsNumber = 0;
-        
+
+        const HomeButton = ()=>{
+            return(
+                <a className="navbar-item nav__home" role="button" tabIndex="0">
+                    Inicio
+                </a>
+            )
+        }
+    
+        const SearchBar = ()=>{
+            return(
+                <div className="navbar-item searchBar__wrapper">
+                    <div className="searchBar">
+                        <input type="text" placeholder="Buscar" className="searchBar__input"></input>
+                        <button className="searchBar__icon"><i className="bi bi-search"></i></button>
+                    </div>
+            </div>
+            )
+        }
+
         return(
             <div id="navbarMain" className="navbar-menu">
             <div className="navbar-end is-size-4-widescreen is-size-5-desktop is-size-4-touch">

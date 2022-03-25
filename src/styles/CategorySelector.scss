@@ -5,7 +5,6 @@
     margin-right: 5%;
 
     li{
-
         a{
             color: white;
             border-bottom: 2px solid var(--color-three-dark);
@@ -14,8 +13,13 @@
                 color: var(--color-one);
                 border-bottom: 2px solid var(--color-three);
             }
+            &:focus-visible{
+                color: var(--color-one);
+                border-bottom: 2px solid var(--color-three);
+                outline: 1px dashed var(--color-three);
+                outline-offset: -2px;
+            }
         }
-
     }
 
     li.is-active{

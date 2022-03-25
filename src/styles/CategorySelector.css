@@ -14,6 +14,12 @@
   color: var(--color-one);
   border-bottom: 2px solid var(--color-three);
 }
+.tabs li a:focus-visible {
+  color: var(--color-one);
+  border-bottom: 2px solid var(--color-three);
+  outline: 1px dashed var(--color-three);
+  outline-offset: -2px;
+}
 .tabs li.is-active a {
   color: var(--color-one);
   border-bottom: 2px solid var(--color-three);
