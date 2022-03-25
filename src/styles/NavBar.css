@@ -42,7 +42,7 @@
   padding-right: 0.4em;
 }
 .searchBar:hover, .searchBar:focus-visible, .searchBar:active {
-  background: #ef2e55;
+  background: var(--color-one-hover);
 }
 .searchBar__input {
   background: none;
@@ -63,6 +63,7 @@
 .searchBar__icon {
   font-size: 1.1em;
   color: var(--color-three);
+  margin-left: 0.32em;
 }
 .searchBar__icon:hover, .searchBar__icon:focus {
   color: var(--color-one-dark);

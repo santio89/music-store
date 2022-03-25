@@ -49,9 +49,8 @@
     padding-right: .4em;
 
     &:hover, &:focus-visible, &:active{
-        background: #ef2e55;
+        background: var(--color-one-hover);
     }
-
 
     &__input{
         background: none;
@@ -68,6 +67,7 @@
     &__icon{
         font-size: 1.1em;
         color: var(--color-three);
+        margin-left: .32em;
 
         &:hover, &:focus{
             color: var(--color-one-dark);
