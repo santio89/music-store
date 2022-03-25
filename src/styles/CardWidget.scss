@@ -1,5 +1,5 @@
 .CartWidget{
-    &:focus-visible{
+    &:hover, &:focus{
         outline: 1px dashed var(--color-three);
     }
 }
