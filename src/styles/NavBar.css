@@ -6,7 +6,7 @@
   font-weight: 800;
   text-shadow: 2px 2px 0 var(--color-two);
 }
-.nav__logo:focus {
+.nav__logo:focus-visible {
   outline: 2px dashed var(--color-three);
   outline-offset: -2px;
 }
@@ -28,6 +28,13 @@
   min-height: inherit;
   overflow: hidden;
   background: var(--color-one);
+}
+
+.navbar-burger:hover {
+  background: none;
+}
+.navbar-burger:focus-visible span {
+  background: var(--color-one-dark);
 }
 
 .navbar-burger.is-large {

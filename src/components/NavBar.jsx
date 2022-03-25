@@ -43,7 +43,7 @@ export default function NavBar({brand}){
 
     const NavBurger = ()=>{
         return(
-            <a role="button" className="navbar-burger is-large" aria-label="menu" aria-expanded="false" data-target="navbarMain">
+            <a role="button" className="navbar-burger is-large" aria-label="menu" aria-expanded="false" data-target="navbarMain" tabIndex="0">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
