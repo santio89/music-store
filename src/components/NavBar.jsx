@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import '../../src/styles/NavBar.css';
+import '../../src/styles/css/NavBar.css';
 import CartWidget from "./CartWidget";
 
     /* burger nav mobile toggle //bulma framework*/

@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import '../../src/styles/CategorySelector.css';
+import '../../src/styles/css/CategorySelector.css';
 
 export default function CategorySelector(){
     return(

@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import '../../src/styles/CardWidget.css';
+import '../../src/styles/css/CardWidget.css';
 
 export default function CartWidget({itemsNumber}){
     return(

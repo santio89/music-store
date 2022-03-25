@@ -1,5 +1,5 @@
 import 'bulma/css/bulma.min.css';
-import '../src/styles/App.css';
+import '../src/styles/css/App.css';
 import CategorySelector from './Components/CategorySelector';
 import Footer from './Components/Footer';
 import ItemListContainer from './Components/ItemListContainer';

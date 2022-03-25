@@ -4,8 +4,8 @@
     &__logo{
         font-weight: 800;
         text-shadow: 2px 2px 0 var(--color-two);
-
-        &:focus-visible{
+        
+        &:hover, &:focus{
             outline: 2px dashed var(--color-three);
             outline-offset: -2px;
         }
@@ -22,7 +22,7 @@
     }
 
     &__home{
-        &:focus-visible{
+        &:hover, &:focus{
             outline: 1px dashed var(--color-three);
         }
     }
@@ -121,7 +121,7 @@
         }
 
         &__input{
-            color: var(--color-two);
+            color: var(--color-one-dark);
             width: 100%;
 
             &::placeholder{

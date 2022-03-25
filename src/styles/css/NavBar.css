@@ -6,7 +6,7 @@
   font-weight: 800;
   text-shadow: 2px 2px 0 var(--color-two);
 }
-.nav__logo:focus-visible {
+.nav__logo:hover, .nav__logo:focus {
   outline: 2px dashed var(--color-three);
   outline-offset: -2px;
 }
@@ -17,7 +17,7 @@
 .nav span {
   transition: transform 400ms, opacity 400ms;
 }
-.nav__home:focus-visible {
+.nav__home:hover, .nav__home:focus {
   outline: 1px dashed var(--color-three);
 }
 .nav__ingresar {
@@ -110,7 +110,7 @@
     background: none;
   }
   .searchBar__input {
-    color: var(--color-two);
+    color: var(--color-one-dark);
     width: 100%;
   }
   .searchBar__input::-moz-placeholder {
