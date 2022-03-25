@@ -1,24 +1,31 @@
 import 'bulma/css/bulma.min.css';
 import '../src/styles/App.css';
-import CategorySelector from './components/CategorySelector';
-import Footer from './components/Footer';
-import NavBar from './components/NavBar';
+import CategorySelector from './Components/CategorySelector';
+import Footer from './Components/Footer';
+import ItemListContainer from './Components/ItemListContainer';
+import NavBar from './Components/NavBar';
 
 
 function App() {
   let brand = "MusicStore";
-  let hello = "OPEN...";
-  let app = "...SOON";
+  let open = "OPEN...";
+  let soon = "...SOON";
+
+  const OpenSoon = ()=>{
+    return(
+      <div className="App">
+        <div className="coming">{open}</div>
+        <div className="soon">{soon}</div>
+      </div>
+    )
+  }
 
   return (
     <>
     
     <NavBar brand={brand} />
     <CategorySelector />
-    <div className="App">
-      <div className="hello">{hello}</div>
-      <div className="react">{app}</div>
-    </div>
+    <ItemListContainer greetings={<OpenSoon />}/>
     <Footer />
 
     </>

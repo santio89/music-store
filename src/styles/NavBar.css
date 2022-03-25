@@ -17,7 +17,7 @@
 .nav span {
   transition: transform 400ms, opacity 400ms;
 }
-.nav__home:focus-visible, .nav__cart:focus-visible {
+.nav__home:focus-visible {
   outline: 1px dashed var(--color-three);
 }
 .nav__ingresar {

@@ -1,6 +1,6 @@
 .nav{
     min-height: 76px;
-
+    
     &__logo{
         font-weight: 800;
         text-shadow: 2px 2px 0 var(--color-two);
@@ -21,7 +21,7 @@
         transition: transform 400ms, opacity 400ms;
     }
 
-    &__home, &__cart{
+    &__home{
         &:focus-visible{
             outline: 1px dashed var(--color-three);
         }

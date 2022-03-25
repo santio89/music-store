@@ -77,6 +77,7 @@ button {
   --color-two: rgb(74, 74, 74);
   --color-three: rgb(255, 255, 255);
   --color-three-dark: rgb(100, 100, 100);
+  --color-back: rgb(50, 50, 50);
 }
 
 html{
@@ -117,7 +118,7 @@ body {
     align-items: center;
     width: 100%;
     min-height: 100vh;
-    background: var(--color-two);
+    background: var(--color-back);
   }
 
   ::selection{

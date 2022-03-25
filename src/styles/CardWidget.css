@@ -1,0 +1,3 @@
+.CartWidget:focus-visible {
+  outline: 1px dashed var(--color-three);
+}/*# sourceMappingURL=CardWidget.css.map */

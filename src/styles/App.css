@@ -1,11 +1,11 @@
 #root {
   display: flex;
   flex-flow: column wrap;
-  justify-content: center;
+  justify-content: start;
   align-items: stretch;
-  width: 100%;
   min-height: 100vh;
-  background: #323232;
+  background: var(--color-back);
+  margin: auto;
 }
 
 .App {
@@ -16,13 +16,15 @@
   transition: transform 1000ms;
   margin: auto;
   min-width: 280px;
+  max-width: 400px;
+  margin: auto;
   transform: translateX(-100%);
   opacity: 0;
   -webkit-animation: fadeTranslateIn 1s forwards;
           animation: fadeTranslateIn 1s forwards;
 }
 
-.hello {
+.coming {
   background-color: #1e1e1e;
   color: #f0f0f0;
   padding: 2rem;
@@ -31,7 +33,7 @@
   width: 100%;
 }
 
-.react {
+.soon {
   background-color: #f0f0f0;
   color: #1e1e1e;
   padding: 2rem;
