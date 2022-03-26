@@ -154,6 +154,6 @@
 
 @media(max-width: 346px){
     .nav__logo{
-        font-size: 2rem !important /* important para remplazar el size de bulma (que tambien usa important) */;
+        font-size: 2rem !important /* override bulma */;
     }
 }
