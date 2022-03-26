@@ -40,7 +40,7 @@
 }
 
 .searchBar {
-  border: 4px dashed var(--color-three);
+  border: 2px dashed var(--color-three);
   border-radius: 1em;
   padding: 0.2em;
   padding-left: 0.4em;
