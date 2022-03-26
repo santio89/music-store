@@ -106,6 +106,9 @@
   .searchBar:hover, .searchBar:focus, .searchBar:focus-within {
     background: none;
   }
+  .searchBar__wrapper:hover, .searchBar__wrapper:focus, .searchBar__wrapper:focus-within {
+    background: var(--color-three-accent);
+  }
   .searchBar__input {
     color: var(--color-one-dark);
     width: 100%;

@@ -118,6 +118,12 @@
             background: none;
         }
 
+        &__wrapper{
+            &:hover, &:focus, &:focus-within{
+                background: var(--color-three-accent);
+            }
+        }
+
         &__input{
             color: var(--color-one-dark);
             width: 100%;
