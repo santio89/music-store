@@ -5,6 +5,7 @@
 .nav__logo {
   font-weight: 800;
   text-shadow: 2px 2px 0 var(--color-two);
+  font-size: 2.5rem;
 }
 .nav__logo:hover, .nav__logo:focus {
   outline: 2px dashed var(--color-three);
@@ -130,12 +131,12 @@
     color: var(--color-one-dark);
   }
 
-  .navbar-item:hover, .navbar-item:focus {
-    color: var(--color-one-dark) !important;
+  a.navbar-item:hover, a.navbar-item:focus {
+    color: var(--color-one-dark);
   }
 }
 @media (max-width: 346px) {
   .nav__logo {
-    font-size: 2rem !important;
+    font-size: 2rem;
   }
 }/*# sourceMappingURL=NavBar.css.map */

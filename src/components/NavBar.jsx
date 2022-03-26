@@ -35,7 +35,7 @@ export default function NavBar({brand}){
 
     const NavLogo = ()=>{
         return(
-            <a className="navbar-item is-size-2 nav__logo" href="index.html">
+            <a className="navbar-item nav__logo" href="index.html">
                     {brand}
             </a>
         )

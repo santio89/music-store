@@ -4,7 +4,8 @@
     &__logo{
         font-weight: 800;
         text-shadow: 2px 2px 0 var(--color-two);
-        
+        font-size: 2.5rem;
+
         &:hover, &:focus{
             outline: 2px dashed var(--color-three);
             outline-offset: -2px;
@@ -143,10 +144,8 @@
         }
     }
 
-    .navbar-item{
-        &:hover, &:focus{
-            color: var(--color-one-dark) !important /* override bulma */;
-        }
+    a.navbar-item:hover, a.navbar-item:focus{
+        color: var(--color-one-dark);
     }
 }
 
@@ -154,6 +153,6 @@
 
 @media(max-width: 346px){
     .nav__logo{
-        font-size: 2rem !important /* override bulma */;
+        font-size: 2rem;
     }
 }
