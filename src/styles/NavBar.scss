@@ -49,40 +49,6 @@
     transform: scale(2.4) translateX(-20%) translateY(12%);
 }
 
-.searchBar{
-    border: 2px dashed var(--color-three);
-    border-radius: 1em;
-    padding: .2em;
-    padding-left: .4em;
-    padding-right: .4em;
-
-    &:hover, &:focus, &:focus-within{
-        background: var(--color-one-hover);
-    }
-
-    &__input{
-        background: none;
-        border: none;
-        outline: none;
-        font-family: inherit;
-        color: var(--color-three);
-
-        &::placeholder{
-            color: var(--color-one-dark);
-        }
-    }
-
-    &__icon{
-        font-size: 1.1em;
-        color: var(--color-three);
-        margin-left: .32em;
-
-        &:hover, &:focus{
-            color: var(--color-one-dark);
-        }
-    }
-}
-
 
 @media(max-width: 1023px){
     .nav{

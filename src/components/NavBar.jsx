@@ -2,6 +2,7 @@
 import React from "react";
 import '../../src/styles/css/NavBar.css';
 import CartWidget from "./CartWidget";
+import SearchBar from "./SearchBar";
 
     /* burger nav mobile toggle //bulma framework*/
     document.addEventListener('DOMContentLoaded', () => {
@@ -77,17 +78,6 @@ export default function NavBar({brand}){
                 <a className="navbar-item nav__home" role="button" tabIndex="0">
                     Inicio
                 </a>
-            )
-        }
-    
-        const SearchBar = ()=>{
-            return(
-                <div className="navbar-item searchBar__wrapper">
-                    <div className="searchBar">
-                        <input type="text" placeholder="Buscar" className="searchBar__input"></input>
-                        <button className="searchBar__icon"><i className="bi bi-search"></i></button>
-                    </div>
-            </div>
             )
         }
 
