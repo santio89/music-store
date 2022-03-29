@@ -3,6 +3,7 @@ import React from "react";
 import '../../src/styles/css/NavBar.css';
 import CartWidget from "./CartWidget";
 import SearchBar from "./SearchBar";
+import LogInButton from "./LogInButton";
 
     /* burger nav mobile toggle //bulma framework*/
     document.addEventListener('DOMContentLoaded', () => {
@@ -58,14 +59,6 @@ export default function NavBar({brand}){
                 <NavLogo />
                 <NavBurger />
             </div>
-        )
-    }
-
-    const LogInButton = ()=>{
-        return(
-            <button className="button is-dark is-size-5-widescreen is-size-6-desktop is-size-5-touch nav__ingresar">
-                <strong>Ingresar</strong>
-            </button>
         )
     }
 

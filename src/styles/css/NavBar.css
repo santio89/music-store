@@ -14,9 +14,6 @@
 .nav__home:hover, .nav__home:focus {
   outline: 1px dashed var(--color-three);
 }
-.nav__ingresar {
-  font-family: inherit;
-}
 
 .navbar-brand {
   min-height: inherit;

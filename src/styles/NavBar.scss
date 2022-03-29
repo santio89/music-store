@@ -1,6 +1,7 @@
 .nav{
     min-height: 76px;
-    
+    z-index: 1;
+
     &__logo{
         font-weight: 800;
         text-shadow: 2px 2px 0 var(--color-two);
@@ -12,15 +13,10 @@
         }
     }
 
-    z-index: 1;
-
     &__home{
         &:hover, &:focus{
             outline: 1px dashed var(--color-three);
         }
-    }
-    &__ingresar{
-        font-family: inherit;
     }
 }
 

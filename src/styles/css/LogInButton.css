@@ -1,0 +1,41 @@
+.button__logIn {
+  font-weight: 700;
+  font-family: inherit;
+  position: relative;
+  overflow: hidden;
+}
+.button__logIn span {
+  position: absolute;
+  background: var(--color-three);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  -webkit-animation: ripples 1s linear infinite;
+          animation: ripples 1s linear infinite;
+}
+
+@-webkit-keyframes ripples {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0.4;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+  }
+}
+
+@keyframes ripples {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0.4;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+  }
+}/*# sourceMappingURL=LogInButton.css.map */
