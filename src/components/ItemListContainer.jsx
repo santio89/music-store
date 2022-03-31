@@ -20,7 +20,7 @@ export default function ItemListContainer(){
     }
     
     function failToAdd(){
-        console.log("FAIL TO ADD");
+        console.log("FAIL TO ADD (NOT ENOUGH STOCK)");
     }
 
     /*  */
