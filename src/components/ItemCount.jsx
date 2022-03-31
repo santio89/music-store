@@ -1,7 +1,7 @@
 import React, { useState }  from "react";
 import '../styles/css/ItemCount.css';
 
-export const useCounter = ()=>{
+const useCounter = ()=>{
     const [x, setX] = useState(0);
 
     const increase = ()=>{setX(x+1)};

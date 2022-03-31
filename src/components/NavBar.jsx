@@ -4,7 +4,6 @@ import '../../src/styles/css/NavBar.css';
 import CartWidget from "./CartWidget";
 import SearchBar from "./SearchBar";
 import LogInButton from "./LogInButton";
-import { useCounter } from "./ItemCount"
 
     /* burger nav mobile toggle //bulma framework*/
     document.addEventListener('DOMContentLoaded', () => {
