@@ -2,10 +2,11 @@
 import React, { useState } from "react";
 import '../../src/styles/css/CardWidget.css';
 
-export function useCart(cartInitial = 0){
+export const useCart = (cartInitial = 0)=>{
     const [cartNumber, setCartNumber] = useState(cartInitial);
 
     const cartAdd = (ammount)=>{
+        console.log("El total del carrito debería ser: " + (cartNumber + ammount)) 
         setCartNumber(cartNumber + ammount)
     }
 
@@ -14,7 +15,7 @@ export function useCart(cartInitial = 0){
 
 
 export default function CartWidget(){
-    const {cartNumber, cartAdd} = useCart(0);
+    const {cartNumber, _ignore} = useCart(0);
     
     return(
         <a className="navbar-item CartWidget" role="button" tabIndex="0">

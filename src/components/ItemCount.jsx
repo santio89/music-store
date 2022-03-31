@@ -1,6 +1,7 @@
 import React, { useState }  from "react";
 import '../styles/css/ItemCount.css';
 
+
 const useCounter = (initial)=>{
     const [x, setX] = useState(initial);
 
@@ -28,7 +29,7 @@ export default function ItemCount({onAdd, failToAdd, initial, stock}) {
                 <button className="ItemCount__buttons__increase" onClick={increase}>+</button>
             </div>
             
-            <button className="ItemCount__add" onClick={x==0?null:(x>stock?failToAdd:()=>{onAdd(x, reset)})}>Agregar al carrito</button>
+            <button className="ItemCount__add" onClick={x===0?null:(x>stock?failToAdd:()=>{onAdd(x, reset)})}>Agregar al carrito</button>
         </div>
     )
 }
