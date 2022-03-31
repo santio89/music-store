@@ -64,7 +64,6 @@ export default function NavBar({brand}){
 
 
     const NavContent = ()=>{
-        let itemsNumber = 0;
         const HomeButton = ()=>{
             return(
                 <a className="navbar-item nav__home" role="button" tabIndex="0">
@@ -80,7 +79,7 @@ export default function NavBar({brand}){
 
                 <SearchBar />
 
-                <CartWidget itemsNumber={itemsNumber}/>
+                <CartWidget/>
             </div>
 
             <div className="navbar-end">
