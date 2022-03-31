@@ -4,6 +4,7 @@ import '../../src/styles/css/NavBar.css';
 import CartWidget from "./CartWidget";
 import SearchBar from "./SearchBar";
 import LogInButton from "./LogInButton";
+import { useCounter } from "./ItemCount"
 
     /* burger nav mobile toggle //bulma framework*/
     document.addEventListener('DOMContentLoaded', () => {
@@ -65,7 +66,6 @@ export default function NavBar({brand}){
 
     const NavContent = ()=>{
         let itemsNumber = 0;
-
         const HomeButton = ()=>{
             return(
                 <a className="navbar-item nav__home" role="button" tabIndex="0">

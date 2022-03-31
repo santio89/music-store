@@ -7,24 +7,14 @@ import NavBar from './Components/NavBar';
 
 function App() {
   let brand = "MusicStore";
-  let open = "OPEN...";
-  let soon = "...SOON";
-
-  const OpenSoon = ()=>{
-    return(
-      <div className="App">
-        <div className="coming">{open}</div>
-        <div className="soon">{soon}</div>
-      </div>
-    )
-  }
+  
 
   return (
     <>
     
     <NavBar brand={brand} />
     <CategorySelector />
-    <ItemListContainer greetings={<OpenSoon />}/>
+    <ItemListContainer />
     <Footer />
 
     </>
