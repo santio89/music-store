@@ -24,17 +24,22 @@
   font-size: 0.4em;
   position: absolute;
   top: 2%;
-  left: 2%;
+  left: 0;
   display: flex;
   flex-flow: column wrap;
   color: var(--color-back-dark);
   font-family: "Courier New", Courier, monospace;
+  width: 100%;
 }
 .Item__content__title {
   color: var(--color-three);
   text-shadow: 1px 1px var(--color-one-dark);
-  margin-top: 4.56rem;
+  margin-top: 6.8rem;
   background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  padding-left: 2%;
+  font-size: 1.12em;
+  line-height: 1.2;
 }
 .Item__content__price {
   font-size: 2em;
@@ -44,4 +49,5 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  margin-left: 2%;
 }/*# sourceMappingURL=Item.css.map */
