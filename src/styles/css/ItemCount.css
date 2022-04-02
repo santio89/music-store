@@ -1,6 +1,6 @@
 .ItemCount {
   font-family: var(--font-primary);
-  font-size: clamp(1rem, 2rem + 2vw, 4rem);
+  font-size: clamp(3.2rem, 2rem + 2vw, 4.8rem);
   border-radius: 0.4em;
   max-width: 100%;
   display: flex;
@@ -17,7 +17,7 @@
   color: var(--color-three);
   text-align: center;
   width: 100%;
-  text-shadow: 2px 2px 0 var(--color-back-dark), 3px 3px 0 var(--color-one);
+  text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
 }
 .ItemCount__buttons button:hover {
   color: var(--color-one);
@@ -39,11 +39,11 @@
   color: var(--color-three);
   padding: 1rem;
   text-align: center;
-  text-shadow: 2px 2px 0 var(--color-back-dark), 3px 3px 0 var(--color-one);
+  text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
+  padding-bottom: 1.12rem;
 }
 .ItemCount__add:hover {
   color: var(--color-one);
-  text-shadow: 2px 2px 0 var(--color-back-dark), 3px 3px 0 var(--color-one);
 }
 .ItemCount__stock {
   position: absolute;
