@@ -15,7 +15,7 @@ export const useCart = (cartInitial = 0)=>{
 
 
 export default function CartWidget(){
-    const {cartNumber, _ignore} = useCart(0);
+    const {cartNumber} = useCart(0);
     
     return(
         <a className="navbar-item CartWidget" role="button" tabIndex="0">

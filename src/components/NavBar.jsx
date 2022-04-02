@@ -1,37 +1,38 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+/* eslint-disable no-unused-vars */
+import React, { useState } from "react";
 import '../../src/styles/css/NavBar.css';
 import CartWidget from "./CartWidget";
 import SearchBar from "./SearchBar";
 import LogInButton from "./LogInButton";
 
-    /* burger nav mobile toggle //bulma framework*/
-    document.addEventListener('DOMContentLoaded', () => {
+/* burger nav mobile toggle //bulma framework*/
+document.addEventListener('DOMContentLoaded', () => {
 
-        // Get all "navbar-burger" elements
-        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-    
-        // Check if there are any navbar burgers
-        if ($navbarBurgers.length > 0) {
-    
-        // Add a click event on each of them
-        $navbarBurgers.forEach( el => {
-            el.addEventListener('click', () => {
-    
-            // Get the target from the "data-target" attribute
-            const target = el.dataset.target;
-            const $target = document.getElementById(target);
-    
-            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-            el.classList.toggle('is-active');
-            $target.classList.toggle('is-active');
-    
-            });
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
         });
-        }
-    
     });
-    /* fin burger nav */
+    }
+
+});
+/* fin burger nav */
 
 export default function NavBar({brand}){
 

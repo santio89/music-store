@@ -1,0 +1,51 @@
+.Item{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: stretch;
+    font-size: 2rem;
+    position: relative;
+    overflow: hidden;
+
+    &__imgWrapper{
+        width: 100%;
+        background: linear-gradient(45deg, var(--color-one), var(--color-one-dark));
+        border-radius: 2rem 2rem 0 0;
+        
+    }
+    
+    &__img{
+        aspect-ratio: 1;
+        width: 100%;
+        object-fit: cover;
+        border-radius: inherit;
+    }
+
+    &__content{
+        background: none;
+        font-size: .4em;
+        position: absolute;
+        top: 2%;
+        left: 2%;
+        display: flex;
+        flex-flow: column wrap;
+        color: var(--color-back-dark);
+        font-family: 'Courier New', Courier, monospace;
+
+        &__title{
+           color: var(--color-three);
+           text-shadow: 1px 1px var(--color-one-dark);
+           margin-top: 4.8rem;
+           background: rgba(0, 0, 0, .4)
+        }
+
+        &__price{
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--color-three);
+            text-shadow: 2px 2px var(--color-one-dark), 3px 3px var(--color-back-dark);
+            width: fit-content;
+        }
+    }
+
+}

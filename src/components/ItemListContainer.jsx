@@ -1,34 +1,39 @@
-import React, { useState } from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useEffect, useState } from 'react';
 import '../../src/styles/css/ItemListContainer.css';
-import ItemCount from './ItemCount';
-import { useCart } from './CartWidget'
+import ItemList from './ItemList';
+
 
 export default function ItemListContainer(){
     
-    /* esto deberia ir en un componente item */
-    const {_ignore, cartAdd} = useCart();
-    const initial = 0;
-    const stockInitial = 10
-
-    const [stock, stockMinus] = useState(stockInitial);
-
-    function onAdd(ammount, resetCounter){
-        console.log(`ADDED ${ammount} TO CART`)
-        stockMinus(stock-ammount);
-        resetCounter();
-        cartAdd(ammount);
-    }
+    const [productos, setProductos] = useState([]);
     
-    function failToAdd(){
-        console.log("FAIL TO ADD (NOT ENOUGH STOCK)");
-    }
+     
+    useEffect(()=>{
+        /*         
+        async function apiTest(){
+            try{
+                const response = await fetch("https://api.discogs.com/database/search?q=NewReleases&token=RkqSJrgChJCPUvsaYEUrkgTSzPgnYlXzVEOZiwnp"); 
+                const items = await response.json();
 
-    /*  */
+                setProductos(items.results)
+            }
+            catch (err){
+                console.log(err);
+            }
+        
+        }
+        apiTest(); */
 
+        fetch("https://api.discogs.com/database/search?type=release&sort=hot%2Cdesc&token=RkqSJrgChJCPUvsaYEUrkgTSzPgnYlXzVEOZiwnp").then(res=>{
+            res.json().then(res=>setProductos(res.results))
+            }).catch(err=>{console.log(err)}) 
+
+    }, [])
+     
     return (
         <div className="ItemListContainer">
-            <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initial} stock={stock}/>
-            <div style={{textAlign: "center", marginTop: "2%", marginBottom: "2%", fontSize: "2em"}}>Stock: {stock}</div>
+            <ItemList productos={productos}/>
         </div>
     )
 }

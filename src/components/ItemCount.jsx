@@ -4,7 +4,7 @@ import '../styles/css/ItemCount.css';
 
 const useCounter = (initial)=>{
     const [x, setX] = useState(initial);
-
+    
     const increase = ()=>{setX(x+1)};
     const decrease = ()=>{setX(x-1)};
     const reset = ()=>{setX(0)};
@@ -30,6 +30,8 @@ export default function ItemCount({onAdd, failToAdd, initial, stock}) {
             </div>
             
             <button className="ItemCount__add" onClick={x===0?null:(x>stock?failToAdd:()=>{onAdd(x, reset)})}>Agregar al carrito</button>
+
+            <div className="ItemCount__stock">Stock: {stock}</div>
         </div>
     )
 }
