@@ -1,6 +1,6 @@
 .ItemCount{
     font-family: var(--font-primary);
-    font-size: clamp(3.2rem, 2rem + 2vw, 4.8rem);
+    font-size: clamp(3.2rem, 2rem + 2vw, 4rem);
     border-radius: .4em;
     max-width: 100%;
     display: flex;
@@ -16,6 +16,7 @@
             text-align: center;
             width: 100%;
             text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
+            font-size: clamp(3.8rem, 2rem + 2vw, 5.8rem);
     
           &:hover{
             color: var(--color-one);
@@ -42,9 +43,9 @@
         background-color: var(--color-back-dark);
         color: var(--color-three);
         padding: 1rem;
+        padding-bottom: 1.2rem;
         text-align: center;
         text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
-        padding-bottom: 1.12rem;
 
       &:hover{
         color: var(--color-one);
@@ -56,8 +57,8 @@
         top: 0;
         right: 2%;
         font-size: .28em;
+        font-size: clamp(.88rem, .88rem + .88vw, 1.12rem);
     }
-
 }
 
 
