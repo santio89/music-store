@@ -1,7 +1,10 @@
 .ItemList{
+    margin: auto;
+    max-width: 1600px;
+    margin-top: 2.8rem;
     display: grid;
     justify-content: center;
     align-content: center;
-    gap: 1.2rem;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+    gap: 1.4rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
