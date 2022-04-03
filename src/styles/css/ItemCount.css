@@ -18,7 +18,7 @@
   text-align: center;
   width: 100%;
   text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
-  font-size: clamp(3.8rem, 2rem + 2vw, 5.8rem);
+  font-size: clamp(4rem, 4rem + 2vw, 4.8rem);
 }
 .ItemCount__buttons button:hover {
   color: var(--color-one);
@@ -29,19 +29,18 @@
   padding: 0.8rem;
   text-align: center;
   width: 100%;
-  font-size: 1.2em;
+  font-size: clamp(3.2rem, 2rem + 2vw, 3.8rem);
   line-height: 1.2;
   text-shadow: 2px 2px 0 var(--color-three), 3px 3px 0 var(--color-one);
 }
 .ItemCount__add {
-  font-size: 0.52em;
+  font-size: clamp(1.58rem, 1rem + 2vw, 1.78rem);
   border-radius: 0 0 2rem 2rem;
   border-top: 2px dashed var(--color-one);
-  line-height: 1;
+  line-height: 1.12;
   background-color: var(--color-back-dark);
   color: var(--color-three);
-  padding: 1rem;
-  padding-bottom: 1.2rem;
+  padding: 0.8rem;
   text-align: center;
   text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
 }
@@ -52,17 +51,5 @@
   position: absolute;
   top: 0;
   right: 2%;
-  font-size: clamp(0.84rem, 0.84rem + 0.84vw, 1.04rem);
-}
-
-/* @keyframes fadeTranslateIn{
-  0%{
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100%{
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
- *//*# sourceMappingURL=ItemCount.css.map */
+  font-size: clamp(0.82rem, 0.82rem + 0.82vw, 1.02rem);
+}/*# sourceMappingURL=ItemCount.css.map */

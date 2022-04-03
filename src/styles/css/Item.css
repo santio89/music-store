@@ -34,15 +34,15 @@
 .Item__content__title {
   color: var(--color-three);
   text-shadow: 1px 1px var(--color-one-dark);
-  margin-top: 6.8rem;
+  margin-top: 6.2rem;
   background: rgba(0, 0, 0, 0.4);
   width: 100%;
   padding-left: 2%;
-  font-size: 1.12em;
+  font-size: 1.2em;
   line-height: 1.2;
 }
 .Item__content__price {
-  font-size: 2em;
+  font-size: 2.1em;
   font-weight: bold;
   color: var(--color-three);
   text-shadow: 2px 2px var(--color-one-dark), 3px 3px var(--color-back-dark);
