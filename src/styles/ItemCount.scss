@@ -8,33 +8,33 @@
     position: relative;
 
     &__buttons{
-        button{
-            font: inherit;
-            line-height: 1;
-            background-color: var(--color-back-dark);
-            color: var(--color-three);
-            text-align: center;
-            width: 100%;
-            text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
-            font-size: clamp(3.8rem, 2rem + 2vw, 5.8rem);
-    
-          &:hover{
-            color: var(--color-one);
-          }
-        }
+      button{
+          font: inherit;
+          line-height: 1;
+          background-color: var(--color-back-dark);
+          color: var(--color-three);
+          text-align: center;
+          width: 100%;
+          text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
+          font-size: clamp(3.8rem, 2rem + 2vw, 5.8rem);
 
-        display: flex;
-
-        &__number{
-            background-color: var(--color-back-dark);
-            color: var(--color-one);
-            padding: .8rem;
-            text-align: center;
-            width: 100%;
-            font-size: 1.2em;
-            line-height: 1.2;
-            text-shadow: 2px 2px 0 var(--color-three), 3px 3px 0 var(--color-one);
+        &:hover{
+          color: var(--color-one);
         }
+      }
+
+      display: flex;
+
+      &__number{
+          background-color: var(--color-back-dark);
+          color: var(--color-one);
+          padding: .8rem;
+          text-align: center;
+          width: 100%;
+          font-size: 1.2em;
+          line-height: 1.2;
+          text-shadow: 2px 2px 0 var(--color-three), 3px 3px 0 var(--color-one);
+      }
     }
 
     &__add{
@@ -58,8 +58,7 @@
         position: absolute;
         top: 0;
         right: 2%;
-        font-size: .28em;
-        font-size: clamp(.88rem, .88rem + .88vw, 1.12rem);
+        font-size: clamp(.84rem, .84rem + .84vw, 1.04rem);
     }
 }
 

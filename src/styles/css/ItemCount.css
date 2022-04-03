@@ -52,8 +52,7 @@
   position: absolute;
   top: 0;
   right: 2%;
-  font-size: 0.28em;
-  font-size: clamp(0.88rem, 0.88rem + 0.88vw, 1.12rem);
+  font-size: clamp(0.84rem, 0.84rem + 0.84vw, 1.04rem);
 }
 
 /* @keyframes fadeTranslateIn{
