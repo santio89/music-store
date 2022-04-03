@@ -29,6 +29,8 @@
   padding: 0.8rem;
   text-align: center;
   width: 100%;
+  font-size: 1.2em;
+  line-height: 1.2;
   text-shadow: 2px 2px 0 var(--color-three), 3px 3px 0 var(--color-one);
 }
 .ItemCount__add {
