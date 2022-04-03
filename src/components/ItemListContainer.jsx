@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import '../../src/styles/css/ItemListContainer.css';
 import ItemList from './ItemList';
+import customFetch from '../utils/customFetch';
 
 
 export default function ItemListContainer(){
@@ -10,7 +11,7 @@ export default function ItemListContainer(){
     
      
     useEffect(()=>{
-        /*         
+        /* fetch en funcion async        
         async function apiTest(){
             try{
                 const response = await fetch("https://api.discogs.com/database/search?q=NewReleases&token=RkqSJrgChJCPUvsaYEUrkgTSzPgnYlXzVEOZiwnp"); 
@@ -25,9 +26,9 @@ export default function ItemListContainer(){
         }
         apiTest(); */
 
-        fetch("https://api.discogs.com/database/search?type=release&sort=hot%2Cdesc&token=RkqSJrgChJCPUvsaYEUrkgTSzPgnYlXzVEOZiwnp").then(res=>{
-            res.json().then(res=>setProductos(res.results))
-            }).catch(err=>{console.log(err)}) 
+        let fetchApi = fetch("https://api.discogs.com/database/search?type=release&sort=hot%2Cdesc&token=RkqSJrgChJCPUvsaYEUrkgTSzPgnYlXzVEOZiwnp");
+        /* fetch custom con promise (hace el fetch a la api luego de un tiempo) */
+        customFetch(1000, fetchApi).then(res=>{res.json().then(res=>setProductos(res.results))}).catch(err=>{console.log(err)}) 
 
     }, [])
      
