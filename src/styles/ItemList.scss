@@ -7,5 +7,22 @@
     justify-content: center;
     align-content: center;
     gap: 1.4rem;
+    overflow: hidden;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: fadeTranslateIn 400ms forwards ease-in-out;
+}
+
+
+
+@keyframes fadeTranslateIn{
+  0%{
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(0);
+    opacity: 1;
+  }
 }

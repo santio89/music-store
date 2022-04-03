@@ -74,7 +74,7 @@ button {
 
 html {
   scrollbar-width: thin;
-  scrollbar-color: var(--color-one) var(--color-three-dark);
+  scrollbar-color: var(--color-one) var(--color-back);
   /* INICIO SCROLLBAR */
   /* width */
   /* track */
@@ -83,17 +83,16 @@ html {
   /* FIN SCROLLBAR */
 }
 html ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 html ::-webkit-scrollbar-track {
   background: var(--color-back);
 }
 html ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(var(--color-one)), rgba(var(--color-three-dark)));
-  border-radius: 10px;
+  background: linear-gradient(180deg, var(--color-one-dark), var(--color-one-dark));
 }
 html ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, rgba(var(--color-one)), rgba(var(--color-three-dark)));
+  background: linear-gradient(180deg, var(--color-one), var(--color-one));
 }
 
 body {
@@ -114,7 +113,7 @@ body {
   font-weight: 400;
   display: flex;
   flex-flow: column wrap;
-  justify-content: start;
+  justify-content: center;
   align-items: stretch;
   min-height: 100vh;
   background: var(--color-back);
