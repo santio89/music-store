@@ -15,7 +15,7 @@ function App() {
   const cartAdd = (amount)=>{
       console.log("CART TOTAL: " + (cartNumber + amount)) 
       
-      setCartNumber(cartNumber + amount)
+      setCartNumber((cartNumber)=>cartNumber + amount)
   }
   
 
