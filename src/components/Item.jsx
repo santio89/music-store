@@ -4,19 +4,18 @@ import ItemCount from './ItemCount';
 import { useCart } from './CartWidget'
 import '../styles/css/Item.css';
 
-export default function Item({id, title, img, stockInitial, price}){
+export default function Item({id, title, img, stockInitial, price, cartAdd}){
      
-const {_ignore, cartAdd} = useCart();
 const initial = 0;
 stockInitial = Math.trunc(stockInitial/40); /* disminuyo el stock solo a modo de que se pueda probar agotar el stock (mas rapidamente) */
 
 const [stock, stockMinus] = useState(stockInitial);
 
-function onAdd(ammount, resetCounter){
-    console.log(`ADDED ${ammount} TO CART`)
-    stockMinus(stock-ammount);
+function onAdd(amount, resetCounter){
+    console.log(`ADDED ${amount} TO CART`)
+    stockMinus(stock-amount);
     resetCounter();
-    cartAdd(ammount);
+    cartAdd(amount);
 }
 
 function failToAdd(){

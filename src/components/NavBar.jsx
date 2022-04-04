@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 /* fin burger nav */
 
-export default function NavBar({brand}){
+export default function NavBar({brand, cartNumber}){
 
     const NavLogo = ()=>{
         return(
@@ -80,7 +80,7 @@ export default function NavBar({brand}){
 
                 <SearchBar />
 
-                <CartWidget/>
+                <CartWidget cartNumber={cartNumber}/>
             </div>
 
             <div className="navbar-end">

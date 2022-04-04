@@ -6,7 +6,7 @@ import customFetch from '../utils/customFetch';
 import PuffLoader from "react-spinners/PuffLoader";
 
 
-export default function ItemListContainer(){
+export default function ItemListContainer({cartAdd}){
     const [loading, setLoading] = useState(false);
     const [productos, setProductos] = useState([]);
      
@@ -46,7 +46,7 @@ export default function ItemListContainer(){
     return (
         <div className="ItemListContainer">
             {
-                loading ? <PuffLoader color={"var(--color-one)"} loading={loading} size={200} speedMultiplier={1.2} /> : <ItemList productos={productos}/>
+                loading ? <PuffLoader color={"var(--color-one)"} loading={loading} size={200} speedMultiplier={1.2} /> : <ItemList productos={productos} cartAdd={cartAdd}/>
             }
             
         </div>
