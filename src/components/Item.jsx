@@ -8,11 +8,11 @@ export default function Item({id, title, img, stockInitial, price, cartAdd}){
 const initial = 0;
 stockInitial = Math.trunc(stockInitial/40); /* disminuyo el stock solo a modo de que se pueda probar agotar el stock (mas rapidamente) */
 
-const [stock, stockMinus] = useState(stockInitial);
+const [stock, setStock] = useState(stockInitial);
 
 function onAdd(amount, resetCounter){
     console.log(`ADDED ${amount} TO CART`)
-    stockMinus(stock-amount);
+    setStock(stock-amount);
     resetCounter();
     cartAdd(amount);
 }
