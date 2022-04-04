@@ -26,19 +26,19 @@
     background: var(--color-one);
 }
 
-.navbar-burger{
+.navbar-burger{    
     span{
         border-radius: 1em;
         transition: transform 400ms, opacity 400ms;
     }
 
-   &:hover{
-       background: none;
-   }
+    &:hover{
+        background: none;
+    }
 
-   &:focus-visible span{
-       background: var(--color-one-dark);
-   }
+    &:focus-visible span{
+        background: var(--color-one-dark);
+    }
 }
 
 .navbar-burger.is-large {
@@ -68,7 +68,6 @@
     .navbar-menu.is-active {
         top: 100%;
         pointer-events: auto;
-        transition: top 400ms ease-in-out;
     }    
     /* fin media query para transition nav bulma */
 

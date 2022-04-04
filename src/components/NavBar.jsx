@@ -1,42 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import '../../src/styles/css/NavBar.css';
 import CartWidget from "./CartWidget";
 import SearchBar from "./SearchBar";
 import LogInButton from "./LogInButton";
 
-/* TOGGLE MOBILE NAV (BULMA SNIPPET)
 
-document.addEventListener('DOMContentLoaded', () => {
-
-    // Get all "navbar-burger" elements
-    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-    // Check if there are any navbar burgers
-    if ($navbarBurgers.length > 0) {
-
-    // Add a click event on each of them
-    $navbarBurgers.forEach( el => {
-        el.addEventListener('click', () => {
-            console.log("test")
-        // Get the target from the "data-target" attribute
-        const target = el.dataset.target;
-        const $target = document.getElementById(target);
-
-        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-        el.classList.toggle('is-active');
-        $target.classList.toggle('is-active');
-
-        });
-    });
-    }
-}); 
-*/
-
-
-/* MOBILE NAV CON STATE */
-const useNav = ()=>{
+/* 
+    MOBILE NAV CON STATE (transitions no funcionan)
+    const useNav = ()=>{
     const [navOpen, setNavOpen] = useState(false);
 
     const open = ()=>{
@@ -48,10 +21,33 @@ const useNav = ()=>{
     };
 
     return {navOpen, open, close}
-}
+} */
 
 export default function NavBar({brand, cartNumber}){
-    let {navOpen, open, close} = useNav();
+    useEffect(()=>{
+        /* TOGGLE NAV MOBILE - BULMA SNIPPET */
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
+    
+        // Add a click event on each of them
+        $navbarBurgers.forEach( el => {
+            el.addEventListener('click', () => {
+                console.log("test")
+            // Get the target from the "data-target" attribute
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+    
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+    
+            });
+        });
+        }
+    }, [cartNumber])
 
     const NavLogo = ()=>{
         return(
@@ -63,7 +59,7 @@ export default function NavBar({brand, cartNumber}){
 
     const NavBurger = ()=>{
         return(
-            <a onClick={navOpen?close:open} role="button" className={`navbar-burger is-large ${navOpen?"is-active":""}`} aria-label="menu" tabIndex="0">
+            <a role="button" className="navbar-burger is-large" aria-label="menu" tabIndex="0" data-target="navbar-menu">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
@@ -91,7 +87,7 @@ export default function NavBar({brand, cartNumber}){
         }
 
         return(
-            <div className={`navbar-menu ${navOpen?"is-active":""}`}>
+            <div className="navbar-menu" id="navbar-menu">
                 <div className="navbar-end is-size-4-widescreen is-size-5-desktop is-size-4-touch">
                     <HomeButton />
 
