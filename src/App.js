@@ -13,7 +13,7 @@ function App() {
   const [cartNumber, setCartNumber] = useState(0);
 
   const cartAdd = (amount)=>{
-      console.log("El total del carrito debería ser: " + (cartNumber + amount)) 
+      console.log("El total del carrito es: " + (cartNumber + amount)) 
       
       setCartNumber(cartNumber + amount)
   }

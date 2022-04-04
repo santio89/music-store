@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, {useState} from "react";
 import ItemCount from './ItemCount';
-import { useCart } from './CartWidget'
 import '../styles/css/Item.css';
 
 export default function Item({id, title, img, stockInitial, price, cartAdd}){
