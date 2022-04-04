@@ -6,7 +6,8 @@ import CartWidget from "./CartWidget";
 import SearchBar from "./SearchBar";
 import LogInButton from "./LogInButton";
 
-/* burger nav mobile toggle //bulma framework*/
+/* TOGGLE MOBILE NAV (BULMA SNIPPET)
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // Get all "navbar-burger" elements
@@ -18,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add a click event on each of them
     $navbarBurgers.forEach( el => {
         el.addEventListener('click', () => {
-
+            console.log("test")
         // Get the target from the "data-target" attribute
         const target = el.dataset.target;
         const $target = document.getElementById(target);
@@ -30,11 +31,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     }
+}); 
+*/
 
-});
-/* fin burger nav */
+
+/* MOBILE NAV CON STATE */
+const useNav = ()=>{
+    const [navOpen, setNavOpen] = useState(false);
+
+    const open = ()=>{
+        setNavOpen(true)
+    };
+
+    const close = ()=>{
+        setNavOpen(false)
+    };
+
+    return {navOpen, open, close}
+}
 
 export default function NavBar({brand, cartNumber}){
+    let {navOpen, open, close} = useNav();
 
     const NavLogo = ()=>{
         return(
@@ -46,7 +63,7 @@ export default function NavBar({brand, cartNumber}){
 
     const NavBurger = ()=>{
         return(
-            <a role="button" className="navbar-burger is-large" aria-label="menu" aria-expanded="false" data-target="navbarMain" tabIndex="0">
+            <a onClick={navOpen?close:open} role="button" className={`navbar-burger is-large ${navOpen?"is-active":""}`} aria-label="menu" tabIndex="0">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
@@ -74,23 +91,23 @@ export default function NavBar({brand, cartNumber}){
         }
 
         return(
-            <div id="navbarMain" className="navbar-menu">
-            <div className="navbar-end is-size-4-widescreen is-size-5-desktop is-size-4-touch">
-                <HomeButton />
+            <div className={`navbar-menu ${navOpen?"is-active":""}`}>
+                <div className="navbar-end is-size-4-widescreen is-size-5-desktop is-size-4-touch">
+                    <HomeButton />
 
-                <SearchBar />
+                    <SearchBar />
 
-                <CartWidget cartNumber={cartNumber}/>
-            </div>
+                    <CartWidget cartNumber={cartNumber}/>
+                </div>
 
-            <div className="navbar-end">
-                <div className="navbar-item">
-                    <div className="buttons">
-                        <LogInButton />
+                <div className="navbar-end">
+                    <div className="navbar-item">
+                        <div className="buttons">
+                            <LogInButton />
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         ) 
     }
 

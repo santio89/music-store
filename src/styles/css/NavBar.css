@@ -57,6 +57,7 @@
   .navbar-menu.is-active {
     top: 100%;
     pointer-events: auto;
+    transition: top 400ms ease-in-out;
   }
 
   /* fin media query para transition nav bulma */
