@@ -50,8 +50,8 @@ export default function NavBar({brand, cartNumber}){
 
     const NavLogo = ()=>{
         return(
-            <a className="navbar-item nav__logo" href="index.html">
-                    {brand}
+            <a className="navbar-item nav__logo" href="#">
+                {brand}
             </a>
         )
     }
@@ -59,9 +59,9 @@ export default function NavBar({brand, cartNumber}){
     const NavBurger = ()=>{
         return(
             <a role="button" className="navbar-burger is-large" aria-label="menu" tabIndex="0" data-target="navbar-menu">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </a>
         )
     }
@@ -109,7 +109,7 @@ export default function NavBar({brand, cartNumber}){
     return(
         <>
         
-        <nav className="navbar is-fixed-top is-danger has-shadow is-spaced nav" role="navigation" aria-label="main navigation">
+        <nav className="navbar is-fixed-top is-danger has-shadow is-spaced nav" id="nav" role="navigation" aria-label="main navigation">
             <NavBrand />
             <NavContent />
         </nav>
