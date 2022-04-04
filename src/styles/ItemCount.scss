@@ -39,7 +39,7 @@
 
     &__add{
         font-size: clamp(1.58rem, 1rem + 2vw, 1.78rem);
-        border-radius: 0 0 2rem 2rem;
+    /*     border-radius: 0 0 2rem 2rem; */
         border-top: 2px dashed var(--color-one);
         line-height: 1.12;
         background-color: var(--color-back-dark);

@@ -5,13 +5,12 @@
     align-items: stretch;
     font-size: 2rem;
     position: relative;
+    border-radius: .8em;
     overflow: hidden;
 
     &__imgWrapper{
         width: 100%;
         background: linear-gradient(45deg, var(--color-one), var(--color-one-dark));
-        border-radius: 2rem 2rem 0 0;
-        
     }
     
     &__img{
