@@ -1,3 +1,6 @@
+.CartWidget {
+  min-width: 120px;
+}
 .CartWidget:hover, .CartWidget:focus {
   outline: 1px dashed var(--color-three);
 }/*# sourceMappingURL=CardWidget.css.map */

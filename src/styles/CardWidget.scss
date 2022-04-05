@@ -1,4 +1,6 @@
 .CartWidget{
+    min-width: 120px;
+
     &:hover, &:focus{
         outline: 1px dashed var(--color-three);
     }
