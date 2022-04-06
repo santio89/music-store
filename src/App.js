@@ -26,7 +26,7 @@ function App() {
     <NavBar brand={brand} cartNumber={cartNumber}/>
     {/* <CategorySelector />
     <ItemListContainer cartAdd={cartAdd}/> */}
-    <ItemDetailContainer />
+    <ItemDetailContainer cartAdd={cartAdd}/>
     <Footer />
 
     </>

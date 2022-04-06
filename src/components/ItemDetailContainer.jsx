@@ -30,7 +30,7 @@ export default function ItemListContainer({cartAdd}){
     return (
         <div className="ItemListContainer">
             {
-                <ItemDetail producto={producto} loading={loading}/>
+                <ItemDetail producto={producto} loading={loading} cartAdd={cartAdd}/>
             }
             
         </div>

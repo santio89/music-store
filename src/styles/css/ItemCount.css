@@ -34,7 +34,7 @@
   text-shadow: 2px 2px 0 var(--color-three), 3px 3px 0 var(--color-one);
 }
 .ItemCount__add {
-  font-size: clamp(1.58rem, 1rem + 2vw, 1.78rem);
+  font-size: clamp(2rem, 2rem + 1vw, 2.8rem);
   border-top: 2px dashed var(--color-one);
   line-height: 1.12;
   background-color: var(--color-back-dark);
@@ -48,7 +48,8 @@
 }
 .ItemCount__stock {
   position: absolute;
-  top: 0;
+  top: -8%;
   right: 2%;
-  font-size: clamp(0.82rem, 0.82rem + 0.82vw, 1.02rem);
+  font-size: clamp(0.8rem, 0.8rem + 0.8vw, 1.2rem);
+  font-family: "Courier New", Courier, monospace;
 }/*# sourceMappingURL=ItemCount.css.map */
