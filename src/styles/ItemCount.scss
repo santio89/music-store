@@ -1,6 +1,6 @@
 .ItemCount{
     font-family: var(--font-primary);
-    font-size: clamp(2.4rem, 2rem + 2vw, 3.2rem);
+    font-size: clamp(1.8rem, 1.8rem + 1.8vw, 3.8rem);
     border-radius: .4em;
     max-width: 100%;
     display: flex;
@@ -11,14 +11,13 @@
       display: flex;
 
       button{
-          font: inherit;
           line-height: 1;
           background-color: var(--color-back-dark);
           color: var(--color-three);
           text-align: center;
           width: 100%;
           text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
-          font-size: clamp(4rem, 4rem + 2vw, 4.8rem);
+          font-size: 2em;
 
         &:hover{
           color: var(--color-one);
@@ -31,19 +30,21 @@
           padding: .8rem;
           text-align: center;
           width: 100%;
-          font-size: clamp(3.2rem, 2rem + 2vw, 3.8rem);
+          font-size: 1.6em;
           line-height: 1.2;
           text-shadow: 2px 2px 0 var(--color-three), 3px 3px 0 var(--color-one);
       }
     }
 
     &__add{
-        font-size: clamp(2rem, 2rem + 1vw, 2.8rem);
+        font-size: .98em;
+        font-weight: bold;
         border-top: 2px dashed var(--color-one);
-        line-height: 1.12;
+        line-height: 1.2;
         background-color: var(--color-back-dark);
         color: var(--color-three);
-        padding: .8rem;
+        padding-top: .8rem;
+        padding-bottom: .2rem;
         text-align: center;
         text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
 
@@ -54,9 +55,9 @@
 
     &__stock{
         position: absolute;
-        top: -8%;
+        top: -10%;
         right: 2%;
-        font-size: clamp(.8rem, .8rem + .8vw, 1.2rem);
+        font-size: .44em;
         font-family: 'Courier New', Courier, monospace;
     }
 }
