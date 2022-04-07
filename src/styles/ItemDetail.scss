@@ -7,7 +7,7 @@
 
 .ItemDetail{
     margin-top: calc(76px + 3.2rem);
-    font-size: clamp(1.8rem, 1.8rem + 1.8vw, 3.8rem);
+    font-size: clamp(2rem, 2rem + 1.2vw, 4rem);
     color: var(--color-three);
     display: flex;
     flex-direction: column;
@@ -49,7 +49,7 @@
     img{
         border-radius: .4em;
         width: 100%;
-        max-width: 600px;
+        max-width: 580px;
         aspect-ratio: 1;
         object-fit: cover;
         outline: 4px dashed var(--color-one);
