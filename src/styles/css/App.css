@@ -1,1 +1,20 @@
-/*# sourceMappingURL=App.css.map */
+@-webkit-keyframes fadeTranslateIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeTranslateIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}/*# sourceMappingURL=App.css.map */

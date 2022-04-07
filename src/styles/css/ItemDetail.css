@@ -16,6 +16,8 @@
   justify-content: center;
   align-items: stretch;
   gap: 2rem;
+  -webkit-animation: fadeTranslateIn 200ms ease-in-out forwards;
+          animation: fadeTranslateIn 200ms ease-in-out forwards;
 }
 .ItemDetail__title {
   color: var(--color-one);

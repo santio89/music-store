@@ -9,19 +9,8 @@
     gap: 1.4rem;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     opacity: 0;
-    transform: translateX(-100%);
     animation: fadeTranslateIn 200ms ease-in-out forwards;
 }
 
 
 
-@keyframes fadeTranslateIn{
-  0%{
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100%{
-    transform: translateX(0);
-    opacity: 1;
-  }
-}

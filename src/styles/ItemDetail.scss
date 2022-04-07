@@ -16,6 +16,7 @@
     justify-content: center;
     align-items: stretch;
     gap: 2rem;
+    animation: fadeTranslateIn 200ms ease-in-out forwards;
 
     &__title{
         color: var(--color-one);
