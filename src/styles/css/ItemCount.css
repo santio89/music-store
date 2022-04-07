@@ -1,6 +1,6 @@
 .ItemCount {
   font-family: var(--font-primary);
-  font-size: clamp(2rem, 2rem + 1.2vw, 4rem);
+  font-size: clamp(1.8rem, 1.8rem + 1vw, 3.4rem);
   border-radius: 0.4em;
   max-width: 100%;
   display: flex;
