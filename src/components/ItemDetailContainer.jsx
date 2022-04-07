@@ -12,14 +12,19 @@ export default function ItemListContainer({cartAdd}){
     
     useEffect(()=>{
         setLoading(true);
-        let fetchApi = fetch("https://api.discogs.com/database/search?type=release&sort=hot%2Cdesc&token=RkqSJrgChJCPUvsaYEUrkgTSzPgnYlXzVEOZiwnp");
+        let fetchApi = fetch("https://api.discogs.com/releases/1954835", {
+            method:'GET', 
+            headers: {
+                Authorization: "Discogs", key:"NzDEWGaaXPKwkGstTywu", secret:"PpQhpcTuzerPMDEGRuwGfsmulqiIyBdJ"
+            }});
         
         /* fetch custom con promise (hace el fetch a la api luego de un tiempo) */
         customFetch(2000, fetchApi).then(
             res=>{
                 res.json().then(
                     res=>{
-                        setProducto(res.results[1]);
+                        console.log(res)
+                        setProducto(res);
                         setLoading(false);
                     }
                 )
