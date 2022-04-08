@@ -37,11 +37,10 @@ export default function ItemListContainer({cartAdd}){
     }, [productId])
 
     return (
-        <div className="ItemListContainer">
+        <div className="ItemDetailWrapper">
             {
                 <ItemDetail producto={producto} loading={loading} cartAdd={cartAdd}/>
             }
-            
         </div>
     )
 }

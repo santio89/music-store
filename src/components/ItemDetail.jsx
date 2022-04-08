@@ -32,36 +32,32 @@ export default function ItemDetail({loading, producto, cartAdd}) {
 
     return (
     <>  
-        
-        <div className='ItemDetailWrapper'>
         {
-            loading?<PuffLoader color={"var(--color-one)"} loading={loading} size={200} speedMultiplier={1.2} />:(
-                <div className='ItemDetail'>
-                    <Link to="/" className='ItemDetail__back'>&#x21E0;&nbsp;Volver</Link>
-                    <div className='ItemDetail__body'>
-                        <div className='ItemDetail__main'>
-                            <div className='ItemDetail__imgWrapper'>
-                                <img alt="item" src={producto && producto.images && producto.images[0] && producto.images[0].resource_url}></img>
-                            </div>
+        loading?<PuffLoader color={"var(--color-one)"} loading={loading} size={200} speedMultiplier={1.2} />:(
+            <div className='ItemDetail'>
+                <Link to="/" className='ItemDetail__back'>&#x21E0;&nbsp;Volver</Link>
+                <div className='ItemDetail__body'>
+                    <div className='ItemDetail__main'>
+                        <div className='ItemDetail__imgWrapper'>
+                            <img alt="item" src={producto && producto.images && producto.images[0] && producto.images[0].resource_url}></img>
                         </div>
-                        <div className="ItemDetail__info">
-                            <p className='ItemDetail__subtitle'>{producto.artists_sort}</p>
-                            <h2 className='ItemDetail__title'>{producto.title?.toUpperCase()}</h2>
-                            {/* <p>◖Artista: {producto.artists_sort}</p>
-                            <p>◖Título: {producto.title}</p> */}
-                            <p>◖Categorías: {producto.genres?.join(" - ")}</p>
-                            <p>◖Año: {producto.year}</p>
-                            <p>◖País: {producto.country}</p>
-                            <p>◖Precio: {"$"+producto.precio}</p>
-                            <div className='ItemDetail__counterWrapper'>
-                            <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initial} stock={stock}/>
-                            </div>
+                    </div>
+                    <div className="ItemDetail__info">
+                        <p className='ItemDetail__subtitle'>{producto.artists_sort}</p>
+                        <h2 className='ItemDetail__title'>{producto.title?.toUpperCase()}</h2>
+                        {/* <p>◖Artista: {producto.artists_sort}</p>
+                        <p>◖Título: {producto.title}</p> */}
+                        <p>◖Categorías: {producto.genres?.join(" - ")}</p>
+                        <p>◖Año: {producto.year}</p>
+                        <p>◖País: {producto.country}</p>
+                        <p>◖Precio: {"$"+producto.precio}</p>
+                        <div className='ItemDetail__counterWrapper'>
+                        <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initial} stock={stock}/>
                         </div>
                     </div>
                 </div>
-                )}
-        </div>
-        
+            </div>
+        )}
     </>
     )
 }

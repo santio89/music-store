@@ -1,9 +1,10 @@
 import '../src/styles/css/App.css';
-import CategorySelector from './Components/CategorySelector';
+import TabSelector from './Components/TabSelector';
 import Footer from './Components/Footer';
 import ItemListContainer from './Components/ItemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer';
 import NavBar from './Components/NavBar';
+import Categories from './Components/Categories'
 import React, { useState } from 'react';
 import { HashRouter, Routes, Route } from "react-router-dom";
 
@@ -25,10 +26,12 @@ function App() {
     <>
       <HashRouter basename="/">
         <NavBar brand={brand} cartNumber={cartNumber}/>
+        <TabSelector />
         <Routes>  
-          <Route exact path="/" element={<><CategorySelector /><ItemListContainer cartAdd={cartAdd}/></>} />
-
+          <Route exact path="/" element={<ItemListContainer cartAdd={cartAdd}/>} />
           <Route exact path="/item/:productId" element={<ItemDetailContainer cartAdd={cartAdd}/>} />
+          <Route exact path="/categories" element={<Categories />} />
+          <Route exact path="/categories/:categoryId"element={<ItemListContainer cartAdd={cartAdd}/>} />
         </Routes>
         <Footer />
       </HashRouter>

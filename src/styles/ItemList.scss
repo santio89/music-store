@@ -1,3 +1,15 @@
+.ItemListWrapper{
+    width: 90%;
+    min-height: 90vh;
+    margin: auto;
+    margin-top: 0;
+    max-width: 1800px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: start;
+}
+
 .ItemList{
     margin: auto;
     width: 100%;
@@ -11,6 +23,4 @@
     opacity: 0;
     animation: fadeTranslateIn 200ms ease-in-out forwards;
 }
-
-
 

@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
-import '../../src/styles/css/ItemListContainer.css';
+import '../../src/styles/css/ItemList.css';
 import ItemList from './ItemList';
 import customFetch from '../utils/customFetch';
 import PuffLoader from "react-spinners/PuffLoader";
@@ -47,7 +47,7 @@ export default function ItemListContainer({cartAdd}){
     }, [])
      
     return (
-        <div className="ItemListContainer">
+        <div className="ItemListWrapper">
             {
                 loading ? <PuffLoader color={"var(--color-one)"} loading={loading} size={200} speedMultiplier={1.2} /> : <ItemList productos={productos} cartAdd={cartAdd}/>
             }

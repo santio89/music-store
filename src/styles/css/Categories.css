@@ -1,0 +1,10 @@
+.categoriesWrapper {
+  width: 90%;
+  min-height: 90vh;
+  margin: auto;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: start;
+  align-items: center;
+  font-size: clamp(2rem, 2rem + 1vw, 4rem);
+}/*# sourceMappingURL=Categories.css.map */
