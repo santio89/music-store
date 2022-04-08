@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import '../../src/styles/css/ItemListContainer.css';
 import ItemDetail from './ItemDetail';
 import customFetch from '../utils/customFetch';
 import { useParams } from 'react-router-dom';
@@ -37,10 +36,8 @@ export default function ItemListContainer({cartAdd}){
     }, [productId])
 
     return (
-        <div className="ItemDetailWrapper">
-            {
-                <ItemDetail producto={producto} loading={loading} cartAdd={cartAdd}/>
-            }
-        </div>
+           
+        <ItemDetail producto={producto} loading={loading} cartAdd={cartAdd}/>
+          
     )
 }
