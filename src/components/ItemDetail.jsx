@@ -45,7 +45,7 @@ export default function ItemDetail({loading, producto, cartAdd}) {
                             </div>
                         </div>
                         <div className="ItemDetail__info">
-                            <h2 className='ItemDetail__title'>{producto.title}</h2>
+                            <h2 className='ItemDetail__title'>{producto.title?.toUpperCase()}</h2>
                             <p>◖Artista: {producto.artists_sort}</p>
                             <p>◖Título: {producto.title}</p>
                             <p>◖Categorías: {producto.genres?.join(" - ")}</p>
