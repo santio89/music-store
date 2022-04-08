@@ -26,9 +26,9 @@ function App() {
       <BrowserRouter>
         <NavBar brand={brand} cartNumber={cartNumber}/>
         <Routes>  
-          <Route exact path="/" element={<><CategorySelector /><ItemListContainer cartAdd={cartAdd}/></>} />
-          
-          <Route exact path="/item/:productId" element={<ItemDetailContainer cartAdd={cartAdd}/>} />
+          <Route exact path="/music-store/" element={<><CategorySelector /><ItemListContainer cartAdd={cartAdd}/></>} />
+
+          <Route exact path="/music-store/item/:productId" element={<ItemDetailContainer cartAdd={cartAdd}/>} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -37,7 +37,7 @@ export default function ItemDetail({loading, producto, cartAdd}) {
         {
             loading?<PuffLoader color={"var(--color-one)"} loading={loading} size={200} speedMultiplier={1.2} />:(
                 <div className='ItemDetail'>
-                    <Link to="/" className='ItemDetail__back'>&#x21E0;&nbsp;Volver</Link>
+                    <Link to="/music-store/" className='ItemDetail__back'>&#x21E0;&nbsp;Volver</Link>
                     <div className='ItemDetail__body'>
                         <div className='ItemDetail__main'>
                             <div className='ItemDetail__imgWrapper'>

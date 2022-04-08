@@ -51,7 +51,7 @@ export default function NavBar({brand, cartNumber}){
 
     const NavLogo = ()=>{
         return(
-            <Link to="/" className="navbar-item nav__logo" href="#">
+            <Link to="/music-store/" className="navbar-item nav__logo" href="#">
                 {brand}
             </Link>
         )
