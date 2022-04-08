@@ -18,10 +18,11 @@
   line-height: 1.8;
   font-family: "Courier New", Courier, monospace;
   width: 100%;
-  gap: 1rem;
+  gap: 1.8rem;
   -webkit-animation: fadeTranslateIn 200ms ease-in-out forwards;
           animation: fadeTranslateIn 200ms ease-in-out forwards;
   margin-bottom: 2rem;
+  min-height: 100vh;
 }
 .ItemDetail__subtitle {
   text-align: left;
@@ -81,10 +82,10 @@
   text-shadow: 1px 1px 0 var(--color-three);
   font-weight: bold;
   color: var(--color-one-dark);
-  margin-bottom: 1.2rem;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  align-self: start;
 }
 .ItemDetail__back:hover {
   color: var(--color-one);
@@ -96,7 +97,6 @@
   align-items: center;
   gap: 2rem;
   width: 100%;
-  margin: auto;
 }
 
 @media (min-width: 1024px) {
@@ -106,16 +106,14 @@
 }
 @media (min-width: 1216px) {
   .ItemDetail {
-    margin-top: calc(108px + 0.2rem);
+    gap: 2rem;
   }
   .ItemDetail__body {
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: start;
     gap: calc(4rem + 2%);
-  }
-  .ItemDetail__back {
-    margin-top: 1.4rem;
   }
   .ItemDetail__imgWrapper {
     max-width: 520px;

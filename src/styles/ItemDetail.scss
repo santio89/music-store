@@ -18,9 +18,10 @@
     line-height: 1.8;
     font-family: 'Courier New', Courier, monospace;
     width: 100%;
-    gap: 1rem;
+    gap: 1.8rem;
     animation: fadeTranslateIn 200ms ease-in-out forwards;
     margin-bottom: 2rem;
+    min-height: 100vh;
 
     &__subtitle{
         text-align: left;
@@ -85,8 +86,8 @@
         text-shadow: 1px 1px 0 var(--color-three);
         font-weight: bold;
         color: var(--color-one-dark);
-        margin-bottom: 1.2rem;
         width: fit-content;
+        align-self: start;
         
         &:hover{
             color: var(--color-one);
@@ -100,7 +101,6 @@
         align-items: center;
         gap: 2rem;
         width: 100%;
-        margin: auto;
     }
 }
 
@@ -112,17 +112,14 @@
 
 @media (min-width: 1216px){
     .ItemDetail{
-        margin-top: calc(108px + .2rem);
+        gap: 2rem;
 
         &__body{
+            display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: start;
             gap: calc(4rem + 2%);
-        }
-
-        &__back{
-            margin-top: 1.4rem;
         }
 
         &__imgWrapper{
