@@ -23,12 +23,17 @@
           animation: fadeTranslateIn 200ms ease-in-out forwards;
   margin-bottom: 2rem;
 }
+.ItemDetail__subtitle {
+  text-align: left;
+  font-family: var(--font-primary);
+  font-size: 1.12em;
+}
 .ItemDetail__title {
   color: var(--color-one);
   text-shadow: 2px 2px 0 var(--color-three);
   line-height: 1.2;
-  font-size: 2em;
-  margin-bottom: 1rem;
+  font-size: 1.8em;
+  margin-bottom: 2rem;
   text-align: left;
   font-weight: bold;
   font-family: var(--font-primary);
@@ -37,11 +42,15 @@
   background: var(--color-back-dark);
   margin-bottom: 2rem;
   padding: 2rem;
+  padding-top: 0.4rem;
   border-radius: 0.4em;
   font-size: clamp(1rem, 1rem + 1vw, 1.52rem);
   outline: 1px dashed var(--color-three-dark);
   width: 100%;
   max-width: 500px;
+}
+.ItemDetail__info p:not(:first-of-type) {
+  font-size: 1.08em;
 }
 .ItemDetail__imgWrapper {
   background: var(--color-back-dark);

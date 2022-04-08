@@ -1,6 +1,6 @@
 .ItemCount {
   font-family: var(--font-primary);
-  font-size: clamp(1.78rem, 1.78rem + 1.78vw, 2.88rem);
+  font-size: clamp(1.6rem, 1.6rem + 1.6vw, 2.6rem);
   border-radius: 0.4em;
   max-width: 100%;
   display: flex;
@@ -17,7 +17,7 @@
   text-align: center;
   width: 100%;
   text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
-  font-size: 2.2em;
+  font-size: 2.18em;
 }
 .ItemCount__buttons button:hover {
   color: var(--color-one);
@@ -28,12 +28,12 @@
   padding: 0.8rem;
   text-align: center;
   width: 100%;
-  font-size: 1.72em;
+  font-size: 1.78em;
   line-height: 1.24;
   text-shadow: 2px 2px 0 var(--color-three), 3px 3px 0 var(--color-one);
 }
 .ItemCount__add {
-  font-size: 0.92em;
+  font-size: 0.94em;
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
   border-top: 2px dashed var(--color-one);
