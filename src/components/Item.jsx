@@ -1,25 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React, {useState} from "react";
-import ItemCount from './ItemCount';
+import { Link } from 'react-router-dom';
 import '../styles/css/Item.css';
 
-export default function Item({id, title, img, stockInitial, price, cartAdd}){
+export default function Item({id, title, img, stockInitial, price}){
      
 const initial = 0;
-stockInitial = Math.trunc(stockInitial/40); /* disminuyo el stock solo a modo de que se pueda probar agotar el stock (mas rapidamente) */
+stockInitial = Math.trunc(stockInitial/40); /* disminuyo el stock solo a modo de que se pueda probar agotar el stock (más rapidamente) */
 
-const [stock, setStock] = useState(stockInitial);
-
-function onAdd(amount, resetCounter){
-    console.log(`ADDED ${amount} TO CART`)
-    setStock(stock-amount);
-    resetCounter();
-    cartAdd(amount);
-}
-
-function failToAdd(){
-    console.log("FAIL TO ADD (NOT ENOUGH STOCK)");
-}
 
     return(
         <>
@@ -29,7 +17,7 @@ function failToAdd(){
                     <p className="Item__content__price">${price}</p>
                     <h3 className="Item__content__title">{title}</h3>
                 </div>
-                <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initial} stock={stock}/>           
+                <Link to={`/item/${id}`} className="Item__details">Detalles</Link>
             </div>
             
         </>

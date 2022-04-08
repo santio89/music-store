@@ -34,7 +34,7 @@
 .Item__content__title {
   color: var(--color-three);
   text-shadow: 1px 1px var(--color-one-dark);
-  margin-top: 6.2rem;
+  margin-top: 6.4rem;
   background: rgba(0, 0, 0, 0.4);
   width: 100%;
   padding-left: 2%;
@@ -50,4 +50,15 @@
   width: -moz-fit-content;
   width: fit-content;
   margin-left: 2%;
+}
+.Item__details {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  text-align: center;
+  background: var(--color-back-dark);
+  padding: 0.4em;
+  color: var(--color-one-dark);
+}
+.Item__details:hover {
+  color: var(--color-one);
 }/*# sourceMappingURL=Item.css.map */

@@ -35,7 +35,7 @@
         &__title{
            color: var(--color-three);
            text-shadow: 1px 1px var(--color-one-dark);
-           margin-top: 6.2rem;
+           margin-top: 6.4rem;
            background: rgba(0, 0, 0, .4);
            width: 100%;
            padding-left: 2%;
@@ -50,6 +50,19 @@
             text-shadow: 2px 2px var(--color-one-dark), 3px 3px var(--color-back-dark);
             width: fit-content;
             margin-left: 2%;
+        }
+    }
+
+    &__details{
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        text-align: center;
+        background: var(--color-back-dark);
+        padding: .4em;
+        color:var(--color-one-dark);
+
+        &:hover{
+            color:var(--color-one);
         }
     }
 }

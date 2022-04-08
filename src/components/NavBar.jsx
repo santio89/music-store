@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import '../../src/styles/css/NavBar.css';
 import CartWidget from "./CartWidget";
 import SearchBar from "./SearchBar";
@@ -50,9 +51,9 @@ export default function NavBar({brand, cartNumber}){
 
     const NavLogo = ()=>{
         return(
-            <a className="navbar-item nav__logo" href="#">
+            <Link to="/" className="navbar-item nav__logo" href="#">
                 {brand}
-            </a>
+            </Link>
         )
     }
 

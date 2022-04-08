@@ -4,11 +4,14 @@ import '../../src/styles/css/ItemListContainer.css';
 import ItemList from './ItemList';
 import customFetch from '../utils/customFetch';
 import PuffLoader from "react-spinners/PuffLoader";
+import { useParams } from 'react-router-dom';
 
 
 export default function ItemListContainer({cartAdd}){
     const [loading, setLoading] = useState(false);
     const [productos, setProductos] = useState([]);
+
+    const { id } = useParams();
     
     useEffect(()=>{
         /* fetch en funcion async        
@@ -24,7 +27,7 @@ export default function ItemListContainer({cartAdd}){
             }
         
         }
-        apiTest(); */
+        apiTest(); */        
 
         setLoading(true);
         let fetchApi = fetch("https://api.discogs.com/database/search?type=release&sort=hot%2Cdesc&token=RkqSJrgChJCPUvsaYEUrkgTSzPgnYlXzVEOZiwnp");

@@ -5,6 +5,7 @@ import ItemListContainer from './Components/ItemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer';
 import NavBar from './Components/NavBar';
 import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 
@@ -22,12 +23,15 @@ function App() {
 
   return (
     <>
-    
-    <NavBar brand={brand} cartNumber={cartNumber}/>
-    {/* <CategorySelector />
-    <ItemListContainer cartAdd={cartAdd}/> */}
-    <ItemDetailContainer cartAdd={cartAdd}/>
-    <Footer />
+      <BrowserRouter>
+        <NavBar brand={brand} cartNumber={cartNumber}/>
+        <Routes>  
+          <Route exact path="/" element={<><CategorySelector /><ItemListContainer cartAdd={cartAdd}/></>} />
+          
+          <Route exact path="/item/:productId" element={<ItemDetailContainer cartAdd={cartAdd}/>} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
 
     </>
   );
