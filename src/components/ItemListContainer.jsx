@@ -33,7 +33,7 @@ export default function ItemListContainer({cartAdd}){
         let fetchApi = fetch("https://api.discogs.com/database/search?type=release&sort=hot%2Cdesc&token=RkqSJrgChJCPUvsaYEUrkgTSzPgnYlXzVEOZiwnp");
         
         /* fetch custom con promise (hace el fetch a la api luego de un tiempo) */
-        customFetch(2000, fetchApi).then(
+        customFetch(1000, fetchApi).then(
             res=>{
                 res.json().then(
                     res=>{
