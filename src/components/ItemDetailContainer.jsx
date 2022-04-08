@@ -7,7 +7,6 @@ import { useParams } from 'react-router-dom';
 
 
 export default function ItemListContainer({cartAdd}){
-
     const { productId } = useParams();
 
     const [loading, setLoading] = useState(false);
@@ -16,8 +15,10 @@ export default function ItemListContainer({cartAdd}){
     useEffect(()=>{
         /* api discogs - key/secret */
         setLoading(true);
-        const key = "NzDEWGaaXPKwkGstTywu"
-        const secret = "PpQhpcTuzerPMDEGRuwGfsmulqiIyBdJ"
+        window.scrollTo(0, 0);
+        
+        const key = "NzDEWGaaXPKwkGstTywu";
+        const secret = "PpQhpcTuzerPMDEGRuwGfsmulqiIyBdJ";
         
         const fetchApi = fetch(`https://api.discogs.com/releases/${productId}?key=${key}&secret=${secret}`);
         
