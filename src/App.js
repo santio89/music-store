@@ -5,9 +5,9 @@ import ItemListContainer from './Components/ItemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer';
 import NavBar from './Components/NavBar';
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
-
+/* uso HashRouter en vez de BrowserRouter ya que de momento tengo el sitio hosteado en github pages, y gh-pages no funciona bien con react router (al parecer por el browser history) */
 
 function App() {
   let brand = "MusicStore";
@@ -23,15 +23,15 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <HashRouter basename="/">
         <NavBar brand={brand} cartNumber={cartNumber}/>
         <Routes>  
-          <Route exact path="/music-store/" element={<><CategorySelector /><ItemListContainer cartAdd={cartAdd}/></>} />
+          <Route exact path="/" element={<><CategorySelector /><ItemListContainer cartAdd={cartAdd}/></>} />
 
-          <Route exact path="/music-store/item/:productId" element={<ItemDetailContainer cartAdd={cartAdd}/>} />
+          <Route exact path="/item/:productId" element={<ItemDetailContainer cartAdd={cartAdd}/>} />
         </Routes>
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
 
     </>
   );

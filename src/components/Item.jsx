@@ -17,7 +17,7 @@ stockInitial = Math.trunc(stockInitial/40); /* disminuyo el stock solo a modo de
                     <p className="Item__content__price">${price}</p>
                     <h3 className="Item__content__title">{title}</h3>
                 </div>
-                <Link to={`/music-store/item/${id}`} className="Item__details">Detalles</Link>
+                <Link to={`/item/${id}`} className="Item__details">Detalles</Link>
             </div>
             
         </>
