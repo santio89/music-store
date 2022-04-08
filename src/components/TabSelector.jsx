@@ -1,11 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from "react";
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from "react";
+import { Link, useParams } from 'react-router-dom'
 import '../../src/styles/css/TabSelector.css';
 
 export default function TabSelector(){
     const [vistosActive, setVistosActive] = useState(true);
     const [categoriesActive, setCategoriesActive] = useState(false);
+
+    const {item, categories} = useParams();
+    
 
     const vistosClick = ()=>{
         setVistosActive(true);
@@ -16,6 +19,16 @@ export default function TabSelector(){
         setVistosActive(false);
         setCategoriesActive(true);
     }
+
+/* VER    useEffect(()=>{
+        if (item){
+            setVistosActive(false);
+            setCategoriesActive(false)
+        } else if (categories){
+            setVistosActive(false);
+            setCategoriesActive(true);
+        }
+    }, [item, categories]); */
     
 
     return(

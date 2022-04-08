@@ -29,9 +29,9 @@ function App() {
         <TabSelector />
         <Routes>  
           <Route exact path="/" element={<ItemListContainer cartAdd={cartAdd}/>} />
-          <Route exact path="/item/:productId" element={<ItemDetailContainer cartAdd={cartAdd}/>} />
-          <Route exact path="/categories" element={<Categories />} />
-          <Route exact path="/categories/:categoryId"element={<ItemListContainer cartAdd={cartAdd}/>} />
+          <Route exact path="/:item/:productId" element={<ItemDetailContainer cartAdd={cartAdd}/>} />
+          <Route exact path="/:categories" element={<Categories />} />
+          <Route exact path="/:categories/:categoryId"element={<ItemListContainer cartAdd={cartAdd}/>} />
         </Routes>
         <Footer />
       </HashRouter>
