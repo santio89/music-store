@@ -27,12 +27,15 @@ export default function TabSelector(){
     }
 
     useEffect(()=>{
-        if (url !== "/" && url !== ( "/categories")){
-            tabsOff();
-        } else if (url === "/"){
+        if (url === "/"){
             setVistosActive(true);
             setCategoriesActive(false);
-        }
+        } else if (url.startsWith("/categories")){
+            setVistosActive(false);
+            setCategoriesActive(true);
+        } else if (url !== "/"){
+            tabsOff();
+        } 
     }, [url]);
     
 

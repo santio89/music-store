@@ -10,16 +10,42 @@
 }
 
 .ItemList{
-    margin: auto;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: start;
+    align-items: center;
     width: 100%;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    gap: 1.4rem;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    opacity: 0;
-    animation: fadeTranslateIn 200ms ease-in-out forwards;
+    
+    &__title{
+        align-self: center;
+        font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.8rem);
+        font-weight: bold;
+        color: var(--color-one);
+        text-shadow: 2px 2px var(--color-three);
+        border-bottom: 2px dashed var(--color-one);
+        margin-bottom: 2rem;
+        animation: fadeTranslateIn 200ms ease-in-out forwards;
+    }
+
+    &__content{
+        margin: auto;
+        width: 100%;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        gap: 1.4rem;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        opacity: 0;
+        animation: fadeTranslateIn 200ms ease-in-out forwards;
+    }
 }
 
+@media (min-width:1024px){
+    .ItemList{
+        &__title{
+            align-self: start;
+        }
+    }
+}

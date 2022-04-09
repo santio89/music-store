@@ -10,6 +10,24 @@
 }
 
 .ItemList {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+}
+.ItemList__title {
+  align-self: center;
+  font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.8rem);
+  font-weight: bold;
+  color: var(--color-one);
+  text-shadow: 2px 2px var(--color-three);
+  border-bottom: 2px dashed var(--color-one);
+  margin-bottom: 2rem;
+  -webkit-animation: fadeTranslateIn 200ms ease-in-out forwards;
+          animation: fadeTranslateIn 200ms ease-in-out forwards;
+}
+.ItemList__content {
   margin: auto;
   width: 100%;
   margin-top: 1rem;
@@ -22,4 +40,10 @@
   opacity: 0;
   -webkit-animation: fadeTranslateIn 200ms ease-in-out forwards;
           animation: fadeTranslateIn 200ms ease-in-out forwards;
+}
+
+@media (min-width: 1024px) {
+  .ItemList__title {
+    align-self: start;
+  }
 }/*# sourceMappingURL=ItemList.css.map */

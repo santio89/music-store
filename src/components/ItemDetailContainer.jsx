@@ -22,7 +22,7 @@ export default function ItemListContainer({cartAdd}){
         const fetchApi = fetch(`https://api.discogs.com/releases/${productId}?key=${key}&secret=${secret}`);
         
         /* fetch custom con promise (hace el fetch a la api luego de un tiempo) */
-        customFetch(2000, fetchApi).then(
+        customFetch(1000, fetchApi).then(
             res=>{
                 res.json().then(
                     res=>{
