@@ -10,27 +10,18 @@ import { useParams } from 'react-router-dom';
 export default function ItemListContainer({cartAdd}){
     const [loading, setLoading] = useState(false);
     const [productos, setProductos] = useState([]);
-
-    const { categoryId } = useParams();
     
-    useEffect(()=>{
-        /* fetch en funcion async        
-        async function apiTest(){
-            try{
-                const response = await fetch("https://api.discogs.com/database/search?q=NewReleases&token=RkqSJrgChJCPUvsaYEUrkgTSzPgnYlXzVEOZiwnp"); 
-                const items = await response.json();
-
-                setProductos(items.results)
-            }
-            catch (err){
-                console.log(err);
-            }
+    const { categoryId } = useParams();
+    const discogsToken = "RkqSJrgChJCPUvsaYEUrkgTSzPgnYlXzVEOZiwnp";
+    
+    
+    useEffect(()=>{     
+        const hotSearch = "type=release&sort=hot%2Cdesc"
         
-        }
-        apiTest(); */        
-
+        const apiSearch = `genre=${categoryId}`;
+        
         setLoading(true);
-        let fetchApi = fetch("https://api.discogs.com/database/search?type=release&sort=hot%2Cdesc&token=RkqSJrgChJCPUvsaYEUrkgTSzPgnYlXzVEOZiwnp");
+        let fetchApi = fetch(`https://api.discogs.com/database/search?${categoryId?apiSearch:hotSearch}&token=${discogsToken}`);
         
         /* fetch custom con promise (hace el fetch a la api luego de un tiempo) */
         customFetch(1000, fetchApi).then(
@@ -44,7 +35,7 @@ export default function ItemListContainer({cartAdd}){
                 )
             }
         ).catch(err=>{console.log(err)}) 
-    }, [])
+    }, [categoryId])
      
     return (
         <div className="ItemListWrapper">

@@ -10,14 +10,14 @@ export default function Categories() {
             <Link to="/categories/pop" className='Categories__pop'>POP</Link>
             <Link to="/categories/blues" className='Categories__blues'>BLUES</Link>
             <Link to="/categories/jazz" className='Categories__jazz'>JAZZ</Link>
-            <Link to="/categories/rap" className='Categories__rap'>RAP</Link>
-            <Link to="/categories/metal" className='Categories__metal'>METAL</Link>
+            <Link to="/categories/hip+hop" className='Categories__rap'>RAP</Link>
             <Link to="/categories/reggae" className='Categories__reggae'>REGGAE</Link>
-            <Link to="/categories/punk" className='Categories__punk'>PUNK</Link>
-            <Link to="/categories/techno" className='Categories__techno'>TECHNO</Link>
+            <Link to="/categories/electronic" className='Categories__techno'>TECHNO</Link>
             <Link to="/categories/country" className='Categories__country'>COUNTRY</Link>
             <Link to="/categories/classical" className='Categories__classical'>CLASSICAL</Link>
             <Link to="/categories/funk" className='Categories__funk'>FUNK</Link>
+            <Link to="/categories/latin" className='Categories__latin'>LATIN</Link>
+            <Link to="/categories/folk" className='Categories__folk'>FOLK</Link>
         </div>
     </div>
   )
