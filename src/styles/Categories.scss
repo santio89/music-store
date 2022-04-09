@@ -18,6 +18,7 @@
     gap: 1.4rem;  
     margin: auto;
     margin-top: 1rem;
+    margin-bottom: 4rem;
     animation: fadeTranslateIn 200ms ease-in-out forwards;
 
     *{
@@ -50,5 +51,10 @@
         *{
             max-width: 420px;
         }
+    }
+}
+@media (min-width: 1508px){
+    .Categories{
+        margin-bottom: 0;
     }
 }

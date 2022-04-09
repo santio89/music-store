@@ -18,6 +18,7 @@
   gap: 1.4rem;
   margin: auto;
   margin-top: 1rem;
+  margin-bottom: 4rem;
   -webkit-animation: fadeTranslateIn 200ms ease-in-out forwards;
           animation: fadeTranslateIn 200ms ease-in-out forwards;
 }
@@ -48,5 +49,10 @@
   }
   .Categories * {
     max-width: 420px;
+  }
+}
+@media (min-width: 1508px) {
+  .Categories {
+    margin-bottom: 0;
   }
 }/*# sourceMappingURL=Categories.css.map */
