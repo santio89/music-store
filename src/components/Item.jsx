@@ -1,11 +1,10 @@
 /* eslint-disable no-unused-vars */
-import React, {useState} from "react";
+import React from "react";
 import { Link } from 'react-router-dom';
 import '../styles/css/Item.css';
 
 export default function Item({id, title, img, stockInitial, price}){
      
-const initial = 0;
 stockInitial = Math.trunc(stockInitial/40); /* disminuyo el stock solo a modo de que se pueda probar agotar el stock (más rapidamente) */
 
 
