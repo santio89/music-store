@@ -26,7 +26,6 @@ export default function ItemListContainer({cartAdd}){
             res=>{
                 res.json().then(
                     res=>{
-                        console.log(res)
                         setProducto(res);
                         setLoading(false);
                     }
