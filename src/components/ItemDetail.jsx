@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PuffLoader from "react-spinners/PuffLoader";
 import ItemCount from './ItemCount';
 import '../../src/styles/css/ItemDetail.css';
@@ -7,9 +7,6 @@ import '../../src/styles/css/ItemDetail.css';
 export default function ItemDetail({loading, producto, cartAdd}) {
     producto.precio = Math.trunc(Math.abs((producto.community?.have - producto.community?.want) * .8 + 200))
     producto.stockInitial = producto.community?.have;
-
-    const history = useNavigate();
-    console.log(history);
 
     const initial = 0;
     producto.stockInitial = Math.trunc(producto.stockInitial/40); /* disminuyo el stock solo a modo de que se pueda probar agotar el stock (mas rapidamente) */

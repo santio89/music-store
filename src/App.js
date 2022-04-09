@@ -27,10 +27,11 @@ function App() {
         <NavBar brand={brand} cartNumber={cartNumber}/>
         <TabSelector />
         <Routes>  
-          <Route exact path="/" element={<ItemListContainer cartAdd={cartAdd}/>} />
+          <Route exact path="/" element={<ItemListContainer />} />
           <Route exact path="/item/:productId" element={<ItemDetailContainer cartAdd={cartAdd}/>} />
           <Route exact path="/categories" element={<Categories />} />
-          <Route exact path="/categories/:categoryId"element={<ItemListContainer cartAdd={cartAdd}/>} />
+          <Route exact path="/categories/:categoryId" element={<ItemListContainer />} />
+          <Route exact path="/search/:searchId" element={<ItemListContainer />} />
         </Routes>
         <Footer />
       </HashRouter>
