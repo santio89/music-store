@@ -9,7 +9,7 @@ export default function ItemList({productos, categoryId}){
     return (
         <>
             <div className="ItemList">
-                {categoryId?<div className='ItemList__title'>VIENDO {(categoryId.replace(/\+/g, " ").toUpperCase())}</div>:null}
+                {categoryId?<div className='ItemList__title'>VIENDO: {(categoryId.replace(/\+/g, " ").toUpperCase())}</div>:null}
                 <div className="ItemList__content">
                     {productos.map((producto)=>{
                         return(
