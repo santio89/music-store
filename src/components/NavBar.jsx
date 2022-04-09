@@ -51,9 +51,9 @@ export default function NavBar({brand, cartNumber}){
 
     const NavLogo = ()=>{
         return(
-            <Link to="/" className="navbar-item nav__logo" href="#">
+            <button onClick={()=>window.scrollTo(0, 0)} className="navbar-item nav__logo" href="#">
                 {brand}
-            </Link>
+            </button>
         )
     }
 
