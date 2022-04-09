@@ -3,10 +3,8 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import '../styles/css/Item.css';
 
-export default function Item({id, title, img, stockInitial, price}){
+export default function Item({id, title, img, price}){
      
-    stockInitial = Math.trunc(stockInitial/40); /* disminuyo el stock solo a modo de que se pueda probar agotar el stock (más rapidamente) */
-
 
     return(
         <>

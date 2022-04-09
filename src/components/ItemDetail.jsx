@@ -50,8 +50,8 @@ export default function ItemDetail({loading, producto, cartAdd}) {
                             <p>◖Géneros: {producto.genres?.join(" - ")}</p>
                             <p>◖Año: {producto.year}</p>
                             <p>◖País: {producto.country}</p>
-                            <p>◖Sello: {producto.labels[0]?.name}</p>
-                            <p>◖Formato: {producto.formats[0]?.name}</p>
+                            <p>◖Sello: {producto.labels?.[0].name}</p>
+                            <p>◖Formato: {producto.formats?.[0].name}</p>
                             <p>◖Precio: {"$"+producto.precio}</p>
                             <div className='ItemDetail__counterWrapper'>
                             <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initial} stock={stock}/>
