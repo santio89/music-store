@@ -38,7 +38,7 @@
   background: rgba(0, 0, 0, 0.4);
   width: 100%;
   padding-left: 2%;
-  font-size: 1.2em;
+  font-size: 1.24em;
   line-height: 1.2;
 }
 .Item__content__price {
@@ -56,8 +56,9 @@
   font-weight: bold;
   text-align: center;
   background: var(--color-back-dark);
-  padding: 0.4em;
+  padding: 0.38em;
   color: var(--color-one-dark);
+  font-size: 1em;
 }
 .Item__details:hover {
   color: var(--color-one);
