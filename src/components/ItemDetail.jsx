@@ -7,7 +7,6 @@ import '../../src/styles/css/ItemDetail.css';
 export default function ItemDetail({loading, producto, cartAdd}) {
     producto.precio = Math.trunc(Math.abs((producto.community?.have - producto.community?.want) * .8 + 200))
     producto.stockInitial = producto.community?.have;
-    console.log(producto.id)
 
     const initial = 0;
     producto.stockInitial = Math.trunc(producto.stockInitial/40); /* disminuyo el stock solo a modo de que se pueda probar agotar el stock (mas rapidamente) */
