@@ -11,7 +11,7 @@ export default function ItemListContainer({cartAdd}){
     const [loading, setLoading] = useState(false);
     const [productos, setProductos] = useState([]);
 
-    const { id } = useParams();
+    const { categoryId } = useParams();
     
     useEffect(()=>{
         /* fetch en funcion async        
