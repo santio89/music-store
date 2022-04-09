@@ -42,7 +42,7 @@ export default function ItemListContainer(){
         <div className="ItemListWrapper">
 
             {
-                loading ? <PuffLoader color={"var(--color-one)"} loading={loading} size={200} speedMultiplier={1.2} /> : <ItemList productos={productos} categoryId={categoryId}/>
+                loading ? <PuffLoader color={"var(--color-one)"} loading={loading} size={200} speedMultiplier={1.2} /> : <ItemList productos={productos} categoryId={categoryId} searchId={searchId}/>
             }
             
         </div>

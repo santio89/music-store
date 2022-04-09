@@ -14,6 +14,7 @@ export default function SearchBar (){
 
         if (e.keyCode===13){
             navigate("/search/"+search)
+            e.target.value="";
         }
         
     }
