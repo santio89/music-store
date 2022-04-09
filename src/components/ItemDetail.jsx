@@ -38,10 +38,8 @@ export default function ItemDetail({loading, producto, cartAdd}) {
                 <div className='ItemDetail'>
                     <Link to="/" className='ItemDetail__back'>&#x21E0;&nbsp;Volver</Link>
                     <div className='ItemDetail__body'>
-                        <div className='ItemDetail__main'>
-                            <div className='ItemDetail__imgWrapper'>
-                                <img alt="item" src={producto && producto.images && producto.images[0] && producto.images[0].resource_url}></img>
-                            </div>
+                        <div className='ItemDetail__imgWrapper'>
+                            <img alt="item" src={producto && producto.images && producto.images[0] && producto.images[0].resource_url}></img>
                         </div>
                         <div className="ItemDetail__info">
                             <p className='ItemDetail__subtitle'>{producto.artists_sort}</p>

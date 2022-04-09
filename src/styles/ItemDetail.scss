@@ -14,9 +14,8 @@
     font-size: clamp(1.8rem, 1.8rem + 1.2vw, 3.4rem);
     color: var(--color-three);
     display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: stretch;
+    justify-content: center;
+    align-items: start;
     line-height: 1.8;
     font-family: 'Courier New', Courier, monospace;
     width: 100%;
@@ -25,11 +24,59 @@
     padding-bottom: 2.8rem;
     margin-bottom: 2.8rem;
     min-height: 100vh;
+    
+    &__body{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: start;
+        align-items: center;
+        gap: 2.8rem;
+        width: 100%;
+        margin-top: 1.2rem;
+    }
 
-    &__subtitle{
-        text-align: left;
-        font-family: var(--font-primary);
-        font-size: 1.12em;
+    &__imgWrapper{
+        background: var(--color-back-dark);
+        padding: 2rem;
+        border-radius: .4em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        outline: 1px dashed var(--color-three-dark);
+        max-width: 500px;
+
+        img{
+            border-radius: inherit;
+            width: 100%;
+            max-width: 600px;
+            aspect-ratio: 1;
+            object-fit: cover;
+            outline: 4px dashed var(--color-one);
+        }
+    }
+
+    &__info{
+        background: var(--color-back-dark);
+        margin-bottom: 2rem;
+        padding: 2rem;
+        padding-top: .4rem;
+        border-radius: .4em;
+        font-size: clamp(1rem, 1rem + 1vw, 1.52rem);
+        outline: 1px dashed var(--color-three-dark);
+        width: 100%;
+        max-width: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-flow: column wrap;
+
+        p:not(:first-of-type){
+            font-size: 1.08em;
+        }
+        
+        p:last-of-type{
+            margin-bottom: 2rem;
+        }
     }
 
     &__title{
@@ -43,45 +90,12 @@
         font-family: var(--font-primary);
     }
 
-    &__info{
-        background: var(--color-back-dark);
-        margin-bottom: 2rem;
-        padding: 2rem;
-        padding-top: .4rem;
-        border-radius: .4em;
-        font-size: clamp(1rem, 1rem + 1vw, 1.52rem);
-        outline: 1px dashed var(--color-three-dark);
-        width: 100%;
-        max-width: 500px;
-
-        p:not(:first-of-type){
-            font-size: 1.08em;
-        }
+    &__subtitle{
+        text-align: left;
+        font-family: var(--font-primary);
+        font-size: 1.12em;
     }
 
-    &__imgWrapper{
-        background: var(--color-back-dark);
-        padding: 2rem;
-        border-radius: .4em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: auto;
-        outline: 1px dashed var(--color-three-dark);
-        max-width: 500px;
-    }
-
-    img{
-        border-radius: inherit;
-        width: 100%;
-        max-width: 600px;
-        aspect-ratio: 1;
-        object-fit: cover;
-        outline: 4px dashed var(--color-one);
-    }
-    p:last-of-type{
-        margin-bottom: 2rem;
-    }
 
     &__back{
         font-size: .6em;
@@ -99,14 +113,8 @@
         }
     }
 
-    &__body{
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 2.8rem;
-        width: 100%;
-        margin-top: 1.2rem;
+    &__counterWrapper{
+        align-self: stretch;
     }
 }
 
@@ -124,9 +132,11 @@
         }
 
         &__imgWrapper{
+            min-width: 520px;
             max-width: 520px;
         }
         &__info{
+            min-width: 480px;
             max-width: 480px;
         }
     }
@@ -135,21 +145,12 @@
 @media (min-width: 1480px){
     .ItemDetail{
         &__imgWrapper{
+            min-width: 600px;
             max-width: 600px;
         }
         &__info{
+            min-width: 600px;
             max-width: 600px;
-        }
-    }
-}
-
-@media (min-width: 1800px){
-    .ItemDetail{
-        &__imgWrapper{
-            max-width: 800px;
-        }
-        &__info{
-            max-width: 800px;
         }
     }
 }
