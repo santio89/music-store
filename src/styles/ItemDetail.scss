@@ -109,8 +109,8 @@
         color: var(--color-one-dark);
         width: fit-content;
         position: absolute;
-        bottom: 0;
-        left: 0;
+        top: -1.4rem;
+        left: .4rem;
 
         &:hover{
             color: var(--color-one);

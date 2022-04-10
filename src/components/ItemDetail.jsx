@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import PuffLoader from "react-spinners/PuffLoader";
 import ItemCount from './ItemCount';
 import '../../src/styles/css/ItemDetail.css';
@@ -12,7 +12,10 @@ export default function ItemDetail({loading, producto, cartAdd}) {
     const initial = 0;
     producto.stockInitial = Math.trunc(producto.stockInitial/40); /* disminuyo el stock solo a modo de que se pueda probar agotar el stock (mas rapidamente) */
 
+    const history = useNavigate();
+
     const [stock, setStock] = useState(0);
+
     useEffect(()=>{
         setStock(producto.stockInitial)
     }, [producto.stockInitial])
@@ -37,7 +40,7 @@ export default function ItemDetail({loading, producto, cartAdd}) {
             {
             loading?<PuffLoader color={"var(--color-one)"} loading={loading} size={200} speedMultiplier={1.2} />:(
                 <div className='ItemDetail'>
-                    <Link to="/" onClick={()=>window.scrollTo(0, 0)} className='ItemDetail__back'>&#x21E0;&nbsp;Volver al Inicio</Link>
+                    <button to="/" onClick={()=>{history(-1); window.scrollTo(0,0)}} className='ItemDetail__back'>&#x21E0;&nbsp;Volver</button>
                     <div className='ItemDetail__body'>
                         <div className='ItemDetail__imgWrapper'>
                             <img alt="item" src={producto && producto.images && producto.images[0] && producto.images[0].resource_url}></img>
