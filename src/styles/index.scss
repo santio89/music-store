@@ -93,12 +93,12 @@ html{
 
 	/* handle */
 	::-webkit-scrollbar-thumb {
-	background: linear-gradient(180deg, var(--color-one-dark), var(--color-one-dark));
+	background: var(--color-one-dark);
 	}
 
 	/* handle on hover */
 	::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, var(--color-one), var(--color-one));
+    background: var(--color-one);
 	}
 
 	/* FIN SCROLLBAR */
