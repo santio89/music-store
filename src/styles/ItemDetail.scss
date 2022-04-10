@@ -28,6 +28,7 @@
     padding-bottom: 2.8rem;
     margin-bottom: 2.8rem;
     min-height: 100vh;
+    margin-top: 1rem;
     
     &__body{
         display: flex;
@@ -102,14 +103,14 @@
 
 
     &__back{
-        font-size: .6em;
+        font-size: .58em;
         font-family: var(--font-primary);
         text-shadow: 1px 1px 0 var(--color-three);
         font-weight: bold;
         color: var(--color-one-dark);
         width: fit-content;
         position: absolute;
-        top: -1.4rem;
+        top: -1.8rem;
         left: .4rem;
 
         &:hover{

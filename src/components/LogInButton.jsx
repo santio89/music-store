@@ -3,13 +3,12 @@ import '../../src/styles/css/LogInButton.css';
 
 
 const buttonRipple = (e)=>{
-    let logInButton = document.querySelector(".button__logIn");
     let x = e.clientX - e.target.getBoundingClientRect().x;
     let y = e.clientY - e.target.getBoundingClientRect().y;
     let ripples = document.createElement("span");
     ripples.style.left = x + "px";
     ripples.style.top = y + "px";
-    logInButton.appendChild(ripples);
+    e.target.appendChild(ripples);
 
     setTimeout(() => {
         ripples.remove();

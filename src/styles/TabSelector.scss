@@ -4,9 +4,10 @@
     margin-top: calc(76px + .2em);
     padding-top: .4rem;
 
+
     li{
         a{
-            font-size: clamp(1rem, 1rem + 1vw, 1.32rem);
+            font-size: clamp(1rem, 1rem + 1vw, 1.4rem);
             color: var(--color-three-dark);
             border-bottom: 2px solid var(--color-three-dark);
 
@@ -29,6 +30,10 @@
             border-bottom: 2px solid var(--color-three);
         }
     }
+
+    &:not(:last-child){
+        margin-bottom: 1rem;
+    }
 }
 
 @media (min-width: 1024px){
@@ -37,8 +42,9 @@
         margin-right: 5%;
         margin-top: calc(108px + .4em);
 
+
         li a{
-            font-size: 1.4rem;
+            font-size: 1.6rem;
         }
     }
 }
