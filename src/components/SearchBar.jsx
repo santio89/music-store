@@ -13,8 +13,13 @@ export default function SearchBar (){
         setSearch(e.target.value);
 
         if (e.keyCode===13){
-            navigate("/search/"+search)
-            e.target.value="";
+            if (search){
+                navigate("/search/"+search)
+                e.target.value="";
+            } else{
+                return;
+            }
+            
         }
         
     }
@@ -24,7 +29,7 @@ export default function SearchBar (){
         <div className="navbar-item searchBar__wrapper">
             <div className="searchBar">
                 <input type="text" placeholder="Buscar" className="searchBar__input" onKeyUp={handleSearch}></input>
-                <Link to={"/search/"+search} className="searchBar__icon"><i className="bi bi-search"></i></Link>
+                <Link to={"/search/"+search} onClick={e=>search?null:e.preventDefault()} className="searchBar__icon"><i className="bi bi-search"></i></Link>
             </div>
     </div>
     )
