@@ -7,6 +7,10 @@
   padding-top: 0.4rem;
   height: 60px;
 }
+.tabs ul {
+  border: none;
+  line-height: 1;
+}
 .tabs li a {
   font-size: clamp(1rem, 1rem + 1vw, 1.4rem);
   color: var(--color-three-dark);
@@ -37,6 +41,6 @@
     margin-top: calc(108px + 0.4em);
   }
   .tabs li a {
-    font-size: 1.6rem;
+    font-size: 1.61rem;
   }
 }/*# sourceMappingURL=TabSelector.css.map */
