@@ -1,16 +1,16 @@
 .ItemDetailWrapper{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: start;
-    min-height: 100vh;
+    min-height: calc(100vh - 76px - 60px); /* container height= 100vh-navHeight-tabsHeight */
     width: 100%;
     max-width: 1800px;
     margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
     position: relative;
 
     >span{
-        margin-top: 14vh;
+        transform: (translateY(-50%));
     }
 }
 
@@ -123,6 +123,14 @@
     }
 }
 
+@media (min-width:1024px){
+    .ItemDetailWrapper{
+        min-height: calc(100vh - 108px - 60px); /* container height= 100vh-navHeight-tabsHeight */
+    }
+    .ItemDetail{
+        margin-top: 1.4rem;
+    }
+}
 
 @media (min-width: 1216px){
     .ItemDetail{

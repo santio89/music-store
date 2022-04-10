@@ -1,15 +1,16 @@
 .ItemListWrapper {
   width: 90%;
-  min-height: 100vh;
+  min-height: calc(100vh - 76px - 60px);
+  /* container height= 100vh-navHeight-tabsHeight */
   margin: auto;
   max-width: 1800px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-items: start;
+  align-items: center;
 }
 .ItemListWrapper > span {
-  margin-top: 14vh;
+  transform: translateY(-50%);
 }
 
 .ItemList {
@@ -47,6 +48,11 @@
 }
 
 @media (min-width: 1024px) {
+  .ItemListWrapper {
+    min-height: calc(100vh - 108px - 60px);
+    /* container height= 100vh-navHeight-tabsHeight */
+  }
+
   .ItemList {
     margin-top: 1.4rem;
   }

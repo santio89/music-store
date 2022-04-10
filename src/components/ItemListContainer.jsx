@@ -37,6 +37,8 @@ export default function ItemListContainer(){
             }
         ).catch(err=>{console.log(err)}) 
     }, [categoryId, searchId])
+
+
      
     return (
        <ItemList productos={productos} categoryId={categoryId} searchId={searchId} loading={loading}/>
