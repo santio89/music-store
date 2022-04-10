@@ -9,7 +9,7 @@ export default function Footer(){
         <footer className="footer">
             <Link to="/" onClick={()=>window.scrollTo(0,0)}>◖Más Vistos</Link>
             <Link to="/categories" onClick={()=>window.scrollTo(0,0)}>◖Categorías</Link>
-            <a href="https://santiweb.netlify.app/" className="footer__santi">santiWeb</a>
+            <a href="https://santiweb.netlify.app/" target="_blank" rel="noreferrer" className="footer__santi">santiWeb</a>
         </footer>
         </>
     )
