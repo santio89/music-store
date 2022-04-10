@@ -36,6 +36,7 @@ export default function ItemListContainer(){
                 )
             }
         ).catch(err=>{console.log(err)}) 
+
     }, [categoryId, searchId])
 
 

@@ -80,7 +80,7 @@ export default function NavBar({brand, cartNumber}){
     const NavContent = ()=>{
         const HomeButton = ()=>{
             return(
-                <Link to="/" className="navbar-item nav__home" role="button" tabIndex="0">
+                <Link to="/" className="navbar-item nav__home" role="button" onClick={()=>window.scrollTo(0,0)}>
                     Inicio
                 </Link>
             )

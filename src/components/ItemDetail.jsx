@@ -7,7 +7,6 @@ import '../../src/styles/css/ItemDetail.css';
 export default function ItemDetail({loading, producto, cartAdd}) {
     producto.precio = Math.trunc(Math.abs((producto.community?.have - producto.community?.want) * .8 + 200))
     producto.stockInitial = producto.community?.have;
-    console.log(producto)
 
     const initial = 0;
     producto.stockInitial = Math.trunc(producto.stockInitial/40); /* disminuyo el stock solo a modo de que se pueda probar agotar el stock (mas rapidamente) */
@@ -40,7 +39,7 @@ export default function ItemDetail({loading, producto, cartAdd}) {
             {
             loading?<PuffLoader color={"var(--color-one)"} loading={loading} size={200} speedMultiplier={1.2} />:(
                 <div className='ItemDetail'>
-                    <button onClick={()=>{history(-1, { keepScrollPosition: true })}} className='ItemDetail__back'>&#x21E0;&nbsp;Volver</button>
+                    <button onClick={()=>{history(-1, { keepScrollPosition: false })}} className='ItemDetail__back'>&#x21E0;&nbsp;Volver</button>
                     <div className='ItemDetail__body'>
                         <div className='ItemDetail__imgWrapper'>
                             <img alt="item" src={producto && producto.images && producto.images[0] && producto.images[0].resource_url}></img>

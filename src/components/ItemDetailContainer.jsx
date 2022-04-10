@@ -14,8 +14,7 @@ export default function ItemListContainer({cartAdd}){
     useEffect(()=>{
         /* api discogs - key/secret */
         setLoading(true);
-        window.scrollTo(0, 0);
-        
+
         const key = "NzDEWGaaXPKwkGstTywu";
         const secret = "PpQhpcTuzerPMDEGRuwGfsmulqiIyBdJ";
         
@@ -32,6 +31,7 @@ export default function ItemListContainer({cartAdd}){
                 )
             }
         ).catch(err=>{console.log(err)}) 
+
     }, [productId])
 
     return (
