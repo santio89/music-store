@@ -1,12 +1,15 @@
 .ItemListWrapper {
   width: 90%;
-  min-height: 40vh;
+  min-height: 100vh;
   margin: auto;
   max-width: 1800px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: start;
+}
+.ItemListWrapper > span {
+  margin-top: 14vh;
 }
 
 .ItemList {
