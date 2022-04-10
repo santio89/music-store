@@ -21,6 +21,7 @@ export default function ItemListContainer(){
         const genreSearch = `genre=${categoryId}&type=release`;
         const manualSearch = `q=${searchId}&type=release`
         
+        
         setLoading(true);
         let fetchApi = fetch(`https://api.discogs.com/database/search?${searchId?manualSearch:(categoryId?genreSearch:hotSearch)}&token=${discogsToken}`);
         

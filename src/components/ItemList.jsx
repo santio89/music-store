@@ -12,7 +12,7 @@ export default function ItemList({productos, categoryId, searchId, loading}){
         <>
             <div className="ItemListWrapper">
                 {
-                    loading ? <PuffLoader color={"var(--color-one)"} loading={loading} size={200} speedMultiplier={1.2} /> :
+                    loading ? (<PuffLoader color={"var(--color-one)"} loading={loading} size={200} speedMultiplier={1.2} />) :
                     <div className="ItemList">
                         {searchId?<div className='ItemList__title'>BUSCANDO: {(searchId.replace(/\+/g, " ").toUpperCase())}</div>:(categoryId?<div className='ItemList__title'>VIENDO: {(categoryId.replace(/\+/g, " ").toUpperCase())}</div>:null)}
                         <div className="ItemList__content">
