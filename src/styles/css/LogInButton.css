@@ -10,8 +10,8 @@
   transform: translate(-50%, -50%);
   pointer-events: none;
   border-radius: 50%;
-  -webkit-animation: ripples 1s linear infinite;
-          animation: ripples 1s linear infinite;
+  -webkit-animation: ripples 1000ms linear infinite;
+          animation: ripples 1000ms linear infinite;
 }
 
 @-webkit-keyframes ripples {
