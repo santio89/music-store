@@ -12,10 +12,10 @@ export default function ItemListContainer(){
     const [productos, setProductos] = useState([]);
     
     const { categoryId } = useParams();
-    const discogsToken = "RkqSJrgChJCPUvsaYEUrkgTSzPgnYlXzVEOZiwnp";
-
     const { searchId } = useParams();
     
+    const discogsToken = "RkqSJrgChJCPUvsaYEUrkgTSzPgnYlXzVEOZiwnp";
+
     
     useEffect(()=>{     
         const hotSearch = "type=release&sort=hot%2Cdesc"
