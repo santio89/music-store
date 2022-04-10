@@ -47,8 +47,6 @@ export default function ItemDetail({loading, producto, cartAdd}) {
                         <div className="ItemDetail__info">
                             <p className='ItemDetail__subtitle'>{producto.artists_sort}</p>
                             <h2 className='ItemDetail__title'>{producto.title?.toUpperCase()}</h2>
-                            {/* <p>◖Artista: {producto.artists_sort}</p>
-                            <p>◖Título: {producto.title}</p> */}
                             <p>◖Géneros: {producto.genres?.join(" - ")}</p>
                             <p>◖Año: {producto.year}</p>
                             <p>◖País: {producto.country}</p>
