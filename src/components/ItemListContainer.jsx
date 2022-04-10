@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import '../../src/styles/css/ItemList.css';
 import ItemList from './ItemList';
 import customFetch from '../utils/customFetch';
-import PuffLoader from "react-spinners/PuffLoader";
 import { useParams } from 'react-router-dom';
 
 
@@ -41,6 +40,6 @@ export default function ItemListContainer(){
 
      
     return (
-       <ItemList productos={productos} categoryId={categoryId} searchId={searchId} loading={loading}/>
+       <ItemList productos={productos} categoryId={categoryId} searchId={searchId} loading={loading} />
     )
 }
