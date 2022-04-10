@@ -6,6 +6,7 @@ import PuffLoader from "react-spinners/PuffLoader";
 export default function ItemList({productos, categoryId, searchId, loading}){
     
     /* price calculado con una formula a partir de las propiedades de 'community have' y 'community want', ya que la base de datos original no incluye precio. por el momento invente esta formula teniendo en cuenta la 'oferta/demanda' para calcular un precio */
+
    
     return (
         <>
