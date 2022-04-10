@@ -19,17 +19,18 @@ export default function ItemListContainer(){
     
     useEffect(()=>{     
         const hotSearch = "type=release&sort=hot%2Cdesc"
-        const apiSearch = `genre=${categoryId}`;
+        const genreSearch = `genre=${categoryId}&type=release`;
         const manualSearch = `q=${searchId}&type=release`
         
         setLoading(true);
-        let fetchApi = fetch(`https://api.discogs.com/database/search?${searchId?manualSearch:(categoryId?apiSearch:hotSearch)}&token=${discogsToken}`);
+        let fetchApi = fetch(`https://api.discogs.com/database/search?${searchId?manualSearch:(categoryId?genreSearch:hotSearch)}&token=${discogsToken}`);
         
         /* fetch custom con promise (hace el fetch a la api luego de un tiempo) */
         customFetch(1000, fetchApi).then(
             res=>{
                 res.json().then(
                     res=>{
+                        console.log(res.results)
                         setProductos(res.results);
                         setLoading(false);
                     }
