@@ -37,7 +37,7 @@ export default function ItemDetail({loading, producto, cartAdd}) {
             {
             loading?<PuffLoader color={"var(--color-one)"} loading={loading} size={200} speedMultiplier={1.2} />:(
                 <div className='ItemDetail'>
-                    <Link to="/" className='ItemDetail__back'>&#x21E0;&nbsp;Volver al Inicio</Link>
+                    <Link to="/" onClick={()=>window.scrollTo(0, 0)} className='ItemDetail__back'>&#x21E0;&nbsp;Volver al Inicio</Link>
                     <div className='ItemDetail__body'>
                         <div className='ItemDetail__imgWrapper'>
                             <img alt="item" src={producto && producto.images && producto.images[0] && producto.images[0].resource_url}></img>
