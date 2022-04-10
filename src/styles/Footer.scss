@@ -1,5 +1,45 @@
-footer{
+.footer{
     padding: 1em;
+    padding-bottom: 0;
     border-top: 2px dashed var(--color-one);
     font-size: 1.4rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: start;
+    gap: 1.8rem;
+    font-size: clamp(1.2rem, 1.2rem + 1vw, 2.4rem);
+    background: linear-gradient(135deg, var(--color-back-dark) 80%, var(--color-one) 80%);
+
+    a{
+        color: var(--color-three);
+        padding: .8rem;
+        text-shadow: 2px 2px 0 var(--color-one);
+        border-radius: .2em;
+        line-height: 1.2;
+
+        &:hover, &:focus{
+            color: var(--color-one);
+            text-shadow: 2px 2px 0 var(--color-three);
+        }
+
+        &:focus-visible{
+            outline: 2px dashed var(--color-one);
+        }
+    }
+
+    &__santi{
+        font-size: .6em;
+        align-self: end;
+        text-shadow: 2px 2px 0 var(--color-one-dark);
+
+        &:hover, &:focus{
+            color: var(--color-one-dark);
+            text-shadow: 2px 2px 0 var(--color-three);
+        }
+
+        &:focus-visible{
+            outline: 2px dashed var(--color-one-dark);
+        }
+    }
 }

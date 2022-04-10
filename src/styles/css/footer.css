@@ -1,5 +1,39 @@
-footer {
+.footer {
   padding: 1em;
+  padding-bottom: 0;
   border-top: 2px dashed var(--color-one);
   font-size: 1.4rem;
-}/*# sourceMappingURL=Footer.css.map */
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: start;
+  gap: 1.8rem;
+  font-size: clamp(1.2rem, 1.2rem + 1vw, 2.4rem);
+  background: linear-gradient(135deg, var(--color-back-dark) 80%, var(--color-one) 80%);
+}
+.footer a {
+  color: var(--color-three);
+  padding: 0.8rem;
+  text-shadow: 2px 2px 0 var(--color-one);
+  border-radius: 0.2em;
+  line-height: 1.2;
+}
+.footer a:hover, .footer a:focus {
+  color: var(--color-one);
+  text-shadow: 2px 2px 0 var(--color-three);
+}
+.footer a:focus-visible {
+  outline: 2px dashed var(--color-one);
+}
+.footer__santi {
+  font-size: 0.6em;
+  align-self: end;
+  text-shadow: 2px 2px 0 var(--color-one-dark);
+}
+.footer__santi:hover, .footer__santi:focus {
+  color: var(--color-one-dark);
+  text-shadow: 2px 2px 0 var(--color-three);
+}
+.footer__santi:focus-visible {
+  outline: 2px dashed var(--color-one-dark);
+}/*# sourceMappingURL=footer.css.map */
