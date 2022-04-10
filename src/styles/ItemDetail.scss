@@ -42,8 +42,8 @@
 
     &__imgWrapper{
         background: var(--color-back-dark);
-        padding: 2rem;
-        border-radius: .4em;
+        padding: 1.4rem;
+        border-radius: 0;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -51,7 +51,7 @@
         max-width: 500px;
 
         img{
-            border-radius: inherit;
+            border-radius: .4em;
             width: 100%;
             max-width: 600px;
             aspect-ratio: 1;
@@ -65,7 +65,7 @@
         margin-bottom: 2rem;
         padding: 2rem;
         padding-top: .4rem;
-        border-radius: .4em;
+        border-radius: 0;
         font-size: clamp(1rem, 1rem + 1vw, 1.52rem);
         outline: 1px dashed var(--color-three-dark);
         width: 100%;
@@ -120,6 +120,18 @@
 
     &__counterWrapper{
         align-self: stretch;
+    }
+}
+
+@media (min-width: 500px){
+    .ItemDetail{
+        &__imgWrapper{
+            border-radius: .4em;
+            padding: 2rem;
+        }
+        &__info{
+            border-radius: .4em;
+        }
     }
 }
 
