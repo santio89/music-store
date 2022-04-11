@@ -1,3 +1,8 @@
+.ItemLink:active{
+    border-radius: 1.6rem;
+    box-shadow: 3px 3px 3px 0 var(--color-one);
+}
+
 .Item{
     display: flex;
     flex-flow: column wrap;
@@ -5,11 +10,14 @@
     align-items: stretch;
     font-size: 2rem;
     position: relative;
-    border-radius: .8em;
+    border-radius: 1.6rem;
     overflow: hidden;
+    box-shadow: 2px 2px 0 0 var(--color-three-dark);
+    transition: box-shadow 400ms;
 
     &__imgWrapper{
         width: 100%;
+        transition: background-image 400ms;
         background: linear-gradient(45deg, var(--color-one), var(--color-one-dark));
     }
     
@@ -61,9 +69,19 @@
         padding: .38em;
         color:var(--color-one-dark);
         font-size: 1em;
+        color: var(--color-three-dark);
+        transition: color 400ms;
+    }
+    
+    &:hover{
+        box-shadow: 2px 2px 0 0 var(--color-one);
+    }
 
-        &:hover{
-            color:var(--color-one);
-        }
+    &:hover>&__details{
+        color: var(--color-one);
+    }
+
+    &:hover>&__imgWrapper{
+        background: linear-gradient(45deg, var(--color-one), var(--color-one));
     }
 }
