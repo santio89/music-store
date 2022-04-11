@@ -31,6 +31,7 @@
     overflow: hidden;
     box-shadow: 2px 2px 0 0 var(--color-three-dark);
     transition: box-shadow 400ms;
+    max-width: 300px;
 
     &__imgWrapper{
         width: 100%;
