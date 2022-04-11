@@ -1,6 +1,11 @@
-.ItemLink:active{
+.ItemLink{
     border-radius: 1.6rem;
-    box-shadow: 3px 3px 3px 0 var(--color-one);
+    transition: box-shadow 100ms;
+    box-shadow: 0 0 0 0 var(--color-one);
+
+    &:active{
+        box-shadow: 3px 3px 3px 0 var(--color-one);
+    }    
 }
 
 .Item{
