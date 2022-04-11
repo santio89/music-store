@@ -1,13 +1,11 @@
 .ItemLink {
   border-radius: 1.6rem;
   transition: box-shadow 100ms;
-  box-shadow: 0 0 0 0 var(--color-one);
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-.ItemLink:active {
-  box-shadow: 3px 3px 3px 0 var(--color-one);
+  /*     box-shadow: 0 0 0 0 var(--color-one); */
+  width: 100%;
+  /*     &:active{
+          box-shadow: 3px 3px 3px 0 var(--color-one);
+      } */
 }
 .ItemLink:hover .Item, .ItemLink:focus-visible .Item {
   box-shadow: 2px 2px 0 0 var(--color-one);
@@ -30,7 +28,6 @@
   overflow: hidden;
   box-shadow: 2px 2px 0 0 var(--color-three-dark);
   transition: box-shadow 400ms;
-  min-width: 240px;
   max-width: 300px;
 }
 .Item__imgWrapper {

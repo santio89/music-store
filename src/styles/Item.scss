@@ -1,12 +1,12 @@
 .ItemLink{
     border-radius: 1.6rem;
     transition: box-shadow 100ms;
-    box-shadow: 0 0 0 0 var(--color-one);
-    width: fit-content;
-
-    &:active{
+/*     box-shadow: 0 0 0 0 var(--color-one); */
+    width: 100%;
+    
+/*     &:active{
         box-shadow: 3px 3px 3px 0 var(--color-one);
-    }    
+    } */    
 
     &:hover .Item, &:focus-visible .Item{
         box-shadow: 2px 2px 0 0 var(--color-one);
@@ -32,7 +32,6 @@
     overflow: hidden;
     box-shadow: 2px 2px 0 0 var(--color-three-dark);
     transition: box-shadow 400ms;
-    min-width: 240px;
     max-width: 300px;
 
     &__imgWrapper{
