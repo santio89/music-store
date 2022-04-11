@@ -11,6 +11,7 @@
     margin: auto;
     margin-top: 1.4vh;
     font-size: clamp(2.4rem, 2rem + 2vw, 3.4rem);
+    animation: fadeTranslateIn 200ms ease-in-out forwards;
 
     h2{
         font-size: 1.08em;

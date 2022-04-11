@@ -21,6 +21,8 @@
   width: 100%;
   margin-bottom: 2rem;
   align-self: start;
+  -webkit-animation: fadeTranslateIn 200ms ease-in-out forwards;
+          animation: fadeTranslateIn 200ms ease-in-out forwards;
 }
 .ItemList__title {
   align-self: center;
@@ -30,8 +32,6 @@
   color: var(--color-one);
   border-bottom: 2px dashed var(--color-one);
   margin-bottom: 2rem;
-  -webkit-animation: fadeTranslateIn 200ms ease-in-out forwards;
-          animation: fadeTranslateIn 200ms ease-in-out forwards;
   word-spacing: 0.2em;
   letter-spacing: 0.01em;
 }
@@ -45,8 +45,6 @@
   align-content: center;
   gap: 1.4rem;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  -webkit-animation: fadeTranslateIn 200ms ease-in-out forwards;
-          animation: fadeTranslateIn 200ms ease-in-out forwards;
 }
 .ItemList__noProducts {
   align-self: start;

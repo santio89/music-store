@@ -21,7 +21,8 @@
     width: 100%;
     margin-bottom: 2rem;
     align-self: start;
-    
+    animation: fadeTranslateIn 200ms ease-in-out forwards;
+
     &__title{
         align-self: center;
         font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.8rem);
@@ -30,7 +31,6 @@
         color: var(--color-one);
         border-bottom: 2px dashed var(--color-one);
         margin-bottom: 2rem;
-        animation: fadeTranslateIn 200ms ease-in-out forwards;
         word-spacing: .2em;
         letter-spacing: .01em;
     }
@@ -45,7 +45,6 @@
         align-content: center;
         gap: 1.4rem;
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-        animation: fadeTranslateIn 200ms ease-in-out forwards;
     }
 
     &__noProducts{
