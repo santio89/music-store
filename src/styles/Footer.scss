@@ -7,20 +7,29 @@
     flex-flow: column wrap;
     justify-content: center;
     align-items: start;
-    gap: 1.8rem;
-    font-size: clamp(1.2rem, 1.2rem + 1vw, 2.2rem);
+    gap: .2em;
+    font-size: clamp(1.2rem, .88rem + .88vw, 2.2rem);
     background: linear-gradient(135deg, var(--color-back-dark) 80%, var(--color-one) 80%);
+    margin-top: auto;
+    line-height: 1.2;
+
+    &__brand{
+        color: var(--color-one);
+        font-weight: 800;
+        text-shadow: 2px 2px 0 var(--color-three);
+        font-size: 1.4em;
+    }
 
     a{
         color: var(--color-three);
         padding: .8rem;
-        text-shadow: 2px 2px 0 var(--color-one);
+        text-shadow: 1px 1px 0 var(--color-one);
         border-radius: .2em;
-        line-height: 1.2;
+      
 
         &:hover, &:focus{
             color: var(--color-one);
-            text-shadow: 2px 2px 0 var(--color-three);
+            text-shadow: 1px 1px 0 var(--color-three);
         }
 
         &:focus-visible{
@@ -29,13 +38,16 @@
     }
 
     &__santi{
-        font-size: .6em;
+        font-size: .74em;
         align-self: end;
-        text-shadow: 2px 2px 0 var(--color-one-dark);
+        color: var(--color-three);
+        text-shadow: 1px 1px 0 var(--color-one-dark);
+        font-weight: bold;
+        line-height: 1;
 
         &:hover, &:focus{
             color: var(--color-one-dark);
-            text-shadow: 2px 2px 0 var(--color-three);
+            text-shadow: 1px 1px 0 var(--color-three);
         }
 
         &:focus-visible{

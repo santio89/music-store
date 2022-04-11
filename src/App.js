@@ -1,3 +1,5 @@
+import React, { useEffect, useState } from 'react';
+import { HashRouter, Routes, Route } from "react-router-dom";
 import '../src/styles/css/App.css';
 import TabSelector from './Components/TabSelector';
 import Footer from './Components/Footer';
@@ -5,8 +7,8 @@ import ItemListContainer from './Components/ItemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer';
 import NavBar from './Components/NavBar';
 import Categories from './Components/Categories'
-import React, { useEffect, useState } from 'react';
-import { HashRouter, Routes, Route } from "react-router-dom";
+import Error404 from './Components/Error404';
+
 
 /* uso HashRouter en vez de BrowserRouter ya que de momento tengo el sitio hosteado en github pages, y gh-pages no funciona bien con react router (al parecer por el browser history) */
 
@@ -37,6 +39,7 @@ function App() {
           <Route exact path="/categories" element={<Categories />} />
           <Route exact path="/categories/:categoryId" element={<ItemListContainer />} />
           <Route exact path="/search/:searchId" element={<ItemListContainer />} />
+          <Route path="/" element={<Error404 />} />
         </Routes>
         <Footer />
       </HashRouter>
