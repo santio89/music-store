@@ -45,7 +45,6 @@
         align-content: center;
         gap: 1.4rem;
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-        opacity: 0;
         animation: fadeTranslateIn 200ms ease-in-out forwards;
     }
 
