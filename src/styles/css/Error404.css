@@ -1,3 +1,45 @@
+.Error404Wrapper {
+  min-height: calc(100vh - 76px - 60px - 0.2rem);
+  /* container height= 100vh-navHeight-tabsHeight-margins */
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  width: 100%;
+}
+
 .Error404 {
-  font-size: 8rem;
+  width: 90%;
+  margin: auto;
+  margin-top: 1.4vh;
+  font-size: clamp(2.4rem, 2rem + 2vw, 3.4rem);
+}
+.Error404 h2 {
+  font-size: 1.08em;
+  font-weight: 800;
+  color: var(--color-one);
+  text-shadow: 2px 2px 0 var(--color-three);
+  text-align: center;
+}
+.Error404 p {
+  color: var(--color-three);
+  text-shadow: 2px 2px 0 var(--color-three-dark);
+  font-size: 0.72em;
+}
+.Error404 a {
+  margin-top: 1.2rem;
+  color: var(--color-one-dark);
+  text-shadow: 2px 2px 0 var(--color-three);
+  display: block;
+  text-align: center;
+  font-size: 0.82em;
+}
+.Error404 a:hover, .Error404 a:focus-visible {
+  color: var(--color-one);
+}
+
+@media (min-width: 1024px) {
+  .Error404Wrapper {
+    min-height: calc(100vh - 108px - 60px - 0.4rem - 1rem);
+    /* container height= 100vh-navHeight-tabsHeight-margins */
+  }
 }/*# sourceMappingURL=Error404.css.map */

@@ -39,7 +39,7 @@ function App() {
           <Route exact path="/categories" element={<Categories />} />
           <Route exact path="/categories/:categoryId" element={<ItemListContainer />} />
           <Route exact path="/search/:searchId" element={<ItemListContainer />} />
-          <Route path="/" element={<Error404 />} />
+          <Route path="*" element={<Error404 />} />
         </Routes>
         <Footer />
       </HashRouter>

@@ -1,6 +1,6 @@
 .ItemDetailWrapper {
-  min-height: calc(100vh - 76px - 60px);
-  /* container height= 100vh-navHeight-tabsHeight */
+  min-height: calc(100vh - 76px - 60px - 0.2rem);
+  /* container height= 100vh-navHeight-tabsHeight-margins */
   width: 100%;
   max-width: 1800px;
   margin: auto;
@@ -127,8 +127,8 @@
 }
 @media (min-width: 1024px) {
   .ItemDetailWrapper {
-    min-height: calc(100vh - 108px - 60px);
-    /* container height= 100vh-navHeight-tabsHeight */
+    min-height: calc(100vh - 108px - 60px - 0.4rem - 1rem);
+    /* container height= 100vh-navHeight-tabsHeight-margins */
   }
 
   .ItemDetail {

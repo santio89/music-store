@@ -22,7 +22,7 @@ export default function ItemList({productos, categoryId, searchId, loading}){
                     loading ? (<PuffLoader color={"var(--color-one)"} loading={loading} size={200} speedMultiplier={1.2} />) :
                     <div className="ItemList">
                         {searchId?<div className='ItemList__title'>BUSCANDO: {(searchId.replace(/\+/g, " ").toUpperCase())}</div>:(categoryId?<div className='ItemList__title'>VIENDO: {(categoryId.replace(/\+/g, " ").toUpperCase())}</div>:null)}
-                        {isProductos?null:<div className="ItemList__noProducts">No se encontraron resultados... <Link className="ItemList__noProducts__link" to="/">Volver al inicio?</Link></div>}
+                        {isProductos?null:<div className="ItemList__noProducts">No se encontraron resultados... <Link className="ItemList__noProducts__link" to="/">Ir al inicio?</Link></div>}
                         <div className="ItemList__content">
                             {productos.map((producto)=>{
                                 return(
