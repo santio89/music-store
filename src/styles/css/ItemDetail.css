@@ -107,7 +107,7 @@
   width: fit-content;
   position: absolute;
   top: -1.8rem;
-  left: 0.4rem;
+  left: 0.48rem;
 }
 .ItemDetail__back:hover {
   color: var(--color-one);
