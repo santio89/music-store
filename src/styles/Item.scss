@@ -6,6 +6,18 @@
     &:active{
         box-shadow: 3px 3px 3px 0 var(--color-one);
     }    
+
+    &:hover .Item, &:focus-visible .Item{
+        box-shadow: 2px 2px 0 0 var(--color-one);
+    }
+
+    &:hover .Item>.Item__details, &:focus-visible .Item>.Item__details{
+        color: var(--color-one);
+    }
+
+    &:hover .Item>.Item__imgWrapper, &:focus-visible .Item>.Item__imgWrapper{
+        background: linear-gradient(45deg, var(--color-one), var(--color-one));
+    }
 }
 
 .Item{
@@ -76,17 +88,5 @@
         font-size: 1em;
         color: var(--color-three-dark);
         transition: color 400ms;
-    }
-    
-    &:hover{
-        box-shadow: 2px 2px 0 0 var(--color-one);
-    }
-
-    &:hover>&__details{
-        color: var(--color-one);
-    }
-
-    &:hover>&__imgWrapper{
-        background: linear-gradient(45deg, var(--color-one), var(--color-one));
     }
 }

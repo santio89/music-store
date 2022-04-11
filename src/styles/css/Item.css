@@ -6,6 +6,15 @@
 .ItemLink:active {
   box-shadow: 3px 3px 3px 0 var(--color-one);
 }
+.ItemLink:hover .Item, .ItemLink:focus-visible .Item {
+  box-shadow: 2px 2px 0 0 var(--color-one);
+}
+.ItemLink:hover .Item > .Item__details, .ItemLink:focus-visible .Item > .Item__details {
+  color: var(--color-one);
+}
+.ItemLink:hover .Item > .Item__imgWrapper, .ItemLink:focus-visible .Item > .Item__imgWrapper {
+  background: linear-gradient(45deg, var(--color-one), var(--color-one));
+}
 
 .Item {
   display: flex;
@@ -73,13 +82,4 @@
   font-size: 1em;
   color: var(--color-three-dark);
   transition: color 400ms;
-}
-.Item:hover {
-  box-shadow: 2px 2px 0 0 var(--color-one);
-}
-.Item:hover > .Item__details {
-  color: var(--color-one);
-}
-.Item:hover > .Item__imgWrapper {
-  background: linear-gradient(45deg, var(--color-one), var(--color-one));
 }/*# sourceMappingURL=Item.css.map */
