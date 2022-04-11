@@ -12,9 +12,9 @@ export default function ItemListContainer({cartAdd}){
     const [producto, setProducto] = useState({});
     
     useEffect(()=>{
-        /* api discogs - key/secret */
         setLoading(true);
-
+        
+        /* api discogs - key/secret */
         const key = "NzDEWGaaXPKwkGstTywu";
         const secret = "PpQhpcTuzerPMDEGRuwGfsmulqiIyBdJ";
         
