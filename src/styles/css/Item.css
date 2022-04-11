@@ -30,6 +30,7 @@
   overflow: hidden;
   box-shadow: 2px 2px 0 0 var(--color-three-dark);
   transition: box-shadow 400ms;
+  min-width: 240px;
   max-width: 300px;
 }
 .Item__imgWrapper {
