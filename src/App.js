@@ -5,7 +5,7 @@ import ItemListContainer from './Components/ItemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer';
 import NavBar from './Components/NavBar';
 import Categories from './Components/Categories'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HashRouter, Routes, Route } from "react-router-dom";
 
 /* uso HashRouter en vez de BrowserRouter ya que de momento tengo el sitio hosteado en github pages, y gh-pages no funciona bien con react router (al parecer por el browser history) */
@@ -19,6 +19,11 @@ function App() {
       
       setCartNumber((cartNumber)=>cartNumber + amount)
   }
+
+  /* scroll top of page on reload (manual) */
+  useEffect(()=>{
+    window.onunload = ()=> window.scrollTo(0, 0);
+  }, [])
   
 
   return (

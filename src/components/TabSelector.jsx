@@ -14,11 +14,13 @@ export default function TabSelector(){
     const vistosClick = ()=>{
         setVistosActive(true);
         setCategoriesActive(false);
+        window.scrollTo(0,0);
     }
 
     const categoriesClick = ()=>{
         setVistosActive(false);
         setCategoriesActive(true);
+        window.scrollTo(0,0);
     }
 
     const tabsOff = ()=>{
