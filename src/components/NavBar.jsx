@@ -38,13 +38,11 @@ export default function NavBar({brand, cartNumber}){
             $target.classList.toggle('is-active');
         }
     
- 
         navbarBurger.addEventListener('click', ()=>navToggleEvent());
-        
-        return(navbarBurger.removeEventListener('click', ()=>navToggleEvent()))
         
     }, [cartNumber])
 
+    
     const NavLogo = ()=>{
         return(
             <Link to="/" className="navbar-item nav__logo" onClick={()=>window.scrollTo(0,0)}>
@@ -55,7 +53,7 @@ export default function NavBar({brand, cartNumber}){
 
     const NavBurger = ()=>{
         return(
-            <button className="navbar-burger is-large" aria-label="menu" tabIndex="0" data-target="navbar-menu">
+            <button className="navbar-burger is-large" aria-label="menu" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
