@@ -27,26 +27,22 @@ import LogInButton from "./LogInButton";
 export default function NavBar({brand, cartNumber}){
     useEffect(()=>{
         /* TOGGLE NAV MOBILE - BULMA SNIPPET */
-        // Get all "navbar-burger" elements
-        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-    
-        // Check if there are any navbar burgers
-        if ($navbarBurgers.length > 0) {
-    
-        // Add a click event on each of them
-        $navbarBurgers.forEach( el => {
-            el.addEventListener('click', () => {
-            // Get the target from the "data-target" attribute
-            const target = el.dataset.target;
+        const navbarBurger = document.querySelector('.navbar-burger');
+
+        const navToggleEvent = ()=>{
+            const target = navbarBurger.dataset.target;
             const $target = document.getElementById(target);
     
             // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-            el.classList.toggle('is-active');
+            navbarBurger.classList.toggle('is-active');
             $target.classList.toggle('is-active');
-    
-            });
-        });
         }
+    
+ 
+        navbarBurger.addEventListener('click', ()=>navToggleEvent());
+        
+        return(navbarBurger.removeEventListener('click', ()=>navToggleEvent()))
+        
     }, [cartNumber])
 
     const NavLogo = ()=>{
@@ -59,11 +55,11 @@ export default function NavBar({brand, cartNumber}){
 
     const NavBurger = ()=>{
         return(
-            <a role="button" className="navbar-burger is-large" aria-label="menu" tabIndex="0" data-target="navbar-menu">
+            <button className="navbar-burger is-large" aria-label="menu" tabIndex="0" data-target="navbar-menu">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
-            </a>
+            </button>
         )
     }
 
