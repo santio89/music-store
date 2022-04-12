@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import '../src/styles/css/App.css';
 import TabSelector from './Components/TabSelector';
 import Footer from './Components/Footer';
@@ -10,7 +10,7 @@ import Categories from './Components/Categories'
 import Error404 from './Components/Error404';
 
 
-/* uso HashRouter en vez de BrowserRouter ya que de momento tengo el sitio hosteado en github pages, y gh-pages no funciona bien con react router (al parecer por el browser history) */
+/* para hacer que BrowserRouter funcione en gh-pages, definí un basename en el router (/music-store). por tanto, si se ejecuta el sitio en el localhost sin anteponer el basename, no va a funcionar. para que lo haga, hay que poner el /music-store */
 
 function App() {
   let brand = "MusicStore";
@@ -30,7 +30,7 @@ function App() {
 
   return (
     <>
-      <HashRouter basename="/">
+      <BrowserRouter basename="/music-store">
         <NavBar brand={brand} cartNumber={cartNumber}/>
         <TabSelector />
         <Routes>  
@@ -42,7 +42,7 @@ function App() {
           <Route path="*" element={<Error404 />} />
         </Routes>
         <Footer />
-      </HashRouter>
+      </BrowserRouter>
 
     </>
   );
