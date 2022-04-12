@@ -10,7 +10,7 @@ import Categories from './Components/Categories'
 import Error404 from './Components/Error404';
 
 
-/* para que el BrowserRouter funcione correctamente en gh-pages al hacer refresh de una sección, defino las rutas y links anteponiendo /music-store */
+/* para hacer que BrowserRouter funcione en gh-pages, definí un basename en el router (/music-store). por tanto, si se ejecuta el sitio en el localhost sin anteponer el basename, no va a funcionar. para que lo haga, hay que poner el /music-store */
 
 function App() {
   let brand = "MusicStore";
@@ -30,16 +30,16 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/music-store">
         <NavBar brand={brand} cartNumber={cartNumber}/>
         <TabSelector />
         <Routes>  
-          <Route exact path="/music-store" element={<ItemListContainer />} />
-          <Route exact path="/music-store/item/:productId" element={<ItemDetailContainer cartAdd={cartAdd}/>} />
-          <Route exact path="/music-store/categories" element={<Categories />} />
-          <Route exact path="/music-store/categories/:categoryId" element={<ItemListContainer />} />
-          <Route exact path="/music-store/search/:searchId" element={<ItemListContainer />} />
-          <Route path="/music-store/*" element={<Error404 />} />
+          <Route exact path="/" element={<ItemListContainer />} />
+          <Route exact path="/item/:productId" element={<ItemDetailContainer cartAdd={cartAdd}/>} />
+          <Route exact path="/categories" element={<Categories />} />
+          <Route exact path="/categories/:categoryId" element={<ItemListContainer />} />
+          <Route exact path="/search/:searchId" element={<ItemListContainer />} />
+          <Route path="*" element={<Error404 />} />
         </Routes>
         <Footer />
       </BrowserRouter>
