@@ -10,7 +10,8 @@ import Categories from './Components/Categories'
 import Error404 from './Components/Error404';
 
 
-/* uso BrowserRouter ya que así lo pide el entregable. sin embargo no funciona correctamente en gh-pages al hacer refresh de una sección. esto se puede solucionar usando HashRouter en gh-pages (reemplazaar BrowserRouter por HashRouter). no uso exact path (solo path) ya que, segun la documentacion del react-router-dom v6, no se utiliza mas ( (In v6 all the routes match exactly by default). */
+/* uso BrowserRouter ya que así lo pide el entregable. sin embargo no funciona correctamente en gh-pages al hacer refresh de una sección. esto se puede solucionar usando HashRouter en gh-pages (reemplazaar BrowserRouter por HashRouter). 
+no uso exact path (solo path) ya que, segun la documentacion del react-router-dom v6, no se utiliza mas (In v6 all the routes match exactly by default). */
 
 function App() {
   let brand = "MusicStore";
@@ -39,7 +40,7 @@ function App() {
           <Route path="/categories" element={<Categories />} />
           <Route path="/categories/:categoryId" element={<ItemListContainer />} />
           <Route path="/search/:searchId" element={<ItemListContainer />} />
-          <Route path="*" element={<Error404 />} />
+          <Route path="/*" element={<Error404 />} />
         </Routes>
         <Footer />
       </BrowserRouter>
