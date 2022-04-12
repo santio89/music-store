@@ -24,7 +24,9 @@
     p{
         color: var(--color-three);
         text-shadow: 2px 2px 0 var(--color-three-dark);
-        font-size: .72em;
+        font-size: .68em;
+        max-width: 1200px;
+        margin: auto;
     }
 
     a{

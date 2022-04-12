@@ -25,7 +25,9 @@
 .Error404 p {
   color: var(--color-three);
   text-shadow: 2px 2px 0 var(--color-three-dark);
-  font-size: 0.72em;
+  font-size: 0.68em;
+  max-width: 1200px;
+  margin: auto;
 }
 .Error404 a {
   margin-top: 1.2rem;
