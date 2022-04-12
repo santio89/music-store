@@ -10,7 +10,7 @@ import Categories from './Components/Categories'
 import Error404 from './Components/Error404';
 
 
-/* para hacer que BrowserRouter funcione en gh-pages, definí un basename en el router (/music-store). por tanto, si se ejecuta el sitio en el localhost sin anteponer el basename, no va a funcionar. para que lo haga, hay que poner el /music-store */
+/* uso BrowserRouter ya que así lo pide el entregable. sin embargo no funciona correctamente en gh-pages al hacer refresh de una sección. esto se puede solucionar usando HashRouter en gh-pages (reemplazaar BrowserRouter por HashRouter) */
 
 function App() {
   let brand = "MusicStore";
@@ -30,7 +30,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter basename="/music-store">
+      <BrowserRouter basename="/">
         <NavBar brand={brand} cartNumber={cartNumber}/>
         <TabSelector />
         <Routes>  
