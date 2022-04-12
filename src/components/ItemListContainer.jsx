@@ -30,6 +30,7 @@ export default function ItemListContainer(){
             res=>{
                 res.json().then(
                     res=>{
+                        console.log(res.results)
                         setProductos(res.results);
                         setLoading(false);
                     }
