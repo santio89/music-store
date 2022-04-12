@@ -1,6 +1,9 @@
 .CartWidget{
     min-width: 120px;
     max-width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover, &:focus{
         outline: 1px dashed var(--color-three);
