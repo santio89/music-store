@@ -2,10 +2,16 @@
     min-width: 120px;
     max-width: 120px;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
 
     &:hover, &:focus{
         outline: 1px dashed var(--color-three);
+    }
+}
+
+@media (min-width: 1024px){
+    .CartWidget{
+        justify-content: center;
     }
 }
