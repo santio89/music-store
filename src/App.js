@@ -10,8 +10,12 @@ import Categories from './Components/Categories'
 import Error404 from './Components/Error404';
 
 
-/* uso BrowserRouter ya que así lo pide el entregable. sin embargo no funciona correctamente en gh-pages al hacer refresh de una sección. esto se puede solucionar usando HashRouter en gh-pages (reemplazaar BrowserRouter por HashRouter). 
-no uso exact path (solo path) ya que, segun la documentacion del react-router-dom v6, no se utiliza mas (In v6 all the routes match exactly by default). */
+/* 
+BrowserRouter no funciona correctamente en gh-pages al hacer refresh de una sección. esto se puede solucionar usando HashRouter o haciendo un redirect de la pagina de error 404 (la que gh-pages reconoce como 404.html) al sitio principal. Ya que la entrega pide usar BrowserRouter, por el momento solucione el tema del refresh haciendo el redirect (por eso hay una pagina 404.html y un script en el index.html).
+
+Debido al mismo tema del routing y gh-pages, tuve que usar un basename para el router ("/music-store"). Por tanto, para ver el sitio hay que poner ese basename (ej: http://localhost:3000/music-store/)
+
+No uso exact path (solo path) ya que, segun la documentacion del react-router-dom v6, no se utiliza mas (In v6 all the routes match exactly by default). */
 
 function App() {
   let brand = "MusicStore";
