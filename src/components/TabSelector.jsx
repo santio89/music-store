@@ -44,8 +44,8 @@ export default function TabSelector(){
     return(
         <div className="tabs is-medium">
             <ul className="is-size-5">
-                <li className={vistosActive?"is-active":""}><Link to="/" onClick={vistosClick} >Más Vistos</Link></li>
-                <li className={categoriesActive?"is-active":""}><Link to="/categories" onClick={categoriesClick}>Categorías</Link></li>
+                <li className={vistosActive?"is-active":""}><Link to="/music-store/" onClick={vistosClick} >Más Vistos</Link></li>
+                <li className={categoriesActive?"is-active":""}><Link to="/music-store/categories" onClick={categoriesClick}>Categorías</Link></li>
             </ul>
         </div>
     )

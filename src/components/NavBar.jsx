@@ -45,7 +45,7 @@ export default function NavBar({brand, cartNumber}){
     
     const NavLogo = ()=>{
         return(
-            <Link to="/" className="navbar-item nav__logo" onClick={()=>window.scrollTo(0,0)}>
+            <Link to="/music-store/" className="navbar-item nav__logo" onClick={()=>window.scrollTo(0,0)}>
                 {brand}
             </Link>
         )
@@ -74,7 +74,7 @@ export default function NavBar({brand, cartNumber}){
     const NavContent = ()=>{
         const HomeButton = ()=>{
             return(
-                <Link to="/" className="navbar-item nav__home" role="button" onClick={()=>window.scrollTo(0,0)}>
+                <Link to="/music-store/" className="navbar-item nav__home" role="button" onClick={()=>window.scrollTo(0,0)}>
                     Inicio
                 </Link>
             )
