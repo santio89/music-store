@@ -30,7 +30,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter basename="/">
+      <BrowserRouter basename="/music-store">
         <NavBar brand={brand} cartNumber={cartNumber}/>
         <TabSelector />
         <Routes>  
