@@ -20,10 +20,9 @@ export default function ItemDetail({loading, producto, cartAdd}) {
     }, [producto.stockInitial])
  
     
-    function onAdd(amount, resetCounter){
+    function onAdd(amount){
         console.log(`ADDED ${amount} TO CART`)
         setStock(stock-amount);
-        resetCounter();
         cartAdd(amount);
     }
 
