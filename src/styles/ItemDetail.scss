@@ -15,7 +15,7 @@
 }
 
 .ItemDetail{
-    font-size: clamp(1.8rem, 1.8rem + 1.2vw, 3.4rem);
+    font-size: clamp(1.8rem, 1.8rem + 1.2vw, 2.8rem);
     color: var(--color-three);
     display: flex;
     justify-content: center;
@@ -67,7 +67,7 @@
         padding: 2rem;
         padding-top: .4rem;
         border-radius: 0;
-        font-size: clamp(1rem, 1rem + 1vw, 1.52rem);
+        font-size: clamp(1rem, 1rem + 1vw, 1.5rem);
         outline: 1px dashed var(--color-three-dark);
         width: 100%;
         max-width: 500px;
@@ -130,39 +130,47 @@
         &__price{
             font-family: var(--font-primary);
             font-weight: bold;
-            font-size: 1.92em;
+            font-size: 1.8em;
+            margin-top: .4rem;
             margin-bottom: 0;
-            text-shadow: 2px 2px var(--color-one);
+            text-shadow: 2px 2px var(--color-one-dark);
+            line-height: 1.4;
         }
     }
 
     &__checkout{
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: end;
         align-items: center;
+        cursor: pointer;
 
         .CartWidget{
             max-width: 100%;
-            margin: 1rem 0 auto;
+            margin-top: 1rem;
+            margin-bottom: 0;
+            padding: .4em;
             border-radius: .2em;
             color: var(--color-one-dark);
+            font-size: 1.2em;
+            font-weight: bold;
+            font-family: var(--font-primary);
+            text-shadow: 1px 1px 0 var(--color-three);
 
             &:hover, &:focus{
-                outline: 2px dashed var(--color-three-dark);
+                outline: 1px dashed var(--color-one);
                 background: none;
                 color: var(--color-one);
             }
 
-            &.checkoutDisabled{
+      /*       &.checkoutDisabled{
                 pointer-events: none;
-                color: var(--color-three-dark);
-            }
+                filter: grayscale(1);
+            } */
 
             i{
                 font-size: 1em !important; /* important to replace bulma style */
             }
-            font-size: 2em;
         }
     }
 }

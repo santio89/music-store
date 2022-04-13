@@ -59,7 +59,7 @@ export default function ItemDetail({loading, producto, cartAdd}) {
                                     <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initial} stock={stock}/>
                                     
                                     <div className='ItemDetail__checkout'>
-                                        <CartWidget disabled={true} cartNumber={"Ir al checkout"} />
+                                        <CartWidget disabled={true} cartNumber={"Checkout"} />
                                     </div>
                                 </div>
                                

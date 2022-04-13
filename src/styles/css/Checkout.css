@@ -12,4 +12,7 @@
 }
 .CheckoutWrapper > span {
   transform: translateY(-50%);
+}
+.CheckoutWrapper .Checkout {
+  text-align: center;
 }/*# sourceMappingURL=Checkout.css.map */
