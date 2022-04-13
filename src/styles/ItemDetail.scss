@@ -79,10 +79,6 @@
         p:not(:first-of-type){
             font-size: 1.08em;
         }
-        
-        p:last-of-type{
-            margin-bottom: 2rem;
-        }
     }
 
     &__title{
@@ -120,7 +116,54 @@
     }
 
     &__counterWrapper{
+        margin-top: 2rem;
         align-self: stretch;
+        border-top: 2px dashed var(--color-one);
+
+        &__counter{
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        &__price{
+            font-family: var(--font-primary);
+            font-weight: bold;
+            font-size: 1.92em;
+            margin-bottom: 0;
+            text-shadow: 2px 2px var(--color-one);
+        }
+    }
+
+    &__checkout{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .CartWidget{
+            max-width: 100%;
+            margin: 1rem 0 auto;
+            border-radius: .2em;
+            color: var(--color-one-dark);
+
+            &:hover, &:focus{
+                outline: 2px dashed var(--color-three-dark);
+                background: none;
+                color: var(--color-one);
+            }
+
+            &.checkoutDisabled{
+                pointer-events: none;
+                color: var(--color-three-dark);
+            }
+
+            i{
+                font-size: 1em !important; /* important to replace bulma style */
+            }
+            font-size: 2em;
+        }
     }
 }
 

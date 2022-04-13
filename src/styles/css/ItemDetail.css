@@ -78,9 +78,6 @@
 .ItemDetail__info p:not(:first-of-type) {
   font-size: 1.08em;
 }
-.ItemDetail__info p:last-of-type {
-  margin-bottom: 2rem;
-}
 .ItemDetail__title {
   color: var(--color-one);
   text-shadow: 2px 2px 0 var(--color-three);
@@ -113,7 +110,48 @@
   color: var(--color-one);
 }
 .ItemDetail__counterWrapper {
+  margin-top: 2rem;
   align-self: stretch;
+  border-top: 2px dashed var(--color-one);
+}
+.ItemDetail__counterWrapper__counter {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+.ItemDetail__counterWrapper__price {
+  font-family: var(--font-primary);
+  font-weight: bold;
+  font-size: 1.92em;
+  margin-bottom: 0;
+  text-shadow: 2px 2px var(--color-one);
+}
+.ItemDetail__checkout {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ItemDetail__checkout .CartWidget {
+  max-width: 100%;
+  margin: 1rem 0 auto;
+  border-radius: 0.2em;
+  color: var(--color-one-dark);
+  font-size: 2em;
+}
+.ItemDetail__checkout .CartWidget:hover, .ItemDetail__checkout .CartWidget:focus {
+  outline: 2px dashed var(--color-three-dark);
+  background: none;
+  color: var(--color-one);
+}
+.ItemDetail__checkout .CartWidget.checkoutDisabled {
+  pointer-events: none;
+  color: var(--color-three-dark);
+}
+.ItemDetail__checkout .CartWidget i {
+  font-size: 1em !important;
+  /* important to replace bulma style */
 }
 
 @media (min-width: 500px) {

@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PuffLoader from "react-spinners/PuffLoader";
 import ItemCount from './ItemCount';
+import CartWidget from './CartWidget';
 import '../../src/styles/css/ItemDetail.css';
 
 export default function ItemDetail({loading, producto, cartAdd}) {
@@ -50,10 +51,18 @@ export default function ItemDetail({loading, producto, cartAdd}) {
                             <p>◖Año: {producto.year}</p>
                             <p>◖País: {producto.country}</p>
                             <p>◖Sello: {producto.labels?.[0].name}</p>
-                            <p>◖Formato: {producto.formats?.[0].name}</p>
-                            <p>◖Precio: {"$"+producto.precio}</p>
+                            <p>◖Formato: {producto.formats?.[0].name}</p>   
+                            
                             <div className='ItemDetail__counterWrapper'>
-                            <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initial} stock={stock}/>
+                                <p className='ItemDetail__counterWrapper__price'>{"$"+producto.precio}</p>
+                                <div className="ItemDetail__counterWrapper__counter">
+                                    <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initial} stock={stock}/>
+                                    
+                                    <div className='ItemDetail__checkout'>
+                                        <CartWidget disabled={true} cartNumber={"Ir al checkout"} />
+                                    </div>
+                                </div>
+                               
                             </div>
                         </div>
                     </div>

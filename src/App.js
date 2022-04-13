@@ -7,6 +7,7 @@ import ItemListContainer from './Components/ItemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer';
 import NavBar from './Components/NavBar';
 import Categories from './Components/Categories'
+import Checkout from './Components/Checkout';
 import Error404 from './Components/Error404';
 
 
@@ -44,6 +45,7 @@ function App() {
           <Route path="/categories" element={<Categories />} />
           <Route path="/categories/:categoryId" element={<ItemListContainer />} />
           <Route path="/search/:searchId" element={<ItemListContainer />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/*" element={<Error404 />} />
         </Routes>
         <Footer />

@@ -1,6 +1,6 @@
 .ItemCount {
   font-family: var(--font-primary);
-  font-size: clamp(1.6rem, 1.6rem + 1.6vw, 2.6rem);
+  font-size: clamp(1.4rem, 1.4rem + 1.4vw, 2.8rem);
   border-radius: 0.4em;
   max-width: 100%;
   display: flex;
@@ -36,12 +36,10 @@
   font-size: 0.94em;
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
-  border-top: 2px dashed var(--color-one);
   line-height: 1.2;
   background-color: var(--color-back-dark);
   color: var(--color-three);
   padding-top: 0.8rem;
-  padding-bottom: 0.2rem;
   text-align: center;
   text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
 }
