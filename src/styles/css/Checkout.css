@@ -25,6 +25,8 @@
   font-size: clamp(1rem, 1rem + 1vw, 1.5rem);
   color: var(--color-one);
   text-shadow: 2px 2px 0 var(--color-three);
+  -webkit-animation: fadeTranslateIn 400ms forwards;
+          animation: fadeTranslateIn 400ms forwards;
 }
 .CheckoutWrapper .Checkout h1 {
   font-size: 1.8em;
