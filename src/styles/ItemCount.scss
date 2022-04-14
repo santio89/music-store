@@ -9,6 +9,8 @@
     align-items: stretch;
     position: relative;
     gap: 2rem;
+    margin-top: 18%;
+    margin-bottom: auto;
     
     &__buttons{
       display: flex;
@@ -86,4 +88,8 @@
     }
 }
 
-
+@media (min-width: 1216px){
+  .ItemCount{
+    margin-top: 8%;
+  }
+}

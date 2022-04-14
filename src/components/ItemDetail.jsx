@@ -53,26 +53,28 @@ export default function ItemDetail({loading, producto, cartAdd, cartNumber}) {
                                     <p>◖Formato: {producto.formats?.[0].name}</p>   
                             </div>
                         </div>
-                        <div className="ItemDetail__info">
-                            <div className="ItemDetail__info__main">
-                                <p className='ItemDetail__subtitle'>{producto.artists_sort}</p>
-                                <h2 className='ItemDetail__title'>{producto.title?.toUpperCase()}</h2>
-                                
-                            </div>
+                        <div className="ItemDetail__infoWrapper">
+                            <div className="ItemDetail__info">
+                                <div className="ItemDetail__info__main">
+                                    <p className='ItemDetail__subtitle'>{producto.artists_sort}</p>
+                                    <h2 className='ItemDetail__title'>{producto.title?.toUpperCase()}</h2>
+                                    
+                                </div>
 
-                            {continueCheckout?null:<div className='ItemDetail__counterWrapper'>
-                                <p className='ItemDetail__counterWrapper__price'>{"$"+producto.precio}</p>
-                                <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initial} stock={stock}/>
-                               
-                            </div>}
-                            
-                            {continueCheckout?<div className='ItemDetail__checkout'>
-                                        <h3>Productos agregados al carrito!</h3>
-                                        <div className='ItemDetail__checkout__buttons'>
-                                            <CartWidget cartNumber={"Ir al checkout"} />
-                                            <button onClick={()=>{setContinueCheckout(false)}} className='ItemDetail__checkout__continue'>Seguir comprando</button>
-                                        </div>
-                            </div>:null}
+                                {continueCheckout?null:<div className='ItemDetail__counterWrapper'>
+                                    <p className='ItemDetail__counterWrapper__price'>{"$"+producto.precio}</p>
+                                    <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initial} stock={stock}/>
+                                
+                                </div>}
+                                
+                                {continueCheckout?<div className='ItemDetail__checkout'>
+                                            <h3>Productos agregados<br />al carrito!</h3>
+                                            <div className='ItemDetail__checkout__buttons'>
+                                                <CartWidget cartNumber={"Ir al checkout"} />
+                                                <button onClick={()=>{setContinueCheckout(false)}} className='ItemDetail__checkout__continue'>Seguir comprando</button>
+                                            </div>
+                                </div>:null}
+                            </div>
                         </div>
                     </div>
                 </div>
