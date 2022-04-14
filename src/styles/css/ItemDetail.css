@@ -105,6 +105,7 @@
   align-self: start;
   font-family: var(--font-primary);
   font-size: 1.12em;
+  text-shadow: 1px 1px 0 var(--color-one);
 }
 .ItemDetail__back {
   font-size: 0.58em;
