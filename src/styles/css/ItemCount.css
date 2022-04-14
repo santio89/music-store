@@ -5,8 +5,12 @@
   max-width: 100%;
   display: flex;
   flex-flow: column wrap;
+  justify-content: center;
+  align-items: stretch;
   position: relative;
   gap: 2rem;
+  -webkit-animation: fadeTranslateIn 400ms forwards;
+          animation: fadeTranslateIn 400ms forwards;
 }
 .ItemCount__buttons {
   display: flex;

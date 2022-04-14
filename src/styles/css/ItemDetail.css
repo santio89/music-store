@@ -74,6 +74,9 @@
   justify-content: center;
   align-items: start;
   flex-flow: column wrap;
+  -webkit-animation: fadeTranslateIn 400ms forwards;
+          animation: fadeTranslateIn 400ms forwards;
+  overflow: hidden;
 }
 .ItemDetail__info p:not(:first-of-type) {
   font-size: 1.08em;
@@ -88,7 +91,7 @@
 .ItemDetail__pWrapper {
   width: 100%;
   border-bottom: 2px dashed var(--color-one);
-  padding-bottom: 3.2rem;
+  padding-bottom: 2rem;
 }
 .ItemDetail__title {
   color: var(--color-one);
@@ -124,12 +127,14 @@
   color: var(--color-one);
 }
 .ItemDetail__counterWrapper {
-  margin-top: 2rem;
   align-self: stretch;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   gap: 2rem;
+  -webkit-animation: fadeTranslateIn 400ms forwards;
+          animation: fadeTranslateIn 400ms forwards;
+  min-height: min(40vh, 500px);
 }
 .ItemDetail__counterWrapper__counter {
   display: flex;
@@ -141,7 +146,6 @@
   font-family: var(--font-primary);
   font-weight: bold;
   font-size: 1.8em;
-  margin-top: 1.2rem;
   margin-bottom: 1.2rem;
   text-shadow: 2px 2px var(--color-one-dark);
   line-height: 1;
@@ -155,15 +159,16 @@
   gap: 1rem;
   -webkit-animation: fadeTranslateIn 400ms forwards;
           animation: fadeTranslateIn 400ms forwards;
-  margin-top: 3.2rem;
   font-size: clamp(1rem, 1rem + 1vw, 1.5rem);
+  min-height: min(40vh, 500px);
 }
 .ItemDetail__checkout h3 {
   color: var(--color-one);
   text-shadow: 2px 2px 0 var(--color-three);
   line-height: 1.4;
   font-size: 1.8em;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   text-align: left;
   font-weight: bold;
   font-family: var(--font-primary);
@@ -173,7 +178,7 @@
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  gap: 1.2rem;
+  gap: 1rem;
 }
 .ItemDetail__checkout .CartWidget {
   max-width: 100%;
@@ -186,7 +191,7 @@
   padding: 0.2em;
   border-radius: 0.2em;
   color: var(--color-one-dark);
-  font-size: 1.24em;
+  font-size: 1.2em;
   font-weight: bold;
   font-family: var(--font-primary);
   text-shadow: 1px 1px 0 var(--color-three-dark);
@@ -221,7 +226,7 @@
   text-align: center;
   border-radius: 0.4rem;
   color: var(--color-one-dark);
-  font-size: 1.24em;
+  font-size: 1.2em;
   font-weight: bold;
   outline: 2px dashed var(--color-three-dark);
   font-family: var(--font-primary);
@@ -290,5 +295,10 @@
   .ItemDetail__info {
     min-width: 600px;
     max-width: 600px;
+  }
+}
+@media (min-width: 2048px) {
+  .ItemDetail {
+    margin-top: 8%;
   }
 }/*# sourceMappingURL=ItemDetail.css.map */

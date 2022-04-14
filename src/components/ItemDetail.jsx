@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import PuffLoader from "react-spinners/PuffLoader";
 import ItemCount from './ItemCount';
 import CartWidget from './CartWidget';
@@ -67,7 +67,7 @@ export default function ItemDetail({loading, producto, cartAdd, cartNumber}) {
                                         <h3>Productos agregados al carrito!</h3>
                                         <div className='ItemDetail__checkout__buttons'>
                                             <CartWidget cartNumber={"Ir al checkout"} />
-                                            <Link to="/" onClick={()=>{window.scrollTo(0,0)}} className='ItemDetail__checkout__continue'>Seguir comprando</Link>
+                                            <button onClick={()=>{setContinueCheckout(false)}} className='ItemDetail__checkout__continue'>Seguir comprando</button>
                                         </div>
                             </div>:null}
                         </div>

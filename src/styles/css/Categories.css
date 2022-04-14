@@ -45,7 +45,7 @@
 @media (min-width: 1024px) {
   .Categories {
     gap: 2.8rem;
-    margin-top: calc(1.2rem + 1.2vw);
+    margin-top: 1.4rem;
   }
   .Categories * {
     max-width: 420px;
@@ -53,6 +53,12 @@
 }
 @media (min-width: 1508px) {
   .Categories {
+    margin-top: 4%;
     margin-bottom: 0;
+  }
+}
+@media (min-width: 2048px) {
+  .Categories {
+    margin-top: 8%;
   }
 }/*# sourceMappingURL=Categories.css.map */

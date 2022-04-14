@@ -75,6 +75,8 @@
         justify-content: center;
         align-items: start;
         flex-flow: column wrap;
+        animation: fadeTranslateIn 400ms forwards;
+        overflow: hidden;
 
         p:not(:first-of-type){
             font-size: 1.08em;
@@ -92,7 +94,7 @@
     &__pWrapper{
         width: 100%;
         border-bottom: 2px dashed var(--color-one);
-        padding-bottom: 3.2rem;
+        padding-bottom: 2rem;
     }
 
     &__title{
@@ -132,12 +134,13 @@
     }
 
     &__counterWrapper{
-        margin-top: 2rem;
         align-self: stretch;
         display: flex;
         flex-flow: column wrap;
         justify-content: center;
         gap: 2rem;
+        animation: fadeTranslateIn 400ms forwards;
+        min-height: min(40vh, 500px);
 
         &__counter{
             display: flex;
@@ -150,7 +153,6 @@
             font-family: var(--font-primary);
             font-weight: bold;
             font-size: 1.8em;
-            margin-top: 1.2rem;
             margin-bottom: 1.2rem;
             text-shadow: 2px 2px var(--color-one-dark);
             line-height: 1;
@@ -165,15 +167,16 @@
         align-items: stretch;
         gap: 1rem;
         animation: fadeTranslateIn 400ms forwards;
-        margin-top: 3.2rem;
         font-size: clamp(1rem, 1rem + 1vw, 1.5rem);
+        min-height: min(40vh, 500px);
         
         h3{
             color: var(--color-one);
             text-shadow: 2px 2px 0 var(--color-three);
             line-height: 1.4;
             font-size: 1.8em;
-            margin-bottom: 2rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
             text-align: left;
             font-weight: bold;
             font-family: var(--font-primary);
@@ -184,7 +187,7 @@
             flex-flow: row wrap;
             justify-content: center;
             align-items: center;
-            gap: 1.2rem;
+            gap: 1rem;
         }
 
         .CartWidget{
@@ -198,7 +201,7 @@
             padding: .2em;
             border-radius: .2em;
             color: var(--color-one-dark);
-            font-size: 1.24em;
+            font-size: 1.2em;
             font-weight: bold;
             font-family: var(--font-primary);
             text-shadow: 1px 1px 0 var(--color-three-dark);
@@ -236,7 +239,7 @@
             text-align: center;
             border-radius: .4rem;
             color: var(--color-one-dark);
-            font-size: 1.24em;
+            font-size: 1.2em;
             font-weight: bold;
             outline: 2px dashed var(--color-three-dark);
             font-family: var(--font-primary);
@@ -322,5 +325,11 @@
             min-width: 600px;
             max-width: 600px;
         }
+    }
+}
+
+@media (min-width: 2048px){
+    .ItemDetail{
+        margin-top: 8%;
     }
 }
