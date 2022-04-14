@@ -12,7 +12,7 @@ export default function Error404() {
         <div className='Error404'>
             <h2>Error 404</h2>
             <p>El contenido al que intenta acceder no existe o no está disponible en este momento.</p>
-            <Link to="/">Ir al inicio?</Link>
+            <Link to="/">Ir al Inicio?</Link>
         </div>
     </div>
   )
