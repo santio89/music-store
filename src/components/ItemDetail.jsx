@@ -58,7 +58,6 @@ export default function ItemDetail({loading, producto, cartAdd, cartNumber}) {
                                 <div className="ItemDetail__info__main">
                                     <p className='ItemDetail__subtitle'>{producto.artists_sort}</p>
                                     <h2 className='ItemDetail__title'>{producto.title?.toUpperCase()}</h2>
-                                    
                                 </div>
 
                                 {continueCheckout?null:<div className='ItemDetail__counterWrapper'>
