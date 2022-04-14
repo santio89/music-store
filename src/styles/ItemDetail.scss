@@ -53,7 +53,6 @@
         outline: 1px dashed var(--color-three-dark);
         max-width: 500px;
         font-size: clamp(1rem, 1rem + 1vw, 1.5rem);
-        transition: 400ms;
 
         img{
             border-radius: .4em;
@@ -71,7 +70,7 @@
     }
 
     &__infoWrapper{
-        font-size: clamp(1rem, 1rem + 1vw, 1.5rem);
+        font-size: clamp(1.8rem, 1rem + 1.8vw, 2rem);
         width: 100%;
         height: 100%;
         padding: 2rem;
@@ -80,10 +79,11 @@
         flex-flow: column wrap;
         justify-content: start;
         align-items: center;
-        min-height: min(80vh, 800px);
         background: var(--color-back-dark);
         outline: 1px dashed var(--color-three-dark);
         overflow: hidden;
+        min-height: 600px;
+        max-height: 600px;
     }
 
     &__info{
@@ -94,7 +94,6 @@
         justify-content: start;
         align-items: center;
         animation: fadeTranslateIn 400ms forwards;
-        transition: 400ms;
 
         &__main{
             width: 100%;
@@ -111,9 +110,9 @@
         color: var(--color-one);
         text-shadow: 2px 2px 0 var(--color-three);
         line-height: 1.4;
-        font-size: 1.8em;
+        font-size: 1em;
         margin-bottom: 2rem;
-        text-align: center;
+        text-align: left;
         align-self: center;
         font-weight: bold;
         font-family: var(--font-primary);
@@ -124,7 +123,7 @@
     &__subtitle{
         align-self: start;
         font-family: var(--font-primary);
-        font-size: 1.12em;
+        font-size: .68em;
         text-shadow: 1px 1px 0 var(--color-one);
     }
 
@@ -165,7 +164,7 @@
         &__price{
             font-family: var(--font-primary);
             font-weight: bold;
-            font-size: 1.8em;
+            font-size: 1.4em;
             margin-bottom: 1.2rem;
             text-shadow: 2px 2px var(--color-one-dark);
             line-height: 1;
@@ -181,17 +180,18 @@
         align-items: stretch;
         gap: 1rem;
         animation: fadeTranslateIn 400ms forwards;
-        font-size: clamp(1rem, 1rem + 1vw, 1.5rem);
+        font-size: clamp(1.8rem, 1.8rem + 1.2vw, 2.8rem);
         
         h3{
-            color: var(--color-one);
-            text-shadow: 2px 2px 0 var(--color-three);
+            color: var(--color-three);
+            text-shadow: 2px 2px 0 var(--color-one);
             line-height: 1.4;
             font-size: 1.4em;
             margin-bottom: 1rem;
             text-align: left;
             font-weight: bold;
             font-family: var(--font-primary);
+            font-size: .8em;
         }
 
         &__buttons{
@@ -200,7 +200,7 @@
             justify-content: center;
             align-items: center;
             gap: 1rem;
-            margin-top: 18%;
+            font-size: .6em;
         }
 
         .CartWidget{
@@ -272,9 +272,17 @@
 
 @media (max-width: 320px){
     .ItemDetail{
+        &__infoWrapper{
+            padding: 1rem;
+        }
+        &__info{
+            width: 100%;
+        }
         &__checkout{
-            .CartWidget, &__continue{
-                font-size: clamp(.8rem, .4rem + 1vw, 1.2rem);;
+            width: 100%;
+            &__buttons{
+                width: 100%;
+                font-size: .5em;
             }
         } 
     }
@@ -318,11 +326,13 @@
             min-width: 520px;
             max-width: 520px;
         }
+
         &__infoWrapper{
             min-width: 520px;
             max-width: 520px;
-            font-size: clamp(1.4rem, 1.4rem + 1.4vw, 2.4rem);
-            min-height: min(80vh, 700px);
+            font-size: clamp(1.8rem, 1.8rem + 1.2vw, 2.8rem);
+            min-height: 680px;
+            max-height: 680px;
         }
 
         &__back{
@@ -352,6 +362,6 @@
 
 @media (min-width: 2048px){
     .ItemDetail{
-        margin-top: 8%;
+        margin-top: 16%;
     }
 }

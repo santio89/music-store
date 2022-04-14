@@ -9,7 +9,6 @@
     align-items: stretch;
     position: relative;
     gap: 2rem;
-    margin-top: 18%;
     margin-bottom: auto;
     
     &__buttons{
@@ -56,7 +55,7 @@
     }
 
     &__add{
-      font-size: .8em;
+      font-size: .94em;
       font-family: var(--font-primary);
       font-weight: bold;
       line-height: 1.2;
@@ -71,7 +70,7 @@
       padding: .4em;
       margin-top: .8rem;
       transition: 200ms;
-
+      
       &:hover{
         text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
         background: var(--color-back);
@@ -90,6 +89,6 @@
 
 @media (min-width: 1216px){
   .ItemCount{
-    margin-top: 8%;
+    margin-top: 12%;
   }
 }

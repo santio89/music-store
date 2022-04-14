@@ -9,7 +9,6 @@
   align-items: stretch;
   position: relative;
   gap: 2rem;
-  margin-top: 18%;
   margin-bottom: auto;
 }
 .ItemCount__buttons {
@@ -51,7 +50,7 @@
   background: var(--color-three-dark);
 }
 .ItemCount__add {
-  font-size: 0.8em;
+  font-size: 0.94em;
   font-family: var(--font-primary);
   font-weight: bold;
   line-height: 1.2;
@@ -82,6 +81,6 @@
 
 @media (min-width: 1216px) {
   .ItemCount {
-    margin-top: 8%;
+    margin-top: 12%;
   }
 }/*# sourceMappingURL=ItemCount.css.map */
