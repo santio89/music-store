@@ -81,9 +81,9 @@
         align-items: center;
         background: var(--color-back-dark);
         outline: 1px dashed var(--color-three-dark);
-        overflow: hidden;
         min-height: 600px;
         max-height: 600px;
+        overflow: hidden;
     }
 
     &__info{
@@ -93,7 +93,6 @@
         flex-flow: column wrap;
         justify-content: start;
         align-items: center;
-        animation: fadeTranslateIn 400ms forwards;
 
         &__main{
             width: 100%;

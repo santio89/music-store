@@ -79,9 +79,9 @@
   align-items: center;
   background: var(--color-back-dark);
   outline: 1px dashed var(--color-three-dark);
-  overflow: hidden;
   min-height: 600px;
   max-height: 600px;
+  overflow: hidden;
 }
 .ItemDetail__info {
   width: 100%;
@@ -90,8 +90,6 @@
   flex-flow: column wrap;
   justify-content: start;
   align-items: center;
-  -webkit-animation: fadeTranslateIn 400ms forwards;
-          animation: fadeTranslateIn 400ms forwards;
 }
 .ItemDetail__info__main {
   width: 100%;
