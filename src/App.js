@@ -9,7 +9,7 @@ import NavBar from './Components/NavBar';
 import Categories from './Components/Categories'
 import Checkout from './Components/Checkout';
 import Error404 from './Components/Error404';
-
+import ContextProvider from './Context/Context';
 
 /* 
 BrowserRouter no funciona correctamente en gh-pages al hacer refresh de una sección. esto se puede solucionar usando HashRouter o haciendo un redirect de la pagina de error 404 (la que gh-pages reconoce como 404.html) al sitio principal. Ya que la entrega pide usar BrowserRouter, por el momento solucione el tema del refresh haciendo el redirect (por eso hay una pagina 404.html y un script en el index.html).
@@ -20,7 +20,6 @@ No uso exact path (solo path) ya que, segun la documentacion del react-router-do
 
 function App() {
   let brand = "MusicStore";
-
 
   const [cartNumber, setCartNumber] = useState(0);
   const cartAdd = (amount)=>{
@@ -37,6 +36,9 @@ function App() {
 
   return (
     <>
+
+      <ContextProvider>
+
       <BrowserRouter basename="/music-store">
         <NavBar brand={brand} cartNumber={cartNumber}/>
         <TabSelector />
@@ -51,6 +53,10 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
+
+      </ContextProvider>
+
+      
     </>
   );
 }
