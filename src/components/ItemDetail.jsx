@@ -10,7 +10,7 @@ export default function ItemDetail({loading, producto, cartAdd, cartNumber}) {
     producto.stockInitial = producto.community?.have;
 
     const initial = 0;
-    producto.stockInitial = Math.trunc(producto.stockInitial/40); /* disminuyo el stock solo a modo de que se pueda probar agotar el stock (mas rapidamente) */
+    producto.stockInitial = Math.trunc(producto.stockInitial/40 + 10); /* disminuyo el stock solo a modo de que se pueda probar agotar el stock (mas rapidamente) */
 
     const history = useNavigate();
     const [stock, setStock] = useState(0);
