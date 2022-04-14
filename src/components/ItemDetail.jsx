@@ -43,18 +43,21 @@ export default function ItemDetail({loading, producto, cartAdd, cartNumber}) {
                     <div className='ItemDetail__body'>
                         <div className='ItemDetail__imgWrapper'>
                             <img alt="item" src={producto && producto.images && producto.images[0] && producto.images[0].resource_url}></img>
+                            <div className='ItemDetail__pWrapper'>
+                                    <p>◖Título: {producto.title}</p>
+                                    <p>◖Artista: {producto.artists_sort}</p>
+                                    <p>◖Género: {producto.genres?.join(" - ")}</p>
+                                    <p>◖Año: {producto.year}</p>
+                                    <p>◖País: {producto.country}</p>
+                                    <p>◖Sello: {producto.labels?.[0].name}</p>
+                                    <p>◖Formato: {producto.formats?.[0].name}</p>   
+                            </div>
                         </div>
                         <div className="ItemDetail__info">
                             <div className="ItemDetail__info__main">
                                 <p className='ItemDetail__subtitle'>{producto.artists_sort}</p>
                                 <h2 className='ItemDetail__title'>{producto.title?.toUpperCase()}</h2>
-                                <div className='ItemDetail__pWrapper'>
-                                    <p>◖Géneros: {producto.genres?.join(" - ")}</p>
-                                    <p>◖Año: {producto.year}</p>
-                                    <p>◖País: {producto.country}</p>
-                                    <p>◖Sello: {producto.labels?.[0].name}</p>
-                                    <p>◖Formato: {producto.formats?.[0].name}</p>   
-                                </div>
+                                
                             </div>
 
                             {continueCheckout?null:<div className='ItemDetail__counterWrapper'>
