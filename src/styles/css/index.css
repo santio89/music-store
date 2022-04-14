@@ -68,6 +68,7 @@ button {
   --color-three-accent: rgb(250, 250, 250);
   --color-three-dark: rgb(100, 100, 100);
   --color-back: rgb(50, 50, 50);
+  --color-mobilenavtext: rgb(74, 74, 74);
   --color-back-dark: rgb(30, 30, 30);
   --font-primary: "Croissant One", cursive;
 }

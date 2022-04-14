@@ -87,7 +87,7 @@ export default function NavBar({brand, cartNumber}){
 
                     <SearchBar />
 
-                    <CartWidget cartNumber={cartNumber}/>
+                    <CartWidget cartNumber={cartNumber} disabled={cartNumber>0?false:true}/>
                 </div>
 
                 <div className="navbar-end">

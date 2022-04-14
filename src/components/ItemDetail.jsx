@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import PuffLoader from "react-spinners/PuffLoader";
 import ItemCount from './ItemCount';
 import CartWidget from './CartWidget';
 import '../../src/styles/css/ItemDetail.css';
 
-export default function ItemDetail({loading, producto, cartAdd}) {
+export default function ItemDetail({loading, producto, cartAdd, cartNumber}) {
     producto.precio = Math.trunc(Math.abs((producto.community?.have - producto.community?.want) * .8 + 200))
     producto.stockInitial = producto.community?.have;
 
@@ -59,7 +59,8 @@ export default function ItemDetail({loading, producto, cartAdd}) {
                                     <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initial} stock={stock}/>
                                     
                                     <div className='ItemDetail__checkout'>
-                                        <CartWidget disabled={true} cartNumber={"Checkout"} />
+                                        <CartWidget disabled={cartNumber>0?false:true} cartNumber={"Ir al checkout"} />
+                                        <Link to="/" onClick={()=>{window.scrollTo(0,0)}} className='ItemDetail__checkout__continue'>Seguir Comprando</Link>
                                     </div>
                                 </div>
                                

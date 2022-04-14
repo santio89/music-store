@@ -24,7 +24,7 @@
     line-height: 1.8;
     font-family: 'Courier New', Courier, monospace;
     width: 100%;
-    gap: 3.2rem;
+    gap: 2.4rem;
     animation: fadeTranslateIn 200ms ease-in-out forwards;
     padding-bottom: 2.8rem;
     margin-bottom: 2.8rem;
@@ -107,8 +107,8 @@
         color: var(--color-one-dark);
         width: fit-content;
         position: absolute;
-        top: -1.8rem;
-        left: 5%;
+        left: min(5%, 1rem);
+        top: -2%;
 
         &:hover{
             color: var(--color-one);
@@ -119,6 +119,9 @@
         margin-top: 2rem;
         align-self: stretch;
         border-top: 2px dashed var(--color-one);
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
 
         &__counter{
             display: flex;
@@ -141,36 +144,59 @@
     &__checkout{
         width: 100%;
         display: flex;
-        justify-content: end;
+        justify-content: center;
         align-items: center;
         cursor: pointer;
+        gap: 1rem;
 
         .CartWidget{
             max-width: 100%;
+            width: 100%;
             margin-top: 1rem;
             margin-bottom: 0;
-            padding: .4em;
+            padding: .2em;
             border-radius: .2em;
             color: var(--color-one-dark);
-            font-size: 1.2em;
+            font-size: 1em;
             font-weight: bold;
             font-family: var(--font-primary);
             text-shadow: 1px 1px 0 var(--color-three);
+            background: var(--color-three-accent);
+            filter: grayscale(0);
 
             &:hover, &:focus{
-                outline: 1px dashed var(--color-one);
-                background: none;
+                outline: 2px dashed var(--color-one);
+                background: var(--color-three);
                 color: var(--color-one);
             }
-
-      /*       &.checkoutDisabled{
-                pointer-events: none;
-                filter: grayscale(1);
-            } */
 
             i{
                 font-size: 1em !important; /* important to replace bulma style */
             }
+        }
+
+        &__continue{
+            max-width: 100%;
+            width: 100%;
+            margin-top: 1rem;
+            margin-bottom: 0;
+            padding: .2em;
+            border-radius: .2em;
+            color: var(--color-one-dark);
+            font-size: 1em;
+            font-weight: bold;
+            font-family: var(--font-primary);
+            text-shadow: 1px 1px 0 var(--color-three);
+            background: var(--color-three-accent);
+            transition: color 400ms, background-color 400ms;
+            filter: grayscale(0);
+
+            &:hover, &:focus{
+                outline: 2px dashed var(--color-one);
+                background: var(--color-three);
+                color: var(--color-one);
+            }
+        
         }
     }
 }
@@ -215,6 +241,10 @@
         &__info{
             min-width: 480px;
             max-width: 480px;
+        }
+
+        &__back{
+            top: -4%;
         }
     }
 }

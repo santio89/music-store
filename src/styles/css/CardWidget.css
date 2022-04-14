@@ -5,13 +5,30 @@
   flex-flow: row wrap;
   justify-content: start;
   align-items: center;
+  color: var(--color-mobilenavtext);
+  transition: color 400ms, background-color 400ms;
+  border-radius: 0.2em;
+  padding: 8px 12px;
 }
 .CartWidget:hover, .CartWidget:focus {
   outline: 1px dashed var(--color-three);
+  color: var(--color-one);
+}
+.CartWidget.checkoutDisabled {
+  pointer-events: none;
+  color: var(--color-three-dark) !important;
+  /* override bulma style */
+  filter: grayscale(1);
 }
 
 @media (min-width: 1024px) {
   .CartWidget {
     justify-content: center;
+    color: var(--color-three);
+  }
+  .CartWidget:hover, .CartWidget:focus {
+    outline: 1px dashed var(--color-three);
+    color: var(--color-three);
+    background: var(--color-one-hover);
   }
 }/*# sourceMappingURL=CardWidget.css.map */

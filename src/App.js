@@ -41,7 +41,7 @@ function App() {
         <TabSelector />
         <Routes>  
           <Route path="/" element={<ItemListContainer />} />
-          <Route path="/item/:productId" element={<ItemDetailContainer cartAdd={cartAdd}/>} />
+          <Route path="/item/:productId" element={<ItemDetailContainer cartAdd={cartAdd} cartNumber={cartNumber}/>} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/categories/:categoryId" element={<ItemListContainer />} />
           <Route path="/search/:searchId" element={<ItemListContainer />} />
