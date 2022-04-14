@@ -21,6 +21,7 @@ No uso exact path (solo path) ya que, segun la documentacion del react-router-do
 function App() {
   let brand = "MusicStore";
 
+
   const [cartNumber, setCartNumber] = useState(0);
   const cartAdd = (amount)=>{
       console.log("CART TOTAL: " + (cartNumber + amount)) 

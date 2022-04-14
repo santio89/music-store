@@ -81,8 +81,8 @@
         align-items: center;
         background: var(--color-back-dark);
         outline: 1px dashed var(--color-three-dark);
-        min-height: 600px;
-        max-height: 600px;
+        min-height:500px;
+        max-height:500px;
         overflow: hidden;
     }
 
@@ -166,7 +166,7 @@
             font-size: 1.4em;
             margin-bottom: 1.2rem;
             text-shadow: 2px 2px var(--color-one-dark);
-            line-height: 1;
+            line-height: 1.2;
         }
     }
 
