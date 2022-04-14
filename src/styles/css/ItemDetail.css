@@ -137,7 +137,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
   gap: 1rem;
 }
 .ItemDetail__checkout .CartWidget {
