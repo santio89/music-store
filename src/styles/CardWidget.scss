@@ -7,7 +7,7 @@
     align-items: center;
     gap: .2em;
     color: var(--color-mobilenavtext);
-    transition: color 400ms, background-color 400ms, filter 400ms;
+    transition: color 200ms, background-color 200ms, filter 200ms;
     border-radius: .2em;
     padding: 8px 12px;
     filter: grayscale(0);
@@ -22,12 +22,6 @@
     &:hover, &:focus{
         outline: 1px dashed var(--color-three);
         color: var(--color-one);
-    }
-
-    &.checkoutDisabled{
-        pointer-events: none;
-        color: var(--color-three-dark) !important; /* override bulma style */
-        filter: grayscale(1);
     }
 }
 

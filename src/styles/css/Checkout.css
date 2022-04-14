@@ -30,13 +30,16 @@
   font-size: 1.8em;
   border-bottom: 2px dashed var(--color-one);
   width: 100%;
+  font-weight: bold;
 }
 .CheckoutWrapper .Checkout__back {
   align-self: start;
-  margin-left: 5%;
-  margin-top: 0.4rem;
+  margin-left: min(5%, 1rem);
+  margin-top: 0.8rem;
   color: var(--color-one-dark);
   text-shadow: 1px 1px 0 var(--color-three);
+  font-size: 1.2em;
+  font-weight: bold;
 }
 .CheckoutWrapper .Checkout__back:hover {
   color: var(--color-one);

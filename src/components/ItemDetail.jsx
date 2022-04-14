@@ -13,23 +13,23 @@ export default function ItemDetail({loading, producto, cartAdd, cartNumber}) {
     producto.stockInitial = Math.trunc(producto.stockInitial/40); /* disminuyo el stock solo a modo de que se pueda probar agotar el stock (mas rapidamente) */
 
     const history = useNavigate();
-
     const [stock, setStock] = useState(0);
+    const [continueCheckout, setContinueCheckout] = useState(false);
+    
+    const onAdd=(amount)=>{
+        console.log(`ADDED ${amount} TO CART`)
+        setStock(stock-amount);
+        cartAdd(amount);
+        setContinueCheckout(true);
+    }
+
+    const failToAdd=()=>{
+        console.log("FAIL TO ADD (NOT ENOUGH STOCK)");
+    }
 
     useEffect(()=>{
         setStock(producto.stockInitial)
     }, [producto.stockInitial])
- 
-    
-    function onAdd(amount){
-        console.log(`ADDED ${amount} TO CART`)
-        setStock(stock-amount);
-        cartAdd(amount);
-    }
-
-    function failToAdd(){
-        console.log("FAIL TO ADD (NOT ENOUGH STOCK)");
-    }
 
 
     return (
@@ -45,26 +45,31 @@ export default function ItemDetail({loading, producto, cartAdd, cartNumber}) {
                             <img alt="item" src={producto && producto.images && producto.images[0] && producto.images[0].resource_url}></img>
                         </div>
                         <div className="ItemDetail__info">
-                            <p className='ItemDetail__subtitle'>{producto.artists_sort}</p>
-                            <h2 className='ItemDetail__title'>{producto.title?.toUpperCase()}</h2>
-                            <p>◖Géneros: {producto.genres?.join(" - ")}</p>
-                            <p>◖Año: {producto.year}</p>
-                            <p>◖País: {producto.country}</p>
-                            <p>◖Sello: {producto.labels?.[0].name}</p>
-                            <p>◖Formato: {producto.formats?.[0].name}</p>   
-                            
-                            <div className='ItemDetail__counterWrapper'>
-                                <p className='ItemDetail__counterWrapper__price'>{"$"+producto.precio}</p>
-                                <div className="ItemDetail__counterWrapper__counter">
-                                    <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initial} stock={stock}/>
-                                    
-                                    <div className='ItemDetail__checkout'>
-                                        <CartWidget disabled={cartNumber>0?false:true} cartNumber={"Ir al checkout"} />
-                                        <Link to="/" onClick={()=>{window.scrollTo(0,0)}} className='ItemDetail__checkout__continue'>Seguir Comprando</Link>
-                                    </div>
+                            <div className="ItemDetail__info__main">
+                                <p className='ItemDetail__subtitle'>{producto.artists_sort}</p>
+                                <h2 className='ItemDetail__title'>{producto.title?.toUpperCase()}</h2>
+                                <div className='ItemDetail__pWrapper'>
+                                    <p>◖Géneros: {producto.genres?.join(" - ")}</p>
+                                    <p>◖Año: {producto.year}</p>
+                                    <p>◖País: {producto.country}</p>
+                                    <p>◖Sello: {producto.labels?.[0].name}</p>
+                                    <p>◖Formato: {producto.formats?.[0].name}</p>   
                                 </div>
-                               
                             </div>
+
+                            {continueCheckout?null:<div className='ItemDetail__counterWrapper'>
+                                <p className='ItemDetail__counterWrapper__price'>{"$"+producto.precio}</p>
+                                <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initial} stock={stock}/>
+                               
+                            </div>}
+                            
+                            {continueCheckout?<div className='ItemDetail__checkout'>
+                                        <h3>Productos agregados al carrito!</h3>
+                                        <div className='ItemDetail__checkout__buttons'>
+                                            <CartWidget cartNumber={"Ir al checkout"} />
+                                            <Link to="/" onClick={()=>{window.scrollTo(0,0)}} className='ItemDetail__checkout__continue'>Seguir comprando</Link>
+                                        </div>
+                            </div>:null}
                         </div>
                     </div>
                 </div>

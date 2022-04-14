@@ -79,21 +79,36 @@
         p:not(:first-of-type){
             font-size: 1.08em;
         }
+
+        &__main{
+            width: 100%;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__pWrapper{
+        width: 100%;
+        border-bottom: 2px dashed var(--color-one);
+        padding-bottom: 3.2rem;
     }
 
     &__title{
         color: var(--color-one);
         text-shadow: 2px 2px 0 var(--color-three);
-        line-height: 1.2;
+        line-height: 1.4;
         font-size: 1.8em;
         margin-bottom: 2rem;
-        text-align: left;
+        text-align: center;
+        align-self: center;
         font-weight: bold;
         font-family: var(--font-primary);
     }
 
     &__subtitle{
-        text-align: left;
+        align-self: start;
         font-family: var(--font-primary);
         font-size: 1.12em;
     }
@@ -118,10 +133,10 @@
     &__counterWrapper{
         margin-top: 2rem;
         align-self: stretch;
-        border-top: 2px dashed var(--color-one);
         display: flex;
         flex-flow: column wrap;
         justify-content: center;
+        gap: 2rem;
 
         &__counter{
             display: flex;
@@ -135,7 +150,7 @@
             font-weight: bold;
             font-size: 1.8em;
             margin-top: 1.2rem;
-            margin-bottom: 0;
+            margin-bottom: 1.2rem;
             text-shadow: 2px 2px var(--color-one-dark);
             line-height: 1;
         }
@@ -144,9 +159,32 @@
     &__checkout{
         width: 100%;
         display: flex;
+        flex-flow: column wrap;
         justify-content: center;
         align-items: stretch;
         gap: 1rem;
+        animation: fadeTranslateIn 400ms forwards;
+        margin-top: 3.2rem;
+        font-size: clamp(1rem, 1rem + 1vw, 1.5rem);
+        
+        h3{
+            color: var(--color-one);
+            text-shadow: 2px 2px 0 var(--color-three);
+            line-height: 1.4;
+            font-size: 1.8em;
+            margin-bottom: 2rem;
+            text-align: left;
+            font-weight: bold;
+            font-family: var(--font-primary);
+        }
+
+        &__buttons{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1.2rem;
+        }
 
         .CartWidget{
             max-width: 100%;
@@ -159,13 +197,16 @@
             padding: .2em;
             border-radius: .2em;
             color: var(--color-one-dark);
-            font-size: clamp(1.2rem, .4rem + 4vw, 1.5rem);
+            font-size: 1.24em;
             font-weight: bold;
             font-family: var(--font-primary);
-            text-shadow: 1px 1px 0 var(--color-three);
+            text-shadow: 1px 1px 0 var(--color-three-dark);
             justify-content: center;
             background: var(--color-three-accent);
             text-align: center;
+            border-radius: .4rem;
+            outline: 2px dashed var(--color-three-dark);
+            transition: color 200ms, background-color 200ms, outline 200ms;
 
             span{
                 display: block;
@@ -192,14 +233,15 @@
             margin-bottom: 0;
             padding: .2em;
             text-align: center;
-            border-radius: .2em;
+            border-radius: .4rem;
             color: var(--color-one-dark);
-            font-size: clamp(1.2rem, .4rem + 4vw, 1.5rem);
+            font-size: 1.24em;
             font-weight: bold;
+            outline: 2px dashed var(--color-three-dark);
             font-family: var(--font-primary);
-            text-shadow: 1px 1px 0 var(--color-three);
+            text-shadow: 1px 1px 0 var(--color-three-dark);
             background: var(--color-three-accent);
-            transition: color 400ms, background-color 400ms;
+            transition: color 200ms, background-color 200ms, outline 200ms;
 
             &:hover, &:focus{
                 outline: 2px dashed var(--color-one);
@@ -215,7 +257,7 @@
     .ItemDetail{
         &__checkout{
             .CartWidget, &__continue{
-                font-size: clamp(1rem, .8rem + 1vw, 1.2rem);;
+                font-size: clamp(.8rem, .4rem + 1vw, 1.2rem);;
             }
         } 
     }

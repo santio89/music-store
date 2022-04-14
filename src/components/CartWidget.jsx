@@ -6,10 +6,10 @@ import '../../src/styles/css/CardWidget.css';
 
 
 
-export default function CartWidget({cartNumber, disabled}){
+export default function CartWidget({cartNumber}){
     
     return(
-        <Link to="/checkout" onClick={()=>window.scrollTo(0,0)} className={`CartWidget ${disabled?"checkoutDisabled":""}`} role="button">
+        <Link to="/checkout" onClick={()=>window.scrollTo(0,0)} className="CartWidget" role="button">
             <span><i className="bi bi-cart-fill is-size-3-widescreen is-size-4-desktop is-size-3-touch"></i>&nbsp;{cartNumber}</span>
         </Link>
     )

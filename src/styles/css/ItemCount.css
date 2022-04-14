@@ -6,50 +6,71 @@
   display: flex;
   flex-flow: column wrap;
   position: relative;
+  gap: 2rem;
 }
 .ItemCount__buttons {
   display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  gap: 2rem;
+}
+.ItemCount__buttons > * {
+  background: var(--color-back);
+  border-radius: 0.4rem;
 }
 .ItemCount__buttons button {
-  line-height: 1;
-  background-color: var(--color-back-dark);
+  line-height: 1.2;
   color: var(--color-three);
   text-align: center;
-  width: 100%;
   text-shadow: 2.4px 2.4px 0 var(--color-back-dark), 3px 3px 0 var(--color-one);
-  font-size: 2.2em;
+  font-size: 1.2em;
+  padding: 0.4rem;
+  flex: 1;
+  transition: 200ms;
 }
 .ItemCount__buttons button:hover {
   color: var(--color-one);
+  background: var(--color-three-dark);
 }
 .ItemCount__buttons__number {
-  background-color: var(--color-back-dark);
+  flex: 1;
   color: var(--color-one);
   padding: 0.8rem;
   text-align: center;
-  width: 100%;
   font-size: 1.8em;
+  font-family: var(--font-primary);
   line-height: 1;
-  text-shadow: 2.4px 2.4px 0 var(--color-three), 3px 3px 0 var(--color-one);
+  text-shadow: 2.4px 2.4px 0 var(--color-three), 4px 4px 0 var(--color-one);
+  background: var(--color-three-dark);
 }
 .ItemCount__add {
   font-size: 0.8em;
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--font-primary);
   font-weight: bold;
-  line-height: 1;
+  line-height: 1.2;
   background-color: var(--color-back-dark);
-  color: var(--color-three);
+  color: var(--color-one);
   padding-top: 0.4rem;
   padding-bottom: 0.4rem;
   text-align: center;
   text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
+  outline: 1px dashed var(--color-three-dark);
+  border-radius: 0.4rem;
+  padding: 0.4em;
+  margin-top: 0.8rem;
+  transition: 200ms;
 }
 .ItemCount__add:hover {
-  color: var(--color-one);
+  text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
+  background: var(--color-back);
+  outline: 1px dashed var(--color-three);
 }
 .ItemCount__stock {
   position: absolute;
-  top: -10%;
+  top: -20%;
   right: 2%;
   font-size: 0.44em;
   font-family: "Courier New", Courier, monospace;

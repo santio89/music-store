@@ -1,7 +1,7 @@
 .footer{
     padding: 1em;
     padding-bottom: 0;
-    border-top: 2px dashed var(--color-one);
+    border-top: 2px dashed var(--color-one-dark);
     font-size: 1.4rem;
     display: flex;
     flex-flow: column wrap;
@@ -9,7 +9,7 @@
     align-items: start;
     gap: .2em;
     font-size: clamp(1.2rem, .88rem + .88vw, 2.2rem);
-    background: linear-gradient(135deg, var(--color-back-dark) 80%, var(--color-one) 80%);
+    background: linear-gradient(135deg, var(--color-back-dark) 80%, var(--color-one-dark) 80%);
     margin-top: auto;
     line-height: 1.2;
 
