@@ -127,16 +127,16 @@
   font-family: var(--font-primary);
   font-weight: bold;
   font-size: 1.8em;
-  margin-top: 0.4rem;
+  margin-top: 1.2rem;
   margin-bottom: 0;
   text-shadow: 2px 2px var(--color-one-dark);
-  line-height: 1.4;
+  line-height: 1;
 }
 .ItemDetail__checkout {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   gap: 1rem;
 }
 .ItemDetail__checkout .CartWidget {
@@ -144,15 +144,22 @@
   width: 100%;
   margin-top: 1rem;
   margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0.2em;
   border-radius: 0.2em;
   color: var(--color-one-dark);
-  font-size: 1em;
+  font-size: clamp(1.2rem, 0.4rem + 4vw, 1.5rem);
   font-weight: bold;
   font-family: var(--font-primary);
   text-shadow: 1px 1px 0 var(--color-three);
+  justify-content: center;
   background: var(--color-three-accent);
-  filter: grayscale(0);
+  text-align: center;
+}
+.ItemDetail__checkout .CartWidget span {
+  display: block;
 }
 .ItemDetail__checkout .CartWidget:hover, .ItemDetail__checkout .CartWidget:focus {
   outline: 2px dashed var(--color-one);
@@ -160,24 +167,27 @@
   color: var(--color-one);
 }
 .ItemDetail__checkout .CartWidget i {
-  font-size: 1em !important;
+  font-size: 1.2em !important;
   /* important to replace bulma style */
 }
 .ItemDetail__checkout__continue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-width: 100%;
   width: 100%;
   margin-top: 1rem;
   margin-bottom: 0;
   padding: 0.2em;
+  text-align: center;
   border-radius: 0.2em;
   color: var(--color-one-dark);
-  font-size: 1em;
+  font-size: clamp(1.2rem, 0.4rem + 4vw, 1.5rem);
   font-weight: bold;
   font-family: var(--font-primary);
   text-shadow: 1px 1px 0 var(--color-three);
   background: var(--color-three-accent);
   transition: color 400ms, background-color 400ms;
-  filter: grayscale(0);
 }
 .ItemDetail__checkout__continue:hover, .ItemDetail__checkout__continue:focus {
   outline: 2px dashed var(--color-one);
@@ -185,6 +195,11 @@
   color: var(--color-one);
 }
 
+@media (max-width: 320px) {
+  .ItemDetail__checkout .CartWidget, .ItemDetail__checkout__continue {
+    font-size: clamp(1rem, 0.8rem + 1vw, 1.2rem);
+  }
+}
 @media (min-width: 500px) {
   .ItemDetail__imgWrapper {
     border-radius: 0.4em;

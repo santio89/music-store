@@ -3,12 +3,20 @@
   max-width: 120px;
   display: flex;
   flex-flow: row wrap;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
+  gap: 0.2em;
   color: var(--color-mobilenavtext);
-  transition: color 400ms, background-color 400ms;
+  transition: color 400ms, background-color 400ms, filter 400ms;
   border-radius: 0.2em;
   padding: 8px 12px;
+  filter: grayscale(0);
+}
+.CartWidget span {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
 .CartWidget:hover, .CartWidget:focus {
   outline: 1px dashed var(--color-three);
