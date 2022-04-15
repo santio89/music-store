@@ -5,7 +5,7 @@ import ItemCount from './ItemCount';
 import CartWidget from './CartWidget';
 import '../../src/styles/css/ItemDetail.css';
 
-export default function ItemDetail({loading, producto, cartAdd, cartNumber}) {
+export default function ItemDetail({loading, producto, cartAdd}) {
     producto.precio = Math.trunc(Math.abs((producto.community?.have - producto.community?.want) * .8 + 200))
     producto.stockInitial = producto.community?.have;
 
