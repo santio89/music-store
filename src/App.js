@@ -39,20 +39,20 @@ function App() {
 
       <ContextProvider>
 
-      <BrowserRouter basename="/music-store">
-        <NavBar brand={brand} cartNumber={cartNumber}/>
-        <TabSelector />
-        <Routes>  
-          <Route path="/" element={<ItemListContainer />} />
-          <Route path="/item/:productId" element={<ItemDetailContainer cartAdd={cartAdd} cartNumber={cartNumber}/>} />
-          <Route path="/categories" element={<Categories />} />
-          <Route path="/categories/:categoryId" element={<ItemListContainer />} />
-          <Route path="/search/:searchId" element={<ItemListContainer />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/*" element={<Error404 />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+        <BrowserRouter basename="/music-store">
+          <NavBar brand={brand} cartNumber={cartNumber}/>
+          <TabSelector />
+          <Routes>  
+            <Route path="/" element={<ItemListContainer />} />
+            <Route path="/item/:productId" element={<ItemDetailContainer cartAdd={cartAdd} cartNumber={cartNumber}/>} />
+            <Route path="/categories" element={<Categories />} />
+            <Route path="/categories/:categoryId" element={<ItemListContainer />} />
+            <Route path="/search/:searchId" element={<ItemListContainer />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/*" element={<Error404 />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
 
       </ContextProvider>
 

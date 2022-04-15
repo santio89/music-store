@@ -1,5 +1,7 @@
-import React, { useState }  from "react";
+import React, { useContext, useState }  from "react";
+import { Context } from "../Context/Context";
 import '../styles/css/ItemCount.css';
+
 
 
 const useCounter = (initial)=>{

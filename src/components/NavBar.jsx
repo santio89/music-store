@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
+import { Context } from "../Context/Context";
 import { Link } from 'react-router-dom';
 import '../../src/styles/css/NavBar.css';
 import CartWidget from "./CartWidget";
@@ -25,6 +26,8 @@ import LogInButton from "./LogInButton";
 } */
 
 export default function NavBar({brand, cartNumber}){
+    let {x} = useContext(Context);
+
     useEffect(()=>{
         /* TOGGLE NAV MOBILE - BULMA SNIPPET */
         const navbarBurger = document.querySelector('.navbar-burger');

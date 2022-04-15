@@ -3,8 +3,7 @@
   max-width: -moz-fit-content;
   max-width: fit-content;
   margin: auto;
-  margin-top: calc(76px + 0.2rem);
-  padding-top: 0.4rem;
+  margin-top: calc(76px + 0.1rem);
   height: 60px;
 }
 .tabs ul {
@@ -41,6 +40,6 @@
     margin-top: calc(108px + 0.4rem);
   }
   .tabs li a {
-    font-size: 1.61rem;
+    font-size: 1.62rem;
   }
 }/*# sourceMappingURL=TabSelector.css.map */
