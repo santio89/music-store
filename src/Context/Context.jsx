@@ -6,6 +6,7 @@ export default function ContextProvider({children}) {
 
     const [carrito, setCarrito] = useState([]);
 
+
     const cartAdd = (item)=>{
         
         setCarrito((carrito)=>[...carrito, {item}])
@@ -13,7 +14,7 @@ export default function ContextProvider({children}) {
 
   return (
     <>
-       <Context.Provider value={carrito}>
+       <Context.Provider value={{carrito, cartAdd}}>
             {children}
        </Context.Provider>
     </>
