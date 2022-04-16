@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 
 
 
-export default function ItemListContainer({cartAdd, cartNumber}){
+export default function ItemListContainer(){
     const { productId } = useParams();
 
     const [loading, setLoading] = useState(false);
@@ -36,7 +36,7 @@ export default function ItemListContainer({cartAdd, cartNumber}){
 
     return (
            
-        <ItemDetail producto={producto} loading={loading} cartAdd={cartAdd} cartNumber={cartNumber}/>
+        <ItemDetail producto={producto} loading={loading}/>
           
     )
 }

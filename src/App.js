@@ -21,12 +21,6 @@ No uso exact path (solo path) ya que, segun la documentacion del react-router-do
 function App() {
   let brand = "MusicStore";
 
-  const [cartNumber, setCartNumber] = useState(0);
-  const cartAdd = (amount)=>{
-      console.log("CART TOTAL: " + (cartNumber + amount)) 
-      
-      setCartNumber((cartNumber)=>cartNumber + amount)
-  }
 
   /* scroll top of page on reload (manual) */
   useEffect(()=>{
@@ -40,11 +34,11 @@ function App() {
       <ContextProvider>
 
         <BrowserRouter basename="/music-store">
-          <NavBar brand={brand} cartNumber={cartNumber}/>
+          <NavBar brand={brand}/>
           <TabSelector />
           <Routes>  
             <Route path="/" element={<ItemListContainer />} />
-            <Route path="/item/:productId" element={<ItemDetailContainer cartAdd={cartAdd} cartNumber={cartNumber}/>} />
+            <Route path="/item/:productId" element={<ItemDetailContainer />} />
             <Route path="/categories" element={<Categories />} />
             <Route path="/categories/:categoryId" element={<ItemListContainer />} />
             <Route path="/search/:searchId" element={<ItemListContainer />} />

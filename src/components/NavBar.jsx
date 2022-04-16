@@ -25,8 +25,8 @@ import LogInButton from "./LogInButton";
     return {navOpen, open, close}
 } */
 
-export default function NavBar({brand, cartNumber}){
-    let {x} = useContext(Context);
+export default function NavBar({brand}){
+    let {cartNumber} = useContext(Context);
 
     useEffect(()=>{
         /* TOGGLE NAV MOBILE - BULMA SNIPPET */
@@ -90,7 +90,7 @@ export default function NavBar({brand, cartNumber}){
 
                     <SearchBar />
 
-                    <CartWidget cartNumber={cartNumber} />
+                    <CartWidget />
                 </div>
 
                 <div className="navbar-end">

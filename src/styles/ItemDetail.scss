@@ -18,8 +18,9 @@
     font-size: clamp(1.8rem, 1.8rem + 1.2vw, 2.8rem);
     color: var(--color-three);
     display: flex;
+    flex-flow: column wrap;
     justify-content: center;
-    align-items: start;
+    align-items: stretch;
     align-self: start;
     line-height: 1.8;
     font-family: 'Courier New', Courier, monospace;
@@ -81,8 +82,6 @@
         align-items: center;
         background: var(--color-back-dark);
         outline: 1px dashed var(--color-three-dark);
-        min-height:540px;
-        max-height:540px;
         overflow: hidden;
     }
 
@@ -145,7 +144,7 @@
 
     &__counterWrapper{
         width: 100%;
-        height: 100%;
+       /*  height: 340px; */
         align-self: stretch;
         display: flex;
         flex-flow: column wrap;
@@ -172,7 +171,7 @@
 
     &__checkout{
         width: 100%;
-        height: 100%;
+       /*  height: 340px; */
         display: flex;
         flex-flow: column wrap;
         justify-content: start;
@@ -311,6 +310,7 @@
 
 @media (min-width: 1216px){
     .ItemDetail{
+        flex-flow: row wrap;
         gap: 2rem;
 
         &__body{
@@ -330,15 +330,18 @@
             min-width: 520px;
             max-width: 520px;
             font-size: clamp(1.8rem, 1.8rem + 1.2vw, 2.8rem);
-            min-height: 900px;
-            max-height: 900px;
         }
 
         &__back{
             top: -4%;
         }
 
+/*         &__counterWrapper{
+            height: 420px;
+        } */
+
         &__checkout{
+           /*  height: 420px; */
             &__buttons{
                 margin-top: 8%;
             }

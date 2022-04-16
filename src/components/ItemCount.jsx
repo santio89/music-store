@@ -1,5 +1,4 @@
-import React, { useContext, useState }  from "react";
-import { Context } from "../Context/Context";
+import React, { useState }  from "react";
 import '../styles/css/ItemCount.css';
 
 

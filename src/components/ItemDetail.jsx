@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { Context } from '../Context/Context';
 import { useNavigate } from 'react-router-dom';
 import PuffLoader from "react-spinners/PuffLoader";
 import ItemCount from './ItemCount';
 import CartWidget from './CartWidget';
 import '../../src/styles/css/ItemDetail.css';
 
-export default function ItemDetail({loading, producto, cartAdd}) {
+export default function ItemDetail({loading, producto}) {
     producto.precio = Math.trunc(Math.abs((producto.community?.have - producto.community?.want) * .8 + 200))
     producto.stockInitial = producto.community?.have;
 
@@ -15,12 +16,14 @@ export default function ItemDetail({loading, producto, cartAdd}) {
     const history = useNavigate();
     const [stock, setStock] = useState(0);
     const [continueCheckout, setContinueCheckout] = useState(false);
+
+    const {cartAdd} = useContext(Context)
     
     const onAdd=(amount)=>{
         console.log(`ADDED ${amount} TO CART`)
         setStock(stock-amount);
-        cartAdd(amount);
         setContinueCheckout(true);
+        cartAdd(amount, producto);
     }
 
     const failToAdd=()=>{
