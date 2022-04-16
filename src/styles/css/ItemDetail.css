@@ -68,7 +68,7 @@
   font-size: 1em;
 }
 .ItemDetail__infoWrapper {
-  font-size: clamp(1.8rem, 1rem + 1.8vw, 2rem);
+  font-size: clamp(1.8rem, 1.8rem + 1.2vw, 2.8rem);
   width: 100%;
   height: 100%;
   padding: 1rem;
@@ -100,7 +100,7 @@
   color: var(--color-one);
   text-shadow: 2px 2px 0 var(--color-three);
   line-height: 1.4;
-  font-size: 1em;
+  font-size: 1.2em;
   margin-bottom: 2rem;
   text-align: left;
   align-self: center;
@@ -110,9 +110,10 @@
   border-bottom: 2px dashed var(--color-one);
 }
 .ItemDetail__subtitle {
+  line-height: 1;
   align-self: start;
   font-family: var(--font-primary);
-  font-size: 0.68em;
+  font-size: 0.8em;
   text-shadow: 1px 1px 0 var(--color-one);
 }
 .ItemDetail__back {
