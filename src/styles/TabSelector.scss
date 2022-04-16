@@ -25,15 +25,13 @@
                 outline: 1px dashed var(--color-three);
                 outline-offset: -2px;
             }
+            &.is-active{
+                color: var(--color-one);
+                border-bottom: 2px solid var(--color-three);
+            }
         }
     }
 
-    li.is-active{
-        a{
-            color: var(--color-one);
-            border-bottom: 2px solid var(--color-three);
-        }
-    }
 
     &:not(:last-child){
         margin-bottom: 1rem;

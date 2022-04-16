@@ -25,7 +25,7 @@
   outline: 1px dashed var(--color-three);
   outline-offset: -2px;
 }
-.tabs li.is-active a {
+.tabs li a.is-active {
   color: var(--color-one);
   border-bottom: 2px solid var(--color-three);
 }

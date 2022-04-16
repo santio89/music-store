@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { Context } from '../Context/Context';
+import { CartContext } from '../Context/CartContext';
 import { useNavigate } from 'react-router-dom';
 import PuffLoader from "react-spinners/PuffLoader";
 import ItemCount from './ItemCount';
@@ -17,7 +17,7 @@ export default function ItemDetail({loading, producto}) {
     const [stock, setStock] = useState(0);
     const [continueCheckout, setContinueCheckout] = useState(false);
 
-    const {cartAdd} = useContext(Context)
+    const {cartAdd} = useContext(CartContext)
     
     const onAdd=(amount)=>{
         console.log(`ADDED ${amount} TO CART`)
@@ -72,7 +72,7 @@ export default function ItemDetail({loading, producto}) {
                                 {continueCheckout?<div className='ItemDetail__checkout'>
                                             <h3>Productos agregados<br />al carrito!</h3>
                                             <div className='ItemDetail__checkout__buttons'>
-                                                <CartWidget cartNumber={"Ir al checkout"} />
+                                                <CartWidget message={"Ir al checkout"} />
                                                 <button onClick={()=>{setContinueCheckout(false)}} className='ItemDetail__checkout__continue'>Seguir comprando</button>
                                             </div>
                                 </div>:null}
