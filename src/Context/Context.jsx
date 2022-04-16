@@ -8,8 +8,14 @@ export default function ContextProvider({children}) {
 
 
     const cartAdd = (amount, item)=>{
-  
-      setCarrito([...carrito, {item}])
+      let arrayToAdd = [];
+
+      for(let i=0; i<amount;i++){
+        arrayToAdd = [...arrayToAdd, {item}]
+      }
+      
+      setCarrito([...carrito, ...arrayToAdd])
+
     }
 
     const cartSub = (id)=>{
@@ -23,7 +29,7 @@ export default function ContextProvider({children}) {
 
   return (
     <>
-       <Context.Provider value={{carrito, cartAdd, itemsTotal}}>
+       <Context.Provider value={{carrito, cartAdd, cartSub, itemsTotal}}>
             {children}
        </Context.Provider>
     </>

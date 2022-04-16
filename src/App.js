@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import '../src/styles/css/App.css';
 import TabSelector from './Components/TabSelector';
@@ -49,7 +49,6 @@ function App() {
         </BrowserRouter>
 
       </ContextProvider>
-
       
     </>
   );
