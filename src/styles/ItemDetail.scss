@@ -142,7 +142,7 @@
 
     &__counterWrapper{
         width: 100%;
-       /*  height: 340px; */
+        height: 340px;
         align-self: stretch;
         display: flex;
         flex-flow: column wrap;
@@ -169,7 +169,7 @@
 
     &__checkout{
         width: 100%;
-       /*  height: 340px; */
+        height: 340px;
         display: flex;
         flex-flow: column wrap;
         justify-content: start;
@@ -342,12 +342,12 @@
             top: -4%;
         }
 
-/*         &__counterWrapper{
-            height: 420px;
-        } */
+        &__counterWrapper{
+            height: unset;
+        }
 
         &__checkout{
-           /*  height: 420px; */
+            height: unset;
             &__buttons{
                 margin-top: 8%;
             }
