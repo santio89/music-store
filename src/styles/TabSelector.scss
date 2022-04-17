@@ -11,6 +11,7 @@
 
     li{
         a{
+            border-radius: .4em .4em 0 0;
             font-size: clamp(1.2rem, .8rem + 2.4vw, 1.4rem);
             color: var(--color-three-dark);
             border-bottom: 2px solid var(--color-three-dark);

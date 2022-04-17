@@ -25,7 +25,7 @@ export default function Checkout() {
                     <li key={item.id}><span>{item.item.title}</span> <span>{item.item.artists_sort}</span><span>${item.item.precio}</span><span>1</span><span>$subt</span></li>
                   )
                 }
-                {carrito.length===0?<li>No hay productos en el carrito</li>:<li className='Checkout__details__list__total'>TOTAL: ${"total"}</li>}
+                {carrito.length===0?<li>No hay productos en el carrito</li>:<li>TOTAL: ${"total"}</li>}
               </ul>
               <div className='Checkout__details__resumen'>
                 <h3>Resumen</h3>

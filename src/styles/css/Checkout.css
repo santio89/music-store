@@ -96,7 +96,7 @@
   border: none;
   padding: 0.4em;
   font-family: var(--font-primary);
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: bold;
   color: var(--color-back-dark);
   text-shadow: 2px 2px 0 var(--color-three);
@@ -127,7 +127,7 @@
 }
 .Checkout__details__resumen__buttons {
   font-family: "Courier New", Courier, monospace;
-  font-size: 0.8em;
+  font-size: 0.78em;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
