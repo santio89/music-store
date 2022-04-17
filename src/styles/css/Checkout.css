@@ -136,6 +136,7 @@
   width: 100%;
   margin-top: 1rem;
   overflow: hidden;
+  gap: 1rem;
 }
 .Checkout__details__resumen__buttons button {
   display: flex;
