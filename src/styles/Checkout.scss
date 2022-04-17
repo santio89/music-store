@@ -69,7 +69,6 @@
             font-size: 1.2em;
             border-bottom: 2px dashed var(--color-one);
             width: 100%;
-            margin-bottom: 1rem;
             padding: .4em;
             color:var(--color-one)
         }
@@ -77,7 +76,7 @@
         &__list{
             display: flex;
             flex-flow: column wrap;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center; 
             background-color: var(--color-back-dark);
             width: 100%;
@@ -120,25 +119,37 @@
                     flex: 1;
                 }
             }
+
+            &__header{
+                margin-top: 1rem;
+            }
         }
         
         &__resumen{
             background-color: var(--color-back-dark);
             width: 100%;
             color: blue !important;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: start;
+            align-items: center;
 
-            &__reset{
+            &__buttons{
                 font-family: 'Courier New', Courier, monospace;
                 font-size: .8em;
                 display: flex;
-                flex: row wrap;
-                justify-content: start;
+                flex-flow: column wrap;
+                justify-content: center;
+                align-items: center;
                 padding: .2em;
+                width: 100%;
+                margin-top: 1rem;
+                overflow: hidden;
 
                 button{
                     display: flex;
                     flex: row wrap;
-                    justify-content: end;
+                    justify-content: start;
                     align-items: center;
                     color: var(--color-one-dark);
                     padding: .4em;
@@ -146,6 +157,7 @@
                     padding-bottom: 0;
                     border-radius: .2em;
                     transition: 200ms;
+                    width: 100%;
 
                     i{
                         font-size: 1.4em;
@@ -156,6 +168,16 @@
                         outline: 1px dashed var(--color-one);
                         background: var(--color-back);
                     }
+
+                    &:last-child{
+                        color: var(--color-three-accent);
+
+                        &:hover, &:focus-visible{
+                            color: var(--color-three);
+                            outline: 1px dashed var(--color-three);
+                            background: var(--color-back);
+                        }
+                    }
                 }
             }
         }
@@ -165,6 +187,8 @@
 
 @media (min-width: 1216px){
     .Checkout{
+        width: 96%;
+
         &__details{
             display: flex;
             flex-flow: row wrap;

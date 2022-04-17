@@ -3,15 +3,20 @@
     display: flex;
     justify-content: center;
     align-items: start;
-    width: 100%;
+    width: 90%;
+    margin: auto
 }
 
 .Error404{
-    width: 90%;
+    width: 100%;
     margin: auto;
     margin-top: 1.4vh;
     font-size: clamp(2.4rem, 2rem + 2vw, 3.4rem);
     animation: fadeTranslateIn 200ms ease-in-out forwards;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
 
     h2{
         font-size: 1.08em;
