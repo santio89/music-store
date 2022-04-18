@@ -1,14 +1,16 @@
+/* bulma size-6 */
+/* bulma size-5 */
+/* itemList title, itemDetail title */
 .footer {
   padding: 1em;
   padding-bottom: 0;
   border-top: 2px dashed var(--color-one-dark);
-  font-size: 1.4rem;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-items: start;
   gap: 0.2em;
-  font-size: clamp(1.2rem, 0.88rem + 0.88vw, 2.2rem);
+  font-size: clamp(1.2rem, 1rem + 1.2vw, 2.2rem);
   background: linear-gradient(135deg, var(--color-back-dark) 80%, var(--color-one-dark) 80%);
   margin-top: auto;
   line-height: 1.2;
@@ -17,13 +19,15 @@
   color: var(--color-one);
   font-weight: 800;
   text-shadow: 2px 2px 0 var(--color-three);
-  font-size: 1.4em;
+  font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.6rem);
 }
 .footer a {
   color: var(--color-three);
   padding: 0.8rem;
   text-shadow: 1px 1px 0 var(--color-one);
   border-radius: 0.2em;
+  font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
+  transition: 200ms;
 }
 .footer a:hover, .footer a:focus {
   color: var(--color-one);
@@ -33,12 +37,12 @@
   outline: 2px dashed var(--color-one);
 }
 .footer__santi {
-  font-size: 0.74em;
   align-self: end;
   color: var(--color-three);
   text-shadow: 1px 1px 0 var(--color-one-dark);
-  font-weight: bold;
   line-height: 1;
+  font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
+  font-weight: bold;
 }
 .footer__santi:hover, .footer__santi:focus {
   color: var(--color-one-dark);

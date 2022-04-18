@@ -13,8 +13,9 @@ export default function Checkout() {
   return (  
     <div className="CheckoutWrapper">
         <div className="Checkout">
+             <button onClick={()=>{history(-1)}}  className='Checkout__back'>⇠ Volver</button>
             <h1>CHECKOUT</h1>
-            <button onClick={()=>{history(-1)}}  className='Checkout__back'>⇠ Volver</button>
+            
             <div className='Checkout__details'>
               <ul className='Checkout__details__list'>
                 <h3>Lista de compra</h3>

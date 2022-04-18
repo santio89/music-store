@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../../src/styles/css/ItemList.css';
 import ItemList from './ItemList';
 import customFetch from '../utils/customFetch';
@@ -15,6 +16,8 @@ export default function ItemListContainer(){
     
     const discogsToken = "RkqSJrgChJCPUvsaYEUrkgTSzPgnYlXzVEOZiwnp";
 
+    const navigate = useNavigate();
+
     
     useEffect(()=>{     
         setLoading(true);
@@ -28,12 +31,16 @@ export default function ItemListContainer(){
         /* fetch custom con promise (hace el fetch a la api luego de un tiempo) */
         customFetch(1000, fetchApi).then(
             res=>{
-                res.json().then(
-                    res=>{
-                        setProductos(res.results);
-                        setLoading(false);
-                    }
-                )
+                if (res.ok){
+                    res.json().then(
+                        res=>{
+                            setProductos(res.results);
+                            setLoading(false);
+                        }
+                    )
+                } else{
+                    navigate("./error404")
+                }               
             }
         ).catch(err=>{console.log(err)}) 
 

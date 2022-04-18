@@ -1,11 +1,12 @@
 .nav{
     min-height: 76px;
     z-index: 2;
+    font-size: 1rem;
 
     &__logo{
         font-weight: 800;
         text-shadow: 2px 2px 0 var(--color-two);
-        font-size: 2.5rem;
+        font-size: $font-xl;
 
         &:hover, &:focus{
             outline: 2px dashed var(--color-three);
@@ -115,6 +116,6 @@
 
 @media(max-width: 346px){
     .nav__logo{
-        font-size: 2rem;
+        font-size: $font-lg;
     }
 }

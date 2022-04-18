@@ -1,3 +1,6 @@
+/* bulma size-6 */
+/* bulma size-5 */
+/* itemList title, itemDetail title */
 .tabs {
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
@@ -12,7 +15,7 @@
 }
 .tabs li a {
   border-radius: 0.4em 0.4em 0 0;
-  font-size: clamp(1.2rem, 0.8rem + 2.4vw, 1.4rem);
+  font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
   color: var(--color-three-dark);
   border-bottom: 2px solid var(--color-three-dark);
 }
@@ -41,6 +44,6 @@
     margin-top: calc(108px + 0.4rem);
   }
   .tabs li a {
-    font-size: 1.62rem;
+    font-size: 1.6rem;
   }
 }/*# sourceMappingURL=TabSelector.css.map */

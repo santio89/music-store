@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 .Error404Wrapper{
     min-height: calc(100vh - 76px - 60px - .2rem); /* container height= 100vh-navHeight-tabsHeight-margins */
     display: flex;
@@ -11,7 +13,7 @@
     width: 100%;
     margin: auto;
     margin-top: 1.4vh;
-    font-size: clamp(2.4rem, 2rem + 2vw, 3.4rem);
+    font-size: $font-fluid-xl;
     animation: fadeTranslateIn 200ms ease-in-out forwards;
     display: flex;
     flex-flow: column wrap;
@@ -19,7 +21,7 @@
     align-items: center;
 
     h2{
-        font-size: 1.08em;
+        font-size: $font-fluid-xl;
         font-weight: 800;
         color: var(--color-one);
         text-shadow: 2px 2px 0 var(--color-three);
@@ -29,7 +31,7 @@
     p{
         color: var(--color-three);
         text-shadow: 2px 2px 0 var(--color-three-dark);
-        font-size: .68em;
+        font-size: $font-fluid-md;
         max-width: 1200px;
         margin: auto;
     }
@@ -40,7 +42,7 @@
         text-shadow: 2px 2px 0 var(--color-three);
         display: block;
         text-align: center;
-        font-size: .82em;
+        font-size: $font-fluid-lg;
 
         &:hover, &:focus-visible{
             color: var(--color-one);

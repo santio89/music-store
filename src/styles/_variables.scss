@@ -1,5 +1,16 @@
-$font-sm-text: .8rem;
-$font-md: 1.2rem;
+$font-xxxs: .6rem;
+$font-xxs: .8rem;
+$font-xs: 1rem; /* bulma size-6 */
+$font-sm: 1.25rem; /* bulma size-5 */
+$font-md: 1.6rem;
+$font-mdd: 1.8rem;
 $font-lg: 2rem;
-$font-xl: 2.4rem;
+$font-xl: 2.5rem;
 $font-title: clamp(1rem, 1rem + 2vw, 2.4rem);
+
+$font-fluid-xs: clamp(.8rem, .8rem + 1vw, 1.32rem);
+$font-fluid-sm: clamp(1rem, 1rem + 1vw, 1.6rem);
+$font-fluid-md: clamp(1.2rem, 1rem + 1.2vw, 2.2rem);
+$font-fluid-lg: clamp(1.8rem, 1.8rem + 1.8vw, 2.6rem); /* itemList title, itemDetail title */
+$font-fluid-xl: clamp(2rem, 2rem + 2vw, 3.2rem);
+$font-fluid-xxl: clamp(2.8rem, 2.8rem + 2.8vw, 5.4rem);

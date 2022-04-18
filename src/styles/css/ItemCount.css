@@ -1,6 +1,9 @@
+/* bulma size-6 */
+/* bulma size-5 */
+/* itemList title, itemDetail title */
 .ItemCount {
   font-family: var(--font-primary);
-  font-size: clamp(1.8rem, 1.8rem + 1.2vw, 2.8rem);
+  font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.6rem);
   border-radius: 0.4em;
   max-width: 100%;
   display: flex;
@@ -29,7 +32,7 @@
   color: var(--color-three);
   text-align: center;
   text-shadow: 2.4px 2.4px 0 var(--color-back-dark), 3px 3px 0 var(--color-one);
-  font-size: 1.2em;
+  font-size: clamp(2rem, 2rem + 2vw, 3.2rem);
   padding: 0.4rem;
   flex: 1;
   transition: 200ms;
@@ -47,14 +50,14 @@
   color: var(--color-one);
   padding: 0.8rem;
   text-align: center;
-  font-size: 1.8em;
+  font-size: clamp(2.8rem, 2.8rem + 2.8vw, 5.4rem);
   font-family: var(--font-primary);
   line-height: 1;
   text-shadow: 2.4px 2.4px 0 var(--color-three), 4px 4px 0 var(--color-one);
   background: var(--color-three-dark);
 }
 .ItemCount__add {
-  font-size: 0.9em;
+  font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.6rem);
   font-family: var(--font-primary);
   font-weight: bold;
   line-height: 1.2;
@@ -80,9 +83,9 @@
 }
 .ItemCount__stock {
   position: absolute;
-  top: -20%;
+  top: -22%;
   right: 2%;
-  font-size: 0.44em;
+  font-size: clamp(0.8rem, 0.8rem + 1vw, 1.32rem);
   font-family: "Courier New", Courier, monospace;
 }
 

@@ -1,3 +1,6 @@
+/* bulma size-6 */
+/* bulma size-5 */
+/* itemList title, itemDetail title */
 .ItemDetailWrapper {
   min-height: calc(100vh - 76px - 60px - 0.2rem);
   /* container height= 100vh-navHeight-tabsHeight-margins */
@@ -15,7 +18,7 @@
 }
 
 .ItemDetail {
-  font-size: clamp(1.8rem, 1.8rem + 1.2vw, 2.8rem);
+  font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.6rem);
   color: var(--color-three);
   display: flex;
   flex-flow: column wrap;
@@ -30,7 +33,7 @@
           animation: fadeTranslateIn 200ms ease-in-out forwards;
   padding-bottom: 2.8rem;
   margin-bottom: 2.8rem;
-  margin-top: 1rem;
+  margin-top: 0.8rem;
 }
 .ItemDetail__body {
   display: flex;
@@ -51,7 +54,7 @@
   gap: clamp(1rem, 1rem + 1.4vw, 4rem);
   outline: 1px dashed var(--color-three-dark);
   width: 100%;
-  font-size: clamp(1rem, 1rem + 1vw, 1.5rem);
+  font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
 }
 .ItemDetail__imgWrapper img {
   border-radius: 0.4em;
@@ -64,10 +67,9 @@
 }
 .ItemDetail__pWrapper {
   width: 100%;
-  font-size: 1em;
 }
 .ItemDetail__infoWrapper {
-  font-size: clamp(1.8rem, 1.8rem + 1.2vw, 2.8rem);
+  font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.6rem);
   width: 100%;
   height: 100%;
   padding: 1rem;
@@ -99,7 +101,7 @@
   color: var(--color-one);
   text-shadow: 2px 2px 0 var(--color-three);
   line-height: 1.4;
-  font-size: 1.2em;
+  font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.6rem);
   margin-bottom: 2rem;
   text-align: left;
   align-self: center;
@@ -112,11 +114,11 @@
   line-height: 1;
   align-self: start;
   font-family: var(--font-primary);
-  font-size: 0.8em;
+  font-size: clamp(1.2rem, 1rem + 1.2vw, 2.2rem);
   text-shadow: 1px 1px 0 var(--color-one);
 }
 .ItemDetail__back {
-  font-size: 0.58em;
+  font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
   font-family: var(--font-primary);
   text-shadow: 1px 1px 0 var(--color-three);
   font-weight: bold;
@@ -151,7 +153,7 @@
 .ItemDetail__counterWrapper__price {
   font-family: var(--font-primary);
   font-weight: bold;
-  font-size: 1.4em;
+  font-size: clamp(2rem, 2rem + 2vw, 3.2rem);
   margin-bottom: 1.2rem;
   text-shadow: 2px 2px var(--color-one-dark);
   line-height: 1.2;
@@ -166,18 +168,17 @@
   gap: 1rem;
   -webkit-animation: fadeTranslateIn 400ms forwards;
           animation: fadeTranslateIn 400ms forwards;
-  font-size: clamp(1.8rem, 1.8rem + 1.2vw, 2.8rem);
+  font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.6rem);
 }
 .ItemDetail__checkout h3 {
   color: var(--color-three);
   text-shadow: 2px 2px 0 var(--color-one);
   line-height: 1.4;
-  font-size: 1.4em;
   margin-bottom: 1rem;
   text-align: left;
   font-weight: bold;
   font-family: var(--font-primary);
-  font-size: 0.8em;
+  font-size: clamp(1.2rem, 1rem + 1.2vw, 2.2rem);
 }
 .ItemDetail__checkout__buttons {
   display: flex;
@@ -185,7 +186,7 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  font-size: 0.6em;
+  font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
 }
 .ItemDetail__checkout .CartWidget {
   max-width: 100%;
@@ -198,7 +199,7 @@
   padding: 0.2em;
   border-radius: 0.2em;
   color: var(--color-one-dark);
-  font-size: 1.2em;
+  font-size: clamp(1.2rem, 1rem + 1.2vw, 2.2rem);
   font-weight: bold;
   font-family: var(--font-primary);
   text-shadow: 1px 1px 0 var(--color-three-dark);
@@ -222,7 +223,7 @@
   transform: translate(2px, 2px);
 }
 .ItemDetail__checkout .CartWidget i {
-  font-size: 1.2em !important;
+  font-size: clamp(1.2rem, 1rem + 1.2vw, 2.2rem) !important;
   /* important to replace bulma style */
 }
 .ItemDetail__checkout__continue {
@@ -237,7 +238,7 @@
   text-align: center;
   border-radius: 0.4rem;
   color: var(--color-one-dark);
-  font-size: 1.2em;
+  font-size: clamp(1.2rem, 1rem + 1.2vw, 2.2rem);
   font-weight: bold;
   outline: 2px dashed var(--color-three-dark);
   font-family: var(--font-primary);
@@ -267,7 +268,7 @@
   }
   .ItemDetail__checkout__buttons {
     width: 100%;
-    font-size: 0.5em;
+    font-size: 0.8rem;
   }
 }
 @media (min-width: 500px) {
@@ -313,7 +314,7 @@
   .ItemDetail__infoWrapper {
     border-radius: 0.4em;
     width: 520px;
-    font-size: clamp(1.8rem, 1.8rem + 1.2vw, 2.8rem);
+    font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.6rem);
   }
   .ItemDetail__back {
     top: -4%;

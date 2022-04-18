@@ -1,3 +1,6 @@
+/* bulma size-6 */
+/* bulma size-5 */
+/* itemList title, itemDetail title */
 .CategoriesWrapper {
   width: 90%;
   min-height: 90vh;
@@ -7,7 +10,7 @@
   flex-flow: column wrap;
   justify-content: start;
   align-items: center;
-  font-size: clamp(1.4rem, 1.4rem + 1vw, 3.4rem);
+  font-size: clamp(1.2rem, 1rem + 1.2vw, 2.2rem);
 }
 
 .Categories {
@@ -29,7 +32,6 @@
   border-radius: 0.4em;
   color: var(--color-three);
   text-shadow: 2px 2px 0 var(--color-back-dark);
-  font-size: 0.9em;
   outline: 4px dashed var(--color-three-dark);
   width: 100%;
   box-shadow: 0 0 0.4em 0 var(--color-three-dark);
@@ -57,3 +59,8 @@
     margin-bottom: 0;
   }
 }
+@media (px) {
+  .Categories {
+    margin-top: 16%;
+  }
+}/*# sourceMappingURL=Categories.css.map */

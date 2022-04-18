@@ -1,3 +1,6 @@
+/* bulma size-6 */
+/* bulma size-5 */
+/* itemList title, itemDetail title */
 .Error404Wrapper {
   min-height: calc(100vh - 76px - 60px - 0.2rem);
   /* container height= 100vh-navHeight-tabsHeight-margins */
@@ -12,7 +15,7 @@
   width: 100%;
   margin: auto;
   margin-top: 1.4vh;
-  font-size: clamp(2.4rem, 2rem + 2vw, 3.4rem);
+  font-size: clamp(2rem, 2rem + 2vw, 3.2rem);
   -webkit-animation: fadeTranslateIn 200ms ease-in-out forwards;
           animation: fadeTranslateIn 200ms ease-in-out forwards;
   display: flex;
@@ -21,7 +24,7 @@
   align-items: center;
 }
 .Error404 h2 {
-  font-size: 1.08em;
+  font-size: clamp(2rem, 2rem + 2vw, 3.2rem);
   font-weight: 800;
   color: var(--color-one);
   text-shadow: 2px 2px 0 var(--color-three);
@@ -30,7 +33,7 @@
 .Error404 p {
   color: var(--color-three);
   text-shadow: 2px 2px 0 var(--color-three-dark);
-  font-size: 0.68em;
+  font-size: clamp(1.2rem, 1rem + 1.2vw, 2.2rem);
   max-width: 1200px;
   margin: auto;
 }
@@ -40,7 +43,7 @@
   text-shadow: 2px 2px 0 var(--color-three);
   display: block;
   text-align: center;
-  font-size: 0.82em;
+  font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.6rem);
 }
 .Error404 a:hover, .Error404 a:focus-visible {
   color: var(--color-one);

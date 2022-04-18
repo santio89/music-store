@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 .CheckoutWrapper{
     min-height: calc(100vh - 76px - 60px - .2rem); /* container height= 100vh-navHeight-tabsHeight-margins */
     width: 100%;
@@ -25,26 +27,28 @@
     flex-flow: column wrap;
     justify-content: start;
     align-items: center;
-    font-size: clamp(1.8rem, 1rem + 1.8vw, 2rem);
+    font-size: $font-fluid-md;
     color: var(--color-one);
     text-shadow: 2px 2px 0 var(--color-three);
     animation: fadeTranslateIn 400ms forwards;
     margin-bottom: 8rem;
 
     h1{
-        font-size: 1.58em;
+        font-size: $font-fluid-xl;
         border-bottom: 2px dashed var(--color-one);
         width: 100%;
         font-weight: bold;
+        margin-top: .8rem;
     }
 
     &__back{
         align-self: start;
-        margin-left: min(5%, 1rem);
-        margin-top: .8rem;
+        position: absolute;
+        left: min(5%, 1rem);
+        top: -2%;
         color: var(--color-one-dark);
         text-shadow: 1px 1px 0 var(--color-three);
-        font-size: 1em;
+        font-size: $font-fluid-sm;
         font-weight: bold;
 
         &:hover{
@@ -66,13 +70,13 @@
         h3{
             font-family: var(--font-primary);
             font-weight: bold;
-            font-size: 1em;
+            font-size: $font-fluid-lg;
             border-bottom: 2px dashed var(--color-one);
             width: 100%;
             padding: .44em;
             color:var(--color-one);
             line-height: 1;
-            margin-bottom: 1rem;
+            margin-bottom: .4rem;
         }
 
         &__list{
@@ -92,7 +96,7 @@
                 justify-content: space-evenly;
                 border-bottom: 1px dashed var(--color-three-dark);
                 width: 100%;
-                font-size: .34em;
+                font-size: $font-xxxs;
                 position: relative;
 
                 &:nth-last-child(2){
@@ -103,14 +107,14 @@
                     border: none;
                     padding: .4em;
                     font-family: var(--font-primary);
-                    font-size: .8em;
                     font-weight: bold;
                     color: var(--color-back-dark);
-                    text-shadow: 2px 2px 0 var(--color-three);
+                    text-shadow: 1px 1px 0 var(--color-three);
                     background: var(--color-one-dark);
                     letter-spacing: .04em;
                     text-align: center;
                     margin-top: auto;
+                    font-size: 1em;
                 }
             }
 
@@ -129,6 +133,7 @@
 
             &__header{
                 font-weight: bold;
+                text-shadow: 1px 1px 0 var(--color-one-dark);
       
                 span{
                     padding: .4em;
@@ -138,8 +143,7 @@
                     justify-content: center;
                     align-items: center;
                     flex: 1;
-                    font-size: 1.12em;
-                    text-align: left;
+                    text-align: left; 
                 }
             }
 
@@ -180,7 +184,7 @@
 
             &__text{
                 font-family: 'Courier New', Courier, monospace;
-                font-size: .88em;
+                font-size: $font-fluid-sm;
                 color: var(--color-three);
                 text-align: left;
                 width: 100%;
@@ -188,7 +192,7 @@
 
             &__buttons{
                 font-family: 'Courier New', Courier, monospace;
-                font-size: .72em;
+                font-size: $font-fluid-xs;
                 display: flex;
                 flex-flow: column wrap;
                 justify-content: center;
@@ -212,7 +216,7 @@
                     will-change: transform;
 
                     i{
-                        font-size: 1.4em;
+                        font-size: $font-fluid-md;
                     }   
 
                     &:hover, &:focus-visible{
@@ -244,9 +248,11 @@
     .Checkout{
         &__details{
             &__list{
+                
                 li{
-                    font-size: .4em;
+                    font-size: .5em;
                 }
+
                 &__remove{
                     right: 0;
                 }
@@ -263,21 +269,14 @@
 @media (min-width: 400px){
     .Checkout{
         &__details{
-            h3{
-                font-size: 1.2em;
-            }
             &__list{
                 li{
-                    font-size: .5em;
-                    
-                    &:last-child{
-                        font-size: 1em;
-                    }
+                    font-size: .6em;
                 }
             }
             &__resumen{
                 &__buttons{
-                    font-size: .7   8em;
+                    font-size: .78em;
                 }
             }
         }
@@ -319,16 +318,16 @@
             flex-flow: row wrap;
 
             h3{
-                font-size: 1.48em;
+                margin-bottom: 1rem;
             }
 
             &__list{
                 width: 68%;
                 border-radius: .4em .4em .8em .8em;
 
+
                 li:last-child{
                     border-radius: 0 0 .4em .4em;
-                    font-size: 1.18em;
                 }
 
                 &__remove{

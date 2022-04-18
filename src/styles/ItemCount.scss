@@ -1,6 +1,8 @@
+@import './variables.scss';
+
 .ItemCount{
     font-family: var(--font-primary);
-    font-size: clamp(1.8rem, 1.8rem + 1.2vw, 2.8rem);
+    font-size: $font-fluid-lg;
     border-radius: .4em;
     max-width: 100%;
     display: flex;
@@ -30,7 +32,7 @@
         color: var(--color-three);
         text-align: center;
         text-shadow: 2.4px 2.4px 0 var(--color-back-dark), 3px 3px 0 var(--color-one);
-        font-size: 1.2em;
+        font-size: $font-fluid-xl;
         padding: .4rem;
         flex: 1;
         transition: 200ms;
@@ -51,7 +53,7 @@
           color: var(--color-one);
           padding: .8rem;
           text-align: center;
-          font-size: 1.8em;
+          font-size: $font-fluid-xxl;
           font-family: var(--font-primary);
           line-height: 1;
           text-shadow: 2.4px 2.4px 0 var(--color-three), 4px 4px 0 var(--color-one);
@@ -60,7 +62,7 @@
     }
 
     &__add{
-      font-size: .9em;
+      font-size: $font-fluid-lg;
       font-family: var(--font-primary);
       font-weight: bold;
       line-height: 1.2;
@@ -89,9 +91,9 @@
 
     &__stock{
         position: absolute;
-        top: -20%;
+        top: -22%;
         right: 2%;
-        font-size: .44em;
+        font-size: $font-fluid-xs;
         font-family: 'Courier New', Courier, monospace;
     }
 }

@@ -106,12 +106,10 @@ export default function NavBar({brand}){
 
     return(
         <>
-        
-        <nav className="navbar is-fixed-top is-danger has-shadow is-spaced nav" id="nav" role="navigation" aria-label="main navigation">
-            <NavBrand />
-            <NavContent />
-        </nav>
-
+            <nav className="navbar is-fixed-top is-danger has-shadow is-spaced nav" id="nav" role="navigation" aria-label="main navigation">
+                <NavBrand />
+                <NavContent />
+            </nav>
         </>
     )
 }

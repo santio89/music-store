@@ -1,3 +1,6 @@
+/* bulma size-6 */
+/* bulma size-5 */
+/* itemList title, itemDetail title */
 .ItemLink {
   border-radius: 1.6rem;
   transition: box-shadow 100ms;
@@ -47,7 +50,7 @@
 }
 .Item__content {
   background: none;
-  font-size: 0.4em;
+  font-size: 1rem;
   position: absolute;
   top: 2%;
   left: 0;
@@ -64,11 +67,11 @@
   background: rgba(0, 0, 0, 0.4);
   width: 100%;
   padding-left: 2%;
-  font-size: 1.24em;
+  font-size: 1rem;
   line-height: 1.2;
 }
 .Item__content__price {
-  font-size: 2.1em;
+  font-size: 1.8rem;
   font-weight: bold;
   color: var(--color-three);
   text-shadow: 2px 2px var(--color-one-dark), 3px 3px var(--color-back-dark);
@@ -83,8 +86,7 @@
   text-align: center;
   background: var(--color-back-dark);
   padding: 0.38em;
-  color: var(--color-one-dark);
-  font-size: 1em;
+  font-size: 2rem;
   color: var(--color-three-dark);
   transition: color 400ms;
 }/*# sourceMappingURL=Item.css.map */
