@@ -23,7 +23,7 @@ export default function Checkout() {
                 {
                   carrito.map((item, index)=>{
                       let subtotal = item?.item?.precio * item?.item?.count;
-                      return(<li key={item?.item?.id + index} className='Checkout__details__list__li'><span>{item?.item?.title}</span> <span>{item?.item?.artists_sort}</span><span>${item?.item?.precio}</span><span>{item?.item?.count}</span><span>${subtotal}</span><button className='Checkout__details__list__remove' aria-label='Eliminar product' title='Eliminar producto' onClick={()=>cartRemove(item?.item?.id)}><i className="bi bi-trash-fill"></i></button></li>)
+                      return(<li key={item?.item?.id} className='Checkout__details__list__li'><span>{item?.item?.title}</span> <span>{item?.item?.artists_sort}</span><span>${item?.item?.precio}</span><span>{item?.item?.count}</span><span>${subtotal}</span><button className='Checkout__details__list__remove' aria-label='Eliminar product' title='Eliminar producto' onClick={()=>cartRemove(item?.item?.id)}><i className="bi bi-trash-fill"></i></button></li>)
                     }
                   )
                 }
