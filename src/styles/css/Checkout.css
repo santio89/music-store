@@ -33,7 +33,7 @@
   margin-bottom: 8rem;
 }
 .Checkout h1 {
-  font-size: 1.4em;
+  font-size: 1.58em;
   border-bottom: 2px dashed var(--color-one);
   width: 100%;
   font-weight: bold;
@@ -67,9 +67,9 @@
   font-size: 1em;
   border-bottom: 2px dashed var(--color-one);
   width: 100%;
-  padding: 0.4em;
+  padding: 0.44em;
   color: var(--color-one);
-  line-height: 1.2;
+  line-height: 1;
   margin-bottom: 1rem;
 }
 .Checkout__details__list {
@@ -261,7 +261,7 @@
     flex-flow: row wrap;
   }
   .Checkout__details h3 {
-    font-size: 1.44em;
+    font-size: 1.48em;
   }
   .Checkout__details__list {
     width: 68%;
