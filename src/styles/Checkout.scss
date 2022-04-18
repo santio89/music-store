@@ -132,10 +132,10 @@
                 color: var(--color-three-dark);
                 filter: drop-shadow(1px 1px 0 var(--color-three-accent));
                 position:absolute;
-                right: 4%;
+                right: 2%;
                 top: 0;
-                font-size: 1.12em;
-                padding: .2em;
+                font-size: 1em;
+                padding: .1em;
 
                 &:hover, &:focus-visible{
                     color: var(--color-one);
@@ -165,7 +165,7 @@
 
             &__text{
                 font-family: 'Courier New', Courier, monospace;
-                font-size: 1em;
+                font-size: .88em;
                 color: var(--color-three);
                 text-align: left;
                 width: 100%;
@@ -231,7 +231,6 @@
             &__list{
                 li{
                     font-size: .4em;
-                    gap: clamp(.2rem, .2rem + 2vw, 4rem);
                 }
                 &__remove{
                     right: 0;
@@ -254,7 +253,7 @@
             }
             &__list{
                 li{
-                    font-size: .52em;
+                    font-size: .5em;
                     
                     &:last-child{
                         font-size: 1em;
@@ -276,6 +275,7 @@
             &__list{
                 li{
                     font-size: .6em;
+                    gap: clamp(.2rem, .2rem + 2vw, 4rem);
                 }
             }
        
@@ -283,13 +283,13 @@
     }
 }
 
-@media (min-width: 600px){
+@media (min-width: 620px){
     .Checkout{
         &__details{
             &__list{
                 li{
                     font-size: .78em;
-                }
+                } 
             }
         }
     }
@@ -314,6 +314,10 @@
                 li:last-child{
                     border-radius: 0 0 .4em .4em;
                     font-size: 1.18em;
+                }
+
+                &__remove{
+                    padding: .2em;
                 }
             }
 

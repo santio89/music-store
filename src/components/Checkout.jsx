@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../Context/CartContext';
 import { useNavigate } from 'react-router-dom';
@@ -7,12 +7,8 @@ import "../styles/css/Checkout.css";
 export default function Checkout() {
   const history = useNavigate();
 
-  const {carrito, cartClear, cartRemove} = useContext(CartContext);
-  const [total, setTotal] = useState(0);
+  const {carrito, cartItems, cartClear, cartRemove, total} = useContext(CartContext);
 
-  useEffect(()=>{
-    setTotal(carrito.reduce((total, item)=>total+=item?.item?.precio * item?.item?.count, 0));
-  }, [carrito])
   
   return (  
     <div className="CheckoutWrapper">
@@ -37,8 +33,8 @@ export default function Checkout() {
                 <h3>Resumen</h3>
                 <div className="Checkout__details__resumen__info">
                   <div className="Checkout__details__resumen__text">
-                    <p>Items en carrito: </p>
-                    <p>Total: </p>
+                    <p>◖Items: {cartItems}</p>
+                    <p>◖Total: ${total}</p>
                   </div>
                   <div className='Checkout__details__resumen__buttons'>
                     <button onClick={()=>{cartClear()}}><i className="bi bi-cart-x-fill"></i>&nbsp;VACIAR CARRITO</button>

@@ -124,10 +124,10 @@
   color: var(--color-three-dark);
   filter: drop-shadow(1px 1px 0 var(--color-three-accent));
   position: absolute;
-  right: 4%;
+  right: 2%;
   top: 0;
-  font-size: 1.12em;
-  padding: 0.2em;
+  font-size: 1em;
+  padding: 0.1em;
 }
 .Checkout__details__list__remove:hover, .Checkout__details__list__remove:focus-visible {
   color: var(--color-one);
@@ -153,7 +153,7 @@
 }
 .Checkout__details__resumen__text {
   font-family: "Courier New", Courier, monospace;
-  font-size: 1em;
+  font-size: 0.88em;
   color: var(--color-three);
   text-align: left;
   width: 100%;
@@ -206,7 +206,6 @@
 @media (min-width: 320px) {
   .Checkout__details__list li {
     font-size: 0.4em;
-    gap: clamp(0.2rem, 0.2rem + 2vw, 4rem);
   }
   .Checkout__details__list__remove {
     right: 0;
@@ -221,7 +220,7 @@
     font-size: 1.2em;
   }
   .Checkout__details__list li {
-    font-size: 0.52em;
+    font-size: 0.5em;
   }
   .Checkout__details__list li:last-child {
     font-size: 1em;
@@ -233,9 +232,10 @@
 @media (min-width: 500px) {
   .Checkout__details__list li {
     font-size: 0.6em;
+    gap: clamp(0.2rem, 0.2rem + 2vw, 4rem);
   }
 }
-@media (min-width: 600px) {
+@media (min-width: 620px) {
   .Checkout__details__list li {
     font-size: 0.78em;
   }
@@ -258,6 +258,9 @@
   .Checkout__details__list li:last-child {
     border-radius: 0 0 0.4em 0.4em;
     font-size: 1.18em;
+  }
+  .Checkout__details__list__remove {
+    padding: 0.2em;
   }
   .Checkout__details__resumen {
     width: 28%;
