@@ -1,6 +1,14 @@
+/* bulma is-size-7 */
+/* bulma is-size-6 */
+/* bulma is-size-5 */
+/* bulma is-size-4 */
+/* bulma is-size-3 */
+/* bulma is-size-2 */
+/* bulma is-size-1 */
 .nav {
   min-height: 76px;
   z-index: 2;
+  font-size: 1rem;
 }
 .nav__logo {
   font-weight: 800;

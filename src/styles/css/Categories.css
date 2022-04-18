@@ -1,6 +1,10 @@
-/* bulma size-6 */
-/* bulma size-5 */
-/* itemList title, itemDetail title */
+/* bulma is-size-7 */
+/* bulma is-size-6 */
+/* bulma is-size-5 */
+/* bulma is-size-4 */
+/* bulma is-size-3 */
+/* bulma is-size-2 */
+/* bulma is-size-1 */
 .CategoriesWrapper {
   width: 90%;
   min-height: 90vh;
@@ -10,7 +14,7 @@
   flex-flow: column wrap;
   justify-content: start;
   align-items: center;
-  font-size: clamp(1.2rem, 1rem + 1.2vw, 2.2rem);
+  font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
 }
 
 .Categories {

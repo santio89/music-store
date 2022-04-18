@@ -1,6 +1,10 @@
-/* bulma size-6 */
-/* bulma size-5 */
-/* itemList title, itemDetail title */
+/* bulma is-size-7 */
+/* bulma is-size-6 */
+/* bulma is-size-5 */
+/* bulma is-size-4 */
+/* bulma is-size-3 */
+/* bulma is-size-2 */
+/* bulma is-size-1 */
 .footer {
   padding: 1em;
   padding-bottom: 0;
@@ -10,7 +14,7 @@
   justify-content: center;
   align-items: start;
   gap: 0.2em;
-  font-size: clamp(1.2rem, 1rem + 1.2vw, 2.2rem);
+  font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
   background: linear-gradient(135deg, var(--color-back-dark) 80%, var(--color-one-dark) 80%);
   margin-top: auto;
   line-height: 1.2;
@@ -19,7 +23,7 @@
   color: var(--color-one);
   font-weight: 800;
   text-shadow: 2px 2px 0 var(--color-three);
-  font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.6rem);
+  font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.8rem);
 }
 .footer a {
   color: var(--color-three);

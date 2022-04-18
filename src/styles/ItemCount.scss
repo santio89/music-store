@@ -63,16 +63,14 @@
 
     &__add{
       font-size: $font-fluid-lg;
-      font-family: var(--font-primary);
+      font-family: 'Courier New', Courier, monospace;
       font-weight: bold;
       line-height: 1.2;
       background-color: var(--color-back-dark);
-      color: var(--color-one);
-      padding-top: .4rem; 
-      padding-bottom: .4rem;
+      color: var(--color-one); 
       text-align: center;
       text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
-      outline: 1px dashed var(--color-three-dark);
+      outline: 2px dashed var(--color-three-dark);
       border-radius: .4rem;
       padding: .4em;
       margin-top: .8rem;
@@ -81,7 +79,8 @@
       
       &:hover, &:focus-visible{
         background: var(--color-back);
-        outline: 1px dashed var(--color-three);
+        outline: 2px dashed var(--color-one);
+        color: var(--color-one);
       }
 
       &:active{

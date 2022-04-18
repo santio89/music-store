@@ -184,15 +184,15 @@
             text-shadow: 2px 2px 0 var(--color-one);
             line-height: 1.4;
             margin-bottom: 1rem;
-            text-align: left;
+            text-align: center;
             font-weight: bold;
             font-family: var(--font-primary);
-            font-size: $font-fluid-md;
+            font-size: $font-fluid-lg;
         }
 
         &__buttons{
             display: flex;
-            flex-flow: row wrap;
+            flex-flow: column wrap;
             justify-content: center;
             align-items: center;
             gap: 1rem;
@@ -200,8 +200,9 @@
         }
 
         .CartWidget{
-            max-width: 100%;
             width: 100%;
+            max-width: 580px;
+            margin: auto;
             margin-top: 1rem;
             margin-bottom: 0;
             display: flex;
@@ -209,13 +210,13 @@
             align-items: center;
             padding: .2em;
             border-radius: .2em;
-            color: var(--color-one-dark);
+            color: var(--color-one);
             font-size: $font-fluid-md;
             font-weight: bold;
-            font-family: var(--font-primary);
-            text-shadow: 1px 1px 0 var(--color-three-dark);
+            font-family: 'Courier New', Courier, monospace;
+            text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
             justify-content: center;
-            background: var(--color-three-accent);
+            background: var(--color-back-dark);
             text-align: center;
             border-radius: .4rem;
             outline: 2px dashed var(--color-three-dark);
@@ -228,8 +229,8 @@
 
             &:hover, &:focus-visible{
                 outline: 2px dashed var(--color-one);
-                background: var(--color-three);
                 color: var(--color-one);
+                background: var(--color-back);
             }
 
             &:active{
@@ -245,26 +246,27 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            max-width: 100%;
             width: 100%;
+            max-width: 580px;
+            margin: auto;
             margin-top: 1rem;
             margin-bottom: 0;
             padding: .2em;
             text-align: center;
             border-radius: .4rem;
-            color: var(--color-one-dark);
+            color: var(--color-one);
             font-size: $font-fluid-md;
             font-weight: bold;
             outline: 2px dashed var(--color-three-dark);
-            font-family: var(--font-primary);
-            text-shadow: 1px 1px 0 var(--color-three-dark);
-            background: var(--color-three-accent);
+            font-family: 'Courier New', Courier, monospace;
+            text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
+            background: var(--color-back-dark);
             transition: 200ms;
             will-change: transform;
 
             &:hover, &:focus-visible{
                 outline: 2px dashed var(--color-one);
-                background: var(--color-three);
+                background: var(--color-back);
                 color: var(--color-one);
             }
 
@@ -287,7 +289,6 @@
             width: 100%;
             &__buttons{
                 width: 100%;
-                font-size: $font-xxs;
             }
         } 
     }

@@ -1,6 +1,10 @@
-/* bulma size-6 */
-/* bulma size-5 */
-/* itemList title, itemDetail title */
+/* bulma is-size-7 */
+/* bulma is-size-6 */
+/* bulma is-size-5 */
+/* bulma is-size-4 */
+/* bulma is-size-3 */
+/* bulma is-size-2 */
+/* bulma is-size-1 */
 .Error404Wrapper {
   min-height: calc(100vh - 76px - 60px - 0.2rem);
   /* container height= 100vh-navHeight-tabsHeight-margins */
@@ -33,7 +37,7 @@
 .Error404 p {
   color: var(--color-three);
   text-shadow: 2px 2px 0 var(--color-three-dark);
-  font-size: clamp(1.2rem, 1rem + 1.2vw, 2.2rem);
+  font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
   max-width: 1200px;
   margin: auto;
 }
@@ -43,7 +47,7 @@
   text-shadow: 2px 2px 0 var(--color-three);
   display: block;
   text-align: center;
-  font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.6rem);
+  font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.8rem);
 }
 .Error404 a:hover, .Error404 a:focus-visible {
   color: var(--color-one);

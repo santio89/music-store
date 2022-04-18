@@ -69,7 +69,7 @@ export default function ItemDetail({loading, producto}) {
                                 </div>}
                                 
                                 {continueCheckout?<div className='ItemDetail__checkout'>
-                                            <h3>Productos agregados<br />al carrito!</h3>
+                                            <h3>Productos agregados!</h3>
                                             <div className='ItemDetail__checkout__buttons'>
                                                 <CartWidget message={"Ir al checkout"} />
                                                 <button onClick={()=>{setContinueCheckout(false)}} className='ItemDetail__checkout__continue'>Seguir comprando</button>
