@@ -72,16 +72,21 @@
             padding: .4em;
             color:var(--color-one);
             line-height: 1.2;
+            margin-bottom: 1rem;
         }
 
         &__list{
             display: flex;
             flex-flow: column wrap;
-            justify-content: space-between;
+            justify-content: start;
             align-items: center; 
             background-color: var(--color-back-dark);
             width: 100%;
             font-family: 'Courier New', Courier, monospace;
+
+            &__header{
+                font-weight: bold;
+            }
 
             li{
                 padding: .2em;
@@ -109,6 +114,7 @@
                     background: var(--color-one-dark);
                     letter-spacing: .04em;
                     text-align: center;
+                    margin-top: auto;
                 }
 
                 span{
@@ -120,10 +126,6 @@
                     align-items: center;
                     flex: 1;
                 }
-            }
-
-            &__header{
-                margin-top: 1rem;
             }
 
             &__remove{
@@ -161,6 +163,14 @@
                 padding-top: 0; 
             }
 
+            &__text{
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1em;
+                color: var(--color-three);
+                text-align: left;
+                width: 100%;
+            }
+
             &__buttons{
                 font-family: 'Courier New', Courier, monospace;
                 font-size: .72em;
@@ -188,7 +198,6 @@
 
                     i{
                         font-size: 1.4em;
-                        margin-left: .4rem;
                     }   
 
                     &:hover, &:focus-visible{
@@ -230,7 +239,7 @@
             }
             &__resumen{
                 &__info{
-                    padding: .8rem;
+                    padding: 1rem;
                     padding-top: 0; 
                 }
             }

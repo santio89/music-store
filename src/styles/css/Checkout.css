@@ -70,15 +70,19 @@
   padding: 0.4em;
   color: var(--color-one);
   line-height: 1.2;
+  margin-bottom: 1rem;
 }
 .Checkout__details__list {
   display: flex;
   flex-flow: column wrap;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
   background-color: var(--color-back-dark);
   width: 100%;
   font-family: "Courier New", Courier, monospace;
+}
+.Checkout__details__list__header {
+  font-weight: bold;
 }
 .Checkout__details__list li {
   padding: 0.2em;
@@ -105,6 +109,7 @@
   background: var(--color-one-dark);
   letter-spacing: 0.04em;
   text-align: center;
+  margin-top: auto;
 }
 .Checkout__details__list li span {
   padding: 0.4em;
@@ -114,9 +119,6 @@
   justify-content: center;
   align-items: center;
   flex: 1;
-}
-.Checkout__details__list__header {
-  margin-top: 1rem;
 }
 .Checkout__details__list__remove {
   color: var(--color-three-dark);
@@ -149,6 +151,13 @@
   padding: 0.4rem;
   padding-top: 0;
 }
+.Checkout__details__resumen__text {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
+  color: var(--color-three);
+  text-align: left;
+  width: 100%;
+}
 .Checkout__details__resumen__buttons {
   font-family: "Courier New", Courier, monospace;
   font-size: 0.72em;
@@ -176,7 +185,6 @@
 }
 .Checkout__details__resumen__buttons button i, .Checkout__details__resumen__buttons a i {
   font-size: 1.4em;
-  margin-left: 0.4rem;
 }
 .Checkout__details__resumen__buttons button:hover, .Checkout__details__resumen__buttons button:focus-visible, .Checkout__details__resumen__buttons a:hover, .Checkout__details__resumen__buttons a:focus-visible {
   color: var(--color-one);
@@ -204,7 +212,7 @@
     right: 0;
   }
   .Checkout__details__resumen__info {
-    padding: 0.8rem;
+    padding: 1rem;
     padding-top: 0;
   }
 }
