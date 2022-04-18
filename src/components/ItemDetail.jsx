@@ -10,7 +10,7 @@ export default function ItemDetail({loading, producto}) {
     producto.precio = Math.trunc(Math.abs((producto.community?.have - producto.community?.want) * .8 + 200))
     producto.stockInitial = producto.community?.have;
 
-    const initial = 0;
+    const initial = 1;
     producto.stockInitial = Math.trunc(producto.stockInitial/40 + 10); /* disminuyo el stock solo a modo de que se pueda probar agotar el stock (mas rapidamente) */
 
     const history = useNavigate();
@@ -19,11 +19,10 @@ export default function ItemDetail({loading, producto}) {
 
     const {cartAdd} = useContext(CartContext)
     
-    const onAdd=(amount)=>{
-        console.log(`ADDED ${amount} TO CART`)
-        setStock(stock-amount);
+    const onAdd=(count)=>{
+        setStock(stock-count);
         setContinueCheckout(true);
-        cartAdd(amount, producto);
+        cartAdd({...producto, count});
     }
 
     const failToAdd=()=>{

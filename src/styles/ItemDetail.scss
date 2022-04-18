@@ -220,17 +220,22 @@
             text-align: center;
             border-radius: .4rem;
             outline: 2px dashed var(--color-three-dark);
-            transition: color 200ms, background-color 200ms, outline 200ms;
+            transition: 200ms;
+            will-change: transform;
 
             span{
                 display: block;
             }
 
-            &:hover, &:focus{
+            &:hover, &:focus-visible{
                 outline: 2px dashed var(--color-one);
                 background: var(--color-three);
                 color: var(--color-one);
             }
+
+            &:active{
+                transform: translate(2px, 2px);
+              }
 
             i{
                 font-size: 1.2em !important; /* important to replace bulma style */
@@ -255,14 +260,18 @@
             font-family: var(--font-primary);
             text-shadow: 1px 1px 0 var(--color-three-dark);
             background: var(--color-three-accent);
-            transition: color 200ms, background-color 200ms, outline 200ms;
+            transition: 200ms;
+            will-change: transform;
 
-            &:hover, &:focus{
+            &:hover, &:focus-visible{
                 outline: 2px dashed var(--color-one);
                 background: var(--color-three);
                 color: var(--color-one);
             }
-        
+
+            &:active{
+                transform: translate(2px, 2px);
+              }
         }
     }
 }

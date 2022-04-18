@@ -1,15 +1,14 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { CartContext } from '../Context/CartContext';
-import { useNavigate } from 'react-router-dom'
-import "../styles/css/Checkout.css"
+import { useNavigate } from 'react-router-dom';
+import "../styles/css/Checkout.css";
 
 export default function Checkout() {
   const history = useNavigate();
 
-  const context = useContext(CartContext);
-  const carrito = context.carrito;
-  const clear = context.cartClear;
-
+  const {carrito, cartClear, cartRemove} = useContext(CartContext);
+  
   return (  
     <div className="CheckoutWrapper">
         <div className="Checkout">
@@ -21,17 +20,22 @@ export default function Checkout() {
                 {carrito.length===0?null:<li className='Checkout__details__list__header'><span>TITULO</span><span>ARTISTA</span><span>PRECIO</span><span>CANT.</span><span>SUBT.</span></li>}
                
                 {
-                  carrito.map(item=>
-                    <li key={item.id}><span>{item.item.title}</span> <span>{item.item.artists_sort}</span><span>${item.item.precio}</span><span>1</span><span>$subt</span></li>
+                  carrito.map((item, index)=>{
+                      let subtotal = item?.item?.precio * item?.item?.count;
+                      return(<li key={item?.item?.id + index}><span>{item?.item?.title}</span> <span>{item?.item?.artists_sort}</span><span>${item?.item?.precio}</span><span>{item?.item?.count}</span><span>${subtotal}</span><button className='Checkout__details__list__remove' aria-label='Eliminar product' title='Eliminar producto' onClick={()=>cartRemove(item?.item?.id)}><i className="bi bi-trash-fill"></i></button></li>)
+                    }
                   )
                 }
-                {carrito.length===0?<li>No hay productos en el carrito</li>:<li>TOTAL: ${"total"}</li>}
+                {carrito.length===0?<li>No hay productos en el carrito</li>:<li>TOTAL: ${carrito.reduce((total, item)=>total+=item?.item?.precio * item?.item?.count, 0)}</li>}
               </ul>
               <div className='Checkout__details__resumen'>
                 <h3>Resumen</h3>
-                <div className='Checkout__details__resumen__buttons'>
-                  <button onClick={()=>{clear()}}><i className="bi bi-cart-x-fill"></i>&nbsp;VACIAR CARRITO</button>
-                  <button ><i class="bi bi-cart-check-fill"></i>&nbsp;FINALIZAR COMPRA</button>
+                <div className="Checkout__details__resumen__info">
+                  <div className='Checkout__details__resumen__buttons'>
+                    <button onClick={()=>{cartClear()}}><i className="bi bi-cart-x-fill"></i>&nbsp;VACIAR CARRITO</button>
+                    <Link to="/" ><i className="bi bi-cart-plus-fill"></i>&nbsp;SEGUIR COMPRANDO</Link>
+                    <button ><i className="bi bi-cart-check-fill"></i>&nbsp;FINALIZAR COMPRA</button>
+                  </div>
                 </div>
               </div>
             </div>

@@ -33,10 +33,14 @@
   padding: 0.4rem;
   flex: 1;
   transition: 200ms;
+  will-change: transform;
 }
-.ItemCount__buttons button:hover {
+.ItemCount__buttons button:hover, .ItemCount__buttons button:focus-visible {
   color: var(--color-one);
   background: var(--color-three-dark);
+}
+.ItemCount__buttons button:active {
+  transform: translate(2px, 2px);
 }
 .ItemCount__buttons__number {
   flex: 1;
@@ -65,11 +69,14 @@
   padding: 0.4em;
   margin-top: 0.8rem;
   transition: 200ms;
+  will-change: transform;
 }
-.ItemCount__add:hover {
-  text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
+.ItemCount__add:hover, .ItemCount__add:focus-visible {
   background: var(--color-back);
   outline: 1px dashed var(--color-three);
+}
+.ItemCount__add:active {
+  transform: translate(2px, 2px);
 }
 .ItemCount__stock {
   position: absolute;

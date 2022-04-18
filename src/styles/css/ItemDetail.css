@@ -208,15 +208,19 @@
   text-align: center;
   border-radius: 0.4rem;
   outline: 2px dashed var(--color-three-dark);
-  transition: color 200ms, background-color 200ms, outline 200ms;
+  transition: 200ms;
+  will-change: transform;
 }
 .ItemDetail__checkout .CartWidget span {
   display: block;
 }
-.ItemDetail__checkout .CartWidget:hover, .ItemDetail__checkout .CartWidget:focus {
+.ItemDetail__checkout .CartWidget:hover, .ItemDetail__checkout .CartWidget:focus-visible {
   outline: 2px dashed var(--color-one);
   background: var(--color-three);
   color: var(--color-one);
+}
+.ItemDetail__checkout .CartWidget:active {
+  transform: translate(2px, 2px);
 }
 .ItemDetail__checkout .CartWidget i {
   font-size: 1.2em !important;
@@ -240,12 +244,16 @@
   font-family: var(--font-primary);
   text-shadow: 1px 1px 0 var(--color-three-dark);
   background: var(--color-three-accent);
-  transition: color 200ms, background-color 200ms, outline 200ms;
+  transition: 200ms;
+  will-change: transform;
 }
-.ItemDetail__checkout__continue:hover, .ItemDetail__checkout__continue:focus {
+.ItemDetail__checkout__continue:hover, .ItemDetail__checkout__continue:focus-visible {
   outline: 2px dashed var(--color-one);
   background: var(--color-three);
   color: var(--color-one);
+}
+.ItemDetail__checkout__continue:active {
+  transform: translate(2px, 2px);
 }
 
 @media (max-width: 320px) {

@@ -8,13 +8,11 @@ import '../../src/styles/css/CardWidget.css';
 
 
 export default function CartWidget({message}){
-    const itemsTotal = useContext(CartContext).itemsTotal();
+    const {cartItems} = useContext(CartContext);
     
     return(
         <Link to="/checkout" onClick={()=>window.scrollTo(0,0)} className="CartWidget" role="button">
-            {message?<span><i className="bi bi-cart-fill is-size-3-widescreen is-size-4-desktop is-size-3-touch"></i>&nbsp;{message}</span>:<span><i className="bi bi-cart-fill is-size-3-widescreen is-size-4-desktop is-size-3-touch"></i>&nbsp;{itemsTotal}</span>}
-            
-            
+            {message?<span><i className="bi bi-cart-fill is-size-3-widescreen is-size-4-desktop is-size-3-touch"></i>&nbsp;{message}</span>:<span><i className="bi bi-cart-fill is-size-3-widescreen is-size-4-desktop is-size-3-touch"></i>&nbsp;{cartItems}</span>}
         </Link>
     )
 }

@@ -64,11 +64,12 @@
 .Checkout__details h3 {
   font-family: var(--font-primary);
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1em;
   border-bottom: 2px dashed var(--color-one);
   width: 100%;
   padding: 0.4em;
   color: var(--color-one);
+  line-height: 1.2;
 }
 .Checkout__details__list {
   display: flex;
@@ -80,14 +81,15 @@
   font-family: "Courier New", Courier, monospace;
 }
 .Checkout__details__list li {
-  font-size: 0.8em;
   padding: 0.2em;
   display: flex;
   flex-flow: row wrap;
-  gap: clamp(0.4rem, 0.4rem + 2vw, 4rem);
+  gap: clamp(0.1rem, 0.1rem + 1vw, 2rem);
   justify-content: space-evenly;
   border-bottom: 1px dashed var(--color-three-dark);
   width: 100%;
+  font-size: 0.34em;
+  position: relative;
 }
 .Checkout__details__list li:nth-last-child(2) {
   border-bottom: 2px dashed var(--color-one);
@@ -96,7 +98,7 @@
   border: none;
   padding: 0.4em;
   font-family: var(--font-primary);
-  font-size: 1em;
+  font-size: 0.8em;
   font-weight: bold;
   color: var(--color-back-dark);
   text-shadow: 2px 2px 0 var(--color-three);
@@ -116,6 +118,19 @@
 .Checkout__details__list__header {
   margin-top: 1rem;
 }
+.Checkout__details__list__remove {
+  color: var(--color-three-dark);
+  filter: drop-shadow(1px 1px 0 var(--color-three-accent));
+  position: absolute;
+  right: 4%;
+  top: 0;
+  font-size: 1.12em;
+  padding: 0.2em;
+}
+.Checkout__details__list__remove:hover, .Checkout__details__list__remove:focus-visible {
+  color: var(--color-one);
+  filter: drop-shadow(1px 1px 0 var(--color-three));
+}
 .Checkout__details__resumen {
   background-color: var(--color-back-dark);
   width: 100%;
@@ -125,9 +140,18 @@
   justify-content: start;
   align-items: center;
 }
+.Checkout__details__resumen__info {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: start;
+  align-items: center;
+  padding: 0.4rem;
+  padding-top: 0;
+}
 .Checkout__details__resumen__buttons {
   font-family: "Courier New", Courier, monospace;
-  font-size: 0.78em;
+  font-size: 0.72em;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -138,36 +162,76 @@
   overflow: hidden;
   gap: 1rem;
 }
-.Checkout__details__resumen__buttons button {
+.Checkout__details__resumen__buttons button, .Checkout__details__resumen__buttons a {
   display: flex;
   flex: row wrap;
   justify-content: start;
   align-items: center;
   color: var(--color-one-dark);
-  padding: 0.4em;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0.2em;
   border-radius: 0.2em;
   transition: 200ms;
   width: 100%;
+  will-change: transform;
 }
-.Checkout__details__resumen__buttons button i {
+.Checkout__details__resumen__buttons button i, .Checkout__details__resumen__buttons a i {
   font-size: 1.4em;
+  margin-left: 0.4rem;
 }
-.Checkout__details__resumen__buttons button:hover, .Checkout__details__resumen__buttons button:focus-visible {
+.Checkout__details__resumen__buttons button:hover, .Checkout__details__resumen__buttons button:focus-visible, .Checkout__details__resumen__buttons a:hover, .Checkout__details__resumen__buttons a:focus-visible {
   color: var(--color-one);
   outline: 1px dashed var(--color-one);
   background: var(--color-back);
 }
-.Checkout__details__resumen__buttons button:last-child {
+.Checkout__details__resumen__buttons button:active, .Checkout__details__resumen__buttons a:active {
+  transform: translate(2px, 2px);
+}
+.Checkout__details__resumen__buttons button:last-of-type, .Checkout__details__resumen__buttons a:last-of-type {
   color: var(--color-three-accent);
 }
-.Checkout__details__resumen__buttons button:last-child:hover, .Checkout__details__resumen__buttons button:last-child:focus-visible {
+.Checkout__details__resumen__buttons button:last-of-type:hover, .Checkout__details__resumen__buttons button:last-of-type:focus-visible, .Checkout__details__resumen__buttons a:last-of-type:hover, .Checkout__details__resumen__buttons a:last-of-type:focus-visible {
   color: var(--color-three);
   outline: 1px dashed var(--color-three);
   background: var(--color-back);
 }
 
+@media (min-width: 320px) {
+  .Checkout__details__list li {
+    font-size: 0.4em;
+    gap: clamp(0.2rem, 0.2rem + 2vw, 4rem);
+  }
+  .Checkout__details__list__remove {
+    right: 0;
+  }
+  .Checkout__details__resumen__info {
+    padding: 0.8rem;
+    padding-top: 0;
+  }
+}
+@media (min-width: 400px) {
+  .Checkout__details h3 {
+    font-size: 1.2em;
+  }
+  .Checkout__details__list li {
+    font-size: 0.52em;
+  }
+  .Checkout__details__list li:last-child {
+    font-size: 1em;
+  }
+  .Checkout__details__resumen__buttons {
+    font-size: 0.7 8em;
+  }
+}
+@media (min-width: 500px) {
+  .Checkout__details__list li {
+    font-size: 0.6em;
+  }
+}
+@media (min-width: 600px) {
+  .Checkout__details__list li {
+    font-size: 0.78em;
+  }
+}
 @media (min-width: 1216px) {
   .Checkout {
     width: 96%;
@@ -176,12 +240,16 @@
     display: flex;
     flex-flow: row wrap;
   }
+  .Checkout__details h3 {
+    font-size: 1.4em;
+  }
   .Checkout__details__list {
     width: 68%;
     border-radius: 0.4em 0.4em 0.8em 0.8em;
   }
   .Checkout__details__list li:last-child {
     border-radius: 0 0 0.4em 0.4em;
+    font-size: 1.18em;
   }
   .Checkout__details__resumen {
     width: 28%;

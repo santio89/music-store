@@ -1,39 +1,40 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
 
 export const CartContext = createContext();
 
 export default function CartContextProvider({children}) {
 
     const [carrito, setCarrito] = useState([]);
+    const [cartItems, setCartItems] = useState(0);
 
+    const cartAdd = (item)=>{
 
-    const cartAdd = (amount, item)=>{
-      let arrayToAdd = [];
-
-      for(let i=0; i<amount;i++){
-        arrayToAdd = [...arrayToAdd, {item}]
+      const itemIndex = carrito.findIndex(producto=>producto.item.id === item.id);
+      if(itemIndex !== -1){
+        const newCart = [...carrito];
+        newCart[itemIndex].item.count += item.count;
+        setCarrito(newCart);
+      } else{
+        setCarrito([...carrito, {item}])
       }
-      
-      setCarrito([...carrito, ...arrayToAdd])
-
     }
 
-    const cartSub = (id)=>{
-      
-      setCarrito(carrito=>{carrito.filter(item=>item.id!==id)})
+    const cartRemove = (id)=>{
+      setCarrito(carrito.filter(item=> item.item.id !== id));
+     
     }
 
     const cartClear = ()=>{
       setCarrito([]);
     }
 
-    const itemsTotal = ()=>{
-      return carrito.length;
-    }
+    useEffect(()=>{
+      setCartItems(carrito.reduce((total, item)=>total+=item.item.count, 0))
+    }, [carrito])
 
   return (
     <>
-       <CartContext.Provider value={{carrito, cartClear, cartAdd, cartSub, itemsTotal}}>
+       <CartContext.Provider value={{carrito, cartItems, cartClear, cartAdd, cartRemove}}>
             {children}
        </CartContext.Provider>
     </>

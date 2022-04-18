@@ -34,10 +34,15 @@
         padding: .4rem;
         flex: 1;
         transition: 200ms;
+        will-change: transform;
 
-        &:hover{
+        &:hover, &:focus-visible{
           color: var(--color-one);
           background: var(--color-three-dark);
+        }
+
+        &:active{
+          transform: translate(2px, 2px)
         }
       }
 
@@ -61,7 +66,7 @@
       line-height: 1.2;
       background-color: var(--color-back-dark);
       color: var(--color-one);
-      padding-top: .4rem;
+      padding-top: .4rem; 
       padding-bottom: .4rem;
       text-align: center;
       text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
@@ -70,11 +75,15 @@
       padding: .4em;
       margin-top: .8rem;
       transition: 200ms;
+      will-change: transform;
       
-      &:hover{
-        text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
+      &:hover, &:focus-visible{
         background: var(--color-back);
         outline: 1px dashed var(--color-three);
+      }
+
+      &:active{
+        transform: translate(2px, 2px);
       }
     }
 

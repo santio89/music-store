@@ -27,7 +27,7 @@ export default function ItemCount({onAdd, failToAdd, initial, stock}) {
     return(
         <div className="ItemCount">
             <div className="ItemCount__buttons">
-                <button className="ItemCount__buttons__decrease" onClick={counter>0?decrease:null}>-</button>
+                <button className="ItemCount__buttons__decrease" onClick={counter>1?decrease:null}>-</button>
                 <div className="ItemCount__buttons__number">{counter}</div>
                 <button className="ItemCount__buttons__increase" onClick={counter>stock-1?null:(stock>0?increase:null)}>+</button>
             </div>
