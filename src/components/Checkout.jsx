@@ -9,7 +9,7 @@ export default function Checkout() {
 
   const {carrito, cartItems, cartClear, cartRemove, total} = useContext(CartContext);
 
-  
+  console.log(carrito)
   return (  
     <div className="CheckoutWrapper">
         <div className="Checkout">
@@ -22,9 +22,9 @@ export default function Checkout() {
                 {carrito.length===0?null:<li className='Checkout__details__list__header'><span>TITULO</span><span>ARTISTA</span><span>PRECIO</span><span>CANT.</span><span>SUBT.</span></li>}
                
                 {
-                  carrito.map((item, index)=>{
+                  carrito.map((item)=>{
                       let subtotal = item?.item?.precio * item?.item?.count;
-                      return(<li key={item?.item?.id} className='Checkout__details__list__li'><span>{item?.item?.title}</span> <span>{item?.item?.artists_sort}</span><span>${item?.item?.precio}</span><span>{item?.item?.count}</span><span>${subtotal}</span><button className='Checkout__details__list__remove' aria-label='Eliminar product' title='Eliminar producto' onClick={()=>cartRemove(item?.item?.id)}><i className="bi bi-trash-fill"></i></button></li>)
+                      return(<li key={item?.item?.id} className='Checkout__details__list__li'><span><Link to={`/item/${item?.item?.id}`}><img alt="item" src={item?.item?.images?.[0]?.uri}></img></Link>{item?.item?.title}</span> <span>{item?.item?.artists_sort}</span><span>${item?.item?.precio}</span><span>{item?.item?.count}</span><span>${subtotal}</span><button className='Checkout__details__list__remove' aria-label='Eliminar product' title='Eliminar producto' onClick={()=>cartRemove(item?.item?.id)}><i className="bi bi-trash-fill"></i></button></li>)
                     }
                   )
                 }
