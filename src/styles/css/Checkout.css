@@ -81,9 +81,6 @@
   width: 100%;
   font-family: "Courier New", Courier, monospace;
 }
-.Checkout__details__list__header {
-  font-weight: bold;
-}
 .Checkout__details__list li {
   padding: 0.2em;
   display: flex;
@@ -111,7 +108,7 @@
   text-align: center;
   margin-top: auto;
 }
-.Checkout__details__list li span {
+.Checkout__details__list__li span {
   padding: 0.4em;
   color: var(--color-three-accent);
   display: flex;
@@ -119,6 +116,21 @@
   justify-content: center;
   align-items: center;
   flex: 1;
+  text-align: left;
+}
+.Checkout__details__list__header {
+  font-weight: bold;
+}
+.Checkout__details__list__header span {
+  padding: 0.4em;
+  color: var(--color-three-accent);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  font-size: 1.12em;
+  text-align: left;
 }
 .Checkout__details__list__remove {
   color: var(--color-three-dark);

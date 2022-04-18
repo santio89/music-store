@@ -84,10 +84,6 @@
             width: 100%;
             font-family: 'Courier New', Courier, monospace;
 
-            &__header{
-                font-weight: bold;
-            }
-
             li{
                 padding: .2em;
                 display: flex;
@@ -116,7 +112,9 @@
                     text-align: center;
                     margin-top: auto;
                 }
+            }
 
+            &__li{
                 span{
                     padding: .4em;
                     color: var(--color-three-accent);
@@ -125,6 +123,23 @@
                     justify-content: center;
                     align-items: center;
                     flex: 1;
+                    text-align: left;
+                }
+            }
+
+            &__header{
+                font-weight: bold;
+      
+                span{
+                    padding: .4em;
+                    color: var(--color-three-accent);
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: center;
+                    align-items: center;
+                    flex: 1;
+                    font-size: 1.12em;
+                    text-align: left;
                 }
             }
 
