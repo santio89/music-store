@@ -30,14 +30,13 @@
           animation: fadeTranslateIn 200ms ease-in-out forwards;
   padding-bottom: 2.8rem;
   margin-bottom: 2.8rem;
-  min-height: 100vh;
   margin-top: 1rem;
 }
 .ItemDetail__body {
   display: flex;
   flex-flow: column wrap;
   justify-content: start;
-  align-items: center;
+  align-items: stretch;
   gap: 2.8rem;
   width: 100%;
   margin-top: 1.2rem;
@@ -47,7 +46,7 @@
   padding: 1rem;
   display: flex;
   flex-flow: column wrap;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   gap: clamp(1rem, 1rem + 1.4vw, 4rem);
   outline: 1px dashed var(--color-three-dark);
@@ -304,7 +303,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: start;
+    align-items: stretch;
     gap: calc(4rem + 2%);
   }
   .ItemDetail__imgWrapper {
@@ -338,10 +337,5 @@
   }
   .ItemDetail__infoWrapper {
     width: 600px;
-  }
-}
-@media (min-width: 2048px) {
-  .ItemDetail {
-    margin-top: 16%;
   }
 }/*# sourceMappingURL=ItemDetail.css.map */
