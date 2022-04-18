@@ -38,7 +38,7 @@ export default function Checkout() {
                   </div>
                   <div className='Checkout__details__resumen__buttons'>
                     <button onClick={()=>{cartClear()}}><i className="bi bi-cart-x-fill"></i>&nbsp;VACIAR CARRITO</button>
-                    <Link to="/" ><i className="bi bi-cart-plus-fill"></i>&nbsp;SEGUIR COMPRANDO</Link>
+                    <Link to="/" onClick={()=>window.scrollTo(0,0)} ><i className="bi bi-cart-plus-fill"></i>&nbsp;SEGUIR COMPRANDO</Link>
                     <button ><i className="bi bi-cart-check-fill"></i>&nbsp;FINALIZAR COMPRA</button>
                   </div>
                 </div>
