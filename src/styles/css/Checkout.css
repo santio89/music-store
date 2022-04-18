@@ -188,14 +188,15 @@
 }
 .Checkout__details__resumen__text {
   font-family: "Courier New", Courier, monospace;
-  font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
+  font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
   color: var(--color-three);
   text-align: left;
   width: 100%;
+  font-weight: bold;
 }
 .Checkout__details__resumen__buttons {
   font-family: "Courier New", Courier, monospace;
-  font-size: clamp(0.8rem, 0.8rem + 1vw, 1.32rem);
+  font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -209,17 +210,20 @@
 .Checkout__details__resumen__buttons button, .Checkout__details__resumen__buttons a {
   display: flex;
   flex: row wrap;
-  justify-content: start;
+  justify-content: end;
   align-items: center;
+  text-align: center;
   color: var(--color-one-dark);
-  padding: 0.2em;
+  padding: 0.28em;
   border-radius: 0.2em;
+  line-height: 1.2;
   transition: 200ms;
   width: 100%;
   will-change: transform;
 }
 .Checkout__details__resumen__buttons button i, .Checkout__details__resumen__buttons a i {
   font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
+  font-weight: bold;
 }
 .Checkout__details__resumen__buttons button:hover, .Checkout__details__resumen__buttons button:focus-visible, .Checkout__details__resumen__buttons a:hover, .Checkout__details__resumen__buttons a:focus-visible {
   color: var(--color-one);
@@ -256,9 +260,6 @@
   }
   .Checkout__details__list__remove {
     font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
-  }
-  .Checkout__details__resumen__buttons {
-    font-size: 0.78em;
   }
 }
 @media (min-width: 500px) {

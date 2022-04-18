@@ -199,15 +199,16 @@
 
             &__text{
                 font-family: 'Courier New', Courier, monospace;
-                font-size: $font-fluid-sm;
+                font-size: $font-fluid-md;
                 color: var(--color-three);
                 text-align: left;
                 width: 100%;
+                font-weight: bold;
             }
 
             &__buttons{
                 font-family: 'Courier New', Courier, monospace;
-                font-size: $font-fluid-xs;
+                font-size: $font-fluid-sm;
                 display: flex;
                 flex-flow: column wrap;
                 justify-content: center;
@@ -221,17 +222,20 @@
                 button, a{
                     display: flex;
                     flex: row wrap;
-                    justify-content: start;
+                    justify-content: end;
                     align-items: center;
+                    text-align: center;
                     color: var(--color-one-dark);
-                    padding: .2em;
+                    padding: .28em;
                     border-radius: .2em;
+                    line-height: 1.2;
                     transition: 200ms;
                     width: 100%;
                     will-change: transform;
 
                     i{
                         font-size: $font-fluid-md;
+                        font-weight: bold;
                     }   
 
                     &:hover, &:focus-visible{
@@ -290,11 +294,6 @@
                 }
                 &__remove{
                     font-size: $font-fluid-md;
-                }
-            }
-            &__resumen{
-                &__buttons{
-                    font-size: .78em;
                 }
             }
         }
