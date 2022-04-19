@@ -76,6 +76,7 @@
       margin-top: .8rem;
       transition: 200ms;
       will-change: transform;
+      cursor: pointer !important;
       
       &:hover, &:focus-visible{
         background: var(--color-back);
@@ -86,14 +87,24 @@
       &:active{
         transform: translate(2px, 2px);
       }
+
+      &:disabled{
+        filter: grayscale(1);
+        pointer-events: none;
+      }
     }
 
     &__stock{
         position: absolute;
-        top: -22%;
-        right: 2%;
+        top: -32%;
+        right: 1.2%;
         font-size: $font-fluid-xs;
         font-family: 'Courier New', Courier, monospace;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: start;
+        align-items: start;
+        line-height: 1.2;
     }
 }
 

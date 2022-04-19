@@ -75,6 +75,7 @@
   margin-top: 0.8rem;
   transition: 200ms;
   will-change: transform;
+  cursor: pointer !important;
 }
 .ItemCount__add:hover, .ItemCount__add:focus-visible {
   background: var(--color-back);
@@ -84,12 +85,21 @@
 .ItemCount__add:active {
   transform: translate(2px, 2px);
 }
+.ItemCount__add:disabled {
+  filter: grayscale(1);
+  pointer-events: none;
+}
 .ItemCount__stock {
   position: absolute;
-  top: -22%;
-  right: 2%;
+  top: -32%;
+  right: 1.2%;
   font-size: clamp(0.8rem, 0.8rem + 1vw, 1.32rem);
   font-family: "Courier New", Courier, monospace;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: start;
+  align-items: start;
+  line-height: 1.2;
 }
 
 @media (min-width: 1216px) {

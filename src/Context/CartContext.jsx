@@ -43,10 +43,9 @@ export default function CartContextProvider({children}) {
       for (let item of carrito){
         if (item.item.id === id){
           return item.item.count;
-        } else{
-          return 0;
-        }
+        } 
       }
+      return 0;
     }
 
     useEffect(()=>{
@@ -57,7 +56,7 @@ export default function CartContextProvider({children}) {
 
   return (
     <>
-       <CartContext.Provider value={{carrito, cartItems, total, cartClear, cartAdd, cartRemove, idCount}}>
+       <CartContext.Provider value={{carrito, cartItems, total, cartClear, cartAdd, cartRemove, modifyCount, idCount}}>
             {children}
        </CartContext.Provider>
     </>

@@ -18,6 +18,11 @@
   border-radius: 0.2em;
   padding: 8px 12px;
   filter: grayscale(0);
+  transition: filter 400ms;
+}
+.CartWidget.disabled {
+  color: var(--color-three-dark);
+  pointer-events: none;
 }
 .CartWidget span {
   display: flex;

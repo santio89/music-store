@@ -1,4 +1,4 @@
-import React, { useState, useContext }  from "react";
+import React, { useState, useContext, useEffect }  from "react";
 import { CartContext } from "../Context/CartContext";
 import '../styles/css/ItemCount.css';
 
@@ -24,20 +24,25 @@ const useCounter = (initial)=>{
 
 export default function ItemCount({onAdd, failToAdd, initial, stock, id}) {
     let {counter, increase, decrease, reset} = useCounter(initial);
-
+    const [inCart, setInCart] = useState(0);
     const {idCount} = useContext(CartContext);
-    console.log(idCount())
+    
+    useEffect(()=>{
+        setInCart(idCount(id))
+    }, [idCount, id])
+    
+    
     return(
         <div className="ItemCount">
             <div className="ItemCount__buttons">
                 <button className="ItemCount__buttons__decrease" onClick={counter>1?decrease:null}>-</button>
                 <div className="ItemCount__buttons__number">{counter}</div>
-                <button className="ItemCount__buttons__increase" onClick={counter>stock-1?null:(counter+idCount()<=stock?increase:null)}>+</button>
+                <button className="ItemCount__buttons__increase" onClick={counter>stock-1?null:(counter+idCount(id)<=stock?increase:null)}>+</button>
             </div>
             
-            <button className="ItemCount__add" onClick={counter===0?null:(counter>stock?failToAdd:()=>{onAdd(counter); reset();})}>Agregar al carrito</button>
+            <button disabled={counter+idCount(id)<=stock?false:true} className="ItemCount__add" onClick={counter===0?null:(counter>stock?failToAdd:()=>{onAdd(counter); reset();})}>Agregar al carrito</button>
 
-            <div className="ItemCount__stock">Stock: {stock}</div>
+            <div className="ItemCount__stock"><span>Stock: {stock}</span><span>Carrito: {inCart}</span></div>
         </div>
     )
 }

@@ -13,6 +13,12 @@
     border-radius: .2em;
     padding: 8px 12px;
     filter: grayscale(0);
+    transition: filter 400ms;
+
+    &.disabled{
+            color: var(--color-three-dark);
+            pointer-events: none;
+    }
 
     span{
         display: flex;
