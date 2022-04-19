@@ -22,22 +22,21 @@ export default function Checkout() {
                
                 {
                   carrito.map((item)=>{
-                      let subtotal = item?.item?.precio * item?.item?.count;
                       return(
                       <li key={item?.item?.id} className='Checkout__details__list__li'>
                         <span><Link to={`/item/${item?.item?.id}`} onClick={()=>window.scrollTo(0,0)}><img alt="item" src={item?.item?.images?.[0]?.uri}></img></Link>{item?.item?.title}</span> 
                         <span>{item?.item?.artists_sort}</span>
                         <span>${item?.item?.precio}</span>
                         <span className='Checkout__details__list__li__input'><input type="number" min={0} defaultValue={item?.item?.count} onBlur={e=>{
-                        e.target.value = Math.round(e.target.value);
-                        if(Number(e.target.value) > Number(item.item.stockInitial)){
-                          e.target.value = item.item.stockInitial;
-                          modifyCount({...item.item, count: Number(e.target.value)});
-                        } else{
-                          modifyCount({...item.item, count: Number(e.target.value)});
-                        }
+                          e.target.value = e.target.value<0?0:Math.round(e.target.value);
+                          if(Number(e.target.value) > Number(item.item.stockInitial)){
+                            e.target.value = item.item.stockInitial;
+                            modifyCount({...item.item, count: Number(e.target.value)});
+                          } else{
+                            modifyCount({...item.item, count: Number(e.target.value)});
+                          }
                         }} onKeyDown={(e)=>e.key!=="Enter"?(e.key!=='Escape'?null:e.target.blur()):e.target.blur()}/> <span className='Checkout__details__list__li__stock'>Stock: {item.item.stockInitial}</span></span>
-                        <span>${subtotal}</span>
+                        <span>${item?.item?.precio * item?.item?.count}</span>
                         <button className='Checkout__details__list__remove' aria-label='Eliminar product' title='Eliminar producto' onClick={()=>cartRemove(item?.item?.id)}><i className="bi bi-trash-fill"></i></button>
                       </li>)
                     }

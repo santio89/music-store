@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { CartContext } from '../Context/CartContext';
 import { useNavigate } from 'react-router-dom';
 import PuffLoader from "react-spinners/PuffLoader";

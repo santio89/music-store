@@ -26,11 +26,10 @@ export default function ItemListContainer(){
                 res.json().then(
                     res=>{
                         setProducto(res);
-                        setLoading(false);
                     }
                 )
             }
-        ).catch(err=>{console.log(err)}) 
+        ).catch(err=>{console.log(err)}).finally(()=>setLoading(false));
 
     }, [productId])
 

@@ -35,16 +35,15 @@ export default function ItemListContainer(){
                     res.json().then(
                         res=>{
                             setProductos(res.results);
-                            setLoading(false);
                         }
                     )
                 } else{
                     navigate("./error404")
                 }               
             }
-        ).catch(err=>{console.log(err)}) 
+        ).catch(err=>{console.log(err)}).finally(()=>setLoading(false));
 
-    }, [categoryId, searchId])
+    }, [categoryId, searchId, navigate])
 
 
      
