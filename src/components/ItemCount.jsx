@@ -37,7 +37,7 @@ export default function ItemCount({onAdd, failToAdd, initial, stock, id}) {
             <div className="ItemCount__buttons">
                 <button className="ItemCount__buttons__decrease" onClick={counter>1?decrease:null}>-</button>
                 <div className="ItemCount__buttons__number">{counter}</div>
-                <button className="ItemCount__buttons__increase" onClick={counter>stock-1?null:(counter+idCount(id)<=stock?increase:null)}>+</button>
+                <button className="ItemCount__buttons__increase" onClick={counter>stock?null:(counter+idCount(id)<stock?increase:null)}>+</button>
             </div>
             
             <button disabled={counter+idCount(id)<=stock?false:true} className="ItemCount__add" onClick={counter===0?null:(counter>stock?failToAdd:()=>{onAdd(counter); reset();})}>Agregar al carrito</button>
