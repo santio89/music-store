@@ -39,6 +39,16 @@ export default function CartContextProvider({children}) {
       setCarrito([]);
     }
 
+    const idCount = (id)=>{
+      for (let item of carrito){
+        if (item.item.id === id){
+          return item.item.count;
+        } else{
+          return 0;
+        }
+      }
+    }
+
     useEffect(()=>{
       setCartItems(carrito.reduce((total, item)=>total+=item.item.count, 0));
       
@@ -47,7 +57,7 @@ export default function CartContextProvider({children}) {
 
   return (
     <>
-       <CartContext.Provider value={{carrito, cartItems, total, cartClear, cartAdd, cartRemove, modifyCount}}>
+       <CartContext.Provider value={{carrito, cartItems, total, cartClear, cartAdd, cartRemove, idCount}}>
             {children}
        </CartContext.Provider>
     </>

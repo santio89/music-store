@@ -64,7 +64,7 @@ export default function ItemDetail({loading, producto}) {
 
                                 {continueCheckout?null:<div className='ItemDetail__counterWrapper'>
                                     <p className='ItemDetail__counterWrapper__price'>{"$"+producto.precio}</p>
-                                    <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initial} stock={producto.stockInitial}/>
+                                    <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initial} stock={producto.stockInitial} id={producto.id}/>
                                 
                                 </div>}
                                 
