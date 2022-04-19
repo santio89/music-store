@@ -119,6 +119,21 @@
             }
 
             &__li{
+                &__stock{
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(0, 50%);
+                    font-size: .68em;
+                    max-width: none !important;
+                }
+
+                &__input{
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: center;
+                    align-items: center;
+                    position:relative;
+                }
                 span{
                     padding: .4em;
                     color: var(--color-three-accent);
@@ -129,6 +144,39 @@
                     flex: 1;
                     text-align: center;
                     max-width: 10ch;
+                }
+               
+                input{
+                   /*  margin: auto; */
+                    text-align: center;
+                    width: 80%;
+                    background: none;
+                    border: none;
+                    outline: none;
+                    transition: outline 200ms;
+                    color: var(--color-three-accent);
+                    -moz-appearance: textfield;
+                    outline: 1px dashed var(--color-three-dark);
+                    border-radius: .2em;
+
+                    &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
+
+                    &:hover, &:focus{
+                        outline: 1px dashed var(--color-one);  
+
+                        &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+                               -webkit-appearance: auto;
+                               margin: 0;
+                               opacity: .2;
+                               position: absolute;
+                               top: 0;
+                               right: 0;
+                               bottom: 0;
+                           }
+                    }
                 }
                 img{
                     width: 100%;
@@ -152,7 +200,7 @@
       
                 span{
                     padding: .4em;
-                    color: var(--color-three-accent);
+                    color: var(--color-three);
                     display: flex;
                     flex-flow: row wrap;
                     justify-content: center;

@@ -7,9 +7,8 @@ import "../styles/css/Checkout.css";
 export default function Checkout() {
   const history = useNavigate();
 
-  const {carrito, cartItems, cartClear, cartRemove, total} = useContext(CartContext);
+  const {carrito, cartItems, cartClear, cartRemove, total, modifyCount} = useContext(CartContext);
 
-  console.log(carrito)
   return (  
     <div className="CheckoutWrapper">
         <div className="Checkout">
@@ -24,7 +23,14 @@ export default function Checkout() {
                 {
                   carrito.map((item)=>{
                       let subtotal = item?.item?.precio * item?.item?.count;
-                      return(<li key={item?.item?.id} className='Checkout__details__list__li'><span><Link to={`/item/${item?.item?.id}`} onClick={()=>window.scrollTo(0,0)}><img alt="item" src={item?.item?.images?.[0]?.uri}></img></Link>{item?.item?.title}</span> <span>{item?.item?.artists_sort}</span><span>${item?.item?.precio}</span><span>{item?.item?.count}</span><span>${subtotal}</span><button className='Checkout__details__list__remove' aria-label='Eliminar product' title='Eliminar producto' onClick={()=>cartRemove(item?.item?.id)}><i className="bi bi-trash-fill"></i></button></li>)
+                      return(<li key={item?.item?.id} className='Checkout__details__list__li'><span><Link to={`/item/${item?.item?.id}`} onClick={()=>window.scrollTo(0,0)}><img alt="item" src={item?.item?.images?.[0]?.uri}></img></Link>{item?.item?.title}</span> <span>{item?.item?.artists_sort}</span><span>${item?.item?.precio}</span><span className='Checkout__details__list__li__input'><input type="number" min={0} defaultValue={item?.item?.count} onBlur={e=>{
+                        if(Number(e.target.value) > Number(item.item.stockInitial)){
+                          e.target.value = item.item.stockInitial;
+                          modifyCount({...item.item, count: Number(e.target.value)});
+                        } else{
+                          modifyCount({...item.item, count: Number(e.target.value)});
+                        }
+                      }}/> <span className='Checkout__details__list__li__stock'>Stock: {item.item.stockInitial}</span> </span><span>${subtotal}</span><button className='Checkout__details__list__remove' aria-label='Eliminar product' title='Eliminar producto' onClick={()=>cartRemove(item?.item?.id)}><i className="bi bi-trash-fill"></i></button></li>)
                     }
                   )
                 }

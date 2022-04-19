@@ -9,11 +9,21 @@ export default function CartContextProvider({children}) {
     const [total, setTotal] = useState(0);
 
     const cartAdd = (item)=>{
-
       const itemIndex = carrito.findIndex(producto=>producto.item.id === item.id);
       if(itemIndex !== -1){
         const newCart = [...carrito];
         newCart[itemIndex].item.count += item.count;
+        setCarrito(newCart);
+      } else{
+        setCarrito([...carrito, {item}])
+      }
+    }
+
+    const modifyCount = (item)=>{
+      const itemIndex = carrito.findIndex(producto=>producto.item.id === item.id);
+      if(itemIndex !== -1){
+        const newCart = [...carrito];
+        newCart[itemIndex].item.count = item.count;
         setCarrito(newCart);
       } else{
         setCarrito([...carrito, {item}])
@@ -37,7 +47,7 @@ export default function CartContextProvider({children}) {
 
   return (
     <>
-       <CartContext.Provider value={{carrito, cartItems, total, cartClear, cartAdd, cartRemove}}>
+       <CartContext.Provider value={{carrito, cartItems, total, cartClear, cartAdd, cartRemove, modifyCount}}>
             {children}
        </CartContext.Provider>
     </>

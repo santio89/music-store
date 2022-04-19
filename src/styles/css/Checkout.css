@@ -117,6 +117,20 @@
   margin-top: auto;
   font-size: 1em;
 }
+.Checkout__details__list__li__stock {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, 50%);
+  font-size: 0.68em;
+  max-width: none !important;
+}
+.Checkout__details__list__li__input {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 .Checkout__details__list__li span {
   padding: 0.4em;
   color: var(--color-three-accent);
@@ -127,6 +141,35 @@
   flex: 1;
   text-align: center;
   max-width: 10ch;
+}
+.Checkout__details__list__li input {
+  /*  margin: auto; */
+  text-align: center;
+  width: 80%;
+  background: none;
+  border: none;
+  outline: none;
+  transition: outline 200ms;
+  color: var(--color-three-accent);
+  -moz-appearance: textfield;
+  outline: 1px dashed var(--color-three-dark);
+  border-radius: 0.2em;
+}
+.Checkout__details__list__li input::-webkit-outer-spin-button, .Checkout__details__list__li input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.Checkout__details__list__li input:hover, .Checkout__details__list__li input:focus {
+  outline: 1px dashed var(--color-one);
+}
+.Checkout__details__list__li input:hover::-webkit-outer-spin-button, .Checkout__details__list__li input:hover::-webkit-inner-spin-button, .Checkout__details__list__li input:focus::-webkit-outer-spin-button, .Checkout__details__list__li input:focus::-webkit-inner-spin-button {
+  -webkit-appearance: auto;
+  margin: 0;
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
 .Checkout__details__list__li img {
   width: 100%;
@@ -147,7 +190,7 @@
 }
 .Checkout__details__list__header span {
   padding: 0.4em;
-  color: var(--color-three-accent);
+  color: var(--color-three);
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
