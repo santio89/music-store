@@ -14,13 +14,13 @@ export default function ItemDetail({loading, producto}) {
     producto.stockInitial = Math.trunc(producto.stockInitial/40 + 10); /* disminuyo el stock solo a modo de que se pueda probar agotar el stock (mas rapidamente) */
 
     const history = useNavigate();
-    const [stock, setStock] = useState(0);
+/*     const [stock, setStock] = useState(0); */
     const [continueCheckout, setContinueCheckout] = useState(false);
 
     const {cartAdd} = useContext(CartContext)
     
     const onAdd=(count)=>{
-        setStock(stock-count);
+    /*     setStock(stock-count); */
         setContinueCheckout(true);
         cartAdd({...producto, count});
     }
@@ -29,9 +29,9 @@ export default function ItemDetail({loading, producto}) {
         console.log("FAIL TO ADD (NOT ENOUGH STOCK)");
     }
 
-    useEffect(()=>{
+/*     useEffect(()=>{
         setStock(producto.stockInitial)
-    }, [producto.stockInitial])
+    }, [producto.stockInitial]) */
 
 
     return (
@@ -64,7 +64,7 @@ export default function ItemDetail({loading, producto}) {
 
                                 {continueCheckout?null:<div className='ItemDetail__counterWrapper'>
                                     <p className='ItemDetail__counterWrapper__price'>{"$"+producto.precio}</p>
-                                    <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initial} stock={stock}/>
+                                    <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initial} stock={producto.stockInitial}/>
                                 
                                 </div>}
                                 

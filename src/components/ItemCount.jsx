@@ -1,4 +1,5 @@
-import React, { useState }  from "react";
+import React, { useState, useContext }  from "react";
+import { CartContext } from "../Context/CartContext";
 import '../styles/css/ItemCount.css';
 
 
@@ -6,6 +7,8 @@ import '../styles/css/ItemCount.css';
 const useCounter = (initial)=>{
     /* pasar un callback a useState hace que el estado inicial sea seteado solo una vez y no cada vez que se renderize el elemento. es mas util si tuviera calculos complejos que realizar para un estado inicial */
     const [ counter, setCounter] = useState(()=>{return initial});
+
+    const {carrito} = useContext(CartContext);
 
     /* pasar un callback a setCounter es recomendable cuando quiero operar basado en el valor anterior */
     const increase = ()=>{setCounter((counter)=> counter + 1 )}; 
