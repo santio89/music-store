@@ -45,20 +45,23 @@
 }
 
 @media (max-width: 1023px) {
+  /* media query mobile nav */
+  .nav {
+    position: relative;
+  }
   .nav__searchIcon {
     color: var(--color-two);
   }
 
-  /* media query para transition nav bulma */
   .navbar-menu {
     display: block;
     position: absolute;
     left: 0;
     right: 0;
-    top: -250%;
+    top: -240%;
     transition: top 400ms ease-in-out;
     pointer-events: none;
-    padding-top: 0;
+    padding-top: 0.2rem;
     z-index: -1;
   }
 
@@ -67,7 +70,39 @@
     pointer-events: auto;
   }
 
-  /* fin media query para transition nav bulma */
+  /* fin media query mobile nav  */
+  @-webkit-keyframes testA {
+    0% {
+      top: -250%;
+    }
+    100% {
+      top: 100%;
+    }
+  }
+  @keyframes testA {
+    0% {
+      top: -250%;
+    }
+    100% {
+      top: 100%;
+    }
+  }
+  @-webkit-keyframes testB {
+    0% {
+      top: -250%;
+    }
+    100% {
+      top: -250%;
+    }
+  }
+  @keyframes testB {
+    0% {
+      top: -250%;
+    }
+    100% {
+      top: -250%;
+    }
+  }
   .searchBar {
     padding: 0;
     border: none;

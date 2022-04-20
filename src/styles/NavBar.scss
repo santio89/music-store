@@ -50,29 +50,48 @@
 
 
 @media(max-width: 1023px){
+    /* media query mobile nav */
     .nav{
+        position: relative;
         &__searchIcon{
             color: var(--color-two);
         }
     }
-    /* media query para transition nav bulma */
+    
     .navbar-menu {
         display: block;
         position: absolute;
         left: 0;
         right: 0;
-        top: -250%;
+        top: -240%;
         transition: top 400ms ease-in-out;
         pointer-events: none;
-        padding-top: 0;
+        padding-top: .2rem;
         z-index: -1;
     }
     
     .navbar-menu.is-active {
         top: 100%;
         pointer-events: auto;
-    }    
-    /* fin media query para transition nav bulma */
+    }   
+    /* fin media query mobile nav  */
+
+    @keyframes testA{
+        0%{
+            top: -250%
+        }
+        100%{
+            top: 100%
+        }
+    }
+    @keyframes testB{
+        0%{
+            top: -250%
+        }
+        100%{
+            top: -250%
+        }
+    }
 
     .searchBar{
         padding: 0;
