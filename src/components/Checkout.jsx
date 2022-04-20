@@ -24,7 +24,7 @@ export default function Checkout() {
                   carrito.map((item)=>{
                       return(
                       <li key={item?.item?.id} className='Checkout__details__list__li'>
-                        <span><Link to={`/item/${item?.item?.id}`} onClick={()=>window.scrollTo(0,0)}><img alt="item" src={item?.item?.images?.[0]?.uri}></img></Link>{item?.item?.title}</span> 
+                        <span><Link to={`/item/${item?.item?.id}`} onClick={()=>window.scrollTo(0,0)}><img alt="item" src={item?.item?.images?.[0]?.uri}></img></Link><span className='Checkout__details__list__li__title'>{item?.item?.title}</span></span> 
                         <span>{item?.item?.artists_sort}</span>
                         <span>${item?.item?.precio}</span>
                         <span className='Checkout__details__list__li__input'><input type="number" min={0} defaultValue={item?.item?.count} onBlur={e=>{
