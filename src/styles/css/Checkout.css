@@ -118,8 +118,10 @@
   font-size: 1em;
 }
 .Checkout__details__list__li__title {
+  width: 100% !important;
+  font-size: 0.8em;
+  justify-content: start !important;
   max-width: none !important;
-  font-size: 0.64em;
   padding: 0 !important;
   text-align: left !important;
 }
@@ -127,7 +129,7 @@
   position: absolute;
   top: 50%;
   transform: translate(0, 50%);
-  font-size: 0.64em;
+  font-size: 0.8em;
   max-width: none !important;
 }
 .Checkout__details__list__li__input {
@@ -146,7 +148,7 @@
   align-items: center;
   flex: 1;
   text-align: center;
-  width: 11ch;
+  width: 12ch;
 }
 .Checkout__details__list__li span:first-child {
   display: flex;
@@ -185,7 +187,7 @@
 }
 .Checkout__details__list__li img {
   width: 100%;
-  max-width: 8ch;
+  max-width: 10ch;
   margin: auto;
   aspect-ratio: 1;
   border-radius: 0.4em;
@@ -325,7 +327,7 @@
 }
 @media (min-width: 620px) {
   .Checkout__details__list li {
-    font-size: 0.74em;
+    font-size: 0.68em;
   }
 }
 @media (min-width: 1216px) {

@@ -119,9 +119,11 @@
             }
 
             &__li{
-                &__title{
+                &__title{   
+                    width: 100% !important;
+                    font-size: .8em;
+                    justify-content: start !important;
                     max-width: none !important;
-                    font-size: .64em;
                     padding: 0 !important;  
                     text-align: left !important;
                 }
@@ -130,7 +132,7 @@
                     position: absolute;
                     top: 50%;
                     transform: translate(0, 50%);
-                    font-size: .64em;
+                    font-size: .8em;
                     max-width: none !important;
                 }
 
@@ -150,7 +152,7 @@
                     align-items: center;
                     flex: 1;
                     text-align: center;
-                    width: 11ch;
+                    width: 12ch;
 
                     &:first-child{
                         display: flex;
@@ -194,7 +196,7 @@
                 }
                 img{
                     width: 100%;
-                    max-width: 8ch;
+                    max-width: 10ch;
                     margin: auto;
                     aspect-ratio: 1;
                     border-radius: .4em;
@@ -380,7 +382,7 @@
         &__details{
             &__list{
                 li{
-                    font-size: .74em;
+                    font-size: .68em;
                 } 
             }
         }
