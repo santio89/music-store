@@ -44,7 +44,7 @@ export default function ItemDetail({loading, producto}) {
                     <button onClick={()=>{history(-1)}} className='ItemDetail__back'>&#x21E0;&nbsp;Volver</button>
                     <div className='ItemDetail__body'>
                         <div className='ItemDetail__imgWrapper'>
-                            <img alt="item" src={producto && producto.images && producto.images[0] && producto.images[0].resource_url}></img>
+                            <img alt="item" src={producto && producto.images && producto.images[0] && producto.images[0].resource_url} loading="lazy"></img>
                             <div className='ItemDetail__pWrapper'>
                                     <p>◖Título: {producto.title}</p>
                                     <p>◖Artista: {producto.artists_sort}</p>
