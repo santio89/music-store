@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-unused-vars */
-import React, { useContext, useEffect } from "react";
-import { CartContext } from "../Context/CartContext";
+import React, { useState } from "react";
+import { useSpring, animated} from 'react-spring';
 import { Link } from 'react-router-dom';
 import '../../src/styles/css/NavBar.css';
 import CartWidget from "./CartWidget";
@@ -9,42 +9,16 @@ import SearchBar from "./SearchBar";
 import LogInButton from "./LogInButton";
 
 
-/* 
-    MOBILE NAV CON STATE (transitions no funcionan)
-    const useNav = ()=>{
-    const [navOpen, setNavOpen] = useState(false);
-
-    const open = ()=>{
-        setNavOpen(true)
-    };
-
-    const close = ()=>{
-        setNavOpen(false)
-    };
-
-    return {navOpen, open, close}
-} */
-
 export default function NavBar({brand}){
-    let {cartNumber} = useContext(CartContext);
 
-    useEffect(()=>{
-        /* TOGGLE NAV MOBILE - BULMA SNIPPET */
-        const navbarBurger = document.querySelector('.navbar-burger');
+    const [navOpen, setNavOpen] = useState(false); 
 
-        const navToggleEvent = ()=>{
-            const target = navbarBurger.dataset.target;
-            const $target = document.getElementById(target);
-    
-            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-            navbarBurger.classList.toggle('is-active');
-            $target.classList.toggle('is-active');
-        }
-    
-        navbarBurger.addEventListener('click', ()=>navToggleEvent());
-        
-    }, [cartNumber])
 
+
+/*     const navTranslate = useSpring({
+        top: navOpen?"100%":"-250%",
+        pointerEvents: navOpen? "auto":"none",
+    }) */
     
     const NavLogo = ()=>{
         return(
@@ -56,7 +30,7 @@ export default function NavBar({brand}){
 
     const NavBurger = ()=>{
         return(
-            <button className="navbar-burger is-large" aria-label="menu" data-target="navbar-menu">
+            <button className={`navbar-burger is-large ${navOpen?"is-active":""}`} aria-label="menu" data-target="navbar-menu" onClick={()=>setNavOpen(!navOpen)}>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -84,7 +58,7 @@ export default function NavBar({brand}){
         }
 
         return(
-            <div className="navbar-menu" id="navbar-menu">
+            <animated.div className={`navbar-menu ${navOpen?"is-active":""}` }id="navbar-menu" /* style={navTranslate} */>
                 <div className="navbar-end is-size-4-widescreen is-size-5-desktop is-size-4-touch">
                     <HomeButton />
 
@@ -100,7 +74,7 @@ export default function NavBar({brand}){
                         </div>
                     </div>
                 </div>
-            </div>
+            </animated.div>
         ) 
     }
 
