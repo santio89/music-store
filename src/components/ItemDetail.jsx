@@ -39,7 +39,7 @@ export default function ItemDetail({loading, producto}) {
                     <motion.div className='ItemDetail' key="ItemDetail"
                         initial={{ opacity: 0, transform: "translateX(-120%)" }}
                         animate={{ opacity: 1, transform: "translateX(0%)" }}
-                        exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'spring', duration: 1 }}>
+                        exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'spring', duration: .8 }}>
                         <button onClick={()=>{history(-1)}} className='ItemDetail__back'>&#x21E0;&nbsp;Volver</button>
                         <div className='ItemDetail__body'>
                             <div className='ItemDetail__imgWrapper'>
@@ -65,7 +65,7 @@ export default function ItemDetail({loading, producto}) {
                                             {continueCheckout?
                                                 <motion.div key="checkout" initial={{ opacity: 0, transform: "translateX(-120%)" }}
                                                 animate={{ opacity: 1, transform: "translateX(0%)" }}
-                                                exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'spring', duration: 1 }} className='ItemDetail__checkout'>
+                                                exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'spring', duration: .8 }} className='ItemDetail__checkout'>
                                                     <h3>Productos agregados!</h3>
                                                     <div className='ItemDetail__checkout__buttons'>
                                                         <CartWidget message={"Ir al checkout"} />
@@ -74,7 +74,7 @@ export default function ItemDetail({loading, producto}) {
                                                 </motion.div>:
                                                 <motion.div key="count" initial={{ opacity: 0, transform: "translateX(-120%)" }}
                                                 animate={{ opacity: 1, transform: "translateX(0%)" }}
-                                                exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'spring', duration: 1 }}  className='ItemDetail__counterWrapper'>
+                                                exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'spring', duration: .8 }}  className='ItemDetail__counterWrapper'>
                                                     <p className='ItemDetail__counterWrapper__price'>{"$"+producto.precio}</p>
                                                     <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initial} stock={producto.stockInitial} id={producto.id}/>                                  
                                                 </motion.div>}

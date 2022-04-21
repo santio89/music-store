@@ -23,7 +23,7 @@ export default function ItemList({productos, categoryId, searchId, loading}){
                 {   
                     loading ? (<PuffLoader color={"var(--color-one)"} loading={loading} size={200} speedMultiplier={1.2} />) :
                     <AnimatePresence>
-                        <motion.div transition={{ type: 'spring', duration: 1 }} key="ItemList" className="ItemList" 
+                        <motion.div transition={{ type: 'spring', duration: .8 }} key="ItemList" className="ItemList" 
                         initial={{opacity: 0, transform: "translateX(-120%)"}} 
                         animate={{opacity: 1,transform: "translateX(0%)"}} 
                         exit={{opacity: 0, transform: "translateX(120%)"}}>
