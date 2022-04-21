@@ -64,11 +64,14 @@ export default function CartContextProvider({children}) {
     })
 
     useEffect(()=>{
-      setCartItems(carrito.reduce((total, item)=>total+=item?.count, 0));
-      
-      setTotal(carrito.reduce((total, item)=>total+=item?.precio * item?.count, 0));
-
-      localStorage.setItem("msShopList", JSON.stringify(carrito));
+      if ((carrito.reduce((total, item)=>total+=item?.count, 0))){
+        setCartItems(carrito.reduce((total, item)=>total+=item?.count, 0));
+        setTotal(carrito.reduce((total, item)=>total+=item?.precio * item?.count, 0));
+        localStorage.setItem("msShopList", JSON.stringify(carrito));
+      } else{
+        cartClear();
+        localStorage.setItem("msShopList", JSON.stringify(carrito));
+      }
     }, [carrito])
 
 
