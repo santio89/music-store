@@ -17,9 +17,7 @@ export default function NavBar({brand}){
     const navClosed = ()=>{
         setNavOpen(false)
     }
-    const navOpened = ()=>{
-        setNavOpen(true)
-    }
+
 
     return(
         <>
@@ -36,13 +34,13 @@ export default function NavBar({brand}){
             </div>
                 <div className={`navbar-menu ${navOpen?"is-active":""}`}>
                     <div className="navbar-end is-size-4-widescreen is-size-5-desktop is-size-4-touch">
-                    <Link to="/" className="navbar-item nav__home" role="button" onClick={()=>window.scrollTo(0,0)}>
+                    <Link to="/" className="navbar-item nav__home" role="button" onClick={()=>{window.scrollTo(0,0); navClosed()}}>
                         Inicio
                     </Link>
 
-                        <SearchBar />
+                        <SearchBar navClosed={navClosed}/>
 
-                        <CartWidget />
+                        <CartWidget navClosed={navClosed}/>
                     </div>
 
                     <div className="navbar-end">

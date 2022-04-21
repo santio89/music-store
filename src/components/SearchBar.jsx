@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import '../../src/styles/css/SearchBar.css';
 import { Link, useNavigate } from 'react-router-dom'
 
-export default function SearchBar (){
+export default function SearchBar ({navClosed}){
 
     const [search, setSearch] = useState("");
 
@@ -17,6 +17,7 @@ export default function SearchBar (){
                 window.scrollTo(0,0);
                 e.target.value="";
                 navigate("/search/"+search);
+                navClosed();
             } else{
                 return;
             }
