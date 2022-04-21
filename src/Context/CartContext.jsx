@@ -9,21 +9,21 @@ export default function CartContextProvider({children}) {
     const [total, setTotal] = useState(0);
 
     const cartAdd = (item)=>{
-      const itemIndex = carrito.findIndex(producto=>producto.item.id === item.id);
+      const itemIndex = carrito.findIndex(producto=>producto.id === item.id);
       if(itemIndex !== -1){
         const newCart = [...carrito];
-        newCart[itemIndex].item.count += item.count;
+        newCart[itemIndex].count += item.count;
         setCarrito(newCart);
       } else{
-        setCarrito([...carrito, {item}])
+        setCarrito([...carrito, item])
       }
     }
 
     const modifyCount = (item)=>{
-      const itemIndex = carrito.findIndex(producto=>producto.item.id === item.id);
+      const itemIndex = carrito.findIndex(producto=>producto.id === item.id);
       if(itemIndex !== -1){
         const newCart = [...carrito];
-        newCart[itemIndex].item.count = item.count;
+        newCart[itemIndex].count = item.count;
         setCarrito(newCart);
       } else{
         setCarrito([...carrito, {item}])
@@ -31,7 +31,7 @@ export default function CartContextProvider({children}) {
     }
 
     const cartRemove = (id)=>{
-      setCarrito(carrito.filter(item=> item.item.id !== id));
+      setCarrito(carrito.filter(item=> item.id !== id));
      
     }
 
@@ -41,8 +41,8 @@ export default function CartContextProvider({children}) {
 
     const idCount = (id)=>{
       for (let item of carrito){
-        if (item.item.id === id){
-          return item.item.count;
+        if (item.id === id){
+          return item.count;
         } 
       }
       return 0;
@@ -64,9 +64,9 @@ export default function CartContextProvider({children}) {
     })
 
     useEffect(()=>{
-      setCartItems(carrito.reduce((total, item)=>total+=item.item.count, 0));
+      setCartItems(carrito.reduce((total, item)=>total+=item.count, 0));
       
-      setTotal(carrito.reduce((total, item)=>total+=item?.item?.precio * item?.item?.count, 0));
+      setTotal(carrito.reduce((total, item)=>total+=item?.precio * item?.count, 0));
 
       localStorage.setItem("msShopList", JSON.stringify(carrito));
     }, [carrito])
