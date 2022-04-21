@@ -33,8 +33,7 @@
   font-family: "Courier New", Courier, monospace;
   width: 100%;
   gap: 2.4rem;
-  -webkit-animation: fadeTranslateIn 200ms ease-in-out forwards;
-          animation: fadeTranslateIn 200ms ease-in-out forwards;
+  /*     animation: fadeTranslateIn 200ms ease-in-out forwards; */
   padding-bottom: 2.8rem;
   margin-bottom: 2.8rem;
   margin-top: 0.8rem;

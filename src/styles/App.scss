@@ -1,5 +1,6 @@
 @import './variables.scss';
 
+/* reemplaze esta transicion con framer-motion, creando una animacion customizada similar */
 @keyframes fadeTranslateIn{
     0%{
       transform: translateX(-100%);

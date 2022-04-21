@@ -5,6 +5,7 @@
 /* bulma is-size-3 */
 /* bulma is-size-2 */
 /* bulma is-size-1 */
+/* reemplaze esta transicion con framer-motion, creando una animacion customizada similar */
 @-webkit-keyframes fadeTranslateIn {
   0% {
     transform: translateX(-100%);

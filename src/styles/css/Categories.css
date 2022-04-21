@@ -26,8 +26,7 @@
   margin: auto;
   margin-top: 1rem;
   margin-bottom: 4rem;
-  -webkit-animation: fadeTranslateIn 200ms ease-in-out forwards;
-          animation: fadeTranslateIn 200ms ease-in-out forwards;
+  /* animation: fadeTranslateIn 200ms ease-in-out forwards; */
 }
 .Categories * {
   padding: 0.6em;
