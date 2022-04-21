@@ -4,7 +4,7 @@ export const CartContext = createContext();
 
 export default function CartContextProvider({children}) {
 
-    const [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem("shopList")) || []);
+    const [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem("msShopList")) || []);
     const [cartItems, setCartItems] = useState(0);
     const [total, setTotal] = useState(0);
 
@@ -53,7 +53,7 @@ export default function CartContextProvider({children}) {
       const checkStorage = (e)=>{
         const {key, newValue} = e;
         
-        if (key==="shopList"){
+        if (key==="msShopList"){
           setCarrito(JSON.parse(newValue));
         }
       }
@@ -68,7 +68,7 @@ export default function CartContextProvider({children}) {
       
       setTotal(carrito.reduce((total, item)=>total+=item?.item?.precio * item?.item?.count, 0));
 
-      localStorage.setItem("shopList", JSON.stringify(carrito));
+      localStorage.setItem("msShopList", JSON.stringify(carrito));
     }, [carrito])
 
 
