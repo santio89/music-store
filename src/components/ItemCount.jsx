@@ -11,7 +11,7 @@ const useCounter = (initial)=>{
     /* pasar un callback a setCounter es recomendable cuando quiero operar basado en el valor anterior */
     const increase = ()=>{setCounter((counter)=> counter + 1 )}; 
     const decrease = ()=>{setCounter((counter)=> counter - 1 )};
-    const reset = ()=>{setCounter(0)};
+    const reset = ()=>{setCounter(1)};
 
     return{ 
         counter,

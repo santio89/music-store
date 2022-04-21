@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { CartContext } from '../Context/CartContext';
 import { useNavigate } from 'react-router-dom';
+import { motion, animatePresence, AnimatePresence } from 'framer-motion'
 import PuffLoader from "react-spinners/PuffLoader";
 import ItemCount from './ItemCount';
 import CartWidget from './CartWidget';
@@ -61,20 +62,26 @@ export default function ItemDetail({loading, producto}) {
                                     <p className='ItemDetail__subtitle'>{producto.artists_sort}</p>
                                     <h2 className='ItemDetail__title'>{producto.title?.toUpperCase()}</h2>
                                 </div>
-
-                                {continueCheckout?null:<div className='ItemDetail__counterWrapper'>
-                                    <p className='ItemDetail__counterWrapper__price'>{"$"+producto.precio}</p>
-                                    <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initial} stock={producto.stockInitial} id={producto.id}/>
-                                
-                                </div>}
-                                
-                                {continueCheckout?<div className='ItemDetail__checkout'>
-                                            <h3>Productos agregados!</h3>
-                                            <div className='ItemDetail__checkout__buttons'>
-                                                <CartWidget message={"Ir al checkout"} />
-                                                <button onClick={()=>{setContinueCheckout(false)}} className='ItemDetail__checkout__continue'>Seguir comprando</button>
-                                            </div>
-                                </div>:null}
+                                <div className='ItemDetail__controlsWrapper'>
+                                    <AnimatePresence>
+                                        {continueCheckout?
+                                            <motion.div key="checkout" initial={{ opacity: 0, transform: "translateX(-120%)" }}
+                                            animate={{ opacity: 1, transform: "translateX(0%)" }}
+                                            exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'spring', duration: 1 }} className='ItemDetail__checkout'>
+                                                <h3>Productos agregados!</h3>
+                                                <div className='ItemDetail__checkout__buttons'>
+                                                    <CartWidget message={"Ir al checkout"} />
+                                                    <button onClick={()=>{setContinueCheckout(false)}} className='ItemDetail__checkout__continue'>Seguir comprando</button>
+                                                </div>
+                                            </motion.div>:
+                                            <motion.div key="count" initial={{ opacity: 0, transform: "translateX(-120%)" }}
+                                            animate={{ opacity: 1, transform: "translateX(0%)" }}
+                                            exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'spring', duration: 1 }}  className='ItemDetail__counterWrapper'>
+                                                <p className='ItemDetail__counterWrapper__price'>{"$"+producto.precio}</p>
+                                                <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initial} stock={producto.stockInitial} id={producto.id}/>                                  
+                                            </motion.div>}                                                           
+                                    </AnimatePresence>
+                                </div>
                             </div>
                         </div>
                     </div>

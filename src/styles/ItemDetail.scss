@@ -73,7 +73,6 @@
         font-size: $font-fluid-lg;   
         width: 100%;
         height: 100%;
-        padding: 1rem;
         display: flex;
         flex-flow: column wrap;
         justify-content: start;
@@ -97,6 +96,8 @@
             flex-flow: column wrap;
             justify-content: center;
             align-items: center;
+            padding: 1rem;
+            padding-bottom: 0;
         }
     }
 
@@ -141,7 +142,19 @@
         }
     }
 
+    
+    &__controlsWrapper{
+        width: 100%;
+        max-width: 600px;
+        height: 340px;
+        margin: auto;
+        margin-top: 0;
+        position: relative;
+    }
+
     &__counterWrapper{
+        position: absolute;
+        inset: 0;
         width: 100%;
         height: 340px;
         align-self: stretch;
@@ -149,7 +162,8 @@
         flex-flow: column wrap;
         justify-content: start;
         gap: 1rem;
-        animation: fadeTranslateIn 400ms forwards;
+        padding: 1rem; 
+        padding-top: 0;
 
         &__counter{
             display: flex;
@@ -170,14 +184,18 @@
 
     &__checkout{
         width: 100%;
+        padding: 1rem;
+        padding-top: 0;
         height: 340px;
+        align-self: stretch;
         display: flex;
         flex-flow: column wrap;
         justify-content: start;
         align-items: stretch;
         gap: 1rem;
-        animation: fadeTranslateIn 400ms forwards;
         font-size: $font-fluid-lg;
+        position: absolute;
+        inset: 0;
         
         h3{
             color: var(--color-three);
@@ -197,6 +215,7 @@
             align-items: center;
             gap: 1rem;
             font-size: $font-fluid-sm;
+            max-width: 100%;
         }
 
         .CartWidget{
@@ -263,6 +282,7 @@
             background: var(--color-back-dark);
             transition: 200ms;
             will-change: transform;
+            
 
             &:hover, &:focus-visible{
                 outline: 2px dashed var(--color-one);
@@ -279,9 +299,6 @@
 
 @media (max-width: 320px){
     .ItemDetail{
-        &__infoWrapper{
-            padding: 1rem;
-        }
         &__info{
             width: 100%;
         }
@@ -299,9 +316,19 @@
         &__imgWrapper{         
             padding: 1.4rem;
         }
-
-        &__infoWrapper{
+        &__info{
+            &__main{
+                padding: 1.4rem;
+                padding-bottom: 0;
+            }
+        }
+        &__counterWrapper{
             padding: 1.4rem;
+            padding-top: 0;
+        }
+        &__checkout{
+            padding: 1.4rem;
+            padding-top: 0;
         }
     }
 }
@@ -317,8 +344,19 @@
             padding: 2rem;
         }
 
-        &__infoWrapper{
+        &__info{
+            &__main{
+                padding: 2rem;
+                padding-bottom: 0;
+            }
+        }
+        &__counterWrapper{
             padding: 2rem;
+            padding-top: 0;
+        }
+        &__checkout{
+            padding: 2rem;
+            padding-top: 0;
         }
     }
 }
@@ -350,6 +388,11 @@
 
         &__back{
             top: -4%;
+        }
+
+        &__controlsWrapper{
+            height: 100%;
+            max-height: 500px;
         }
 
         &__counterWrapper{
