@@ -48,6 +48,20 @@ export default function CartContextProvider({children}) {
       return 0;
     }
 
+    useEffect(()=>{
+
+      const checkStorage = (e)=>{
+        const {key, newValue} = e;
+        
+        if (key==="shopList"){
+          setCarrito(JSON.parse(newValue));
+        }
+      }
+
+      window.addEventListener("storage", checkStorage)
+
+      return (()=>window.removeEventListener("storage", checkStorage))
+    })
 
     useEffect(()=>{
       setCartItems(carrito.reduce((total, item)=>total+=item.item.count, 0));
@@ -57,7 +71,7 @@ export default function CartContextProvider({children}) {
       localStorage.setItem("shopList", JSON.stringify(carrito));
     }, [carrito])
 
-    
+
   return (
     <>
        <CartContext.Provider value={{carrito, cartItems, total, cartClear, cartAdd, cartRemove, modifyCount, idCount}}>
