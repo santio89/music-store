@@ -11,6 +11,16 @@ import LogInButton from "./LogInButton";
 export default function NavBar({brand}){
     const [navOpen, setNavOpen] = useState(false); 
 
+    const navToggle = (navOpen)=>{
+        setNavOpen(navOpen=>!navOpen)
+    }
+    const navClosed = ()=>{
+        setNavOpen(false)
+    }
+    const navOpened = ()=>{
+        setNavOpen(true)
+    }
+
     return(
         <>
             <nav className="navbar is-fixed-top is-danger has-shadow is-spaced nav" id="nav" role="navigation" aria-label="main navigation">
@@ -18,7 +28,7 @@ export default function NavBar({brand}){
                  <Link to="/" className="navbar-item nav__logo" onClick={()=>window.scrollTo(0,0)}>
                     {brand}
                 </Link>
-                <button className={`navbar-burger is-large ${navOpen?"is-active":""}`} aria-label="menu" onClick={()=>setNavOpen(navOpen=>!navOpen)}>
+                <button className={`navbar-burger is-large ${navOpen?"is-active":""}`} aria-label="menu" onClick={()=>navToggle()}>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
