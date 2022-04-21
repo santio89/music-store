@@ -17,7 +17,7 @@ export default function Checkout() {
           initial={{opacity: 0, transform: "translateX(-120%)"}} 
           animate={{opacity: 1, transform: "translateX(0%)"}} 
           exit={{opacity: 0, transform: "translateX(120%)"}} 
-          transition={{type: "spring", duration: .8}}
+          transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}
           >
               <button onClick={()=>{history(-1)}}  className='Checkout__back'>⇠ Volver</button>
               <h1>CHECKOUT</h1>

@@ -11,7 +11,7 @@ export default function Categories() {
           initial={{ opacity: 0, transform: "translateX(-120%)" }} 
           animate={{ opacity: 1, transform: "translateX(0%)" }} 
           exit={{ opacity: 0, transform: "translateX(120%)" }} 
-          transition={{ type: 'spring', duration: .8 }}  
+          transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}  
           className='Categories'>
                 <Link to="/categories/rock" onClick={()=>window.scrollTo(0,0)} className='Categories__rock'>ROCK</Link>
                 <Link to="/categories/pop" onClick={()=>window.scrollTo(0,0)} className='Categories__pop'>POP</Link>

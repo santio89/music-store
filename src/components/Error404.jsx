@@ -14,7 +14,7 @@ export default function Error404() {
       initial={{ opacity: 0, transform: "translateX(-120%)" }}
       animate={{ opacity: 1, transform: "translateX(0%)" }}
       exit={{ opacity: 0, transform: "translateX(120%)" }} 
-      transition={{ type: 'spring', duration: .8 }}>
+      transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
           <div className='Error404'>
               <h2>Error 404</h2>
               <p>El contenido al que intenta acceder no existe o no está disponible en este momento.</p>

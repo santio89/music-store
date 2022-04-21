@@ -39,7 +39,7 @@ export default function ItemDetail({loading, producto}) {
                     <motion.div className='ItemDetail' key="ItemDetail"
                         initial={{ opacity: 0, transform: "translateX(-120%)" }}
                         animate={{ opacity: 1, transform: "translateX(0%)" }}
-                        exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'spring', duration: .8 }}>
+                        exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
                         <button onClick={()=>{history(-1)}} className='ItemDetail__back'>&#x21E0;&nbsp;Volver</button>
                         <div className='ItemDetail__body'>
                             <div className='ItemDetail__imgWrapper'>

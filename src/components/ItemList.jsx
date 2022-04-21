@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
-import { motion, animatePresente, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Item from './Item'
 import '../../src/styles/css/ItemList.css';
 import PuffLoader from "react-spinners/PuffLoader";
@@ -23,7 +23,7 @@ export default function ItemList({productos, categoryId, searchId, loading}){
                 {   
                     loading ? (<PuffLoader color={"var(--color-one)"} loading={loading} size={200} speedMultiplier={1.2} />) :
                     <AnimatePresence>
-                        <motion.div transition={{ type: 'spring', duration: .8 }} key="ItemList" className="ItemList" 
+                        <motion.div transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} key="ItemList" className="ItemList" 
                         initial={{opacity: 0, transform: "translateX(-120%)"}} 
                         animate={{opacity: 1,transform: "translateX(0%)"}} 
                         exit={{opacity: 0, transform: "translateX(120%)"}}>
