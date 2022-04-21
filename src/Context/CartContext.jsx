@@ -4,7 +4,7 @@ export const CartContext = createContext();
 
 export default function CartContextProvider({children}) {
 
-    const [carrito, setCarrito] = useState([]);
+    const [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem("shopList")) || []);
     const [cartItems, setCartItems] = useState(0);
     const [total, setTotal] = useState(0);
 
@@ -48,12 +48,16 @@ export default function CartContextProvider({children}) {
       return 0;
     }
 
+
     useEffect(()=>{
       setCartItems(carrito.reduce((total, item)=>total+=item.item.count, 0));
       
       setTotal(carrito.reduce((total, item)=>total+=item?.item?.precio * item?.item?.count, 0));
+
+      localStorage.setItem("shopList", JSON.stringify(carrito));
     }, [carrito])
 
+    
   return (
     <>
        <CartContext.Provider value={{carrito, cartItems, total, cartClear, cartAdd, cartRemove, modifyCount, idCount}}>
