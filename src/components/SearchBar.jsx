@@ -14,16 +14,14 @@ export default function SearchBar ({navClosed}){
 
         if (e.keyCode===13){
             if (search){
+                navClosed();
                 window.scrollTo(0,0);
                 e.target.value="";
                 navigate("/search/"+search);
-                navClosed();
             } else{
                 return;
-            }
-            
+            } 
         }
-        
     }
 
 

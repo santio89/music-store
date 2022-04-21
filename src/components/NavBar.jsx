@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import '../../src/styles/css/NavBar.css';
 import CartWidget from "./CartWidget";
@@ -11,13 +11,15 @@ import LogInButton from "./LogInButton";
 export default function NavBar({brand}){
     const [navOpen, setNavOpen] = useState(false); 
 
-    const navToggle = (navOpen)=>{
+    const navToggle = ()=>{
         setNavOpen(navOpen=>!navOpen)
     }
-    const navClosed = ()=>{
-        setNavOpen(false)
-    }
 
+    const navClosed = ()=>{
+        if (navOpen){
+            setNavOpen(false)
+        }
+    }
 
     return(
         <>
@@ -34,13 +36,13 @@ export default function NavBar({brand}){
             </div>
                 <div className={`navbar-menu ${navOpen?"is-active":""}`}>
                     <div className="navbar-end is-size-4-widescreen is-size-5-desktop is-size-4-touch">
-                    <Link to="/" className="navbar-item nav__home" role="button" onClick={()=>{window.scrollTo(0,0); navClosed()}}>
+                    <Link to="/" className="navbar-item nav__home" role="button" onClick={()=>{navClosed(); window.scrollTo(0,0)}}>
                         Inicio
                     </Link>
 
                         <SearchBar navClosed={navClosed}/>
 
-                        <CartWidget navClosed={navClosed}/>
+                        <CartWidget navClosed={navClosed} navOpen={navOpen}/>
                     </div>
 
                     <div className="navbar-end">
