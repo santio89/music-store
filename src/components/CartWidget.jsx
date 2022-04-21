@@ -3,7 +3,7 @@
 import React, { useContext } from "react";
 import { CartContext } from "../Context/CartContext";
 import { Link } from 'react-router-dom'
-import '../../src/styles/css/CardWidget.css';
+import '../../src/styles/css/CartWidget.css';
 
 
 

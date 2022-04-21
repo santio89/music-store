@@ -1,0 +1,56 @@
+/* bulma is-size-7 */
+/* bulma is-size-6 */
+/* bulma is-size-5 */
+/* bulma is-size-4 */
+/* bulma is-size-3 */
+/* bulma is-size-2 */
+/* bulma is-size-1 */
+.CartWidget {
+  width: 100vw;
+  display: block;
+  gap: 0.2em;
+  color: var(--color-mobilenavtext);
+  transition: color 200ms, background-color 200ms, filter 200ms;
+  border-radius: 0.2em;
+  padding: 8px 12px;
+  filter: grayscale(0);
+  transition: filter 400ms;
+  text-align: left;
+}
+.CartWidget.disabled {
+  color: var(--color-three-dark);
+  pointer-events: none;
+}
+.CartWidget span {
+  display: block;
+  width: 100vw;
+}
+.CartWidget:hover, .CartWidget:focus {
+  outline: 1px dashed var(--color-three);
+  color: var(--color-one);
+  background-color: var(--color-three-accent);
+}
+
+@media (min-width: 1024px) {
+  .CartWidget {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-three);
+    min-width: 120px;
+    max-width: 120px;
+    text-align: center;
+  }
+  .CartWidget:hover, .CartWidget:focus {
+    outline: 1px dashed var(--color-three);
+    color: var(--color-three);
+    background: var(--color-one-hover);
+  }
+  .CartWidget span {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}/*# sourceMappingURL=CartWidget.css.map */
