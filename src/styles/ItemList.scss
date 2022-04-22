@@ -27,7 +27,7 @@
 
     &__title{
         align-self: start;
-        font-size: $font-fluid-mdsp;
+        font-size: $font-fluid-mdd;
         font-weight: bold;
         text-shadow: 2px 2px 0 var(--color-three);
         color: var(--color-one);
@@ -40,7 +40,10 @@
         margin: auto;
         background: var(--color-back-dark);
         word-wrap: break-word;
-
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
 
         select{
             background: none;
@@ -54,7 +57,7 @@
             margin: 0;
             line-height: 40px;
             cursor: pointer;
-            transition: text-shadow 200ms;
+            transition: color 200ms, text-shadow 200ms;
 
             option{
                 width: 100%;
@@ -63,10 +66,10 @@
             }
 
             &:hover, &:focus-visible{
-                text-shadow: 2px 2px 0 var(--color-back-dark);
+                color: var(--color-three);
+                text-shadow: 2px 2px 0 var(--color-one);
             }
         }
-
     }
 
     &__content{

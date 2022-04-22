@@ -58,7 +58,7 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: -240%;
+    top: -250%;
     transition: top 400ms ease-in-out;
     pointer-events: none;
     padding-top: 0.2rem;
@@ -71,38 +71,6 @@
   }
 
   /* fin media query mobile nav  */
-  @-webkit-keyframes testA {
-    0% {
-      top: -250%;
-    }
-    100% {
-      top: 100%;
-    }
-  }
-  @keyframes testA {
-    0% {
-      top: -250%;
-    }
-    100% {
-      top: 100%;
-    }
-  }
-  @-webkit-keyframes testB {
-    0% {
-      top: -250%;
-    }
-    100% {
-      top: -250%;
-    }
-  }
-  @keyframes testB {
-    0% {
-      top: -250%;
-    }
-    100% {
-      top: -250%;
-    }
-  }
   .searchBar {
     padding: 0;
     border: none;

@@ -5,16 +5,17 @@
     margin: auto;
     margin-top: calc(76px + .1rem);
     height: 60px;
+    line-height: .8;
 
     ul{
-        border: none;
-        line-height: 1;
+        margin: auto;
+        border: none; 
     }
 
     li{
         a{
             border-radius: .4em .4em 0 0;
-            font-size: $font-fluid-sm;
+            font-size: $font-fluid-mdd;
             color: var(--color-three-dark);
             border-bottom: 2px solid var(--color-three-dark);
 
@@ -49,7 +50,7 @@
 
 
         li a{
-            font-size: $font-mdm;
+            font-size: $font-mdd;
         }
     }
 }
