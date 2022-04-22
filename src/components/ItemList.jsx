@@ -23,7 +23,7 @@ export default function ItemList({ productos, searchId, loading }) {
     return (
         <>
             <AnimatePresence>
-                <motion.div transition={{ type: 'spring', duration: .8 }} initial={{ opacity: 0, transform: "translateX(-120%)" }}
+                {searchId || categoryId ? <motion.div transition={{ type: 'spring', duration: .8 }} initial={{ opacity: 0, transform: "translateX(-120%)" }}
                     animate={{ opacity: 1, transform: "translateX(0%)" }}
                     exit={{ opacity: 0, transform: "translateX(120%)" }} key="ItemList__title__search" className='ItemList__title'>
 
@@ -56,7 +56,8 @@ export default function ItemList({ productos, searchId, loading }) {
                             <option value={"folk"}>FOLK</option>
                         </select></>) : null
                     }
-                </motion.div>
+                </motion.div> : null}
+
             </AnimatePresence>
 
             <div className="ItemListWrapper">
