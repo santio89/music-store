@@ -63,9 +63,9 @@
         position: absolute;
         left: 0;
         right: 0;
-        top: 100%;
-        transform: translateY(-100%);
-        transition: transform 400ms ease-in-out;
+        top: -250%;
+       /*  transform: translateY(-100%); */
+        transition: top 400ms ease-in-out;
         pointer-events: none;
         padding-top: calc(.4rem + 20%);
         margin-top: -20%;
@@ -73,9 +73,11 @@
     }
     
     .navbar-menu.is-active {
+        top: 100%;
         pointer-events: auto;
+        transition: none;
         animation: bounceInDown 600ms ease-in-out;
-        transform: translateY(0);
+      /*   transform: translateY(0); */
     }   
     /* fin media query mobile nav  */
 
