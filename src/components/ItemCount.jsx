@@ -5,7 +5,7 @@ import '../styles/css/ItemCount.css';
 
 
 const useCounter = (initial)=>{
-    /* pasar un callback a useState hace que el estado inicial sea seteado solo una vez y no cada vez que se renderize el elemento. es mas util si tuviera calculos complejos que realizar para un estado inicial */
+    /* pasar un callback a useState hace que el estado inicial sea seteado solo una vez y no cada vez que se renderize el elemento. es mas util si tuviera calculos complejos que realizar para un estado inicial. en este caso no hace mucha diferencia */
     const [ counter, setCounter] = useState(()=>{return initial});
 
     /* pasar un callback a setCounter es recomendable cuando quiero operar basado en el valor anterior */
