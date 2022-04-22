@@ -1,6 +1,6 @@
 @import './variables.scss';
 
-.footer{
+.footer {
     padding: 1em;
     padding-bottom: 0;
     border-top: 2px dashed var(--color-one-dark);
@@ -14,14 +14,14 @@
     margin-top: auto;
     line-height: 1.2;
 
-    &__brand{
+    &__brand {
         color: var(--color-one);
         font-weight: 800;
         text-shadow: 2px 2px 0 var(--color-three);
         font-size: $font-fluid-lg;
     }
 
-    a{
+    a {
         color: var(--color-three);
         padding: .8rem;
         text-shadow: 1px 1px 0 var(--color-one);
@@ -29,17 +29,18 @@
         font-size: $font-fluid-sm;
         transition: 200ms;
 
-        &:hover, &:focus{
+        &:hover,
+        &:focus {
             color: var(--color-one);
             text-shadow: 1px 1px 0 var(--color-three);
         }
 
-        &:focus-visible{
+        &:focus-visible {
             outline: 2px dashed var(--color-one);
         }
     }
 
-    &__santi{
+    &__santi {
         align-self: end;
         color: var(--color-three);
         text-shadow: 1px 1px 0 var(--color-one-dark);
@@ -47,12 +48,13 @@
         font-size: $font-fluid-sm;
         font-weight: bold;
 
-        &:hover, &:focus{
+        &:hover,
+        &:focus {
             color: var(--color-one-dark);
             text-shadow: 1px 1px 0 var(--color-three);
         }
 
-        &:focus-visible{
+        &:focus-visible {
             outline: 2px dashed var(--color-one-dark);
         }
     }

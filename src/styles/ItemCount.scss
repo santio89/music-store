@@ -1,115 +1,117 @@
 @import './variables.scss';
 
-.ItemCount{
-    font-family: var(--font-primary);
-    font-size: $font-fluid-lg;
-    border-radius: .4em;
-    max-width: 100%;
+.ItemCount {
+  font-family: var(--font-primary);
+  font-size: $font-fluid-lg;
+  border-radius: .4em;
+  max-width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: stretch;
+  position: relative;
+  gap: 2rem;
+  margin-bottom: auto;
+
+  &__buttons {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     justify-content: center;
-    align-items: stretch;
-    position: relative;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
     gap: 2rem;
-    margin-bottom: auto;
-    
-    &__buttons{
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Courier New', Courier, monospace;
-      font-weight: bold;
-      gap: 2rem;
 
-      &>*{
-        background: var(--color-back);
-        border-radius: .4rem;
-      }
-
-      button{
-        line-height: 1.2;
-        color: var(--color-three);
-        text-align: center;
-        text-shadow: 2.4px 2.4px 0 var(--color-back-dark), 3px 3px 0 var(--color-one);
-        font-size: $font-fluid-xl;
-        padding: .4rem;
-        flex: 1;
-        transition: 200ms;
-        will-change: transform;
-
-        &:hover, &:focus-visible{
-          color: var(--color-one);
-          background: var(--color-three-dark);
-        }
-
-        &:active{
-          transform: translate(2px, 2px)
-        }
-      }
-
-      &__number{
-          flex: 1;
-          color: var(--color-one);
-          padding: .8rem;
-          text-align: center;
-          font-size: $font-fluid-xxl;
-          font-family: var(--font-primary);
-          line-height: 1;
-          text-shadow: 2.4px 2.4px 0 var(--color-three), 4px 4px 0 var(--color-one);
-          background: var(--color-three-dark);
-      }
+    &>* {
+      background: var(--color-back);
+      border-radius: .4rem;
     }
 
-    &__add{
-      font-size: $font-fluid-lg;
-      font-family: 'Courier New', Courier, monospace;
-      font-weight: bold;
+    button {
       line-height: 1.2;
-      background-color: var(--color-back-dark);
-      color: var(--color-one); 
+      color: var(--color-three);
       text-align: center;
-      text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
-      outline: 2px dashed var(--color-three-dark);
-      border-radius: .4rem;
-      padding: .4em;
-      margin-top: .8rem;
+      text-shadow: 2.4px 2.4px 0 var(--color-back-dark), 3px 3px 0 var(--color-one);
+      font-size: $font-fluid-xl;
+      padding: .4rem;
+      flex: 1;
       transition: 200ms;
       will-change: transform;
-      cursor: pointer !important;
-      
-      &:hover, &:focus-visible{
-        background: var(--color-back);
-        outline: 2px dashed var(--color-one);
+
+      &:hover,
+      &:focus-visible {
         color: var(--color-one);
+        background: var(--color-three-dark);
       }
 
-      &:active{
-        transform: translate(2px, 2px);
-      }
-
-      &:disabled{
-        filter: grayscale(1);
-        pointer-events: none;
+      &:active {
+        transform: translate(2px, 2px)
       }
     }
 
-    &__stock{
-        position: absolute;
-        top: -32%;
-        right: 1.2%;
-        font-size: $font-fluid-xs;
-        font-family: 'Courier New', Courier, monospace;
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: start;
-        align-items: start;
-        line-height: 1.2;
+    &__number {
+      flex: 1;
+      color: var(--color-one);
+      padding: .8rem;
+      text-align: center;
+      font-size: $font-fluid-xxl;
+      font-family: var(--font-primary);
+      line-height: 1;
+      text-shadow: 2.4px 2.4px 0 var(--color-three), 4px 4px 0 var(--color-one);
+      background: var(--color-three-dark);
     }
+  }
+
+  &__add {
+    font-size: $font-fluid-lg;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    line-height: 1.2;
+    background-color: var(--color-back-dark);
+    color: var(--color-one);
+    text-align: center;
+    text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
+    outline: 2px dashed var(--color-three-dark);
+    border-radius: .4rem;
+    padding: .4em;
+    margin-top: .8rem;
+    transition: 200ms;
+    will-change: transform;
+    cursor: pointer !important;
+
+    &:hover,
+    &:focus-visible {
+      background: var(--color-back);
+      outline: 2px dashed var(--color-one);
+      color: var(--color-one);
+    }
+
+    &:active {
+      transform: translate(2px, 2px);
+    }
+
+    &:disabled {
+      filter: grayscale(1);
+      pointer-events: none;
+    }
+  }
+
+  &__stock {
+    position: absolute;
+    top: -32%;
+    right: 1.2%;
+    font-size: $font-fluid-xs;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: start;
+    align-items: start;
+    line-height: 1.2;
+  }
 }
 
-@media (min-width: 1216px){
-  .ItemCount{
+@media (min-width: 1216px) {
+  .ItemCount {
     margin-top: 12%;
   }
 }

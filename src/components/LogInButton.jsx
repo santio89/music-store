@@ -2,7 +2,7 @@ import React from "react"
 import '../../src/styles/css/LogInButton.css';
 
 
-const buttonRipple = (e)=>{
+const buttonRipple = (e) => {
     let x = e.clientX - e.target.getBoundingClientRect().x;
     let y = e.clientY - e.target.getBoundingClientRect().y;
     let ripples = document.createElement("span");
@@ -15,8 +15,8 @@ const buttonRipple = (e)=>{
     }, 1000);
 }
 
-export default function LogInButton (){
-    return(
+export default function LogInButton() {
+    return (
         <button onClick={buttonRipple} className="button is-dark is-size-5-widescreen is-size-6-desktop is-size-5-touch button__logIn">
             Ingresar
         </button>

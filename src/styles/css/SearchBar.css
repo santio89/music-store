@@ -74,7 +74,8 @@
     color: var(--color-one-dark);
   }
 
-  a.navbar-item:hover, a.navbar-item:focus {
+  a.navbar-item:hover,
+a.navbar-item:focus {
     color: var(--color-one-dark);
   }
 }/*# sourceMappingURL=SearchBar.css.map */

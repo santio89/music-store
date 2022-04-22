@@ -23,10 +23,10 @@ function App() {
 
 
   /* scroll top of page on reload (manual) */
-  useEffect(()=>{
-    window.onunload = ()=> window.scrollTo(0, 0);
+  useEffect(() => {
+    window.onunload = () => window.scrollTo(0, 0);
   }, [])
-  
+
 
   return (
     <>
@@ -34,9 +34,9 @@ function App() {
       <CartContextProvider>
 
         <BrowserRouter basename="/music-store">
-          <NavBar brand={brand}/>
+          <NavBar brand={brand} />
           <TabSelector />
-          <Routes>  
+          <Routes>
             <Route path="/" element={<ItemListContainer />} />
             <Route path="/item/:productId" element={<ItemDetailContainer />} />
             <Route path="/categories" element={<Categories />} />
@@ -49,7 +49,7 @@ function App() {
         </BrowserRouter>
 
       </CartContextProvider>
-      
+
     </>
   );
 }

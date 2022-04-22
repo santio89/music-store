@@ -1,35 +1,37 @@
 @import './variables.scss';
 
-.tabs{
+.tabs {
     max-width: fit-content;
     margin: auto;
     margin-top: calc(76px + .1rem);
     height: 60px;
     line-height: .8;
 
-    ul{
+    ul {
         margin: auto;
-        border: none; 
+        border: none;
     }
 
-    li{
-        a{
+    li {
+        a {
             border-radius: .4em .4em 0 0;
             font-size: $font-fluid-mdd;
             color: var(--color-three-dark);
             border-bottom: 2px solid var(--color-three-dark);
 
-            &:hover{
+            &:hover {
                 color: var(--color-one);
                 border-bottom: 2px solid var(--color-three);
             }
-            &:focus-visible{
+
+            &:focus-visible {
                 color: var(--color-one);
                 border-bottom: 2px solid var(--color-three);
                 outline: 1px dashed var(--color-three);
                 outline-offset: -2px;
             }
-            &.is-active{
+
+            &.is-active {
                 color: var(--color-one);
                 border-bottom: 2px solid var(--color-three);
             }
@@ -37,19 +39,19 @@
     }
 
 
-    &:not(:last-child){
+    &:not(:last-child) {
         margin-bottom: 1rem;
     }
 }
 
-@media (min-width: 1024px){
-    .tabs{
+@media (min-width: 1024px) {
+    .tabs {
         margin-left: auto;
         margin-right: 5%;
         margin-top: calc(108px + .4rem);
 
 
-        li a{
+        li a {
             font-size: $font-mdd;
         }
     }

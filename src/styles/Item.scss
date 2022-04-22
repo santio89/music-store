@@ -1,31 +1,34 @@
 @import './variables.scss';
 
-.ItemLink{
+.ItemLink {
     border-radius: 1.6rem;
     transition: box-shadow 100ms;
     width: 100%;
     max-width: 320px;
     box-shadow: 0 0 0 0 var(--color-one);
     margin: auto;
-    
-    &:active{
-        box-shadow: 3px 3px 3px 0 var(--color-one);
-    }    
 
-    &:hover .Item, &:focus-visible .Item{
+    &:active {
+        box-shadow: 3px 3px 3px 0 var(--color-one);
+    }
+
+    &:hover .Item,
+    &:focus-visible .Item {
         box-shadow: 2px 2px 0 0 var(--color-one);
     }
 
-    &:hover .Item>.Item__details, &:focus-visible .Item>.Item__details{
+    &:hover .Item>.Item__details,
+    &:focus-visible .Item>.Item__details {
         color: var(--color-one);
     }
 
-    &:hover .Item>.Item__imgWrapper, &:focus-visible .Item>.Item__imgWrapper{
+    &:hover .Item>.Item__imgWrapper,
+    &:focus-visible .Item>.Item__imgWrapper {
         background: linear-gradient(45deg, var(--color-one), var(--color-one));
     }
 }
 
-.Item{
+.Item {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -38,21 +41,21 @@
     transition: box-shadow 400ms;
     width: 100%;
     margin: auto;
-    
-    &__imgWrapper{
+
+    &__imgWrapper {
         width: 100%;
         transition: background-image 400ms;
         background: linear-gradient(45deg, var(--color-one), var(--color-one-dark));
     }
-    
-    &__img{
+
+    &__img {
         aspect-ratio: 1;
         width: 100%;
         object-fit: cover;
         border-radius: inherit;
     }
 
-    &__content{
+    &__content {
         background: none;
         font-size: $font-xs;
         position: absolute;
@@ -64,18 +67,18 @@
         font-family: 'Courier New', Courier, monospace;
         width: 100%;
 
-        &__title{
-           color: var(--color-three);
-           text-shadow: 1px 1px var(--color-one-dark);
-           margin-top: 6.4rem;
-           background: rgba(0, 0, 0, .4);
-           width: 100%;
-           padding-left: 2%;
-           font-size: $font-xs;
-           line-height: 1.2;
+        &__title {
+            color: var(--color-three);
+            text-shadow: 1px 1px var(--color-one-dark);
+            margin-top: 6.4rem;
+            background: rgba(0, 0, 0, .4);
+            width: 100%;
+            padding-left: 2%;
+            font-size: $font-xs;
+            line-height: 1.2;
         }
 
-        &__price{
+        &__price {
             font-size: $font-mdd;
             font-weight: bold;
             color: var(--color-three);
@@ -85,7 +88,7 @@
         }
     }
 
-    &__details{
+    &__details {
         font-family: 'Courier New', Courier, monospace;
         font-weight: bold;
         text-align: center;

@@ -1,15 +1,16 @@
 @import './variables.scss';
 
 /* algunas transiciones hechas con css keyframes y otras con react framer-motion */
-@keyframes fadeTranslateIn{
-  0%{
+@keyframes fadeTranslateIn {
+  0% {
     transform: translateX(-100%);
     opacity: 0;
   }
-  100%{
+
+  100% {
     transform: translateX(0);
     opacity: 1;
-    }
+  }
 }
 
 

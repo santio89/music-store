@@ -5,38 +5,38 @@ import { useParams } from 'react-router-dom';
 
 
 
-export default function ItemListContainer(){
+export default function ItemListContainer() {
     const { productId } = useParams();
 
     const [loading, setLoading] = useState(false);
     const [producto, setProducto] = useState({});
-    
-    useEffect(()=>{
+
+    useEffect(() => {
         setLoading(true);
-        
+
         /* api discogs - key/secret */
         const key = "NzDEWGaaXPKwkGstTywu";
         const secret = "PpQhpcTuzerPMDEGRuwGfsmulqiIyBdJ";
-        
+
         const fetchApi = fetch(`https://api.discogs.com/releases/${productId}?key=${key}&secret=${secret}`);
-        
+
         /* fetch custom con promise (hace el fetch a la api luego de un tiempo) */
         customFetch(1000, fetchApi).then(
-            res=>{
+            res => {
                 res.json().then(
-                    res=>{
+                    res => {
                         setProducto(res);
                         setLoading(false);
                     }
                 )
             }
-        ).catch(err=>{console.log(err)});
+        ).catch(err => { console.log(err) });
 
     }, [productId])
 
     return (
-           
-        <ItemDetail producto={producto} loading={loading}/>
-          
+
+        <ItemDetail producto={producto} loading={loading} />
+
     )
 }

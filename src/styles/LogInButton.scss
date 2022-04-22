@@ -1,29 +1,29 @@
 @import './variables.scss';
 
-.button__logIn{
+.button__logIn {
     font-weight: 700;
     font-family: inherit;
     position: relative;
     overflow: hidden;
 
-    span{
+    span {
         position: absolute;
         background: var(--color-three);
         transform: translate(-50%, -50%);
         pointer-events: none;
         border-radius: 50%;
         animation: ripples 1000ms linear infinite;
-        }
+    }
 }
 
-@keyframes ripples{
-    0%{
+@keyframes ripples {
+    0% {
         width: 0px;
         height: 0px;
         opacity: 0.4;
     }
 
-    100%{
+    100% {
         width: 500px;
         height: 500px;
         opacity: 0;

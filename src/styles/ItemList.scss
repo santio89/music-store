@@ -1,8 +1,9 @@
 @import './variables.scss';
 
-.ItemListWrapper{
+.ItemListWrapper {
     width: 90%;
-    min-height: calc(100vh - 76px - 60px - .2rem); /* container height= 100vh-navHeight-tabsHeight-margins */
+    min-height: calc(100vh - 76px - 60px - .2rem);
+    /* container height= 100vh-navHeight-tabsHeight-margins */
     margin: auto;
     max-width: 1800px;
     display: flex;
@@ -11,12 +12,12 @@
     align-items: center;
     margin-top: 1rem;
 
-    >span{
+    >span {
         transform: (translateY(-50%));
     }
 }
 
-.ItemList{
+.ItemList {
     display: flex;
     flex-flow: column wrap;
     justify-content: start;
@@ -25,7 +26,7 @@
     margin-bottom: 2rem;
     align-self: start;
 
-    &__title{
+    &__title {
         align-self: start;
         font-size: $font-fluid-mdd;
         font-weight: bold;
@@ -45,7 +46,7 @@
         justify-content: center;
         align-items: center;
 
-        select{
+        select {
             background: none;
             border: none;
             outline: none;
@@ -59,20 +60,21 @@
             cursor: pointer;
             transition: color 200ms, text-shadow 200ms;
 
-            option{
+            option {
                 width: 100%;
                 background: var(--color-back-dark);
                 font-size: .8em;
             }
 
-            &:hover, &:focus-visible{
+            &:hover,
+            &:focus-visible {
                 color: var(--color-three);
                 text-shadow: 2px 2px 0 var(--color-one);
             }
         }
     }
 
-    &__content{
+    &__content {
         margin: auto;
         width: 100%;
         margin-top: 1rem;
@@ -84,7 +86,7 @@
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     }
 
-    &__noProducts{
+    &__noProducts {
         align-self: start;
         font-size: $font-fluid-md;
         font-weight: bold;
@@ -93,37 +95,41 @@
         margin-bottom: 2rem;
         animation: fadeTranslateIn 200ms ease-in-out forwards;
 
-        &__link{
+        &__link {
             color: var(--color-one-dark);
             margin-left: .8em;
             text-shadow: 2px 2px 0 var(--color-three);
 
-            &:hover, &:focus-visible{
+            &:hover,
+            &:focus-visible {
                 color: var(--color-one);
             }
         }
     }
 }
 
-@media (min-width: 500px){
-    .ItemList__title{
+@media (min-width: 500px) {
+    .ItemList__title {
         border-radius: .2em;
         max-width: fit-content;
     }
 }
-@media (min-width:1024px){
-    .ItemListWrapper{
-        min-height: calc(100vh - 108px - 60px - .4rem - 1rem); /* container height= 100vh-navHeight-tabsHeight-margins */
+
+@media (min-width:1024px) {
+    .ItemListWrapper {
+        min-height: calc(100vh - 108px - 60px - .4rem - 1rem);
+        /* container height= 100vh-navHeight-tabsHeight-margins */
     }
-    .ItemList{
+
+    .ItemList {
         margin-top: 1.4rem;
 
-        &__title{
+        &__title {
             margin-left: 5%;
             margin-right: 5%;
         }
 
-        &__noProducts{
+        &__noProducts {
             align-self: center;
         }
     }

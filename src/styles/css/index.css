@@ -23,7 +23,22 @@ html {
   font-size: 100%;
 }
 
-ul, ol, li, a, h1, h2, h3, p, body, header, section, footer, .container, .container-fluid, .row, .col {
+ul,
+ol,
+li,
+a,
+h1,
+h2,
+h3,
+p,
+body,
+header,
+section,
+footer,
+.container,
+.container-fluid,
+.row,
+.col {
   margin: 0;
   padding: 0;
 }
@@ -45,7 +60,10 @@ ul {
   list-style: none;
 }
 
-button, input, textarea, select {
+button,
+input,
+textarea,
+select {
   font: inherit;
 }
 

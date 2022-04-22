@@ -7,15 +7,16 @@ import '../../src/styles/css/CartWidget.css';
 
 
 
-export default function CartWidget({message, navClosed, navOpen}){
-    const {cartItems} = useContext(CartContext);
-    
-    return(
-        <Link to="/checkout" onClick={()=>{
-            if (navOpen){
+export default function CartWidget({ message, navClosed, navOpen }) {
+    const { cartItems } = useContext(CartContext);
+
+    return (
+        <Link to="/checkout" onClick={() => {
+            if (navOpen) {
                 navClosed();
-            }; window.scrollTo(0,0); }} className={`CartWidget ${cartItems>0?"":"disabled"}`} role="button">
-            {message?<span><i className="bi bi-cart-fill is-size-3-widescreen is-size-4-desktop is-size-3-touch"></i>&nbsp;{message}</span>:<span><i className="bi bi-cart-fill is-size-3-widescreen is-size-4-desktop is-size-3-touch"></i>&nbsp;{cartItems}</span>}
+            }; window.scrollTo(0, 0);
+        }} className={`CartWidget ${cartItems > 0 ? "" : "disabled"}`} role="button">
+            {message ? <span><i className="bi bi-cart-fill is-size-3-widescreen is-size-4-desktop is-size-3-touch"></i>&nbsp;{message}</span> : <span><i className="bi bi-cart-fill is-size-3-widescreen is-size-4-desktop is-size-3-touch"></i>&nbsp;{cartItems}</span>}
         </Link>
     )
 }

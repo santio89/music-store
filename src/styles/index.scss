@@ -18,7 +18,22 @@ html {
   font-size: 100%;
 }
 
-ul, ol, li, a, h1, h2, h3, p, body, header, section, footer, .container, .container-fluid, .row, .col {
+ul,
+ol,
+li,
+a,
+h1,
+h2,
+h3,
+p,
+body,
+header,
+section,
+footer,
+.container,
+.container-fluid,
+.row,
+.col {
   margin: 0;
   padding: 0;
 }
@@ -40,7 +55,10 @@ ul {
   list-style: none;
 }
 
-button, input, textarea, select {
+button,
+input,
+textarea,
+select {
   font: inherit;
 }
 
@@ -62,7 +80,7 @@ button {
 
 /* FIN CSS RESET */
 
-:root{
+:root {
   --color-one: rgb(242, 69, 104);
   --color-one-hover: rgb(239, 46, 85);
   --color-one-dark: rgb(179, 61, 85);
@@ -76,48 +94,48 @@ button {
   --font-primary: 'Croissant One', cursive;
 }
 
-html{
-    scrollbar-width: thin;
-    scrollbar-color: var(--color-one) var(--color-back);
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-one) var(--color-back);
 
 
-	/* INICIO SCROLLBAR */
+  /* INICIO SCROLLBAR */
 
-	/* width */
-	::-webkit-scrollbar {
-		width: 8px;
-	}
+  /* width */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
 
-	/* track */
-	::-webkit-scrollbar-track {
-	background: var(--color-back);
-	}
-
-	/* handle */
-	::-webkit-scrollbar-thumb {
-	background: var(--color-one-dark);
-	}
-
-	/* handle on hover */
-	::-webkit-scrollbar-thumb:hover {
-    background: var(--color-one);
-	}
-
-	/* FIN SCROLLBAR */
-}
-
-body {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 100vh;
+  /* track */
+  ::-webkit-scrollbar-track {
     background: var(--color-back);
   }
 
-  
-#root{
+  /* handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-one-dark);
+  }
+
+  /* handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-one);
+  }
+
+  /* FIN SCROLLBAR */
+}
+
+body {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--color-back);
+}
+
+
+#root {
   width: 100%;
   overflow-x: hidden;
   line-height: 1.5;
@@ -131,8 +149,7 @@ body {
   background: var(--color-back);
 }
 
-::selection{
+::selection {
   background: var(--color-one-dark);
   color: var(--color-three);
 }
-

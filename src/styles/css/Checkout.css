@@ -263,7 +263,8 @@
   overflow: hidden;
   gap: 1rem;
 }
-.Checkout__details__resumen__buttons button, .Checkout__details__resumen__buttons a {
+.Checkout__details__resumen__buttons button,
+.Checkout__details__resumen__buttons a {
   display: flex;
   flex: row wrap;
   justify-content: end;
@@ -277,22 +278,29 @@
   width: 100%;
   will-change: transform;
 }
-.Checkout__details__resumen__buttons button i, .Checkout__details__resumen__buttons a i {
+.Checkout__details__resumen__buttons button i,
+.Checkout__details__resumen__buttons a i {
   font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
   font-weight: bold;
 }
-.Checkout__details__resumen__buttons button:hover, .Checkout__details__resumen__buttons button:focus-visible, .Checkout__details__resumen__buttons a:hover, .Checkout__details__resumen__buttons a:focus-visible {
+.Checkout__details__resumen__buttons button:hover, .Checkout__details__resumen__buttons button:focus-visible,
+.Checkout__details__resumen__buttons a:hover,
+.Checkout__details__resumen__buttons a:focus-visible {
   color: var(--color-one);
   outline: 1px dashed var(--color-one);
   background: var(--color-back);
 }
-.Checkout__details__resumen__buttons button:active, .Checkout__details__resumen__buttons a:active {
+.Checkout__details__resumen__buttons button:active,
+.Checkout__details__resumen__buttons a:active {
   transform: translate(2px, 2px);
 }
-.Checkout__details__resumen__buttons button:last-of-type, .Checkout__details__resumen__buttons a:last-of-type {
+.Checkout__details__resumen__buttons button:last-of-type,
+.Checkout__details__resumen__buttons a:last-of-type {
   color: var(--color-three-accent);
 }
-.Checkout__details__resumen__buttons button:last-of-type:hover, .Checkout__details__resumen__buttons button:last-of-type:focus-visible, .Checkout__details__resumen__buttons a:last-of-type:hover, .Checkout__details__resumen__buttons a:last-of-type:focus-visible {
+.Checkout__details__resumen__buttons button:last-of-type:hover, .Checkout__details__resumen__buttons button:last-of-type:focus-visible,
+.Checkout__details__resumen__buttons a:last-of-type:hover,
+.Checkout__details__resumen__buttons a:last-of-type:focus-visible {
   color: var(--color-three);
   outline: 1px dashed var(--color-three);
   background: var(--color-back);

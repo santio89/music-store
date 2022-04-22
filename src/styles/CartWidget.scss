@@ -1,6 +1,6 @@
 @import './variables.scss';
 
-.CartWidget{
+.CartWidget {
     width: 100%;
     display: block;
     gap: .2em;
@@ -12,25 +12,26 @@
     transition: filter 400ms;
     text-align: left;
 
-    &.disabled{
-            color: var(--color-three-dark);
-            pointer-events: none;
+    &.disabled {
+        color: var(--color-three-dark);
+        pointer-events: none;
     }
 
-    span{
+    span {
         display: block;
         width: 100%;
     }
 
-    &:hover, &:focus{
+    &:hover,
+    &:focus {
         outline: 1px dashed var(--color-three);
         color: var(--color-one);
         background-color: var(--color-three-accent);
     }
 }
 
-@media (min-width: 1024px){
-    .CartWidget{
+@media (min-width: 1024px) {
+    .CartWidget {
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
@@ -40,13 +41,14 @@
         max-width: 120px;
         text-align: center;
 
-        &:hover, &:focus{
+        &:hover,
+        &:focus {
             outline: 1px dashed var(--color-three);
             color: var(--color-three);
             background: var(--color-one-hover);
         }
 
-        span{
+        span {
             display: flex;
             flex-flow: row wrap;
             justify-content: center;

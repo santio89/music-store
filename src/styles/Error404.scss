@@ -1,7 +1,8 @@
 @import './variables.scss';
 
-.Error404Wrapper{
-    min-height: calc(100vh - 76px - 60px - .2rem); /* container height= 100vh-navHeight-tabsHeight-margins */
+.Error404Wrapper {
+    min-height: calc(100vh - 76px - 60px - .2rem);
+    /* container height= 100vh-navHeight-tabsHeight-margins */
     display: flex;
     justify-content: center;
     align-items: start;
@@ -9,7 +10,7 @@
     margin: auto
 }
 
-.Error404{
+.Error404 {
     width: 100%;
     margin: auto;
     margin-top: 1.4vh;
@@ -20,7 +21,7 @@
     justify-content: center;
     align-items: center;
 
-    h2{
+    h2 {
         font-size: $font-fluid-xl;
         font-weight: 800;
         color: var(--color-one);
@@ -28,7 +29,7 @@
         text-align: center;
     }
 
-    p{
+    p {
         color: var(--color-three);
         text-shadow: 2px 2px 0 var(--color-three-dark);
         font-size: $font-fluid-md;
@@ -36,7 +37,7 @@
         margin: auto;
     }
 
-    a{
+    a {
         margin-top: 1.2rem;
         color: var(--color-one-dark);
         text-shadow: 2px 2px 0 var(--color-three);
@@ -44,14 +45,16 @@
         text-align: center;
         font-size: $font-fluid-lg;
 
-        &:hover, &:focus-visible{
+        &:hover,
+        &:focus-visible {
             color: var(--color-one);
         }
     }
 }
 
-@media (min-width:1024px){
-    .Error404Wrapper{
-        min-height: calc(100vh - 108px - 60px - .4rem - 1rem); /* container height= 100vh-navHeight-tabsHeight-margins */
+@media (min-width:1024px) {
+    .Error404Wrapper {
+        min-height: calc(100vh - 108px - 60px - .4rem - 1rem);
+        /* container height= 100vh-navHeight-tabsHeight-margins */
     }
 }
