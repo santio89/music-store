@@ -63,15 +63,16 @@
         position: absolute;
         left: 0;
         right: 0;
-        top: -250%;
-        transition: top 400ms ease-in-out;
+        top: 100%;
+        transform: translateY(-100%);
+        transition: transform 400ms ease-in-out;
         pointer-events: none;
-        padding-top: .2rem;
+        padding-top: .4rem;
         z-index: -1;
     }
     
     .navbar-menu.is-active {
-        top: 100%;
+        transform: translateY(0%);
         pointer-events: auto;
     }   
     /* fin media query mobile nav  */
