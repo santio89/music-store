@@ -9,6 +9,7 @@
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+    margin-top: 1rem;
 
     >span{
         transform: (translateY(-50%));
@@ -23,19 +24,49 @@
     width: 100%;
     margin-bottom: 2rem;
     align-self: start;
-   /*  animation: fadeTranslateIn 200ms ease-in-out forwards; */
 
     &__title{
-        align-self: center;
-        font-size: $font-fluid-lg;
+        align-self: start;
+        font-size: $font-fluid-mdsp;
         font-weight: bold;
-        text-shadow: 2px 2px var(--color-three);
+        text-shadow: 2px 2px 0 var(--color-three);
         color: var(--color-one);
-        border-bottom: 2px dashed var(--color-one);
-        margin-bottom: 2rem;
         word-spacing: .2em;
-        letter-spacing: .01em;
+        letter-spacing: .02em;
+        padding-left: 1rem;
+        padding-right: 1rem;
         width: 100%;
+        max-width: 500px;
+        margin: auto;
+        background: var(--color-back-dark);
+        word-wrap: break-word;
+
+
+        select{
+            background: none;
+            border: none;
+            outline: none;
+            color: var(--color-one);
+            text-shadow: 2px 2px 0 var(--color-three);
+            padding: 0;
+            padding-right: .2em;
+            padding-left: 1ch;
+            margin: 0;
+            line-height: 40px;
+            cursor: pointer;
+            transition: text-shadow 200ms;
+
+            option{
+                width: 100%;
+                background: var(--color-back-dark);
+                font-size: .8em;
+            }
+
+            &:hover, &:focus-visible{
+                text-shadow: 2px 2px 0 var(--color-back-dark);
+            }
+        }
+
     }
 
     &__content{
@@ -71,6 +102,12 @@
     }
 }
 
+@media (min-width: 500px){
+    .ItemList__title{
+        border-radius: .2em;
+        max-width: fit-content;
+    }
+}
 @media (min-width:1024px){
     .ItemListWrapper{
         min-height: calc(100vh - 108px - 60px - .4rem - 1rem); /* container height= 100vh-navHeight-tabsHeight-margins */
@@ -79,7 +116,8 @@
         margin-top: 1.4rem;
 
         &__title{
-            align-self: start;
+            margin-left: 5%;
+            margin-right: 5%;
         }
 
         &__noProducts{

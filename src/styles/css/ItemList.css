@@ -15,6 +15,7 @@
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  margin-top: 1rem;
 }
 .ItemListWrapper > span {
   transform: translateY(-50%);
@@ -28,19 +29,44 @@
   width: 100%;
   margin-bottom: 2rem;
   align-self: start;
-  /*  animation: fadeTranslateIn 200ms ease-in-out forwards; */
 }
 .ItemList__title {
-  align-self: center;
-  font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.8rem);
+  align-self: start;
+  font-size: clamp(0.4rem, 0.4rem + 4.8vw, 2.4rem);
   font-weight: bold;
-  text-shadow: 2px 2px var(--color-three);
+  text-shadow: 2px 2px 0 var(--color-three);
   color: var(--color-one);
-  border-bottom: 2px dashed var(--color-one);
-  margin-bottom: 2rem;
   word-spacing: 0.2em;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
+  padding-left: 1rem;
+  padding-right: 1rem;
   width: 100%;
+  max-width: 500px;
+  margin: auto;
+  background: var(--color-back-dark);
+  word-wrap: break-word;
+}
+.ItemList__title select {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--color-one);
+  text-shadow: 2px 2px 0 var(--color-three);
+  padding: 0;
+  padding-right: 0.2em;
+  padding-left: 1ch;
+  margin: 0;
+  line-height: 40px;
+  cursor: pointer;
+  transition: text-shadow 200ms;
+}
+.ItemList__title select option {
+  width: 100%;
+  background: var(--color-back-dark);
+  font-size: 0.8em;
+}
+.ItemList__title select:hover, .ItemList__title select:focus-visible {
+  text-shadow: 2px 2px 0 var(--color-back-dark);
 }
 .ItemList__content {
   margin: auto;
@@ -72,6 +98,14 @@
   color: var(--color-one);
 }
 
+@media (min-width: 500px) {
+  .ItemList__title {
+    border-radius: 0.2em;
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+  }
+}
 @media (min-width: 1024px) {
   .ItemListWrapper {
     min-height: calc(100vh - 108px - 60px - 0.4rem - 1rem);
@@ -82,7 +116,8 @@
     margin-top: 1.4rem;
   }
   .ItemList__title {
-    align-self: start;
+    margin-left: 5%;
+    margin-right: 5%;
   }
   .ItemList__noProducts {
     align-self: center;
