@@ -1,14 +1,32 @@
 @import './variables.scss';
 
-/* reemplaze esta transicion con framer-motion, creando una animacion customizada similar */
+/* algunas transiciones hechas con css keyframes y otras con react framer-motion */
 @keyframes fadeTranslateIn{
-    0%{
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-    100%{
-      transform: translateX(0);
-      opacity: 1;
-    }
+  0%{
+    transform: translateX(-100%);
+    opacity: 0;
   }
-  
+  100%{
+    transform: translateX(0);
+    opacity: 1;
+    }
+}
+
+
+@keyframes bounceInDown {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  60% {
+    transform: translateY(10%);
+  }
+
+  80% {
+    transform: translateY(-10%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

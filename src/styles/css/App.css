@@ -5,7 +5,7 @@
 /* bulma is-size-3 */
 /* bulma is-size-2 */
 /* bulma is-size-1 */
-/* reemplaze esta transicion con framer-motion, creando una animacion customizada similar */
+/* algunas transiciones hechas con css keyframes y otras con react framer-motion */
 @-webkit-keyframes fadeTranslateIn {
   0% {
     transform: translateX(-100%);
@@ -24,5 +24,33 @@
   100% {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+@-webkit-keyframes bounceInDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  60% {
+    transform: translateY(10%);
+  }
+  80% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes bounceInDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  60% {
+    transform: translateY(10%);
+  }
+  80% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
   }
 }/*# sourceMappingURL=App.css.map */
