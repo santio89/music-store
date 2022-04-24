@@ -26,13 +26,13 @@ export default function ItemDetailContainer() {
 
         /*  fetch custom con promise (hace el fetch a la api luego de un tiempo). 
         luego actualizo los datos de mi base de datos mas especificamente del producto que se quiera ver. al utilizar la key/secret que me provee la api, puedo acceder a algunos datos más */
-        customFetch(400, fetchApi).then(
+        customFetch(500, fetchApi).then(
             res => {
                 res.json().then(
                     res => {
                         res.price = Math.trunc(Math.abs((res.community?.have - res.community?.want) * .8 + 200));
                         res.stock = Math.trunc(res.community.have / 40 + 12);
-                        /* actualizo data con mas info */
+                        /* actualizo data con mas info gracias al single search autentificado en la api */
                         setDoc(doc(productsCollection, res.id.toString()), res, { merge: true })
 
                         /* busco el producto en la base de datos de firebase primero y, si no esta disponible, muestro desde la api (para mantener el sitio activo)*/
@@ -42,7 +42,6 @@ export default function ItemDetailContainer() {
                                 setLoading(false);
                             }
                         }).catch(() => { setProducto(res); setLoading(false) })
-
                     }
                 )
 
