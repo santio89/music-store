@@ -237,12 +237,12 @@
             font-family: 'Courier New', Courier, monospace;
             text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
             justify-content: center;
-            background: var(--color-back-dark);
+            background-color: transparent;
             text-align: center;
             border-radius: .4rem;
             outline: 2px dashed var(--color-three-dark);
             transition: 200ms;
-            will-change: transform;
+            will-change: transform, background-color;
 
             span {
                 display: block;
@@ -283,9 +283,9 @@
             outline: 2px dashed var(--color-three-dark);
             font-family: 'Courier New', Courier, monospace;
             text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
-            background: var(--color-back-dark);
+            background-color: transparent;
             transition: 200ms;
-            will-change: transform;
+            will-change: transform, background-color;
 
 
             &:hover,

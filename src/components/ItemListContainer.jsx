@@ -36,7 +36,7 @@ export default function ItemListContainer() {
                     res.json().then(
                         res => {
                             /* res.results tiene los productos que devuelve la api. a partir de ahi creo/actualizo (con setDoc) mi base de datos en firebase. luego leo (con getDocs) desde firebase y seteo el array de productos para mostrar en pantalla. dejo los id de firebase para mantener mas consistencia (podria ser reemplazado por los id de firebase si quisiera) */
-
+                            console.log(res)
                             const database = getFirestore();
                             const productsCollection = collection(database, "products");
 
@@ -51,25 +51,24 @@ export default function ItemListContainer() {
                 
                                                 setDoc(doc(productsCollection, result.id.toString()), result, { merge: true })
                                             }) */
-
+                                            
 
                             let firebaseProducts = []
+                            /* busco en firebase los productos que la api diga para mostrar, y los seteo en el array de productos. si la api no esta disponible (ej quota exceeded), muestro desde la api directamente para mantener el sitio activo*/
                             getDocs(productsCollection, "products").then(results => results.forEach(result => {
-                                /* busco en firebase los productos que la api diga para mostrar, y los seteo en el array de productos. si la api no esta disponible (ej quota exceeded), muestro desde la api directamente para mantener el sitio activo*/
-
                                 res.results.forEach((r) => {
                                     let addProductDb = true; /* si lo encuentro en firebase, no lo agrego */
 
                                     if (r.id === result.data().id) {
                                         if (result.data().price !== (Math.trunc(Math.abs((r.community.have - r.community.want) * .8 + 200)))) {
-                                            setDoc(doc(productsCollection, r.id.toString()), result.data(), { merge: true });
+                                            setDoc(doc(productsCollection, r.id.toString()), r, { merge: true });
                                         }
                                         firebaseProducts = [...firebaseProducts, result.data()]; addProductDb = false
                                     }
 
                                     if (addProductDb) {
-                                        setDoc(doc(productsCollection, result.id.toString()), result.data(), { merge: true });
-                                        firebaseProducts = [...firebaseProducts, result.data()];
+                                        setDoc(doc(productsCollection, r.id.toString()), r, { merge: true });
+                                        firebaseProducts = [...firebaseProducts, r];
                                     }
                                 })
 

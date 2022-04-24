@@ -65,7 +65,7 @@
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
   line-height: 1.2;
-  background-color: var(--color-back-dark);
+  background-color: transparent;
   color: var(--color-one);
   text-align: center;
   text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
@@ -74,7 +74,7 @@
   padding: 0.4em;
   margin-top: 0.8rem;
   transition: 200ms;
-  will-change: transform;
+  will-change: transform, background-color;
   cursor: pointer !important;
 }
 .ItemCount__add:hover, .ItemCount__add:focus-visible {
