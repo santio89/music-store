@@ -40,12 +40,13 @@ export default function ItemListContainer() {
                             const database = getFirestore();
                             const productsCollection = collection(database, "products");
 
-                            const batch = writeBatch(database);
-                            /* esta funcion actualiza la base de datos en firebase (actualiza los datos (merge) o crea si no existen) */
+                         
+                            /* esta funcion actualiza la base de datos en firebase (actualiza los datos (merge) o crea si no existen).
+                            creo el price en base a las propiedades community.have y community.want de la api. hago lo mismo para el stock */
                             res.results.forEach((result)=>{
-                                /* creo el price en base a las propiedades community.have y community.want de la api. hago lo mismo para el stock */
+                      
                                 result.price=Math.trunc(Math.abs((result.community?.have - result.community?.want) * .8 + 200));
-                                result.stock = Math.trunc(result.community.have / 40 + 12); /* disminuyo el stock solo a modo de que se pueda probar agotar el stock (mas rapidamente) */
+                                result.stock = Math.trunc(result.community.have / 40 + 12); 
 
                                 setDoc(doc(productsCollection, result.id.toString()), result, { merge: true })
                             })
