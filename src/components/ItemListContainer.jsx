@@ -44,40 +44,38 @@ export default function ItemListContainer() {
                             /* esta funcion actualiza la base de datos en firebase (actualiza los datos (merge) o crea si no existen).
                             creo el price en base a las propiedades community.have y community.want de la api. hago lo mismo para el stock.
                             Importante: dejo desactivada de momento esta funcion ya que genera muchas operaciones de lectura (y otras tantas de escritura) innecesarias. la base de datos en firebase igual se va a seguir actualizando (solo si un item no existe y tambien cuando abro en detalle) pero no deberia consumir tanta quota) */
-            /*                 res.results.forEach((result) => {
-
-                                result.price = Math.trunc(Math.abs((result.community?.have - result.community?.want) * .8 + 200));
-                                result.stock = Math.trunc(result.community.have / 40 + 12);
-
-                                setDoc(doc(productsCollection, result.id.toString()), result, { merge: true })
-                            }) */
+                            /*                 res.results.forEach((result) => {
+                
+                                                result.price = Math.trunc(Math.abs((result.community?.have - result.community?.want) * .8 + 200));
+                                                result.stock = Math.trunc(result.community.have / 40 + 12);
+                
+                                                setDoc(doc(productsCollection, result.id.toString()), result, { merge: true })
+                                            }) */
 
 
                             let firebaseProducts = []
                             getDocs(productsCollection, "products").then(results => results.forEach(result => {
                                 /* busco en firebase los productos que la api diga para mostrar, y los seteo en el array de productos. si la api no esta disponible (ej quota exceeded), muestro desde la api directamente para mantener el sitio activo*/
 
-                                
-
                                 res.results.forEach((r) => {
                                     let addProductDb = true; /* si lo encuentro en firebase, no lo agrego */
 
                                     if (r.id === result.data().id) {
-                                        if (result.data().price !== (Math.trunc(Math.abs((r.community.have - r.community.want) * .8 + 200)))){
+                                        if (result.data().price !== (Math.trunc(Math.abs((r.community.have - r.community.want) * .8 + 200)))) {
                                             setDoc(doc(productsCollection, r.id.toString()), result.data(), { merge: true });
                                         }
-                                        firebaseProducts = [...firebaseProducts, result.data()]; addProductDb= false 
+                                        firebaseProducts = [...firebaseProducts, result.data()]; addProductDb = false
                                     }
 
-                                    if (addProductDb){
+                                    if (addProductDb) {
                                         setDoc(doc(productsCollection, result.id.toString()), result.data(), { merge: true });
                                         firebaseProducts = [...firebaseProducts, result.data()];
                                     }
                                 })
-                                
+
                                 setProductos(firebaseProducts);
                                 setLoading(false);
-                            })).catch(() => { 
+                            })).catch(() => {
                                 res.results.forEach((result) => {
                                     result.price = Math.trunc(Math.abs((result.community?.have - result.community?.want) * .8 + 200));
                                     result.stock = Math.trunc(result.community.have / 40 + 12);

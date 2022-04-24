@@ -44,13 +44,8 @@ export default function ItemDetailContainer() {
                         }).catch(() => { setProducto(res); setLoading(false) })
                     }
                 )
-
-
             }
         ).catch(err => { console.log("error: ", err) });
-
-
-
 
     }, [productId])
 
