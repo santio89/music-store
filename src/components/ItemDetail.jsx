@@ -62,7 +62,7 @@ export default function ItemDetail({ loading, producto }) {
                                                     {continueCheckout ?
                                                         <motion.div key="checkout" initial={{ opacity: 0, transform: "translateX(-120%)" }}
                                                             animate={{ opacity: 1, transform: "translateX(0%)" }}
-                                                            exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'spring', duration: .8 }} className='ItemDetail__checkout'>
+                                                            exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'spring', duration: .4 }} className='ItemDetail__checkout'>
                                                             <h3>Productos agregados!</h3>
                                                             <div className='ItemDetail__checkout__buttons'>
                                                                 <CartWidget message={"Ir al checkout"} />
@@ -71,7 +71,7 @@ export default function ItemDetail({ loading, producto }) {
                                                         </motion.div> :
                                                         <motion.div key="count" initial={{ opacity: 0, transform: "translateX(-120%)" }}
                                                             animate={{ opacity: 1, transform: "translateX(0%)" }}
-                                                            exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'spring', duration: .8 }} className='ItemDetail__counterWrapper'>
+                                                            exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'spring', duration: .4 }} className='ItemDetail__counterWrapper'>
                                                             <p className='ItemDetail__counterWrapper__price'>{"$" + producto.price}</p>
                                                             <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initialCount} stock={producto.stock} id={producto.id} />
                                                         </motion.div>}
