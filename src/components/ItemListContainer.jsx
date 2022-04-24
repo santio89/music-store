@@ -5,7 +5,7 @@ import '../../src/styles/css/ItemList.css';
 import ItemList from './ItemList';
 import customFetch from '../utils/customFetch';
 import { useParams } from 'react-router-dom';
-import { doc, setDoc, writeBatch, collection, getFirestore, getDocs } from 'firebase/firestore'
+import { doc, setDoc, collection, getFirestore, getDocs } from 'firebase/firestore'
 
 
 export default function ItemListContainer() {
@@ -40,11 +40,11 @@ export default function ItemListContainer() {
                             const database = getFirestore();
                             const productsCollection = collection(database, "products");
 
-                         
+                            
                             /* esta funcion actualiza la base de datos en firebase (actualiza los datos (merge) o crea si no existen).
                             creo el price en base a las propiedades community.have y community.want de la api. hago lo mismo para el stock */
                             res.results.forEach((result)=>{
-                      
+                        
                                 result.price=Math.trunc(Math.abs((result.community?.have - result.community?.want) * .8 + 200));
                                 result.stock = Math.trunc(result.community.have / 40 + 12); 
 
@@ -54,16 +54,16 @@ export default function ItemListContainer() {
 
                             let firebaseProducts = []
                             getDocs(productsCollection, "products").then(results=>results.forEach(result=>{
-                                /* busco en firebase los productos que la api diga para mostrar, y los seteo en el array de productos */
+                                /* busco en firebase los productos que la api diga para mostrar, y los seteo en el array de productos. si la api no esta disponible (ej quota exceeded), muestro desde la api directamente para mantener el sitio activo*/
                                 res.results.forEach((r)=>{
                                     if (result.data().id === r.id){ firebaseProducts = [...firebaseProducts, result.data()] }
-                                })     
+                                }) 
 
                                 setProductos(firebaseProducts);
                                 setLoading(false);
-                            }));
+                            })).catch(()=>{setProductos(res.results); setLoading(false)})    ;
                         }
-                    )
+                    ).catch(err => { console.log("error: ", err) }); 
                 } else {
                     navigate("./error404")
                 }
