@@ -33,7 +33,7 @@ export default function Checkout() {
                     <li key={item?.id} className='Checkout__details__list__li'>
                       <span><Link to={`/item/${item?.id}`} onClick={() => window.scrollTo(0, 0)}><img alt="item" src={item?.images?.[0]?.uri}></img></Link><span className='Checkout__details__list__li__title'>{item?.title}</span></span>
                       <span>{item?.artists_sort}</span>
-                      <span>${item?.precio}</span>
+                      <span>${item?.price}</span>
                       <span className='Checkout__details__list__li__input'><input type="number" min={0} defaultValue={item?.count} onBlur={e => {
                         e.target.value = e.target.value < 0 ? 0 : Math.round(e.target.value);
                         if (Number(e.target.value) > Number(item.stockInitial)) {
@@ -43,7 +43,7 @@ export default function Checkout() {
                           modifyCount({ ...item, count: Number(e.target.value) });
                         }
                       }} onKeyDown={(e) => e.key !== "Enter" ? (e.key !== 'Escape' ? null : e.target.blur()) : e.target.blur()} /> <span className='Checkout__details__list__li__stock'>Stock: {item.stockInitial}</span></span>
-                      <span>${item?.precio * item?.count}</span>
+                      <span>${item?.price * item?.count}</span>
                       <button className='Checkout__details__list__remove' aria-label='Eliminar product' title='Eliminar producto' onClick={() => cartRemove(item?.id)}><i className="bi bi-trash-fill"></i></button>
                     </li>)
                 }
