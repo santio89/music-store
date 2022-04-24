@@ -8,11 +8,8 @@ import CartWidget from './CartWidget';
 import '../../src/styles/css/ItemDetail.css';
 
 export default function ItemDetail({ loading, producto }) {
-    producto.precio = Math.trunc(Math.abs((producto.community?.have - producto.community?.want) * .8 + 200))
-    producto.stockInitial = producto.community?.have;
 
-    const initial = 1;
-    producto.stockInitial = Math.trunc(producto.stockInitial / 40 + 10); /* disminuyo el stock solo a modo de que se pueda probar agotar el stock (mas rapidamente) */
+    const initialCount = 1;
 
     const history = useNavigate();
     const [continueCheckout, setContinueCheckout] = useState(false);
@@ -43,7 +40,7 @@ export default function ItemDetail({ loading, producto }) {
                                 <button onClick={() => { history(-1) }} className='ItemDetail__back'>&#x21E0;&nbsp;Volver</button>
                                 <div className='ItemDetail__body'>
                                     <div className='ItemDetail__imgWrapper'>
-                                        <img alt="item" src={producto && producto.images && producto.images[0] && producto.images[0].resource_url} loading="lazy"></img>
+                                        <img alt="item" src={producto.cover_image} loading="lazy"></img>
                                         <div className='ItemDetail__pWrapper'>
                                             <p>◖Título: {producto.title}</p>
                                             <p>◖Artista: {producto.artists_sort}</p>
@@ -75,8 +72,8 @@ export default function ItemDetail({ loading, producto }) {
                                                         <motion.div key="count" initial={{ opacity: 0, transform: "translateX(-120%)" }}
                                                             animate={{ opacity: 1, transform: "translateX(0%)" }}
                                                             exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'spring', duration: .8 }} className='ItemDetail__counterWrapper'>
-                                                            <p className='ItemDetail__counterWrapper__price'>{"$" + producto.precio}</p>
-                                                            <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initial} stock={producto.stockInitial} id={producto.id} />
+                                                            <p className='ItemDetail__counterWrapper__price'>{"$" + producto.price}</p>
+                                                            <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initialCount} stock={producto.stock} id={producto.id} />
                                                         </motion.div>}
                                                 </AnimatePresence>
                                             </div>

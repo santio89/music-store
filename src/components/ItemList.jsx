@@ -73,7 +73,7 @@ export default function ItemList({ productos, searchId, loading }) {
                                 <div className="ItemList__content">
                                     {productos.map((producto) => {
                                         return (
-                                            <Item key={producto.id} id={producto.id} title={producto.title} img={producto.cover_image} stockInitial={producto.community?.have} price={producto.price} />
+                                            <Item key={producto.id} id={producto.id} title={producto.title} img={producto.cover_image} stock={producto.stock} price={producto.price} />
                                         )
                                     })}
                                 </div>
