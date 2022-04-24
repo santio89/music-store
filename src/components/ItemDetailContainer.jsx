@@ -26,7 +26,7 @@ export default function ItemDetailContainer() {
 
         /*  fetch custom con promise (hace el fetch a la api luego de un tiempo). 
         luego actualizo los datos de mi base de datos mas especificamente del producto que se quiera ver. al utilizar la key/secret que me provee la api, puedo acceder a algunos datos más */
-        customFetch(500, fetchApi).then(
+        customFetch(400, fetchApi).then(
             res => {
                 res.json().then(
                     res => {

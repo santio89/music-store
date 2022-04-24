@@ -30,7 +30,7 @@ export default function ItemListContainer() {
         let fetchApi = fetch(`https://api.discogs.com/database/search?${searchId ? manualSearch : (categoryId ? genreSearch : hotSearch)}&token=${discogsToken}`);
 
         /* fetch custom con promise (hace el fetch a la api luego de un tiempo (lo dejo para apreciar el loading un poco) ) */
-        customFetch(500, fetchApi).then(
+        customFetch(400, fetchApi).then(
             res => {
                 if (res.ok) {
                     res.json().then(
