@@ -36,7 +36,6 @@ export default function ItemListContainer() {
                     res.json().then(
                         res => {
                             /* res.results tiene los productos que devuelve la api. a partir de ahi creo/actualizo (con setDoc) mi base de datos en firebase. luego leo (con getDocs) desde firebase y seteo el array de productos para mostrar en pantalla. dejo los id de firebase para mantener mas consistencia (podria ser reemplazado por los id de firebase si quisiera) */
-                            console.log(res)
                             const database = getFirestore();
                             const productsCollection = collection(database, "products");
 

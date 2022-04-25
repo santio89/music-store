@@ -19,7 +19,6 @@
 }
 .ItemDetailWrapper > span {
   transform: translateY(-50%);
-  transition: 1000ms;
 }
 
 .ItemDetail {

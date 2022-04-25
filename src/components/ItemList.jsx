@@ -69,14 +69,17 @@ export default function ItemList({ productos, searchId, loading }) {
                                 animate={{ opacity: 1, transform: "translateX(0%)" }}
                                 exit={{ opacity: 0, transform: "translateX(120%)" }}>
 
-                                {isProductos ? null : <div className="ItemList__noProducts">No se encontraron resultados... <Link className="ItemList__noProducts__link" to="/">Ir al inicio?</Link></div>}
-                                <div className="ItemList__content">
-                                    {productos.map((producto) => {
-                                        return (
-                                            <Item key={producto.id} id={producto.id} title={producto.title} img={producto.cover_image} stock={producto.stock} price={producto.price} />
-                                        )
-                                    })}
-                                </div>
+                                {isProductos ? <div className="ItemList__contentWrapper"> 
+                                    <button className="ItemList__sort">Ordenar&nbsp;<i class="bi bi-caret-down-fill"></i></button>
+                                    <div className="ItemList__content">
+                                        {productos.map((producto) => {
+                                            return (
+                                                <Item key={producto.id} id={producto.id} title={producto.title} img={producto.cover_image} stock={producto.stock} price={producto.price} />
+                                            )
+                                        })}
+                                    </div>
+                                </div> : <div className="ItemList__noProducts">No se encontraron resultados... <Link className="ItemList__noProducts__link" to="/">Ir al inicio?</Link></div>}
+                                
                             </motion.div>
                         </AnimatePresence>
                 }

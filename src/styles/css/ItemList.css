@@ -15,11 +15,10 @@
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
+  /*   margin-top: 1rem; */
 }
 .ItemListWrapper > span {
   transform: translateY(-50%);
-  transition: 1000ms;
 }
 
 .ItemList {
@@ -35,15 +34,15 @@
   align-self: start;
   font-size: clamp(1rem, 1rem + 1.4vw, 1.8rem);
   font-weight: bold;
-  text-shadow: 2px 2px 0 var(--color-three);
+  text-shadow: 1px 1px 0 var(--color-three);
   color: var(--color-one);
   word-spacing: 0.2em;
   letter-spacing: 0.02em;
+  padding: 0.4rem;
   padding-left: 1rem;
   padding-right: 1rem;
   width: 100%;
   max-width: 500px;
-  margin: auto;
   background: var(--color-back-dark);
   word-wrap: break-word;
   display: flex;
@@ -56,7 +55,7 @@
   border: none;
   outline: none;
   color: var(--color-one);
-  text-shadow: 2px 2px 0 var(--color-three);
+  text-shadow: 1px 1px 0 var(--color-three);
   padding: 0;
   padding-right: 0.2em;
   padding-left: 1ch;
@@ -72,7 +71,46 @@
 }
 .ItemList__title select:hover, .ItemList__title select:focus-visible {
   color: var(--color-three);
-  text-shadow: 2px 2px 0 var(--color-one);
+  text-shadow: 1px 1px 0 var(--color-one);
+}
+.ItemList__contentWrapper {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+.ItemList__sort {
+  align-self: start;
+  font-size: clamp(1rem, 1rem + 1.4vw, 1.8rem);
+  font-weight: bold;
+  text-shadow: 1px 1px 0 var(--color-three);
+  color: var(--color-one);
+  word-spacing: 0.2em;
+  letter-spacing: 0.02em;
+  padding: 0.2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  max-width: 240px;
+  border-radius: 0 0.2em 0.2em 0;
+  background: var(--color-back-dark);
+  word-wrap: break-word;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: start;
+  align-items: center;
+  margin-top: 0.4rem;
+  margin-left: -6%;
+}
+.ItemList__sort i {
+  font-size: 0.8em;
+  transition: color 200ms, text-shadow 200ms;
+}
+.ItemList__sort:hover i {
+  text-shadow: 1px 1px 0 var(--color-one);
+  color: var(--color-three);
 }
 .ItemList__content {
   margin: auto;
@@ -106,7 +144,7 @@
 
 @media (min-width: 500px) {
   .ItemList__title {
-    border-radius: 0.2em;
+    border-radius: 0 0.2em 0.2em 0;
     max-width: -webkit-fit-content;
     max-width: -moz-fit-content;
     max-width: fit-content;
@@ -124,6 +162,11 @@
   .ItemList__title {
     margin-left: 5%;
     margin-right: 5%;
+    border-radius: 0.2em;
+  }
+  .ItemList__sort {
+    margin-left: 0;
+    border-radius: 0.2em;
   }
   .ItemList__noProducts {
     align-self: center;
