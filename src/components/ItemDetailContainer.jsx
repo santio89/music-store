@@ -31,17 +31,23 @@ export default function ItemDetailContainer() {
                 res.json().then(
                     res => {
                         res.price = Math.trunc(Math.abs((res.community?.have - res.community?.want) * .8 + 200));
-                        res.stock = Math.trunc(res.community.have / 40 + 12);
+                       
                         /* actualizo data con mas info gracias al single search autentificado en la api */
                         setDoc(doc(productsCollection, res.id.toString()), res, { merge: true })
 
                         /* busco el producto en la base de datos de firebase primero y, si no esta disponible, muestro desde la api (para mantener el sitio activo)*/
                         getDoc(productRef).then(snapshot => {
-                            if (snapshot.exists()) {
+                            if (snapshot.exists()) {    
+                                /* si no tiene la propiedad stock, la crea. por tanto, si hay stock en firebase, no lo actualizo desde la api */
+                                if (!snapshot.data().stock){
+                                    res.stock = Math.trunc(res.community.have / 40 + 12);
+                                    setDoc(doc(productsCollection, res.id.toString()), res, { merge: true })
+                                }
+
                                 setProducto(snapshot.data());
                                 setLoading(false);
                             }
-                        }).catch(() => { setProducto(res); setLoading(false) })
+                        }).catch(() => { res.stock = Math.trunc(res.community.have / 40 + 12); setProducto(res); setLoading(false) })
                     }
                 )
             }
