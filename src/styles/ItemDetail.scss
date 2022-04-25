@@ -247,7 +247,7 @@
             text-align: center;
             border-radius: .4rem;
             outline: 2px dashed var(--color-three-dark);
-            transition: 200ms;
+          /*   transition: 200ms; */
             will-change: transform, background-color;
 
             span {
@@ -290,7 +290,7 @@
             font-family: 'Courier New', Courier, monospace;
             text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
             background-color: transparent;
-            transition: 200ms;
+           /*  transition: 200ms; */
             will-change: transform, background-color;
 
 

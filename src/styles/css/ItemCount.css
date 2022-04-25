@@ -39,7 +39,7 @@
   font-size: clamp(2rem, 2rem + 2vw, 3.2rem);
   padding: 0.4rem;
   flex: 1;
-  transition: 200ms;
+  /*  transition: 200ms; */
   will-change: transform;
 }
 .ItemCount__buttons button:hover, .ItemCount__buttons button:focus-visible {
@@ -73,7 +73,7 @@
   border-radius: 0.4rem;
   padding: 0.4em;
   margin-top: 0.8rem;
-  transition: 200ms;
+  /* transition: 200ms; */
   will-change: transform, background-color;
   cursor: pointer !important;
 }

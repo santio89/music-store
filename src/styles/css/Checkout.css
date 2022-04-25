@@ -274,7 +274,7 @@
   padding: 0.28em;
   border-radius: 0.2em;
   line-height: 1.2;
-  transition: 200ms;
+  /* transition: 200ms; */
   width: 100%;
   background: transparent;
   will-change: transform, background-color;

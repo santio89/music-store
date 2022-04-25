@@ -35,7 +35,7 @@
       font-size: $font-fluid-xl;
       padding: .4rem;
       flex: 1;
-      transition: 200ms;
+     /*  transition: 200ms; */
       will-change: transform;
 
       &:hover,
@@ -75,7 +75,7 @@
     border-radius: .4rem;
     padding: .4em;
     margin-top: .8rem;
-    transition: 200ms;
+    /* transition: 200ms; */
     will-change: transform, background-color;
     cursor: pointer !important;
 
