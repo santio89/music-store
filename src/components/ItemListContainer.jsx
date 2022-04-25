@@ -5,7 +5,6 @@ import '../../src/styles/css/ItemList.css';
 import ItemList from './ItemList';
 import customFetch from '../utils/customFetch';
 import { useParams } from 'react-router-dom';
-import { doc, setDoc, collection, getFirestore, getDocs } from 'firebase/firestore'
 
 
 export default function ItemListContainer() {
@@ -35,51 +34,20 @@ export default function ItemListContainer() {
                 if (res.ok) {
                     res.json().then(
                         res => {
-                            /* res.results tiene los productos que devuelve la api. a partir de ahi creo/actualizo (con setDoc) mi base de datos en firebase. luego leo (con getDocs) desde firebase y seteo el array de productos para mostrar en pantalla. dejo los id de firebase para mantener mas consistencia (podria ser reemplazado por los id de firebase si quisiera) */
-                       
-                            /* busco en firebase los productos que la api diga para mostrar, y los seteo en el array de productos (si no existe en firebase, los crea). si la api no esta disponible (ej quota exceeded), muestro desde la api directamente para mantener el sitio activo.
-                            creo el price en base a las propiedades community.have y community.want de la api. hago lo mismo para el stock.*/
-
-                            /* const database = getFirestore();
-                            const productsCollection = collection(database, "products");
-
-                            let firebaseProducts = []
-                            
-                            getDocs(productsCollection, "products").then(results => {results.forEach(result => {
-                                
-                                res.results.forEach((r) => {
-                                    
-                                    r.price = Math.trunc(Math.abs((r.community?.have - r.community?.want) * .8 + 200));
-                                    r.stock = Math.trunc(r.community.have / 40 + 12);
-
-                                    if (r.id === result.data().id) {
-                                        if (result.data().price !== r.price) {
-                                            
-                                            setDoc(doc(productsCollection, r.id.toString()), r, { merge: true });
-                                        }
-
-                                        firebaseProducts = [...firebaseProducts, result.data()]; 
-
-                                    } else{
-                                        setDoc(doc(productsCollection, r.id.toString()), r, { merge: true });
-                                        firebaseProducts = [...firebaseProducts, r]; 
-                                    }
-                                })
-                            }); setProductos(firebaseProducts); setLoading(false);}).catch(() => {
-                                res.results.forEach((r) => {
-                                    r.price = Math.trunc(Math.abs((r.community?.have - r.community?.want) * .8 + 200));
-                                    r.stock = Math.trunc(r.community.have / 40 + 12);
-                                });
-                                setProductos(res.results); setLoading(false);
-                            }); */
-
                             res.results.forEach((r) => {
-                                r.price = Math.trunc(Math.abs((r.community?.have - r.community?.want) * .8 + 200));
+                                r.price = Math.trunc(Math.abs((r.community?.want / r.community?.have) * 4 + (r.community.want - r.community.have)));
                                 r.stock = Math.trunc(r.community.have / 40 + 12);
+
+
+                               /*  ESTE CODIGO ES PARA ESCRIBIR LOS RESULTADOS DE LA API EN FIREBASE. lo desactivo de momento ya que resulta en muchas lecturas/escrituras innecesarias en firebase (se ejecutaria cada vez que se cargue la lista. esta bueno para ir cargando la base de datos inicial)
+
+                                const database = getFirestore();
+                                const productsCollection = collection(database, "products");
+                                setDoc(doc(productsCollection, r.id.toString()), r, { merge: true }) */
+  
                             });
-                            setProductos(res.results); setLoading(false);
-
-
+                            setProductos(res.results);
+                            setLoading(false);
                         }
                     ).catch(err => { console.log("error: ", err) });
                 } else {
@@ -87,6 +55,22 @@ export default function ItemListContainer() {
                 }
             }
         ).catch(err => { console.log(err) });
+
+        /*  ESTE CODIGO ES PARA LEER DESDE FIREBASE y mostrar esos resultados en pantalla (en vez de mostrar los resultados de la api). Lo dejo desactivado ya que prefiero mostrar de la api los resultados de la lista (de esta forma es mas dinamico ya que la api continua agregando discos). De todas formas, al abrir un item (en item detail), el mismo se agrega o actualiza tambien a mi base de datos en firebase (pero manteniendo el stock de firebase, si hubiera)
+
+        const database = getFirestore();
+        const productsCollection = collection(database, "products");
+
+        let firebaseProducts = []
+        
+        const hotSearchQuery = query(productsCollection, orderBy("community.want", "desc"), limit(50));
+        getDocs(hotSearchQuery).then(snapshot=>{
+            snapshot.docs.forEach((doc)=>{
+                console.log(doc.data())
+                firebaseProducts = [...firebaseProducts, doc.data()]
+            });
+            setProductos(firebaseProducts); setLoading(false);
+        }) */
 
     }, [categoryId, searchId, navigate])
 

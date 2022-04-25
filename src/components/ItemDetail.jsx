@@ -42,20 +42,20 @@ export default function ItemDetail({ loading, producto }) {
                                     <div className='ItemDetail__imgWrapper'>
                                         <img alt="item" src={producto?.cover_image || producto?.images?.[0]?.resource_url} loading="lazy"></img>
                                         <div className='ItemDetail__pWrapper'>
-                                            <p>◖Título: {producto.title}</p>
-                                            <p>◖Artista: {producto.artists_sort}</p>
-                                            <p>◖Género: {producto.genres?.join(" - ")}</p>
-                                            <p>◖Año: {producto.year}</p>
-                                            <p>◖País: {producto.country}</p>
-                                            <p>◖Sello: {producto.labels?.[0].name}</p>
-                                            <p>◖Formato: {producto.formats?.[0].name}</p>
+                                            <p>◖Título: {producto?.title}</p>
+                                            <p>◖Artista: {producto?.artists_sort}</p>
+                                            <p>◖Género: {producto?.genres?.join(" - ")}</p>
+                                            <p>◖Año: {producto?.year}</p>
+                                            <p>◖País: {producto?.country}</p>
+                                            <p>◖Sello: {producto?.labels?.[0].name}</p>
+                                            <p>◖Formato: {producto?.formats?.[0].name}</p>
                                         </div>
                                     </div>
                                     <div className="ItemDetail__infoWrapper">
                                         <div className="ItemDetail__info">
                                             <div className="ItemDetail__info__main">
-                                                <p className='ItemDetail__subtitle'>{producto.artists_sort}</p>
-                                                <h2 className='ItemDetail__title'>{producto.title?.toUpperCase()}</h2>
+                                                <p className='ItemDetail__subtitle'>{producto?.artists_sort}</p>
+                                                <h2 className='ItemDetail__title'>{producto?.title?.toUpperCase()}</h2>
                                             </div>
                                             <div className='ItemDetail__controlsWrapper'>
                                                 <AnimatePresence>
@@ -75,8 +75,8 @@ export default function ItemDetail({ loading, producto }) {
                                                         <motion.div key="count" initial={{ opacity: 0, transform: "translateX(-120%)" }}
                                                             animate={{ opacity: 1, transform: "translateX(0%)" }}
                                                             exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className='ItemDetail__counterWrapper'>
-                                                            <p className='ItemDetail__counterWrapper__price'>{"$" + producto.price}</p>
-                                                            <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initialCount} stock={producto.stock} id={producto.id} />
+                                                            <p className='ItemDetail__counterWrapper__price'>{"$" + producto?.price}</p>
+                                                            <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initialCount} stock={producto?.stock} id={producto?.id} />
                                                         </motion.div>}
                                                 </AnimatePresence>
                                             </div>

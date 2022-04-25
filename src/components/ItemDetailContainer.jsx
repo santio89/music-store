@@ -24,18 +24,17 @@ export default function ItemDetailContainer() {
         const productRef = doc(database, "products", productId);
         const productsCollection = collection(database, "products");
 
-        /*  fetch custom con promise (hace el fetch a la api luego de un tiempo). 
-        luego actualizo los datos de mi base de datos mas especificamente del producto que se quiera ver. al utilizar la key/secret que me provee la api, puedo acceder a algunos datos más */
+        /*  actualizo los datos de mi base de datos, mas especificamente del producto que se quiera ver. al utilizar la key/secret que me provee la api, puedo acceder a algunos datos más */
         customFetch(400, fetchApi).then(
             res => {
                 res.json().then(
                     res => {
-                        res.price = Math.trunc(Math.abs((res.community?.have - res.community?.want) * .8 + 200));
+                        res.price =  Math.trunc(Math.abs((res.community?.want / res.community?.have) * 4 + (res.community.want - res.community.have)));
                        
                         /* actualizo data con mas info gracias al single search autentificado en la api */
                         setDoc(doc(productsCollection, res.id.toString()), res, { merge: true })
 
-                        /* busco el producto en la base de datos de firebase primero y, si no esta disponible, muestro desde la api (para mantener el sitio activo)*/
+                        /* busco el producto en la base de datos de firebase primero y, si no esta disponible, muestro desde la api (para mantener el sitio activo, en caso de exceder la quota por ej)*/
                         getDoc(productRef).then(snapshot => {
                             if (snapshot.exists()) {    
                                 /* si no tiene la propiedad stock, la crea. por tanto, si hay stock en firebase, no lo actualizo desde la api */

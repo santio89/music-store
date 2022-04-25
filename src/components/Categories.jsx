@@ -17,7 +17,7 @@ export default function Categories() {
           <Link to="/categories/pop" onClick={() => window.scrollTo(0, 0)} className='Categories__pop'>POP</Link>
           <Link to="/categories/blues" onClick={() => window.scrollTo(0, 0)} className='Categories__blues'>BLUES</Link>
           <Link to="/categories/jazz" onClick={() => window.scrollTo(0, 0)} className='Categories__jazz'>JAZZ</Link>
-          <Link to="/categories/hip+hop" onClick={() => window.scrollTo(0, 0)} className='Categories__rap'>HIP HOP</Link>
+          <Link to="/categories/hip+hop" onClick={() => window.scrollTo(0, 0)} className='Categories__hiphop'>HIP HOP</Link>
           <Link to="/categories/reggae" onClick={() => window.scrollTo(0, 0)} className='Categories__reggae'>REGGAE</Link>
           <Link to="/categories/electronic" onClick={() => window.scrollTo(0, 0)} className='Categories__techno'>ELECTRONIC</Link>
           <Link to="/categories/country" onClick={() => window.scrollTo(0, 0)} className='Categories__country'>COUNTRY</Link>
