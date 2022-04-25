@@ -30,7 +30,6 @@ export default function ItemDetailContainer() {
             res => {
                 res.json().then(
                     res => {
-                        console.log(res)
                         res.price = Math.trunc(Math.abs((res.community?.have - res.community?.want) * .8 + 200));
                         res.stock = Math.trunc(res.community.have / 40 + 12);
                         /* actualizo data con mas info gracias al single search autentificado en la api */
