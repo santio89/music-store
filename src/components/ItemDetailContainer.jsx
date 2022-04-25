@@ -41,7 +41,7 @@ export default function ItemDetailContainer() {
                                     setDoc(doc(productsCollection, res.id.toString()), res, { merge: true })
                                 }
 
-                                if (!snapshot.data().price || snapshot.data().price !== res.price){
+                                if (!snapshot.data().price || (snapshot.data().price !== res.price)){
                                     /* seteo el precio si no existe o esta desactualizado */
                                     setDoc(doc(productsCollection, res.id.toString()), res, { merge: true })
                                 }
