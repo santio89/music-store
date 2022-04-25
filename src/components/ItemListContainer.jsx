@@ -40,39 +40,32 @@ export default function ItemListContainer() {
                             /* busco en firebase los productos que la api diga para mostrar, y los seteo en el array de productos (si no existe en firebase, los crea). si la api no esta disponible (ej quota exceeded), muestro desde la api directamente para mantener el sitio activo.
                             creo el price en base a las propiedades community.have y community.want de la api. hago lo mismo para el stock.*/
 
-                  /*           const database = getFirestore();
+                            /* const database = getFirestore();
                             const productsCollection = collection(database, "products");
 
                             let firebaseProducts = []
                             
-                            getDocs(productsCollection, "products").then(results => results.forEach(result => {
-                           
+                            getDocs(productsCollection, "products").then(results => {results.forEach(result => {
+                                
                                 res.results.forEach((r) => {
-                                    let addProductDb = true; 
                                     
+                                    r.price = Math.trunc(Math.abs((r.community?.have - r.community?.want) * .8 + 200));
+                                    r.stock = Math.trunc(r.community.have / 40 + 12);
+
                                     if (r.id === result.data().id) {
-                                        if (result.data().price !== (Math.trunc(Math.abs((r.community.have - r.community.want) * .8 + 200)))) {
-                                            r.price = Math.trunc(Math.abs((r.community?.have - r.community?.want) * .8 + 200));
+                                        if (result.data().price !== r.price) {
                                             
                                             setDoc(doc(productsCollection, r.id.toString()), r, { merge: true });
                                         }
+
                                         firebaseProducts = [...firebaseProducts, result.data()]; 
 
-                                        addProductDb = false
-                                    }
-
-                                    if (addProductDb) {
-                                        r.price = Math.trunc(Math.abs((r.community?.have - r.community?.want) * .8 + 200));
-                                        r.stock = Math.trunc(r.community.have / 40 + 12);
-
+                                    } else{
                                         setDoc(doc(productsCollection, r.id.toString()), r, { merge: true });
-                                        firebaseProducts = [...firebaseProducts, r];
+                                        firebaseProducts = [...firebaseProducts, r]; 
                                     }
                                 })
-
-                                setProductos(firebaseProducts);
-                                setLoading(false);
-                            })).catch(() => {
+                            }); setProductos(firebaseProducts); setLoading(false);}).catch(() => {
                                 res.results.forEach((r) => {
                                     r.price = Math.trunc(Math.abs((r.community?.have - r.community?.want) * .8 + 200));
                                     r.stock = Math.trunc(r.community.have / 40 + 12);
