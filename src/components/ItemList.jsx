@@ -71,7 +71,7 @@ export default function ItemList({ productos, searchId, loading }) {
 
                                 {isProductos ? <div className="ItemList__contentWrapper"> 
                                     <div className="ItemList__sortWrapper">
-                                        <button className="ItemList__sort">Ordenar&nbsp;<i class="bi bi-caret-down-fill"></i></button>
+                                        <button className="ItemList__sort">Ordenar&nbsp;<i className="bi bi-caret-down-fill"></i></button>
                                         <div className="ItemList__sortOptions">
                                             <button className="ItemList__sortOptions__lowest">Menor Precio</button>
                                             <button className="ItemList__sortOptions__highest">Mayor Precio</button>
