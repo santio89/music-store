@@ -63,8 +63,11 @@ export default function ItemDetail({ loading, producto }) {
                                                         <motion.div key="checkout" initial={{ opacity: 0, transform: "translateX(-120%)" }}
                                                             animate={{ opacity: 1, transform: "translateX(0%)" }}
                                                             exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className='ItemDetail__checkout'>
-                                                            <h3>Productos<br/>agregados!</h3>
-                                                            <div className='ItemDetail__checkout__buttons'>
+                                                            <motion.h3 key="ProductsAdded" initial={{ opacity: 0, transform: "translateX(-120%)" }}
+                                                            animate={{ opacity: 1, transform: "translateX(0%)" }}
+                                                            exit={{ opacity: 0, transform: "translateX(120%)" }}
+                                                            transition={{ type: 'spring', duration: .8, stiffness: 140, mass: 1.2 }}>Productos<br/>agregados!</motion.h3>
+                                                                <div className='ItemDetail__checkout__buttons'>
                                                                 <CartWidget message={"Ir al checkout"} />
                                                                 <button onClick={() => { setContinueCheckout(false) }} className='ItemDetail__checkout__continue'>Seguir comprando</button>
                                                             </div>
