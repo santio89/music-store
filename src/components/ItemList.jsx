@@ -70,7 +70,14 @@ export default function ItemList({ productos, searchId, loading }) {
                                 exit={{ opacity: 0, transform: "translateX(120%)" }}>
 
                                 {isProductos ? <div className="ItemList__contentWrapper"> 
-                                    <button className="ItemList__sort">Ordenar&nbsp;<i class="bi bi-caret-down-fill"></i></button>
+                                    <div className="ItemList__sortWrapper">
+                                        <button className="ItemList__sort">Ordenar&nbsp;<i class="bi bi-caret-down-fill"></i></button>
+                                        <div className="ItemList__sortOptions">
+                                            <button className="ItemList__sortOptions__lowest">Menor Precio</button>
+                                            <button className="ItemList__sortOptions__highest">Mayor Precio</button>
+                                        </div>
+                                    </div>
+                                    
                                     <div className="ItemList__content">
                                         {productos.map((producto) => {
                                             return (
