@@ -68,7 +68,6 @@ export default function ItemListContainer() {
                 snapshot.docs.forEach((doc) => {
                     firebaseProducts = [...firebaseProducts, doc.data()]
                 });
-                console.log(firebaseProducts)
                 setProductos(firebaseProducts); setLoading(false);
             });
         }
