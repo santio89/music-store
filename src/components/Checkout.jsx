@@ -10,11 +10,8 @@ export default function Checkout() {
 
   const { carrito, cartItems, cartClear, cartRemove, total, modifyCount } = useContext(CartContext);
 
-  const [removeItemOpen, setRemoveItemOpen] = useState(false);
-/*   const toggleRemoveItemOpen = ()=>{
-    setRemoveItemOpen (!removeItemOpen);
-  } */
   const [removeItemSelected, setRemoveItemSelected]= useState(0);
+  const [cartClearConfirm, setCartClearConfirm] = useState(false);
   
 
 
@@ -52,6 +49,7 @@ export default function Checkout() {
                         }
                       }} onKeyDown={(e) => e.key !== "Enter" ? (e.key !== 'Escape' ? null : e.target.blur()) : e.target.blur()} /> <span className='Checkout__details__list__li__stock'>Stock: {item.stock}</span></span>
                       <span>${item?.price * item?.count}</span>
+
                       {
                         removeItemSelected===item?.id?<div className='Checkout__details__list__removeConfirm'>
                           <p>ELIMINAR?</p>
@@ -59,9 +57,7 @@ export default function Checkout() {
                             <button onClick={()=>cartRemove(item?.id)}>SI</button>
                             <button onClick={()=>setRemoveItemSelected(0)}>NO</button>
                           </div>
-                        </div>:<button className='Checkout__details__list__remove' aria-label='Eliminar product' title='Eliminar producto' onClick={() =>{ setRemoveItemSelected(item?.id)}}><i className="bi bi-trash-fill"></i></button>
-
-                       
+                        </div>:<button className='Checkout__details__list__remove' aria-label='Eliminar product' title='Eliminar producto' onClick={()=> setRemoveItemSelected(item?.id)}><i className="bi bi-trash-fill"></i></button>
                       }
                       
                     </li>)
@@ -73,18 +69,31 @@ export default function Checkout() {
             <div className='Checkout__details__resumen'>
               <h3>Resumen</h3>
               <div className="Checkout__details__resumen__info">
-                <div className="Checkout__details__resumen__text">
-                  <p>◖Items: {cartItems}</p>
-                  <p>◖Total: ${total}</p>
+                <div className="Checkout__details__resumen__cleartextContainer">
+                  <AnimatePresence>
+                    {cartClearConfirm?
+                    
+                    <motion.div key="resumenClear" initial={{ opacity: 0, transform: "translateX(-120%)" }}
+                    animate={{ opacity: 1, transform: "translateX(0%)" }}
+                    exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className='Checkout__details__resumen__clear'>
+                      <p>VACIAR CARRITO?</p>
+                      <div className="Checkout__details__resumen__clear__buttons">
+                        <button onClick={()=>{cartClear(); setCartClearConfirm(false)}}> SI</button>
+                        <button onClick={()=> setCartClearConfirm(false)}> NO</button>
+                      </div>
+                    </motion.div>:
+                    
+                    <motion.div key="resumenText" initial={{ opacity: 0, transform: "translateX(-120%)" }}
+                    animate={{ opacity: 1, transform: "translateX(0%)" }}
+                    exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className="Checkout__details__resumen__text">
+                      <p>◖Items: {cartItems}<br/>◖Total: ${total}</p>
+                      
+                    </motion.div>}
+                  </AnimatePresence>
                 </div>
                 <div className='Checkout__details__resumen__buttons'>
-                  <button onClick={() => { cartClear() }}>VACIAR CARRITO&nbsp;<i className="bi bi-cart-x-fill"></i></button>
-             {/*      <dialog openModal>
-                    <p>VACIAR CARRITO?</p>
-                    <button>SI</button>
-                    <button>NO</button>
-                    <button>X</button>
-                  </dialog> */}
+                  <button onClick={()=> setCartClearConfirm(true)}>VACIAR CARRITO&nbsp;<i className="bi bi-cart-x-fill"></i></button>
+
 
                   <Link to="/" onClick={() => window.scrollTo(0, 0)}>SEGUIR COMPRANDO&nbsp;<i className="bi bi-cart-plus-fill"></i></Link>
 

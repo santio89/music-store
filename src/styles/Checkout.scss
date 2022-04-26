@@ -275,11 +275,11 @@
                         text-shadow: 2px 2px 0 var(--color-back-dark);
                         line-height: 1;
                         padding: .2em;
+                        border-radius: .1em;
 
                         &:hover, &:focus-visible{
                             background: var(--color-one);
-                            border-radius: .1em;
-                          
+                            color: var(--color-three);
                         }
                     }
                 }
@@ -289,11 +289,59 @@
         &__resumen {
             background-color: var(--color-back-dark);
             width: 100%;
-            color: blue !important;
             display: flex;
             flex-flow: column wrap;
             justify-content: start;
             align-items: center;
+            overflow: hidden;
+
+            &__cleartextContainer{
+                width: 100%;
+                height: 120px;
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+            }
+
+            &__clear{
+                position: absolute;
+                inset: 0;
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: center;
+                align-items: center;
+
+                p{
+                    color: var(--color-one);
+                    text-shadow: 1px 1px var(--color-three);
+                }
+
+                &__buttons{
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 2rem;
+                    width: 100%;
+
+                    button{
+                        color: var(--color-three-accent);
+                        text-shadow: 1px 1px var(--color-one);
+                        padding: .1em;
+                        border-radius: .1em;
+                        width: 100%;
+                        flex: 1;
+
+                        &:hover, &:focus-visible{
+                            color: var(--color-three);
+                            text-shadow: 1px 1px var(--color-back-dark);
+                            background: var(--color-one-dark);
+                        }
+                    }
+                }
+            }
 
             &__info {
                 width: 100%;
@@ -306,12 +354,18 @@
             }
 
             &__text {
+                position: absolute;
+                inset: 0;
                 font-family: 'Courier New', Courier, monospace;
                 font-size: $font-fluid-md;
                 color: var(--color-three);
                 text-align: left;
-                width: 100%;
                 font-weight: bold;
+                align-self: start;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: start;
+                align-items: center;
             }
 
             &__buttons {
@@ -338,7 +392,6 @@
                     padding: .28em;
                     border-radius: .2em;
                     line-height: 1.2;
-                    /* transition: 200ms; */
                     width: 100%;
                     background: transparent;
                     will-change: transform, background-color;

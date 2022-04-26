@@ -185,6 +185,8 @@
     }
 
     &__checkout {
+        position: absolute;
+        inset: 0;
         width: 100%;
         padding: 1rem;
         padding-top: 0;
@@ -196,8 +198,6 @@
         align-items: stretch;
         gap: .4rem;
         font-size: $font-fluid-lg;
-        position: absolute;
-        inset: 0;
         will-change: transform;
 
         h3 {
