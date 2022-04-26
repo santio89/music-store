@@ -63,9 +63,9 @@ export default function CartContextProvider({ children }) {
   })
 
   useEffect(() => {
-    setCartItems(carrito.reduce((total, item) => total += item?.count, 0));
+    setCartItems(carrito.reduce((total, item) => total + item?.count, 0));
 
-    setTotal(carrito.reduce((total, item) => total += item?.price * item?.count, 0));
+    setTotal(carrito.reduce((total, item) => total + item?.price * item?.count, 0));
 
     localStorage.setItem("msShopList", JSON.stringify(carrito));
   }, [carrito])
