@@ -19,6 +19,24 @@ export default function ItemListContainer() {
 
     const navigate = useNavigate();
 
+    const [ sortOpen, setSortOpen ] = useState(false);
+    const sortLow = ()=>{
+        productos.sort((a,b)=>{
+            return (a.price - b.price)
+        })
+        
+        setProductos(productos);
+        setSortOpen(false)
+    }
+    const sortHigh = ()=>{
+        productos.sort((a,b)=>{
+            return (b.price - a.price)
+        })
+        
+        setProductos(productos);
+        setSortOpen(false)
+    }
+
 
     useEffect(() => {
         setLoading(true);
@@ -71,29 +89,11 @@ export default function ItemListContainer() {
                 setProductos(firebaseProducts); setLoading(false);
             });
         }
-
-
-
-        /*  ESTE CODIGO ES PARA LEER DESDE FIREBASE y mostrar esos resultados en pantalla (en vez de mostrar los resultados de la api). Lo dejo desactivado ya que prefiero mostrar de la api los resultados de la lista (de esta forma es mas dinamico ya que la api continua agregando discos). De todas formas, al abrir un item (en item detail), el mismo se agrega o actualiza tambien a mi base de datos en firebase 
-
-        const database = getFirestore();
-        const productsCollection = collection(database, "products");
-
-        let firebaseProducts = []
-        
-        const hotSearchQuery = query(productsCollection, orderBy("community.want", "desc"), limit(50));
-        getDocs(hotSearchQuery).then(snapshot=>{
-            snapshot.docs.forEach((doc)=>{
-                firebaseProducts = [...firebaseProducts, doc.data()]
-            });
-            setProductos(firebaseProducts); setLoading(false);
-        })*/
-
     }, [categoryId, searchId, navigate])
 
 
 
     return (
-        <ItemList productos={productos} categoryId={categoryId} searchId={searchId} loading={loading} />
+        <ItemList productos={productos} categoryId={categoryId} searchId={searchId} loading={loading} sortOpen={sortOpen} setSortOpen={setSortOpen} sortLow={sortLow} sortHigh={sortHigh} />
     )
 }

@@ -5,12 +5,13 @@ import Item from './Item'
 import '../../src/styles/css/ItemList.css';
 import PuffLoader from "react-spinners/PuffLoader";
 
-export default function ItemList({ productos, searchId, loading }) {
+export default function ItemList({ productos, searchId, loading, sortOpen, setSortOpen, sortLow, sortHigh }) {
 
     /*price calculado con una formula a partir de las propiedades de 'community have' y 'community want' (que vienen de la api) */
 
     const { categoryId } = useParams();
     const [isProductos, setIsProductos] = useState(false);
+    
     const history = useNavigate();
 
     useEffect(() => {
@@ -71,10 +72,10 @@ export default function ItemList({ productos, searchId, loading }) {
 
                                 {isProductos ? <div className="ItemList__contentWrapper"> 
                                     <div className="ItemList__sortWrapper">
-                                        <button className="ItemList__sort">Ordenar&nbsp;<i className="bi bi-caret-down-fill"></i></button>
-                                        <div className="ItemList__sortOptions">
-                                            <button className="ItemList__sortOptions__lowest">Menor Precio</button>
-                                            <button className="ItemList__sortOptions__highest">Mayor Precio</button>
+                                        <button className={`ItemList__sort ${sortOpen?"is-active":""}`} onClick={()=>setSortOpen((sortOpen)=>!sortOpen)}>Ordenar&nbsp;<i className="bi bi-caret-down-fill"></i></button>
+                                        <div className={`ItemList__sortOptions ${sortOpen?"is-visible":""}`}>
+                                            <button className="ItemList__sortOptions__lowest" onClick={()=>sortLow()}>Menor Precio</button>
+                                            <button className="ItemList__sortOptions__highest" onClick={()=>sortHigh()}>Mayor Precio</button>
                                         </div>
                                     </div>
                                     

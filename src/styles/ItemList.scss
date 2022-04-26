@@ -94,17 +94,15 @@
         z-index: 1;
         border-radius: 0 .2em .2em 0;
         margin-top: .4rem;
-
-        &:hover, &:focus, &:focus-within{
-            outline: 1px dashed var(--color-one);
-        }
+        text-shadow: 1px 1px 0 var(--color-three);
+        color: var(--color-one);
     }
     
     &__sort{
         font-size: $font-fluid-mdd;
         font-weight: bold;
-        text-shadow: 1px 1px 0 var(--color-three);
-        color: var(--color-one);
+        color: inherit;
+        text-shadow: inherit;
         word-spacing: .2em;
         letter-spacing: .02em;
         padding: .2rem 1rem;
@@ -116,14 +114,18 @@
         flex-flow: row wrap;
         justify-content: start;
         align-items: center;
-        
+        transition: color 200ms, text-shadow 200ms;
 
         i{
             font-size: .8em;
-            transition: color 200ms, text-shadow 200ms;
         }
 
-        &:hover i{
+        &:hover, &:focus-visible{
+            outline: 1px dashed var(--color-one);
+        }
+
+        &.is-active{
+            outline: 1px dashed var(--color-one);
             text-shadow: 1px 1px 0 var(--color-one);
             color: var(--color-three);
         }
@@ -154,9 +156,10 @@
             background: linear-gradient(45deg, var(--color-back-dark) 25%, var(--color-back-dark) 25%);
             background-size: 200%;
 
-            &:hover{
-                background: linear-gradient(45deg, var(--color-back-dark), var(--color-one-dark));
-                background-size: 200%;
+            &:hover, &:focus-visible{
+                background: var(--color-back);
+                text-shadow: 1px 1px 0 var(--color-one);
+                color: var(--color-three);
             }
         }
 

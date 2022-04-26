@@ -92,15 +92,14 @@
   z-index: 1;
   border-radius: 0 0.2em 0.2em 0;
   margin-top: 0.4rem;
-}
-.ItemList__sortWrapper:hover, .ItemList__sortWrapper:focus, .ItemList__sortWrapper:focus-within {
-  outline: 1px dashed var(--color-one);
+  text-shadow: 1px 1px 0 var(--color-three);
+  color: var(--color-one);
 }
 .ItemList__sort {
   font-size: clamp(1rem, 1rem + 1.4vw, 1.8rem);
   font-weight: bold;
-  text-shadow: 1px 1px 0 var(--color-three);
-  color: var(--color-one);
+  color: inherit;
+  text-shadow: inherit;
   word-spacing: 0.2em;
   letter-spacing: 0.02em;
   padding: 0.2rem 1rem;
@@ -112,12 +111,16 @@
   flex-flow: row wrap;
   justify-content: start;
   align-items: center;
+  transition: color 200ms, text-shadow 200ms;
 }
 .ItemList__sort i {
   font-size: 0.8em;
-  transition: color 200ms, text-shadow 200ms;
 }
-.ItemList__sort:hover i {
+.ItemList__sort:hover, .ItemList__sort:focus-visible {
+  outline: 1px dashed var(--color-one);
+}
+.ItemList__sort.is-active {
+  outline: 1px dashed var(--color-one);
   text-shadow: 1px 1px 0 var(--color-one);
   color: var(--color-three);
 }
@@ -146,9 +149,10 @@
   background: linear-gradient(45deg, var(--color-back-dark) 25%, var(--color-back-dark) 25%);
   background-size: 200%;
 }
-.ItemList__sortOptions button:hover {
-  background: linear-gradient(45deg, var(--color-back-dark), var(--color-one-dark));
-  background-size: 200%;
+.ItemList__sortOptions button:hover, .ItemList__sortOptions button:focus-visible {
+  background: var(--color-back);
+  text-shadow: 1px 1px 0 var(--color-one);
+  color: var(--color-three);
 }
 .ItemList__sortOptions__lowest {
   border-radius: 0.2em 0.2em 0 0;
