@@ -26,7 +26,7 @@ export default function ItemListContainer() {
         })
         
         setProductos(productos);
-        setSortOpen(false)
+        setSortOpen(false);
     }
     const sortHigh = ()=>{
         productos.sort((a,b)=>{
@@ -34,7 +34,15 @@ export default function ItemListContainer() {
         })
         
         setProductos(productos);
-        setSortOpen(false)
+        setSortOpen(false);
+    }
+    const sortRelevance = ()=>{
+        productos.sort((a,b)=>{
+            return (b.community.have - a.community.have)
+        })
+
+        setProductos(productos);
+        setSortOpen(false);
     }
 
 
@@ -81,7 +89,7 @@ export default function ItemListContainer() {
             const productsCollection = collection(database, "products");
             let firebaseProducts = []
 
-            const hotSearchQuery = query(productsCollection, orderBy("community.want", "desc"), limit(50));
+            const hotSearchQuery = query(productsCollection, orderBy("community.have", "desc"), limit(50));
             getDocs(hotSearchQuery).then(snapshot => {
                 snapshot.docs.forEach((doc) => {
                     firebaseProducts = [...firebaseProducts, doc.data()]
@@ -94,6 +102,6 @@ export default function ItemListContainer() {
 
 
     return (
-        <ItemList productos={productos} categoryId={categoryId} searchId={searchId} loading={loading} sortOpen={sortOpen} setSortOpen={setSortOpen} sortLow={sortLow} sortHigh={sortHigh} />
+        <ItemList productos={productos} categoryId={categoryId} searchId={searchId} loading={loading} sortOpen={sortOpen} setSortOpen={setSortOpen} sortLow={sortLow} sortHigh={sortHigh} sortRelevance={sortRelevance}/>
     )
 }

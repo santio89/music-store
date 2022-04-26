@@ -148,6 +148,7 @@
   letter-spacing: 0.02em;
   background: linear-gradient(45deg, var(--color-back-dark) 25%, var(--color-back-dark) 25%);
   background-size: 200%;
+  text-align: left;
 }
 .ItemList__sortOptions button:hover, .ItemList__sortOptions button:focus-visible {
   background: var(--color-back);
@@ -157,7 +158,7 @@
 .ItemList__sortOptions__lowest {
   border-radius: 0.2em 0.2em 0 0;
 }
-.ItemList__sortOptions__highest {
+.ItemList__sortOptions__relevance {
   border-radius: 0 0 0.2em 0.2em;
 }
 .ItemList__sortOptions:hover, .ItemList__sortOptions:focus, .ItemList__sortOptions:focus-within {

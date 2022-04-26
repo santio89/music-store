@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion'
 import { CartContext } from '../Context/CartContext';
@@ -9,6 +9,14 @@ export default function Checkout() {
   const history = useNavigate();
 
   const { carrito, cartItems, cartClear, cartRemove, total, modifyCount } = useContext(CartContext);
+
+  const [removeItemOpen, setRemoveItemOpen] = useState(false);
+/*   const toggleRemoveItemOpen = ()=>{
+    setRemoveItemOpen (!removeItemOpen);
+  } */
+  const [removeItemSelected, setRemoveItemSelected]= useState(0);
+  
+
 
   return (
     <div className="CheckoutWrapper">
@@ -44,7 +52,18 @@ export default function Checkout() {
                         }
                       }} onKeyDown={(e) => e.key !== "Enter" ? (e.key !== 'Escape' ? null : e.target.blur()) : e.target.blur()} /> <span className='Checkout__details__list__li__stock'>Stock: {item.stock}</span></span>
                       <span>${item?.price * item?.count}</span>
-                      <button className='Checkout__details__list__remove' aria-label='Eliminar product' title='Eliminar producto' onClick={() => cartRemove(item?.id)}><i className="bi bi-trash-fill"></i></button>
+                      {
+                        removeItemSelected===item?.id?<div className='Checkout__details__list__removeConfirm'>
+                          <p>ELIMINAR?</p>
+                          <div className="Checkout__details__list__removeConfirm__buttons">
+                            <button onClick={()=>cartRemove(item?.id)}>SI</button>
+                            <button onClick={()=>setRemoveItemSelected(0)}>NO</button>
+                          </div>
+                        </div>:<button className='Checkout__details__list__remove' aria-label='Eliminar product' title='Eliminar producto' onClick={() =>{ setRemoveItemSelected(item?.id)}}><i className="bi bi-trash-fill"></i></button>
+
+                       
+                      }
+                      
                     </li>)
                 }
                 )
@@ -60,7 +79,15 @@ export default function Checkout() {
                 </div>
                 <div className='Checkout__details__resumen__buttons'>
                   <button onClick={() => { cartClear() }}>VACIAR CARRITO&nbsp;<i className="bi bi-cart-x-fill"></i></button>
+             {/*      <dialog openModal>
+                    <p>VACIAR CARRITO?</p>
+                    <button>SI</button>
+                    <button>NO</button>
+                    <button>X</button>
+                  </dialog> */}
+
                   <Link to="/" onClick={() => window.scrollTo(0, 0)}>SEGUIR COMPRANDO&nbsp;<i className="bi bi-cart-plus-fill"></i></Link>
+
                   <button >FINALIZAR COMPRA&nbsp;<i className="bi bi-cart-check-fill"></i></button>
                 </div>
               </div>

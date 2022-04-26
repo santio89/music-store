@@ -156,7 +156,6 @@
   align-items: start;
 }
 .Checkout__details__list__li input {
-  /*  margin: auto; */
   text-align: center;
   width: 80%;
   background: none;
@@ -223,6 +222,39 @@
 .Checkout__details__list__remove:hover, .Checkout__details__list__remove:focus-visible {
   color: var(--color-one);
   filter: drop-shadow(1px 1px 0 var(--color-three));
+}
+.Checkout__details__list__removeConfirm {
+  position: absolute;
+  right: 1%;
+  top: 2%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: start;
+  align-items: center;
+  font-weight: bold;
+  border-radius: 0.1em;
+  background: var(--color-one-dark);
+  color: var(--color-back-dark);
+  text-shadow: 1px 1px 0 var(--color-three-accent);
+  padding: 0.1em;
+  outline: 1px dashed var(--color-three-accent);
+}
+.Checkout__details__list__removeConfirm__buttons {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.4em;
+}
+.Checkout__details__list__removeConfirm__buttons button {
+  color: var(--color-three-accent);
+  text-shadow: 2px 2px 0 var(--color-back-dark);
+  line-height: 1;
+  padding: 0.2em;
+}
+.Checkout__details__list__removeConfirm__buttons button:hover, .Checkout__details__list__removeConfirm__buttons button:focus-visible {
+  background: var(--color-one);
+  border-radius: 0.1em;
 }
 .Checkout__details__resumen {
   background-color: var(--color-back-dark);
