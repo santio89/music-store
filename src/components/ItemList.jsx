@@ -24,12 +24,12 @@ export default function ItemList({ productos, searchId, loading, sortOpen, setSo
     return (
         <>
             <AnimatePresence>
-                {searchId || categoryId ? <motion.div transition={{ type: 'spring', duration: .8 }} initial={{ opacity: 0, transform: "translateX(-120%)" }}
+                <motion.div transition={{ type: 'spring', duration: .8 }} initial={{ opacity: 0, transform: "translateX(-120%)" }}
                     animate={{ opacity: 1, transform: "translateX(0%)" }}
                     exit={{ opacity: 0, transform: "translateX(120%)" }} key="ItemList__title__search" className='ItemList__title'>
 
                     {
-                        searchId ? <>BUSCANDO: {searchId.replace(/\+/g, " ").toUpperCase()}</> : categoryId ? (<>VIENDO: <select defaultValue={categoryId} onChange={(e) => { history(`../categories/${e.target.value.replace(/\s/g, "+")}`) }}>
+                        searchId ? <div>BUSCANDO: {searchId.replace(/\+/g, " ").toUpperCase()}</div> : (categoryId ? (<div>VIENDO: <select defaultValue={categoryId} onChange={(e) => { history(`../categories/${e.target.value.replace(/\s/g, "+")}`) }}>
                             <option value={"categories"} disabled>CATEGORIAS</option>
 
                             <option value={"rock"}>ROCK</option>
@@ -55,9 +55,9 @@ export default function ItemList({ productos, searchId, loading, sortOpen, setSo
                             <option value={"latin"}>LATIN</option>
 
                             <option value={"folk"}>FOLK</option>
-                        </select></>) : null
+                        </select></div>) : <div>MÁS VISTOS</div>)
                     }
-                </motion.div> : null}
+                </motion.div>
 
             </AnimatePresence>
 

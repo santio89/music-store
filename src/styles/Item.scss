@@ -70,12 +70,18 @@
         &__title {
             color: var(--color-three);
             text-shadow: 1px 1px var(--color-one-dark);
-            margin-top: 6.4rem;
+            margin-top: 6.8rem;
             background: rgba(0, 0, 0, .4);
             width: 100%;
             padding-left: 2%;
             font-size: $font-xs;
             line-height: 1.2;
+            max-height: 100px;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         &__price {
@@ -99,3 +105,4 @@
         transition: color 400ms;
     }
 }
+
