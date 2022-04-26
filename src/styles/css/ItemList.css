@@ -184,8 +184,6 @@
   color: var(--color-three);
   text-shadow: 2px 2px 0 var(--color-three-dark);
   margin-bottom: 2rem;
-  -webkit-animation: fadeTranslateIn 200ms ease-in-out forwards;
-          animation: fadeTranslateIn 200ms ease-in-out forwards;
 }
 .ItemList__noProducts__link {
   color: var(--color-one-dark);
