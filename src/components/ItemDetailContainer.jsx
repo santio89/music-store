@@ -35,19 +35,24 @@ export default function ItemDetailContainer() {
                         /* busco el producto en la base de datos de firebase primero y, si no esta disponible, muestro desde la api (para mantener el sitio activo)*/
                         getDoc(productRef).then(snapshot => {
                             if (snapshot.exists()) {
-                                /* si no tiene la propiedad stock, la crea. por tanto, si hay stock en firebase, no lo actualizo desde la api */
+                                /* si no tiene la propiedad stock, la crea (o si es 0 la refresca). por tanto, si hay stock en firebase, no lo actualizo desde la api */
                                 if (!snapshot.data().stock) {
                                     res.stock = Math.trunc(res.community.have / 40 + 12);
                                     setDoc(doc(productsCollection, res.id.toString()), res, { merge: true })
-                                }
 
-                                if (!snapshot.data().price || (snapshot.data().price !== res.price)){
-                                    /* seteo el precio si no existe o esta desactualizado */
-                                    setDoc(doc(productsCollection, res.id.toString()), res, { merge: true })
-                                }
-
-                                setProducto(snapshot.data());
-                                setLoading(false);
+                                    setProducto(res);
+                                    setLoading(false);
+                                } else{
+                                    if (!snapshot.data().price || (snapshot.data().price !== res.price)){
+                                        /* seteo el precio si no existe o esta desactualizado */
+                                        setDoc(doc(productsCollection, res.id.toString()), res, { merge: true })
+                                        setProducto(res);
+                                        setLoading(false);
+                                    } else{
+                                        setProducto(snapshot.data());
+                                        setLoading(false);
+                                    }
+                                }                             
                             } else{
                                 res.stock = Math.trunc(res.community.have / 40 + 12); 
                                 setDoc(doc(productsCollection, res.id.toString()), res, { merge: true }); 
