@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence, LayoutGroup } from 'framer-motion'
+import { motion, AnimatePresence, /* LayoutGroup */ } from 'framer-motion'
 import { CartContext } from '../Context/CartContext';
 import { useNavigate } from 'react-router-dom';
 /* import { CheckoutForm } from './CheckoutForm'; */
@@ -36,13 +36,13 @@ export default function Checkout() {
                 <h3>Lista de compra</h3>
                 {carrito.length === 0 ? null : <li className='Checkout__details__list__header'><span>TITULO</span><span>ARTISTA</span><span>PRECIO</span><span>CANT.</span><span>SUBT.</span></li>}
 
-                <LayoutGroup>
+               {/*  <LayoutGroup> */}
                   <AnimatePresence>
 
                     {
                       carrito.map((item) => {
                         return (
-                          <motion.li layout key={item?.id} initial={{ opacity: 0, transform: "translateX(-120%)" }} animate={{ opacity: 1, transform: "translateX(0%)" }} exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className='Checkout__details__list__li'>
+                          <motion.li key={item?.id} initial={{ opacity: 0, transform: "translateX(-120%)" }} animate={{ opacity: 1, transform: "translateX(0%)" }} exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className='Checkout__details__list__li'>
                             <span><Link to={`/item/${item?.id}`}><img alt="item" src={item?.images?.[0]?.uri}></img></Link><span className='Checkout__details__list__li__title'>{item?.title}</span></span>
                             <span>{item?.artists_sort}</span>
                             <span>${item?.price}</span>
@@ -71,10 +71,10 @@ export default function Checkout() {
                       )
                     }
                   </AnimatePresence>
-                </LayoutGroup>
+               {/*  </LayoutGroup> */}
                 <li>
                   <AnimatePresence exitBeforeEnter>
-                    {carrito.length === 0 ? <motion.p key={"noProducts"} initial={{ opacity: 0, transform: "translateY(120%)" }} animate={{ opacity: 1, transform: "translateY(0%)" }} eYit={{ opacity: 0, transform: "translateY(-120%)" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>No hay productos en el carrito</motion.p> : <motion.p key={"yesProducts"} initial={{ opacity: 0, transform: "translateY(120%)" }} animate={{ opacity: 1, transform: "translateY(0%)" }} eYit={{ opacity: 0, transform: "translateY(-120%)" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>TOTAL: ${total}</motion.p>}
+                    {carrito.length === 0 ? <motion.p key={"noProducts"} initial={{ opacity: 0, transform: "translateY(120%)" }} animate={{ opacity: 1, transform: "  (0%)" }} eYit={{ opacity: 0, transform: "translateY(-120%)" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>No hay productos en el carrito</motion.p> : <motion.p key={"yesProducts"} initial={{ opacity: 0, transform: "translateY(120%)" }} animate={{ opacity: 1, transform: "translateY(0%)" }} eYit={{ opacity: 0, transform: "translateY(-120%)" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>TOTAL: ${total}</motion.p>}
                   </AnimatePresence>
                 </li>
               </ul>
