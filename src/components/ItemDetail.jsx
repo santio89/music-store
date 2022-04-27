@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { CartContext } from '../Context/CartContext';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion'
@@ -24,6 +24,10 @@ export default function ItemDetail({ loading, producto }) {
     const failToAdd = () => {
         console.log("FAIL TO ADD (NOT ENOUGH STOCK)");
     }
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
 
 
     return (

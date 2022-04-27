@@ -8,8 +8,8 @@ export default function TabSelector() {
     return (
         <div className="tabs is-medium">
             <ul className="is-size-5">
-                <li ><NavLink to="/" onClick={() => window.scrollTo(0, 0)} className={({ isActive }) => isActive ? "is-active" : ""}>Más Vistos</NavLink></li>
-                <li ><NavLink to="/categories" onClick={() => window.scrollTo(0, 0)} className={({ isActive }) => isActive ? "is-active" : ""}>Categorías</NavLink></li>
+                <li ><NavLink to="/" className={({ isActive }) => isActive ? "is-active" : ""}>Más Vistos</NavLink></li>
+                <li ><NavLink to="/categories" className={({ isActive }) => isActive ? "is-active" : ""}>Categorías</NavLink></li>
             </ul>
         </div>
     )

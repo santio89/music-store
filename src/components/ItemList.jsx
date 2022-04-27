@@ -19,6 +19,10 @@ export default function ItemList({ productos, searchId, loading, sortOpen, setSo
 
     }, [productos])
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+
 
 
     return (

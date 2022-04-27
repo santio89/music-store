@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion'
 import { CartContext } from '../Context/CartContext';
@@ -14,7 +14,9 @@ export default function Checkout() {
   const [removeItemSelected, setRemoveItemSelected]= useState(0);
   const [cartClearConfirm, setCartClearConfirm] = useState(false);
   
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="CheckoutWrapper">
@@ -37,7 +39,7 @@ export default function Checkout() {
                 carrito.map((item) => {
                   return (
                     <li key={item?.id} className='Checkout__details__list__li'>
-                      <span><Link to={`/item/${item?.id}`} onClick={() => window.scrollTo(0, 0)}><img alt="item" src={item?.images?.[0]?.uri}></img></Link><span className='Checkout__details__list__li__title'>{item?.title}</span></span>
+                      <span><Link to={`/item/${item?.id}`}><img alt="item" src={item?.images?.[0]?.uri}></img></Link><span className='Checkout__details__list__li__title'>{item?.title}</span></span>
                       <span>{item?.artists_sort}</span>
                       <span>${item?.price}</span>
                       <span className='Checkout__details__list__li__input'><input type="number" min={0} defaultValue={item?.count} onBlur={e => {
@@ -96,7 +98,7 @@ export default function Checkout() {
                   <button onClick={()=> setCartClearConfirm(true)}>VACIAR CARRITO&nbsp;<i className="bi bi-cart-x-fill"></i></button>
 
 
-                  <Link to="/" onClick={() => window.scrollTo(0, 0)}>SEGUIR COMPRANDO&nbsp;<i className="bi bi-cart-plus-fill"></i></Link>
+                  <Link to="/">SEGUIR COMPRANDO&nbsp;<i className="bi bi-cart-plus-fill"></i></Link>
 
                   <button >FINALIZAR COMPRA&nbsp;<i className="bi bi-cart-check-fill"></i></button>
                 </div>

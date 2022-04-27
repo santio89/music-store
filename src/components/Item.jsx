@@ -8,7 +8,7 @@ export default function Item({ id, title, img, price }) {
 
     return (
         <>
-            <Link to={`/item/${id}`} className="ItemLink" onClick={() => window.scrollTo(0, 0)}>
+            <Link to={`/item/${id}`} className="ItemLink">
                 <div className="Item">
                     <div className="Item__imgWrapper"><img className="Item__img" src={img} alt={"cover_image_" + id} loading="lazy"></img></div>
                     <div className="Item__content">
