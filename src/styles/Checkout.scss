@@ -88,6 +88,7 @@
             background-color: var(--color-back-dark);
             width: 100%;
             font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
 
             li {
                 padding: .2em;
@@ -101,11 +102,11 @@
                 position: relative;
 
                 &:nth-last-child(2) {
-                    border-bottom: 2px dashed var(--color-one);
+                    border-bottom: none;
                 }
 
                 &:last-child {
-                    border: none;
+                    border-top: 2px dashed var(--color-back-dark);
                     padding: .4em;
                     font-family: var(--font-primary);
                     font-weight: bold;
@@ -116,6 +117,7 @@
                     text-align: center;
                     margin-top: auto;
                     font-size: 1em;
+                    overflow: hidden;
                 }
             }
 

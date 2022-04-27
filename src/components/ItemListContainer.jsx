@@ -65,7 +65,6 @@ export default function ItemListContainer() {
                 if (res.ok) {
                     res.json().then(
                         res => {
-                            console.log(res.results)
                             res.results.forEach((r) => {
                                 r.price = Math.trunc(Math.abs((r.community.have / r.community.want) * 1.8) + ((r.community.want / r.community.have) * .8) + 120) * 12;
 

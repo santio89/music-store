@@ -36,13 +36,8 @@ export default function ItemDetailContainer() {
                         getDoc(productRef).then(snapshot => {
                             if (snapshot.exists()) {
                                 /* si no tiene la propiedad stock, la crea (o si es 0 la refresca). por tanto, si hay stock en firebase, no lo actualizo desde la api */
-                                if (!snapshot.data().stock) {
-                                    res.stock = Math.trunc(res.community.have / 40 + 12);
-                                    setDoc(doc(productsCollection, res.id.toString()), res, { merge: true })
-
-                                    setProducto(res);
-                                    setLoading(false);
-                                } else{
+                               
+                                if (snapshot.data().stock) {
                                     if (!snapshot.data().price || (snapshot.data().price !== res.price)){
                                         /* seteo el precio si no existe o esta desactualizado */
                                         setDoc(doc(productsCollection, res.id.toString()), res, { merge: true })
@@ -52,6 +47,12 @@ export default function ItemDetailContainer() {
                                         setProducto(snapshot.data());
                                         setLoading(false);
                                     }
+                                } else{
+                                    res.stock = Math.trunc(res.community.have / 40 + 12);
+                                    setDoc(doc(productsCollection, res.id.toString()), res, { merge: true })
+
+                                    setProducto(res);
+                                    setLoading(false);
                                 }                             
                             } else{
                                 res.stock = Math.trunc(res.community.have / 40 + 12); 

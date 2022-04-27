@@ -111,8 +111,13 @@
   align-self: center;
   font-weight: bold;
   font-family: var(--font-primary);
-  padding-bottom: 1.4rem;
+  padding-bottom: 0.4rem;
   border-bottom: 2px dashed var(--color-one);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .ItemDetail__subtitle {
   line-height: 1;
@@ -120,6 +125,11 @@
   font-family: var(--font-primary);
   font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
   text-shadow: 1px 1px 0 var(--color-one);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .ItemDetail__back {
   font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
