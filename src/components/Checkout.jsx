@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, LayoutGroup } from 'framer-motion'
 import { CartContext } from '../Context/CartContext';
 import { useNavigate } from 'react-router-dom';
 /* import { CheckoutForm } from './CheckoutForm'; */
@@ -13,6 +13,7 @@ export default function Checkout() {
 
   const [removeItemSelected, setRemoveItemSelected] = useState(0);
   const [cartClearConfirm, setCartClearConfirm] = useState(false);
+  const [checkoutConfirmation, setCheckoutConfirmacion] = useState(false)
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -33,54 +34,56 @@ export default function Checkout() {
 
             <div className='Checkout__details__list'>
               <h3>Lista de compra</h3>
+
               <ul className='Checkout__details__list__ul'>
-                
+
                 <AnimatePresence>
-                {carrito.length === 0 ? null : <motion.li initial={{opacity: 0}} animate={{opacity: 1}} exit={{transform: "translateY(-120%)", opacity: 0}} className='Checkout__details__list__header' transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}><span>TITULO</span><span>ARTISTA</span><span>PRECIO</span><span>CANT.</span><span>SUBT.</span></motion.li>}
+                  {carrito.length === 0 ? null : <motion.li initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ transform: "translateY(-120%)", opacity: 0 }} className='Checkout__details__list__header' transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}><span>TITULO</span><span>ARTISTA</span><span>PRECIO</span><span>CANT.</span><span>SUBT.</span></motion.li>}
                 </AnimatePresence>
 
-               
-                  <AnimatePresence>
+              
+                <AnimatePresence>
 
-                    {
-                      carrito.map((item) => {
-                        return (
-                          <motion.li key={item?.id} initial={{ opacity: 0, transform: "translateX(-120%)" }} animate={{ opacity: 1, transform: "translateX(0%)" }} exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className='Checkout__details__list__li'>
-                            <span><Link to={`/item/${item?.id}`}><img alt="item" src={item?.images?.[0]?.uri}></img></Link><span className='Checkout__details__list__li__title'>{item?.title}</span></span>
-                            <span>{item?.artists_sort}</span>
-                            <span>${item?.price}</span>
-                            <span className='Checkout__details__list__li__input'><input type="number" min={0} defaultValue={item?.count} onBlur={e => {
-                              e.target.value = e.target.value < 0 ? 0 : Math.round(e.target.value);
-                              if (Number(e.target.value) > Number(item.stock)) {
-                                e.target.value = item.stock;
-                                modifyCount({ ...item, count: Number(e.target.value) });
-                              } else {
-                                modifyCount({ ...item, count: Number(e.target.value) });
-                              }
-                            }} onKeyDown={(e) => e.key !== "Enter" ? (e.key !== 'Escape' ? null : e.target.blur()) : e.target.blur()} /> <span className='Checkout__details__list__li__stock'>Stock: {item.stock}</span></span>
-                            <span>${item?.price * item?.count}</span>
-                            {
-                              removeItemSelected === item?.id ? <div className='Checkout__details__list__removeConfirm'>
-                                <p>ELIMINAR?</p>
-                                <div className="Checkout__details__list__removeConfirm__buttons">
-                                  <button onClick={() => { setRemoveItemSelected(0); cartRemove(item?.id) }}>SI</button>
-                                  <button onClick={() => setRemoveItemSelected(0)}>NO</button>
-                                </div>
-                              </div> : <button className='Checkout__details__list__remove' aria-label='Eliminar product' title='Eliminar producto' onClick={() => setRemoveItemSelected(item?.id)}><i className="bi bi-trash-fill"></i></button>
+                  {
+                    carrito.map((item) => {
+                      return (
+                        <motion.li key={item?.id} initial={{ opacity: 0, transform: "translateX(-120%)" }} animate={{ opacity: 1, transform: "translateX(0%)" }} exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className='Checkout__details__list__li'>
+                          <span><Link to={`/item/${item?.id}`}><img alt="item" src={item?.images?.[0]?.uri}></img></Link><span className='Checkout__details__list__li__title'>{item?.title}</span></span>
+                          <span>{item?.artists_sort}</span>
+                          <span>${item?.price}</span>
+                          <span className='Checkout__details__list__li__input'><input type="number" min={0} defaultValue={item?.count} onBlur={e => {
+                            e.target.value = e.target.value < 0 ? 0 : Math.round(e.target.value);
+                            if (Number(e.target.value) > Number(item.stock)) {
+                              e.target.value = item.stock;
+                              modifyCount({ ...item, count: Number(e.target.value) });
+                            } else {
+                              modifyCount({ ...item, count: Number(e.target.value) });
                             }
-                          </motion.li>
-                        )
-                      }
+                          }} onKeyDown={(e) => e.key !== "Enter" ? (e.key !== 'Escape' ? null : e.target.blur()) : e.target.blur()} /> <span className='Checkout__details__list__li__stock'>Stock: {item.stock}</span></span>
+                          <span>${item?.price * item?.count}</span>
+                          {
+                            removeItemSelected === item?.id ? <div className='Checkout__details__list__removeConfirm'>
+                              <p>ELIMINAR?</p>
+                              <div className="Checkout__details__list__removeConfirm__buttons">
+                                <button onClick={() => { setRemoveItemSelected(0); cartRemove(item?.id) }}>SI</button>
+                                <button onClick={() => setRemoveItemSelected(0)}>NO</button>
+                              </div>
+                            </div> : <button className='Checkout__details__list__remove' aria-label='Eliminar product' title='Eliminar producto' onClick={() => setRemoveItemSelected(item?.id)}><i className="bi bi-trash-fill"></i></button>
+                          }
+                        </motion.li>
                       )
                     }
-                  </AnimatePresence>
-               
-                <li>  
-                  <AnimatePresence exitBeforeEnter>
-                    {cartItems === 0 ? <motion.p key={"noProducts"} initial={{ opacity: 0 }} animate={{ opacity: 1}} exit={{ transform:"translateY(120%)", opacity: 0}} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>No hay productos en el carrito</motion.p> : <motion.p key={"yesProducts"} initial={{ opacity: 0 }} animate={{ opacity: 1}} exit={{transform: "translateY(120%)", opacity: 0}} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>TOTAL: ${total}</motion.p>}
-                  </AnimatePresence>
-                </li>
+                    )
+                  }
+                </AnimatePresence>
               </ul>
+
+              <div className='Checkout__details__list__total'>
+                <AnimatePresence exitBeforeEnter>
+                  {cartItems === 0 ? <motion.p key={"noProducts"} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ transform: "translateY(120%)", opacity: 0 }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>No hay productos en el carrito</motion.p> : <motion.p key={"yesProducts"} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ transform: "translateY(120%)", opacity: 0 }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>TOTAL: ${total}</motion.p>}
+                </AnimatePresence>
+              </div>
+
             </div>
 
             <div className='Checkout__details__resumen'>

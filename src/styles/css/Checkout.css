@@ -109,10 +109,10 @@
   position: relative;
   overflow: hidden;
 }
-.Checkout__details__list li:nth-last-child(2) {
+.Checkout__details__list li:nth-last-child(1) {
   border-bottom: none;
 }
-.Checkout__details__list li:last-child {
+.Checkout__details__list__total {
   border-top: 2px dashed var(--color-back-dark);
   padding: 0.4em;
   font-family: var(--font-primary);
@@ -443,7 +443,7 @@
     width: 68%;
     border-radius: 0.4em 0.4em 0.8em 0.8em;
   }
-  .Checkout__details__list li:last-child {
+  .Checkout__details__list__total {
     border-radius: 0 0 0.4em 0.4em;
   }
   .Checkout__details__list__remove {
