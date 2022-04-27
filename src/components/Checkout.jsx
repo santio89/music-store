@@ -1,8 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion'
 import { CartContext } from '../Context/CartContext';
 import { useNavigate } from 'react-router-dom';
+/* import { CheckoutForm } from './CheckoutForm'; */
 import "../styles/css/Checkout.css";
 
 export default function Checkout() {
@@ -100,6 +101,11 @@ export default function Checkout() {
                   <button >FINALIZAR COMPRA&nbsp;<i className="bi bi-cart-check-fill"></i></button>
                 </div>
               </div>
+
+         {/*      <div className="Checkout__details__resumen__confirm">
+
+              </div> */}
+
             </div>
           </div>
         </motion.div>

@@ -5,7 +5,7 @@ import Item from './Item'
 import '../../src/styles/css/ItemList.css';
 import PuffLoader from "react-spinners/PuffLoader";
 
-export default function ItemList({ productos, searchId, loading, sortOpen, setSortOpen, sortLow, sortHigh, sortRelevance }) {
+export default function ItemList({ productos, searchId, loading, sortOpen, setSortOpen, sortLow, sortHigh, sortRelevance, sortActive, setSortActive }) {
 
     /*price calculado con una formula a partir de las propiedades de 'community have' y 'community want' (que vienen de la api) */
 
@@ -31,29 +31,17 @@ export default function ItemList({ productos, searchId, loading, sortOpen, setSo
                     {
                         searchId ? <div>BUSCANDO: {searchId.replace(/\+/g, " ").toUpperCase()}</div> : (categoryId ? (<div>VIENDO: <select defaultValue={categoryId} onChange={(e) => { history(`../categories/${e.target.value.replace(/\s/g, "+")}`) }}>
                             <option value={"categories"} disabled>CATEGORIAS</option>
-
                             <option value={"rock"}>ROCK</option>
-
                             <option value={"pop"}>POP</option>
-
                             <option value={"blues"}>BLUES</option>
-
                             <option value={"jazz"}>JAZZ</option>
-
                             <option value={"hip+hop"}>HIP HOP</option>
-
                             <option value={"reggae"}>REGGAE</option>
-
                             <option value={"electronic"}>ELECTRONIC</option>
-
                             <option value={"country"}>COUNTRY</option>
-
                             <option value={"classical"}>CLASSICAL</option>
-
                             <option value={"funk"}>FUNK</option>
-
                             <option value={"latin"}>LATIN</option>
-
                             <option value={"folk"}>FOLK</option>
                         </select></div>) : <div>MÁS VISTOS</div>)
                     }
@@ -74,9 +62,9 @@ export default function ItemList({ productos, searchId, loading, sortOpen, setSo
                                     <div className="ItemList__sortWrapper">
                                         <button className={`ItemList__sort ${sortOpen?"is-active":""}`} onClick={()=>setSortOpen((sortOpen)=>!sortOpen)}>Ordenar&nbsp;<i className="bi bi-caret-down-fill"></i></button>
                                         <div className={`ItemList__sortOptions ${sortOpen?"is-visible":""}`}>
-                                            <button className="ItemList__sortOptions__lowest" onClick={()=>sortLow()}>Menor Precio</button>
-                                            <button className="ItemList__sortOptions__highest" onClick={()=>sortHigh()}>Mayor Precio</button>
-                                            <button className="ItemList__sortOptions__relevance" onClick={()=>sortRelevance()}>Relevancia</button>
+                                            <button className={`ItemList__sortOptions__lowest ${sortActive==="low"?"is-active":null}`} onClick={()=>{sortLow(); setSortActive("low")}}>Menor Precio</button>
+                                            <button className={`ItemList__sortOptions__highest ${sortActive==="high"?"is-active":null}`} onClick={()=>{sortHigh(); setSortActive("high")}}>Mayor Precio</button>
+                                            <button className={`ItemList__sortOptions__relevance ${sortActive==="relevance"?"is-active":null}`} onClick={()=>{sortRelevance(); setSortActive("relevance")}}>Relevancia</button>
                                         </div>
                                     </div>
                                     

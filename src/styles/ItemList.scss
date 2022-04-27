@@ -157,7 +157,7 @@
             background-size: 200%;
             text-align: left;
 
-            &:hover, &:focus-visible{
+            &:hover, &:focus-visible, &.is-active{
                 background: var(--color-back);
                 text-shadow: 1px 1px 0 var(--color-one);
                 color: var(--color-three);

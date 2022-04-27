@@ -5,7 +5,6 @@ import '../../src/styles/css/ItemList.css';
 import ItemList from './ItemList';
 import customFetch from '../utils/customFetch';
 import { useParams } from 'react-router-dom';
-import { getDocs, collection, getFirestore, query, orderBy, limit } from 'firebase/firestore'
 
 
 export default function ItemListContainer() {
@@ -20,6 +19,7 @@ export default function ItemListContainer() {
     const navigate = useNavigate();
 
     const [ sortOpen, setSortOpen ] = useState(false);
+    const [ sortActive, setSortActive ] = useState("relevance");
     const sortLow = ()=>{
         productos.sort((a,b)=>{
             return (a.price - b.price)
@@ -53,38 +53,42 @@ export default function ItemListContainer() {
         const genreSearch = `genre=${categoryId}&type=release`;
         const manualSearch = `q=${searchId}&type=release`
 
-        let fetchApi = fetch(`https://api.discogs.com/database/search?${searchId ? manualSearch : (categoryId ? genreSearch : hotSearch)}&token=${discogsToken}`);
+        let fetchApi = fetch(`https://api.discogs.com/database/search?${searchId ? manualSearch : (categoryId ? genreSearch : hotSearch)}&type=release&token=${discogsToken}`);
 
+
+        
+        /* desde la api, hago las busqedas de lista (para mantener los resultados más dinámicos que si los trajera de firebase). luego en el detalle de compra, actualizo mi base de datos en firebase (desde firebase tambien manejo stock por ej). si un item no existe, lo crea; si hay que actualizar precio. */
 
         /* fetch custom con promise (hace el fetch a la api luego de un tiempo (lo dejo para apreciar el loading un poco) ) */
-        /* si es una busqueda manual o de categoria consulto api. else, muestro los mas visto desde firebase (seria la homepage) */
-        if (categoryId || searchId) {
-            customFetch(400, fetchApi).then(
-                res => {
-                    if (res.ok) {
-                        res.json().then(
-                            res => {
-                                res.results.forEach((r) => {
-                                    r.price = Math.trunc(Math.abs((r.community.have / r.community.want) * 1.8) + ((r.community.want / r.community.have) * .8) + 120) * 12;
+        customFetch(400, fetchApi).then(
+            res => {
+                if (res.ok) {
+                    res.json().then(
+                        res => {
+                            console.log(res.results)
+                            res.results.forEach((r) => {
+                                r.price = Math.trunc(Math.abs((r.community.have / r.community.want) * 1.8) + ((r.community.want / r.community.have) * .8) + 120) * 12;
 
-                                    /* ESTE CODIGO ES PARA ESCRIBIR LOS RESULTADOS DE LA API, EN FIREBASE. lo desactivo de momento ya que resulta en muchas lecturas/escrituras innecesarias (se ejecutaria cada vez que se cargue la lista. esta bueno para cargar la base de datos inicial)
- 
-                                    const database = getFirestore();
-                                    const productsCollection = collection(database, "products");
-                                    setDoc(doc(productsCollection, r.id.toString()), r, { merge: true });
-                                    */
+                                /* ESTE CODIGO ES PARA ESCRIBIR ESTOS RESULTADOS DE LA API, EN FIREBASE. lo desactivo de momento ya que resulta en muchas lecturas/escrituras innecesarias (se ejecutaria cada vez que se cargue la lista. esta bueno para cargar la base de datos inicial)
 
-                                });
-                                setProductos(res.results);
-                                setLoading(false);
-                            }
-                        ).catch(err => { console.log("error: ", err) });
-                    } else {
-                        navigate("./error404")
-                    }
+                                const database = getFirestore();
+                                const productsCollection = collection(database, "products");
+                                setDoc(doc(productsCollection, r.id.toString()), r, { merge: true });
+                                */
+
+                            });
+                            setProductos(res.results);
+                            setLoading(false);
+                        }
+                    ).catch(err => { console.log("error: ", err) });
+                } else {
+                    navigate("./error404")
                 }
-            ).catch(err => { console.log(err) })
-        } else {
+            }
+        ).catch(err => { console.log(err) })
+            
+        /*  
+            FIREBASE - QUERY FILTRADA
             const database = getFirestore();
             const productsCollection = collection(database, "products");
             let firebaseProducts = []
@@ -94,14 +98,15 @@ export default function ItemListContainer() {
                 snapshot.docs.forEach((doc) => {
                     firebaseProducts = [...firebaseProducts, doc.data()]
                 });
+                console.log(firebaseProducts);
                 setProductos(firebaseProducts); setLoading(false);
-            });
-        }
+            }); */
+        
     }, [categoryId, searchId, navigate])
 
 
 
     return (
-        <ItemList productos={productos} categoryId={categoryId} searchId={searchId} loading={loading} sortOpen={sortOpen} setSortOpen={setSortOpen} sortLow={sortLow} sortHigh={sortHigh} sortRelevance={sortRelevance}/>
+        <ItemList productos={productos} categoryId={categoryId} searchId={searchId} loading={loading} sortOpen={sortOpen} setSortOpen={setSortOpen} sortLow={sortLow} sortHigh={sortHigh} sortRelevance={sortRelevance} sortActive={sortActive} setSortActive={setSortActive}/>
     )
 }

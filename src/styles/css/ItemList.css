@@ -150,7 +150,7 @@
   background-size: 200%;
   text-align: left;
 }
-.ItemList__sortOptions button:hover, .ItemList__sortOptions button:focus-visible {
+.ItemList__sortOptions button:hover, .ItemList__sortOptions button:focus-visible, .ItemList__sortOptions button.is-active {
   background: var(--color-back);
   text-shadow: 1px 1px 0 var(--color-one);
   color: var(--color-three);
