@@ -15,6 +15,7 @@
     &.disabled {
         color: var(--color-three-dark);
         pointer-events: none;
+        filter: grayscale(1);
     }
 
     span {

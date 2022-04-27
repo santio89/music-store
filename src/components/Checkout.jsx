@@ -32,9 +32,12 @@ export default function Checkout() {
           <motion.div className='Checkout__details'>
 
             <div className='Checkout__details__list'>
+              <h3>Lista de compra</h3>
               <ul className='Checkout__details__list__ul'>
-                <h3>Lista de compra</h3>
-                {carrito.length === 0 ? null : <li className='Checkout__details__list__header'><span>TITULO</span><span>ARTISTA</span><span>PRECIO</span><span>CANT.</span><span>SUBT.</span></li>}
+                
+                <AnimatePresence>
+                {carrito.length === 0 ? null : <motion.li initial={{opacity: 0}} animate={{opacity: 1}} exit={{transform: "translateY(-120%)", opacity: 0}} className='Checkout__details__list__header' transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}><span>TITULO</span><span>ARTISTA</span><span>PRECIO</span><span>CANT.</span><span>SUBT.</span></motion.li>}
+                </AnimatePresence>
 
                
                   <AnimatePresence>
@@ -60,7 +63,7 @@ export default function Checkout() {
                               removeItemSelected === item?.id ? <div className='Checkout__details__list__removeConfirm'>
                                 <p>ELIMINAR?</p>
                                 <div className="Checkout__details__list__removeConfirm__buttons">
-                                  <button onClick={() => { cartRemove(item?.id) }}>SI</button>
+                                  <button onClick={() => { setRemoveItemSelected(0); cartRemove(item?.id) }}>SI</button>
                                   <button onClick={() => setRemoveItemSelected(0)}>NO</button>
                                 </div>
                               </div> : <button className='Checkout__details__list__remove' aria-label='Eliminar product' title='Eliminar producto' onClick={() => setRemoveItemSelected(item?.id)}><i className="bi bi-trash-fill"></i></button>
@@ -74,11 +77,12 @@ export default function Checkout() {
                
                 <li>  
                   <AnimatePresence exitBeforeEnter>
-                    {cartItems === 0 ? <motion.p key={"noProducts"} initial={{ opacity: 0 }} animate={{ opacity: 1}} exit={{ opacity: 0}} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>No hay productos en el carrito</motion.p> : <motion.p key={"yesProducts"} initial={{ opacity: 0 }} animate={{ opacity: 1}} exit={{ opacity: 0}} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>TOTAL: ${total}</motion.p>}
+                    {cartItems === 0 ? <motion.p key={"noProducts"} initial={{ opacity: 0 }} animate={{ opacity: 1}} exit={{ transform:"translateY(120%)", opacity: 0}} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>No hay productos en el carrito</motion.p> : <motion.p key={"yesProducts"} initial={{ opacity: 0 }} animate={{ opacity: 1}} exit={{transform: "translateY(120%)", opacity: 0}} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>TOTAL: ${total}</motion.p>}
                   </AnimatePresence>
                 </li>
               </ul>
             </div>
+
             <div className='Checkout__details__resumen'>
               <h3>Resumen</h3>
               <div className="Checkout__details__resumen__info">

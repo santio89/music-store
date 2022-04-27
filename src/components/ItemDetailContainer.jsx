@@ -36,12 +36,13 @@ export default function ItemDetailContainer() {
                         getDoc(productRef).then(snapshot => {
                             if (snapshot.exists()) {
                                 /* si no tiene la propiedad stock, la crea (o si es 0 la refresca). por tanto, si hay stock en firebase, no lo actualizo desde la api */
-                               
                                 if (snapshot.data().stock) {
                                     if (!snapshot.data().price || (snapshot.data().price !== res.price)){
                                         /* seteo el precio si no existe o esta desactualizado */
                                         setDoc(doc(productsCollection, res.id.toString()), res, { merge: true })
-                                        setProducto(res);
+
+                                        res.stock = snapshot.data().stock;
+                                        setProducto(res);  /* dado que actualizo la base de datos en firebase (actualizo precio en este if) y esta operacion es async, voy a mostrar en pantalla el resultado de la api ya que el contenido es el mismo (a excepcion del stock, el cual traigo de firebase y muestro) y ya lo tengo disponible */
                                         setLoading(false);
                                     } else{
                                         setProducto(snapshot.data());
