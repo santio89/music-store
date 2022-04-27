@@ -41,7 +41,7 @@ export default function Checkout() {
                   {carrito.length === 0 ? null : <motion.li initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ transform: "translateY(-120%)", opacity: 0 }} className='Checkout__details__list__header' transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}><span>TITULO</span><span>ARTISTA</span><span>PRECIO</span><span>CANT.</span><span>SUBT.</span></motion.li>}
                 </AnimatePresence>
 
-              
+
                 <AnimatePresence>
 
                   {
@@ -114,10 +114,9 @@ export default function Checkout() {
                 <div className='Checkout__details__resumen__buttons'>
                   <button onClick={() => setCartClearConfirm(true)}>VACIAR CARRITO&nbsp;<i className="bi bi-cart-x-fill"></i></button>
 
-
-                  <Link to="/">SEGUIR COMPRANDO&nbsp;<i className="bi bi-cart-plus-fill"></i></Link>
-
                   <button>FINALIZAR COMPRA&nbsp;<i className="bi bi-cart-check-fill"></i></button>
+                  
+                  <Link to="/">SEGUIR COMPRANDO&nbsp;<i className="bi bi-cart-plus-fill"></i></Link>
                 </div>
               </div>
 
