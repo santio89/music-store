@@ -30,7 +30,7 @@ export default function ItemDetailContainer() {
             res => {
                 res.json().then(
                     res => {
-                        res.price = Math.trunc(Math.abs((res.community.have / res.community.want) * 1.8) + ((res.community.want / res.community.have) * .8) + 120) * 12;
+                        res.price = Math.trunc(Math.abs((res.community.have / res.community.want) * 1.8) + ((res.community.want / (res.community.have + 1)) * .8) + 120) * 12;
                         
                         /* busco el producto en la base de datos de firebase primero y, si no esta disponible, muestro desde la api (para mantener el sitio activo)*/
                         getDoc(productRef).then(snapshot => {

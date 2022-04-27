@@ -66,7 +66,7 @@ export default function ItemListContainer() {
                     res.json().then(
                         res => {
                             res.results.forEach((r) => {
-                                r.price = Math.trunc(Math.abs((r.community.have / r.community.want) * 1.8) + ((r.community.want / r.community.have) * .8) + 120) * 12;
+                                r.price = Math.trunc(Math.abs((r.community.have / r.community.want) * 1.8) + ((r.community.want / (r.community.have + 1)) * .8) + 120) * 12;
 
                                 /* ESTE CODIGO ES PARA ESCRIBIR ESTOS RESULTADOS DE LA API, EN FIREBASE. lo desactivo de momento ya que resulta en muchas lecturas/escrituras innecesarias (se ejecutaria cada vez que se cargue la lista. esta bueno para cargar la base de datos inicial)
 
