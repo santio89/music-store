@@ -110,7 +110,7 @@ export default function Checkout() {
 
                   <Link to="/">SEGUIR COMPRANDO&nbsp;<i className="bi bi-cart-plus-fill"></i></Link>
 
-                  <button >FINALIZAR COMPRA&nbsp;<i className="bi bi-cart-check-fill"></i></button>
+                  <button>FINALIZAR COMPRA&nbsp;<i className="bi bi-cart-check-fill"></i></button>
                 </div>
               </div>
 
