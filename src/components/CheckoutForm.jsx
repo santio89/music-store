@@ -1,17 +1,40 @@
 import React, { useState } from 'react'
 import '../styles/css/CheckoutForm.css'
 
-export default function CheckoutForm({total, checkoutSuccessTrue}) {
-/*     const [name, setName ] = useState("");
+export default function CheckoutForm({total, checkoutSuccessTrue, carrito}) {
+    const [name, setName ] = useState("");
     const [email, setEmail ] = useState("");
     const [phone, setPhone ] = useState("");
     const [address, setAddress ] = useState("");
+    console.log(carrito)
 
-    let buyer = {
-        buyer: {name, email, address, phone};
-        shopList: cart;
-        total: total;
-    } */  
+
+    const getDate = ()=>{
+      const today = new Date();
+      const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+      const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+      return(date+' '+time);
+    }
+
+    const carritoList = carrito.map(item=>{return { 
+      title: item.title,
+      artist: item.artists_sort,
+      genre: item.genres,
+      released: item.year,
+      label: item.labels[0],
+      format: item.formats[0],
+      price: item.price,
+      quantity: item.count,
+      date: getDate(),
+      
+    }})
+
+    const buyer = {
+        buyer: {name, email, phone, address},
+        shopList: carritoList,
+        total: total,
+    }  
 
   return (
     <form className='CheckoutForm' onSubmit={(e)=>{e.preventDefault(); }}>
@@ -19,23 +42,23 @@ export default function CheckoutForm({total, checkoutSuccessTrue}) {
       <div className='CheckoutForm__fields'>
         <fieldset>
           <legend>Nombre</legend>
-          <input type="text" required  />
+          <input aria-label='Nombre' type="text" required  />
         </fieldset>
         <fieldset>
           <legend>Apellido</legend>
-          <input type="text" required  />
+          <input aria-label='Apellido' type="text" required  />
         </fieldset>
         <fieldset>
           <legend>E-Mail</legend>
-          <input type="email" required  />
+          <input aria-label='E-Mail' type="email" required  />
         </fieldset>
         <fieldset>
           <legend>Teléfono</legend>
-          <input type="tel" pattern="[0-9]+" required  />
+          <input aria-label='Teléfono' type="tel" pattern="[0-9]+" required  />
         </fieldset>
         <fieldset>
           <legend>Dirección</legend>
-          <input type="text" required  />
+          <input aria-label='Dirección' type="text" required  />
         </fieldset>
       </div>
       <p className='CheckoutForm__total'>Total: ${total}</p>

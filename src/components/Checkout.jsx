@@ -22,6 +22,8 @@ export default function Checkout() {
     setCheckoutConfirmation(!checkoutConfirmation);
   }
 
+  const [checkoutCode, setCheckoutCode] = useState(false);
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -139,7 +141,7 @@ export default function Checkout() {
                       <motion.div className="Checkout__details__resumen__confirm" key="checkoutConfirm" initial={{ transform: "translateX(-120%", opacity: 0 }} animate={{ transform: "translateX(0%)", opacity: 1 }} exit={{ transform: "translateX(120%)", opacity: 0 }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
                         <div className='Checkout__details__resumen__confirm__form'>
                           <button onClick={() => toggleCheckoutConfirmation()} className='Checkout__details__resumen__confirm__form__back'>⇠ Atrás</button>
-                          <CheckoutForm total={total} checkoutSuccessTrue={checkoutSuccessTrue} />
+                          <CheckoutForm total={total} checkoutSuccessTrue={checkoutSuccessTrue} setCheckoutCode={setCheckoutCode} carrito={carrito} />
                         </div>
                       </motion.div>
                     }
@@ -151,7 +153,7 @@ export default function Checkout() {
                 exit={{ opacity: 0, transform: "translateX(120%)" }}
                 transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
                 <h3>Compra realizada con éxito!</h3>
-                <p>Tu código de compra es: </p>
+                <p>Tu código de compra es: {}</p>
                 <Link to="/" className='Checkout__success__continue'>SEGUIR COMPRANDO ⇢</Link>
               </motion.div>
             }
