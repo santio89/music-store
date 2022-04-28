@@ -45,7 +45,7 @@
     &__back {
         position: absolute;
         left: min(5%, 1rem);
-        top: -2%;
+        top: min(-20px, -2%);
         color: var(--color-one-dark);
         text-shadow: 1px 1px 0 var(--color-three);
         font-size: $font-fluid-sm;

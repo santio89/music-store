@@ -139,7 +139,6 @@
         text-overflow: ellipsis;
     }
 
-
     &__back {
         font-size: $font-fluid-sm;
         font-family: var(--font-primary);
@@ -149,13 +148,12 @@
         width: fit-content;
         position: absolute;
         left: min(5%, 1rem);
-        top: -2%;
+        top: min(-20px, -2%);
 
         &:hover {
             color: var(--color-one);
         }
     }
-
 
     &__controlsWrapper {
         width: 100%;
