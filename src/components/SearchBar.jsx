@@ -23,6 +23,7 @@ export default function SearchBar({ navClosed }) {
         }
     }
 
+    
     return (
         <div className="navbar-item searchBar__wrapper">
             <div className="searchBar">
