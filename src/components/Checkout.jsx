@@ -1,9 +1,9 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence, LayoutGroup } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { CartContext } from '../Context/CartContext';
 import { useNavigate } from 'react-router-dom';
-/* import { CheckoutForm } from './CheckoutForm'; */
+import CheckoutForm from './CheckoutForm';
 import "../styles/css/Checkout.css";
 
 export default function Checkout() {
@@ -13,7 +13,10 @@ export default function Checkout() {
 
   const [removeItemSelected, setRemoveItemSelected] = useState(0);
   const [cartClearConfirm, setCartClearConfirm] = useState(false);
-  const [checkoutConfirmation, setCheckoutConfirmacion] = useState(false)
+  const [checkoutConfirmation, setCheckoutConfirmation] = useState(false)
+  const toggleCheckoutConfirmation = ()=>{
+    setCheckoutConfirmation(!checkoutConfirmation);
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -88,7 +91,11 @@ export default function Checkout() {
 
             <div className='Checkout__details__resumen'>
               <h3>Resumen</h3>
-              <div className="Checkout__details__resumen__info">
+              <AnimatePresence exitBeforeEnter>
+              {!checkoutConfirmation?  
+              <motion.div className="Checkout__details__resumen__info" key={"checkoutDetails"} initial={{ opacity: 0, transform: "translateX(-120%)" }}
+              animate={{ opacity: 1, transform: "translateX(0%)" }}
+              exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
                 <div className="Checkout__details__resumen__cleartextContainer">
                   <AnimatePresence>
                     {cartClearConfirm ?
@@ -114,16 +121,19 @@ export default function Checkout() {
                 <div className='Checkout__details__resumen__buttons'>
                   <button onClick={() => setCartClearConfirm(true)}>VACIAR CARRITO&nbsp;<i className="bi bi-cart-x-fill"></i></button>
 
-                  <button>FINALIZAR COMPRA&nbsp;<i className="bi bi-cart-check-fill"></i></button>
+                  <button onClick={()=>toggleCheckoutConfirmation()}>FINALIZAR COMPRA&nbsp;<i className="bi bi-cart-check-fill"></i></button>
                   
                   <Link to="/">SEGUIR COMPRANDO&nbsp;<i className="bi bi-cart-plus-fill"></i></Link>
                 </div>
-              </div>
-
-              {/*      <div className="Checkout__details__resumen__confirm">
-
-                    </div> */}
-
+              </motion.div>:
+              <motion.div className="Checkout__details__resumen__confirm" key="checkoutConfirm" initial={{transform:"translateX(-120%", opacity: 0}} animate={{transform:"translateX(0%)", opacity: 1}} exit={{transform:"translateX(120%)", opacity: 0}} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
+                  <div className='Checkout__details__resumen__confirm__form'>
+                      <button onClick={() => toggleCheckoutConfirmation()}>⇠ Atrás</button>
+                      <CheckoutForm total={total}/>
+                  </div>
+              </motion.div>
+              }
+              </AnimatePresence>
             </div>
           </motion.div>
         </motion.div>
