@@ -1,0 +1,90 @@
+/* bulma is-size-7 */
+/* bulma is-size-6 */
+/* bulma is-size-5 */
+/* bulma is-size-4 */
+/* bulma is-size-3 */
+/* bulma is-size-2 */
+/* bulma is-size-1 */
+.CheckoutForm {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+.CheckoutForm h4 {
+  font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
+}
+.CheckoutForm__fields {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+.CheckoutForm fieldset {
+  max-width: 90%;
+  font-family: "Courier New", Courier, monospace;
+  color: var(--color-one-dark);
+  border: 1px dashed var(--color-three-dark);
+  border-radius: 0.2em;
+  transition: border 400ms;
+  text-align: left;
+  line-height: 1.2;
+  font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
+  transition: color 400ms, border-color 400ms;
+}
+.CheckoutForm fieldset:focus, .CheckoutForm fieldset:focus-within, .CheckoutForm fieldset:valid {
+  border: 1px dashed var(--color-one);
+  color: var(--color-one);
+}
+.CheckoutForm fieldset legend {
+  margin: 0 0 0 0.4em;
+  padding: 0 0.1em;
+}
+.CheckoutForm input {
+  width: 100%;
+  background: none;
+  background-image: linear-gradient(var(--color-one), var(--color-one));
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  background-position: bottom left;
+  outline: none;
+  border: none;
+  transition: background-size 400ms;
+  color: var(--color-three);
+  padding: 0 0.2em;
+}
+.CheckoutForm input:focus {
+  background-size: 100% 2px;
+}
+.CheckoutForm__total {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
+  color: var(--color-one);
+  text-shadow: 1px 1px 0 var(--color-back-dark);
+  background: var(--color-back);
+  padding: 0.4rem;
+  border-radius: 0.2em;
+}
+.CheckoutForm__send {
+  color: var(--color-three);
+  text-shadow: 2px 2px 0 var(--color-one);
+  border-radius: 0.2em;
+  padding: 0.2em 0.4em;
+  outline: 2px dashed var(--color-three-dark);
+  margin: 0.8rem auto 1.6rem auto;
+  transition: color 200ms, text-shadow 200ms, background-color 200ms, outline-color 200ms;
+  background-color: transparent;
+  will-change: transform, background-color;
+}
+.CheckoutForm__send:hover, .CheckoutForm__send:focus-visible {
+  color: var(--color-one);
+  text-shadow: 2px 2px 0 var(--color-three);
+  background-color: var(--color-back);
+  outline: 2px dashed var(--color-one);
+}
+.CheckoutForm__send:active {
+  transform: translate(2px, 2px);
+}/*# sourceMappingURL=CheckoutForm.css.map */

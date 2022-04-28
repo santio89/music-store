@@ -1,0 +1,96 @@
+@import './variables.scss';
+
+.CheckoutForm {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    gap: .8rem;
+
+    h4{
+        font-size: $font-fluid-md;
+    }
+
+    &__fields{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        gap: .4rem;
+    }
+    
+    fieldset{
+        max-width: 90%;
+        font-family: 'Courier New', Courier, monospace;
+        color: var(--color-one-dark);
+        border: 1px dashed var(--color-three-dark);
+        border-radius: .2em;
+        transition: border 400ms;
+        text-align: left;
+        line-height: 1.2;
+        font-size: $font-fluid-sm;
+        transition: color 400ms, border-color 400ms;
+
+        &:focus, &:focus-within, &:valid{
+            border: 1px dashed var(--color-one);
+            color: var(--color-one);
+        }
+
+        legend{
+            margin: 0 0 0 .4em;
+            padding: 0 .1em;
+        }
+    }
+
+    input {
+        width: 100%;
+        background: none;
+        background-image: linear-gradient(var(--color-one), var(--color-one));
+        background-repeat: no-repeat;
+        background-size: 0% 2px;
+        background-position: bottom left;
+        outline: none;
+        border: none;
+        transition: background-size 400ms;
+        color: var(--color-three);
+        padding: 0 .2em;
+
+        &:focus{
+            background-size: 100% 2px;
+        }
+    }
+
+    &__total{
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        font-size: $font-fluid-sm;
+        color: var(--color-one);
+        text-shadow: 1px 1px 0 var(--color-back-dark);
+        background: var(--color-back);
+        padding: .4rem;
+        border-radius: .2em;
+    }
+
+    &__send{
+        color: var(--color-three);
+        text-shadow: 2px 2px 0 var(--color-one);
+        border-radius: .2em;
+        padding: .2em .4em;
+        outline: 2px dashed var(--color-three-dark);
+        margin: .8rem auto 1.6rem auto;
+        transition: color 200ms, text-shadow 200ms, background-color 200ms, outline-color 200ms;
+        background-color: transparent;
+        will-change: transform, background-color;
+
+        &:hover, &:focus-visible{
+            color: var(--color-one);
+            text-shadow: 2px 2px 0 var(--color-three);
+            background-color: var(--color-back);
+            outline: 2px dashed var(--color-one);
+        }
+
+        &:active{
+            transform: translate(2px, 2px)
+        }
+    }
+}

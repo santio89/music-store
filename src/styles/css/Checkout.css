@@ -368,6 +368,8 @@
   width: 100%;
   background: transparent;
   will-change: transform, background-color;
+  transition: filter 400ms, color 400ms;
+  filter: grayscale(0);
 }
 .Checkout__details__resumen__buttons button i,
 .Checkout__details__resumen__buttons a i {
@@ -396,9 +398,35 @@
   outline: 1px dashed var(--color-three);
   background: var(--color-back);
 }
+.Checkout__details__resumen__buttons button.disabled,
+.Checkout__details__resumen__buttons a.disabled {
+  color: var(--color-three-dark);
+  pointer-events: none;
+  filter: grayscale(1);
+}
+.Checkout__details__resumen__confirm {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
 .Checkout__details__resumen__confirm__form {
   padding: 0.4rem;
   width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+.Checkout__details__resumen__confirm__form__back {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  align-self: start;
+  color: var(--color-one-dark);
+  font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
+}
+.Checkout__details__resumen__confirm__form__back:hover {
+  color: var(--color-one);
 }
 
 @media (min-width: 320px) {

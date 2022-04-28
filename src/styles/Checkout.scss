@@ -305,6 +305,7 @@
             justify-content: start;
             align-items: center;
             overflow: hidden;
+            
 
             &__cleartextContainer{
                 width: 100%;
@@ -344,7 +345,7 @@
                         border-radius: .1em;
                         width: 100%;
                         flex: 1;
-
+                        
                         &:hover, &:focus-visible{
                             color: var(--color-three);
                             text-shadow: 1px 1px var(--color-back-dark);
@@ -406,6 +407,8 @@
                     width: 100%;
                     background: transparent;
                     will-change: transform, background-color;
+                    transition: filter 400ms, color 400ms;
+                    filter: grayscale(0);
 
                     i {
                         font-size: $font-fluid-md;
@@ -433,13 +436,41 @@
                             background: var(--color-back);
                         }
                     }
+
+                    &.disabled {
+                        color: var(--color-three-dark);
+                        pointer-events: none;
+                        filter: grayscale(1);
+                    }
                 }
             }
 
             &__confirm{
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: center;
+                align-items: center;
+
+
                 &__form {
                     padding: .4rem;
                     width: 100%;
+                    display: flex;
+                    flex-flow: column wrap;
+                    justify-content: center;
+                    align-items: center;
+                   
+                    &__back{
+                        font-family: 'Courier New', Courier, monospace;
+                        font-weight: bold;
+                        align-self: start;
+                        color: var(--color-one-dark);
+                        font-size: $font-fluid-sm;
+
+                        &:hover{
+                            color: var(--color-one);
+                        }
+                    }
                 }
             }
         }

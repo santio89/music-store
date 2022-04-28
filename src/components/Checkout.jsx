@@ -119,16 +119,16 @@ export default function Checkout() {
                   </AnimatePresence>
                 </div>
                 <div className='Checkout__details__resumen__buttons'>
-                  <button onClick={() => setCartClearConfirm(true)}>VACIAR CARRITO&nbsp;<i className="bi bi-cart-x-fill"></i></button>
+                  <button onClick={() => setCartClearConfirm(true)} className={`${cartItems > 0 ? "" : "disabled"}`} >VACIAR CARRITO&nbsp;<i className="bi bi-cart-x-fill"></i></button>
 
-                  <button onClick={()=>toggleCheckoutConfirmation()}>FINALIZAR COMPRA&nbsp;<i className="bi bi-cart-check-fill"></i></button>
+                  <button onClick={()=>toggleCheckoutConfirmation()} className={`${cartItems > 0 ? "" : "disabled"}`}>FINALIZAR COMPRA&nbsp;<i className="bi bi-cart-check-fill"></i></button>
                   
                   <Link to="/">SEGUIR COMPRANDO&nbsp;<i className="bi bi-cart-plus-fill"></i></Link>
                 </div>
               </motion.div>:
               <motion.div className="Checkout__details__resumen__confirm" key="checkoutConfirm" initial={{transform:"translateX(-120%", opacity: 0}} animate={{transform:"translateX(0%)", opacity: 1}} exit={{transform:"translateX(120%)", opacity: 0}} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
                   <div className='Checkout__details__resumen__confirm__form'>
-                      <button onClick={() => toggleCheckoutConfirmation()}>⇠ Atrás</button>
+                      <button onClick={() => toggleCheckoutConfirmation()} className='Checkout__details__resumen__confirm__form__back'>⇠ Atrás</button>
                       <CheckoutForm total={total}/>
                   </div>
               </motion.div>

@@ -9,7 +9,7 @@
     border-radius: .2em;
     padding: 8px 12px;
     filter: grayscale(0);
-    transition: filter 400ms;
+    transition: filter 400ms, color 400ms;
     text-align: left;
 
     &.disabled {
