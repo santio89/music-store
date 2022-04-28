@@ -43,7 +43,7 @@ export default function Checkout() {
             {!checkoutSuccess ?
               <motion.div className='Checkout__details' key="checkoutDetails" initial={{ opacity: 0, transform: "translateX(-120%)" }}
                 animate={{ opacity: 1, transform: "translateX(0%)" }}
-                exit={{ opacity: 0, transform: "translateX(120%)" }}
+                exit={{ opacity: 0 }}
                 transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
 
                 <div className='Checkout__details__list'>
@@ -146,15 +146,15 @@ export default function Checkout() {
                     }
                   </AnimatePresence>
                 </div>
-              </motion.div> : 
-               <motion.div className='Checkout__success' key="checkoutSuccess" initial={{ opacity: 0 }}
-               animate={{ opacity: 1 }}
-               exit={{ opacity: 0 }}
-               transition={{ duration: .8 }}>
-                 <h3>Compra realizada con éxito!</h3>
-                 <p>Tu código de compra es: </p>
-                 <Link to="/" className='Checkout__success__continue'>SEGUIR COMPRANDO ⇢</Link>
-               </motion.div>
+              </motion.div> :
+              <motion.div className='Checkout__success' key="checkoutSuccess" initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0, transform: "translateX(120%)" }}
+                transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
+                <h3>Compra realizada con éxito!</h3>
+                <p>Tu código de compra es: </p>
+                <Link to="/" className='Checkout__success__continue'>SEGUIR COMPRANDO ⇢</Link>
+              </motion.div>
             }
           </AnimatePresence>
         </motion.div>
