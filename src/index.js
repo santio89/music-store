@@ -14,18 +14,17 @@ import { getAnalytics } from "firebase/analytics";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyArMzAtSSMvG-uPS9TNZmQdbZJ7xE0rVAk",
-  authDomain: "music-store-54f43.firebaseapp.com",
-  projectId: "music-store-54f43",
-  storageBucket: "music-store-54f43.appspot.com",
-  messagingSenderId: "545067547241",
-  appId: "1:545067547241:web:25a44c4267ba859a8780f8",
-  measurementId: "G-QE17DTKS4Z"
+  apiKey: "AIzaSyCfcnZd-7keqPD1yx1419NxmmniOjYxDMs",
+  authDomain: "music-store-firebase.firebaseapp.com",
+  projectId: "music-store-firebase",
+  storageBucket: "music-store-firebase.appspot.com",
+  messagingSenderId: "287530167031",
+  appId: "1:287530167031:web:2f8d6107f5ccc1e90901f2",
+  measurementId: "G-69HTNVD24H"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// eslint-disable-next-line no-unused-vars
 const analytics = getAnalytics(app);
 
 
