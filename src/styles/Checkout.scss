@@ -43,7 +43,6 @@
     }
 
     &__back {
-        align-self: start;
         position: absolute;
         left: min(5%, 1rem);
         top: -2%;
@@ -475,7 +474,57 @@
             }
         }
     }
+
+    &__success{
+        margin: auto;
+        margin-top: 1rem;
+        width: 90%;
+        max-width: 1200px;
+        border-radius: .4em;
+        background: var(--color-back-dark);
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+
+        h3{
+            font-family: var(--font-primary);
+            font-weight: bold;
+            font-size: $font-fluid-lg;
+            border-bottom: 2px dashed var(--color-one);
+            width: 100%;
+            padding: .44em;
+            color: var(--color-three);
+            text-shadow: 2px 2px 0 var(--color-one);
+            line-height: 1.4;
+            margin-bottom: .4rem;
+        }
+
+        p{
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: $font-fluid-md;
+            color: var(--color-one);
+            text-shadow: 1px 1px 0 var(--color-three);
+        }
+
+        &__continue{
+            align-self: end;
+            padding: .4em;
+            font-size: $font-fluid-mdd;
+            color: var(--color-three);
+            text-shadow: 1px 1px 0 var(--color-one);
+            transition: color 200ms, text-shadow 200ms;
+
+            &:hover{
+                color: var(--color-one);
+                text-shadow: 1px 1px 0 var(--color-three);
+            }
+        }
+    }
 }
+
+
 
 @media (min-width: 320px) {
     .Checkout {

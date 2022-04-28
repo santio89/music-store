@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../styles/css/CheckoutForm.css'
 
-export default function CheckoutForm({total}) {
+export default function CheckoutForm({total, checkoutSuccessTrue}) {
 /*     const [name, setName ] = useState("");
     const [email, setEmail ] = useState("");
     const [phone, setPhone ] = useState("");
@@ -14,7 +14,7 @@ export default function CheckoutForm({total}) {
     } */  
 
   return (
-    <form className='CheckoutForm'>
+    <form className='CheckoutForm' onSubmit={(e)=>{e.preventDefault(); }}>
       <h4>Completar datos</h4>
       <div className='CheckoutForm__fields'>
         <fieldset>
@@ -39,7 +39,7 @@ export default function CheckoutForm({total}) {
         </fieldset>
       </div>
       <p className='CheckoutForm__total'>Total: ${total}</p>
-      <button className='CheckoutForm__send'>Enviar pedido</button>
+      <button className='CheckoutForm__send' onClick={()=>{window.scrollTo(0, 0); checkoutSuccessTrue()}} >Enviar pedido</button>
     </form>
   )
 }

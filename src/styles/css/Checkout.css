@@ -46,7 +46,6 @@
   margin-top: 0.8rem;
 }
 .Checkout__back {
-  align-self: start;
   position: absolute;
   left: min(5%, 1rem);
   top: -2%;
@@ -427,6 +426,49 @@
 }
 .Checkout__details__resumen__confirm__form__back:hover {
   color: var(--color-one);
+}
+.Checkout__success {
+  margin: auto;
+  margin-top: 1rem;
+  width: 90%;
+  max-width: 1200px;
+  border-radius: 0.4em;
+  background: var(--color-back-dark);
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+.Checkout__success h3 {
+  font-family: var(--font-primary);
+  font-weight: bold;
+  font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.8rem);
+  border-bottom: 2px dashed var(--color-one);
+  width: 100%;
+  padding: 0.44em;
+  color: var(--color-three);
+  text-shadow: 2px 2px 0 var(--color-one);
+  line-height: 1.4;
+  margin-bottom: 0.4rem;
+}
+.Checkout__success p {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
+  color: var(--color-one);
+  text-shadow: 1px 1px 0 var(--color-three);
+}
+.Checkout__success__continue {
+  align-self: end;
+  padding: 0.4em;
+  font-size: clamp(1rem, 1rem + 1.4vw, 1.8rem);
+  color: var(--color-three);
+  text-shadow: 1px 1px 0 var(--color-one);
+  transition: color 200ms, text-shadow 200ms;
+}
+.Checkout__success__continue:hover {
+  color: var(--color-one);
+  text-shadow: 1px 1px 0 var(--color-three);
 }
 
 @media (min-width: 320px) {
