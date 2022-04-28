@@ -16,7 +16,6 @@ export default function Checkout() {
 
   const [checkoutSuccess, setCheckoutSuccess] = useState(false);
   const checkoutSuccessTrue = () => setCheckoutSuccess(true);
-  const checkoutSuccessfalse = () => setCheckoutSuccess(false);
 
   const [checkoutConfirmation, setCheckoutConfirmation] = useState(false)
   const toggleCheckoutConfirmation = () => {
