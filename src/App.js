@@ -33,7 +33,7 @@ function App() {
 
       <CartContextProvider>
 
-        <BrowserRouter basename="/music-store">
+        <BrowserRouter>
           <NavBar brand={brand} />
           <TabSelector />
           <Routes>
