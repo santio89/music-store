@@ -8,7 +8,6 @@ export default function SearchBar({ navClosed }) {
 
     const navigate = useNavigate();
 
-
     const handleSearch = (e) => {
         setSearch(e.target.value);
 
