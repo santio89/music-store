@@ -38,9 +38,9 @@ export default function ItemDetail({ loading, producto }) {
                     loading ? <PuffLoader color={"var(--color-one)"} loading={loading} size={200} speedMultiplier={1.2} /> : (
                         <AnimatePresence>
                             <motion.div className='ItemDetail' key="ItemDetail"
-                                initial={{ opacity: 0, transform: "translateX(-120%)" }}
-                                animate={{ opacity: 1, transform: "translateX(0%)" }}
-                                exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
+                                initial={{ opacity: 0, x: "-120%" }}
+                                animate={{ opacity: 1, x: "0%" }}
+                                exit={{ opacity: 0, x: "120%" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
                                 <button onClick={() => { history(-1) }} className='ItemDetail__back'><i className="bi bi-caret-left-fill"></i></button>
                                 <div className='ItemDetail__body'>
                                     <div className='ItemDetail__imgWrapper'>
@@ -64,21 +64,21 @@ export default function ItemDetail({ loading, producto }) {
                                             <div className='ItemDetail__controlsWrapper'>
                                                 <AnimatePresence>
                                                     {continueCheckout ?
-                                                        <motion.div key="checkout" initial={{ opacity: 0, transform: "translateX(-120%)" }}
-                                                            animate={{ opacity: 1, transform: "translateX(0%)" }}
-                                                            exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className='ItemDetail__checkout'>
-                                                            <motion.h3 key="ProductsAdded" initial={{ opacity: 0, transform: "translateX(-120%)" }}
-                                                            animate={{ opacity: 1, transform: "translateX(0%)" }}
-                                                            exit={{ opacity: 0, transform: "translateX(120%)" }}
+                                                        <motion.div key="checkout" initial={{ opacity: 0, x: "-120%" }}
+                                                            animate={{ opacity: 1, x: "0%" }}
+                                                            exit={{ opacity: 0, x: "120%" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className='ItemDetail__checkout'>
+                                                            <motion.h3 key="ProductsAdded" initial={{ opacity: 0, x: "-120%" }}
+                                                            animate={{ opacity: 1, x: "0%" }}
+                                                            exit={{ opacity: 0, x: "120%" }}
                                                             transition={{ type: 'spring', duration: .8, stiffness: 140, mass: 1.2 }}>Productos<br/>agregados!</motion.h3>
                                                                 <div className='ItemDetail__checkout__buttons'>
                                                                 <CartWidget message={"Ir al checkout"} />
                                                                 <button onClick={() => { setContinueCheckout(false) }} className='ItemDetail__checkout__continue'>Seguir comprando</button>
                                                             </div>
                                                         </motion.div> :
-                                                        <motion.div key="count" initial={{ opacity: 0, transform: "translateX(-120%)" }}
-                                                            animate={{ opacity: 1, transform: "translateX(0%)" }}
-                                                            exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className='ItemDetail__counterWrapper'>
+                                                        <motion.div key="count" initial={{ opacity: 0, x: "-120%" }}
+                                                            animate={{ opacity: 1, x: "0%" }}
+                                                            exit={{ opacity: 0, x: "120%" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className='ItemDetail__counterWrapper'>
                                                             <p className='ItemDetail__counterWrapper__price'>{"$" + producto?.price}</p>
                                                             <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initialCount} stock={producto?.stock} id={producto?.id} />
                                                         </motion.div>}

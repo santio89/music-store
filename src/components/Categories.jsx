@@ -13,9 +13,9 @@ export default function Categories() {
     <div className='CategoriesWrapper'>
       <AnimatePresence>
         <motion.div key="Categories"
-          initial={{ opacity: 0, transform: "translateX(-120%)" }}
-          animate={{ opacity: 1, transform: "translateX(0%)" }}
-          exit={{ opacity: 0, transform: "translateX(120%)" }}
+          initial={{ opacity: 0, x: "-120%" }}
+          animate={{ opacity: 1, x: "0%" }}
+          exit={{ opacity: 0, x: "120%" }}
           transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}
           className='Categories'>
           <Link to="/categories/rock" className='Categories__rock'>ROCK</Link>

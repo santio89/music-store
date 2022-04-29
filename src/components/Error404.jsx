@@ -11,9 +11,9 @@ export default function Error404() {
   return (
     <AnimatePresence>
       <motion.div className="Error404Wrapper" key="Error404"
-        initial={{ opacity: 0, transform: "translateX(-120%)" }}
-        animate={{ opacity: 1, transform: "translateX(0%)" }}
-        exit={{ opacity: 0, transform: "translateX(120%)" }}
+        initial={{ opacity: 0, x: "-120%" }}
+        animate={{ opacity: 1, x: "0%" }}
+        exit={{ opacity: 0, x: "120%" }}
         transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
         <div className='Error404'>
           <h2>Error 404</h2>
