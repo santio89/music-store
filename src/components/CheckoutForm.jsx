@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../styles/css/CheckoutForm.css'
-import { addDoc, collection, getFirestore } from 'firebase/firestore'
+import { addDoc, updateDoc, getDoc, doc, collection, getFirestore } from 'firebase/firestore'
 
 export default function CheckoutForm({total, checkoutSuccessTrue, carrito, setCheckoutCode, cartClear}) {
     const [name, setName ] = useState("");
@@ -8,6 +8,7 @@ export default function CheckoutForm({total, checkoutSuccessTrue, carrito, setCh
     const [email, setEmail ] = useState("");
     const [phone, setPhone ] = useState("");
     const [address, setAddress ] = useState("");
+    const [shopList, setShopList] = []
 
 
     const getDate = ()=>{
@@ -17,25 +18,25 @@ export default function CheckoutForm({total, checkoutSuccessTrue, carrito, setCh
 
       return(date+' '+time);
     }
-
-    const carritoList = carrito.map(item=>{return { 
-      title: item.title,
-      artist: item.artists_sort,
-      id: item.id,
-      price: item.price,
-      quantity: item.count,
-      date: getDate()
-    }})
+    
 
     const order = {
         buyer: {name, email, phone, address},
-        shopList: carritoList,
+        shopList: shopList,
         total: total,
     }  
 
     const sendOrder = ()=>{
       const db = getFirestore();
-      const ordersCollection = collection(db, "orders")
+      const ordersCollection = collection(db, "orders");
+      const productsCollection = collection(db, "products");
+
+/*       shopList.map(item=>{
+        const productDoc = doc(db, "products", item.id)
+        getDoc(productDoc)
+        updateDoc(productDoc, {count: })
+
+      }) */
       
       addDoc(ordersCollection, order).then(({id})=>{
         setCheckoutCode(id);
@@ -44,6 +45,22 @@ export default function CheckoutForm({total, checkoutSuccessTrue, carrito, setCh
         window.scrollTo(0, 0);
       }).catch(err=>console.log("Error sending order: "+err))
     }
+
+
+    useEffect(()=>{
+      const carritoList = carrito.map(item=>{return { 
+        title: item.title,
+        artist: item.artists_sort,
+        id: item.id,
+        price: item.price,
+        quantity: item.count,
+        date: getDate()
+      }})
+
+      setShopList(carritoList);
+    }, [carrito]);
+
+
 
   return (
     <form className='CheckoutForm' onSubmit={(e)=>{e.preventDefault(); sendOrder()}}>
