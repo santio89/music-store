@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "music-store-54f43"
-  }
+    "default": "music-store-firebase"
+  },
+  "targets": {}
 }
