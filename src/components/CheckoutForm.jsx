@@ -63,7 +63,7 @@ export default function CheckoutForm({total, checkoutSuccessTrue, carrito, setCh
         </fieldset>
         <fieldset>
           <legend>Teléfono</legend>
-          <input value={phone} onChange={e=>setPhone(e.currentTarget.value)} aria-label='Teléfono' type="tel" title="Ingresar teléfono" pattern="[0-9]{1,20}" required maxLength={40} />
+          <input value={phone} onChange={e=>setPhone(e.currentTarget.value)} aria-label='Teléfono' type="tel" title="Ingresar teléfono" pattern="[0-9]{6,20}" required maxLength={40} />
         </fieldset>
         <fieldset>
           <legend>Dirección</legend>
