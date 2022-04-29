@@ -8,7 +8,7 @@ export default function CheckoutForm({total, checkoutSuccessTrue, carrito, setCh
     const [email, setEmail ] = useState("");
     const [phone, setPhone ] = useState("");
     const [address, setAddress ] = useState("");
-    const [shopList, setShopList] = []
+    const [shopList, setShopList] = useState([]);
 
 
     const getDate = ()=>{
