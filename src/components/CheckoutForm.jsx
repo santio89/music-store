@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import '../styles/css/CheckoutForm.css'
+import { addDoc, collection, getFirestore } from 'firebase/firestore'
 
-export default function CheckoutForm({total, checkoutSuccessTrue, carrito}) {
+export default function CheckoutForm({total, checkoutSuccessTrue, carrito, setCheckoutCode, cartClear}) {
     const [name, setName ] = useState("");
     const [lastName, setLastName ] = useState("");
     const [email, setEmail ] = useState("");
@@ -20,24 +21,32 @@ export default function CheckoutForm({total, checkoutSuccessTrue, carrito}) {
     const carritoList = carrito.map(item=>{return { 
       title: item.title,
       artist: item.artists_sort,
-      genre: item.genres,
-      released: item.year,
-      label: item.labels[0],
-      format: item.formats[0],
+      id: item.id,
       price: item.price,
       quantity: item.count,
-      date: getDate(),
-      
+      date: getDate()
     }})
 
-    const buyer = {
+    const order = {
         buyer: {name, email, phone, address},
         shopList: carritoList,
         total: total,
     }  
 
+    const sendOrder = ()=>{
+      const db = getFirestore();
+      const ordersCollection = collection(db, "orders")
+      
+      addDoc(ordersCollection, order).then(({id})=>{
+        setCheckoutCode(id);
+        checkoutSuccessTrue();
+        cartClear();
+        window.scrollTo(0, 0);
+      }).catch(err=>console.log("Error sending order: "+err))
+    }
+
   return (
-    <form className='CheckoutForm' onSubmit={(e)=>{e.preventDefault(); window.scrollTo(0, 0); checkoutSuccessTrue()}}>
+    <form className='CheckoutForm' onSubmit={(e)=>{e.preventDefault(); sendOrder()}}>
       <h4>Completar datos</h4>
       <div className='CheckoutForm__fields'>
         <fieldset>
@@ -54,7 +63,7 @@ export default function CheckoutForm({total, checkoutSuccessTrue, carrito}) {
         </fieldset>
         <fieldset>
           <legend>Teléfono</legend>
-          <input value={phone} onChange={e=>setPhone(e.currentTarget.value)} aria-label='Teléfono' type="tel" pattern="[0-9]+" required  />
+          <input value={phone} onChange={e=>setPhone(e.currentTarget.value)} aria-label='Teléfono' type="tel" pattern="[0-9]{6}[0-9]+" required  />
         </fieldset>
         <fieldset>
           <legend>Dirección</legend>

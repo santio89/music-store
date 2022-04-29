@@ -486,6 +486,7 @@
         flex-flow: column wrap;
         justify-content: center;
         align-items: center;
+        gap: .4rem;
 
         h3{
             font-family: var(--font-primary);
@@ -506,6 +507,7 @@
             font-size: $font-fluid-md;
             color: var(--color-one);
             text-shadow: 1px 1px 0 var(--color-three);
+            line-height: 1.4;
         }
 
         &__continue{
@@ -517,6 +519,36 @@
             transition: color 200ms, text-shadow 200ms;
 
             &:hover{
+                color: var(--color-one);
+                text-shadow: 1px 1px 0 var(--color-three);
+            }
+        }
+
+        &__code{
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: $font-fluid-md;
+            color: var(--color-one);
+            padding: .2em .4em;
+            border-radius: .4em;
+            background: var(--color-back);
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+
+            i{
+                color: var(--color-three);
+                text-shadow: 1px 1px 0 var(--color-one);
+            }
+
+            &:hover, &:focus-visible{
+                outline: 1px dashed var(--color-three-dark);
+            }
+
+            &:active{
+                outline: 2px dashed var(--color-one);
+            }
+            
+            &:active i{
                 color: var(--color-one);
                 text-shadow: 1px 1px 0 var(--color-three);
             }
