@@ -47,11 +47,11 @@
 }
 .Checkout__back {
   position: absolute;
-  left: min(5%, 1rem);
+  left: min(2%, 1rem);
   top: min(-20px, -2%);
   color: var(--color-one-dark);
   text-shadow: 1px 1px 0 var(--color-three);
-  font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
+  font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.8rem);
   font-weight: bold;
 }
 .Checkout__back:hover {
@@ -422,7 +422,7 @@
   font-weight: bold;
   align-self: start;
   color: var(--color-one-dark);
-  font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
+  font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
 }
 .Checkout__details__resumen__confirm__form__back:hover {
   color: var(--color-one);

@@ -38,7 +38,7 @@ export default function Checkout() {
           exit={{ opacity: 0, transform: "translateX(120%)" }}
           transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}
         >
-          <button onClick={() => { history(-1) }} className='Checkout__back'>⇠ Volver</button>
+          <button onClick={() => { history(-1) }} className='Checkout__back'><i className="bi bi-caret-left-fill"></i></button>
           <h1>CHECKOUT</h1>
           <AnimatePresence exitBeforeEnter>
             {!checkoutSuccess ?
@@ -140,7 +140,7 @@ export default function Checkout() {
                       </motion.div> :
                       <motion.div className="Checkout__details__resumen__confirm" key="checkoutConfirm" initial={{ transform: "translateX(-120%", opacity: 0 }} animate={{ transform: "translateX(0%)", opacity: 1 }} exit={{ transform: "translateX(120%)", opacity: 0 }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
                         <div className='Checkout__details__resumen__confirm__form'>
-                          <button onClick={() => toggleCheckoutConfirmation()} className='Checkout__details__resumen__confirm__form__back'>⇠ Atrás</button>
+                          <button onClick={() => toggleCheckoutConfirmation()} className='Checkout__details__resumen__confirm__form__back'><i className="bi bi-caret-left-fill"></i></button>
                           <CheckoutForm total={total} checkoutSuccessTrue={checkoutSuccessTrue} setCheckoutCode={setCheckoutCode} carrito={carrito} />
                         </div>
                       </motion.div>

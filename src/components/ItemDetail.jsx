@@ -41,7 +41,7 @@ export default function ItemDetail({ loading, producto }) {
                                 initial={{ opacity: 0, transform: "translateX(-120%)" }}
                                 animate={{ opacity: 1, transform: "translateX(0%)" }}
                                 exit={{ opacity: 0, transform: "translateX(120%)" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
-                                <button onClick={() => { history(-1) }} className='ItemDetail__back'>&#x21E0;&nbsp;Volver</button>
+                                <button onClick={() => { history(-1) }} className='ItemDetail__back'><i className="bi bi-caret-left-fill"></i></button>
                                 <div className='ItemDetail__body'>
                                     <div className='ItemDetail__imgWrapper'>
                                         <img alt="item" src={producto?.cover_image || producto?.images?.[0]?.resource_url} loading="lazy"></img>

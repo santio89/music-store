@@ -20,7 +20,7 @@
     }
     
     fieldset{
-        max-width: 90%;
+        max-width: 94%;
         font-family: 'Courier New', Courier, monospace;
         color: var(--color-one-dark);
         border: 1px dashed var(--color-three-dark);
@@ -54,7 +54,7 @@
         font-size: $font-fluid-sm;
         transition: background-size 400ms;
         color: var(--color-three);
-        padding: 0 .2em;
+        padding: .1em .2em;
 
         &:focus{
             background-size: 100% 2px;

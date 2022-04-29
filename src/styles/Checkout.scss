@@ -44,11 +44,11 @@
 
     &__back {
         position: absolute;
-        left: min(5%, 1rem);
+        left: min(2%, 1rem);
         top: min(-20px, -2%);
         color: var(--color-one-dark);
         text-shadow: 1px 1px 0 var(--color-three);
-        font-size: $font-fluid-sm;
+        font-size: $font-fluid-lg;
         font-weight: bold;
 
         &:hover {
@@ -464,7 +464,7 @@
                         font-weight: bold;
                         align-self: start;
                         color: var(--color-one-dark);
-                        font-size: $font-fluid-sm;
+                        font-size: $font-fluid-md;
 
                         &:hover{
                             color: var(--color-one);

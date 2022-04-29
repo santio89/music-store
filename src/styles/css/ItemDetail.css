@@ -132,7 +132,7 @@
   text-overflow: ellipsis;
 }
 .ItemDetail__back {
-  font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
+  font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.8rem);
   font-family: var(--font-primary);
   text-shadow: 1px 1px 0 var(--color-three);
   font-weight: bold;
@@ -141,8 +141,8 @@
   width: -moz-fit-content;
   width: fit-content;
   position: absolute;
-  left: min(5%, 1rem);
-  top: min(-20px, -2%);
+  left: min(2%, 1rem);
+  top: -3.2%;
 }
 .ItemDetail__back:hover {
   color: var(--color-one);
@@ -367,7 +367,7 @@
     font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.8rem);
   }
   .ItemDetail__back {
-    top: -4%;
+    top: -5.2%;
   }
   .ItemDetail__controlsWrapper {
     height: 100%;

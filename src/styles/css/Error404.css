@@ -44,11 +44,18 @@
   color: var(--color-one-dark);
   text-shadow: 2px 2px 0 var(--color-three);
   display: block;
+  font-weight: bold;
   text-align: center;
   font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.8rem);
+  background-image: linear-gradient(var(--color-one), var(--color-one));
+  background-size: 0% 3px;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  transition: color 400ms, background-size 400ms;
 }
 .Error404 a:hover, .Error404 a:focus-visible {
   color: var(--color-one);
+  background-size: 100% 3px;
 }
 
 @media (min-width: 1024px) {

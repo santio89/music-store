@@ -41,12 +41,19 @@
         color: var(--color-one-dark);
         text-shadow: 2px 2px 0 var(--color-three);
         display: block;
+        font-weight: bold;
         text-align: center;
         font-size: $font-fluid-lg;
+        background-image: linear-gradient(var(--color-one), var(--color-one));
+        background-size: 0% 3px;
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        transition: color 400ms, background-size 400ms;
 
         &:hover,
         &:focus-visible {
             color: var(--color-one);
+            background-size: 100% 3px;
         }
     }
 }

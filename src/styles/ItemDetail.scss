@@ -140,15 +140,15 @@
     }
 
     &__back {
-        font-size: $font-fluid-sm;
+        font-size: $font-fluid-lg;
         font-family: var(--font-primary);
         text-shadow: 1px 1px 0 var(--color-three);
         font-weight: bold;
         color: var(--color-one-dark);
         width: fit-content;
         position: absolute;
-        left: min(5%, 1rem);
-        top: min(-20px, -2%);
+        left: min(2%, 1rem);
+        top: -3.2%;
 
         &:hover {
             color: var(--color-one);
@@ -417,7 +417,7 @@
         }
 
         &__back {
-            top: -4%;
+            top: -5.2%;
         }
 
         &__controlsWrapper {
