@@ -60,7 +60,7 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
               window.scrollTo(0, 0);
             }).catch(err => console.log("Error sending order: " + err))
         }
-      }).catch((err)=>{console.log("error requesting order: "+err)});
+      }).catch((err)=>{console.log("Error sending order: "+err)});
     })
   }
 
