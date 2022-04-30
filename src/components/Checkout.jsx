@@ -153,7 +153,7 @@ export default function Checkout() {
                 exit={{ opacity: 0, x: "120%" }}
                 transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
                 <h3>Compra realizada con éxito!</h3>
-                <p>Tu código de compra es:<br/><button onClick={()=>navigator.clipboard.writeText(checkoutCode)} title="Copiar al portapapeles" className='Checkout__success__code'>{checkoutCode} <i class="bi bi-clipboard"></i></button></p>
+                <p>Tu código de compra es:<br/><button onClick={()=>navigator.clipboard.writeText(checkoutCode)} title="Copiar al portapapeles" className='Checkout__success__code'>{checkoutCode} <i className="bi bi-clipboard"></i></button></p>
                 <Link to="/" className='Checkout__success__continue'>SEGUIR COMPRANDO ⇢</Link>
               </motion.div>
             }
