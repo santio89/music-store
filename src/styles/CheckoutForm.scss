@@ -9,6 +9,7 @@
 
     h4{
         font-size: $font-fluid-md;
+        font-weight: bold;
     }
 
     &__fields{
@@ -77,6 +78,7 @@
     &__send{
         color: var(--color-three);
         text-shadow: 1px 1px 0 var(--color-one);
+        font-weight: bold;
         border-radius: .2em;
         padding: .2em .4em;
         outline: 2px dashed var(--color-three-dark);
@@ -107,6 +109,21 @@
             }
             &:nth-child(3){
                 animation-delay: 400ms;
+            }
+        }
+    }
+}
+
+@media (min-width: 1216px){
+    .CheckoutForm{
+        &__send{
+            text-shadow: 2px 2px 0 var(--color-one);
+
+            &:hover, &:focus-visible{
+                color: var(--color-one);
+                text-shadow: 2px 2px 0 var(--color-three);
+                background-color: var(--color-back);
+                outline: 2px dashed var(--color-one);
             }
         }
     }

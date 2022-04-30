@@ -70,7 +70,7 @@
     background-color: transparent;
     color: var(--color-one);
     text-align: center;
-    text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
+    text-shadow: 1px 1px 0 var(--color-back-dark), 1.4px 1.4px 0 var(--color-one);
     outline: 2px dashed var(--color-three-dark);
     border-radius: .4rem;
     padding: .4em;
@@ -113,5 +113,9 @@
 @media (min-width: 1216px) {
   .ItemCount {
     margin-top: 12%;
+
+    &__add{
+      text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
+    }
   }
 }
