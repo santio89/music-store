@@ -237,7 +237,7 @@
   font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
   font-weight: bold;
   font-family: "Courier New", Courier, monospace;
-  text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
+  text-shadow: 1px 1px 0 var(--color-back-dark), 1.4px 1.4px 0 var(--color-one);
   justify-content: center;
   background-color: transparent;
   text-align: center;
@@ -278,7 +278,7 @@
   font-weight: bold;
   outline: 2px dashed var(--color-three-dark);
   font-family: "Courier New", Courier, monospace;
-  text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
+  text-shadow: 1px 1px 0 var(--color-back-dark), 1.4px 1.4px 0 var(--color-one);
   background-color: transparent;
   /*  transition: 200ms; */
   will-change: transform, background-color;
@@ -386,6 +386,12 @@
   }
   .ItemDetail__checkout h3 {
     margin-top: 1rem;
+  }
+  .ItemDetail__checkout .CartWidget {
+    text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
+  }
+  .ItemDetail__checkout__continue {
+    text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
   }
 }
 @media (min-width: 1480px) {

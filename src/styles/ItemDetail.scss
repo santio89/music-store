@@ -251,7 +251,7 @@
             font-size: $font-fluid-md;
             font-weight: bold;
             font-family: 'Courier New', Courier, monospace;
-            text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
+            text-shadow: 1px 1px 0 var(--color-back-dark), 1.4px 1.4px 0 var(--color-one);
             justify-content: center;
             background-color: transparent;
             text-align: center;
@@ -298,7 +298,7 @@
             font-weight: bold;
             outline: 2px dashed var(--color-three-dark);
             font-family: 'Courier New', Courier, monospace;
-            text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
+            text-shadow: 1px 1px 0 var(--color-back-dark), 1.4px 1.4px 0 var(--color-one);
             background-color: transparent;
            /*  transition: 200ms; */
             will-change: transform, background-color;
@@ -440,6 +440,14 @@
 
             h3{
                 margin-top: 1rem;
+            }
+
+            .CartWidget{
+                text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
+            }
+
+            &__continue{
+                text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
             }
         }
     }
