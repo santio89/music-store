@@ -74,7 +74,7 @@
 
     &__send{
         color: var(--color-three);
-        text-shadow: 2px 2px 0 var(--color-one);
+        text-shadow: 1px 1px 0 var(--color-one);
         border-radius: .2em;
         padding: .2em .4em;
         outline: 2px dashed var(--color-three-dark);
@@ -82,16 +82,33 @@
         transition: color 200ms, text-shadow 200ms, background-color 200ms, outline-color 200ms;
         background-color: transparent;
         will-change: transform, background-color;
+        word-spacing: .02em;
+        letter-spacing: .01em;
 
         &:hover, &:focus-visible{
             color: var(--color-one);
-            text-shadow: 2px 2px 0 var(--color-three);
+            text-shadow: 1px 1px 0 var(--color-three);
             background-color: var(--color-back);
             outline: 2px dashed var(--color-one);
         }
 
         &:active{
             transform: translate(2px, 2px)
+        }
+
+        span{
+            animation: spanLoad 800ms alternate infinite;
+            letter-spacing: .02em;
+
+            &:nth-child(1){
+                animation-delay: 0;
+            }
+            &:nth-child(2){
+                animation-delay: 200ms;
+            }
+            &:nth-child(3){
+                animation-delay: 400ms;
+            }
         }
     }
 }

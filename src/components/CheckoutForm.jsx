@@ -108,7 +108,7 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
       </div>
       <p className='CheckoutForm__total'>Total: ${total}</p>
       <button className='CheckoutForm__send'>
-        {loadingCheckout?"Procesando...":"Enviar pedido"}
+        {loadingCheckout?<>Procesando<span>.</span><span>.</span><span>.</span></>:<>Enviar pedido</>}
       </button>
     </form>
   )

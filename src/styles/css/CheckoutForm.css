@@ -71,7 +71,7 @@
 }
 .CheckoutForm__send {
   color: var(--color-three);
-  text-shadow: 2px 2px 0 var(--color-one);
+  text-shadow: 1px 1px 0 var(--color-one);
   border-radius: 0.2em;
   padding: 0.2em 0.4em;
   outline: 2px dashed var(--color-three-dark);
@@ -79,13 +79,32 @@
   transition: color 200ms, text-shadow 200ms, background-color 200ms, outline-color 200ms;
   background-color: transparent;
   will-change: transform, background-color;
+  word-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 .CheckoutForm__send:hover, .CheckoutForm__send:focus-visible {
   color: var(--color-one);
-  text-shadow: 2px 2px 0 var(--color-three);
+  text-shadow: 1px 1px 0 var(--color-three);
   background-color: var(--color-back);
   outline: 2px dashed var(--color-one);
 }
 .CheckoutForm__send:active {
   transform: translate(2px, 2px);
+}
+.CheckoutForm__send span {
+  -webkit-animation: spanLoad 800ms alternate infinite;
+          animation: spanLoad 800ms alternate infinite;
+  letter-spacing: 0.02em;
+}
+.CheckoutForm__send span:nth-child(1) {
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+}
+.CheckoutForm__send span:nth-child(2) {
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
+}
+.CheckoutForm__send span:nth-child(3) {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
 }/*# sourceMappingURL=CheckoutForm.css.map */

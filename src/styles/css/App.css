@@ -53,4 +53,20 @@
   100% {
     transform: translateY(0);
   }
+}
+@-webkit-keyframes spanLoad {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes spanLoad {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }/*# sourceMappingURL=App.css.map */
