@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import '../styles/css/CheckoutForm.css'
-import { addDoc, getDoc, doc, collection, getFirestore, serverTimestamp, writeBatch } from 'firebase/firestore'
+import React, { useState, useEffect } from 'react';
+import '../styles/css/CheckoutForm.css';
+import { addDoc, getDoc, doc, collection, getFirestore, serverTimestamp, writeBatch } from 'firebase/firestore';
 
 export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setCheckoutCode, cartClear }) {
   const [name, setName] = useState("");
@@ -9,6 +9,7 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const [shopList, setShopList] = useState([]);
+  const [loadingCheckout, setLoadingCheckout] = useState(false);
 
 
   const order = {
@@ -22,10 +23,13 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
     const db = getFirestore();
     const ordersCollection = collection(db, "orders");
     const orderBatch = writeBatch(db)
+
     
     shopList.forEach((item, index) => {
+      setLoadingCheckout(true);
       let productDoc = doc(db, "products", String(item.id));
-      let prevStock = 0;
+      let prevStock = 0;  
+
 
       /* discounting stock - adding to batch*/
       getDoc(productDoc).then(snapshot => {
@@ -44,7 +48,6 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
         orderBatch.update(productDoc, { stock: newStock });
 
       }).then(() => {
-
         if (shopList[index] === shopList[shopList.length-1]){
           orderBatch.commit();
 
@@ -52,7 +55,8 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
             addDoc(ordersCollection, order).then(({ id }) => {
               setCheckoutCode(id);
               checkoutSuccessTrue();
-              cartClear();
+              cartClear();  
+              setLoadingCheckout(false);
               window.scrollTo(0, 0);
             }).catch(err => console.log("Error sending order: " + err))
         }
@@ -103,7 +107,9 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
         </fieldset>
       </div>
       <p className='CheckoutForm__total'>Total: ${total}</p>
-      <button className='CheckoutForm__send'>Enviar pedido</button>
+      <button className='CheckoutForm__send'>
+        {loadingCheckout?"Procesando...":"Enviar pedido"}
+      </button>
     </form>
   )
 }
