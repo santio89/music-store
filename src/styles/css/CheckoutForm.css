@@ -96,10 +96,6 @@
           animation: spanLoad 800ms alternate infinite;
   letter-spacing: 0.02em;
 }
-.CheckoutForm__send span:nth-child(1) {
-  -webkit-animation-delay: 0;
-          animation-delay: 0;
-}
 .CheckoutForm__send span:nth-child(2) {
   -webkit-animation-delay: 200ms;
           animation-delay: 200ms;
