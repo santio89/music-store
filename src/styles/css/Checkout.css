@@ -430,9 +430,7 @@
 .Checkout__success {
   margin: auto;
   margin-top: 1rem;
-  width: 90%;
-  max-width: 1200px;
-  border-radius: 0.4em;
+  width: 100%;
   background: var(--color-back-dark);
   display: flex;
   flex-flow: column wrap;
@@ -482,6 +480,8 @@
   background: var(--color-back);
   margin-top: 1rem;
   margin-bottom: 1rem;
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
 }
 .Checkout__success__code i {
   color: var(--color-three);
@@ -552,6 +552,11 @@
   }
   .Checkout__details__resumen {
     width: 28%;
+    border-radius: 0.4em;
+  }
+  .Checkout__success {
+    width: 90%;
+    max-width: 1200px;
     border-radius: 0.4em;
   }
 }/*# sourceMappingURL=Checkout.css.map */

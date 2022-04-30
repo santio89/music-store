@@ -478,9 +478,7 @@
     &__success{
         margin: auto;
         margin-top: 1rem;
-        width: 90%;
-        max-width: 1200px;
-        border-radius: .4em;
+        width: 100%;
         background: var(--color-back-dark);
         display: flex;
         flex-flow: column wrap;
@@ -534,6 +532,8 @@
             background: var(--color-back);
             margin-top: 1rem;
             margin-bottom: 1rem;
+            margin-left: .4rem;
+            margin-right: .4rem;
 
             i{
                 color: var(--color-three);
@@ -652,6 +652,11 @@
                 width: 28%;
                 border-radius: .4em;
             }
+        }
+
+        &__success{
+            width: 90%;
+            max-width: 1200px;border-radius: .4em;
         }
     }
 }
