@@ -25,7 +25,8 @@
 .CheckoutForm fieldset {
   max-width: 94%;
   font-family: "Courier New", Courier, monospace;
-  color: var(--color-one-dark);
+  color: var(--color-one);
+  font-weight: bold;
   border: 1px dashed var(--color-three-dark);
   border-radius: 0.2em;
   transition: border 400ms;
@@ -55,6 +56,7 @@
   transition: background-size 400ms;
   color: var(--color-three);
   padding: 0.1em 0.2em;
+  font-weight: normal;
 }
 .CheckoutForm input:focus {
   background-size: 100% 2px;
