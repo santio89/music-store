@@ -8,13 +8,13 @@
 
 
 	<url>
-	  <loc>https://santio89.github.io/music-store/</loc>
-	  <lastmod>2022-04-09T21:24:52+00:00</lastmod>
+	  <loc>https://music-store-firebase.firebaseapp.com/</loc>
+	  <lastmod>2022-04-29T21:24:52+00:00</lastmod>
 	</url>
 
 	<url>
-	  <loc>https://santio89.github.io/music-store/#/categories/</loc>
-	  <lastmod>2022-04-09T21:24:52+00:00</lastmod>
+	  <loc>https://music-store-firebase.firebaseapp.com/categories/</loc>
+	  <lastmod>2022-04-29T21:24:52+00:00</lastmod>
 	</url>
 
 </urlset>
