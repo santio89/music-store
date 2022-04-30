@@ -58,10 +58,6 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
         }
       }).catch((err)=>{console.log("error requesting order: "+err)});
     })
-
-    
-
-
   }
 
 
