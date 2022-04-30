@@ -22,11 +22,11 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
   const sendOrder = () => {
     const db = getFirestore();
     const ordersCollection = collection(db, "orders");
-    const orderBatch = writeBatch(db)
+    const orderBatch = writeBatch(db);
+    setLoadingCheckout(true);
 
     
     shopList.forEach((item, index) => {
-      setLoadingCheckout(true);
       let productDoc = doc(db, "products", String(item.id));
       let prevStock = 0;  
 
