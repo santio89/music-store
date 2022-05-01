@@ -42,7 +42,7 @@ export default function Checkout() {
           <h1>CHECKOUT</h1>
           <AnimatePresence exitBeforeEnter>
             {!checkoutSuccess ?
-              <motion.div className='Checkout__details' key="checkoutDetails" exit={{ opacity: 0, x: "120%" }}
+              <motion.div className='Checkout__details' key="checkoutDetails" exit={{ opacity: 0, y: "120%" }}
                 transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
 
                 <div className='Checkout__details__list'>
@@ -148,8 +148,8 @@ export default function Checkout() {
                   </AnimatePresence>
                 </div>
               </motion.div> :
-              <motion.div className='Checkout__success' key="checkoutSuccess" initial={{ x: "-120%", opacity: 0 }}
-                animate={{ opacity: 1, x: "0%" }}
+              <motion.div className='Checkout__success' key="checkoutSuccess" initial={{ y: "-120%", opacity: 0 }}
+                animate={{ opacity: 1, y: "0%" }}
                 exit={{ opacity: 0, x: "120%" }}
                 transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
                 <h3>Compra realizada con éxito!</h3>
