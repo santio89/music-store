@@ -13,7 +13,7 @@ export default function ThemeContextProvider({children}) {
             const { key, newValue } = e;
 
             if (key === "msDarkTheme") {
-                setDarkTheme(newValue)
+                setDarkTheme(JSON.parse(newValue))
             }
         }
 
