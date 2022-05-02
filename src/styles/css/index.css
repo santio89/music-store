@@ -129,32 +129,8 @@ body {
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  transition: color 200ms, background-color 200ms, text-shadow 200ms;
-}
-body * {
-  transition: color 200ms, background-color 200ms, text-shadow 200ms;
 }
 
-/* 
-.themeWrapper {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  min-height: 100vh;
-  background: var(--color-back);
-  transition: color 200ms, background-color 200ms, text-shadow 200ms;
-
-  *{
-    transition: color 200ms, background-color 200ms, text-shadow 200ms;
-  }
-} */
-/* .altMainColor{
-  --color-one: rgb(143, 58, 240);
-  --color-one-hover: rgb(134, 51, 230);
-  --color-one-dark: rgb(121, 37, 216);
-} */
 .lightBackground {
   --color-back: rgb(220, 220, 220);
   --color-back-dark: rgb(180, 180, 180);
@@ -172,6 +148,7 @@ body * {
   align-items: stretch;
   min-height: 100vh;
   background: var(--color-back);
+  transition: background-color 400ms;
 }
 
 ::-moz-selection {

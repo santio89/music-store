@@ -21,9 +21,10 @@
     &__home{
         color: var(--color-mobilenavtext);
         padding: .4em;
+
         &:hover, &:focus{
+            color: var(--color-one); 
             outline: 1px dashed var(--color-three);
-            
             background: var(--color-one-hover) !important;
         }
     }
@@ -67,6 +68,7 @@
             color: var(--color-mobilenavtext);
 
             &:hover, &:focus{
+                color: var(--color-one) !important;
                 outline: none;
                 background: var(--color-three-accent) !important;
             }

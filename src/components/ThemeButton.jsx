@@ -24,13 +24,15 @@ export default function ThemeButton({navClosed}) {
         /*   <button onClick={buttonRipple} className="button is-dark is-size-5-widescreen is-size-6-desktop is-size-5-touch button__logIn">
               Ingresar
           </button> */
-        <AnimatePresence exitBeforeEnter>
+        
             <button className="themeButton" onClick={()=>{toggleDarkTheme(); navClosed()}}>
+                <AnimatePresence exitBeforeEnter>
                 {darkTheme?
-                    <motion.i key="themeButtonSun" className="bi bi-sun-fill" initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: .4}}></motion.i>:
-                    <motion.i key="themeButtonMoon" class="bi bi-moon-fill" initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} transition={{duration: .4}}></motion.i>
+                    <motion.i key="themeButtonSun" className="bi bi-sun-fill" initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0, transform: "rotate(180deg)"}} transition={{duration: .2}}></motion.i>:
+                    <motion.i key="themeButtonMoon" className="bi bi-moon-fill" initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0, transform: "rotate(180deg)"}} transition={{duration: .2}}></motion.i>
                 }
+                </AnimatePresence>
             </button>
-        </AnimatePresence>
+        
     )
 }

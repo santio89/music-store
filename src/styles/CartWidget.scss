@@ -5,10 +5,9 @@
     display: block;
     gap: .2em;
     color: var(--color-mobilenavtext);
-    transition: color 200ms, background-color 200ms, filter 200ms;
     padding: .4em;
     filter: grayscale(0);
-    transition: filter 400ms, color 400ms;
+    transition: filter 200ms, color 200ms;
     text-align: left;
 
     &.disabled {

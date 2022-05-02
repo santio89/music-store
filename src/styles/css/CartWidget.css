@@ -10,10 +10,9 @@
   display: block;
   gap: 0.2em;
   color: var(--color-mobilenavtext);
-  transition: color 200ms, background-color 200ms, filter 200ms;
   padding: 0.4em;
   filter: grayscale(0);
-  transition: filter 400ms, color 400ms;
+  transition: filter 200ms, color 200ms;
   text-align: left;
 }
 .CartWidget.disabled {

@@ -60,7 +60,7 @@
         }
 
         &__input {
-            color: var(--color-one-dark);
+            color: var(--color-one);
             width: 100%;
 
             &::placeholder {
@@ -74,7 +74,7 @@
 
             &:hover,
             &:focus {
-                color: var(--color-one-dark);
+                color: var(--color-one);
             }
         }
     }

@@ -54,7 +54,7 @@
     background: var(--color-three-accent);
   }
   .searchBar__input {
-    color: var(--color-one-dark);
+    color: var(--color-one);
     width: 100%;
   }
   .searchBar__input::-moz-placeholder {
@@ -71,7 +71,7 @@
     color: var(--color-two);
   }
   .searchBar__icon:hover, .searchBar__icon:focus {
-    color: var(--color-one-dark);
+    color: var(--color-one);
   }
 
   a.navbar-item:hover,

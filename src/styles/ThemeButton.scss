@@ -19,8 +19,6 @@
 .themeButton{
     font-size: $font-lgg;
     color: var(--color-mobilenavtext);
-    transition: none;
-    padding: .3em;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -28,15 +26,28 @@
     text-align: center;
     border-radius: .2em;
     background-color: transparent;
+    margin-bottom: .2em;
 
     i{
         line-height: 1;
     }
 
     &:hover, &:focus-visible{
-        outline: 1px dashed var(--color-three);
-        background-color: var(--color-one-hover);
+        color: var(--color-one);
     }
 
 }
 
+
+@media (min-width: 1024px){
+    .themeButton{
+        padding: .3em;
+        margin: 0;
+
+        &:hover, &:focus-visible{
+            color: var(--color-three);
+            outline: 1px dashed var(--color-three);
+            background-color: var(--color-one-hover);
+        }
+    }
+}
