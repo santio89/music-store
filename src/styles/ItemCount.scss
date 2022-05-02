@@ -63,11 +63,11 @@
   }
 
   &__add {
-    font-size: $font-fluid-lg;
+    font-size: $font-fluid-md;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     line-height: 1.2;
-    background-color: transparent;
+    background: var(--color-back);
     color: var(--color-one);
     text-align: center;
     text-shadow: 1px 1px 0 var(--color-back-dark), 1.4px 1.4px 0 var(--color-one);
@@ -75,14 +75,13 @@
     border-radius: .4rem;
     padding: .4em;
     margin-top: .8rem;
-    /* transition: 200ms; */
-    will-change: transform, background-color;
+    will-change: transform;
     cursor: pointer !important;
 
     &:hover,
     &:focus-visible {
-      background: var(--color-back);
-      outline: 2px dashed var(--color-one);
+      
+      outline: 2px dashed var(--color-three);
       color: var(--color-one);
     }
 

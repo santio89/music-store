@@ -1,0 +1,42 @@
+@import './variables.scss';
+
+/* .button__logIn {
+    font-weight: 700;
+    font-family: inherit;
+    position: relative;
+    overflow: hidden;
+
+    span {
+        position: absolute;
+        background: var(--color-three);
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        border-radius: 50%;
+        animation: ripples 1000ms linear infinite;
+    }
+} */
+
+.themeButton{
+    font-size: $font-lgg;
+    color: var(--color-mobilenavtext);
+    transition: none;
+    padding: .3em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: .2em;
+    background-color: transparent;
+
+    i{
+        line-height: 1;
+    }
+
+    &:hover, &:focus-visible{
+        outline: 1px dashed var(--color-three);
+        background-color: var(--color-one-hover);
+    }
+
+}
+

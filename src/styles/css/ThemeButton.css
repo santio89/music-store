@@ -1,0 +1,42 @@
+/* bulma is-size-7 */
+/* bulma is-size-6 */
+/* bulma is-size-5 */
+/* bulma is-size-4 */
+/* bulma is-size-3 */
+/* bulma is-size-2 */
+/* bulma is-size-1 */
+/* .button__logIn {
+    font-weight: 700;
+    font-family: inherit;
+    position: relative;
+    overflow: hidden;
+
+    span {
+        position: absolute;
+        background: var(--color-three);
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        border-radius: 50%;
+        animation: ripples 1000ms linear infinite;
+    }
+} */
+.themeButton {
+  font-size: 2.2rem;
+  color: var(--color-mobilenavtext);
+  transition: none;
+  padding: 0.3em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 0.2em;
+  background-color: transparent;
+}
+.themeButton i {
+  line-height: 1;
+}
+.themeButton:hover, .themeButton:focus-visible {
+  outline: 1px dashed var(--color-three);
+  background-color: var(--color-one-hover);
+}/*# sourceMappingURL=ThemeButton.css.map */

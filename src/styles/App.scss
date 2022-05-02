@@ -40,3 +40,17 @@
     opacity: 0;
   }
 }
+
+@keyframes ripples {
+  0% {
+      width: 0px;
+      height: 0px;
+      opacity: 0.4;
+  }
+
+  100% {
+      width: 500px;
+      height: 500px;
+      opacity: 0;
+  }
+}

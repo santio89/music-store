@@ -15,6 +15,7 @@
 .CheckoutForm h4 {
   font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
   font-weight: bold;
+  text-shadow: 1px 1px 0 var(--color-three);
 }
 .CheckoutForm__fields {
   display: flex;
@@ -27,6 +28,7 @@
   max-width: 94%;
   font-family: "Courier New", Courier, monospace;
   color: var(--color-one);
+  text-shadow: 1px 1px 0 var(--color-back);
   font-weight: bold;
   border: 1px dashed var(--color-three-dark);
   border-radius: 0.2em;

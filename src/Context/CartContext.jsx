@@ -56,7 +56,6 @@ export default function CartContextProvider({ children }) {
         setCarrito(JSON.parse(newValue));
       }
     }
-
     window.addEventListener("storage", checkStorage)
 
     return (() => window.removeEventListener("storage", checkStorage))

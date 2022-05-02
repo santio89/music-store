@@ -239,20 +239,19 @@
   font-family: "Courier New", Courier, monospace;
   text-shadow: 1px 1px 0 var(--color-back-dark), 1.4px 1.4px 0 var(--color-one);
   justify-content: center;
-  background-color: transparent;
+  background: var(--color-back);
   text-align: center;
   border-radius: 0.4rem;
   outline: 2px dashed var(--color-three-dark);
   /*   transition: 200ms; */
-  will-change: transform, background-color;
+  will-change: transform;
 }
 .ItemDetail__checkout .CartWidget span {
   display: block;
 }
 .ItemDetail__checkout .CartWidget:hover, .ItemDetail__checkout .CartWidget:focus-visible {
-  outline: 2px dashed var(--color-one);
+  outline: 2px dashed var(--color-three);
   color: var(--color-one);
-  background: var(--color-back);
 }
 .ItemDetail__checkout .CartWidget:active {
   transform: translate(2px, 2px);
@@ -279,13 +278,11 @@
   outline: 2px dashed var(--color-three-dark);
   font-family: "Courier New", Courier, monospace;
   text-shadow: 1px 1px 0 var(--color-back-dark), 1.4px 1.4px 0 var(--color-one);
-  background-color: transparent;
-  /*  transition: 200ms; */
-  will-change: transform, background-color;
+  background: var(--color-back);
+  will-change: transform;
 }
 .ItemDetail__checkout__continue:hover, .ItemDetail__checkout__continue:focus-visible {
-  outline: 2px dashed var(--color-one);
-  background: var(--color-back);
+  outline: 2px dashed var(--color-three);
   color: var(--color-one);
 }
 .ItemDetail__checkout__continue:active {

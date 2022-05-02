@@ -20,7 +20,7 @@
 
     &__home{
         color: var(--color-mobilenavtext);
-
+        padding: .4em;
         &:hover, &:focus{
             outline: 1px dashed var(--color-three);
             

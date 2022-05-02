@@ -423,6 +423,7 @@
   align-self: start;
   color: var(--color-one-dark);
   font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
+  line-height: 1;
 }
 .Checkout__details__resumen__confirm__form__back:hover {
   color: var(--color-one);

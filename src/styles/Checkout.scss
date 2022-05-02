@@ -465,7 +465,8 @@
                         align-self: start;
                         color: var(--color-one-dark);
                         font-size: $font-fluid-md;
-
+                        line-height: 1;
+                        
                         &:hover{
                             color: var(--color-one);
                         }

@@ -253,12 +253,12 @@
             font-family: 'Courier New', Courier, monospace;
             text-shadow: 1px 1px 0 var(--color-back-dark), 1.4px 1.4px 0 var(--color-one);
             justify-content: center;
-            background-color: transparent;
+            background: var(--color-back);
             text-align: center;
             border-radius: .4rem;
             outline: 2px dashed var(--color-three-dark);
           /*   transition: 200ms; */
-            will-change: transform, background-color;
+            will-change: transform;
 
             span {
                 display: block;
@@ -266,9 +266,8 @@
 
             &:hover,
             &:focus-visible {
-                outline: 2px dashed var(--color-one);
+                outline: 2px dashed var(--color-three);
                 color: var(--color-one);
-                background: var(--color-back);
             }
 
             &:active {
@@ -299,15 +298,13 @@
             outline: 2px dashed var(--color-three-dark);
             font-family: 'Courier New', Courier, monospace;
             text-shadow: 1px 1px 0 var(--color-back-dark), 1.4px 1.4px 0 var(--color-one);
-            background-color: transparent;
-           /*  transition: 200ms; */
-            will-change: transform, background-color;
+            background: var(--color-back);
+            will-change: transform;
 
 
             &:hover,
             &:focus-visible {
-                outline: 2px dashed var(--color-one);
-                background: var(--color-back);
+                outline: 2px dashed var(--color-three);
                 color: var(--color-one);
             }
 

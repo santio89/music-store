@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import '../../src/styles/css/NavBar.css';
 import CartWidget from "./CartWidget";
 import SearchBar from "./SearchBar";
-import LogInButton from "./LogInButton";
+import ThemeButton from "./ThemeButton";
 
 
 export default function NavBar({ brand }) {
@@ -48,7 +48,7 @@ export default function NavBar({ brand }) {
                     <div className="navbar-end">
                         <div className="navbar-item">
                             <div className="buttons">
-                                <LogInButton />
+                                <ThemeButton navClosed={navClosed} />
                             </div>
                         </div>
                     </div>
