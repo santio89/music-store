@@ -23,15 +23,19 @@ export default function ThemeContextProvider({children}) {
 
     useEffect(() => {
         localStorage.setItem("msDarkTheme", JSON.stringify(darkTheme));
+
+        if (darkTheme === false){
+            document.body.classList.add("lightBackground")
+        } else{
+            document.body.classList.remove("lightBackground")
+        }
       }, [darkTheme])
 
     return (
         <>
-            <div className={`themeWrapper ${darkTheme?"":"lightBackground"}`}>
                 <ThemeContext.Provider value={{darkTheme, toggleDarkTheme}}>
                     {children}
                 </ThemeContext.Provider>
-            </div>
         </>
     )
 }
