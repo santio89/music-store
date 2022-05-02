@@ -112,7 +112,8 @@ html ::-webkit-scrollbar {
   width: 8px;
 }
 html ::-webkit-scrollbar-track {
-  background: var(--color-back);
+  background: rgb(50, 50, 50);
+  /* var(--color-back) */
 }
 html ::-webkit-scrollbar-thumb {
   background: var(--color-one-dark);

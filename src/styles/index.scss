@@ -108,7 +108,7 @@ html {
 
   /* track */
   ::-webkit-scrollbar-track {
-    background: var(--color-back);
+    background: rgb(50, 50, 50); /* var(--color-back) */
   }
 
   /* handle */
