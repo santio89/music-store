@@ -63,7 +63,7 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
       }).catch((err)=>{console.log("Error sending order: "+err)});
     })
   }
-
+  
 
   useEffect(() => {
     const carritoList = carrito.map(item => {
