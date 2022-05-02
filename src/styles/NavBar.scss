@@ -4,6 +4,7 @@
     min-height: 76px;
     z-index: 2;
     font-size: 1rem;
+    background: var(--color-one) !important;
 
     &__logo{
         font-weight: 800;
@@ -13,12 +14,17 @@
         &:hover, &:focus{
             outline: 2px dashed var(--color-three);
             outline-offset: -2px;
+            background: var(--color-one-hover) !important;
         }
     }
 
     &__home{
+        color: var(--color-mobilenavtext);
+
         &:hover, &:focus{
             outline: 1px dashed var(--color-three);
+            
+            background: var(--color-one-hover) !important;
         }
     }
 }
@@ -55,6 +61,15 @@
         position: relative;
         &__searchIcon{
             color: var(--color-two);
+        }
+
+        &__home{
+            color: var(--color-mobilenavtext);
+
+            &:hover, &:focus{
+                outline: none;
+                background: var(--color-three-accent) !important;
+            }
         }
     }
     

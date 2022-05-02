@@ -93,7 +93,7 @@ button {
   --color-three-accent: rgb(250, 250, 250);
   --color-three-dark: rgb(100, 100, 100);
   --color-back: rgb(50, 50, 50);
-  --color-mobilenavtext: rgb(74, 74, 74);
+  --color-mobilenavtext: rgb(54, 54, 54);
   --color-back-dark: rgb(30, 30, 30);
   --font-primary: "Croissant One", cursive;
 }
@@ -129,6 +129,18 @@ body {
   width: 100%;
   min-height: 100vh;
   background: var(--color-back);
+}
+
+.altMainColor {
+  --color-one: rgb(143, 58, 240);
+  --color-one-hover: rgb(134, 51, 230);
+  --color-one-dark: rgb(121, 37, 216);
+}
+
+.lightBackground {
+  --color-back: rgb(220, 220, 220);
+  --color-mobilenavtext: rgb(54, 54, 54);
+  --color-back-dark: rgb(150, 150, 150);
 }
 
 #root {

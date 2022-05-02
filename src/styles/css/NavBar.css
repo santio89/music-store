@@ -9,6 +9,7 @@
   min-height: 76px;
   z-index: 2;
   font-size: 1rem;
+  background: var(--color-one) !important;
 }
 .nav__logo {
   font-weight: 800;
@@ -18,9 +19,14 @@
 .nav__logo:hover, .nav__logo:focus {
   outline: 2px dashed var(--color-three);
   outline-offset: -2px;
+  background: var(--color-one-hover) !important;
+}
+.nav__home {
+  color: var(--color-mobilenavtext);
 }
 .nav__home:hover, .nav__home:focus {
   outline: 1px dashed var(--color-three);
+  background: var(--color-one-hover) !important;
 }
 
 .navbar-brand {
@@ -51,6 +57,13 @@
   }
   .nav__searchIcon {
     color: var(--color-two);
+  }
+  .nav__home {
+    color: var(--color-mobilenavtext);
+  }
+  .nav__home:hover, .nav__home:focus {
+    outline: none;
+    background: var(--color-three-accent) !important;
   }
 
   .navbar-menu {

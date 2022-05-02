@@ -35,7 +35,6 @@
   font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
   color: var(--color-one);
   text-shadow: 2px 2px 0 var(--color-three);
-  /* animation: fadeTranslateIn 400ms forwards; */
   margin-bottom: 8rem;
 }
 .Checkout h1 {
@@ -76,6 +75,7 @@
   width: 100%;
   padding: 0.44em;
   color: var(--color-one);
+  text-shadow: 1px 1px 0 var(--color-three);
   line-height: 1;
   margin-bottom: 0.4rem;
 }
