@@ -133,7 +133,7 @@ export default function Checkout() {
                         <div className='Checkout__details__resumen__buttons'>
                           <button onClick={() => setCartClearConfirm(true)} className={`${cartItems > 0 ? "" : "disabled"}`} >VACIAR CARRITO&nbsp;<i className="bi bi-cart-x-fill"></i></button>
 
-                          <button onClick={() => toggleCheckoutConfirmation()} className={`${cartItems > 0 ? "" : "disabled"}`}>FINALIZAR COMPRA&nbsp;<i className="bi bi-cart-check-fill"></i></button>
+                          <button onClick={() => {toggleCheckoutConfirmation(); setCartClearConfirm(false)}} className={`${cartItems > 0 ? "" : "disabled"}`}>FINALIZAR COMPRA&nbsp;<i className="bi bi-cart-check-fill"></i></button>
 
                           <Link to="/">SEGUIR COMPRANDO&nbsp;<i className="bi bi-cart-plus-fill"></i></Link>
                         </div>
@@ -155,7 +155,7 @@ export default function Checkout() {
                 exit={{ opacity: 0, transform: "translateX(120%)" }}
                 transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
                 <h3>Compra realizada con éxito!</h3>
-                <p>Tu código de compra es:<br/><button onClick={()=>navigator.clipboard.writeText(checkoutCode)} title="Copiar al portapapeles" className='Checkout__success__code'>{checkoutCode} <i className="bi bi-clipboard"></i></button></p>
+                <p>Tu código de compra es:<br /><button onClick={() => navigator.clipboard.writeText(checkoutCode)} title="Copiar al portapapeles" className='Checkout__success__code'>{checkoutCode} <i className="bi bi-clipboard"></i></button></p>
                 <Link to="/" className='Checkout__success__continue'>SEGUIR COMPRANDO ⇢</Link>
               </motion.div>
             }
