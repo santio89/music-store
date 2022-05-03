@@ -87,23 +87,23 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
       <div className='CheckoutForm__fields'>
         <fieldset>
           <legend>Nombre</legend>
-          <input value={name} onChange={e => setName(e.currentTarget.value)} aria-label='Nombre' type="text" required title="Ingresar nombre" maxLength={100} />
+          <input name="nombre" value={name} onChange={e => setName(e.currentTarget.value)} aria-label='Nombre' type="text" required title="Ingresar nombre" maxLength={100} />
         </fieldset>
         <fieldset>
           <legend>Apellido</legend>
-          <input value={lastName} onChange={e => setLastName(e.currentTarget.value)} aria-label='Apellido' type="text" title="Ingresar apellido" required maxLength={100} />
+          <input name="apellido" value={lastName} onChange={e => setLastName(e.currentTarget.value)} aria-label='Apellido' type="text" title="Ingresar apellido" required maxLength={100} />
         </fieldset>
         <fieldset>
           <legend>E-Mail</legend>
-          <input value={email} onChange={e => setEmail(e.currentTarget.value)} aria-label='E-Mail' type="email" title="Ingresar e-mail" required maxLength={320} />
+          <input name="email" value={email} onChange={e => setEmail(e.currentTarget.value)} aria-label='E-Mail' type="email" title="Ingresar e-mail" required maxLength={320} />
         </fieldset>
         <fieldset>
           <legend>Teléfono</legend>
-          <input value={phone} onChange={e => setPhone(e.currentTarget.value)} aria-label='Teléfono' type="tel" title="Ingresar teléfono" pattern="[0-9]{6,20}" required maxLength={40} />
+          <input name="telefono" value={phone} onChange={e => setPhone(e.currentTarget.value)} aria-label='Teléfono' type="tel" title="Ingresar teléfono" pattern="[0-9]{6,20}" required maxLength={40} />
         </fieldset>
         <fieldset>
           <legend>Dirección</legend>
-          <input value={address} onChange={e => setAddress(e.currentTarget.value)} aria-label='Dirección' type="text" title="Ingresar dirección" required maxLength={200} />
+          <input name="direccion" value={address} onChange={e => setAddress(e.currentTarget.value)} aria-label='Dirección' type="text" title="Ingresar dirección" required maxLength={200} />
         </fieldset>
       </div>
       <p className='CheckoutForm__total'>Total: ${total}</p>
