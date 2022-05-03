@@ -102,7 +102,7 @@
   font-family: var(--font-primary);
   font-weight: bold;
   color: var(--color-back-dark);
-  text-shadow: 1px 1px 0 var(--color-three);
+  text-shadow: 1px 1px 0 var(--color-four);
   background: var(--color-one-dark);
   letter-spacing: 0.04em;
   text-align: center;
