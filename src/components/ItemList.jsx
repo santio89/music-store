@@ -33,7 +33,7 @@ export default function ItemList({ productos, searchId, loading, sortOpen, setSo
                     exit={{ opacity: 0, x: "120%" }} key="ItemList__title__search" className='ItemList__title'>
 
                     {
-                        searchId ? <div>BUSCANDO: {searchId.replace(/\+/g, " ").toUpperCase()}</div> : (categoryId ? (<div>VIENDO: <select defaultValue={categoryId} onChange={(e) => { history(`../categories/${e.target.value.replace(/\s/g, "+")}`) }}>
+                        searchId ? <div>BUSCANDO: {searchId.replace(/\+/g, " ").toUpperCase()}</div> : (categoryId ? (<div>VIENDO: <select name="categorias" defaultValue={categoryId} onChange={(e) => { history(`../categories/${e.target.value.replace(/\s/g, "+")}`) }}>
                             <option value={"categories"} disabled>CATEGORIAS</option>
                             <option value={"rock"}>ROCK</option>
                             <option value={"pop"}>POP</option>
