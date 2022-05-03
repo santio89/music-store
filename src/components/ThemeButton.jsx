@@ -2,6 +2,7 @@ import React, { useContext } from "react"
 import '../../src/styles/css/ThemeButton.css';
 import { ThemeContext } from "../Context/ThemeContext";
 import { motion, AnimatePresence } from "framer-motion";
+import { RotateLoader } from "react-spinners";
 
 
 /* const buttonRipple = (e) => {
@@ -28,8 +29,8 @@ export default function ThemeButton({navClosed}) {
             <button className="themeButton" onClick={()=>{toggleDarkTheme(); navClosed()}}>
                 <AnimatePresence exitBeforeEnter>
                 {darkTheme?
-                    <motion.i key="themeButtonSun" className="bi bi-sun-fill" initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0, transform: "rotate(180deg)"}} transition={{duration: .2}}></motion.i>:
-                    <motion.i key="themeButtonMoon" className="bi bi-moon-fill" initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0, transform: "rotate(180deg)"}} transition={{duration: .2}}></motion.i>
+                    <motion.i key="themeButtonSun" className="bi bi-sun-fill" initial={{opacity: 0, transform: "rotate(-180deg)"}} animate={{opacity: 1, transform: "rotate(0deg)"}} exit={{opacity: 0, transform: "rotate(180deg)"}} transition={{duration: .2}}></motion.i>:
+                    <motion.i key="themeButtonMoon" className="bi bi-moon-fill" initial={{opacity: 0, transform: "rotate(-180deg)"}} animate={{opacity: 1, transform:"rotate(0deg)"}} exit={{opacity: 0, transform: "rotate(180deg)"}} transition={{duration: .2}}></motion.i>
                 }
                 </AnimatePresence>
             </button>
