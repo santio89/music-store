@@ -3,7 +3,7 @@ import React, { createContext, useState, useEffect } from 'react'
 export const ThemeContext = createContext();
 
 export default function ThemeContextProvider({children}) {
-    const [darkTheme, setDarkTheme] = useState(JSON.parse(localStorage.getItem("msDarkTheme")) || true);
+    const [darkTheme, setDarkTheme] = useState(true && JSON.parse(localStorage.getItem("msDarkTheme")));
     
     const toggleDarkTheme = () => {
         setDarkTheme(theme => !theme);
