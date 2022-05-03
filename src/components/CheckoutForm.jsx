@@ -82,7 +82,7 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
 
 
   return (
-    <form className='CheckoutForm' onSubmit={(e) => { e.preventDefault(); sendOrder() }}>
+    <form className='CheckoutForm' onSubmit={(e) => { e.preventDefault(); sendOrder(); e.target.reset() }}>
       <h4>Completar datos</h4>
       <div className='CheckoutForm__fields'>
         <fieldset>
