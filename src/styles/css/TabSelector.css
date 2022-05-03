@@ -20,7 +20,7 @@
 }
 .tabs li a {
   border-radius: 0.4em 0.4em 0 0;
-  font-size: clamp(1rem, 1rem + 1.4vw, 1.8rem);
+  font-size: clamp(1rem, 1rem + 1.4vw, 2rem);
   color: var(--color-three-dark);
   border-bottom: 2px solid var(--color-three-dark);
 }

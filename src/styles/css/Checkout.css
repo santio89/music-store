@@ -274,6 +274,7 @@
   justify-content: start;
   align-items: center;
   overflow: hidden;
+  font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
 }
 .Checkout__details__resumen__cleartextContainer {
   width: 100%;
@@ -291,6 +292,7 @@
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
+  font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
 }
 .Checkout__details__resumen__clear p {
   color: var(--color-one);
@@ -462,7 +464,7 @@
 .Checkout__success__continue {
   align-self: end;
   padding: 0.4em;
-  font-size: clamp(1rem, 1rem + 1.4vw, 1.8rem);
+  font-size: clamp(1rem, 1rem + 1.4vw, 2rem);
   color: var(--color-three);
   text-shadow: 1px 1px 0 var(--color-one);
   transition: color 200ms, text-shadow 200ms;
@@ -552,7 +554,7 @@
     padding: 0.2em;
   }
   .Checkout__details__resumen {
-    width: 28%;
+    width: 29.2%;
     border-radius: 0.4em;
   }
   .Checkout__success {

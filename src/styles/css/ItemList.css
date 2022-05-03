@@ -30,7 +30,7 @@
 }
 .ItemList__title {
   align-self: start;
-  font-size: clamp(1rem, 1rem + 1.4vw, 1.8rem);
+  font-size: clamp(1rem, 1rem + 1.4vw, 2rem);
   font-weight: bold;
   text-shadow: 1px 1px 0 var(--color-three);
   color: var(--color-one);
@@ -96,7 +96,7 @@
   color: var(--color-one);
 }
 .ItemList__sort {
-  font-size: clamp(1rem, 1rem + 1.4vw, 1.8rem);
+  font-size: clamp(1rem, 1rem + 1.4vw, 2rem);
   font-weight: bold;
   color: inherit;
   text-shadow: inherit;

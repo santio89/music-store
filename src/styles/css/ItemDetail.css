@@ -33,7 +33,6 @@
   font-family: "Courier New", Courier, monospace;
   width: 100%;
   gap: 2.4rem;
-  /*     animation: fadeTranslateIn 200ms ease-in-out forwards; */
   padding-bottom: 2.8rem;
   margin-bottom: 2.8rem;
   margin-top: 0.8rem;
@@ -243,7 +242,6 @@
   text-align: center;
   border-radius: 0.4rem;
   outline: 2px dashed var(--color-three-dark);
-  /*   transition: 200ms; */
   will-change: transform;
 }
 .ItemDetail__checkout .CartWidget span {

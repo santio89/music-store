@@ -9,6 +9,7 @@
     filter: grayscale(0);
     transition: filter 200ms, color 200ms;
     text-align: left;
+    transition: color 400ms, filter 400ms;
 
     &.disabled {
         color: var(--color-three-dark);
