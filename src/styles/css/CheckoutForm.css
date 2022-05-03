@@ -67,7 +67,7 @@
 .CheckoutForm__total {
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
-  font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
+  font-size: clamp(1rem, 1rem + 1.4vw, 2rem);
   color: var(--color-one);
   text-shadow: 1px 1px 0 var(--color-back-dark);
   background: var(--color-back);
@@ -75,24 +75,25 @@
   border-radius: 0.2em;
 }
 .CheckoutForm__send {
-  color: var(--color-three);
-  text-shadow: 1px 1px 0 var(--color-one);
+  color: var(--color-four);
+  text-shadow: 1px 1px 0 var(--color-back-dark);
+  font-size: clamp(1rem, 1rem + 1.4vw, 2rem);
   font-weight: bold;
   border-radius: 0.2em;
   padding: 0.2em 0.4em;
-  outline: 2px dashed var(--color-three-dark);
+  outline: 2px dashed var(--color-one);
   margin: 1rem auto 2rem auto;
   transition: color 200ms, text-shadow 200ms, background-color 200ms, outline-color 200ms;
-  background-color: transparent;
+  background: var(--color-back);
   will-change: transform, background-color;
   word-spacing: 0.02em;
   letter-spacing: 0.01em;
 }
 .CheckoutForm__send:hover, .CheckoutForm__send:focus-visible {
-  color: var(--color-one);
+  color: var(--color-back-dark);
   text-shadow: 1px 1px 0 var(--color-three);
-  background-color: var(--color-back);
-  outline: 2px dashed var(--color-one);
+  background-color: var(--color-one);
+  outline: 2px dashed var(--color-three);
 }
 .CheckoutForm__send:active {
   transform: translate(2px, 2px);
@@ -113,12 +114,14 @@
 
 @media (min-width: 1216px) {
   .CheckoutForm__send {
-    text-shadow: 2px 2px 0 var(--color-one);
+    color: var(--color-four);
+    text-shadow: 2px 2px 0 var(--color-back-dark);
+    outline: 4px dashed var(--color-one);
   }
   .CheckoutForm__send:hover, .CheckoutForm__send:focus-visible {
-    color: var(--color-one);
+    color: var(--color-back-dark);
     text-shadow: 2px 2px 0 var(--color-three);
-    background-color: var(--color-back);
-    outline: 2px dashed var(--color-one);
+    background-color: var(--color-one);
+    outline: 4px dashed var(--color-three);
   }
 }/*# sourceMappingURL=CheckoutForm.css.map */

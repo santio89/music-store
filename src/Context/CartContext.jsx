@@ -4,7 +4,7 @@ export const CartContext = createContext();
 
 export default function CartContextProvider({ children }) {
 
-  const [carrito, setCarrito] = useState([] && JSON.parse(localStorage.getItem("msShopList")));
+  const [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem("msShopList")) || []);
   const [cartItems, setCartItems] = useState(0);
   const [total, setTotal] = useState(0);  
 
