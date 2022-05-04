@@ -485,7 +485,6 @@
   margin-bottom: 1rem;
   margin-left: 0.4rem;
   margin-right: 0.4rem;
-  word-break: break-word;
 }
 .Checkout__success__code i {
   color: var(--color-three);
