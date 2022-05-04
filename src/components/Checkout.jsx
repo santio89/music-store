@@ -178,7 +178,7 @@ export default function Checkout() {
                   <summary>Detalle de compra</summary>
                   <div className='Checkout__success__details__items'>
                     {checkoutOrder?.shopList?.map((item)=>{
-                      return <p key={item.id}><span>{item.title} / {item.artist}</span><span>${item.price}</span><span>(x{item.count})</span></p>
+                      return <p key={item.id}><span><span className='Checkout__success__details__items__artist'>{item.artist}</span><br/><span>{item.title.toUpperCase()}</span></span><span>${item.price}</span><span>(x{item.count})</span></p>
                     })}
                   </div>
                   <p className='Checkout__success__details__total'>Total: ${checkoutOrder.total}</p>

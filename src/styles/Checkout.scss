@@ -486,7 +486,7 @@
         flex-flow: column wrap;
         justify-content: center;
         align-items: center;
-        gap: .4rem;
+        gap: .8rem;
 
         h3{
             font-family: var(--font-primary);
@@ -565,9 +565,8 @@
             font-size: $font-fluid-md;
             color: var(--color-one);
             text-shadow: 1px 1px 0 var(--color-two);
-            
 
-            &:hover, &:focus-visible, &:focus-within{
+            &:hover, &[open]{
                 outline: 2px dashed var(--color-one);
             }
     
@@ -613,6 +612,13 @@
             &--buyer{
                 p{
                     border: none;
+                }
+            }
+
+            &__items{
+                &__artist{
+                    color: var(--color-three-dark);
+                    font-size: .8em;
                 }
             }
         }
