@@ -13,7 +13,7 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
 
 
   const order = {
-    buyer: { name, email, phone, address },
+    buyer: { name, lastName, email, phone, address },
     shopList: shopList,
     total: total,
     date: serverTimestamp()

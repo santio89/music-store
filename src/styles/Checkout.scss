@@ -506,7 +506,7 @@
             font-weight: bold;
             font-size: $font-fluid-md;
             color: var(--color-one);
-            text-shadow: 1px 1px 0 var(--color-three);
+            text-shadow: 1px 1px 0 var(--color-two);
             line-height: 1.4;
         }
 
@@ -553,6 +553,67 @@
             &:active i{
                 color: var(--color-one);
                 text-shadow: 1px 1px 0 var(--color-three);
+            }
+        }
+
+        &__details{
+            width: 100%;
+            text-align: left;
+            padding: .6rem 1.2rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: $font-fluid-md;
+            color: var(--color-one);
+            text-shadow: 1px 1px 0 var(--color-two);
+            
+
+            &:hover, &:focus-visible, &:focus-within{
+                outline: 2px dashed var(--color-one);
+            }
+    
+            summary{
+                cursor: pointer;
+                border: none;
+                outline: none;
+                border-radius: .1em;
+                padding: .1em;
+
+                &:focus-visible{
+                    background: var(--color-back)
+                }
+            }
+
+            p{
+                font-size: $font-fluid-sm;
+                color: var(--color-two);
+                text-shadow: none;
+                color: var(--color-three);
+                font-weight: normal;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+                align-items: center;
+                padding: .2em 0;
+                border-bottom: 1px dashed var(--color-two);
+
+                span{
+                    flex: 1;
+
+                    &:not(:first-of-type){
+                        text-align: right;
+                    }
+                }
+
+                &.Checkout__success__details__total{
+                    justify-content: center;
+                    border: none;
+                }
+            }
+
+            &--buyer{
+                p{
+                    border: none;
+                }
             }
         }
     }

@@ -458,7 +458,7 @@
   font-weight: bold;
   font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
   color: var(--color-one);
-  text-shadow: 1px 1px 0 var(--color-three);
+  text-shadow: 1px 1px 0 var(--color-two);
   line-height: 1.4;
 }
 .Checkout__success__continue {
@@ -499,6 +499,55 @@
 .Checkout__success__code:active i {
   color: var(--color-one);
   text-shadow: 1px 1px 0 var(--color-three);
+}
+.Checkout__success__details {
+  width: 100%;
+  text-align: left;
+  padding: 0.6rem 1.2rem;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
+  color: var(--color-one);
+  text-shadow: 1px 1px 0 var(--color-two);
+}
+.Checkout__success__details:hover, .Checkout__success__details:focus-visible, .Checkout__success__details:focus-within {
+  outline: 2px dashed var(--color-one);
+}
+.Checkout__success__details summary {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 0.1em;
+  padding: 0.1em;
+}
+.Checkout__success__details summary:focus-visible {
+  background: var(--color-back);
+}
+.Checkout__success__details p {
+  font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
+  color: var(--color-two);
+  text-shadow: none;
+  color: var(--color-three);
+  font-weight: normal;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2em 0;
+  border-bottom: 1px dashed var(--color-two);
+}
+.Checkout__success__details p span {
+  flex: 1;
+}
+.Checkout__success__details p span:not(:first-of-type) {
+  text-align: right;
+}
+.Checkout__success__details p.Checkout__success__details__total {
+  justify-content: center;
+  border: none;
+}
+.Checkout__success__details--buyer p {
+  border: none;
 }
 
 @media (min-width: 320px) {

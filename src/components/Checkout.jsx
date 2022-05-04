@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { getFirestore, doc, getDoc } from 'firebase/firestore'
 import { motion, AnimatePresence } from 'framer-motion'
 import { CartContext } from '../Context/CartContext';
 import { useNavigate } from 'react-router-dom';
@@ -22,7 +23,24 @@ export default function Checkout() {
     setCheckoutConfirmation(!checkoutConfirmation);
   }
 
-  const [checkoutCode, setCheckoutCode] = useState(false);
+  const [checkoutCode, setCheckoutCode] = useState("0");
+  const [checkoutOrder, setCheckoutOrder] = useState([]);
+
+  
+
+  useEffect(()=>{
+    const db = getFirestore();
+    const orderRef = doc(db, "orders", checkoutCode);
+
+    getDoc(orderRef).then(snapshot=>{
+      if (snapshot.exists()){
+        console.log(snapshot.data())
+        setCheckoutOrder(snapshot.data());
+      }
+    })
+
+  }, [checkoutCode])
+
 
 
   useEffect(() => {
@@ -33,18 +51,18 @@ export default function Checkout() {
     <div className="CheckoutWrapper">
       <AnimatePresence>
         <motion.div key="Checkout" className="Checkout"
-          initial={{ opacity: 0, x:"-120%" }}
-          animate={{ opacity: 1, x:"0%" }}
-          exit={{ opacity: 0, x:"120%" }}
+          initial={{ opacity: 0, x: "-120%" }}
+          animate={{ opacity: 1, x: "0%" }}
+          exit={{ opacity: 0, x: "120%" }}
           transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}
         >
           <button onClick={() => { history(-1) }} className='Checkout__back'><i className="bi bi-caret-left-fill"></i></button>
           <h1>CHECKOUT</h1>
           <AnimatePresence exitBeforeEnter>
             {!checkoutSuccess ?
-              <motion.div className='Checkout__details' key="checkoutDetails" initial={{ opacity: 0, x:"-120%" }}
-                animate={{ opacity: 1, x:"0%" }}
-                exit={{ opacity: 0, y:"120%" }}
+              <motion.div className='Checkout__details' key="checkoutDetails" initial={{ opacity: 0, x: "-120%" }}
+                animate={{ opacity: 1, x: "0%" }}
+                exit={{ opacity: 0, y: "120%" }}
                 transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
 
                 <div className='Checkout__details__list'>
@@ -62,7 +80,7 @@ export default function Checkout() {
                       {
                         carrito.map((item) => {
                           return (
-                            <motion.li key={item?.id} initial={{ opacity: 0, x:"-120%" }} animate={{ opacity: 1, x:"0%" }} exit={{ opacity: 0, x:"120%" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className='Checkout__details__list__li'>
+                            <motion.li key={item?.id} initial={{ opacity: 0, x: "-120%" }} animate={{ opacity: 1, x: "0%" }} exit={{ opacity: 0, x: "120%" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className='Checkout__details__list__li'>
                               <span><Link to={`/item/${item?.id}`}><img alt="item" src={item?.images?.[0]?.uri}></img></Link><span className='Checkout__details__list__li__title'>{item?.title}</span></span>
                               <span>{item?.artists_sort}</span>
                               <span>${item?.price}</span>
@@ -95,7 +113,7 @@ export default function Checkout() {
 
                   <div className='Checkout__details__list__total'>
                     <AnimatePresence exitBeforeEnter>
-                      {cartItems === 0 ? <motion.p key={"noProducts"} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ y:"120%", opacity: 0 }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>No hay productos en el carrito</motion.p> : <motion.p key={"yesProducts"} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ y:"120%", opacity: 0 }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>TOTAL: ${total}</motion.p>}
+                      {cartItems === 0 ? <motion.p key={"noProducts"} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ y: "120%", opacity: 0 }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>No hay productos en el carrito</motion.p> : <motion.p key={"yesProducts"} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ y: "120%", opacity: 0 }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>TOTAL: ${total}</motion.p>}
                     </AnimatePresence>
                   </div>
 
@@ -105,16 +123,16 @@ export default function Checkout() {
                   <h3>Resumen</h3>
                   <AnimatePresence exitBeforeEnter>
                     {!checkoutConfirmation ?
-                      <motion.div className="Checkout__details__resumen__info" key={"checkoutDetails"} initial={{ opacity: 0, x:"-120%" }}
-                        animate={{ opacity: 1, x:"0%" }}
-                        exit={{ opacity: 0, x:"120%" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
+                      <motion.div className="Checkout__details__resumen__info" key={"checkoutDetails"} initial={{ opacity: 0, x: "-120%" }}
+                        animate={{ opacity: 1, x: "0%" }}
+                        exit={{ opacity: 0, x: "120%" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
                         <div className="Checkout__details__resumen__cleartextContainer">
                           <AnimatePresence>
                             {cartClearConfirm ?
 
-                              <motion.div key="resumenClear" initial={{ opacity: 0, x:"-120%" }}
-                                animate={{ opacity: 1, x:"0%" }}
-                                exit={{ opacity: 0, x:"120%" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className='Checkout__details__resumen__clear'>
+                              <motion.div key="resumenClear" initial={{ opacity: 0, x: "-120%" }}
+                                animate={{ opacity: 1, x: "0%" }}
+                                exit={{ opacity: 0, x: "120%" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className='Checkout__details__resumen__clear'>
                                 <p>VACIAR CARRITO?</p>
                                 <div className="Checkout__details__resumen__clear__buttons">
                                   <button onClick={() => { cartClear(); setCartClearConfirm(false) }}> SI</button>
@@ -122,9 +140,9 @@ export default function Checkout() {
                                 </div>
                               </motion.div> :
 
-                              <motion.div key="resumenText" initial={{ opacity: 0, x:"-120%" }}
-                                animate={{ opacity: 1, x:"0%" }}
-                                exit={{ opacity: 0, x:"120%" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className="Checkout__details__resumen__text">
+                              <motion.div key="resumenText" initial={{ opacity: 0, x: "-120%" }}
+                                animate={{ opacity: 1, x: "0%" }}
+                                exit={{ opacity: 0, x: "120%" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className="Checkout__details__resumen__text">
                                 <p>◖Items: {cartItems}<br />◖Total: ${total}</p>
 
                               </motion.div>}
@@ -133,12 +151,12 @@ export default function Checkout() {
                         <div className='Checkout__details__resumen__buttons'>
                           <button onClick={() => setCartClearConfirm(true)} className={`${cartItems > 0 ? "" : "disabled"}`} >VACIAR CARRITO&nbsp;<i className="bi bi-cart-x-fill"></i></button>
 
-                          <button onClick={() => {toggleCheckoutConfirmation(); setCartClearConfirm(false)}} className={`${cartItems > 0 ? "" : "disabled"}`}>FINALIZAR COMPRA&nbsp;<i className="bi bi-cart-check-fill"></i></button>
+                          <button onClick={() => { toggleCheckoutConfirmation(); setCartClearConfirm(false) }} className={`${cartItems > 0 ? "" : "disabled"}`}>FINALIZAR COMPRA&nbsp;<i className="bi bi-cart-check-fill"></i></button>
 
                           <Link to="/">SEGUIR COMPRANDO&nbsp;<i className="bi bi-cart-plus-fill"></i></Link>
                         </div>
                       </motion.div> :
-                      <motion.div className="Checkout__details__resumen__confirm" key="checkoutConfirm" initial={{ x:"-120%", opacity: 0 }} animate={{ x:"0%", opacity: 1 }} exit={{ x:"120%", opacity: 0 }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
+                      <motion.div className="Checkout__details__resumen__confirm" key="checkoutConfirm" initial={{ x: "-120%", opacity: 0 }} animate={{ x: "0%", opacity: 1 }} exit={{ x: "120%", opacity: 0 }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
                         <div className='Checkout__details__resumen__confirm__form'>
                           <button onClick={() => toggleCheckoutConfirmation()} className='Checkout__details__resumen__confirm__form__back'><i className="bi bi-caret-left-fill"></i></button>
 
@@ -152,10 +170,28 @@ export default function Checkout() {
               </motion.div> :
               <motion.div className='Checkout__success' key="checkoutSuccess" initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                exit={{ opacity: 0, x:"120%" }}
+                exit={{ opacity: 0, x: "120%" }}
                 transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
                 <h3>Compra realizada con éxito!</h3>
                 <p>Tu código de compra es:<br /><button onClick={() => navigator.clipboard.writeText(checkoutCode)} title="Copiar al portapapeles" className='Checkout__success__code'>{checkoutCode} <i className="bi bi-clipboard"></i></button></p>
+                <details className='Checkout__success__details Checkout__success__details--detail'>
+                  <summary>Detalle de compra</summary>
+                  <div className='Checkout__success__details__items'>
+                    {checkoutOrder?.shopList?.map((item)=>{
+                      return <p key={item.id}><span>{item.title} / {item.artist}</span><span>${item.price}</span><span>(x{item.count})</span></p>
+                    })}
+                  </div>
+                  <p className='Checkout__success__details__total'>Total: ${checkoutOrder.total}</p>
+                </details>
+
+                <details className='Checkout__success__details Checkout__success__details--buyer'>
+                  <summary>Datos del comprador</summary>
+                  <p>· Nombre: {checkoutOrder?.buyer?.name}</p>
+                  <p>· Apellido: {checkoutOrder?.buyer?.lastName}</p>
+                  <p>· E-Mail: {checkoutOrder?.buyer?.email}</p>
+                  <p>· Teléfono: {checkoutOrder?.buyer?.phone}</p>
+                  <p>· Dirección: {checkoutOrder?.buyer?.address}</p>
+                </details>
                 <Link to="/" className='Checkout__success__continue'>SEGUIR COMPRANDO ⇢</Link>
               </motion.div>
             }
