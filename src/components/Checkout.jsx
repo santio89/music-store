@@ -23,7 +23,7 @@ export default function Checkout() {
     setCheckoutConfirmation(!checkoutConfirmation);
   }
 
-  const [checkoutCode, setCheckoutCode] = useState("0");
+  const [checkoutCode, setCheckoutCode] = useState(" ");
   const [checkoutOrder, setCheckoutOrder] = useState([]);
 
   

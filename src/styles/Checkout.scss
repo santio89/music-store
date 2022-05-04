@@ -536,6 +536,7 @@
             margin-bottom: 1rem;
             margin-left: .4rem;
             margin-right: .4rem;
+            word-break: break-word;
 
             i{
                 color: var(--color-three);
@@ -557,7 +558,7 @@
         }
 
         &__details{
-            width: 100%;
+            width: calc(100% - 4px);
             text-align: left;
             padding: .6rem 1.2rem;
             font-family: 'Courier New', Courier, monospace;
@@ -565,6 +566,8 @@
             font-size: $font-fluid-md;
             color: var(--color-one);
             text-shadow: 1px 1px 0 var(--color-two);
+            margin-left: 2px;
+            margin-right: 2px;
 
             &:hover, &[open]{
                 outline: 2px dashed var(--color-one);

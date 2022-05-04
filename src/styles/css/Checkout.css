@@ -485,6 +485,7 @@
   margin-bottom: 1rem;
   margin-left: 0.4rem;
   margin-right: 0.4rem;
+  word-break: break-word;
 }
 .Checkout__success__code i {
   color: var(--color-three);
@@ -501,7 +502,7 @@
   text-shadow: 1px 1px 0 var(--color-three);
 }
 .Checkout__success__details {
-  width: 100%;
+  width: calc(100% - 4px);
   text-align: left;
   padding: 0.6rem 1.2rem;
   font-family: "Courier New", Courier, monospace;
@@ -509,6 +510,8 @@
   font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
   color: var(--color-one);
   text-shadow: 1px 1px 0 var(--color-two);
+  margin-left: 2px;
+  margin-right: 2px;
 }
 .Checkout__success__details:hover, .Checkout__success__details[open] {
   outline: 2px dashed var(--color-one);
