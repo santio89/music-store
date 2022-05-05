@@ -10,7 +10,7 @@ export default function Item({ id, title, img, price }) {
     return (
         <>
             <AnimatePresence>
-                <motion.div layout key={`/item/${id}`}
+                <motion.div className="ItemWrapper" layout key={`/item/${id}`}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
