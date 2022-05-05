@@ -34,7 +34,6 @@ export default function Checkout() {
 
     getDoc(orderRef).then(snapshot=>{
       if (snapshot.exists()){
-        console.log(snapshot.data())
         setCheckoutOrder(snapshot.data());
       }
     })
@@ -181,7 +180,8 @@ export default function Checkout() {
                       return <p key={item.id}><span><span className='Checkout__success__details__items__artist'>{item.artist}</span><br/><span>{item.title.toUpperCase()}</span></span><span>${item.price}</span><span>(x{item.count})</span></p>
                     })}
                   </div>
-                  <p className='Checkout__success__details__total'>Total: ${checkoutOrder.total}</p>
+                  <p className='Checkout__success__details__total'>TOTAL: ${checkoutOrder.total}</p>
+                  <p className='Checkout__success__details__date'>Fecha de compra: {(new Date(checkoutOrder?.date?.seconds * 1000).toLocaleDateString())}</p>
                 </details>
 
                 <details className='Checkout__success__details Checkout__success__details--buyer'>

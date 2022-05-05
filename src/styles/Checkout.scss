@@ -608,6 +608,16 @@
                 &.Checkout__success__details__total{
                     justify-content: center;
                     border: none;
+                    font-weight: bold;
+                    font-size: $font-fluid-smm;
+                    padding: .4em;
+                }
+
+                &.Checkout__success__details__date{
+                    color: var(--color-three-dark);
+                    font-size: .6em;
+                    justify-content: end;
+                    border: none;
                 }
             }
 
