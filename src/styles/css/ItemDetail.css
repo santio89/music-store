@@ -67,6 +67,11 @@
      object-fit: cover;
   outline: 4px dashed var(--color-one);
 }
+.ItemDetail__imgWrapper details p {
+  font-size: clamp(0.88rem, 0.88rem + 1vw, 1.4rem);
+  color: var(--color-one);
+  text-shadow: 1px 1px 0 var(--color-two);
+}
 .ItemDetail__pWrapper {
   width: 100%;
 }

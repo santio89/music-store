@@ -63,6 +63,12 @@
             object-fit: cover;
             outline: 4px dashed var(--color-one);
         }
+
+        details p{
+            font-size: $font-fluid-xss;
+            color: var(--color-one);
+            text-shadow: 1px 1px 0 var(--color-two);
+        }
     }
 
     &__pWrapper {

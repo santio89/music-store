@@ -53,6 +53,12 @@ export default function ItemDetail({ loading, producto }) {
                                             <p>◖País: {producto?.country}</p>
                                             <p>◖Sello: {producto?.labels?.[0].name}</p>
                                             <p>◖Formato: {producto?.formats?.[0].name}</p>
+                                            <details>
+                                                <summary>Tracklist</summary>
+                                                {
+                                                    producto?.tracklist?.map(track=><p key={`${track.position}-${track.title}`}>&nbsp;{track.position} - {track.title}</p>)
+                                                }
+                                            </details>
                                         </div>
                                     </div>
                                     <div className="ItemDetail__infoWrapper">
