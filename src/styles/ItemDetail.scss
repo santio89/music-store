@@ -64,10 +64,22 @@
             outline: 4px dashed var(--color-one);
         }
 
-        details p{
+        details{
+            summary{
+                cursor: pointer;
+                outline: none;
+                border: none;
+                border-radius: .1em;
+
+                &:focus-visible{
+                    outline: 1px dashed var(--color-one);
+                }
+            }
+            p{
             font-size: $font-fluid-xss;
             color: var(--color-one);
             text-shadow: 1px 1px 0 var(--color-two);
+            }
         }
     }
 

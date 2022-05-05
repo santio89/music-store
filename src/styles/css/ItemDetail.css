@@ -67,6 +67,15 @@
      object-fit: cover;
   outline: 4px dashed var(--color-one);
 }
+.ItemDetail__imgWrapper details summary {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 0.1em;
+}
+.ItemDetail__imgWrapper details summary:focus-visible {
+  outline: 1px dashed var(--color-one);
+}
 .ItemDetail__imgWrapper details p {
   font-size: clamp(0.88rem, 0.88rem + 1vw, 1.4rem);
   color: var(--color-one);
