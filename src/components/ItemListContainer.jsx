@@ -49,7 +49,7 @@ export default function ItemListContainer() {
     useEffect(() => {
         setLoading(true);
 
-        const hotSearch = "type=release&sort=want%2Cdesc"
+        const hotSearch = "type=release&sort=want"
         const genreSearch = `genre=${categoryId}&type=release`;
         const manualSearch = `q=${searchId}&type=release`
 
