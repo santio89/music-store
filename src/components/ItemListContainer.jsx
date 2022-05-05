@@ -49,11 +49,11 @@ export default function ItemListContainer() {
     useEffect(() => {
         setLoading(true);
 
-        const hotSearch = "type=release&sort=hot%2Cdesc"
+        const hotSearch = "type=release&sort=want%2Cdesc"
         const genreSearch = `genre=${categoryId}&type=release`;
         const manualSearch = `q=${searchId}&type=release`
 
-        let fetchApi = fetch(`https://api.discogs.com/database/search?${searchId ? manualSearch : (categoryId ? genreSearch : hotSearch)}&type=release&token=${discogsToken}`);
+        let fetchApi = fetch(`https://api.discogs.com/database/search?${searchId ? manualSearch : (categoryId ? genreSearch : hotSearch)}&token=${discogsToken}`);
 
 
         
