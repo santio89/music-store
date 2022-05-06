@@ -16,6 +16,8 @@ export default function ItemDetail({ loading, producto }) {
 
     const { cartAdd } = useContext(CartContext)
 
+/*     const [spotifyId, setSpotifyId] = useState(" "); */
+
     const onAdd = (count) => {
         setContinueCheckout(true);
         cartAdd({ ...producto, count });
@@ -27,7 +29,22 @@ export default function ItemDetail({ loading, producto }) {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-      }, []);
+
+/*        setSpotifyId("4aawyAB9vmqN3uQ7FjRGTy");
+       
+        fetch(`https://api.spotify.com/v1/albums/${spotifyId}?market=ES`, {
+            headers: {
+                Accept: "application/json",
+                Authorization: "Bearer BQAqNF0DD4Ht6mkn3f8yJrIwrA5Ows0cnajS-j-MKVxa2_5wTMY7d8nErVeGB5Kg-TsxCSig20Qc7L1JOQ4iuGqUDBm9KPrERvWtP8WbVGctPsSFxcNKOfstOv20hnMboeaaB0ewVJvejj4_FRABXnoYvKbrXQM",
+                "Content-Type": "application/json"
+            }
+        }).then(res => {
+            console.log(res.url)
+            setSpotifyUrl(res?.url)
+        }) */
+    }, []);
+
+
 
 
     return (
@@ -56,8 +73,11 @@ export default function ItemDetail({ loading, producto }) {
                                             <details>
                                                 <summary>Tracklist</summary>
                                                 {
-                                                    producto?.tracklist?.map(track=><p key={`${track.position}-${track.title}`}>&nbsp;{track.position} - {track.title}</p>)
+                                                    producto?.tracklist?.map(track => <p key={`${track.position}-${track.title}`}>&nbsp;{track.position} - {track.title}</p>)
                                                 }
+
+                                            {/*     <iframe style={{ borderRadius: "12px" }} src={`https://open.spotify.com/embed/album/${spotifyId && spotifyId}?utm_source=generator`} width="100%" height="380" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe> */}
+
                                             </details>
                                         </div>
                                     </div>
@@ -74,10 +94,10 @@ export default function ItemDetail({ loading, producto }) {
                                                             animate={{ opacity: 1, x: "0%" }}
                                                             exit={{ opacity: 0, x: "120%" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className='ItemDetail__checkout'>
                                                             <motion.h3 key="ProductsAdded" initial={{ opacity: 0, x: "-120%" }}
-                                                            animate={{ opacity: 1, x: "0%" }}
-                                                            exit={{ opacity: 0, x: "120%" }}
-                                                            transition={{ type: 'spring', duration: .8, stiffness: 140, mass: 1.2 }}>Productos<br/>agregados!</motion.h3>
-                                                                <div className='ItemDetail__checkout__buttons'>
+                                                                animate={{ opacity: 1, x: "0%" }}
+                                                                exit={{ opacity: 0, x: "120%" }}
+                                                                transition={{ type: 'spring', duration: .8, stiffness: 140, mass: 1.2 }}>Productos<br />agregados!</motion.h3>
+                                                            <div className='ItemDetail__checkout__buttons'>
                                                                 <CartWidget message={"Ir al checkout"} />
                                                                 <button onClick={() => { setContinueCheckout(false) }} className='ItemDetail__checkout__continue'>Seguir comprando</button>
                                                             </div>
