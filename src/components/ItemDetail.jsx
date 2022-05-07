@@ -26,7 +26,7 @@ export default function ItemDetail({ loading, producto, spotifyId }) {
         console.log("FAIL TO ADD (NOT ENOUGH STOCK)");
     }
 
-    const changeImgSelected = (imgUrl)=>{
+    const changeImgSelected = (imgUrl) => {
         setImgSelected(imgUrl)
     }
 
@@ -54,10 +54,9 @@ export default function ItemDetail({ loading, producto, spotifyId }) {
                                     <div className='ItemDetail__detailsWrapper'>
                                         <img alt="imgSelected" src={imgSelected} loading="lazy"></img>
                                         <div className='ItemDetail__imgSelector'>
-                                            <button onClick={()=>{changeImgSelected(producto?.cover_image || producto?.images?.[0]?.resource_url)}}><img alt="img01" src={producto?.cover_image || producto?.images?.[0]?.resource_url} loading="lazy"></img></button>
-                                            <button onClick={()=>{changeImgSelected(producto?.cover_image || producto?.images?.[1]?.resource_url)}}><img alt="img02" src={producto?.cover_image || producto?.images?.[1]?.resource_url} loading="lazy"></img></button>
-                                            <button onClick={()=>{changeImgSelected(producto?.cover_image || producto?.images?.[2]?.resource_url)}}><img alt="img03" src={producto?.cover_image || producto?.images?.[2]?.resource_url} loading="lazy"></img></button>
-                                            <button onClick={()=>{changeImgSelected(producto?.cover_image || producto?.images?.[3]?.resource_url)}}><img alt="img04" src={producto?.cover_image || producto?.images?.[3]?.resource_url} loading="lazy"></img></button>
+                                            {producto?.images?.slice(0, 4).map((img) => {
+                                                return <button key={img.resource_url} onClick={() => { changeImgSelected(img.resource_url) }}><img alt="img01" src={img.resource_url} loading="lazy"></img></button>
+                                            })}
                                         </div>
                                         <div className='ItemDetail__pWrapper'>
                                             <p>◖TITULO: {producto?.title?.toUpperCase()}</p>

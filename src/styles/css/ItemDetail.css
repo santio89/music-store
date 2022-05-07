@@ -111,7 +111,7 @@
   margin: auto;
   width: 22%;
   min-width: 60px;
-  max-width: 80px;
+  max-width: 100px;
   aspect-ratio: 1;
   border-radius: 0.2em;
 }
