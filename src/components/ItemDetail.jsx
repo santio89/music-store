@@ -57,7 +57,7 @@ export default function ItemDetail({ loading, producto }) {
             res.json().then(res => {
                 setSpotifyId(res?.albums?.items?.[0]?.id)
             })
-        }).catch(err=>console.log("error fetching spotify: " + err));
+        }).catch(err => console.log("error fetching spotify: " + err));
 
 
     }, [producto]);
@@ -81,19 +81,23 @@ export default function ItemDetail({ loading, producto }) {
                                     <div className='ItemDetail__imgWrapper'>
                                         <img alt="item" src={producto?.cover_image || producto?.images?.[0]?.resource_url} loading="lazy"></img>
                                         <div className='ItemDetail__pWrapper'>
-                                            <p>◖Título: {producto?.title}</p>
-                                            <p>◖Artista: {producto?.artists_sort}</p>
-                                            <p>◖Género: {producto?.genres?.join(" - ")}</p>
-                                            <p>◖Año: {producto?.year}</p>
-                                            <p>◖País: {producto?.country}</p>
-                                            <p>◖Sello: {producto?.labels?.[0].name}</p>
-                                            <p>◖Formato: {producto?.formats?.[0].name}</p>
+                                            <p>◖TITULO: {producto?.title.toUpperCase()}</p>
+                                            <p>◖ARTISTA: {producto?.artists_sort.toUpperCase()}</p>
+                                            <details>
+                                                <summary>Más Info</summary>
+                                                <p>&nbsp;◖Género: {producto?.genres?.join(" - ")}</p>
+                                                <p>&nbsp;◖Año: {producto?.year}</p>
+                                                <p>&nbsp;◖País: {producto?.country}</p>
+                                                <p>&nbsp;◖Sello: {producto?.labels?.[0].name}</p>
+                                                <p>&nbsp;◖Formato: {producto?.formats?.[0].name}</p>
+                                            </details>
                                             <details>
                                                 <summary>Tracklist</summary>
                                                 {
                                                     producto?.tracklist?.map(track => <p key={`${track.position}-${track.title}`}>&nbsp;{track.position} - {track.title}</p>)
                                                 }
                                             </details>
+                                         
                                             <details>
                                                 <summary>Spotify</summary>
                                                 <iframe title='spotify-tracklist' style={{ borderRadius: "12px" }} src={`https://open.spotify.com/embed/album/${spotifyId && spotifyId}?utm_source=generator`} width="100%" height="380" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>

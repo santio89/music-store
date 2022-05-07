@@ -87,6 +87,11 @@
 .ItemDetail__pWrapper {
   width: 100%;
 }
+.ItemDetail__pWrapper > p {
+  font-weight: bold;
+  color: var(--color-one);
+  text-shadow: 1px 1px 0 var(--color-three);
+}
 .ItemDetail__infoWrapper {
   font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.8rem);
   width: 100%;

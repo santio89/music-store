@@ -89,6 +89,11 @@
 
     &__pWrapper {
         width: 100%;
+        > p{
+            font-weight: bold;
+            color: var(--color-one);
+            text-shadow: 1px 1px 0 var(--color-three);
+        }
     }
 
     &__infoWrapper {
