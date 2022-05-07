@@ -5,7 +5,7 @@
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 1.2rem;
 
     h4{
         font-size: $font-fluid-md;
@@ -18,11 +18,11 @@
         flex-flow: column wrap;
         justify-content: center;
         align-items: center;
-        gap: .8rem;
+        gap: 1rem;
     }
     
     fieldset{
-        max-width: 94%;
+        max-width: 100%;
         font-family: 'Courier New', Courier, monospace;
         color: var(--color-one);
         text-shadow: 1px 1px 0 var(--color-back);

@@ -10,7 +10,7 @@
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 .CheckoutForm h4 {
   font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
@@ -22,10 +22,10 @@
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 .CheckoutForm fieldset {
-  max-width: 94%;
+  max-width: 100%;
   font-family: "Courier New", Courier, monospace;
   color: var(--color-one);
   text-shadow: 1px 1px 0 var(--color-back);
