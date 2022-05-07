@@ -95,6 +95,14 @@ button {
   --font-primary: 'Croissant One', cursive;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-back: rgb(220, 220, 220);
+    --color-back-dark: rgb(180, 180, 180);
+    --color-four: rgb(40, 40, 40);
+  }
+}
+
 html {
   scrollbar-width: thin;
   scrollbar-color: var(--color-one) var(--color-back);
@@ -109,7 +117,8 @@ html {
 
   /* track */
   ::-webkit-scrollbar-track {
-    background: rgb(50, 50, 50); /* var(--color-back) */
+    background: rgb(50, 50, 50);
+    /* var(--color-back) */
   }
 
   /* handle */
@@ -134,12 +143,11 @@ body {
   min-height: 100vh;
 }
 
-.lightBackground{
+.lightBackground {
   --color-back: rgb(220, 220, 220);
   --color-back-dark: rgb(180, 180, 180);
   --color-four: rgb(40, 40, 40);
 }
-
 
 #root {
   width: 100%;
@@ -160,3 +168,4 @@ body {
   background: var(--color-one-dark);
   color: var(--color-three);
 }
+

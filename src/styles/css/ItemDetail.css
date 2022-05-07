@@ -81,6 +81,9 @@
   color: var(--color-one);
   text-shadow: 1px 1px 0 var(--color-two);
 }
+.ItemDetail__imgWrapper details iframe {
+  padding: 0.4em 0.2em 0 0.2em;
+}
 .ItemDetail__pWrapper {
   width: 100%;
 }

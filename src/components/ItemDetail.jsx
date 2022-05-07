@@ -16,7 +16,9 @@ export default function ItemDetail({ loading, producto }) {
 
     const { cartAdd } = useContext(CartContext)
 
-/*     const [spotifyId, setSpotifyId] = useState(" "); */
+    /*     const [spotifySearch, setSpotifySearch] = useState(" "); */
+    const [spotifyId, setSpotifyId] = useState(" ");
+
 
     const onAdd = (count) => {
         setContinueCheckout(true);
@@ -30,19 +32,35 @@ export default function ItemDetail({ loading, producto }) {
     useEffect(() => {
         window.scrollTo(0, 0);
 
-/*        setSpotifyId("4aawyAB9vmqN3uQ7FjRGTy");
-       
-        fetch(`https://api.spotify.com/v1/albums/${spotifyId}?market=ES`, {
+
+
+
+
+        /*  fetch(`https://api.spotify.com/v1/albums/${spotifyId}?market=ES`, {
+             headers: {
+                 Accept: "application/json",
+                 Authorization: "Bearer BQAqNF0DD4Ht6mkn3f8yJrIwrA5Ows0cnajS-j-MKVxa2_5wTMY7d8nErVeGB5Kg-TsxCSig20Qc7L1JOQ4iuGqUDBm9KPrERvWtP8WbVGctPsSFxcNKOfstOv20hnMboeaaB0ewVJvejj4_FRABXnoYvKbrXQM",
+                 "Content-Type": "application/json"
+             }
+         }).then(res => {
+             console.log(res)
+           
+         }) */
+
+        fetch(`https://api.spotify.com/v1/search?q=${producto?.title}%20${producto?.artists_sort}&type=album`, {
             headers: {
                 Accept: "application/json",
-                Authorization: "Bearer BQAqNF0DD4Ht6mkn3f8yJrIwrA5Ows0cnajS-j-MKVxa2_5wTMY7d8nErVeGB5Kg-TsxCSig20Qc7L1JOQ4iuGqUDBm9KPrERvWtP8WbVGctPsSFxcNKOfstOv20hnMboeaaB0ewVJvejj4_FRABXnoYvKbrXQM",
+                Authorization: "Bearer BQDXkYwf7aUexz4raa7Z6RhK9DiGEC1igESXZUrZckmqKyf9bmHE673aB1zkhbe3YYX5NAUaa9VIz_-xHXHruEVww3gz7MKhhtssfRy3Jzt27Cz8eT3Ov9QKo8GxltKROqnMq0jywJKtoDetKWT_lVFxn1QKb4g",
                 "Content-Type": "application/json"
             }
         }).then(res => {
-            console.log(res.url)
-            setSpotifyUrl(res?.url)
-        }) */
-    }, []);
+            res.json().then(res => {
+                setSpotifyId(res?.albums?.items?.[0]?.id)
+            })
+        })
+
+
+    }, [producto]);
 
 
 
@@ -75,9 +93,10 @@ export default function ItemDetail({ loading, producto }) {
                                                 {
                                                     producto?.tracklist?.map(track => <p key={`${track.position}-${track.title}`}>&nbsp;{track.position} - {track.title}</p>)
                                                 }
-
-                                            {/*     <iframe style={{ borderRadius: "12px" }} src={`https://open.spotify.com/embed/album/${spotifyId && spotifyId}?utm_source=generator`} width="100%" height="380" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe> */}
-
+                                            </details>
+                                            <details>
+                                                <summary>Spotify</summary>
+                                                <iframe title='spotify-tracklist' style={{ borderRadius: "12px" }} src={`https://open.spotify.com/embed/album/${spotifyId && spotifyId}?utm_source=generator`} width="100%" height="380" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
                                             </details>
                                         </div>
                                     </div>

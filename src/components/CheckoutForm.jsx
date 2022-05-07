@@ -11,6 +11,13 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
   const [shopList, setShopList] = useState([]);
   const [loadingCheckout, setLoadingCheckout] = useState(false);
 
+  const resetInputs = ()=>{
+    setName("");
+    setLastName("")
+    setEmail("")
+    setPhone("")
+    setAddress("")
+  }
 
   const order = {
     buyer: { name, lastName, email, phone, address },
@@ -20,10 +27,10 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
   }
 
   const sendOrder = () => {
+    setLoadingCheckout(true);
     const db = getFirestore();
     const ordersCollection = collection(db, "orders");
     const orderBatch = writeBatch(db);
-    setLoadingCheckout(true);
 
     
     shopList.forEach((item, index) => {
@@ -56,6 +63,7 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
               setCheckoutCode(id);
               checkoutSuccessTrue();
               cartClear();  
+              resetInputs();
               setLoadingCheckout(false);
               window.scrollTo(0, 0);
             }).catch(err => console.log("Error sending order: " + err))
@@ -82,7 +90,7 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
 
 
   return (
-    <form className='CheckoutForm' onSubmit={(e) => { e.preventDefault(); sendOrder(); e.target.reset() }}>
+    <form className='CheckoutForm' onSubmit={(e) => { e.preventDefault(); sendOrder() }}>
       <h4>Completar datos</h4>
       <div className='CheckoutForm__fields'>
         <fieldset>
