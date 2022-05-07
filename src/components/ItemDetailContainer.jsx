@@ -73,7 +73,7 @@ export default function ItemDetailContainer() {
                             setLoading(false)
                         })
 
-
+                        /* fetch a spotify para conseguir una token temporaria, luego fetch para el tracklist */
                         fetch("https://accounts.spotify.com/api/token", {
                             body: "client_id=cf9bd46107404be28e5f6ac908e9986b&client_secret=54285d7f09e6482f92050ce401bcabfd&grant_type=refresh_token&refresh_token=AQCooI85UHj6cuJo-JBVD68yiGqpmwFLrVhTgSF8IGH2_aR5n6TpSflzMxtqWz0Eej_fkIOVgmNHy_jfomKCSZMrvfhqgP62SNC7HD4tZx0rtd9ulaPa7lCCf9MzHOpGA4E",
                             headers: {
