@@ -81,8 +81,8 @@ export default function ItemDetail({ loading, producto }) {
                                     <div className='ItemDetail__imgWrapper'>
                                         <img alt="item" src={producto?.cover_image || producto?.images?.[0]?.resource_url} loading="lazy"></img>
                                         <div className='ItemDetail__pWrapper'>
-                                            <p>◖TITULO: {producto?.title.toUpperCase()}</p>
-                                            <p>◖ARTISTA: {producto?.artists_sort.toUpperCase()}</p>
+                                            <p>◖TITULO: {producto?.title?.toUpperCase()}</p>
+                                            <p>◖ARTISTA: {producto?.artists_sort?.toUpperCase()}</p>
                                             <details>
                                                 <summary>Más Info</summary>
                                                 <p>&nbsp;◖Género: {producto?.genres?.join(" - ")}</p>
