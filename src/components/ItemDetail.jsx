@@ -52,12 +52,12 @@ export default function ItemDetail({ loading, producto, spotifyId }) {
                                 <button onClick={() => { history(-1) }} className='ItemDetail__back'><i className="bi bi-caret-left-fill"></i></button>
                                 <div className='ItemDetail__body'>
                                     <div className='ItemDetail__detailsWrapper'>
-                                        <img alt="item" src={imgSelected} loading="lazy"></img>
+                                        <img alt="imgSelected" src={imgSelected} loading="lazy"></img>
                                         <div className='ItemDetail__imgSelector'>
-                                            <button onClick={()=>{changeImgSelected(producto?.cover_image || producto?.images?.[0]?.resource_url)}}><img alt="item" src={producto?.cover_image || producto?.images?.[0]?.resource_url} loading="lazy"></img></button>
-                                            <button onClick={()=>{changeImgSelected(producto?.cover_image || producto?.images?.[1]?.resource_url)}}><img alt="item" src={producto?.cover_image || producto?.images?.[1]?.resource_url} loading="lazy"></img></button>
-                                            <button onClick={()=>{changeImgSelected(producto?.cover_image || producto?.images?.[2]?.resource_url)}}><img alt="item" src={producto?.cover_image || producto?.images?.[2]?.resource_url} loading="lazy"></img></button>
-                                            <button onClick={()=>{changeImgSelected(producto?.cover_image || producto?.images?.[3]?.resource_url)}}><img alt="item" src={producto?.cover_image || producto?.images?.[3]?.resource_url} loading="lazy"></img></button>
+                                            <button onClick={()=>{changeImgSelected(producto?.cover_image || producto?.images?.[0]?.resource_url)}}><img alt="img01" src={producto?.cover_image || producto?.images?.[0]?.resource_url} loading="lazy"></img></button>
+                                            <button onClick={()=>{changeImgSelected(producto?.cover_image || producto?.images?.[1]?.resource_url)}}><img alt="img02" src={producto?.cover_image || producto?.images?.[1]?.resource_url} loading="lazy"></img></button>
+                                            <button onClick={()=>{changeImgSelected(producto?.cover_image || producto?.images?.[2]?.resource_url)}}><img alt="img03" src={producto?.cover_image || producto?.images?.[2]?.resource_url} loading="lazy"></img></button>
+                                            <button onClick={()=>{changeImgSelected(producto?.cover_image || producto?.images?.[3]?.resource_url)}}><img alt="img04" src={producto?.cover_image || producto?.images?.[3]?.resource_url} loading="lazy"></img></button>
                                         </div>
                                         <div className='ItemDetail__pWrapper'>
                                             <p>◖TITULO: {producto?.title?.toUpperCase()}</p>
