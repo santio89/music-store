@@ -9,11 +9,11 @@ import '../../src/styles/css/ItemDetail.css';
 
 export default function ItemDetail({ loading, producto, spotifyId }) {
 
-    const initialCount = 1; 
+    const initialCount = 1;
 
     const history = useNavigate();
     const [continueCheckout, setContinueCheckout] = useState(false);
-
+    const [imgSelected, setImgSelected] = useState("")
     const { cartAdd } = useContext(CartContext)
 
 
@@ -26,10 +26,15 @@ export default function ItemDetail({ loading, producto, spotifyId }) {
         console.log("FAIL TO ADD (NOT ENOUGH STOCK)");
     }
 
+    const changeImgSelected = (imgUrl)=>{
+        setImgSelected(imgUrl)
+    }
+
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []);
+        setImgSelected(producto?.cover_image || producto?.images?.[0]?.resource_url)
+    }, [producto]);
 
 
 
@@ -46,8 +51,14 @@ export default function ItemDetail({ loading, producto, spotifyId }) {
                                 exit={{ opacity: 0, x: "120%" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
                                 <button onClick={() => { history(-1) }} className='ItemDetail__back'><i className="bi bi-caret-left-fill"></i></button>
                                 <div className='ItemDetail__body'>
-                                    <div className='ItemDetail__imgWrapper'>
-                                        <img alt="item" src={producto?.cover_image || producto?.images?.[0]?.resource_url} loading="lazy"></img>
+                                    <div className='ItemDetail__detailsWrapper'>
+                                        <img alt="item" src={imgSelected} loading="lazy"></img>
+                                        <div className='ItemDetail__imgSelector'>
+                                            <button onClick={()=>{changeImgSelected(producto?.cover_image || producto?.images?.[0]?.resource_url)}}><img alt="item" src={producto?.cover_image || producto?.images?.[0]?.resource_url} loading="lazy"></img></button>
+                                            <button onClick={()=>{changeImgSelected(producto?.cover_image || producto?.images?.[1]?.resource_url)}}><img alt="item" src={producto?.cover_image || producto?.images?.[1]?.resource_url} loading="lazy"></img></button>
+                                            <button onClick={()=>{changeImgSelected(producto?.cover_image || producto?.images?.[2]?.resource_url)}}><img alt="item" src={producto?.cover_image || producto?.images?.[2]?.resource_url} loading="lazy"></img></button>
+                                            <button onClick={()=>{changeImgSelected(producto?.cover_image || producto?.images?.[3]?.resource_url)}}><img alt="item" src={producto?.cover_image || producto?.images?.[3]?.resource_url} loading="lazy"></img></button>
+                                        </div>
                                         <div className='ItemDetail__pWrapper'>
                                             <p>◖TITULO: {producto?.title?.toUpperCase()}</p>
                                             <p>◖ARTISTA: {producto?.artists_sort?.toUpperCase()}</p>

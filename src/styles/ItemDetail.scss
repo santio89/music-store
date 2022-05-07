@@ -43,14 +43,14 @@
         margin-top: 1.2rem;
     }
 
-    &__imgWrapper {
+    &__detailsWrapper {
         background: var(--color-back-dark);
         padding: 1rem;
         display: flex;
         flex-flow: column wrap;
         justify-content: start;
         align-items: center;
-        gap: clamp(1rem, 1rem + 1.4vw, 4rem);
+        gap: 1.2rem;
         outline: 1px dashed var(--color-three-dark);
         width: 100%;
         font-size: $font-fluid-sm;
@@ -80,10 +80,13 @@
                     outline: 1px dashed var(--color-one);
                 }
             }
+
             p{
             font-size: $font-fluid-xss;
             color: var(--color-one);
             text-shadow: 1px 1px 0 var(--color-two);
+            font-weight: bold;
+            will-change: transform;
             }
 
             iframe{
@@ -94,6 +97,34 @@
                 outline: 2px dashed var(--color-one);
             }
         }
+    }
+
+    &__imgSelector{
+        width: 100%;
+        max-width: 600px;
+        height: 60px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        gap: clamp(.4rem, .4rem + .4vw, 1.8rem);
+        margin-bottom: 1.2rem;
+
+        button {
+            margin: auto;
+            width: 22%;
+            min-width: 60px;
+            max-width: 80px;
+            aspect-ratio: 1;
+            border-radius: .2em;
+
+            img{
+                width: 100%;;
+                outline: none;
+                border-radius: .2em;
+                outline: 1px dashed var(--color-three-dark);
+            }
+        }   
     }
 
     &__pWrapper {
@@ -367,7 +398,7 @@
 
 @media (min-width: 500px) {
     .ItemDetail {
-        &__imgWrapper {
+        &__detailsWrapper {
             padding: 1.4rem;
         }
 
@@ -399,8 +430,12 @@
     .ItemDetail {
         margin-top: 1.4rem;
 
-        &__imgWrapper {
+        &__detailsWrapper {
             padding: 2rem;
+        }
+        
+        &__imgSelector{
+            margin-bottom: 2.4rem;
         }
 
         &__info {
@@ -435,7 +470,7 @@
             gap: calc(4rem + 2%);
         }
 
-        &__imgWrapper {
+        &__detailsWrapper {
             width: 520px;
             border-radius: .4em;
         }
@@ -486,7 +521,7 @@
 
 @media (min-width: 1480px) {
     .ItemDetail {
-        &__imgWrapper {
+        &__detailsWrapper {
             width: 600px;
 
             img {
