@@ -57,7 +57,7 @@ export default function ItemDetail({ loading, producto }) {
             res.json().then(res => {
                 setSpotifyId(res?.albums?.items?.[0]?.id)
             })
-        })
+        }).catch(err=>console.log("error fetching spotify: " + err));
 
 
     }, [producto]);
