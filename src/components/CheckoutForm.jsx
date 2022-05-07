@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/css/CheckoutForm.css';
 import { addDoc, getDoc, doc, collection, getFirestore, serverTimestamp, writeBatch } from 'firebase/firestore';
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setCheckoutCode, cartClear }) {
   const [name, setName] = useState("");
@@ -10,8 +11,10 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
   const [address, setAddress] = useState("");
   const [shopList, setShopList] = useState([]);
   const [loadingCheckout, setLoadingCheckout] = useState(false);
+  const [recaptchaValid, setRecaptchaValid] = useState(false);
+  const recaptchaRef = React.createRef();
 
-  const resetInputs = ()=>{
+  const resetInputs = () => {
     setName("");
     setLastName("")
     setEmail("")
@@ -32,10 +35,10 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
     const ordersCollection = collection(db, "orders");
     const orderBatch = writeBatch(db);
 
-    
+
     shopList.forEach((item, index) => {
       let productDoc = doc(db, "products", String(item.id));
-      let prevStock = 0;  
+      let prevStock = 0;
 
 
       /* discounting stock - adding to batch*/
@@ -46,7 +49,7 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
           }
         }
 
-        let newStock =  Number(prevStock) - Number(item.count);
+        let newStock = Number(prevStock) - Number(item.count);
 
         if (newStock <= 0) {
           console.log(`Item ID ${item.id} estaría fuera de stock => Restockeado!`)
@@ -55,23 +58,24 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
         orderBatch.update(productDoc, { stock: newStock });
 
       }).then(() => {
-        if (shopList[index] === shopList[shopList.length-1]){
+        if (shopList[index] === shopList[shopList.length - 1]) {
           orderBatch.commit();
 
-             /* adding order */
-            addDoc(ordersCollection, order).then(({ id }) => {
-              setCheckoutCode(id);
-              checkoutSuccessTrue();
-              cartClear();  
-              resetInputs();
-              setLoadingCheckout(false);
-              window.scrollTo(0, 0);
-            }).catch(err => console.log("Error sending order: " + err))
+          /* adding order */
+          addDoc(ordersCollection, order).then(({ id }) => {
+            setCheckoutCode(id);
+            checkoutSuccessTrue();
+            cartClear();
+            resetInputs();
+            setRecaptchaValid(false);
+            setLoadingCheckout(false);
+            window.scrollTo(0, 0);
+          }).catch(err => console.log("Error sending order: " + err))
         }
-      }).catch((err)=>{console.log("Error sending order: "+err)});
+      }).catch((err) => { console.log("Error sending order: " + err) });
     })
   }
-  
+
 
   useEffect(() => {
     const carritoList = carrito.map(item => {
@@ -87,10 +91,19 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
     setShopList(carritoList);
   }, [carrito]);
 
+  useEffect(()=>{
+    recaptchaRef.current.execute();
+  }, [recaptchaRef])
+
 
 
   return (
-    <form className='CheckoutForm' onSubmit={(e) => { e.preventDefault(); sendOrder() }}>
+    <form className='CheckoutForm' onSubmit={(e) => {
+      e.preventDefault();
+      if (recaptchaValid) {
+        sendOrder()
+      }
+    }}>
       <h4>Completar datos</h4>
       <div className='CheckoutForm__fields'>
         <fieldset>
@@ -116,8 +129,11 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
       </div>
       <p className='CheckoutForm__total'>Total: ${total}</p>
       <button className='CheckoutForm__send'>
-        {loadingCheckout?<>Procesando<span>.</span><span>.</span><span>.</span></>:<>Enviar pedido</>}
+        {loadingCheckout ? <>Procesando<span>.</span><span>.</span><span>.</span></> : <>Enviar pedido</>}
       </button>
+      <ReCAPTCHA ref={recaptchaRef} sitekey="6Le4gNAfAAAAALoRTECfoVQlz8IUgGJK766SJ7nD" size="invisible" theme="dark" badge='inline' onChange={() =>{
+         setRecaptchaValid(true)
+      }} />
     </form>
   )
 }

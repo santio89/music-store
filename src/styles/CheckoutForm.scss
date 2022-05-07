@@ -85,7 +85,7 @@
         border-radius: .2em;
         padding: .2em .4em;
         outline: 2px dashed var(--color-one);
-        margin: 1rem auto 2rem auto;
+        margin: .4rem auto .4rem auto;
         transition: color 200ms, text-shadow 200ms, background-color 200ms, outline-color 200ms;
         background: var(--color-back);
         will-change: transform, background-color;
@@ -116,8 +116,6 @@
         }
     }
 }
-
-
 
 @media (min-width: 1216px){
     .CheckoutForm{

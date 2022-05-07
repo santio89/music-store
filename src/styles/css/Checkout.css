@@ -273,6 +273,7 @@
   flex-flow: column wrap;
   justify-content: start;
   align-items: center;
+  padding-bottom: 1rem;
   overflow: hidden;
   font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
 }

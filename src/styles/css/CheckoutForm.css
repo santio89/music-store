@@ -82,7 +82,7 @@
   border-radius: 0.2em;
   padding: 0.2em 0.4em;
   outline: 2px dashed var(--color-one);
-  margin: 1rem auto 2rem auto;
+  margin: 0.4rem auto 0.4rem auto;
   transition: color 200ms, text-shadow 200ms, background-color 200ms, outline-color 200ms;
   background: var(--color-back);
   will-change: transform, background-color;
