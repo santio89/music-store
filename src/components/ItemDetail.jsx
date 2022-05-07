@@ -68,7 +68,7 @@ export default function ItemDetail({ loading, producto, spotifyId }) {
 
                                             <details>
                                                 <summary>Spotify</summary>
-                                                <iframe title='spotify-tracklist' style={{ borderRadius: "12px" }} src={`https://open.spotify.com/embed/album/${spotifyId && spotifyId}?utm_source=generator`} width="100%" height="380" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                                                <iframe title='spotify-tracklist' src={`https://open.spotify.com/embed/album/${spotifyId && spotifyId}?utm_source=generator`} width="100%" height="380" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
                                             </details>
                                         </div>
                                     </div>
