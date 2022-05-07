@@ -7,17 +7,14 @@ import ItemCount from './ItemCount';
 import CartWidget from './CartWidget';
 import '../../src/styles/css/ItemDetail.css';
 
-export default function ItemDetail({ loading, producto }) {
+export default function ItemDetail({ loading, producto, spotifyId }) {
 
-    const initialCount = 1;
+    const initialCount = 1; 
 
     const history = useNavigate();
     const [continueCheckout, setContinueCheckout] = useState(false);
 
     const { cartAdd } = useContext(CartContext)
-
-    /*     const [spotifySearch, setSpotifySearch] = useState(" "); */
-    const [spotifyId, setSpotifyId] = useState(" ");
 
 
     const onAdd = (count) => {
@@ -29,39 +26,10 @@ export default function ItemDetail({ loading, producto }) {
         console.log("FAIL TO ADD (NOT ENOUGH STOCK)");
     }
 
+
     useEffect(() => {
         window.scrollTo(0, 0);
-
-
-
-
-
-        /*  fetch(`https://api.spotify.com/v1/albums/${spotifyId}?market=ES`, {
-             headers: {
-                 Accept: "application/json",
-                 Authorization: "Bearer BQAqNF0DD4Ht6mkn3f8yJrIwrA5Ows0cnajS-j-MKVxa2_5wTMY7d8nErVeGB5Kg-TsxCSig20Qc7L1JOQ4iuGqUDBm9KPrERvWtP8WbVGctPsSFxcNKOfstOv20hnMboeaaB0ewVJvejj4_FRABXnoYvKbrXQM",
-                 "Content-Type": "application/json"
-             }
-         }).then(res => {
-             console.log(res)
-           
-         }) */
-
-        fetch(`https://api.spotify.com/v1/search?q=${producto?.title}%20${producto?.artists_sort}&type=album`, {
-            headers: {
-                Accept: "application/json",
-                Authorization: "Bearer BQDXkYwf7aUexz4raa7Z6RhK9DiGEC1igESXZUrZckmqKyf9bmHE673aB1zkhbe3YYX5NAUaa9VIz_-xHXHruEVww3gz7MKhhtssfRy3Jzt27Cz8eT3Ov9QKo8GxltKROqnMq0jywJKtoDetKWT_lVFxn1QKb4g",
-                "Content-Type": "application/json"
-            }
-        }).then(res => {
-            res.json().then(res => {
-                setSpotifyId(res?.albums?.items?.[0]?.id)
-            })
-        }).catch(err => console.log("error fetching spotify: " + err));
-
-
-    }, [producto]);
-
+    }, []);
 
 
 
@@ -97,7 +65,7 @@ export default function ItemDetail({ loading, producto }) {
                                                     producto?.tracklist?.map(track => <p key={`${track.position}-${track.title}`}>&nbsp;{track.position} - {track.title}</p>)
                                                 }
                                             </details>
-                                         
+
                                             <details>
                                                 <summary>Spotify</summary>
                                                 <iframe title='spotify-tracklist' style={{ borderRadius: "12px" }} src={`https://open.spotify.com/embed/album/${spotifyId && spotifyId}?utm_source=generator`} width="100%" height="380" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
