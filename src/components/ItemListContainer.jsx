@@ -55,15 +55,25 @@ export default function ItemListContainer() {
         setPaginationLoading(true);
         let fetchApi = fetch(paginationUrl);
 
-        customFetch(400, fetchApi).then(res=>{
-            if(res.ok){
-                res.json().then(res=>{
-                    setPaginationObject(res.pagination);
-                    setProductos(res.results);
-                    setPaginationLoading(false);
-                })
+        customFetch(400, fetchApi).then(
+            res => {
+                if (res.ok) {
+                    res.json().then(
+                        res => {
+                            setPaginationObject(res.pagination);
+
+                            res.results.forEach((r) => {
+                                r.price = Math.trunc(Math.abs((r.community.have / r.community.want) * 1.8) + ((r.community.want / (r.community.have + 1)) * .8) + 120) * 12;
+                            });
+                            setProductos(res.results);
+                            setPaginationLoading(false);
+                        }
+                    ).catch(err => { console.log("error: ", err) });
+                } else {
+                    navigate("./error404")
+                }
             }
-        })
+        ).catch(err => { console.log(err) })
     }
 
 
