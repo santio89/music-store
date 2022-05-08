@@ -167,6 +167,7 @@
 }
 .ItemList__sort.is-active {
   outline: 1px dashed var(--color-one);
+  color: var(--color-one);
 }
 .ItemList__sortOptions {
   display: flex;
