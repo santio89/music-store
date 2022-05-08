@@ -143,7 +143,7 @@
   color: var(--color-one);
 }
 .ItemList__sort {
-  font-size: clamp(1rem, 1rem + 1.4vw, 2rem);
+  font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
   font-weight: bold;
   color: var(--color-one-dark);
   text-shadow: inherit;
@@ -186,7 +186,7 @@
 .ItemList__sortOptions button {
   width: 100%;
   padding: 0.2rem 1rem;
-  font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
+  font-size: clamp(0.8rem, 0.8rem + 1vw, 1.32rem);
   font-weight: bold;
   text-shadow: 1px 1px 0 var(--color-three);
   color: var(--color-one);

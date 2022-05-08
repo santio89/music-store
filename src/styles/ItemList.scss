@@ -156,7 +156,7 @@
     }
 
     &__sort {
-        font-size: $font-fluid-mdd;
+        font-size: $font-fluid-sm;
         font-weight: bold;
         color: var(--color-one-dark);
         text-shadow: inherit;
@@ -204,7 +204,7 @@
         button {
             width: 100%;
             padding: .2rem 1rem;
-            font-size: $font-fluid-sm;
+            font-size: $font-fluid-xs;
             font-weight: bold;
             text-shadow: 1px 1px 0 var(--color-three);
             color: var(--color-one);
