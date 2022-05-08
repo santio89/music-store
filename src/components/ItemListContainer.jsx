@@ -68,12 +68,12 @@ export default function ItemListContainer() {
                             setProductos(res.results);
                             setPaginationLoading(false);
                         }
-                    ).catch(err => { console.log("error: ", err) });
+                    ).catch(() => {setPaginationLoading(false)});
                 } else {
                     navigate("./error404")
                 }
             }
-        ).catch(err => { console.log(err) })
+        ).catch(() => {setPaginationLoading(false)})
     }
 
 
@@ -111,12 +111,12 @@ export default function ItemListContainer() {
                             setProductos(res.results);
                             setLoading(false);
                         }
-                    ).catch(err => { console.log("error: ", err) });
+                    ).catch(err => { console.log("error fetching data: ", err) });
                 } else {
                     navigate("./error404")
                 }
             }
-        ).catch(err => { console.log(err) })
+        ).catch(err => { console.log("error fetching data: ", err) })
             
         /*  
             FIREBASE - QUERY FILTRADA
