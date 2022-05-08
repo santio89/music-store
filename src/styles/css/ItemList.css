@@ -21,7 +21,7 @@
 .ItemListWrapper.paginationLoading {
   cursor: wait;
 }
-.ItemListWrapper * {
+.ItemListWrapper.paginationLoading * {
   cursor: inherit;
 }
 

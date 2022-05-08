@@ -16,10 +16,10 @@
         
     &.paginationLoading{
         cursor: wait;
-    }
 
-    *{
-        cursor: inherit;
+        *{
+            cursor: inherit;
+        }
     }
 }
 
