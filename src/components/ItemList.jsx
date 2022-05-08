@@ -21,7 +21,6 @@ export default function ItemList({ productos, searchId, loading, sortOpen, setSo
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        console.log(pagination)
     }, [pagination]);
 
 
