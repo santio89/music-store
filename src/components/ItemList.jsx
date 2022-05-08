@@ -79,10 +79,10 @@ export default function ItemList({ productos, searchId, loading, sortOpen, setSo
                                             <span className="ItemList__pagination__content__controls">
                                                 <button onClick={()=>{
                                                     paginationFetch(pagination.urls.prev)
-                                                }}>&lt;Anterior</button>
+                                                }}>&lt; Anterior</button>
                                                 <button onClick={()=>{
                                                     paginationFetch(pagination.urls.next)
-                                                }}>Siguiente&gt;</button>
+                                                }}>Siguiente &gt;</button>
                                             </span>
                                         </p>
                                     </div>
