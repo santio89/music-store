@@ -143,8 +143,6 @@
     }
 
     &__sortWrapper {
-        width: 100%;
-        max-width: 240px;
         position: relative;
         align-self: start;
         margin-left: -6%;
@@ -162,14 +160,14 @@
         text-shadow: inherit;
         word-spacing: .2em;
         letter-spacing: .02em;
-        padding: .2rem 1rem;
+        padding: .2rem 1.5rem;
         width: 100%;
         border-radius: inherit;
         background: var(--color-back-dark);
         word-wrap: break-word;
         display: flex;
         flex-flow: row wrap;
-        justify-content: start;
+        justify-content: center;
         align-items: center;
         transition: color 200ms, text-shadow 200ms;
 
@@ -213,7 +211,8 @@
             background: var(--color-back-dark);
             background-size: 200%;
             text-align: left;
-
+            white-space: nowrap;
+            
             &:hover,
             &:focus-visible,
             &.is-active {
