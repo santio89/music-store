@@ -9,6 +9,7 @@ import { useParams } from 'react-router-dom';
 
 export default function ItemListContainer() {
     const [loading, setLoading] = useState(false);
+    const [paginationLoading, setPaginationLoading] = useState(false);
     const [productos, setProductos] = useState([]);
 
     const { categoryId } = useParams();
@@ -20,6 +21,10 @@ export default function ItemListContainer() {
 
     const [ sortOpen, setSortOpen ] = useState(false);
     const [ sortActive, setSortActive ] = useState("relevance");
+
+    const [paginationObject, setPaginationObject] = useState({});
+
+
     const sortLow = ()=>{
         productos.sort((a,b)=>{
             return (a.price - b.price)
@@ -46,6 +51,22 @@ export default function ItemListContainer() {
     }
 
 
+    const paginationFetch = (paginationUrl)=>{
+        setPaginationLoading(true);
+        let fetchApi = fetch(paginationUrl);
+
+        customFetch(400, fetchApi).then(res=>{
+            if(res.ok){
+                res.json().then(res=>{
+                    setPaginationObject(res.pagination);
+                    setProductos(res.results);
+                    setPaginationLoading(false);
+                })
+            }
+        })
+    }
+
+
     useEffect(() => {
         setLoading(true);
 
@@ -54,7 +75,6 @@ export default function ItemListContainer() {
         const manualSearch = `q=${searchId}&type=release`
 
         let fetchApi = fetch(`https://api.discogs.com/database/search?${searchId ? manualSearch : (categoryId ? genreSearch : hotSearch)}&token=${discogsToken}`);
-
 
         
         /* desde la api, hago las busqedas de lista (para mantener los resultados más dinámicos que si los trajera de firebase). luego en el detalle de compra, actualizo mi base de datos en firebase (desde firebase tambien manejo stock por ej). si un item no existe, lo crea; si hay que actualizar precio. */
@@ -65,6 +85,8 @@ export default function ItemListContainer() {
                 if (res.ok) {
                     res.json().then(
                         res => {
+                            setPaginationObject(res.pagination);
+
                             res.results.forEach((r) => {
                                 r.price = Math.trunc(Math.abs((r.community.have / r.community.want) * 1.8) + ((r.community.want / (r.community.have + 1)) * .8) + 120) * 12;
 
@@ -106,6 +128,6 @@ export default function ItemListContainer() {
 
 
     return (
-        <ItemList productos={productos} categoryId={categoryId} searchId={searchId} loading={loading} sortOpen={sortOpen} setSortOpen={setSortOpen} sortLow={sortLow} sortHigh={sortHigh} sortRelevance={sortRelevance} sortActive={sortActive} setSortActive={setSortActive}/>
+        <ItemList productos={productos} categoryId={categoryId} searchId={searchId} loading={loading} sortOpen={sortOpen} setSortOpen={setSortOpen} sortLow={sortLow} sortHigh={sortHigh} sortRelevance={sortRelevance} sortActive={sortActive} setSortActive={setSortActive} pagination={paginationObject} paginationFetch={paginationFetch} paginationLoading={paginationLoading} />
     )
 }

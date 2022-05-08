@@ -18,6 +18,12 @@
 .ItemListWrapper > span {
   transform: translateY(-50%);
 }
+.ItemListWrapper.paginationLoading {
+  cursor: wait;
+}
+.ItemListWrapper * {
+  cursor: inherit;
+}
 
 .ItemList {
   display: flex;
@@ -75,6 +81,47 @@
 .ItemList__title:focus, .ItemList__title:focus-within {
   outline: 1px dashed var(--color-one);
 }
+.ItemList__pagination {
+  font-size: clamp(0.8rem, 0.8rem + 1vw, 1.32rem);
+  font-weight: bold;
+}
+.ItemList__pagination__content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.ItemList__pagination__content__total {
+  color: var(--color-one);
+  font-family: "Courier New", Courier, monospace;
+}
+.ItemList__pagination__content__controls {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+.ItemList__pagination__content__controls button {
+  color: var(--color-one-dark);
+  text-shadow: 1px 1px 0 var(--color-three);
+  border-radius: 0.2em;
+  padding: 0.4em;
+  background: var(--color-back-dark);
+  transition: transform 200ms, color 200ms;
+  will-change: transform;
+}
+.ItemList__pagination__content__controls button:hover {
+  color: var(--color-one);
+}
+.ItemList__pagination__content__controls button:focus-visible {
+  outline: 1px dashed var(--color-one);
+  color: var(--color-one);
+}
+.ItemList__pagination__content__controls button:active {
+  transform: translate(2px, 2px);
+}
 .ItemList__contentWrapper {
   width: 100%;
   display: flex;
@@ -98,7 +145,7 @@
 .ItemList__sort {
   font-size: clamp(1rem, 1rem + 1.4vw, 2rem);
   font-weight: bold;
-  color: inherit;
+  color: var(--color-one-dark);
   text-shadow: inherit;
   word-spacing: 0.2em;
   letter-spacing: 0.02em;
@@ -117,12 +164,11 @@
   font-size: 0.8em;
 }
 .ItemList__sort:hover, .ItemList__sort:focus-visible {
+  color: var(--color-one);
   outline: 1px dashed var(--color-one);
 }
 .ItemList__sort.is-active {
   outline: 1px dashed var(--color-one);
-  text-shadow: 1px 1px 0 var(--color-one);
-  color: var(--color-three);
 }
 .ItemList__sortOptions {
   display: flex;
@@ -223,6 +269,16 @@
   }
   .ItemList__sortOptions {
     border-radius: 0.2em;
+  }
+  .ItemList__pagination {
+    align-self: end;
+    margin-right: 0.8rem;
+  }
+  .ItemList__pagination__content {
+    gap: 1.4rem;
+  }
+  .ItemList__pagination__content__controls {
+    gap: 0.6rem;
   }
   .ItemList__noProducts {
     align-self: center;

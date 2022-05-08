@@ -5,7 +5,7 @@ import Item from './Item'
 import '../../src/styles/css/ItemList.css';
 import PuffLoader from "react-spinners/PuffLoader";
 
-export default function ItemList({ productos, searchId, loading, sortOpen, setSortOpen, sortLow, sortHigh, sortRelevance, sortActive, setSortActive }) {
+export default function ItemList({ productos, searchId, loading, sortOpen, setSortOpen, sortLow, sortHigh, sortRelevance, sortActive, setSortActive, pagination, paginationFetch, paginationLoading }) {
 
     /*price calculado con una formula a partir de las propiedades de 'community have' y 'community want' (que vienen de la api) */
 
@@ -21,7 +21,8 @@ export default function ItemList({ productos, searchId, loading, sortOpen, setSo
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []);
+        console.log(pagination)
+    }, [pagination]);
 
 
 
@@ -53,7 +54,7 @@ export default function ItemList({ productos, searchId, loading, sortOpen, setSo
 
             </AnimatePresence>
 
-            <div className="ItemListWrapper">
+            <div className={`ItemListWrapper ${paginationLoading?"paginationLoading":""}`}>
                 {
                     loading ? (<PuffLoader color={"var(--color-one)"} loading={loading} size={200} speedMultiplier={1.2} />) :
                         <AnimatePresence>
@@ -61,7 +62,7 @@ export default function ItemList({ productos, searchId, loading, sortOpen, setSo
                                 initial={{ opacity: 0, x: "-120%" }}
                                 animate={{ opacity: 1, x: "0%" }}
                                 exit={{ opacity: 0, x: "120%" }}>
-
+                                    
                                 {isProductos ? <div className="ItemList__contentWrapper">
                                     <div className="ItemList__sortWrapper">
                                         <button className={`ItemList__sort ${sortOpen ? "is-active" : ""}`} onClick={() => setSortOpen((sortOpen) => !sortOpen)}>Ordenar&nbsp;<i className="bi bi-caret-down-fill"></i></button>
@@ -70,6 +71,21 @@ export default function ItemList({ productos, searchId, loading, sortOpen, setSo
                                             <button className={`ItemList__sortOptions__highest ${sortActive === "high" ? "is-active" : null}`} onClick={() => { sortHigh(); setSortActive("high") }}>Mayor Precio</button>
                                             <button className={`ItemList__sortOptions__relevance ${sortActive === "relevance" ? "is-active" : null}`} onClick={() => { sortRelevance(); setSortActive("relevance") }}>Relevancia</button>
                                         </div>
+                                    </div>
+                                    <div className="ItemList__pagination">
+                                        <p className="ItemList__pagination__content">
+                                            <span className="ItemList__pagination__content__total">
+                                                <span>{Number(1 + pagination.per_page * (pagination.page - 1)).toLocaleString()} </span>- <span>{Number(pagination.page * pagination.per_page).toLocaleString()} </span>de <span>{pagination.items>10000?Number(10000).toLocaleString():pagination.items.toLocaleString()}</span>
+                                            </span>
+                                            <span className="ItemList__pagination__content__controls">
+                                                <button onClick={()=>{
+                                                    paginationFetch(pagination.urls.prev)
+                                                }}>&lt;Anterior</button>
+                                                <button onClick={()=>{
+                                                    paginationFetch(pagination.urls.next)
+                                                }}>Siguiente&gt;</button>
+                                            </span>
+                                        </p>
                                     </div>
                                     <LayoutGroup>
                                         <div className="ItemList__content">
