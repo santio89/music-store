@@ -5,7 +5,7 @@ import Item from './Item'
 import '../../src/styles/css/ItemList.css';
 import PuffLoader from "react-spinners/PuffLoader";
 
-export default function ItemList({ productos, searchId, loading, sortOpen, setSortOpen, sortLow, sortHigh, sortRelevance, sortActive, pagination, paginationFetch, paginationLoading, sortAllLow, sortAllHigh, sortAllRelevance }) {
+export default function ItemList({ productos, searchId, loading, sortOpen, setSortOpen, sortActive, pagination, paginationFetch, paginationLoading, sortAllLow, sortAllHigh, sortAllRelevance }) {
 
     /*price calculado con una formula a partir de las propiedades de 'community have' y 'community want' (que vienen de la api) */
 
@@ -90,7 +90,7 @@ export default function ItemList({ productos, searchId, loading, sortOpen, setSo
                                         <div className="ItemList__content">
                                             {productos.map((producto) => {
                                                 return (
-                                                    <Item key={producto?.id} id={producto?.id} title={producto?.artists_sort ? (`${producto?.artists_sort} - ${producto?.title}`) : producto?.title} img={producto?.cover_image || producto?.images?.[0]?.resource_url} price={producto?.price} />
+                                                    <Item key={producto?.id} id={producto?.id} title={producto?.artists_sort ? (`${producto?.artists_sort} - ${producto?.title}`) : producto?.title} img={producto?.cover_image === 'https://s.discogs.com/0cfc9ba1706020d48f4db57ed5320370674ab122/images/spacer.gif'?"/src/assets/disc.jpg":(producto?.cover_image || producto?.images?.[0]?.resource_url)} price={producto?.price} />
                                                 )
                                             })}
                                         </div>

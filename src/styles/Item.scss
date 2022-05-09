@@ -46,6 +46,8 @@
         width: 100%;
         transition: background-image 400ms;
         background: linear-gradient(45deg, var(--color-one), var(--color-one-dark));
+        background-color: var(--color-one);  
+        background-size: cover;
     }
 
     &__img {
