@@ -66,7 +66,6 @@ export default function ItemListContainer() {
                 if (res.ok) {
                     res.json().then(
                         res => {
-                            console.log(res)
                             setPaginationObject(res.pagination);        
                             setSortActive("low");
                             setSortOpen(false);
