@@ -191,7 +191,8 @@ export default function ItemListContainer() {
                     res.json().then(
                         res => {
                             setPaginationObject(res.pagination);
-
+                            setSortActive("relevance");
+                            
                             res.results.forEach((r) => {
                                 r.price = Math.trunc(Math.abs((r.community.have/20) * 1.2) + ((r.community.have / (r.community.have + 20)) * 1.2) + 1200);
 
