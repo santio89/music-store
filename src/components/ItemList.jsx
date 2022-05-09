@@ -5,7 +5,7 @@ import Item from './Item'
 import '../../src/styles/css/ItemList.css';
 import PuffLoader from "react-spinners/PuffLoader";
 
-export default function ItemList({ productos, searchId, loading, sortOpen, setSortOpen, sortLow, sortHigh, sortRelevance, sortActive, setSortActive, pagination, paginationFetch, paginationLoading }) {
+export default function ItemList({ productos, searchId, loading, sortOpen, setSortOpen, sortLow, sortHigh, sortRelevance, sortActive, pagination, paginationFetch, paginationLoading, sortAllLow, sortAllHigh, sortAllRelevance }) {
 
     /*price calculado con una formula a partir de las propiedades de 'community have' y 'community want' (que vienen de la api) */
 
@@ -66,9 +66,9 @@ export default function ItemList({ productos, searchId, loading, sortOpen, setSo
                                     <div className="ItemList__sortWrapper">
                                         <button className={`ItemList__sort ${sortOpen ? "is-active" : ""}`} onClick={() => setSortOpen((sortOpen) => !sortOpen)}>Ordenar&nbsp;<i className="bi bi-caret-down-fill"></i></button>
                                         <div className={`ItemList__sortOptions ${sortOpen ? "is-visible" : ""}`}>
-                                            <button className={`ItemList__sortOptions__lowest ${sortActive === "low" ? "is-active" : null}`} onClick={() => { sortLow(); setSortActive("low") }}>Menor Precio</button>
-                                            <button className={`ItemList__sortOptions__highest ${sortActive === "high" ? "is-active" : null}`} onClick={() => { sortHigh(); setSortActive("high") }}>Mayor Precio</button>
-                                            <button className={`ItemList__sortOptions__relevance ${sortActive === "relevance" ? "is-active" : null}`} onClick={() => { sortRelevance(); setSortActive("relevance") }}>Relevancia</button>
+                                            <button className={`ItemList__sortOptions__lowest ${sortActive === "low" ? "is-active" : null}`} onClick={() => { sortAllLow() }}>Menor Precio</button>
+                                            <button className={`ItemList__sortOptions__highest ${sortActive === "high" ? "is-active" : null}`} onClick={() => { sortAllHigh() }}>Mayor Precio</button>
+                                            <button className={`ItemList__sortOptions__relevance ${sortActive === "relevance" ? "is-active" : null}`} onClick={() => { sortAllRelevance() }}>Relevancia</button>
                                         </div>
                                     </div>
                                     <div className="ItemList__pagination">
