@@ -52,7 +52,7 @@ export default function ItemDetail({ loading, producto, spotifyId }) {
                                 <button onClick={() => { history(-1) }} className='ItemDetail__back'><i className="bi bi-caret-left-fill"></i></button>
                                 <div className='ItemDetail__body'>
                                     <div className='ItemDetail__detailsWrapper'>
-                                        <img alt="imgSelected" src={imgSelected} loading="lazy"></img>
+                                        <img alt={`${producto?.title} - ${producto?.artists_sort}`} src={imgSelected} loading="lazy"></img>
                                         <div className='ItemDetail__imgSelector'>
                                             {producto?.images?.slice(0, 4).map((img) => {
                                                 return <button key={img.resource_url} onClick={() => { changeImgSelected(img.resource_url) }}><img alt="img01" src={img.resource_url} loading="lazy"></img></button>
