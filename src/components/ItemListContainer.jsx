@@ -61,7 +61,7 @@ export default function ItemListContainer() {
 
         let fetchApi = fetch(`https://api.discogs.com/database/search?${searchId ? manualSearch : (categoryId ? genreSearch : hotSearch)}&token=${discogsToken}`);
 
-        customFetch(400, fetchApi).then(
+        customFetch(200, fetchApi).then(
             res => {
                 if (res.ok) {
                     res.json().then(
@@ -93,7 +93,7 @@ export default function ItemListContainer() {
 
         let fetchApi = fetch(`https://api.discogs.com/database/search?${searchId ? manualSearch : (categoryId ? genreSearch : hotSearch)}&token=${discogsToken}`);
 
-        customFetch(400, fetchApi).then(
+        customFetch(200, fetchApi).then(
             res => {
                 if (res.ok) {
                     res.json().then(
@@ -124,7 +124,7 @@ export default function ItemListContainer() {
 
         let fetchApi = fetch(`https://api.discogs.com/database/search?${searchId ? manualSearch : (categoryId ? genreSearch : hotSearch)}&token=${discogsToken}`);
 
-        customFetch(400, fetchApi).then(
+        customFetch(200, fetchApi).then(
             res => {
                 if (res.ok) {
                     res.json().then(
@@ -152,7 +152,7 @@ export default function ItemListContainer() {
         setPaginationLoading(true);
         let fetchApi = fetch(paginationUrl);
 
-        customFetch(400, fetchApi).then(
+        customFetch(200, fetchApi).then(
             res => {
                 if (res.ok) {
                     res.json().then(
@@ -188,7 +188,7 @@ export default function ItemListContainer() {
         /* desde la api, hago las busqedas de lista (para mantener los resultados más dinámicos que si los trajera de firebase). luego en el detalle de compra, actualizo mi base de datos en firebase (desde firebase tambien manejo stock por ej). si un item no existe, lo crea; si hay que actualizar precio. */
 
         /* fetch custom con promise (hace el fetch a la api luego de un tiempo (lo dejo para apreciar el loading un poco) ) */
-        customFetch(400, fetchApi).then(
+        customFetch(200, fetchApi).then(
             res => {
                 if (res.ok) {
                     res.json().then(
