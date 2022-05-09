@@ -69,6 +69,8 @@ export default function ItemListContainer() {
                             console.log(res)
                             setPaginationObject(res.pagination);        
                             setSortActive("low");
+                            setSortOpen(false);
+                            
                             
                             res.results.forEach((r) => {
                                 r.price = Math.trunc(Math.abs((r.community.have/20) * 1.2) + ((r.community.have / (r.community.have + 20)) * 1.2) + 1200);
@@ -99,6 +101,7 @@ export default function ItemListContainer() {
                         res => {
                             setPaginationObject(res.pagination);        
                             setSortActive("high");
+                            setSortOpen(false);
                             
                             res.results.forEach((r) => {
                                 r.price = Math.trunc(Math.abs((r.community.have/20) * 1.2) + ((r.community.have / (r.community.have + 20)) * 1.2) + 1200);
@@ -129,6 +132,7 @@ export default function ItemListContainer() {
                         res => {
                             setPaginationObject(res.pagination);        
                             setSortActive("relevance");
+                            setSortOpen(false);
                             
                             res.results.forEach((r) => {
                                 r.price = Math.trunc(Math.abs((r.community.have/20) * 1.2) + ((r.community.have / (r.community.have + 20)) * 1.2) + 1200);
@@ -154,8 +158,8 @@ export default function ItemListContainer() {
                 if (res.ok) {
                     res.json().then(
                         res => {
-                            setPaginationObject(res.pagination);        
-                            setSortActive("relevance");
+                            setPaginationObject(res.pagination);
+                            setSortOpen(false);
                             
                             res.results.forEach((r) => {
                                 r.price = Math.trunc(Math.abs((r.community.have/20) * 1.2) + ((r.community.have / (r.community.have + 20)) * 1.2) + 1200);
@@ -192,7 +196,8 @@ export default function ItemListContainer() {
                         res => {
                             setPaginationObject(res.pagination);
                             setSortActive("relevance");
-                            
+                            setSortOpen(false);
+
                             res.results.forEach((r) => {
                                 r.price = Math.trunc(Math.abs((r.community.have/20) * 1.2) + ((r.community.have / (r.community.have + 20)) * 1.2) + 1200);
 
