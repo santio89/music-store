@@ -13,11 +13,11 @@
     >span {
         transform: (translateY(-50%));
     }
-        
-    &.paginationLoading{
+
+    &.paginationLoading {
         cursor: wait;
 
-        *{
+        * {
             cursor: inherit;
         }
     }
@@ -89,7 +89,46 @@
     &__pagination {
         font-size: $font-fluid-xs;
         font-weight: bold;
-        
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        gap: .4rem;
+
+        button {
+            color: var(--color-one-dark);
+            text-shadow: 1px 1px 0 var(--color-three);
+            border-radius: .2em;
+            padding: .4em;
+            background: var(--color-back-dark);
+            transition: transform 200ms, color 200ms;
+            will-change: transform;
+            flex: 1;
+
+            &:hover {
+                color: var(--color-one);
+            }
+
+            &:focus-visible {
+                outline: 1px dashed var(--color-one);
+                color: var(--color-one);
+            }
+
+            &:active {
+                transform: translate(2px, 2px);
+            }
+        }
+
+        &__startend {
+            font-size: $font-fluid-xxs;
+            line-height: 1;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: .4rem;
+        }
+
         &__content {
             display: flex;
             flex-flow: column wrap;
@@ -104,31 +143,19 @@
 
             &__controls {
                 display: flex;
-                flex-flow: row wrap;
+                flex-flow: column wrap;
                 justify-content: center;
-                align-items: center;
-                gap: .4rem;
+                align-items: stretch;
 
-                button {
-                    color: var(--color-one-dark);
-                    text-shadow: 1px 1px 0 var(--color-three);
-                    border-radius: .2em;
-                    padding: .4em;
-                    background: var(--color-back-dark);
-                    transition: transform 200ms, color 200ms;
-                    will-change: transform;
-
-                    &:hover{
-                        color: var(--color-one);
-                    }
-                    &:focus-visible{
-                        outline: 1px dashed var(--color-one);
-                        color: var(--color-one);
-                    }
-                    &:active{
-                        transform: translate(2px, 2px);
-                    }
+                &__buttonContainer {
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: center;
+                    align-items: stretch;
+                    gap: .4rem;
                 }
+
+
             }
         }
     }
@@ -213,7 +240,7 @@
             background-size: 200%;
             text-align: left;
             white-space: nowrap;
-            
+
             &:hover,
             &:focus-visible,
             &.is-active {
@@ -276,13 +303,13 @@
 }
 
 @media (min-width: 500px) {
-    .ItemList{
-        &__title{
+    .ItemList {
+        &__title {
             border-radius: 0 .2em .2em 0;
-        max-width: fit-content;
+            max-width: fit-content;
         }
 
-        &__sortWrapper{
+        &__sortWrapper {
             width: fit-content;
             margin-left: -6%;
         }
@@ -316,6 +343,10 @@
         &__pagination {
             align-self: end;
             margin-right: .8rem;
+
+            &__startend{
+                align-self: end;
+            }
 
             &__content {
                 flex-flow: row wrap;

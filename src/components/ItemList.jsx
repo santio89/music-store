@@ -53,7 +53,7 @@ export default function ItemList({ productos, searchId, loading, sortOpen, setSo
 
             </AnimatePresence>
 
-            <div className={`ItemListWrapper ${paginationLoading?"paginationLoading":""}`}>
+            <div className={`ItemListWrapper ${paginationLoading ? "paginationLoading" : ""}`}>
                 {
                     loading ? (<PuffLoader color={"var(--color-one)"} loading={loading} size={200} speedMultiplier={1.2} />) :
                         <AnimatePresence>
@@ -61,36 +61,49 @@ export default function ItemList({ productos, searchId, loading, sortOpen, setSo
                                 initial={{ opacity: 0, x: "-120%" }}
                                 animate={{ opacity: 1, x: "0%" }}
                                 exit={{ opacity: 0, x: "120%" }}>
-                                    
+
                                 {isProductos ? <div className="ItemList__contentWrapper">
                                     <div className="ItemList__sortWrapper">
                                         <button className={`ItemList__sort ${sortOpen ? "is-active" : ""}`} onClick={() => setSortOpen((sortOpen) => !sortOpen)}>Ordenar&nbsp;<i className="bi bi-caret-down-fill"></i></button>
                                         <div className={`ItemList__sortOptions ${sortOpen ? "is-visible" : ""}`}>
-                                            <button className={`ItemList__sortOptions__lowest ${sortActive === "low" ? "is-active" : null}`} onClick={() => { sortAllLow() }}>Menor Precio</button>
-                                            <button className={`ItemList__sortOptions__highest ${sortActive === "high" ? "is-active" : null}`} onClick={() => { sortAllHigh() }}>Mayor Precio</button>
+                                            {/* <button className={`ItemList__sortOptions__lowest ${sortActive === "low" ? "is-active" : null}`} onClick={() => { sortAllLow() }}>Menor Precio</button> */}
+                                            <button className={`ItemList__sortOptions__highest ${sortActive === "high" ? "is-active" : null}`} onClick={() => { sortAllHigh() }}>Precio</button>
                                             <button className={`ItemList__sortOptions__relevance ${sortActive === "relevance" ? "is-active" : null}`} onClick={() => { sortAllRelevance() }}>Relevancia</button>
                                         </div>
                                     </div>
                                     <div className="ItemList__pagination">
-                                        <p className="ItemList__pagination__content">
+
+                                        <div className="ItemList__pagination__startend">
+                                            <button onClick={() => {
+                                                paginationFetch(pagination.urls.first)
+                                            }}>Inicio</button>
+                                            <button onClick={() => {
+                                                paginationFetch(pagination.urls.last)
+                                            }}>Final</button>
+                                        </div>
+
+                                        <div className="ItemList__pagination__content">
                                             <span className="ItemList__pagination__content__total">
-                                                <span>{Number(1 + pagination.per_page * (pagination.page - 1)).toLocaleString()} </span>- <span>{Number(pagination.page * pagination.per_page).toLocaleString()} </span>de <span>{pagination.items>10000?Number(10000).toLocaleString():pagination.items.toLocaleString()}</span>
+                                                <span>{Number(1 + pagination.per_page * (pagination.page - 1)).toLocaleString()} </span>- <span>{Number(pagination.page * pagination.per_page).toLocaleString()} </span>de <span>{pagination.items > 10000 ? Number(10000).toLocaleString() : pagination.items.toLocaleString()}</span>
                                             </span>
                                             <span className="ItemList__pagination__content__controls">
-                                                <button onClick={()=>{
-                                                    paginationFetch(pagination.urls.prev)
-                                                }}>&lt; Anterior</button>
-                                                <button onClick={()=>{
-                                                    paginationFetch(pagination.urls.next)
-                                                }}>Siguiente &gt;</button>
+                                                <div className="ItemList__pagination__content__controls__buttonContainer">
+                                                    <button onClick={() => {
+                                                        paginationFetch(pagination.urls.prev)
+                                                    }}>&lt;&nbsp;Anterior</button>
+                                                    <button onClick={() => {
+                                                        paginationFetch(pagination.urls.next)
+                                                    }}>Siguiente&nbsp;&gt;</button>
+                                                </div>
+
                                             </span>
-                                        </p>
+                                        </div>
                                     </div>
                                     <LayoutGroup>
                                         <div className="ItemList__content">
                                             {productos.map((producto) => {
                                                 return (
-                                                    <Item key={producto?.id} id={producto?.id} title={producto?.artists_sort ? (`${producto?.artists_sort} - ${producto?.title}`) : producto?.title} img={producto?.cover_image.endsWith("spacer.gif")?"https://raw.githubusercontent.com/santio89/music-store/master/src/assets/disc.jpg":(producto?.cover_image || producto?.images?.[0]?.resource_url)} price={producto?.price} />
+                                                    <Item key={producto?.id} id={producto?.id} title={producto?.artists_sort ? (`${producto?.artists_sort} - ${producto?.title}`) : producto?.title} img={producto?.cover_image.endsWith("spacer.gif") ? "https://raw.githubusercontent.com/santio89/music-store/master/src/assets/disc.jpg" : (producto?.cover_image || producto?.images?.[0]?.resource_url)} price={producto?.price} />
                                                 )
                                             })}
                                         </div>

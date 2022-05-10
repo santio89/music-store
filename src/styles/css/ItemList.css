@@ -84,6 +84,40 @@
 .ItemList__pagination {
   font-size: clamp(0.8rem, 0.8rem + 1vw, 1.32rem);
   font-weight: bold;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+.ItemList__pagination button {
+  color: var(--color-one-dark);
+  text-shadow: 1px 1px 0 var(--color-three);
+  border-radius: 0.2em;
+  padding: 0.4em;
+  background: var(--color-back-dark);
+  transition: transform 200ms, color 200ms;
+  will-change: transform;
+  flex: 1;
+}
+.ItemList__pagination button:hover {
+  color: var(--color-one);
+}
+.ItemList__pagination button:focus-visible {
+  outline: 1px dashed var(--color-one);
+  color: var(--color-one);
+}
+.ItemList__pagination button:active {
+  transform: translate(2px, 2px);
+}
+.ItemList__pagination__startend {
+  font-size: clamp(0.6rem, 0.6rem + 1vw, 1.2rem);
+  line-height: 1;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0.4rem;
 }
 .ItemList__pagination__content {
   display: flex;
@@ -98,29 +132,16 @@
 }
 .ItemList__pagination__content__controls {
   display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+.ItemList__pagination__content__controls__buttonContainer {
+  display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   gap: 0.4rem;
-}
-.ItemList__pagination__content__controls button {
-  color: var(--color-one-dark);
-  text-shadow: 1px 1px 0 var(--color-three);
-  border-radius: 0.2em;
-  padding: 0.4em;
-  background: var(--color-back-dark);
-  transition: transform 200ms, color 200ms;
-  will-change: transform;
-}
-.ItemList__pagination__content__controls button:hover {
-  color: var(--color-one);
-}
-.ItemList__pagination__content__controls button:focus-visible {
-  outline: 1px dashed var(--color-one);
-  color: var(--color-one);
-}
-.ItemList__pagination__content__controls button:active {
-  transform: translate(2px, 2px);
 }
 .ItemList__contentWrapper {
   width: 100%;
@@ -279,6 +300,9 @@
   .ItemList__pagination {
     align-self: end;
     margin-right: 0.8rem;
+  }
+  .ItemList__pagination__startend {
+    align-self: end;
   }
   .ItemList__pagination__content {
     flex-flow: row wrap;
