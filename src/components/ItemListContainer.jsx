@@ -24,33 +24,7 @@ export default function ItemListContainer() {
 
     const [paginationObject, setPaginationObject] = useState({});
 
-/* 
-    manual sort para pagina de resultados actual
 
-    const sortLow = ()=>{
-        productos.sort((a,b)=>{
-            return (a.price - b.price)
-        })
-        
-        setProductos(productos);
-        setSortOpen(false);
-    }
-    const sortHigh = ()=>{
-        productos.sort((a,b)=>{
-            return (b.price - a.price)
-        })
-        
-        setProductos(productos);
-        setSortOpen(false);
-    }
-    const sortRelevance = ()=>{
-        productos.sort((a,b)=>{
-            return (b.community.want - a.community.want)
-        })
-
-        setProductos(productos);
-        setSortOpen(false);
-    } */
 
     const sortAllHigh = ()=>{
         setPaginationLoading(true);
@@ -71,7 +45,7 @@ export default function ItemListContainer() {
                             setSortOpen(false);
                             
                             res.results.forEach((r) => {
-                                r.price = Math.ceil(Math.abs((r.community.have/20) * 1.2) + ((r.community.have / (r.community.have + 20)) * 1.2) + 1200);
+                                r.price = Math.ceil(Math.abs(100 + (r.community.have/4000)*1.4));
                             });
                             setProductos(res.results);
                             setPaginationLoading(false);
@@ -102,7 +76,7 @@ export default function ItemListContainer() {
                             setSortOpen(false);
                             
                             res.results.forEach((r) => {
-                                r.price = Math.ceil(Math.abs((r.community.have/20) * 1.2) + ((r.community.have / (r.community.have + 20)) * 1.2) + 1200);
+                                r.price = Math.ceil(Math.abs(100 + (r.community.have/4000)*1.4));
                             });
                             setProductos(res.results);
                             setPaginationLoading(false);
@@ -129,7 +103,7 @@ export default function ItemListContainer() {
                             setSortOpen(false);
                             
                             res.results.forEach((r) => {
-                                r.price = Math.ceil(Math.abs((r.community.have/20) * 1.2) + ((r.community.have / (r.community.have + 20)) * 1.2) + 1200);
+                                r.price = Math.ceil(Math.abs(100 + (r.community.have/4000)*1.4));
                             });
                             setProductos(res.results);
                             setPaginationLoading(false);
@@ -166,7 +140,7 @@ export default function ItemListContainer() {
                             setSortOpen(false);
 
                             res.results.forEach((r) => {
-                                r.price = Math.ceil(Math.abs((r.community.have/20) * 1.2) + ((r.community.have / (r.community.have + 20)) * 1.2) + 1200);
+                                r.price = Math.ceil(Math.abs(100 + (r.community.have/4000)*1.4));
 
                                 /* ESTE CODIGO ES PARA ESCRIBIR ESTOS RESULTADOS DE LA API, EN FIREBASE. lo desactivo de momento ya que resulta en muchas lecturas/escrituras innecesarias (se ejecutaria cada vez que se cargue la lista. esta bueno para cargar la base de datos inicial)
 
