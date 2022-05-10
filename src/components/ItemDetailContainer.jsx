@@ -35,7 +35,7 @@ export default function ItemDetailContainer() {
             res => {
                 res.json().then(
                     res => {
-                        res.price = Math.trunc(Math.abs((res.community.have/20) * 1.2) + ((res.community.have / (res.community.have + 20)) * 1.2) + 1200);
+                        res.price = Math.ceil(Math.abs((res.community.have/20) * 1.2) + ((res.community.have / (res.community.have + 20)) * 1.2) + 1200);
 
                         /* busco el producto en la base de datos de firebase primero y, si no esta disponible, muestro desde la api (para mantener el sitio activo)*/
                         getDoc(productRef).then(snapshot => {
@@ -55,20 +55,20 @@ export default function ItemDetailContainer() {
                                         setLoading(false);
                                     }
                                 } else {
-                                    res.stock = Math.trunc(res.community.have / 40 + 12);
+                                    res.stock = Math.ceil(res.community.have / 40 + 12);
                                     setDoc(doc(productsCollection, res.id.toString()), res, { merge: true })
 
                                     setProducto(res);
                                     setLoading(false);
                                 }
                             } else {
-                                res.stock = Math.trunc(res.community.have / 40 + 12);
+                                res.stock = Math.ceil(res.community.have / 40 + 12);
                                 setDoc(doc(productsCollection, res.id.toString()), res, { merge: true });
                                 setProducto(res);
                                 setLoading(false);
                             }
                         }).catch(() => {
-                            res.stock = Math.trunc(res.community.have / 40 + 12);
+                            res.stock = Math.ceil(res.community.have / 40 + 12);
                             setProducto(res);
                             setLoading(false)
                         })
