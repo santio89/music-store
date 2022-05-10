@@ -52,38 +52,6 @@ export default function ItemListContainer() {
         setSortOpen(false);
     } */
 
-    const sortAllLow = ()=>{
-        setPaginationLoading(true);
-
-        const hotSearch = "type=release&sort=have&sort_order=asc"
-        const genreSearch = `genre=${categoryId}&type=release&sort=have&sort_order=asc`;
-        const manualSearch = `q=${searchId}&type=release&sort=have&sort_order=asc`
-
-        let fetchApi = fetch(`https://api.discogs.com/database/search?${searchId ? manualSearch : (categoryId ? genreSearch : hotSearch)}&token=${discogsToken}`);
-
-        customFetch(200, fetchApi).then(
-            res => {
-                if (res.ok) {
-                    res.json().then(
-                        res => {
-                            setPaginationObject(res.pagination);        
-                            setSortActive("low");
-                            setSortOpen(false);
-                            
-                            
-                            res.results.forEach((r) => {
-                                r.price = Math.ceil(Math.abs((r.community.have/20) * 1.2) + ((r.community.have / (r.community.have + 20)) * 1.2) + 1200);
-                            });
-                            setProductos(res.results);
-                            setPaginationLoading(false);
-                        }
-                    ).catch(() => {setPaginationLoading(false)});
-                } else {
-                    navigate("./error404")
-                }
-            }
-        ).catch(() => {setPaginationLoading(false)})
-    }
     const sortAllHigh = ()=>{
         setPaginationLoading(true);
         
@@ -238,6 +206,6 @@ export default function ItemListContainer() {
 
 
     return (
-        <ItemList productos={productos} categoryId={categoryId} searchId={searchId} loading={loading} sortOpen={sortOpen} setSortOpen={setSortOpen} sortActive={sortActive} setSortActive={setSortActive} pagination={paginationObject} paginationFetch={paginationFetch} paginationLoading={paginationLoading} sortAllLow={sortAllLow} sortAllHigh={sortAllHigh} sortAllRelevance={sortAllRelevance} />
+        <ItemList productos={productos} categoryId={categoryId} searchId={searchId} loading={loading} sortOpen={sortOpen} setSortOpen={setSortOpen} sortActive={sortActive} setSortActive={setSortActive} pagination={paginationObject} paginationFetch={paginationFetch} paginationLoading={paginationLoading} sortAllHigh={sortAllHigh} sortAllRelevance={sortAllRelevance} />
     )
 }

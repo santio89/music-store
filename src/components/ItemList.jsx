@@ -5,7 +5,7 @@ import Item from './Item'
 import '../../src/styles/css/ItemList.css';
 import PuffLoader from "react-spinners/PuffLoader";
 
-export default function ItemList({ productos, searchId, loading, sortOpen, setSortOpen, sortActive, pagination, paginationFetch, paginationLoading, sortAllLow, sortAllHigh, sortAllRelevance }) {
+export default function ItemList({ productos, searchId, loading, sortOpen, setSortOpen, sortActive, pagination, paginationFetch, paginationLoading, sortAllHigh, sortAllRelevance }) {
 
     /*price calculado con una formula a partir de las propiedades de 'community have' y 'community want' (que vienen de la api) */
 
