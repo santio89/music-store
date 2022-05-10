@@ -208,7 +208,7 @@ export default function ItemListContainer() {
                 setProductos(firebaseProducts); setLoading(false);
             }); */
 
-    }, [categoryId, searchId, navigate])
+    }, [categoryId, searchId, navigate, discogsKey, discogsSecret])
 
 
 
