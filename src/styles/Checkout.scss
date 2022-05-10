@@ -379,6 +379,19 @@
                 flex-flow: row wrap;
                 justify-content: start;
                 align-items: center;
+
+                p{
+                    position: relative;
+
+                    span{
+                        font-size: .68em;
+                        color: var(--color-three-dark);
+                        position: absolute;
+                        top: 40%;
+                        right: -26%;
+                        
+                    }
+                }
             }
 
             &__buttons {

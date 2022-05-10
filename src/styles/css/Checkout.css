@@ -343,6 +343,16 @@
   justify-content: start;
   align-items: center;
 }
+.Checkout__details__resumen__text p {
+  position: relative;
+}
+.Checkout__details__resumen__text p span {
+  font-size: 0.68em;
+  color: var(--color-three-dark);
+  position: absolute;
+  top: 40%;
+  right: -26%;
+}
 .Checkout__details__resumen__buttons {
   font-family: "Courier New", Courier, monospace;
   font-size: clamp(1rem, 1rem + 1vw, 1.6rem);

@@ -9,7 +9,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCfcnZd-7keqPD1yx1419NxmmniOjYxDMs",
+  apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
   authDomain: "music-store-firebase.firebaseapp.com",
   projectId: "music-store-firebase",
   storageBucket: "music-store-firebase.appspot.com",

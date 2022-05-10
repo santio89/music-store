@@ -142,7 +142,7 @@ export default function Checkout() {
                               <motion.div key="resumenText" initial={{ opacity: 0, x: "-120%" }}
                                 animate={{ opacity: 1, x: "0%" }}
                                 exit={{ opacity: 0, x: "120%" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className="Checkout__details__resumen__text">
-                                <p>◖Items: {cartItems}<br />◖Total: ${total}(USD)</p>
+                                <p>◖Items: {cartItems}<br />◖Total: ${total}<span>(USD)</span></p>
 
                               </motion.div>}
                           </AnimatePresence>

@@ -17,14 +17,19 @@ export default function ItemDetailContainer() {
         setLoading(true);
 
         /* api discogs - key/secret */
-        const key = "NzDEWGaaXPKwkGstTywu";
-        const secret = "PpQhpcTuzerPMDEGRuwGfsmulqiIyBdJ";
+        const key = process.env.REACT_APP_DISCOGS_KEY;
+        const secret = process.env.REACT_APP_DISCOGS_SECRET;
 
         const fetchApi = fetch(`https://api.discogs.com/releases/${productId}?key=${key}&secret=${secret}`);
 
         const database = getFirestore();
         const productRef = doc(database, "products", productId);
         const productsCollection = collection(database, "products");
+
+        const spotifyId = process.env.REACT_APP_SPOTIFY_ID;
+        const spotifySecret = process.env.REACT_APP_SPOTIFY_SECRET;
+        const spotifyRefresh = process.env.REACT_APP_SPOTIFY_REFRESH;
+        const spotifyToken = process.env.REACT_APP_SPOTIFY_TOKEN;
 
         /*Spotify Client ID cf9bd46107404be28e5f6ac908e9986b
          Spotify Client Secret 54285d7f09e6482f92050ce401bcabfd  */
@@ -75,10 +80,10 @@ export default function ItemDetailContainer() {
 
                         /* fetch a spotify para conseguir una token temporaria, luego fetch para el tracklist */
                         fetch("https://accounts.spotify.com/api/token", {
-                            body: "client_id=cf9bd46107404be28e5f6ac908e9986b&client_secret=54285d7f09e6482f92050ce401bcabfd&grant_type=refresh_token&refresh_token=AQCooI85UHj6cuJo-JBVD68yiGqpmwFLrVhTgSF8IGH2_aR5n6TpSflzMxtqWz0Eej_fkIOVgmNHy_jfomKCSZMrvfhqgP62SNC7HD4tZx0rtd9ulaPa7lCCf9MzHOpGA4E",
+                            body: `client_id=${spotifyId}&client_secret=${spotifySecret}&grant_type=refresh_token&refresh_token=${spotifyRefresh}`,
                             headers: {
                                 "Content-Type": "application/x-www-form-urlencoded",
-                                "Authorization": "Basic Y2Y5YmQ0NjEwNzQwNGJlMjhlNWY2YWM5MDhlOTk4NmI6NTQyODVkN2YwOWU2NDgyZjkyMDUwY2U0MDFiY2FiZmQ="
+                                "Authorization": `Basic ${spotifyToken}`
                             },
                             method: "POST"
                         }).then(response => {

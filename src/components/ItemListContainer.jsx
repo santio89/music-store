@@ -15,7 +15,7 @@ export default function ItemListContainer() {
     const { categoryId } = useParams();
     const { searchId } = useParams();
 
-    const discogsToken = "RkqSJrgChJCPUvsaYEUrkgTSzPgnYlXzVEOZiwnp";
+    const discogsToken = process.env.REACT_APP_DISCOGS_TOKEN;
 
     const navigate = useNavigate();
 
