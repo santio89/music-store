@@ -92,10 +92,10 @@
         
         &__content {
             display: flex;
-            flex-flow: row wrap;
+            flex-flow: column wrap;
             justify-content: center;
             align-items: center;
-            gap: 1rem;
+            gap: .2rem;
 
             &__total {
                 color: var(--color-one);
@@ -145,12 +145,12 @@
     &__sortWrapper {
         position: relative;
         align-self: start;
-        margin-left: -6%;
         z-index: 1;
         border-radius: 0 .2em .2em 0;
         margin-top: .4rem;
         text-shadow: 1px 1px 0 var(--color-three);
         color: var(--color-one);
+        width: 100%;
     }
 
     &__sort {
@@ -276,9 +276,16 @@
 }
 
 @media (min-width: 500px) {
-    .ItemList__title {
-        border-radius: 0 .2em .2em 0;
+    .ItemList{
+        &__title{
+            border-radius: 0 .2em .2em 0;
         max-width: fit-content;
+        }
+
+        &__sortWrapper{
+            width: fit-content;
+            margin-left: -6%;
+        }
     }
 }
 
@@ -311,6 +318,7 @@
             margin-right: .8rem;
 
             &__content {
+                flex-flow: row wrap;
                 gap: 1.4rem;
 
                 &__controls {
