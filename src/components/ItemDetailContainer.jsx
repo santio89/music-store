@@ -17,10 +17,10 @@ export default function ItemDetailContainer() {
         setLoading(true);
 
         /* api discogs - key/secret */
-        const key = process.env.REACT_APP_DISCOGS_KEY;
-        const secret = process.env.REACT_APP_DISCOGS_SECRET;
+        const discogsKey = process.env.REACT_APP_DISCOGS_KEY;
+        const discogsSecret = process.env.REACT_APP_DISCOGS_SECRET;
 
-        const fetchApi = fetch(`https://api.discogs.com/releases/${productId}?key=${key}&secret=${secret}`);
+        const fetchApi = fetch(`https://api.discogs.com/releases/${productId}?key=${discogsKey}&secret=${discogsSecret}`);
 
         const database = getFirestore();
         const productRef = doc(database, "products", productId);

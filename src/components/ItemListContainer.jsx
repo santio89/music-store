@@ -15,114 +15,115 @@ export default function ItemListContainer() {
     const { categoryId } = useParams();
     const { searchId } = useParams();
 
-    const discogsToken = process.env.REACT_APP_DISCOGS_TOKEN;
+    const discogsKey = process.env.REACT_APP_DISCOGS_KEY;
+    const discogsSecret = process.env.REACT_APP_DISCOGS_SECRET;
 
     const navigate = useNavigate();
 
-    const [ sortOpen, setSortOpen ] = useState(false);
-    const [ sortActive, setSortActive ] = useState("relevance");
+    const [sortOpen, setSortOpen] = useState(false);
+    const [sortActive, setSortActive] = useState("relevance");
 
     const [paginationObject, setPaginationObject] = useState({});
 
 
 
-    const sortAllHigh = ()=>{
+    const sortAllHigh = () => {
         setPaginationLoading(true);
-        
+
         const hotSearch = "type=release&sort=have&sort_order=desc"
         const genreSearch = `genre=${categoryId}&type=release&sort=have&sort_order=desc`;
         const manualSearch = `q=${searchId}&type=release&sort=have&sort_order=desc`
 
-        let fetchApi = fetch(`https://api.discogs.com/database/search?${searchId ? manualSearch : (categoryId ? genreSearch : hotSearch)}&token=${discogsToken}`);
+        let fetchApi = fetch(`https://api.discogs.com/database/search?${searchId ? manualSearch : (categoryId ? genreSearch : hotSearch)}&key=${discogsKey}&secret=${discogsSecret}`);
 
         customFetch(200, fetchApi).then(
             res => {
                 if (res.ok) {
                     res.json().then(
                         res => {
-                            setPaginationObject(res.pagination);        
+                            setPaginationObject(res.pagination);
                             setSortActive("high");
                             setSortOpen(false);
-                            
+
                             res.results.forEach((r) => {
-                                r.price = Math.ceil(Math.abs(100 + (r.community.have/4000)*1.56));
+                                r.price = Math.ceil(Math.abs(100 + (r.community.have / 4000) * 1.56));
                             });
                             setProductos(res.results);
                             setPaginationLoading(false);
                         }
-                    ).catch(() => {setPaginationLoading(false)});
+                    ).catch(() => { setPaginationLoading(false) });
                 } else {
                     navigate("./error404")
                 }
             }
-        ).catch(() => {setPaginationLoading(false)})
+        ).catch(() => { setPaginationLoading(false) })
     }
-    const sortAllRelevance = ()=>{
+    const sortAllRelevance = () => {
         setPaginationLoading(true);
 
         const hotSearch = "type=release&sort=want&sort_order=desc"
         const genreSearch = `genre=${categoryId}&type=release&sort=want&sort_order=desc`;
         const manualSearch = `q=${searchId}&type=release&sort=want&sort_order=desc`
 
-        let fetchApi = fetch(`https://api.discogs.com/database/search?${searchId ? manualSearch : (categoryId ? genreSearch : hotSearch)}&token=${discogsToken}`);
+        let fetchApi = fetch(`https://api.discogs.com/database/search?${searchId ? manualSearch : (categoryId ? genreSearch : hotSearch)}&key=${discogsKey}&secret=${discogsSecret}`);
 
         customFetch(200, fetchApi).then(
             res => {
                 if (res.ok) {
                     res.json().then(
                         res => {
-                            setPaginationObject(res.pagination);        
+                            setPaginationObject(res.pagination);
                             setSortActive("relevance");
                             setSortOpen(false);
-                            
+
                             res.results.forEach((r) => {
-                                r.price = Math.ceil(Math.abs(100 + (r.community.have/4000)*1.56));
+                                r.price = Math.ceil(Math.abs(100 + (r.community.have / 4000) * 1.56));
                             });
                             setProductos(res.results);
                             setPaginationLoading(false);
                         }
-                    ).catch(() => {setPaginationLoading(false)});
+                    ).catch(() => { setPaginationLoading(false) });
                 } else {
                     navigate("./error404")
                 }
             }
-        ).catch(() => {setPaginationLoading(false)})
+        ).catch(() => { setPaginationLoading(false) })
     }
 
-    const sortAllHot = ()=>{
+    const sortAllHot = () => {
         setPaginationLoading(true);
 
         const hotSearch = "type=release&sort=hot&sort_order=desc"
         const genreSearch = `genre=${categoryId}&type=release&sort=hot&sort_order=desc`;
         const manualSearch = `q=${searchId}&type=release&sort=hot&sort_order=desc`
 
-        let fetchApi = fetch(`https://api.discogs.com/database/search?${searchId ? manualSearch : (categoryId ? genreSearch : hotSearch)}&token=${discogsToken}`);
+        let fetchApi = fetch(`https://api.discogs.com/database/search?${searchId ? manualSearch : (categoryId ? genreSearch : hotSearch)}&key=${discogsKey}&secret=${discogsSecret}`);
 
         customFetch(200, fetchApi).then(
             res => {
                 if (res.ok) {
                     res.json().then(
                         res => {
-                            setPaginationObject(res.pagination);        
+                            setPaginationObject(res.pagination);
                             setSortActive("hot");
                             setSortOpen(false);
-                            
+
                             res.results.forEach((r) => {
-                                r.price = Math.ceil(Math.abs(100 + (r.community.have/4000)*1.56));
+                                r.price = Math.ceil(Math.abs(100 + (r.community.have / 4000) * 1.56));
                             });
                             setProductos(res.results);
                             setPaginationLoading(false);
                         }
-                    ).catch(() => {setPaginationLoading(false)});
+                    ).catch(() => { setPaginationLoading(false) });
                 } else {
                     navigate("./error404")
                 }
             }
-        ).catch(() => {setPaginationLoading(false)})
+        ).catch(() => { setPaginationLoading(false) })
     }
 
 
-    const paginationFetch = (paginationUrl)=>{
+    const paginationFetch = (paginationUrl) => {
         setPaginationLoading(true);
         let fetchApi = fetch(paginationUrl);
 
@@ -133,19 +134,19 @@ export default function ItemListContainer() {
                         res => {
                             setPaginationObject(res.pagination);
                             setSortOpen(false);
-                            
+
                             res.results.forEach((r) => {
-                                r.price = Math.ceil(Math.abs(100 + (r.community.have/4000)*1.56));
+                                r.price = Math.ceil(Math.abs(100 + (r.community.have / 4000) * 1.56));
                             });
                             setProductos(res.results);
                             setPaginationLoading(false);
                         }
-                    ).catch(() => {setPaginationLoading(false)});
+                    ).catch(() => { setPaginationLoading(false) });
                 } else {
                     navigate("./error404")
                 }
             }
-        ).catch(() => {setPaginationLoading(false)})
+        ).catch(() => { setPaginationLoading(false) })
     }
 
 
@@ -156,9 +157,9 @@ export default function ItemListContainer() {
         const genreSearch = `genre=${categoryId}&type=release&sort=want`;
         const manualSearch = `q=${searchId}&type=release&sort=want`
 
-        let fetchApi = fetch(`https://api.discogs.com/database/search?${searchId ? manualSearch : (categoryId ? genreSearch : hotSearch)}&token=${discogsToken}`);
+        let fetchApi = fetch(`https://api.discogs.com/database/search?${searchId ? manualSearch : (categoryId ? genreSearch : hotSearch)}&key=${discogsKey}&secret=${discogsSecret}`);
 
-        
+
         /* desde la api, hago las busqedas de lista (para mantener los resultados más dinámicos que si los trajera de firebase). luego en el detalle de compra, actualizo mi base de datos en firebase (desde firebase tambien manejo stock por ej). si un item no existe, lo crea; si hay que actualizar precio. */
 
         /* fetch custom con promise (hace el fetch a la api luego de un tiempo (lo dejo para apreciar el loading un poco) ) */
@@ -172,7 +173,7 @@ export default function ItemListContainer() {
                             setSortOpen(false);
 
                             res.results.forEach((r) => {
-                                r.price = Math.ceil(Math.abs(100 + (r.community.have/4000)*1.56));
+                                r.price = Math.ceil(Math.abs(100 + (r.community.have / 4000) * 1.56));
 
                                 /* ESTE CODIGO ES PARA ESCRIBIR ESTOS RESULTADOS DE LA API, EN FIREBASE. lo desactivo de momento ya que resulta en muchas lecturas/escrituras innecesarias (se ejecutaria cada vez que se cargue la lista. esta bueno para cargar la base de datos inicial)
 
@@ -191,7 +192,7 @@ export default function ItemListContainer() {
                 }
             }
         ).catch(err => { console.log("error fetching data: ", err) })
-            
+
         /*  
             FIREBASE - QUERY FILTRADA
             const database = getFirestore();
@@ -206,7 +207,7 @@ export default function ItemListContainer() {
                 console.log(firebaseProducts);
                 setProductos(firebaseProducts); setLoading(false);
             }); */
-        
+
     }, [categoryId, searchId, navigate])
 
 
