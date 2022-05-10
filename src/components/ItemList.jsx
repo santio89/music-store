@@ -5,7 +5,7 @@ import Item from './Item'
 import '../../src/styles/css/ItemList.css';
 import PuffLoader from "react-spinners/PuffLoader";
 
-export default function ItemList({ productos, searchId, loading, sortOpen, setSortOpen, sortActive, pagination, paginationFetch, paginationLoading, sortAllHigh, sortAllRelevance }) {
+export default function ItemList({ productos, searchId, loading, sortOpen, setSortOpen, sortActive, pagination, paginationFetch, paginationLoading, sortAllHigh, sortAllRelevance, sortAllHot }) {
 
     /*price calculado con una formula a partir de las propiedades de 'community have' y 'community want' (que vienen de la api) */
 
@@ -68,6 +68,7 @@ export default function ItemList({ productos, searchId, loading, sortOpen, setSo
                                         <div className={`ItemList__sortOptions ${sortOpen ? "is-visible" : ""}`}>
                                             {/* <button className={`ItemList__sortOptions__lowest ${sortActive === "low" ? "is-active" : null}`} onClick={() => { sortAllLow() }}>Menor Precio</button> */}
                                             <button className={`ItemList__sortOptions__highest ${sortActive === "high" ? "is-active" : null}`} onClick={() => { sortAllHigh() }}>Precio</button>
+                                            <button className={`ItemList__sortOptions__hot ${sortActive === "hot" ? "is-active" : null}`} onClick={() => { sortAllHot() }}>Últimos</button>
                                             <button className={`ItemList__sortOptions__relevance ${sortActive === "relevance" ? "is-active" : null}`} onClick={() => { sortAllRelevance() }}>Relevancia</button>
                                         </div>
                                     </div>

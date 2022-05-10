@@ -225,7 +225,7 @@
 .ItemList__sortOptions__lowest {
   border-radius: 0.2em 0.2em 0 0;
 }
-.ItemList__sortOptions__relevance {
+.ItemList__sortOptions__hot {
   border-radius: 0 0 0.2em 0.2em;
 }
 .ItemList__sortOptions:hover, .ItemList__sortOptions:focus, .ItemList__sortOptions:focus-within {

@@ -89,6 +89,38 @@ export default function ItemListContainer() {
         ).catch(() => {setPaginationLoading(false)})
     }
 
+    const sortAllHot = ()=>{
+        setPaginationLoading(true);
+
+        const hotSearch = "type=release&sort=hot&sort_order=desc"
+        const genreSearch = `genre=${categoryId}&type=release&sort=hot&sort_order=desc`;
+        const manualSearch = `q=${searchId}&type=release&sort=hot&sort_order=desc`
+
+        let fetchApi = fetch(`https://api.discogs.com/database/search?${searchId ? manualSearch : (categoryId ? genreSearch : hotSearch)}&token=${discogsToken}`);
+
+        customFetch(200, fetchApi).then(
+            res => {
+                if (res.ok) {
+                    res.json().then(
+                        res => {
+                            setPaginationObject(res.pagination);        
+                            setSortActive("hot");
+                            setSortOpen(false);
+                            
+                            res.results.forEach((r) => {
+                                r.price = Math.ceil(Math.abs(100 + (r.community.have/4000)*1.56));
+                            });
+                            setProductos(res.results);
+                            setPaginationLoading(false);
+                        }
+                    ).catch(() => {setPaginationLoading(false)});
+                } else {
+                    navigate("./error404")
+                }
+            }
+        ).catch(() => {setPaginationLoading(false)})
+    }
+
 
     const paginationFetch = (paginationUrl)=>{
         setPaginationLoading(true);
@@ -180,6 +212,6 @@ export default function ItemListContainer() {
 
 
     return (
-        <ItemList productos={productos} categoryId={categoryId} searchId={searchId} loading={loading} sortOpen={sortOpen} setSortOpen={setSortOpen} sortActive={sortActive} setSortActive={setSortActive} pagination={paginationObject} paginationFetch={paginationFetch} paginationLoading={paginationLoading} sortAllHigh={sortAllHigh} sortAllRelevance={sortAllRelevance} />
+        <ItemList productos={productos} categoryId={categoryId} searchId={searchId} loading={loading} sortOpen={sortOpen} setSortOpen={setSortOpen} sortActive={sortActive} setSortActive={setSortActive} pagination={paginationObject} paginationFetch={paginationFetch} paginationLoading={paginationLoading} sortAllHigh={sortAllHigh} sortAllRelevance={sortAllRelevance} sortAllHot={sortAllHot} />
     )
 }
