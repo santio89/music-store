@@ -20,6 +20,7 @@ html {
   overflow-x: hidden;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  scroll-padding-top: 76px;
   font-size: 100%;
 }
 
@@ -162,4 +163,10 @@ body {
 ::selection {
   background: var(--color-one-dark);
   color: var(--color-three);
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-padding: 108px;
+  }
 }/*# sourceMappingURL=index.css.map */

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
 import Item from './Item'
@@ -13,6 +13,7 @@ export default function ItemList({ productos, searchId, loading, sortOpen, setSo
     const [isProductos, setIsProductos] = useState(false);
 
     const history = useNavigate();
+    const topPagRef = useRef(null);
 
     useEffect(() => {
         productos.length > 0 ? setIsProductos(true) : setIsProductos(false);
@@ -62,11 +63,10 @@ export default function ItemList({ productos, searchId, loading, sortOpen, setSo
                                 animate={{ opacity: 1, x: "0%" }}
                                 exit={{ opacity: 0, x: "120%" }}>
 
-                                {isProductos ? <div className="ItemList__contentWrapper">
+                                {isProductos ? <div className="ItemList__contentWrapper" ref={topPagRef}>
                                     <div className="ItemList__sortWrapper">
                                         <button className={`ItemList__sort ${sortOpen ? "is-active" : ""}`} onClick={() => setSortOpen((sortOpen) => !sortOpen)}>Ordenar&nbsp;<i className="bi bi-caret-down-fill"></i></button>
                                         <div className={`ItemList__sortOptions ${sortOpen ? "is-visible" : ""}`}>
-                                            {/* <button className={`ItemList__sortOptions__lowest ${sortActive === "low" ? "is-active" : null}`} onClick={() => { sortAllLow() }}>Menor Precio</button> */}
                                             <button className={`ItemList__sortOptions__highest ${sortActive === "high" ? "is-active" : null}`} onClick={() => { sortAllHigh() }}>Precio</button>
                                             <button className={`ItemList__sortOptions__hot ${sortActive === "hot" ? "is-active" : null}`} onClick={() => { sortAllHot() }}>Últimos</button>
                                             <button className={`ItemList__sortOptions__relevance ${sortActive === "relevance" ? "is-active" : null}`} onClick={() => { sortAllRelevance() }}>Relevancia</button>
@@ -109,6 +109,39 @@ export default function ItemList({ productos, searchId, loading, sortOpen, setSo
                                             })}
                                         </div>
                                     </LayoutGroup>
+
+                                    <div className="ItemList__pagination">
+
+                                        <div className="ItemList__pagination__startend">
+                                            <button onClick={() => {
+                                                topPagRef.current.scrollIntoView();
+                                                paginationFetch(pagination.urls.first);
+                                            }}>Inicio</button>
+                                            <button onClick={() => {
+                                                topPagRef.current.scrollIntoView();
+                                                paginationFetch(pagination.urls.last);
+                                            }}>Final</button>
+                                        </div>
+
+                                        <div className="ItemList__pagination__content">
+                                            <span className="ItemList__pagination__content__total">
+                                                <span>{Number(1 + pagination.per_page * (pagination.page - 1)).toLocaleString()} </span>- <span>{Number(pagination.page * pagination.per_page).toLocaleString()} </span>de <span>{pagination.items > 10000 ? Number(10000).toLocaleString() : pagination.items.toLocaleString()}</span>
+                                            </span>
+                                            <span className="ItemList__pagination__content__controls">
+                                                <div className="ItemList__pagination__content__controls__buttonContainer">
+                                                    <button onClick={() => {
+                                                        topPagRef.current.scrollIntoView();
+                                                        paginationFetch(pagination.urls.prev);
+                                                    }}>&lt;&nbsp;Anterior</button>
+                                                    <button onClick={() => {
+                                                        topPagRef.current.scrollIntoView();
+                                                        paginationFetch(pagination.urls.next);
+                                                    }}>Siguiente&nbsp;&gt;</button>
+                                                </div>
+
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div> : <div className="ItemList__noProducts">No se encontraron resultados... <Link className="ItemList__noProducts__link" to="/">Ir al inicio?</Link></div>}
 
                             </motion.div>
