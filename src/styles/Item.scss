@@ -90,7 +90,7 @@
             font-size: $font-mdd;
             font-weight: bold;
             color: var(--color-three);
-            text-shadow: 2px 2px var(--color-one-dark), 3px 3px var(--color-back-dark);
+            text-shadow: 1px 1px var(--color-one-dark), 2px 2px var(--color-back-dark);
             width: fit-content;
             margin-left: 2%;
         }
@@ -107,4 +107,3 @@
         transition: color 400ms;
     }
 }
-
