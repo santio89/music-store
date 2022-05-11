@@ -6,6 +6,7 @@
     position: relative;
     overflow: hidden;
     margin-left: auto;
+    margin-right: 1vw;
     transition: 200ms;
 
     span {
@@ -18,19 +19,70 @@
     }
 }
 
-.profilePic{
+.profilePic {
     aspect-ratio: 1;
-    width: 50px;
+    width: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: 1vw;
+    outline: 3px dashed var(--color-one-dark);
+    border: none;
+    z-index: 1;
 
-    img{
+    img {
         width: 100%;
+        max-height: none;
         object-fit: cover;
+    }
+
+    &:hover,
+    &:focus-visible,
+    &.is-active {
+        outline: 3px dashed var(--color-one);
     }
 }
 
-@media (min-width: 1024px){
-    .LogInButton{
+.userOptions {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: .4rem;
+    background: rgba(255, 255, 255, .4);
+    padding: .4rem 2rem;
+    margin-right: -2rem;
+    border-radius: .4em 0 0 .4em;
+
+    button {
+        color: var(--color-three);
+        font-size: $font-fluid-xs;
+        background: var(--color-one-dark);
+        padding: .28em;
+        border-radius: .2em;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+
+        &:hover, &:focus-visible{
+            outline: 1px dashed var(--color-three);
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .LogInButton {
         margin-left: 0;
         margin-right: 0;
+    }
+
+    .profilePic {
+        margin-left: 0;
+        margin-right: 0;
+
+        &:hover,
+        &:focus-visible,
+        &.is-active {
+            outline: 3px dashed var(--color-three);
+        }
     }
 }

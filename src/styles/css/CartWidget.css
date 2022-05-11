@@ -53,4 +53,9 @@
     justify-content: center;
     align-items: center;
   }
+  .CartWidget.disabled:hover, .CartWidget.disabled:focus {
+    color: var(--color-three-dark);
+    outline: 1px dashed var(--color-three-dark);
+    background: transparent;
+  }
 }/*# sourceMappingURL=CartWidget.css.map */

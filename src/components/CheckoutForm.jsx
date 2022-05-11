@@ -1,29 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import '../styles/css/CheckoutForm.css';
 import { addDoc, getDoc, doc, collection, getFirestore, serverTimestamp, writeBatch } from 'firebase/firestore';
 import ReCAPTCHA from "react-google-recaptcha";
+import { AuthContext } from '../Context/AuthContext'
 
 export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setCheckoutCode, cartClear }) {
-  const [name, setName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  const { authUser } = useContext(AuthContext);
+  const [name, setName] = useState(authUser.displayName || "");
+  const [email, setEmail] = useState(authUser.email || "");
+  const [phone, setPhone] = useState(authUser.phoneNumber || "");
   const [address, setAddress] = useState("");
   const [shopList, setShopList] = useState([]);
   const [loadingCheckout, setLoadingCheckout] = useState(false);
   const [recaptchaValid, setRecaptchaValid] = useState(false);
   const recaptchaRef = React.createRef();
 
+
   const resetInputs = () => {
     setName("");
-    setLastName("")
     setEmail("")
     setPhone("")
     setAddress("")
   }
 
   const order = {
-    buyer: { name, lastName, email, phone, address },
+    buyer: { name, email, phone, address },
     shopList: shopList,
     total: total,
     date: serverTimestamp()
@@ -91,7 +92,7 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
     setShopList(carritoList);
   }, [carrito]);
 
-  useEffect(()=>{
+  useEffect(() => {
     recaptchaRef.current.execute();
   }, [recaptchaRef])
 
@@ -107,12 +108,8 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
       <h4>Completar datos</h4>
       <div className='CheckoutForm__fields'>
         <fieldset>
-          <legend>Nombre</legend>
+          <legend>Nombre Completo</legend>
           <input name="nombre" value={name} onChange={e => setName(e.currentTarget.value)} aria-label='Nombre' type="text" required title="Ingresar nombre" maxLength={100} />
-        </fieldset>
-        <fieldset>
-          <legend>Apellido</legend>
-          <input name="apellido" value={lastName} onChange={e => setLastName(e.currentTarget.value)} aria-label='Apellido' type="text" title="Ingresar apellido" required maxLength={100} />
         </fieldset>
         <fieldset>
           <legend>E-Mail</legend>
@@ -131,8 +128,8 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
       <button className='CheckoutForm__send'>
         {loadingCheckout ? <>Procesando<span>.</span><span>.</span><span>.</span></> : <>Enviar pedido</>}
       </button>
-      <ReCAPTCHA ref={recaptchaRef} sitekey="6Le4gNAfAAAAALoRTECfoVQlz8IUgGJK766SJ7nD" size="invisible" theme="dark" badge='inline' onChange={() =>{
-         setRecaptchaValid(true)
+      <ReCAPTCHA ref={recaptchaRef} sitekey="6Le4gNAfAAAAALoRTECfoVQlz8IUgGJK766SJ7nD" size="invisible" theme="dark" badge='inline' onChange={() => {
+        setRecaptchaValid(true)
       }} />
     </form>
   )
