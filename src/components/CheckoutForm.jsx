@@ -6,9 +6,9 @@ import { AuthContext } from '../Context/AuthContext'
 
 export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setCheckoutCode, cartClear }) {
   const { authUser } = useContext(AuthContext);
-  const [name, setName] = useState(authUser.displayName || "");
-  const [email, setEmail] = useState(authUser.email || "");
-  const [phone, setPhone] = useState(authUser.phoneNumber || "");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const [shopList, setShopList] = useState([]);
   const [loadingCheckout, setLoadingCheckout] = useState(false);
@@ -96,13 +96,17 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
     recaptchaRef.current.execute();
   }, [recaptchaRef])
 
-
+  useEffect(()=>{
+    setName(authUser?.displayName)
+    setEmail(authUser?.email)
+    setPhone(authUser?.phoneNumber)
+  }, [authUser])
 
   return (
     <form className='CheckoutForm' onSubmit={(e) => {
       e.preventDefault();
       if (recaptchaValid) {
-        sendOrder()
+        sendOrder();
       }
     }}>
       <h4>Completar datos</h4>
