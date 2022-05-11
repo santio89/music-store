@@ -106,7 +106,7 @@ export default function ItemDetail({ loading, producto, spotifyId }) {
                                                         <motion.div key="count" initial={{ opacity: 0, x: "-120%" }}
                                                             animate={{ opacity: 1, x: "0%" }}
                                                             exit={{ opacity: 0, x: "120%" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className='ItemDetail__counterWrapper'>
-                                                            <p className='ItemDetail__counterWrapper__price'>{"$" + producto?.price}</p>
+                                                            <p className='ItemDetail__counterWrapper__price'>{"$" + producto?.price}<span>(USD)</span></p>
                                                             <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initialCount} stock={producto?.stock} id={producto?.id} />
                                                         </motion.div>}
                                                 </AnimatePresence>

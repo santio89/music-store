@@ -64,32 +64,32 @@
             outline: 4px dashed var(--color-one);
         }
 
-        details{
+        details {
             display: flex;
             flex-flow: column wrap;
             justify-content: center;
             align-items: center;
 
-            summary{
+            summary {
                 cursor: pointer;
                 outline: none;
                 border: none;
                 border-radius: .1em;
 
-                &:focus-visible{
+                &:focus-visible {
                     outline: 1px dashed var(--color-one);
                 }
             }
 
-            p{
-            font-size: $font-fluid-xss;
-            color: var(--color-one);
-            text-shadow: 1px 1px 0 var(--color-two);
-            font-weight: bold;
-            will-change: transform;
+            p {
+                font-size: $font-fluid-xss;
+                color: var(--color-one);
+                text-shadow: 1px 1px 0 var(--color-two);
+                font-weight: bold;
+                will-change: transform;
             }
 
-            iframe{
+            iframe {
                 margin: auto;
                 margin-top: .4em;
                 border-radius: .4em;
@@ -99,7 +99,7 @@
         }
     }
 
-    &__imgSelector{
+    &__imgSelector {
         width: 100%;
         max-width: 600px;
         height: 60px;
@@ -118,18 +118,20 @@
             aspect-ratio: 1;
             border-radius: .2em;
 
-            img{
-                width: 100%;;
+            img {
+                width: 100%;
+                ;
                 outline: none;
                 border-radius: .2em;
                 outline: 1px dashed var(--color-three-dark);
             }
-        }   
+        }
     }
 
     &__pWrapper {
         width: 100%;
-        > p{
+
+        >p {
             font-weight: bold;
             color: var(--color-one);
             text-shadow: 1px 1px 0 var(--color-three);
@@ -188,7 +190,7 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
-        
+
     }
 
     &__subtitle {
@@ -258,6 +260,20 @@
             margin-bottom: 1rem;
             text-shadow: 2px 2px var(--color-one-dark);
             line-height: 1.2;
+            width: fit-content;
+            letter-spacing: .03em;
+            position: relative;
+
+            span {
+                font-size: .52em;
+                color: var(--color-three-dark);
+                text-shadow: 1px 1px var(--color-three);
+                position: absolute;
+                top: -20%;
+                right: -64%;
+                letter-spacing: .02em;
+            }
+
         }
     }
 
@@ -288,8 +304,8 @@
             margin-top: .4rem;
             padding: .12em .06em;
             background: linear-gradient(45deg, var(--color-one-dark), var(--color-one), var(--color-one-dark));
-            border-radius: .2em; 
-            outline: 4px dashed var(--color-one);      
+            border-radius: .2em;
+            outline: 4px dashed var(--color-one);
         }
 
         &__buttons {
@@ -340,7 +356,7 @@
             }
 
             i {
-                font-size: $font-fluid-md !important;
+                font-size: $font-fluid-md  !important;
                 /* important to replace bulma style */
             }
         }
@@ -433,8 +449,8 @@
         &__detailsWrapper {
             padding: 2rem;
         }
-        
-        &__imgSelector{
+
+        &__imgSelector {
             margin-bottom: 2.4rem;
         }
 
@@ -504,15 +520,15 @@
                 gap: .8rem;
             }
 
-            h3{
+            h3 {
                 margin-top: 1rem;
             }
 
-            .CartWidget{
+            .CartWidget {
                 text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
             }
 
-            &__continue{
+            &__continue {
                 text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
             }
         }

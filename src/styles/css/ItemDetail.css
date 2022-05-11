@@ -240,6 +240,20 @@
   margin-bottom: 1rem;
   text-shadow: 2px 2px var(--color-one-dark);
   line-height: 1.2;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  letter-spacing: 0.03em;
+  position: relative;
+}
+.ItemDetail__counterWrapper__price span {
+  font-size: 0.52em;
+  color: var(--color-three-dark);
+  text-shadow: 1px 1px var(--color-three);
+  position: absolute;
+  top: -20%;
+  right: -64%;
+  letter-spacing: 0.02em;
 }
 .ItemDetail__checkout {
   position: absolute;
