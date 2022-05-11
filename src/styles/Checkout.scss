@@ -611,6 +611,7 @@
                 border-bottom: 1px dashed var(--color-two);
 
                 span{
+                    width: 12ch;
                     flex: 1;
 
                     &:not(:first-of-type){

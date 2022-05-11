@@ -550,6 +550,7 @@
   border-bottom: 1px dashed var(--color-two);
 }
 .Checkout__success__details p span {
+  width: 12ch;
   flex: 1;
 }
 .Checkout__success__details p span:not(:first-of-type) {
