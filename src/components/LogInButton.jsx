@@ -16,11 +16,14 @@ const buttonRipple = (e) => {
 }
 
 export default function LogInButton() {
-    const { authLogIn } = useContext(AuthContext);
-    
+    const { authLogIn, authUser } = useContext(AuthContext);
+
     return (
-        <button onClick={(e)=>{buttonRipple(e); authLogIn()}} className="button is-dark is-size-5-widescreen is-size-6-desktop is-size-5-touch LogInButton">
-            Ingresar
-        </button>
+        <>
+            {!authUser ?<button onClick={(e) => { buttonRipple(e); authLogIn() }} className="button is-dark is-size-5-widescreen is-size-6-desktop is-size-5-touch LogInButton">
+                    Ingresar
+                </button>:<div className='profilePic'><img alt="Profile Pic" src={authUser.photoURL}></img></div>
+            }
+        </>
     )
 }

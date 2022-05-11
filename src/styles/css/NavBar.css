@@ -55,8 +55,9 @@
 .navbar-end .buttons {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
+  gap: 1rem;
 }
 
 @media (max-width: 1023px) {

@@ -36,7 +36,7 @@ export default function AuthContextProvider({children}) {
     }, [authUser])
     
     return (
-        <AuthContext.Provider value={{authLogIn}}>
+        <AuthContext.Provider value={{authLogIn, authUser}}>
             {children}
         </AuthContext.Provider>
     )

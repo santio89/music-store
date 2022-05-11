@@ -11,7 +11,6 @@
   position: relative;
   overflow: hidden;
   margin-left: auto;
-  margin-right: 1.1vw;
   transition: 200ms;
 }
 .LogInButton span {
@@ -24,14 +23,19 @@
           animation: ripples 1000ms linear infinite;
 }
 
+.profilePic {
+  aspect-ratio: 1;
+  width: 50px;
+}
+.profilePic img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 @media (min-width: 1024px) {
   .LogInButton {
-    margin-left: 0.4rem;
+    margin-left: 0;
     margin-right: 0;
-  }
-}
-@media (min-width: 1216px) {
-  .LogInButton {
-    margin-left: 1rem;
   }
 }/*# sourceMappingURL=LogInButton.css.map */
