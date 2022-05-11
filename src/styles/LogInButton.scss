@@ -1,0 +1,33 @@
+@import './variables.scss';
+
+.LogInButton {
+    font-weight: 700;
+    font-family: inherit;
+    position: relative;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: 1.1vw;
+    transition: 200ms;
+
+    span {
+        position: absolute;
+        background: var(--color-three);
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        border-radius: 50%;
+        animation: ripples 1000ms linear infinite;
+    }
+}
+
+@media (min-width: 1024px){
+    .LogInButton{
+        margin-left: .4rem;
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 1216px){
+    .LogInButton{
+        margin-left: 1rem;
+    }
+}

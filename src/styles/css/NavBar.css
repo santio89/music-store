@@ -52,6 +52,13 @@
   transform: scale(2.4) translateX(-20%) translateY(12%);
 }
 
+.navbar-end .buttons {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 1023px) {
   /* media query mobile nav */
   .nav {
@@ -75,12 +82,12 @@
     left: 0;
     right: 0;
     top: -250%;
-    /*  transform: translateY(-100%); */
     transition: top 400ms ease-in-out;
     pointer-events: none;
     padding-top: calc(0.4rem + 20%);
     margin-top: -20%;
     z-index: -1;
+    padding-bottom: 0.8rem;
   }
 
   .navbar-menu.is-active {

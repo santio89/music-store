@@ -1,0 +1,37 @@
+/* bulma is-size-7 */
+/* bulma is-size-6 */
+/* bulma is-size-5 */
+/* bulma is-size-4 */
+/* bulma is-size-3 */
+/* bulma is-size-2 */
+/* bulma is-size-1 */
+.LogInButton {
+  font-weight: 700;
+  font-family: inherit;
+  position: relative;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: 1.1vw;
+  transition: 200ms;
+}
+.LogInButton span {
+  position: absolute;
+  background: var(--color-three);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  -webkit-animation: ripples 1000ms linear infinite;
+          animation: ripples 1000ms linear infinite;
+}
+
+@media (min-width: 1024px) {
+  .LogInButton {
+    margin-left: 0.4rem;
+    margin-right: 0;
+  }
+}
+@media (min-width: 1216px) {
+  .LogInButton {
+    margin-left: 1rem;
+  }
+}/*# sourceMappingURL=LogInButton.css.map */

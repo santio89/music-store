@@ -6,6 +6,7 @@ import '../../src/styles/css/NavBar.css';
 import CartWidget from "./CartWidget";
 import SearchBar from "./SearchBar";
 import ThemeButton from "./ThemeButton";
+import LogInButton from "./LogInButton";
 
 
 export default function NavBar({ brand }) {
@@ -49,6 +50,7 @@ export default function NavBar({ brand }) {
                         <div className="navbar-item">
                             <div className="buttons">
                                 <ThemeButton navClosed={navClosed} />
+                                <LogInButton />
                             </div>
                         </div>
                     </div>

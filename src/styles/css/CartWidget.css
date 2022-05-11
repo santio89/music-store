@@ -38,8 +38,7 @@
     justify-content: center;
     align-items: center;
     color: var(--color-three);
-    min-width: 120px;
-    max-width: 120px;
+    min-width: 80px;
     text-align: center;
     border-radius: 0.2em;
   }

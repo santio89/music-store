@@ -5,22 +5,7 @@
 /* bulma is-size-3 */
 /* bulma is-size-2 */
 /* bulma is-size-1 */
-/* .button__logIn {
-    font-weight: 700;
-    font-family: inherit;
-    position: relative;
-    overflow: hidden;
-
-    span {
-        position: absolute;
-        background: var(--color-three);
-        transform: translate(-50%, -50%);
-        pointer-events: none;
-        border-radius: 50%;
-        animation: ripples 1000ms linear infinite;
-    }
-} */
-.themeButton {
+.ThemeButton {
   font-size: 2.4rem;
   color: var(--color-mobilenavtext);
   display: flex;
@@ -32,19 +17,19 @@
   background-color: transparent;
   margin-bottom: 0.2em;
 }
-.themeButton i {
+.ThemeButton i {
   line-height: 1;
 }
-.themeButton:hover, .themeButton:focus-visible {
+.ThemeButton:hover, .ThemeButton:focus-visible {
   color: var(--color-one);
 }
 
 @media (min-width: 1024px) {
-  .themeButton {
+  .ThemeButton {
     padding: 0.3em;
     margin: 0;
   }
-  .themeButton:hover, .themeButton:focus-visible {
+  .ThemeButton:hover, .ThemeButton:focus-visible {
     color: var(--color-three);
     outline: 1px dashed var(--color-three);
     background-color: var(--color-one-hover);

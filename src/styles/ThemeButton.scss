@@ -1,22 +1,6 @@
 @import './variables.scss';
 
-/* .button__logIn {
-    font-weight: 700;
-    font-family: inherit;
-    position: relative;
-    overflow: hidden;
-
-    span {
-        position: absolute;
-        background: var(--color-three);
-        transform: translate(-50%, -50%);
-        pointer-events: none;
-        border-radius: 50%;
-        animation: ripples 1000ms linear infinite;
-    }
-} */
-
-.themeButton{
+.ThemeButton {
     font-size: $font-lgg;
     color: var(--color-mobilenavtext);
     display: flex;
@@ -28,23 +12,25 @@
     background-color: transparent;
     margin-bottom: .2em;
 
-    i{
+    i {
         line-height: 1;
     }
 
-    &:hover, &:focus-visible{
+    &:hover,
+    &:focus-visible {
         color: var(--color-one);
     }
 
 }
 
 
-@media (min-width: 1024px){
-    .themeButton{
+@media (min-width: 1024px) {
+    .ThemeButton {
         padding: .3em;
         margin: 0;
 
-        &:hover, &:focus-visible{
+        &:hover,
+        &:focus-visible {
             color: var(--color-three);
             outline: 1px dashed var(--color-three);
             background-color: var(--color-one-hover);
