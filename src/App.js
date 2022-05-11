@@ -11,6 +11,7 @@ import Checkout from './Components/Checkout';
 import Error404 from './Components/Error404';
 import CartContextProvider from './Context/CartContext';
 import ThemeContextProvider from './Context/ThemeContext';
+import AuthContextProvider from './Context/AuthContext'
 
 
 function App() {
@@ -24,24 +25,26 @@ function App() {
 
   return (
     <>
-      <ThemeContextProvider>
-        <CartContextProvider>
-          <BrowserRouter>
-            <NavBar brand={brand} />
-            <TabSelector />
-            <Routes>
-              <Route path="/" element={<ItemListContainer />} />
-              <Route path="/item/:productId" element={<ItemDetailContainer />} />
-              <Route path="/categories" element={<Categories />} />
-              <Route path="/categories/:categoryId" element={<ItemListContainer />} />
-              <Route path="/search/:searchId" element={<ItemListContainer />} />
-              <Route path="/checkout" element={<Checkout />} />
-              <Route path="/*" element={<Error404 />} />
-            </Routes>
-            <Footer />
-          </BrowserRouter>
-        </CartContextProvider>
-      </ThemeContextProvider>
+      <AuthContextProvider>
+        <ThemeContextProvider>
+          <CartContextProvider>
+            <BrowserRouter>
+              <NavBar brand={brand} />
+              <TabSelector />
+              <Routes>
+                <Route path="/" element={<ItemListContainer />} />
+                <Route path="/item/:productId" element={<ItemDetailContainer />} />
+                <Route path="/categories" element={<Categories />} />
+                <Route path="/categories/:categoryId" element={<ItemListContainer />} />
+                <Route path="/search/:searchId" element={<ItemListContainer />} />
+                <Route path="/checkout" element={<Checkout />} />
+                <Route path="/*" element={<Error404 />} />
+              </Routes>
+              <Footer />
+            </BrowserRouter>
+          </CartContextProvider>
+        </ThemeContextProvider>
+      </AuthContextProvider>
 
     </>
   );

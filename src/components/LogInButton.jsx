@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../styles/css/LogInButton.css'
+import { AuthContext } from '../Context/AuthContext'
 
 const buttonRipple = (e) => {
     let x = e.clientX - e.target.getBoundingClientRect().x;
@@ -15,8 +16,10 @@ const buttonRipple = (e) => {
 }
 
 export default function LogInButton() {
+    const { authLogIn } = useContext(AuthContext);
+    
     return (
-        <button onClick={buttonRipple} className="button is-dark is-size-5-widescreen is-size-6-desktop is-size-5-touch LogInButton">
+        <button onClick={(e)=>{buttonRipple(e); authLogIn()}} className="button is-dark is-size-5-widescreen is-size-6-desktop is-size-5-touch LogInButton">
             Ingresar
         </button>
     )
