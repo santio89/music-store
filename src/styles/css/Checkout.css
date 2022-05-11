@@ -350,8 +350,8 @@
   font-size: 0.68em;
   color: var(--color-three-dark);
   position: absolute;
-  top: 40%;
-  right: -26%;
+  bottom: -1ch;
+  left: 2ch;
 }
 .Checkout__details__resumen__buttons {
   font-family: "Courier New", Courier, monospace;
