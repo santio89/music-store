@@ -16,7 +16,7 @@
 }
 .nav__home {
   color: var(--color-mobilenavtext);
-  padding: 0.4em;
+  padding: 8px 12px;
 }
 .nav__home:hover, .nav__home:focus {
   color: var(--color-one);
@@ -45,19 +45,33 @@
   transform: scale(2.4) translateX(-20%) translateY(12%);
 }
 
+.navbar-start {
+  font-size: 1.25rem;
+  margin-left: 0.4rem;
+}
+
 .navbar-end {
   font-size: 1.4rem;
 }
-.navbar-end .buttons {
+.navbar-end .navbar-buttons {
+  position: fixed;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0 12px;
+  height: 64px;
+}
+.navbar-end .navbar-buttons .buttons {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
+  margin: 0;
 }
 
 @media (max-width: 1023px) {
-  /* media query mobile nav */
   .nav {
     position: relative;
   }
@@ -73,18 +87,32 @@
     background: var(--color-three-accent) !important;
   }
 
+  .navbar-start,
+.navbar-end {
+    margin-left: 0.4rem;
+  }
+
   .navbar-menu {
     display: block;
     position: absolute;
     left: 0;
     right: 0;
-    top: -250%;
+    top: -260%;
     transition: top 400ms ease-in-out;
     pointer-events: none;
     padding-top: calc(0.4rem + 20%);
     margin-top: -20%;
     z-index: -1;
-    padding-bottom: 0.8rem;
+    padding-bottom: 1.8rem;
+    will-change: transform;
+  }
+
+  .navbar-end .navbar-buttons {
+    position: static;
+    padding: 0.38em;
+  }
+  .navbar-end .navbar-buttons .buttons {
+    width: 100%;
   }
 
   .navbar-menu.is-active {
@@ -93,7 +121,6 @@
     transition: none;
     -webkit-animation: bounceInDown 600ms ease-in-out;
             animation: bounceInDown 600ms ease-in-out;
-    /*   transform: translateY(0); */
   }
 
   /* fin media query mobile nav  */
@@ -141,7 +168,16 @@ a.navbar-item:focus {
   }
 }
 @media (min-width: 1216px) {
-  .navbar-end {
+  .navbar-start, .navbar-end {
     font-size: 1.5rem;
+  }
+
+  .navbar-start {
+    margin-left: calc(50% - 120px);
+    transform: translateX(-50%);
+  }
+
+  .navbar-end .buttons {
+    gap: 1rem;
   }
 }/*# sourceMappingURL=NavBar.css.map */

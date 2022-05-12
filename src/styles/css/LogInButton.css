@@ -36,7 +36,7 @@
 
 .profilePic {
   aspect-ratio: 1;
-  width: 60px;
+  width: 64px;
   border-radius: 50%;
   overflow: hidden;
   margin-right: 1vw;
@@ -74,10 +74,10 @@
   font-weight: bold;
   font-size: 0.76em;
   text-align: left;
-  padding: 0.1rem 2.8rem 0.1rem 2rem;
+  padding: 0.08rem 2.8rem 0.08rem 2rem;
 }
 .userOptions button:hover, .userOptions button:focus-visible, .userOptions a:hover, .userOptions a:focus-visible {
-  outline: 2px dashed var(--color-three);
+  outline: 2px dashed var(--color-one);
 }
 .userOptions button:nth-child(1), .userOptions a:nth-child(1) {
   border-radius: 0.2em 0 0 0;
@@ -101,5 +101,8 @@
 
   .userOptions {
     margin-left: 0;
+  }
+  .userOptions button:hover, .userOptions button:focus-visible, .userOptions a:hover, .userOptions a:focus-visible {
+    outline: 2px dashed var(--color-three);
   }
 }/*# sourceMappingURL=LogInButton.css.map */

@@ -39,7 +39,7 @@
 
 .profilePic {
     aspect-ratio: 1;
-    width: 60px;
+    width: 64px;
     border-radius: 50%;
     overflow: hidden;
     margin-right: 1vw;
@@ -50,7 +50,7 @@
     img {
         width: 100%;
         max-height: none;
-        object-fit: cover;
+        object-fit: cover;  
     }
 
     &:hover,
@@ -80,10 +80,10 @@
         font-weight: bold;
         font-size: .76em;
         text-align: left;
-        padding: .1rem 2.8rem .1rem 2rem; 
+        padding: .08rem 2.8rem .08rem 2rem; 
 
         &:hover, &:focus-visible{
-            outline: 2px dashed var(--color-three);
+            outline: 2px dashed var(--color-one);
         }
 
         &:nth-child(1){
@@ -109,9 +109,15 @@
         &.is-active {
             outline: 3px dashed var(--color-three);
         }
-    }
+    }       
 
     .userOptions{
         margin-left: 0;
+
+        button, a{
+            &:hover, &:focus-visible{
+                outline: 2px dashed var(--color-three);
+            }
+        }
     }
 }

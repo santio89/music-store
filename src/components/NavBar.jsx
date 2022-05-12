@@ -36,7 +36,7 @@ export default function NavBar({ brand }) {
                     </button>
                 </div>
                 <div className={`navbar-menu ${navOpen ? "is-active" : ""}`}>
-                    <div className="navbar-end">
+                    <div className="navbar-start">
                         <Link to="/" className="navbar-item nav__home" role="button" onClick={() => { navClosed(); window.scrollTo(0, 0) }}>
                             Inicio
                         </Link>
@@ -47,10 +47,10 @@ export default function NavBar({ brand }) {
                     </div>
 
                     <div className="navbar-end">
-                        <div className="navbar-item">
+                        <div className="navbar-item navbar-buttons">
                             <div className="buttons">
                                 <ThemeButton navClosed={navClosed} />
-                                <LogInButton />
+                                <LogInButton navClosed={navClosed} />
                             </div>
                         </div>
                     </div>

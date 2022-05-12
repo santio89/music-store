@@ -21,7 +21,7 @@
 
     &__home {
         color: var(--color-mobilenavtext);
-        padding: .4em;
+        padding: 8px 12px;
 
         &:hover,
         &:focus {
@@ -57,22 +57,36 @@
     transform: scale(2.4) translateX(-20%) translateY(12%);
 }
 
+.navbar-start {
+    font-size: $font-sm;
+    margin-left: .4rem;
+}
+
 .navbar-end {
     font-size: $font-smm;
 
-    .buttons {
+    .navbar-buttons {
+        position: fixed;
         display: flex;
         flex-flow: row wrap;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        gap: 1rem;
+        padding: 0 12px;
+        height: 64px;
+
+        .buttons {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: .8rem;
+            margin: 0;
+        }
     }
 }
 
 
 @media(max-width: 1023px) {
-
-    /* media query mobile nav */
     .nav {
         position: relative;
 
@@ -92,18 +106,35 @@
         }
     }
 
+    .navbar-start,
+    .navbar-end {
+        margin-left: .4rem;
+    }
+
     .navbar-menu {
         display: block;
         position: absolute;
         left: 0;
         right: 0;
-        top: -250%;
+        top: -260%;
         transition: top 400ms ease-in-out;
         pointer-events: none;
         padding-top: calc(.4rem + 20%);
         margin-top: -20%;
         z-index: -1;
-        padding-bottom: .8rem;
+        padding-bottom: 1.8rem;
+        will-change: transform;
+    }
+
+    .navbar-end {
+        .navbar-buttons {
+            position: static;
+            padding: .38em;
+
+            .buttons {
+                width: 100%;
+            }
+        }
     }
 
     .navbar-menu.is-active {
@@ -111,7 +142,6 @@
         pointer-events: auto;
         transition: none;
         animation: bounceInDown 600ms ease-in-out;
-        /*   transform: translateY(0); */
     }
 
     /* fin media query mobile nav  */
@@ -173,7 +203,18 @@
 
 
 @media (min-width: 1216px) {
-    .navbar-end {
+    .navbar-start, .navbar-end {
         font-size: $font-md;
+    }
+
+    .navbar-start{
+        margin-left: calc(50% - 120px);
+        transform: translateX(-50%);
+    }
+
+    .navbar-end{
+        .buttons{
+            gap: 1rem;
+        }
     }
 }

@@ -19,7 +19,7 @@
 
 @media (min-width: 1024px) {
   .ThemeButton {
-    padding: 0.3em;
+    padding: 0.2em;
     margin: 0;
   }
   .ThemeButton:hover, .ThemeButton:focus-visible {
