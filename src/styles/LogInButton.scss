@@ -62,27 +62,36 @@
 
 .userOptions {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: center;
-    align-items: center;
-    gap: .4rem;
+    align-items: stretch;
+    gap: .1rem;
     background: rgba(255, 255, 255, .4);
-    padding: .4rem 2rem;
+    padding: .1rem;
     margin-left: auto;
-    margin-right: -2rem;
-    border-radius: .4em 0 0 .4em;
+    margin-right: -2.8rem;
+    border-radius: .2em 0 0 .2em;
 
     button {
         color: var(--color-three);
         font-size: $font-fluid-xxs;
         background: var(--color-one-dark);
-        padding: .28em;
-        border-radius: .2em;
+        padding: .1em .3em;
         font-family: 'Courier New', Courier, monospace;
         font-weight: bold;
+        font-size: .74em;
+        text-align: center;
+        padding: .1rem 2.8rem; 
 
         &:hover, &:focus-visible{
-            outline: 1px dashed var(--color-three);
+            outline: 2px dashed var(--color-three);
+        }
+
+        &:nth-child(1){
+            border-radius: .2em 0 0 0;
+        }
+        &:nth-child(2){
+            border-radius: 0 0 0 .2em;
         }
     }
 }

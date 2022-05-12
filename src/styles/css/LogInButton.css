@@ -56,27 +56,35 @@
 
 .userOptions {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   justify-content: center;
-  align-items: center;
-  gap: 0.4rem;
+  align-items: stretch;
+  gap: 0.1rem;
   background: rgba(255, 255, 255, 0.4);
-  padding: 0.4rem 2rem;
+  padding: 0.1rem;
   margin-left: auto;
-  margin-right: -2rem;
-  border-radius: 0.4em 0 0 0.4em;
+  margin-right: -2.8rem;
+  border-radius: 0.2em 0 0 0.2em;
 }
 .userOptions button {
   color: var(--color-three);
   font-size: clamp(0.6rem, 0.6rem + 1vw, 1.2rem);
   background: var(--color-one-dark);
-  padding: 0.28em;
-  border-radius: 0.2em;
+  padding: 0.1em 0.3em;
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
+  font-size: 0.74em;
+  text-align: center;
+  padding: 0.1rem 2.8rem;
 }
 .userOptions button:hover, .userOptions button:focus-visible {
-  outline: 1px dashed var(--color-three);
+  outline: 2px dashed var(--color-three);
+}
+.userOptions button:nth-child(1) {
+  border-radius: 0.2em 0 0 0;
+}
+.userOptions button:nth-child(2) {
+  border-radius: 0 0 0 0.2em;
 }
 
 @media (min-width: 1024px) {
