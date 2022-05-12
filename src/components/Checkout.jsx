@@ -41,7 +41,6 @@ export default function Checkout() {
   }, [checkoutCode])
 
 
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
