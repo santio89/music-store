@@ -181,7 +181,7 @@ export default function Checkout() {
                     })}
                   </div>
                   <p className='Checkout__success__details__total'>TOTAL: ${checkoutOrder.total}</p>
-                  <p className='Checkout__success__details__date'>Fecha de compra: {(new Date(checkoutOrder?.date?.seconds * 1000).toLocaleDateString())}</p>
+                  <p className='Checkout__success__details__date'>Fecha de compra: {(new Date(checkoutOrder?.date?.seconds * 1000).toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute:'2-digit', hour12: false}))}</p>
                 </details>
 
                 <details className='Checkout__success__details Checkout__success__details--buyer'>
