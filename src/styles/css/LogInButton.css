@@ -10,21 +10,21 @@
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  line-height: 1.2;
+  line-height: 1;
 }
 .LogInButton i {
   font-size: 1.12em;
   background: var(--color-one);
-  padding: 0.22em;
+  padding: 0.2em;
   text-shadow: 1px 1px 0 var(--color-three-dark);
   border-radius: 50%;
-  line-height: 1.2;
+  line-height: 1;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
 }
-.LogInButton span:not(.LogInButton__Ingresar) {
+.LogInButton span.spanRipple {
   position: absolute;
   background: var(--color-three);
   transform: translate(-50%, -50%);
@@ -70,12 +70,11 @@
   color: var(--color-three);
   font-size: clamp(0.6rem, 0.6rem + 1vw, 1.2rem);
   background: var(--color-one-dark);
-  padding: 0.1em 0.3em;
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
   font-size: 0.76em;
-  text-align: center;
-  padding: 0.1rem 2.8rem;
+  text-align: left;
+  padding: 0.1rem 2.8rem 0.1rem 2rem;
 }
 .userOptions button:hover, .userOptions button:focus-visible {
   outline: 2px dashed var(--color-three);

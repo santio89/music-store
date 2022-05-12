@@ -1,13 +1,18 @@
-import React, { createContext, useState } from 'react'
-import { getAuth, signOut, signInWithPopup, GoogleAuthProvider, setPersistence, browserLocalPersistence, onAuthStateChanged } from "firebase/auth";
+import React, { createContext, useState, useEffect } from 'react'
+import { getAuth, signOut, signInWithRedirect, GoogleAuthProvider, setPersistence, browserLocalPersistence, onAuthStateChanged } from "firebase/auth";
 
 export const AuthContext = createContext();
 
 
 export default function AuthContextProvider({ children }) {
     const [authUser, setAuthUser] = useState(null);
+    const [authLoading, setAuthLoading] = useState(false);
+
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
+    googleProvider.setCustomParameters({
+        prompt: 'select_account'
+    });
 
     onAuthStateChanged(auth, (user) => {
         setAuthUser(user);
@@ -16,14 +21,18 @@ export default function AuthContextProvider({ children }) {
     const authLogIn = () => {
         setPersistence(auth, browserLocalPersistence)
             .then(() => {
-                return signInWithPopup(auth, googleProvider).then((result) => {
+                setAuthLoading(true);
+                return signInWithRedirect(auth, googleProvider).then((result) => {
                     setAuthUser(result.user);
+
                 }).catch((error) => {
-                    console.log("error in auth sign in: " + error)
+                    setAuthLoading(false);
+                    console.log("error in auth sign in: " + error);
                 });
             })
             .catch((error) => {
-                console.log("error setting persistance: " + error)
+                setAuthLoading(false);
+                console.log("error setting persistance: " + error);
             });
     }
 
@@ -35,9 +44,12 @@ export default function AuthContextProvider({ children }) {
         });
     }
 
+    useEffect(()=>{
+        setAuthLoading(false);
+    }, [authUser])
 
     return (
-        <AuthContext.Provider value={{ authLogIn, authLogOut, authUser }}>
+        <AuthContext.Provider value={{ authLogIn, authLogOut, authUser, authLoading }}>
             {children}
         </AuthContext.Provider>
     )
