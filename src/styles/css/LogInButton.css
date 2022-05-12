@@ -6,8 +6,15 @@
   margin-left: auto;
   margin-right: 1vw;
   transition: 200ms;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
-.LogInButton span {
+.LogInButton i {
+  line-height: 1;
+}
+.LogInButton span:not(.LogInButton__Ingresar) {
   position: absolute;
   background: var(--color-three);
   transform: translate(-50%, -50%);
