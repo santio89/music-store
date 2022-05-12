@@ -36,7 +36,7 @@ export default function NavBar({ brand }) {
                     </button>
                 </div>
                 <div className={`navbar-menu ${navOpen ? "is-active" : ""}`}>
-                    <div className="navbar-end is-size-4-widescreen is-size-5-desktop is-size-4-touch">
+                    <div className="navbar-end">
                         <Link to="/" className="navbar-item nav__home" role="button" onClick={() => { navClosed(); window.scrollTo(0, 0) }}>
                             Inicio
                         </Link>

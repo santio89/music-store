@@ -1,20 +1,14 @@
 $font-xxxs: .6rem;
-/* bulma is-size-7 */
 $font-xxs: .75rem; 
- /* bulma is-size-6 */
 $font-xs: 1rem;
- /* bulma is-size-5 */
 $font-sm: 1.25rem;
- /* bulma is-size-4 */
+$font-smm: 1.4rem;
 $font-md: 1.5rem;
 $font-mdm: 1.6rem;
 $font-mdd: 1.8rem;
-/* bulma is-size-3 */
 $font-lg: 2rem; 
 $font-lgg: 2.4rem;
-/* bulma is-size-2 */
 $font-xl: 2.5rem; 
-/* bulma is-size-1 */
 $font-xxl: 3rem; 
 
 $font-fluid-xxs: clamp(.6rem, .6rem + 1vw, 1.2rem);

@@ -1,52 +1,54 @@
 @import './variables.scss';
 
-.nav{
+.nav {
     min-height: 76px;
     z-index: 2;
     font-size: 1rem;
     background: var(--color-one) !important;
 
-    &__logo{
+    &__logo {
         font-weight: 800;
         text-shadow: 2px 2px 0 var(--color-two);
         font-size: $font-xl;
 
-        &:hover, &:focus{
+        &:hover,
+        &:focus {
             outline: 2px dashed var(--color-three);
             outline-offset: -2px;
             background: var(--color-one-hover) !important;
         }
     }
 
-    &__home{
+    &__home {
         color: var(--color-mobilenavtext);
         padding: .4em;
 
-        &:hover, &:focus{
-            color: var(--color-one); 
+        &:hover,
+        &:focus {
+            color: var(--color-one);
             outline: 1px dashed var(--color-three);
             background: var(--color-one-hover) !important;
         }
     }
 }
 
-.navbar-brand{
+.navbar-brand {
     min-height: inherit;
     overflow: hidden;
     background: var(--color-one);
 }
 
-.navbar-burger{    
-    span{
+.navbar-burger {
+    span {
         border-radius: 1em;
         transition: transform 400ms, opacity 400ms;
     }
 
-    &:hover{
+    &:hover {
         background: none;
     }
 
-    &:focus-visible span{
+    &:focus-visible span {
         background: var(--color-one-dark);
     }
 }
@@ -55,36 +57,41 @@
     transform: scale(2.4) translateX(-20%) translateY(12%);
 }
 
-.navbar-end{
-    .buttons{
+.navbar-end {
+    font-size: $font-smm;
+
+    .buttons {
         display: flex;
         flex-flow: row wrap;
-        justify-content: start;
+        justify-content: space-between;
         align-items: center;
         gap: 1rem;
     }
 }
 
 
-@media(max-width: 1023px){
+@media(max-width: 1023px) {
+
     /* media query mobile nav */
-    .nav{
+    .nav {
         position: relative;
-        &__searchIcon{
+
+        &__searchIcon {
             color: var(--color-two);
         }
 
-        &__home{
+        &__home {
             color: var(--color-mobilenavtext);
 
-            &:hover, &:focus{
+            &:hover,
+            &:focus {
                 color: var(--color-one) !important;
                 outline: none;
                 background: var(--color-three-accent) !important;
             }
         }
     }
-    
+
     .navbar-menu {
         display: block;
         position: absolute;
@@ -98,61 +105,75 @@
         z-index: -1;
         padding-bottom: .8rem;
     }
-    
+
     .navbar-menu.is-active {
         top: 100%;
         pointer-events: auto;
         transition: none;
         animation: bounceInDown 600ms ease-in-out;
-      /*   transform: translateY(0); */
-    }   
+        /*   transform: translateY(0); */
+    }
+
     /* fin media query mobile nav  */
 
-    .searchBar{
+    .searchBar {
         padding: 0;
         border: none;
         width: 100%;
         display: flex;
 
-        &:hover, &:focus, &:focus-within{
+        &:hover,
+        &:focus,
+        &:focus-within {
             background: none;
         }
 
-        &__wrapper{
-            &:hover, &:focus, &:focus-within{
+        &__wrapper {
+
+            &:hover,
+            &:focus,
+            &:focus-within {
                 background: var(--color-three-accent);
             }
         }
 
-        &__input{
+        &__input {
             color: var(--color-one-dark);
             width: 100%;
 
-            &::placeholder{
+            &::placeholder {
                 color: var(--color-one-dark);
             }
         }
 
-        &__icon{
+        &__icon {
             margin-right: 3.1vw;
             color: var(--color-two);
 
-            &:hover, &:focus{
+            &:hover,
+            &:focus {
                 color: var(--color-one-dark);
             }
         }
     }
 
-    a.navbar-item:hover, a.navbar-item:focus{
+    a.navbar-item:hover,
+    a.navbar-item:focus {
         color: var(--color-one-dark);
     }
 }
 
 
 
-@media(max-width: 346px){
-    .nav__logo{
+@media(max-width: 346px) {
+    .nav__logo {
         font-size: $font-lg;
     }
 }
 
+
+@media (min-width: 1216px) {
+    .navbar-end {
+        font-size: $font-md;
+    }
+}
