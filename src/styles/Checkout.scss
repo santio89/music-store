@@ -718,6 +718,13 @@
     }
 }
 
+@media (min-width: 1024px){
+    .CheckoutWrapper {
+        min-height: calc(100vh - 108px - 60px - .4rem - 1rem);
+        /* container height= 100vh-navHeight-tabsHeight-margins */
+    }
+}
+
 @media (min-width: 1216px) {
     .Checkout {
         width: 96%;

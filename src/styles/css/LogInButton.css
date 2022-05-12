@@ -66,7 +66,7 @@
   margin-right: -2.8rem;
   border-radius: 0.2em 0 0 0.2em;
 }
-.userOptions button {
+.userOptions button, .userOptions a {
   color: var(--color-three);
   font-size: clamp(0.6rem, 0.6rem + 1vw, 1.2rem);
   background: var(--color-one-dark);
@@ -76,13 +76,13 @@
   text-align: left;
   padding: 0.1rem 2.8rem 0.1rem 2rem;
 }
-.userOptions button:hover, .userOptions button:focus-visible {
+.userOptions button:hover, .userOptions button:focus-visible, .userOptions a:hover, .userOptions a:focus-visible {
   outline: 2px dashed var(--color-three);
 }
-.userOptions button:nth-child(1) {
+.userOptions button:nth-child(1), .userOptions a:nth-child(1) {
   border-radius: 0.2em 0 0 0;
 }
-.userOptions button:nth-child(2) {
+.userOptions button:nth-child(2), .userOptions a:nth-child(2) {
   border-radius: 0 0 0 0.2em;
 }
 

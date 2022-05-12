@@ -1,0 +1,15 @@
+.ComprasWrapper {
+  min-height: calc(100vh - 76px - 60px - 0.2rem);
+  /* container height= 100vh-navHeight-tabsHeight-margins */
+  width: 100%;
+  max-width: 1800px;
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.ComprasWrapper > span {
+  transform: translateY(-50%);
+}/*# sourceMappingURL=Compras.css.map */

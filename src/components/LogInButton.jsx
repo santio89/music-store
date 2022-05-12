@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import { Link } from 'react-router-dom'
 import '../styles/css/LogInButton.css'
 import { AuthContext } from '../Context/AuthContext'
 import { useEffect } from 'react';
@@ -34,7 +35,7 @@ export default function LogInButton() {
 
     return (
         <>
-            {userSettings ? <div className='userOptions'><button >Compras</button><button onClick={() => authLogOut()}>Salir</button></div> : null}
+            {userSettings ? <div className='userOptions'><Link to="/compras" >Compras</Link><button onClick={() => authLogOut()}>Salir</button></div> : null}
             {!authUser ? <button onClick={(e) => { buttonRipple(e); authLogIn() }} className="button is-dark is-size-5 LogInButton">
                 <span className='LogInButton__Ingresar'>Ingresar: &nbsp;</span>{authLoading?<PuffLoader color={"var(--color-one)"} size={20} speedMultiplier={1.2} />:<i className="bi bi-google"></i>}
             </button> : <button className={`profilePic ${userSettings ? "is-active" : ""}`} onClick={() => toggleUserSettings()}><img alt="Profile Pic" src={authUser.photoURL}></img></button>
