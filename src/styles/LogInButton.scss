@@ -12,9 +12,19 @@
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+    line-height: 1.2;
 
     i{
-        line-height: 1;
+        font-size: 1.12em;
+        background: var(--color-one);
+        padding: .22em;
+        text-shadow: 1px 1px 0 var(--color-three-dark);
+        border-radius: 50%;
+        line-height: 1.2;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
     }
 
     span:not(.LogInButton__Ingresar) {

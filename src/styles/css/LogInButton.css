@@ -10,9 +10,19 @@
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  line-height: 1.2;
 }
 .LogInButton i {
-  line-height: 1;
+  font-size: 1.12em;
+  background: var(--color-one);
+  padding: 0.22em;
+  text-shadow: 1px 1px 0 var(--color-three-dark);
+  border-radius: 50%;
+  line-height: 1.2;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
 .LogInButton span:not(.LogInButton__Ingresar) {
   position: absolute;
