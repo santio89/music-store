@@ -343,7 +343,7 @@
   font-size: 0.68em;
   color: var(--color-three-dark);
   position: absolute;
-  bottom: -1ch;
+  bottom: -1.2ch;
   left: 2ch;
 }
 .Checkout__details__resumen__buttons {

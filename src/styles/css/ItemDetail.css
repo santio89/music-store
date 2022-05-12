@@ -236,16 +236,15 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  letter-spacing: 0.03em;
-  position: relative;
+  letter-spacing: 0.04em;
 }
 .ItemDetail__counterWrapper__price span {
   font-size: 0.52em;
   color: var(--color-three-dark);
   text-shadow: 1px 1px var(--color-three);
-  position: absolute;
-  top: -20%;
-  right: -64%;
+  margin-left: 0.4ch;
+  bottom: 0;
+  right: 0;
   letter-spacing: 0.02em;
 }
 .ItemDetail__checkout {

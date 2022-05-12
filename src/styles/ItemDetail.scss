@@ -261,16 +261,15 @@
             text-shadow: 2px 2px var(--color-one-dark);
             line-height: 1.2;
             width: fit-content;
-            letter-spacing: .03em;
-            position: relative;
+            letter-spacing: .04em;
 
             span {
                 font-size: .52em;
                 color: var(--color-three-dark);
                 text-shadow: 1px 1px var(--color-three);
-                position: absolute;
-                top: -20%;
-                right: -64%;
+                margin-left: .4ch;
+                bottom: 0;
+                right: 0;
                 letter-spacing: .02em;
             }
 
