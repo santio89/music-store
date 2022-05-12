@@ -1,33 +1,29 @@
-import React, { createContext, useState, useEffect } from 'react'
-import { getAuth, signOut, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import React, { createContext, useState } from 'react'
+import { getAuth, signOut, signInWithPopup, GoogleAuthProvider, setPersistence, browserLocalPersistence, onAuthStateChanged } from "firebase/auth";
 
 export const AuthContext = createContext();
 
 
 export default function AuthContextProvider({ children }) {
-    /*     const [authCredential, setAuthCredential] = useState(null);
-        const [authToken, setAuthToken] = useState(null); */
     const [authUser, setAuthUser] = useState(null);
-    const [auth, setAuth] = useState(null);
+    const auth = getAuth();
+    const googleProvider = new GoogleAuthProvider();
 
+    onAuthStateChanged(auth, (user) => {
+        setAuthUser(user);
+    })
 
     const authLogIn = () => {
-        const provider = new GoogleAuthProvider();
-        signInWithPopup(auth, provider)
-            .then((result) => {
-                // This gives you a Google Access Token. You can use it to access the Google API.
-                /*   setAuthCredential(GoogleAuthProvider.credentialFromResult(result));
-                  setAuthToken(GoogleAuthProvider.credentialFromResult(result).accessToken); */
-                // The signed-in user info.
-                setAuthUser(result.user);
-                // ...
-            }).catch((error) => {
-                // Handle Errors here.
-                console.log("authentication error: " + error)
-
-                // The AuthCredential type that was used.
-                /*   setAuthCredential(GoogleAuthProvider.credentialFromError(error)); */
-                // ...
+        setPersistence(auth, browserLocalPersistence)
+            .then(() => {
+                return signInWithPopup(auth, googleProvider).then((result) => {
+                    setAuthUser(result.user);
+                }).catch((error) => {
+                    console.log("error in auth sign in: " + error)
+                });
+            })
+            .catch((error) => {
+                console.log("error setting persistance: " + error)
             });
     }
 
@@ -39,13 +35,6 @@ export default function AuthContextProvider({ children }) {
         });
     }
 
-    useEffect(() => {
-    }, [authUser])
-
-
-    useEffect(() => {
-        setAuth(() => getAuth());
-    }, [])
 
     return (
         <AuthContext.Provider value={{ authLogIn, authLogOut, authUser }}>

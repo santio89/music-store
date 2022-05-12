@@ -96,10 +96,10 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
     recaptchaRef.current.execute();
   }, [recaptchaRef])
 
-  useEffect(()=>{
-    setName(authUser?.displayName)
-    setEmail(authUser?.email)
-    setPhone(authUser?.phoneNumber)
+  useEffect(() => {
+    setName(authUser?.displayName != null ? authUser?.displayName : "")
+    setEmail(authUser?.email != null ? authUser?.email : "")
+    setPhone(authUser?.phoneNumber != null ? authUser?.phoneNumber : "")
   }, [authUser])
 
   return (
