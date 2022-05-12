@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function ThemeButton({ navClosed }) {
     const { toggleDarkTheme, darkTheme } = useContext(ThemeContext);
 
+
     return (
         <button className="ThemeButton" onClick={() => { toggleDarkTheme(); navClosed() }}>
             <AnimatePresence exitBeforeEnter>

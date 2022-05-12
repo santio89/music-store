@@ -2,9 +2,9 @@ import React, { createContext, useState, useEffect } from 'react'
 
 export const ThemeContext = createContext();
 
-export default function ThemeContextProvider({children}) {
-    const [darkTheme, setDarkTheme] = useState(true && JSON.parse(localStorage.getItem("msDarkTheme")));
-    
+export default function ThemeContextProvider({ children }) {
+    const [darkTheme, setDarkTheme] = useState(true && (JSON.parse(localStorage.getItem("msDarkTheme")) != null ? JSON.parse(localStorage.getItem("msDarkTheme")) : true));
+
     const toggleDarkTheme = () => {
         setDarkTheme(theme => !theme);
     }
@@ -25,18 +25,18 @@ export default function ThemeContextProvider({children}) {
     useEffect(() => {
         localStorage.setItem("msDarkTheme", JSON.stringify(darkTheme));
 
-        if (darkTheme === false){
+        if (darkTheme === false) {
             document.body.classList.add("lightBackground")
-        } else{
+        } else {
             document.body.classList.remove("lightBackground")
         }
-      }, [darkTheme])
+    }, [darkTheme])
 
     return (
         <>
-                <ThemeContext.Provider value={{darkTheme, toggleDarkTheme}}>
-                    {children}
-                </ThemeContext.Provider>
+            <ThemeContext.Provider value={{ darkTheme, toggleDarkTheme }}>
+                {children}
+            </ThemeContext.Provider>
         </>
     )
 }

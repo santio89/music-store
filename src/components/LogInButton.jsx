@@ -34,7 +34,7 @@ export default function LogInButton() {
         <>
             {userSettings ? <div className='userOptions'><button >Compras</button><button onClick={() => authLogOut()}>Salir</button></div> : null}
             {!authUser ? <button onClick={(e) => { buttonRipple(e); authLogIn() }} className="button is-dark is-size-5 LogInButton">
-                <span className='LogInButton__Ingresar'>Ingresar: &nbsp;</span><i class="bi bi-google"></i>
+                <span className='LogInButton__Ingresar'>Ingresar: &nbsp;</span><i className="bi bi-google"></i>
             </button> : <button className={`profilePic ${userSettings ? "is-active" : ""}`} onClick={() => toggleUserSettings()}><img alt="Profile Pic" src={authUser.photoURL}></img></button>
             }
         </>
