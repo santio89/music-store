@@ -27,7 +27,7 @@
   align-items: center;
   font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
   color: var(--color-one);
-  text-shadow: 2px 2px 0 var(--color-three);
+  text-shadow: 2px 2px 0 var(--color-four);
   margin-bottom: 8rem;
 }
 .Checkout h1 {
@@ -36,13 +36,14 @@
   width: 100%;
   font-weight: bold;
   margin-top: 0.8rem;
+  text-shadow: 2px 2px 0 var(--color-three);
 }
 .Checkout__back {
   position: absolute;
   left: min(2%, 1rem);
   top: min(-20px, -2%);
   color: var(--color-one-dark);
-  text-shadow: 1px 1px 0 var(--color-three);
+  text-shadow: 1px 1px 0 var(--color-four);
   font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.8rem);
   font-weight: bold;
 }
@@ -94,13 +95,14 @@
   padding: 0.4em;
   font-family: var(--font-primary);
   font-weight: bold;
-  color: var(--color-back-dark);
+  color: var(--color-five);
   text-shadow: 1px 1px 0 var(--color-four);
   background: var(--color-one-dark);
   letter-spacing: 0.04em;
   text-align: center;
   margin-top: auto;
   font-size: 1em;
+  font-weight: bold;
   overflow: hidden;
 }
 .Checkout__details__list li {
@@ -142,7 +144,7 @@
 }
 .Checkout__details__list__li span {
   padding: 0.4em;
-  color: var(--color-three-accent);
+  color: var(--color-four);
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -164,10 +166,11 @@
   border: none;
   outline: none;
   transition: outline 200ms;
-  color: var(--color-three-accent);
+  color: var(--color-four);
   -moz-appearance: textfield;
   outline: 1px dashed var(--color-three-dark);
   border-radius: 0.2em;
+  font-weight: bold;
 }
 .Checkout__details__list__li input::-webkit-outer-spin-button, .Checkout__details__list__li input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -214,7 +217,7 @@
 }
 .Checkout__details__list__remove {
   color: var(--color-three-dark);
-  filter: drop-shadow(1px 1px 0 var(--color-three-accent));
+  filter: drop-shadow(1px 1px 0 var(--color-three));
   position: absolute;
   right: 2%;
   top: 0;
@@ -237,9 +240,9 @@
   border-radius: 0.1em;
   background: var(--color-one-dark);
   color: var(--color-back-dark);
-  text-shadow: 1px 1px 0 var(--color-three-accent);
+  text-shadow: 1px 1px 0 var(--color-four);
   padding: 0.1em;
-  outline: 1px dashed var(--color-three-accent);
+  outline: 1px dashed var(--color-three);
 }
 .Checkout__details__list__removeConfirm__buttons {
   display: flex;
@@ -249,15 +252,15 @@
   gap: 1.4em;
 }
 .Checkout__details__list__removeConfirm__buttons button {
-  color: var(--color-three-accent);
-  text-shadow: 2px 2px 0 var(--color-back-dark);
+  color: var(--color-four);
+  text-shadow: 1px 1px 0 var(--color-back-dark);
   line-height: 1;
   padding: 0.2em;
   border-radius: 0.1em;
 }
 .Checkout__details__list__removeConfirm__buttons button:hover, .Checkout__details__list__removeConfirm__buttons button:focus-visible {
   background: var(--color-one);
-  color: var(--color-three);
+  color: var(--color-four);
 }
 .Checkout__details__resumen {
   background-color: var(--color-back-dark);
@@ -301,8 +304,8 @@
   width: 100%;
 }
 .Checkout__details__resumen__clear__buttons button {
-  color: var(--color-three-accent);
-  text-shadow: 1px 1px var(--color-one);
+  color: var(--color-four);
+  text-shadow: 1px 1px var(--color-back);
   padding: 0.1em;
   border-radius: 0.1em;
   width: 100%;
@@ -327,7 +330,7 @@
   inset: 0;
   font-family: "Courier New", Courier, monospace;
   font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
-  color: var(--color-three);
+  color: var(--color-four);
   text-align: left;
   font-weight: bold;
   align-self: start;
@@ -394,13 +397,13 @@
 }
 .Checkout__details__resumen__buttons button:last-of-type,
 .Checkout__details__resumen__buttons a:last-of-type {
-  color: var(--color-three-accent);
+  color: var(--color-four);
 }
 .Checkout__details__resumen__buttons button:last-of-type:hover, .Checkout__details__resumen__buttons button:last-of-type:focus-visible,
 .Checkout__details__resumen__buttons a:last-of-type:hover,
 .Checkout__details__resumen__buttons a:last-of-type:focus-visible {
-  color: var(--color-three);
-  outline: 1px dashed var(--color-three);
+  color: var(--color-four);
+  outline: 1px dashed var(--color-four);
   background: var(--color-back);
 }
 .Checkout__details__resumen__buttons button.disabled,
@@ -452,7 +455,7 @@
   border-bottom: 2px dashed var(--color-one);
   width: 100%;
   padding: 0.44em;
-  color: var(--color-three);
+  color: var(--color-four);
   text-shadow: 2px 2px 0 var(--color-one);
   line-height: 1.4;
   margin-bottom: 0.4rem;
@@ -469,13 +472,13 @@
   align-self: end;
   padding: 0.4em;
   font-size: clamp(1rem, 1rem + 1.4vw, 2rem);
-  color: var(--color-three);
+  color: var(--color-four);
   text-shadow: 1px 1px 0 var(--color-one);
   transition: color 200ms, text-shadow 200ms;
 }
 .Checkout__success__continue:hover {
   color: var(--color-one);
-  text-shadow: 1px 1px 0 var(--color-three);
+  text-shadow: 1px 1px 0 var(--color-four);
 }
 .Checkout__success__code {
   font-family: "Courier New", Courier, monospace;
@@ -491,7 +494,7 @@
   margin-right: 0.4rem;
 }
 .Checkout__success__code i {
-  color: var(--color-three);
+  color: var(--color-four);
   text-shadow: 1px 1px 0 var(--color-one);
 }
 .Checkout__success__code:hover, .Checkout__success__code:focus-visible {
@@ -502,7 +505,7 @@
 }
 .Checkout__success__code:active i {
   color: var(--color-one);
-  text-shadow: 1px 1px 0 var(--color-three);
+  text-shadow: 1px 1px 0 var(--color-four);
 }
 .Checkout__success__details {
   width: calc(100% - 4px);
@@ -533,7 +536,7 @@
   font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
   color: var(--color-two);
   text-shadow: none;
-  color: var(--color-three);
+  color: var(--color-four);
   font-weight: normal;
   display: flex;
   flex-flow: row wrap;

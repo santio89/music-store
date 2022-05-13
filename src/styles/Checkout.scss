@@ -30,7 +30,7 @@
     align-items: center;
     font-size: $font-fluid-md;
     color: var(--color-one);
-    text-shadow: 2px 2px 0 var(--color-three);
+    text-shadow: 2px 2px 0 var(--color-four);
     margin-bottom: 8rem;
 
     h1 {
@@ -39,6 +39,7 @@
         width: 100%;
         font-weight: bold;
         margin-top: .8rem;
+        text-shadow: 2px 2px 0 var(--color-three);
     }
 
     &__back {
@@ -46,7 +47,7 @@
         left: min(2%, 1rem);
         top: min(-20px, -2%);
         color: var(--color-one-dark);
-        text-shadow: 1px 1px 0 var(--color-three);
+        text-shadow: 1px 1px 0 var(--color-four);
         font-size: $font-fluid-lg;
         font-weight: bold;
 
@@ -102,13 +103,14 @@
                 padding: .4em;
                 font-family: var(--font-primary);
                 font-weight: bold;
-                color: var(--color-back-dark);
+                color: var(--color-five);
                 text-shadow: 1px 1px 0 var(--color-four);
                 background: var(--color-one-dark);
                 letter-spacing: .04em;
                 text-align: center;
                 margin-top: auto;
                 font-size: 1em;
+                font-weight: bold;
                 overflow: hidden;
             }
 
@@ -157,7 +159,7 @@
 
                 span {
                     padding: .4em;
-                    color: var(--color-three-accent);
+                    color: var(--color-four);
                     display: flex;
                     flex-flow: row wrap;
                     justify-content: center;
@@ -181,10 +183,11 @@
                     border: none;
                     outline: none;
                     transition: outline 200ms;
-                    color: var(--color-three-accent);
+                    color: var(--color-four);
                     -moz-appearance: textfield;
                     outline: 1px dashed var(--color-three-dark);
                     border-radius: .2em;
+                    font-weight: bold;
 
                     &::-webkit-outer-spin-button,
                     &::-webkit-inner-spin-button {
@@ -243,7 +246,7 @@
 
             &__remove {
                 color: var(--color-three-dark);
-                filter: drop-shadow(1px 1px 0 var(--color-three-accent));
+                filter: drop-shadow(1px 1px 0 var(--color-three));
                 position: absolute;
                 right: 2%;
                 top: 0;
@@ -269,9 +272,9 @@
                 border-radius: .1em;
                 background: var(--color-one-dark);
                 color: var(--color-back-dark);
-                text-shadow: 1px 1px 0 var(--color-three-accent);
+                text-shadow: 1px 1px 0 var(--color-four);
                 padding: .1em;
-                outline: 1px dashed var(--color-three-accent);
+                outline: 1px dashed var(--color-three);
 
                 &__buttons{
                     display: flex;
@@ -281,15 +284,15 @@
                     gap: 1.4em;
                     
                     button{
-                        color: var(--color-three-accent);
-                        text-shadow: 2px 2px 0 var(--color-back-dark);
+                        color: var(--color-four);
+                        text-shadow: 1px 1px 0 var(--color-back-dark);
                         line-height: 1;
                         padding: .2em;
                         border-radius: .1em;
 
                         &:hover, &:focus-visible{
                             background: var(--color-one);
-                            color: var(--color-three);
+                            color: var(--color-four);
                         }
                     }
                 }
@@ -340,8 +343,8 @@
                     width: 100%;
 
                     button{
-                        color: var(--color-three-accent);
-                        text-shadow: 1px 1px var(--color-one);
+                        color: var(--color-four);
+                        text-shadow: 1px 1px var(--color-back);
                         padding: .1em;
                         border-radius: .1em;
                         width: 100%;
@@ -371,7 +374,7 @@
                 inset: 0;
                 font-family: 'Courier New', Courier, monospace;
                 font-size: $font-fluid-md;
-                color: var(--color-three);
+                color: var(--color-four);
                 text-align: left;
                 font-weight: bold;
                 align-self: start;
@@ -440,12 +443,12 @@
                     }
 
                     &:last-of-type {
-                        color: var(--color-three-accent);
+                        color: var(--color-four);
 
                         &:hover,
                         &:focus-visible {
-                            color: var(--color-three);
-                            outline: 1px dashed var(--color-three);
+                            color: var(--color-four);
+                            outline: 1px dashed var(--color-four);
                             background: var(--color-back);
                         }
                     }
@@ -508,7 +511,7 @@
             border-bottom: 2px dashed var(--color-one);
             width: 100%;
             padding: .44em;
-            color: var(--color-three);
+            color: var(--color-four);
             text-shadow: 2px 2px 0 var(--color-one);
             line-height: 1.4;
             margin-bottom: .4rem;
@@ -527,13 +530,13 @@
             align-self: end;
             padding: .4em;
             font-size: $font-fluid-mdd;
-            color: var(--color-three);
+            color: var(--color-four);
             text-shadow: 1px 1px 0 var(--color-one);
             transition: color 200ms, text-shadow 200ms;
 
             &:hover{
                 color: var(--color-one);
-                text-shadow: 1px 1px 0 var(--color-three);
+                text-shadow: 1px 1px 0 var(--color-four);
             }
         }
 
@@ -551,7 +554,7 @@
             margin-right: .4rem;
 
             i{
-                color: var(--color-three);
+                color: var(--color-four);
                 text-shadow: 1px 1px 0 var(--color-one);
             }
 
@@ -565,7 +568,7 @@
             
             &:active i{
                 color: var(--color-one);
-                text-shadow: 1px 1px 0 var(--color-three);
+                text-shadow: 1px 1px 0 var(--color-four);
             }
         }
 
@@ -601,7 +604,7 @@
                 font-size: $font-fluid-sm;
                 color: var(--color-two);
                 text-shadow: none;
-                color: var(--color-three);
+                color: var(--color-four);
                 font-weight: normal;
                 display: flex;
                 flex-flow: row wrap;
