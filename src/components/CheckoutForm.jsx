@@ -116,16 +116,16 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
           <input name="nombre" value={name} onChange={e => setName(e.currentTarget.value)} aria-label='Nombre' type="text" required title="Ingresar nombre" maxLength={100} />
         </fieldset>
         <fieldset>
-          <legend>E-Mail</legend>
-          <input name="email" value={email} onChange={e => setEmail(e.currentTarget.value)} aria-label='E-Mail' type="email" title="Ingresar e-mail" required maxLength={320} />
-        </fieldset>
-        <fieldset>
           <legend>Teléfono</legend>
           <input name="telefono" value={phone} onChange={e => setPhone(e.currentTarget.value)} aria-label='Teléfono' type="tel" title="Ingresar teléfono" pattern="[0-9]{6,20}" required maxLength={40} />
         </fieldset>
         <fieldset>
           <legend>Dirección</legend>
           <input name="direccion" value={address} onChange={e => setAddress(e.currentTarget.value)} aria-label='Dirección' type="text" title="Ingresar dirección" required maxLength={200} />
+        </fieldset>
+        <fieldset>
+          <legend>E-Mail</legend>
+          <input name="email" value={email} onChange={e => setEmail(e.currentTarget.value)} aria-label='E-Mail' type="email" title="Ingresar e-mail" required maxLength={320} />
         </fieldset>
       </div>
       <p className='CheckoutForm__total'>Total: ${total}</p>

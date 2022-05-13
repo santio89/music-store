@@ -33,9 +33,9 @@ export default function UserDatos() {
                     {userData && userData != null ? <div className='Datos__details'>
                         <div className='Datos__details__pWrapper'>
                             <p>◖&nbsp;Nombre Completo: {userData?.name}</p>
-                            <p>◖&nbsp;E-Mail: {userData?.email}</p>
                             <p>◖&nbsp;Teléfono: {userData?.phone}</p>
                             <p>◖&nbsp;Dirección: {userData?.address}</p>
+                            <p>◖&nbsp;E-Mail: {userData?.email}</p>
                         </div>
                     </div> : <div className='Datos__nouser'><p>Debes&nbsp;<button onClick={() => authLogIn()}>Iniciar Sesión</button>&nbsp;para ver tus datos</p></div>}
 
