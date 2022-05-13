@@ -1,15 +1,17 @@
 import React, { useEffect, useContext, useState } from 'react'
-import '../styles/css/Compras.css'
+import { useNavigate } from 'react-router-dom'
+import '../styles/css/UserCompras.css'
 import { motion, AnimatePresence } from 'framer-motion'
 import { AuthContext } from '../Context/AuthContext'
 import { getDocs, where, collection, getFirestore, query } from 'firebase/firestore'
 import PuffLoader from "react-spinners/PuffLoader";
 
-export default function Compras() {
+export default function UserCompras() {
 
   const { authUser, authLogIn } = useContext(AuthContext);
   const [userOrders, setUserOrders] = useState([]);
   const [comprasLoading, setComprasLoading] = useState(false)
+  const history = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -41,6 +43,7 @@ export default function Compras() {
           animate={{ opacity: 1, x: "0%" }}
           exit={{ opacity: 0, x: "120%" }}
           transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
+          <button onClick={() => { history(-1) }} className='Compras__back'><i className="bi bi-caret-left-fill"></i></button>
           <h1 className='Compras__title'>Mis Compras</h1>
 
           {authUser && authUser != null ? <div className='Compras__details'>

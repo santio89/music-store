@@ -29,6 +29,18 @@
   color: var(--color-one);
   text-shadow: 2px 2px 0 var(--color-three);
 }
+.Compras__back {
+  position: absolute;
+  left: min(2%, 1rem);
+  top: min(-20px, -2%);
+  color: var(--color-one-dark);
+  text-shadow: 1px 1px 0 var(--color-four);
+  font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.8rem);
+  font-weight: bold;
+}
+.Compras__back:hover {
+  color: var(--color-one);
+}
 .Compras__title {
   font-size: clamp(2rem, 2rem + 2vw, 3.2rem);
   border-bottom: 2px dashed var(--color-one);
@@ -150,4 +162,4 @@
   .Compras {
     width: 96%;
   }
-}/*# sourceMappingURL=Compras.css.map */
+}/*# sourceMappingURL=UserCompras.css.map */

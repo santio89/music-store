@@ -1,0 +1,100 @@
+.DatosWrapper {
+  min-height: calc(100vh - 76px - 60px - 0.2rem);
+  /* container height= 100vh-navHeight-tabsHeight-margins */
+  width: 100%;
+  max-width: 1800px;
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.DatosWrapper > span {
+  transform: translateY(-50%);
+}
+
+.Datos {
+  align-self: start;
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8rem;
+  text-align: center;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: start;
+  align-items: start;
+  font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
+  color: var(--color-one);
+  text-shadow: 2px 2px 0 var(--color-three);
+}
+.Datos__back {
+  position: absolute;
+  left: min(2%, 1rem);
+  top: min(-20px, -2%);
+  color: var(--color-one-dark);
+  text-shadow: 1px 1px 0 var(--color-four);
+  font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.8rem);
+  font-weight: bold;
+}
+.Datos__back:hover {
+  color: var(--color-one);
+}
+.Datos__title {
+  font-size: clamp(2rem, 2rem + 2vw, 3.2rem);
+  border-bottom: 2px dashed var(--color-one);
+  width: 100%;
+  font-weight: bold;
+  margin-top: 0.8rem;
+}
+.Datos__nouser {
+  width: 100%;
+  text-align: center;
+  text-shadow: none;
+  margin-top: 2rem;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+}
+.Datos__nouser button {
+  color: var(--color-four);
+  will-change: transform;
+  transition: transform 200ms;
+}
+.Datos__nouser button:hover, .Datos__nouser button:focus-visible {
+  border-bottom: 2px dashed var(--color-one);
+}
+.Datos__nouser button:active {
+  transform: translate(2px, 2px);
+}
+.Datos__details {
+  margin: auto;
+  margin-top: 1.4rem;
+  text-shadow: none;
+  color: var(--color-four);
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  font-family: "Courier New", Courier, monospace;
+  font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
+}
+.Datos__details p {
+  margin: auto;
+  width: 80%;
+  text-align: left;
+}
+
+@media (min-width: 1024px) {
+  .DatosWrapper {
+    min-height: calc(100vh - 108px - 60px - 0.4rem - 1rem);
+    /* container height= 100vh-navHeight-tabsHeight-margins */
+  }
+}
+@media (min-width: 1216px) {
+  .Datos {
+    width: 96%;
+  }
+}/*# sourceMappingURL=UserDatos.css.map */

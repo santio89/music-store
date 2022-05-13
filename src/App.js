@@ -5,7 +5,8 @@ import TabSelector from './Components/TabSelector';
 import Footer from './Components/Footer';
 import ItemListContainer from './Components/ItemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer';
-import Compras from './Components/Compras';
+import UserCompras from './Components/UserCompras';
+import UserDatos from './Components/UserDatos';
 import NavBar from './Components/NavBar';
 import Categories from './Components/Categories'
 import Checkout from './Components/Checkout';
@@ -34,7 +35,8 @@ function App() {
               <TabSelector />
               <Routes>
                 <Route path="/" element={<ItemListContainer />} />
-                <Route path="/compras" element={<Compras />} />
+                <Route path="/user/compras" element={<UserCompras />} />
+                <Route path="/user/datos" element={<UserDatos />} />
                 <Route path="/item/:productId" element={<ItemDetailContainer />} />
                 <Route path="/categories" element={<Categories />} />
                 <Route path="/categories/:categoryId" element={<ItemListContainer />} />

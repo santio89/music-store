@@ -3,6 +3,8 @@
   font-family: inherit;
   position: relative;
   overflow: hidden;
+  margin-bottom: 0 !important;
+  /* override bulma style */
   margin-left: auto;
   margin-right: 1vw;
   transition: 200ms;
@@ -34,6 +36,11 @@
           animation: ripples 1000ms linear infinite;
 }
 
+.profilePicWrapper {
+  border-radius: 50%;
+  position: relative;
+}
+
 .profilePic {
   aspect-ratio: 1;
   width: 64px;
@@ -43,6 +50,7 @@
   outline: 3px dashed var(--color-one-dark);
   border: none;
   z-index: 1;
+  position: relative;
 }
 .profilePic img {
   width: 100%;
@@ -52,6 +60,26 @@
 }
 .profilePic:hover, .profilePic:focus-visible, .profilePic.is-active {
   outline: 3px dashed var(--color-one);
+}
+
+.logOutBtn {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  z-index: 1;
+  font-size: 1em;
+  border-radius: 50%;
+  line-height: 1;
+  padding: 4px;
+  background: var(--color-one-dark);
+  will-change: transform;
+  transition: transform 200ms;
+}
+.logOutBtn:hover, .logOutBtn:focus-visible {
+  outline: 2px dashed var(--color-one);
+}
+.logOutBtn:active {
+  transform: translate(2px, 2px);
 }
 
 .userOptions {
@@ -66,7 +94,7 @@
   margin-right: -2.8rem;
   border-radius: 0.2em 0 0 0.2em;
 }
-.userOptions button, .userOptions a {
+.userOptions a {
   color: var(--color-three);
   font-size: clamp(0.6rem, 0.6rem + 1vw, 1.2rem);
   background: var(--color-one-dark);
@@ -76,13 +104,13 @@
   text-align: left;
   padding: 0.08rem 2.8rem 0.08rem 2rem;
 }
-.userOptions button:hover, .userOptions button:focus-visible, .userOptions a:hover, .userOptions a:focus-visible {
+.userOptions a:hover, .userOptions a:focus-visible {
   outline: 2px dashed var(--color-one);
 }
-.userOptions button:nth-child(1), .userOptions a:nth-child(1) {
+.userOptions a:nth-child(1) {
   border-radius: 0.2em 0 0 0;
 }
-.userOptions button:nth-child(2), .userOptions a:nth-child(2) {
+.userOptions a:nth-child(2) {
   border-radius: 0 0 0 0.2em;
 }
 
@@ -90,6 +118,13 @@
   .LogInButton {
     margin-left: 0;
     margin-right: 0;
+  }
+
+  .logOutBtn {
+    right: -30px;
+  }
+  .logOutBtn:hover, .logOutBtn:focus-visible {
+    outline: 2px dashed var(--color-three);
   }
 
   .profilePic {
@@ -102,7 +137,7 @@
   .userOptions {
     margin-left: 0;
   }
-  .userOptions button:hover, .userOptions button:focus-visible, .userOptions a:hover, .userOptions a:focus-visible {
+  .userOptions a:hover, .userOptions a:focus-visible {
     outline: 2px dashed var(--color-three);
   }
 }/*# sourceMappingURL=LogInButton.css.map */

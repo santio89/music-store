@@ -32,6 +32,20 @@
     color: var(--color-one);
     text-shadow: 2px 2px 0 var(--color-three);
 
+    &__back {
+        position: absolute;
+        left: min(2%, 1rem);
+        top: min(-20px, -2%);
+        color: var(--color-one-dark);
+        text-shadow: 1px 1px 0 var(--color-four);
+        font-size: $font-fluid-lg;
+        font-weight: bold;
+
+        &:hover {
+            color: var(--color-one);
+        }
+    }
+
     &__title {
         font-size: $font-fluid-xl;
         border-bottom: 2px dashed var(--color-one);

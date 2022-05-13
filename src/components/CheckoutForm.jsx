@@ -5,7 +5,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { AuthContext } from '../Context/AuthContext'
 
 export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setCheckoutCode, cartClear }) {
-  const { authUser } = useContext(AuthContext);
+  const { userData } = useContext(AuthContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -97,10 +97,10 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
   }, [recaptchaRef])
 
   useEffect(() => {
-    setName(authUser?.displayName != null ? authUser?.displayName : "")
-    setEmail(authUser?.email != null ? authUser?.email : "")
-    setPhone(authUser?.phoneNumber != null ? authUser?.phoneNumber : "")
-  }, [authUser])
+    setName(userData?.name != null ? userData?.name : "")
+    setEmail(userData?.email != null ? userData?.email : "")
+    setPhone(userData?.phoneNumber != null ? userData?.phoneNumber : "")
+  }, [userData])
 
   return (
     <form className='CheckoutForm' onSubmit={(e) => {
