@@ -446,7 +446,7 @@
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1.2rem;
 }
 .Checkout__success h3 {
   font-family: var(--font-primary);

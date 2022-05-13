@@ -79,7 +79,7 @@
   margin-left: 2px;
   margin-right: 2px;
   background: var(--color-back-dark);
-  border-radius: 0.4em;
+  border-radius: 0.2em;
 }
 .Compras__details__order:hover, .Compras__details__order[open] {
   outline: 2px dashed var(--color-one);
