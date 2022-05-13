@@ -87,7 +87,7 @@
         flex-flow: column wrap;
         justify-content: center;
         align-items: center;
-        gap: 1rem;
+        gap: 2.8rem;
         width: 100%;
         font-family: 'Courier New', Courier, monospace;
         font-size: $font-fluid-sm;
@@ -95,14 +95,55 @@
         border-radius: .2em;
         padding: 1.4em .4em;
 
-        &__pWrapper{
+        &__pWrapper {
             width: fit-content;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
         }
 
         p {
             width: 100%;
             margin: auto;
             text-align: left;
+        }
+
+        &__btnContainer {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+            gap: .8em;
+
+            &__btn {
+                font-weight: 700;
+                font-family: inherit;
+                position: relative;
+                overflow: hidden;
+                margin-bottom: 0 !important;
+                /* override bulma */
+                margin-left: auto;
+                margin-right: 1vw;
+                transition: 200ms;
+                line-height: 1;
+                flex: 1;
+                will-change: transform;
+
+                &:active{
+                    transform: translate(2px, 2px)
+                }
+
+                span.spanRipple {
+                    position: absolute;
+                    background: var(--color-three);
+                    transform: translate(-50%, -50%);
+                    pointer-events: none;
+                    border-radius: 50%;
+                    animation: ripples 1000ms linear infinite;
+                }
+            }
         }
     }
 }

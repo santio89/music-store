@@ -5,6 +5,20 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { AuthContext } from '../Context/AuthContext'
 import PuffLoader from "react-spinners/PuffLoader";
 
+const buttonRipple = (e) => {
+    let x = e.clientX - e.target.getBoundingClientRect().x;
+    let y = e.clientY - e.target.getBoundingClientRect().y;
+    let ripples = document.createElement("span");
+    ripples.classList.add("spanRipple")
+    ripples.style.left = x + "px";
+    ripples.style.top = y + "px";
+    e.target.appendChild(ripples);
+
+    setTimeout(() => {
+        ripples.remove();
+    }, 1000);
+}
+
 export default function UserDatos() {
     const { userData, authLogIn, userDataLoading } = useContext(AuthContext);
     const [datosLoading, setDatosLoading] = useState(true);
@@ -36,6 +50,10 @@ export default function UserDatos() {
                             <p>◖&nbsp;Teléfono: {userData?.phone}</p>
                             <p>◖&nbsp;Dirección: {userData?.address}</p>
                             <p>◖&nbsp;E-Mail: {userData?.email}</p>
+                        </div>
+                        <div className='Datos__details__btnContainer'>
+                            <button onClick={(e) => { buttonRipple(e) }} className="button is-danger is-size-5 Datos__details__btnContainer__btn">Editar</button>
+                            <button onClick={(e) => { buttonRipple(e) }} className="button is-danger is-size-5 Datos__details__btnContainer__btn">Guardar</button>
                         </div>
                     </div> : <div className='Datos__nouser'><p>Debes&nbsp;<button onClick={() => authLogIn()}>Iniciar Sesión</button>&nbsp;para ver tus datos</p></div>}
 

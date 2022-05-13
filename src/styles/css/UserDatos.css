@@ -76,7 +76,7 @@
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 2.8rem;
   width: 100%;
   font-family: "Courier New", Courier, monospace;
   font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
@@ -88,11 +88,49 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 .Datos__details p {
   width: 100%;
   margin: auto;
   text-align: left;
+}
+.Datos__details__btnContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8em;
+}
+.Datos__details__btnContainer__btn {
+  font-weight: 700;
+  font-family: inherit;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0 !important;
+  /* override bulma */
+  margin-left: auto;
+  margin-right: 1vw;
+  transition: 200ms;
+  line-height: 1;
+  flex: 1;
+  will-change: transform;
+}
+.Datos__details__btnContainer__btn:active {
+  transform: translate(2px, 2px);
+}
+.Datos__details__btnContainer__btn span.spanRipple {
+  position: absolute;
+  background: var(--color-three);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  -webkit-animation: ripples 1000ms linear infinite;
+          animation: ripples 1000ms linear infinite;
 }
 
 @media (min-width: 1024px) {
