@@ -22,7 +22,7 @@ export default function UserCompras() {
     setComprasLoading(true);
     const database = getFirestore();
     const ordersCollection = collection(database, "orders");
-    const userOrders = query(ordersCollection, where("buyer.email", "==", `${authUser?.email}`), orderBy("date", "desc"));
+    const userOrders = query(ordersCollection, where("buyer.uid", "==", `${authUser?.uid}`), orderBy("date", "desc"));
     let orders = []
 
     getDocs(userOrders).then(snapshot => {
