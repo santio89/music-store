@@ -10,6 +10,7 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+  const [uid, setUid] = useState("");
   const [shopList, setShopList] = useState([]);
   const [loadingCheckout, setLoadingCheckout] = useState(false);
   const [recaptchaValid, setRecaptchaValid] = useState(false);
@@ -24,7 +25,7 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
   }
 
   const order = {
-    buyer: { name, email, phone, address },
+    buyer: { name, email, phone, address, uid },
     shopList: shopList,
     total: total,
     date: serverTimestamp()
@@ -100,6 +101,7 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
     setName(userData?.name != null ? userData?.name : "")
     setEmail(userData?.email != null ? userData?.email : "")
     setPhone(userData?.phoneNumber != null ? userData?.phoneNumber : "")
+    setUid(userData?.uid != null ? userData?.uid : "")
   }, [userData])
 
   return (
