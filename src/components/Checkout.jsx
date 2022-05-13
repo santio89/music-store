@@ -187,9 +187,9 @@ export default function Checkout() {
                   <summary>Datos del comprador</summary>
                   <p>· Nombre: {checkoutOrder?.buyer?.name}</p>
                   <p>· Apellido: {checkoutOrder?.buyer?.lastName}</p>
-                  <p>· E-Mail: {checkoutOrder?.buyer?.email}</p>
                   <p>· Teléfono: {checkoutOrder?.buyer?.phone}</p>
                   <p>· Dirección: {checkoutOrder?.buyer?.address}</p>
+                  <p>· E-Mail: {checkoutOrder?.buyer?.email}</p>
                 </details>
                 <Link to="/" className='Checkout__success__continue'>SEGUIR COMPRANDO ⇢</Link>
               </motion.div>
