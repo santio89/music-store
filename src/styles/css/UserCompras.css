@@ -78,6 +78,9 @@
   align-items: center;
   gap: 1rem;
   width: 100%;
+  background: var(--color-back-dark);
+  border-radius: 0.2em;
+  padding: 0.4em 0;
 }
 .Compras__details__order {
   width: calc(100% - 4px);

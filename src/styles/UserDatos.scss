@@ -91,10 +91,17 @@
         width: 100%;
         font-family: 'Courier New', Courier, monospace;
         font-size: $font-fluid-sm;
-        
-        p{
+        background: var(--color-back-dark);
+        border-radius: .2em;
+        padding: 1.4em .4em;
+
+        &__pWrapper{
+            width: fit-content;
+        }
+
+        p {
+            width: 100%;
             margin: auto;
-            width: 80%;
             text-align: left;
         }
     }

@@ -89,7 +89,10 @@
         align-items: center;
         gap: 1rem;
         width: 100%;
-        
+        background: var(--color-back-dark);
+        border-radius: .2em;
+        padding: .4em 0;
+
         &__order {
             width: calc(100% - 4px);
             text-align: left;

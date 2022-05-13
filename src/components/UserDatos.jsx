@@ -14,8 +14,8 @@ export default function UserDatos() {
         window.scrollTo(0, 0);
     }, []);
 
-    useEffect(()=>{
-        if(userDataLoading === false){
+    useEffect(() => {
+        if (userDataLoading === false) {
             setDatosLoading(false);
         }
     }, [userDataLoading])
@@ -31,10 +31,12 @@ export default function UserDatos() {
                     <h1 className='Datos__title'>Mis Datos</h1>
 
                     {userData && userData != null ? <div className='Datos__details'>
-                        <p>◖&nbsp;Nombre Completo: {userData?.name}</p>
-                        <p>◖&nbsp;E-Mail: {userData?.email}</p>
-                        <p>◖&nbsp;Teléfono: {userData?.phone}</p>
-                        <p>◖&nbsp;Dirección: {userData?.address}</p>
+                        <div className='Datos__details__pWrapper'>
+                            <p>◖&nbsp;Nombre Completo: {userData?.name}</p>
+                            <p>◖&nbsp;E-Mail: {userData?.email}</p>
+                            <p>◖&nbsp;Teléfono: {userData?.phone}</p>
+                            <p>◖&nbsp;Dirección: {userData?.address}</p>
+                        </div>
                     </div> : <div className='Datos__nouser'><p>Debes&nbsp;<button onClick={() => authLogIn()}>Iniciar Sesión</button>&nbsp;para ver tus datos</p></div>}
 
                 </motion.div>

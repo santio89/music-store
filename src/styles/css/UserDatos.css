@@ -80,10 +80,18 @@
   width: 100%;
   font-family: "Courier New", Courier, monospace;
   font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
+  background: var(--color-back-dark);
+  border-radius: 0.2em;
+  padding: 1.4em 0.4em;
+}
+.Datos__details__pWrapper {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .Datos__details p {
+  width: 100%;
   margin: auto;
-  width: 80%;
   text-align: left;
 }
 

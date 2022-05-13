@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import '../styles/css/UserCompras.css'
 import { motion, AnimatePresence } from 'framer-motion'
 import { AuthContext } from '../Context/AuthContext'
-import { getDocs, where, collection, getFirestore, query } from 'firebase/firestore'
+import { getDocs, where, collection, getFirestore, query, orderBy } from 'firebase/firestore'
 import PuffLoader from "react-spinners/PuffLoader";
 
 export default function UserCompras() {
@@ -22,7 +22,7 @@ export default function UserCompras() {
     setComprasLoading(true);
     const database = getFirestore();
     const ordersCollection = collection(database, "orders");
-    const userOrders = query(ordersCollection, where("buyer.email", "==", `${authUser?.email}`));
+    const userOrders = query(ordersCollection, where("buyer.email", "==", `${authUser?.email}`), orderBy("date", "desc"));
     let orders = []
 
     getDocs(userOrders).then(snapshot => {
