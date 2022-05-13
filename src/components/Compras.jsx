@@ -16,6 +16,7 @@ export default function Compras() {
   }, []);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setComprasLoading(true);
     const database = getFirestore();
     const ordersCollection = collection(database, "orders");
