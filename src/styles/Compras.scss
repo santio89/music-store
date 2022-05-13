@@ -87,6 +87,8 @@
             text-shadow: 1px 1px 0 var(--color-two);
             margin-left: 2px;
             margin-right: 2px;
+            background: var(--color-back-dark);
+            border-radius: .4em;
 
             &:hover,
             &[open] {
