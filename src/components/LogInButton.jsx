@@ -38,7 +38,7 @@ export default function LogInButton({navClosed}) {
             {userSettings ? <div className='userOptions'><Link to="/user/compras" onClick={()=>{navClosed(); setUserSettings(false)}} >Compras</Link><Link to="/user/datos" onClick={()=>{navClosed(); setUserSettings(false)}} >Datos</Link></div> : null}
             {!authUser ? <button onClick={(e) => { buttonRipple(e); authLogIn() }} className="button is-dark is-size-5 LogInButton">
                 <span className='LogInButton__Ingresar'>Ingresar: &nbsp;</span>{authLoading?<PuffLoader color={"var(--color-one)"} size={20} speedMultiplier={1.2} />:<i className="bi bi-google"></i>}
-            </button> : <div className='profilePicWrapper'><button className={`profilePic ${userSettings ? "is-active" : ""}`} onClick={() => toggleUserSettings()}><img alt="Profile Pic" src={authUser.photoURL}></img></button><button className='logOutBtn' onClick={() => authLogOut()} title="Cerrar Sesión"><i className="bi bi-box-arrow-right"></i></button></div>
+            </button> : <div className='profilePicWrapper'><button title='Ver Opciones' className={`profilePic ${userSettings ? "is-active" : ""}`} onClick={() => toggleUserSettings()}><img alt="Profile Pic" src={authUser.photoURL}></img></button><button className='logOutBtn' onClick={() => authLogOut()} title="Cerrar Sesión"><i className="bi bi-box-arrow-right"></i></button></div>
             }
         </>
     )
