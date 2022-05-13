@@ -22,6 +22,7 @@
     height: 100%;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 8rem;
     text-align: center;
     display: flex;
     flex-flow: column wrap;
@@ -30,19 +31,134 @@
     font-size: $font-fluid-md;
     color: var(--color-one);
     text-shadow: 2px 2px 0 var(--color-three);
-    margin-bottom: 8rem;
 
-    &__title{
+    &__title {
         font-size: $font-fluid-xl;
         border-bottom: 2px dashed var(--color-one);
         width: 100%;
         font-weight: bold;
         margin-top: .8rem;
     }
+
+    &__nouser {
+        width: 100%;
+        text-align: center;
+        text-shadow: none;
+        margin-top: 2rem;
+        font-weight: bold;
+        font-family: 'Courier New', Courier, monospace;
+
+        button {
+            color: var(--color-four);
+            will-change: transform;
+            transition: transform 200ms;
+
+            &:hover,
+            &:focus-visible {
+                border-bottom: 2px dashed var(--color-one);
+            }
+
+            &:active {
+                transform: translate(2px, 2px);
+            }
+        }
+    }
+
+    &__details {
+        margin: auto;
+        margin-top: 1.4rem;
+        text-shadow: none;
+        color: var(--color-four);
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        
+        &__order {
+            width: calc(100% - 4px);
+            text-align: left;
+            padding: .6rem 1.2rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: $font-fluid-mdd;
+            color: var(--color-one);
+            text-shadow: 1px 1px 0 var(--color-two);
+            margin-left: 2px;
+            margin-right: 2px;
+
+            &:hover,
+            &[open] {
+                outline: 2px dashed var(--color-one);
+            }
+
+            summary {
+                cursor: pointer;
+                border: none;
+                outline: none;
+                border-radius: .1em;
+                padding: .1em;
+                color: var(--color-four);
+                font-weight: bold;
+                font-family: var(--font-primary);
+                letter-spacing: .04em;
+                text-shadow: 1px 1px 0 var(--color-back-dark);
+
+                &:focus-visible {
+                    background: var(--color-back)
+                }
+            }
+
+            p {
+                font-size: $font-fluid-sm;
+                text-shadow: none;
+                color: var(--color-four);
+                font-weight: normal;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+                align-items: center;
+                padding: .2em 0;
+                border-bottom: 1px dashed var(--color-two);
+
+                span {
+                    width: 12ch;
+                    flex: 1;
+
+                    &:not(:first-of-type) {
+                        text-align: right;
+                    }
+                }
+
+                &.Compras__details__total {
+                    justify-content: center;
+                    border: none;
+                    font-weight: bold;
+                    font-size: $font-fluid-smm;
+                    padding: .4em;
+                }
+
+                &.Compras__details__id {
+                    color: var(--color-three-dark);
+                    font-size: .68em;
+                    justify-content: end;
+                    border: none;
+                }
+            }
+
+            &__items {
+                &__artist {
+                    color: var(--color-three-dark);
+                    font-size: .88em;
+                }
+            }
+        }
+    }
 }
 
 
-@media (min-width: 1024px){
+@media (min-width: 1024px) {
     .ComprasWrapper {
         min-height: calc(100vh - 108px - 60px - .4rem - 1rem);
         /* container height= 100vh-navHeight-tabsHeight-margins */

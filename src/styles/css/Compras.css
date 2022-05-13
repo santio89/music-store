@@ -19,6 +19,7 @@
   height: 100%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 8rem;
   text-align: center;
   display: flex;
   flex-flow: column wrap;
@@ -27,7 +28,6 @@
   font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
   color: var(--color-one);
   text-shadow: 2px 2px 0 var(--color-three);
-  margin-bottom: 8rem;
 }
 .Compras__title {
   font-size: clamp(2rem, 2rem + 2vw, 3.2rem);
@@ -35,6 +35,103 @@
   width: 100%;
   font-weight: bold;
   margin-top: 0.8rem;
+}
+.Compras__nouser {
+  width: 100%;
+  text-align: center;
+  text-shadow: none;
+  margin-top: 2rem;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+}
+.Compras__nouser button {
+  color: var(--color-four);
+  will-change: transform;
+  transition: transform 200ms;
+}
+.Compras__nouser button:hover, .Compras__nouser button:focus-visible {
+  border-bottom: 2px dashed var(--color-one);
+}
+.Compras__nouser button:active {
+  transform: translate(2px, 2px);
+}
+.Compras__details {
+  margin: auto;
+  margin-top: 1.4rem;
+  text-shadow: none;
+  color: var(--color-four);
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+.Compras__details__order {
+  width: calc(100% - 4px);
+  text-align: left;
+  padding: 0.6rem 1.2rem;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: clamp(1rem, 1rem + 1.4vw, 2rem);
+  color: var(--color-one);
+  text-shadow: 1px 1px 0 var(--color-two);
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.Compras__details__order:hover, .Compras__details__order[open] {
+  outline: 2px dashed var(--color-one);
+}
+.Compras__details__order summary {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 0.1em;
+  padding: 0.1em;
+  color: var(--color-four);
+  font-weight: bold;
+  font-family: var(--font-primary);
+  letter-spacing: 0.04em;
+  text-shadow: 1px 1px 0 var(--color-back-dark);
+}
+.Compras__details__order summary:focus-visible {
+  background: var(--color-back);
+}
+.Compras__details__order p {
+  font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
+  text-shadow: none;
+  color: var(--color-four);
+  font-weight: normal;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2em 0;
+  border-bottom: 1px dashed var(--color-two);
+}
+.Compras__details__order p span {
+  width: 12ch;
+  flex: 1;
+}
+.Compras__details__order p span:not(:first-of-type) {
+  text-align: right;
+}
+.Compras__details__order p.Compras__details__total {
+  justify-content: center;
+  border: none;
+  font-weight: bold;
+  font-size: clamp(1.1rem, 1.1rem + 1.1vw, 1.8rem);
+  padding: 0.4em;
+}
+.Compras__details__order p.Compras__details__id {
+  color: var(--color-three-dark);
+  font-size: 0.68em;
+  justify-content: end;
+  border: none;
+}
+.Compras__details__order__items__artist {
+  color: var(--color-three-dark);
+  font-size: 0.88em;
 }
 
 @media (min-width: 1024px) {
