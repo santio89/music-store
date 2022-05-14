@@ -45,8 +45,8 @@ export default function LogInButton({ navClosed }) {
                     <motion.button key="logInBtn"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }} transition={{ duration: .4 }} onClick={(e) => { buttonRipple(e); authLogIn() }} className="button is-dark is-size-5 LogInButton">
-                        <span className='LogInButton__Ingresar'></span>{authLoading ? <PuffLoader color={"var(--color-one)"} size={30} speedMultiplier={1.2} /> : <>Ingresar: &nbsp;<i className="bi bi-google"></i></>}
+                        exit={{ opacity: 0 }} transition={{ duration: .4 }} onClick={(e) => { buttonRipple(e); authLogIn() }} className="button is-dark is-size-5 LogInButton" title='Ingresar con Google'>
+                        <span className='LogInButton__Ingresar'></span>{authLoading ? <PuffLoader color={"var(--color-one)"} size={30} speedMultiplier={1.2} /> : <><i className="bi bi-google"></i></>}
                     </motion.button> 
                 }
             </AnimatePresence>

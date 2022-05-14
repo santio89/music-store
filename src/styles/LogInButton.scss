@@ -1,7 +1,7 @@
 @import './variables.scss';
 
 .LogInButton {
-    font-weight: 700;
+    font-weight: bold;
     font-family: inherit;
     position: relative;
     overflow: hidden;
@@ -15,7 +15,9 @@
     align-items: center;
     line-height: 1;
     will-change: transform;
-    width: 184px;
+    width: 140px;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 1px 1px 0 var(--color-one);
 
     &:active{
         transform: translate(2px, 2px)
@@ -32,6 +34,7 @@
         flex-flow: row wrap;
         justify-content: center;
         align-items: center;
+        transform: scale(1.12);
     }
 
     span.spanRipple {
@@ -54,7 +57,7 @@
     width: 68px;
     border-radius: 50%;
     overflow: hidden;
-    margin-right: 1vw;
+    margin-right: calc(1vw + 2px);
     outline: 3px dashed var(--color-one-dark);
     border: none;
     z-index: 1;
@@ -75,8 +78,8 @@
 
 .logOutBtn {
     position: absolute;
-    bottom: -3px;
-    right: -3px;
+    bottom: -2px;
+    right: -2px;
     z-index: 1;
     font-size: 1em;
     border-radius: 50%;
@@ -140,7 +143,7 @@
     }
 
     .logOutBtn {
-        right: -30px;
+        right: -20px;
         
         &:hover,
         &:focus-visible {
@@ -149,7 +152,7 @@
     }
 
     .profilePic {
-        margin-right: 0;
+        margin-right: 12px;
 
         &:hover,
         &:focus-visible,
