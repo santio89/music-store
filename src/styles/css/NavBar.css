@@ -60,7 +60,7 @@
   justify-content: center;
   align-items: center;
   padding: 0 12px;
-  height: 64px;
+  height: 80px;
 }
 .navbar-end .navbar-buttons .buttons {
   display: flex;
@@ -69,6 +69,9 @@
   align-items: center;
   gap: 0.8rem;
   margin: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 80px;
 }
 
 @media (max-width: 1023px) {
@@ -101,9 +104,9 @@
     transition: top 400ms ease-in-out;
     pointer-events: none;
     padding-top: calc(0.4rem + 20%);
+    padding-bottom: 1.4rem;
     margin-top: -20%;
     z-index: -1;
-    padding-bottom: 2.2rem;
     will-change: transform;
   }
 
