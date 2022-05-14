@@ -117,7 +117,7 @@ export default function CheckoutForm({ total, toggleCheckoutConfirmation, checko
         <div className='CheckoutForm__fields'>
           <fieldset>
             <legend>Nombre Completo</legend>
-            <input name="nombre" value={name} onChange={e => setName(e.currentTarget.value)} aria-label='Nombre' type="text" required title="Ingresar nombre" maxLength={100} />
+            <input name="nombre" value={name} onChange={e => setName(e.currentTarget.value)} aria-label='Nombre' type="text" required title="Ingresar nombre" maxLength={200} pattern="^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$" />
           </fieldset>
           <fieldset>
             <legend>Teléfono</legend>
@@ -129,7 +129,7 @@ export default function CheckoutForm({ total, toggleCheckoutConfirmation, checko
           </fieldset>
           <fieldset>
             <legend>E-Mail</legend>
-            <input name="email" value={email} onChange={e => setEmail(e.currentTarget.value)} aria-label='E-Mail' type="email" title="Ingresar e-mail" required maxLength={320} />
+            <input name="email" value={email} onChange={e => setEmail(e.currentTarget.value)} aria-label='E-Mail' type="email" title="Ingresar e-mail" required maxLength={320} pattern={"^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z-]+(?:.[a-zA-Z0-9-]+)$"} />
           </fieldset>
         </div>
         <p className='CheckoutForm__total'>Total: ${total}</p>

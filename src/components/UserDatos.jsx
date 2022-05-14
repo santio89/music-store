@@ -22,7 +22,12 @@ const buttonRipple = (e) => {
 export default function UserDatos() {
     const { userData, authLogIn, userDataLoading } = useContext(AuthContext);
     const [datosLoading, setDatosLoading] = useState(true);
+    const [editMode, setEditMode] = useState(false);
     const history = useNavigate();
+
+    const toggleEditMode = ()=>{
+        setEditMode(editMode=>!editMode)
+    }
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -52,7 +57,7 @@ export default function UserDatos() {
                             <p>·&nbsp;E-Mail: <span>{userData?.email}</span></p>
                         </div>
                         <div className='Datos__details__btnContainer'>
-                            <button onClick={(e) => { buttonRipple(e) }} className="button is-danger is-size-5 Datos__details__btnContainer__btn">Editar</button>
+                            <button onClick={(e) => { buttonRipple(e); toggleEditMode() }} className="button is-danger is-size-5 Datos__details__btnContainer__btn">{editMode?"Cancelar":"Editar"}</button>
                             <button onClick={(e) => { buttonRipple(e) }} className="button is-danger is-size-5 Datos__details__btnContainer__btn">Guardar</button>
                         </div>
                     </div> : <div className='Datos__nouser'><p>Debes&nbsp;<button onClick={() => authLogIn()}>Iniciar Sesión</button>&nbsp;para ver tus datos</p></div>}

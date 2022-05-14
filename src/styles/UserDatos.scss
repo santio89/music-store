@@ -88,7 +88,7 @@
         justify-content: center;
         align-items: center;
         gap: 2.8rem;
-        width: 80%;
+        width: 100%;
         font-family: 'Courier New', Courier, monospace;
         font-size: $font-fluid-sm;
         background: var(--color-back-dark);
@@ -122,6 +122,7 @@
             gap: .8em;
 
             &__btn {
+                width: 120px;
                 font-weight: 700;
                 font-family: inherit;
                 position: relative;
@@ -163,5 +164,15 @@
 @media (min-width: 1216px) {
     .Datos {
         width: 96%;
+
+        &__details{
+            width: 80%;
+
+            &__btnContainer{
+                &__btn{
+                    width: 140px;
+                }
+            }
+        }
     }
 }
