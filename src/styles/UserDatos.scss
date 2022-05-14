@@ -80,31 +80,57 @@
 
     &__details {
         margin: auto;
-        margin-top: 1.4rem;
-        text-shadow: none;
-        color: var(--color-four);
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 2.8rem;
         width: 100%;
-        font-family: 'Courier New', Courier, monospace;
-        font-size: $font-fluid-sm;
-        background: var(--color-back-dark);
-        border-radius: .2em;
-        padding: 1.4em .4em;
+        
+        form {
+            margin: auto;
+            margin-top: 1.4rem;
+            text-shadow: none;
+            color: var(--color-four);
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: start;
+            gap: 2.8rem;
+            width: 100%;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: $font-fluid-sm;
+            background: var(--color-back-dark);
+            border-radius: .2em;
+            padding: 1.4em .4em;
+        }
 
         &__pWrapper {
-            width: fit-content;
+            width: 100%;
             display: flex;
             flex-flow: column wrap;
             justify-content: center;
             align-items: center;
             gap: 1rem;
 
-            span{
+            span {
                 font-weight: bold;
+
+                input {
+                    background: none;
+                    outline: none;
+                    border: none;
+                    color: inherit;
+                    box-shadow: 0 2px 0 0 var(--color-one);
+                    width: fit-content;
+                }
+
+                /* Chrome, Safari, Edge, Opera */
+                input::-webkit-outer-spin-button,
+                input::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+
+                /* Firefox */
+                input[type=number] {
+                    -moz-appearance: textfield;
+                }
             }
         }
 
@@ -120,6 +146,7 @@
             justify-content: center;
             align-items: center;
             gap: .8em;
+            align-self: center;
 
             &__btn {
                 width: 120px;
@@ -136,7 +163,7 @@
                 flex: 1;
                 will-change: transform;
 
-                &:active{
+                &:active {
                     transform: translate(2px, 2px)
                 }
 
@@ -165,11 +192,11 @@
     .Datos {
         width: 96%;
 
-        &__details{
+        &__details {
             width: 80%;
 
-            &__btnContainer{
-                &__btn{
+            &__btnContainer {
+                &__btn {
                     width: 140px;
                 }
             }

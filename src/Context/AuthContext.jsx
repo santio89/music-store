@@ -7,7 +7,7 @@ export const AuthContext = createContext();
 export default function AuthContextProvider({ children }) {
     const [authUser, setAuthUser] = useState(null);
     const [authLoading, setAuthLoading] = useState(false);
-    const [userData, setUserData] = useState(null);
+    const [userData, setUserData] = useState({});
     const [userDataLoading, setUserDataLoading] = useState(true);
 
     const auth = getAuth();
@@ -16,29 +16,29 @@ export default function AuthContextProvider({ children }) {
         prompt: 'select_account'
     });
 
-    const getUserData = (user)=>{
+    const getUserData = (user) => {
         setUserDataLoading(true);
         const database = getFirestore();
         const userDataRef = doc(database, "users", user?.uid);
         const usersCollection = collection(database, "users");
         const userObject = {
-            name: user.displayName,
-            email: user.email,
-            phone: user.phoneNumber,
-            address: null,
+            name: user.displayName !== null ? user.displayName : "",
+            email: user.email !== null ? user.email : "",
+            phone: user.phoneNumber !== null ? user.phoneNumber : "",
+            address: "",
             uid: user.uid,
         }
 
-        getDoc(userDataRef).then(snapshot=>{
-            if (snapshot.exists()){
+        getDoc(userDataRef).then(snapshot => {
+            if (snapshot.exists()) {
                 setUserData(snapshot.data());
                 setAuthLoading(false);
                 setUserDataLoading(false);
-            } else{
+            } else {
                 setUserData(userObject);
-                setDoc(doc(usersCollection, user?.uid), userObject).then(()=>{setAuthLoading(false); setUserDataLoading(false);}).catch(e=>console.log("error creating user: "+e));
+                setDoc(doc(usersCollection, user?.uid), userObject).then(() => { setAuthLoading(false); setUserDataLoading(false); }).catch(e => console.log("error creating user: " + e));
             }
-        }).catch(e=>console.log())
+        }).catch(e => console.log())
     }
 
     onAuthStateChanged(auth, (user) => {
@@ -72,13 +72,13 @@ export default function AuthContextProvider({ children }) {
     }
 
     useEffect(() => {
-        if (authUser && authUser.uid){
+        if (authUser && authUser.uid) {
             getUserData(authUser);
         }
     }, [authUser])
 
     return (
-        <AuthContext.Provider value={{ authLogIn, authLogOut, authUser, authLoading, userData, userDataLoading }}>
+        <AuthContext.Provider value={{ authLogIn, authLogOut, authUser, authLoading, userData, setUserData, userDataLoading }}>
             {children}
         </AuthContext.Provider>
     )

@@ -4,34 +4,54 @@ import '../styles/css/UserDatos.css'
 import { motion, AnimatePresence } from 'framer-motion'
 import { AuthContext } from '../Context/AuthContext'
 import PuffLoader from "react-spinners/PuffLoader";
-
-const buttonRipple = (e) => {
-    let x = e.clientX - e.target.getBoundingClientRect().x;
-    let y = e.clientY - e.target.getBoundingClientRect().y;
-    let ripples = document.createElement("span");
-    ripples.classList.add("spanRipple")
-    ripples.style.left = x + "px";
-    ripples.style.top = y + "px";
-    e.target.appendChild(ripples);
-
-    setTimeout(() => {
-        ripples.remove();
-    }, 1000);
-}
+import { doc, setDoc, collection, getFirestore } from 'firebase/firestore';
 
 export default function UserDatos() {
-    const { userData, authLogIn, userDataLoading } = useContext(AuthContext);
+    const { userData, setUserData, authLogIn, userDataLoading } = useContext(AuthContext);
     const [datosLoading, setDatosLoading] = useState(true);
     const [editMode, setEditMode] = useState(false);
+    const [saveLoading, setSaveLoading] = useState(false);
+    const [saveConfirm, setSaveConfirm] = useState(false);
     const history = useNavigate();
 
-    const toggleEditMode = ()=>{
-        setEditMode(editMode=>!editMode)
+    const [name, setName] = useState(userData?.name || "");
+    const [phone, setPhone] = useState(userData?.phone || "");
+    const [address, setAddress] = useState(userData?.address || "");
+
+    const resetInputs = () => {
+        setName(userData?.name);
+        setPhone(userData?.phone);
+        setAddress(userData?.address);
+    }
+
+    const toggleEditMode = () => {
+        setEditMode(editMode => !editMode)
+    }
+
+    const saveData = () => {
+        setSaveLoading(true);
+        const database = getFirestore();
+        const usersCollection = collection(database, "users");
+
+        const userObject = {
+            ...userData,
+            name: name,
+            phone: phone,
+            address: address,
+        }
+
+        setDoc(doc(usersCollection, userData.uid), userObject, { merge: true }).then(() => { setUserData(userObject); setSaveLoading(false); setEditMode(false); setSaveConfirm(true); setTimeout(() => setSaveConfirm(false), 4000) }).catch(e => console.log("error saving data: " + e));
     }
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    useEffect(() => {
+        setName(userData?.name);
+        setPhone(userData?.phone);
+        setAddress(userData?.address);
+    }, [userData])
 
     useEffect(() => {
         if (userDataLoading === false) {
@@ -50,21 +70,28 @@ export default function UserDatos() {
                     <h1 className='Datos__title'>Mis Datos</h1>
 
                     {userData && userData != null ? <div className='Datos__details'>
-                        <div className='Datos__details__pWrapper'>
-                            <p>·&nbsp;Nombre Completo: <span>{userData?.name}</span></p>
-                            <p>·&nbsp;Teléfono: <span>{userData?.phone}</span></p>
-                            <p>·&nbsp;Dirección: <span>{userData?.address}</span></p>
-                            <p>·&nbsp;E-Mail: <span>{userData?.email}</span></p>
-                        </div>
-                        <div className='Datos__details__btnContainer'>
-                            <button onClick={(e) => { buttonRipple(e); toggleEditMode() }} className="button is-danger is-size-5 Datos__details__btnContainer__btn">{editMode?"Cancelar":"Editar"}</button>
-                            <button onClick={(e) => { buttonRipple(e) }} className="button is-danger is-size-5 Datos__details__btnContainer__btn">Guardar</button>
-                        </div>
-                    </div> : <div className='Datos__nouser'><p>Debes&nbsp;<button onClick={() => authLogIn()}>Iniciar Sesión</button>&nbsp;para ver tus datos</p></div>}
+                        <form onSubmit={(e) => e.preventDefault()}>
+                            <div className='Datos__details__pWrapper'>
 
+                                <p>·&nbsp;Nombre Completo: <span>{editMode ? <input type="text" value={name} maxLength={200} pattern="^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$" onChange={(e) => { setName(e.currentTarget.value) }} /> : userData?.name}</span></p>
+
+                                <p>·&nbsp;Teléfono: <span>{editMode ? <input type="tel" value={phone} pattern="[0-9]{6,20}" maxLength={40} onChange={(e) => { setPhone(e.currentTarget.value) }} /> : userData?.phone}</span></p>
+
+                                <p>·&nbsp;Dirección: <span>{editMode ? <input type="text" value={address} maxLength={200} onChange={(e) => { setAddress(e.currentTarget.value) }} /> : userData?.address}</span></p>
+
+                                <p>·&nbsp;E-Mail: <span>{userData?.email}</span></p>
+
+                            </div>
+                            <div className='Datos__details__btnContainer'>
+                                <button onClick={() => { if (editMode) { resetInputs() } toggleEditMode() }} className="button is-danger is-size-5 Datos__details__btnContainer__btn">{editMode ? "Cancelar" : "Editar"}</button>
+
+                                <button onClick={() => { editMode && saveData() }} className="button is-danger is-size-5 Datos__details__btnContainer__btn">{saveLoading ? <PuffLoader color={"var(--color-three)"} size={30} speedMultiplier={1.2} /> : (saveConfirm ? "Guardado!" : "Guardar")}</button>
+                            </div>
+                        </form>
+                    </div> : <div className='Datos__nouser'><p>Debes&nbsp;<button onClick={() => authLogIn()}>Iniciar Sesión</button>&nbsp;para ver tus datos</p></div>}
                 </motion.div>
             </AnimatePresence>}
 
-        </div>
+        </div >
     )
 }
