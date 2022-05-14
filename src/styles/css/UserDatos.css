@@ -85,7 +85,7 @@
   font-family: "Courier New", Courier, monospace;
   font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
   background: var(--color-back-dark);
-  border-radius: 0.2em;
+  /*       border-radius: .2em; */
   padding: 1.4em 0.4em;
 }
 .Datos__details__pWrapper {
@@ -98,6 +98,8 @@
 }
 .Datos__details__pWrapper span {
   font-weight: bold;
+  margin-left: 2ch;
+  margin-right: 2ch;
   /* Chrome, Safari, Edge, Opera */
   /* Firefox */
 }
@@ -107,9 +109,8 @@
   border: none;
   color: inherit;
   box-shadow: 0 2px 0 0 var(--color-one);
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  margin: auto;
+  width: calc(100% - 4ch);
 }
 .Datos__details__pWrapper span input::-webkit-outer-spin-button,
 .Datos__details__pWrapper span input::-webkit-inner-spin-button {

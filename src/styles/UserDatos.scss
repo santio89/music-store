@@ -96,7 +96,7 @@
             font-family: 'Courier New', Courier, monospace;
             font-size: $font-fluid-sm;
             background: var(--color-back-dark);
-            border-radius: .2em;
+      /*       border-radius: .2em; */
             padding: 1.4em .4em;
         }
 
@@ -110,6 +110,8 @@
 
             span {
                 font-weight: bold;
+                margin-left: 2ch;
+                margin-right: 2ch;
 
                 input {
                     background: none;
@@ -117,7 +119,8 @@
                     border: none;
                     color: inherit;
                     box-shadow: 0 2px 0 0 var(--color-one);
-                    width: fit-content;
+                    margin: auto;
+                    width: calc(100% - 4ch);
                 }
 
                 /* Chrome, Safari, Edge, Opera */

@@ -73,13 +73,13 @@ export default function UserDatos() {
                         <form onSubmit={(e) => e.preventDefault()}>
                             <div className='Datos__details__pWrapper'>
 
-                                <p>·&nbsp;Nombre Completo: <span>{editMode ? <input type="text" value={name} maxLength={200} pattern="^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$" onChange={(e) => { setName(e.currentTarget.value) }} /> : userData?.name}</span></p>
+                                <p>·&nbsp;Nombre Completo:<br/><span>{editMode ? <input type="text" value={name} maxLength={200} pattern="^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$" onChange={(e) => { setName(e.currentTarget.value) }} /> : userData?.name}</span></p>
 
-                                <p>·&nbsp;Teléfono: <span>{editMode ? <input type="tel" value={phone} pattern="[0-9]{6,20}" maxLength={40} onChange={(e) => { setPhone(e.currentTarget.value) }} /> : userData?.phone}</span></p>
+                                <p>·&nbsp;Teléfono:<br/><span>{editMode ? <input type="tel" value={phone} pattern="[0-9]{6,20}" maxLength={40} onChange={(e) => { setPhone(e.currentTarget.value) }} /> : userData?.phone}</span></p>
 
-                                <p>·&nbsp;Dirección: <span>{editMode ? <input type="text" value={address} maxLength={200} onChange={(e) => { setAddress(e.currentTarget.value) }} /> : userData?.address}</span></p>
+                                <p>·&nbsp;Dirección:<br/><span>{editMode ? <input type="text" value={address} maxLength={200} onChange={(e) => { setAddress(e.currentTarget.value) }} /> : userData?.address}</span></p>
 
-                                <p>·&nbsp;E-Mail: <span>{userData?.email}</span></p>
+                                <p>·&nbsp;E-Mail:<br/><span className='userEmail'>{userData?.email}</span></p>
 
                             </div>
                             <div className='Datos__details__btnContainer'>
