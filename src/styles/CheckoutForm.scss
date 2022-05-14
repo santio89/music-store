@@ -4,13 +4,15 @@
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     gap: 1.2rem;
 
     h4{
         font-size: $font-fluid-md;
         font-weight: bold;
-        text-shadow: 1px 1px 0 var(--color-three)
+        font-family: 'Courier New', Courier, monospace;
+        border-bottom: 2px dashed var(--color-three-dark);
+        text-shadow: 1px 1px 0 var(--color-back);
     }
 
     &__fields{
@@ -69,23 +71,24 @@
     &__total{
         font-family: 'Courier New', Courier, monospace;
         font-weight: bold;
-        font-size: $font-fluid-mdd;
+        font-size: $font-fluid-smm;
         color: var(--color-one);
         text-shadow: 1px 1px 0 var(--color-back-dark);
         background: var(--color-back);
         padding: .4rem;
         border-radius: .2em;
+        line-height: 1.4;
+        text-align: center;
     }
 
     &__send{
         color: var(--color-four);
-        text-shadow: 1px 1px 0 var(--color-back-dark);
+        text-shadow: 1px 1px 0 var(--color-five);
         font-size: $font-fluid-mdd;
         font-weight: bold;
         border-radius: .2em;
         padding: .2em .4em;
         outline: 2px dashed var(--color-one);
-        margin: .4rem auto .4rem auto;
         transition: color 200ms, text-shadow 200ms, background-color 200ms, outline-color 200ms;
         background: var(--color-back);
         will-change: transform, background-color;
@@ -93,8 +96,8 @@
         letter-spacing: .01em;
 
         &:hover, &:focus-visible{
-            color: var(--color-back-dark);
-            text-shadow: 1px 1px 0 var(--color-three);
+            color: var(--color-five);
+            text-shadow: 1px 1px 0 var(--color-four);
             background-color: var(--color-one);
             outline: 2px dashed var(--color-three);
         }
@@ -115,20 +118,32 @@
             }
         }
     }
+
+    &__back{
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        align-self: start;
+        color: var(--color-one-dark);
+        font-size: $font-fluid-md;
+        line-height: 1;
+        
+        &:hover{
+            color: var(--color-one);
+        }
+    }
+}
+
+.grecaptcha-badge{
+    margin: auto;
 }
 
 @media (min-width: 1216px){
     .CheckoutForm{
         &__send{
-            color: var(--color-four);
-            text-shadow: 2px 2px 0 var(--color-back-dark);
-            outline: 4px dashed var(--color-one);
+            text-shadow: 2px 2px 0 var(--color-five);
 
             &:hover, &:focus-visible{
-                color: var(--color-back-dark);
-                text-shadow: 2px 2px 0 var(--color-three);
-                background-color: var(--color-one);
-                outline: 4px dashed var(--color-three);
+                text-shadow: 2px 2px 0 var(--color-four);
             }
         }
     }

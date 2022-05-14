@@ -83,7 +83,7 @@
   outline: 2px dashed var(--color-one);
 }
 .logOutBtn:active {
-  transform: translate(2px, 2px);
+  transform: translate(1px, 1px);
 }
 
 .userOptions {

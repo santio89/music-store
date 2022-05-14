@@ -419,23 +419,12 @@
   align-items: center;
 }
 .Checkout__details__resumen__confirm__form {
-  padding: 0.4rem;
+  padding: 0 0.8rem 0.8rem 0.8rem;
   width: 100%;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-}
-.Checkout__details__resumen__confirm__form__back {
-  font-family: "Courier New", Courier, monospace;
-  font-weight: bold;
-  align-self: start;
-  color: var(--color-one-dark);
-  font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
-  line-height: 1;
-}
-.Checkout__details__resumen__confirm__form__back:hover {
-  color: var(--color-one);
 }
 .Checkout__success {
   margin: auto;

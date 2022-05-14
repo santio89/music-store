@@ -4,7 +4,7 @@ import { addDoc, getDoc, doc, collection, getFirestore, serverTimestamp, writeBa
 import ReCAPTCHA from "react-google-recaptcha";
 import { AuthContext } from '../Context/AuthContext'
 
-export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setCheckoutCode, cartClear }) {
+export default function CheckoutForm({ total, toggleCheckoutConfirmation, checkoutSuccessTrue, carrito, setCheckoutCode, cartClear }) {
   const { userData } = useContext(AuthContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -105,38 +105,41 @@ export default function CheckoutForm({ total, checkoutSuccessTrue, carrito, setC
   }, [userData])
 
   return (
-    <form className='CheckoutForm' onSubmit={(e) => {
-      e.preventDefault();
-      if (recaptchaValid) {
-        sendOrder();
-      }
-    }}>
-      <h4>Completar datos</h4>
-      <div className='CheckoutForm__fields'>
-        <fieldset>
-          <legend>Nombre Completo</legend>
-          <input name="nombre" value={name} onChange={e => setName(e.currentTarget.value)} aria-label='Nombre' type="text" required title="Ingresar nombre" maxLength={100} />
-        </fieldset>
-        <fieldset>
-          <legend>Teléfono</legend>
-          <input name="telefono" value={phone} onChange={e => setPhone(e.currentTarget.value)} aria-label='Teléfono' type="tel" title="Ingresar teléfono" pattern="[0-9]{6,20}" required maxLength={40} />
-        </fieldset>
-        <fieldset>
-          <legend>Dirección</legend>
-          <input name="direccion" value={address} onChange={e => setAddress(e.currentTarget.value)} aria-label='Dirección' type="text" title="Ingresar dirección" required maxLength={200} />
-        </fieldset>
-        <fieldset>
-          <legend>E-Mail</legend>
-          <input name="email" value={email} onChange={e => setEmail(e.currentTarget.value)} aria-label='E-Mail' type="email" title="Ingresar e-mail" required maxLength={320} />
-        </fieldset>
-      </div>
-      <p className='CheckoutForm__total'>Total: ${total}</p>
-      <button className='CheckoutForm__send'>
-        {loadingCheckout ? <>Procesando<span>.</span><span>.</span><span>.</span></> : <>Enviar pedido</>}
-      </button>
-      <ReCAPTCHA ref={recaptchaRef} sitekey="6Le4gNAfAAAAALoRTECfoVQlz8IUgGJK766SJ7nD" size="invisible" theme="dark" badge='inline' onChange={() => {
-        setRecaptchaValid(true)
-      }} />
-    </form>
+    <>
+      <button onClick={() => toggleCheckoutConfirmation()} className='CheckoutForm__back'><i className="bi bi-caret-left-fill"></i></button>
+      <form className='CheckoutForm' onSubmit={(e) => {
+        e.preventDefault();
+        if (recaptchaValid) {
+          sendOrder();
+        }
+      }}>
+        <h4>Completar datos</h4>
+        <div className='CheckoutForm__fields'>
+          <fieldset>
+            <legend>Nombre Completo</legend>
+            <input name="nombre" value={name} onChange={e => setName(e.currentTarget.value)} aria-label='Nombre' type="text" required title="Ingresar nombre" maxLength={100} />
+          </fieldset>
+          <fieldset>
+            <legend>Teléfono</legend>
+            <input name="telefono" value={phone} onChange={e => setPhone(e.currentTarget.value)} aria-label='Teléfono' type="tel" title="Ingresar teléfono" pattern="[0-9]{6,20}" required maxLength={40} />
+          </fieldset>
+          <fieldset>
+            <legend>Dirección</legend>
+            <input name="direccion" value={address} onChange={e => setAddress(e.currentTarget.value)} aria-label='Dirección' type="text" title="Ingresar dirección" required maxLength={200} />
+          </fieldset>
+          <fieldset>
+            <legend>E-Mail</legend>
+            <input name="email" value={email} onChange={e => setEmail(e.currentTarget.value)} aria-label='E-Mail' type="email" title="Ingresar e-mail" required maxLength={320} />
+          </fieldset>
+        </div>
+        <p className='CheckoutForm__total'>Total: ${total}</p>
+        <button className='CheckoutForm__send'>
+          {loadingCheckout ? <>Procesando<span>.</span><span>.</span><span>.</span></> : <>Enviar pedido</>}
+        </button>
+        <ReCAPTCHA ref={recaptchaRef} sitekey="6Le4gNAfAAAAALoRTECfoVQlz8IUgGJK766SJ7nD" size="invisible" theme="dark" badge='inline' onChange={() => {
+          setRecaptchaValid(true)
+        }} />
+      </form>
+    </>
   )
 }

@@ -46,10 +46,10 @@ export default function UserDatos() {
 
                     {userData && userData != null ? <div className='Datos__details'>
                         <div className='Datos__details__pWrapper'>
-                            <p>◖&nbsp;Nombre Completo: {userData?.name}</p>
-                            <p>◖&nbsp;Teléfono: {userData?.phone}</p>
-                            <p>◖&nbsp;Dirección: {userData?.address}</p>
-                            <p>◖&nbsp;E-Mail: {userData?.email}</p>
+                            <p>·&nbsp;Nombre Completo: <span>{userData?.name}</span></p>
+                            <p>·&nbsp;Teléfono: <span>{userData?.phone}</span></p>
+                            <p>·&nbsp;Dirección: <span>{userData?.address}</span></p>
+                            <p>·&nbsp;E-Mail: <span>{userData?.email}</span></p>
                         </div>
                         <div className='Datos__details__btnContainer'>
                             <button onClick={(e) => { buttonRipple(e) }} className="button is-danger is-size-5 Datos__details__btnContainer__btn">Editar</button>

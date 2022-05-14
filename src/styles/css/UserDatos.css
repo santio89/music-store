@@ -77,7 +77,7 @@
   justify-content: center;
   align-items: center;
   gap: 2.8rem;
-  width: 100%;
+  width: 80%;
   font-family: "Courier New", Courier, monospace;
   font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
   background: var(--color-back-dark);
@@ -93,6 +93,9 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+.Datos__details__pWrapper span {
+  font-weight: bold;
 }
 .Datos__details p {
   width: 100%;

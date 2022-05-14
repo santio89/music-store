@@ -469,25 +469,12 @@
 
 
                 &__form {
-                    padding: .4rem;
+                    padding: 0 .8rem .8rem .8rem;
                     width: 100%;
                     display: flex;
                     flex-flow: column wrap;
                     justify-content: center;
                     align-items: center;
-                   
-                    &__back{
-                        font-family: 'Courier New', Courier, monospace;
-                        font-weight: bold;
-                        align-self: start;
-                        color: var(--color-one-dark);
-                        font-size: $font-fluid-md;
-                        line-height: 1;
-                        
-                        &:hover{
-                            color: var(--color-one);
-                        }
-                    }
                 }
             }
         }

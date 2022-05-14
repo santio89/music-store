@@ -142,7 +142,6 @@ export default function Checkout() {
                                 animate={{ opacity: 1, x: "0%" }}
                                 exit={{ opacity: 0, x: "120%" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className="Checkout__details__resumen__text">
                                 <p>◖Items: {cartItems}<br />◖Total: ${total}<span>(USD)</span></p>
-
                               </motion.div>}
                           </AnimatePresence>
                         </div>
@@ -156,9 +155,8 @@ export default function Checkout() {
                       </motion.div> :
                       <motion.div className="Checkout__details__resumen__confirm" key="checkoutConfirm" initial={{ x: "-120%", opacity: 0 }} animate={{ x: "0%", opacity: 1 }} exit={{ x: "120%", opacity: 0 }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
                         <div className='Checkout__details__resumen__confirm__form'>
-                          <button onClick={() => toggleCheckoutConfirmation()} className='Checkout__details__resumen__confirm__form__back'><i className="bi bi-caret-left-fill"></i></button>
 
-                          <CheckoutForm total={total} checkoutSuccessTrue={checkoutSuccessTrue} setCheckoutCode={setCheckoutCode} carrito={carrito} cartClear={cartClear} />
+                          <CheckoutForm total={total} cartItems={cartItems} checkoutSuccessTrue={checkoutSuccessTrue} setCheckoutCode={setCheckoutCode} carrito={carrito} cartClear={cartClear} toggleCheckoutConfirmation={toggleCheckoutConfirmation} />
 
                         </div>
                       </motion.div>
@@ -185,11 +183,11 @@ export default function Checkout() {
 
                 <details className='Checkout__success__details Checkout__success__details--buyer'>
                   <summary>Datos del comprador</summary>
-                  <p>· Nombre: {checkoutOrder?.buyer?.name}</p>
-                  <p>· Apellido: {checkoutOrder?.buyer?.lastName}</p>
-                  <p>· Teléfono: {checkoutOrder?.buyer?.phone}</p>
-                  <p>· Dirección: {checkoutOrder?.buyer?.address}</p>
-                  <p>· E-Mail: {checkoutOrder?.buyer?.email}</p>
+                  <p>·&nbsp;Nombre: {checkoutOrder?.buyer?.name}</p>
+                  <p>·&nbsp;Apellido: {checkoutOrder?.buyer?.lastName}</p>
+                  <p>·&nbsp;Teléfono: {checkoutOrder?.buyer?.phone}</p>
+                  <p>·&nbsp;Dirección: {checkoutOrder?.buyer?.address}</p>
+                  <p>·&nbsp;E-Mail: {checkoutOrder?.buyer?.email}</p>
                 </details>
                 <Link to="/" className='Checkout__success__continue'>SEGUIR COMPRANDO ⇢</Link>
               </motion.div>
