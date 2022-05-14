@@ -31,7 +31,7 @@ export default function AuthContextProvider({ children }) {
 
         getDoc(userDataRef).then(snapshot => {
             if (snapshot.exists()) {
-                setUserData(snapshot.data());
+                setUserData(snapshot.data())
                 setAuthLoading(false);
                 setUserDataLoading(false);
             } else {
@@ -76,6 +76,7 @@ export default function AuthContextProvider({ children }) {
             getUserData(authUser);
         }
     }, [authUser])
+
 
     return (
         <AuthContext.Provider value={{ authLogIn, authLogOut, authUser, authLoading, userData, setUserData, userDataLoading }}>

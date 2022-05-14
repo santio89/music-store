@@ -4,6 +4,7 @@ import '../styles/css/LogInButton.css'
 import { AuthContext } from '../Context/AuthContext'
 import { useEffect } from 'react';
 import PuffLoader from "react-spinners/PuffLoader";
+import { motion, AnimatePresence} from 'framer-motion';
 
 const buttonRipple = (e) => {
     let x = e.clientX - e.target.getBoundingClientRect().x;
@@ -19,7 +20,7 @@ const buttonRipple = (e) => {
     }, 1000);
 }
 
-export default function LogInButton({navClosed}) {
+export default function LogInButton({ navClosed }) {
     const { authLogIn, authLogOut, authUser, authLoading } = useContext(AuthContext);
     const [userSettings, setUserSettings] = useState(false);
 
@@ -35,11 +36,20 @@ export default function LogInButton({navClosed}) {
 
     return (
         <>
-            {userSettings ? <div className='userOptions'><Link to="/user/compras" onClick={()=>{navClosed(); setUserSettings(false)}} >Compras</Link><Link to="/user/datos" onClick={()=>{navClosed(); setUserSettings(false)}} >Datos</Link></div> : null}
-            {!authUser ? <button onClick={(e) => { buttonRipple(e); authLogIn() }} className="button is-dark is-size-5 LogInButton">
-                <span className='LogInButton__Ingresar'>Ingresar: &nbsp;</span>{authLoading?<PuffLoader color={"var(--color-one)"} size={20} speedMultiplier={1.2} />:<i className="bi bi-google"></i>}
-            </button> : <div className='profilePicWrapper'><button title='Ver Opciones' className={`profilePic ${userSettings ? "is-active" : ""}`} onClick={() => toggleUserSettings()}><img alt="Profile Pic" src={authUser.photoURL}></img></button><button className='logOutBtn' onClick={() => authLogOut()} title="Cerrar Sesión"><i className="bi bi-box-arrow-right"></i></button></div>
-            }
+            {userSettings && <div className='userOptions'><Link to="/user/compras" onClick={() => { navClosed(); setUserSettings(false) }} >Compras</Link><Link to="/user/datos" onClick={() => { navClosed(); setUserSettings(false) }} >Datos</Link></div>}
+            <AnimatePresence exitBeforeEnter>
+                {authUser? <motion.div key="profileWrapper"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }} transition={{ duration: .4 }} className='profilePicWrapper'><button title='Ver Opciones' className={`profilePic ${userSettings ? "is-active" : ""}`} onClick={() => toggleUserSettings()}><img alt="Profile Pic" src={authUser.photoURL}></img></button><button className='logOutBtn' onClick={() => authLogOut()} title="Cerrar Sesión"><i className="bi bi-box-arrow-right"></i></button></motion.div> :
+                    <motion.button key="logInBtn"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }} transition={{ duration: .4 }} onClick={(e) => { buttonRipple(e); authLogIn() }} className="button is-dark is-size-5 LogInButton">
+                        <span className='LogInButton__Ingresar'></span>{authLoading ? <PuffLoader color={"var(--color-one)"} size={30} speedMultiplier={1.2} /> : <>Ingresar: &nbsp;<i className="bi bi-google"></i></>}
+                    </motion.button> 
+                }
+            </AnimatePresence>
         </>
     )
 }

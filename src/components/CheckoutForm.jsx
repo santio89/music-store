@@ -100,7 +100,8 @@ export default function CheckoutForm({ total, toggleCheckoutConfirmation, checko
   useEffect(() => {
     setName(userData?.name != null ? userData?.name : "")
     setEmail(userData?.email != null ? userData?.email : "")
-    setPhone(userData?.phoneNumber != null ? userData?.phoneNumber : "")
+    setPhone(userData?.phone != null ? userData?.phone : "")
+    setAddress(userData?.address != null ? userData?.address : "")
     setUid(userData?.uid != null ? userData?.uid : "")
   }, [userData])
 
