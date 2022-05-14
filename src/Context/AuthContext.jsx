@@ -38,7 +38,7 @@ export default function AuthContextProvider({ children }) {
                 setUserData(userObject);
                 setDoc(doc(usersCollection, user?.uid), userObject).then(() => { setAuthLoading(false); setUserDataLoading(false); }).catch(e => console.log("error creating user: " + e));
             }
-        }).catch(e => console.log())
+        }).catch(e => console.log("error retrieving user: "+e))
     }
 
     onAuthStateChanged(auth, (user) => {
