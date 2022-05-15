@@ -13,6 +13,7 @@
         font-family: 'Courier New', Courier, monospace;
         border-bottom: 2px dashed var(--color-three-dark);
         text-shadow: 1px 1px 0 var(--color-back);
+        margin-bottom: .4rem;
     }
 
     &__fields{
@@ -94,6 +95,7 @@
         will-change: transform, background-color;
         word-spacing: .02em;
         letter-spacing: .01em;
+        margin-bottom: 1.2rem;
 
         &:hover, &:focus-visible{
             color: var(--color-five);

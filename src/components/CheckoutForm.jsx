@@ -114,7 +114,7 @@ export default function CheckoutForm({ total, toggleCheckoutConfirmation, checko
           sendOrder();
         }
       }}>
-        <h4>Completar datos</h4>
+        <h4>COMPLETAR</h4>
         <div className='CheckoutForm__fields'>
           <fieldset>
             <legend>Nombre Completo</legend>
@@ -135,7 +135,7 @@ export default function CheckoutForm({ total, toggleCheckoutConfirmation, checko
         </div>
         <p className='CheckoutForm__total'>Total: ${total}</p>
         <button className='CheckoutForm__send'>
-          {loadingCheckout ? <>Procesando<span>.</span><span>.</span><span>.</span></> : <>Enviar pedido</>}
+          {loadingCheckout ? <>Procesando<span>.</span><span>.</span><span>.</span></> : <>ENVIAR PEDIDO</>}
         </button>
         <ReCAPTCHA ref={recaptchaRef} sitekey="6Le4gNAfAAAAALoRTECfoVQlz8IUgGJK766SJ7nD" size="invisible" theme="dark" badge='inline' onChange={() => {
           setRecaptchaValid(true)
