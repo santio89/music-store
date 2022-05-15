@@ -18,27 +18,38 @@
     &__brand {
         color: var(--color-one);
         font-weight: 800;
-        text-shadow: 2px 2px 0 var(--color-three);
+        text-shadow: 1px 1px 0 var(--color-three);
         font-size: $font-fluid-lg;
+        padding: .8rem;
+        border-radius: .1em;
+        font-weight: bold;
+        transition: transform 200ms;
+        will-change: transform;
+
+        &:focus-visible {
+            outline: 1px dashed var(--color-one);
+        }
+        
+        &:active{
+            transform: translate(2px, 2px)
+        }
     }
 
     a {
         color: var(--color-three);
         padding: .8rem;
-        text-shadow: 1px 1px 0 var(--color-one);
-        border-radius: .2em;
+        border-radius: .1em;
         font-size: $font-fluid-sm;
-        transition: 200ms;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        text-shadow: 1px 1px 0 var(--color-three-dark);
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             color: var(--color-one);
             text-shadow: 1px 1px 0 var(--color-three);
         }
-
-        &:focus-visible {
-            outline: 2px dashed var(--color-one);
-        }
+        
     }
 
     &__santi {
@@ -48,15 +59,5 @@
         line-height: 1;
         font-size: $font-fluid-sm;
         font-weight: bold;
-
-        &:hover,
-        &:focus {
-            color: var(--color-one-dark);
-            text-shadow: 1px 1px 0 var(--color-three);
-        }
-
-        &:focus-visible {
-            outline: 2px dashed var(--color-one-dark);
-        }
     }
 }

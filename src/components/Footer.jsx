@@ -7,7 +7,7 @@ export default function Footer() {
     return (
         <>
             <footer className="footer">
-                <div className="footer__brand">MusicStore</div>
+                <button className="footer__brand" onClick={()=>window.scrollTo(0, 0)}>MusicStore</button>
                 <Link to="/">◖Más Vistos</Link>
                 <Link to="/categories">◖Categorías</Link>
                 <a href="https://santiweb.netlify.app/" target="_blank" rel="noreferrer" className="footer__santi">santiWeb</a>
