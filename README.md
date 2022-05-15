@@ -29,8 +29,10 @@ npm start
 ><br/>· Listado de productos actualizados desde Discogs.
 ><br/>· Manejo de stock desde Firebase.
 ><br/>· Conectar con api de Spotify para escuchas los albums (en detalle de item).
-><br/>· Manejar carrito (agregar, modificar, eliminar) y enviar la información a Firebase.
+><br/>· Manejar carro de compras (agregar, modificar, eliminar) y enviar la información a Firebase.
 ><br/>· Mostrar categorías de productos y navegar entre ellas.
+><br/>· Filtrado, búsqueda y paginación de productos.
+><br/>· Modo oscuro/claro.
 ><br/>· Local storage con persistencia entre ventanas.
 ><br/>· Manejo de usuarios desde Firebase con login de Google.
 ><br/>· Carro de compras persistente del usuario.
