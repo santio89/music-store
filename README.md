@@ -5,11 +5,10 @@
   </a>
 </p>
 
-> React // Proyecto final Coderhouse
+> REACT | PROYECTO FINAL CODERHOUSE
 > E-Commerce desarrollado con React y conectado a Firebase
 
 ### 🏠 [Repo](https://github.com/santio89/music-store)
-
 ### ✨ [Demo](https://music-store-firebase.web.app/)
 
 ## Instalar
@@ -26,9 +25,8 @@ npm start
 
 ## Funcionalidades
 
-
->· Leer productos de una api (Discogs) y crearlos en una base de datos (Firebase). En caso de no exisitir el producto en Firebase lo crea; en caso de ya exisitir, le actualiza el precio según Discogs pero mantiene el stock desde Firebase.
-><br/>· Listado de productos (api) actualizados desde api.
+>· Leer productos de una api y crearlos en una base de datos. En caso de no exisitir el producto en la base de datos, lo crea; en caso de ya exisitir, le actualiza el precio según la api pero mantiene el stock desde la base datos.
+><br/>· Listado de productos actualizados desde Discogs.
 ><br/>· Manejo de stock desde Firebase.
 ><br/>· Conectar con api de Spotify para escuchas los albums (en detalle de item).
 ><br/>· Manejar carrito (agregar, modificar, eliminar) y enviar la información a Firebase.
@@ -37,8 +35,6 @@ npm start
 ><br/>· Manejo de usuarios desde Firebase con login de Google.
 ><br/>· Carro de compras persistente del usuario.
 ><br/>· Modificación de datos de usuario.
-
-
 
 
 ## Recursos y librerías utilizadas
@@ -51,6 +47,7 @@ framer-motion
 bulma css/bootstrap icons/google fonts
 google firebase
 ```
+
 
 ## Autor
 
