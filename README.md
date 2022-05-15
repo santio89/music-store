@@ -1,4 +1,4 @@
-<h1 align="center">MUSIC-STORE // REACT PROJECT 👋</h1>
+<h1 align="center">MUSIC-STORE | REACT PROJECT 👋</h1>
 <p>
   <a href="https://www.npmjs.com/package/music-store" target="_blank">
     <img alt="Version" src="https://img.shields.io/npm/v/music-store.svg">
