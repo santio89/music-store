@@ -8,7 +8,7 @@ export const AuthContext = createContext();
 
 export default function AuthContextProvider({ children }) {
     const [authUser, setAuthUser] = useState(null);
-    const [authLoading, setAuthLoading] = useState(localStorage.getItem("msAuthLoading") === "true"? true : false);
+    const [authLoading, setAuthLoading] = useState(localStorage.getItem("msAuthLoading") === "true" ? true : false);
     const [userData, setUserData] = useState({});
     const [userDataLoading, setUserDataLoading] = useState(true);
 
@@ -83,7 +83,7 @@ export default function AuthContextProvider({ children }) {
         const database = getFirestore();
         const userDataRef = doc(database, "users", user?.uid);
 
-        setDoc(userDataRef, cart, { merge: true }).catch((e)=>console.log("error setting firebase cart: "+e))
+        setDoc(userDataRef, cart, { merge: true }).catch((e) => console.log("error setting firebase cart: " + e))
     }
 
     useEffect(() => {
@@ -91,7 +91,6 @@ export default function AuthContextProvider({ children }) {
             getUserData(authUser);
         }
     }, [authUser])
-
 
 
 
