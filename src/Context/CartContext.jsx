@@ -1,12 +1,15 @@
-import React, { createContext, useState, useEffect } from 'react'
+import React, { createContext, useState, useEffect, useContext } from 'react'
+import { AuthContext } from './AuthContext'
 
 export const CartContext = createContext();
 
 export default function CartContextProvider({ children }) {
-
-  const [carrito, setCarrito] = useState(JSON.parse(localStorage.getItem("msShopList")) || []);
+  
+  const { authUser, userData, firebaseSetUserCart } = useContext(AuthContext);
+  const [carrito, setCarrito] = useState(() => localStorage.getItem("msShopList") && localStorage.getItem("msShopList") !== undefined && !authUser ? JSON.parse(localStorage.getItem("msShopList")) : []);
   const [cartItems, setCartItems] = useState(0);
-  const [total, setTotal] = useState(0);  
+  const [total, setTotal] = useState(0);
+
 
   const cartAdd = (item) => {
     const itemIndex = carrito.findIndex(producto => producto.id === item.id);
@@ -48,11 +51,12 @@ export default function CartContextProvider({ children }) {
     return 0;
   }
 
+  /* local storage persistent entre ventanas */
   useEffect(() => {
     const checkStorage = (e) => {
       const { key, newValue } = e;
 
-      if (key === "msShopList") {
+      if (key === "msShopList" || key === `msShopList-${userData.uid}`) {
         setCarrito(JSON.parse(newValue));
       }
     }
@@ -60,14 +64,35 @@ export default function CartContextProvider({ children }) {
 
     return (() => window.removeEventListener("storage", checkStorage))
   })
+  /* fin local storage persistent entre ventanas */
+
+
+  /* logout useEffect / separar storage usuario o generico */
+  useEffect(() => {
+    if (userData?.userCart != null && userData?.userCart !== "") {
+      setCarrito(JSON.parse(userData.userCart))
+    } else if (userData === null){
+      setCarrito(localStorage.getItem("msShopList") && localStorage.getItem("msShopList") !== undefined ? JSON.parse(localStorage.getItem("msShopList")) : [])
+    }
+  }, [userData])
+/* fin logout useEffect */
+
 
   useEffect(() => {
-    setCartItems(carrito.reduce((total, item) => total + item?.count, 0));
+    setCartItems(carrito?.reduce((total, item) => total + item?.count, 0));
+    setTotal(carrito?.reduce((total, item) => total + item?.price * item?.count, 0));
 
-    setTotal(carrito.reduce((total, item) => total + item?.price * item?.count, 0));
+    if (carrito) {
+      if (authUser && userData?.uid != null) {
+        localStorage.setItem(`msShopList-${userData.uid}`, JSON.stringify(carrito))
+        firebaseSetUserCart(authUser, { userCart: JSON.stringify(carrito) })
+      } else if (!authUser) {
+        localStorage.setItem("msShopList", JSON.stringify(carrito))
+      }
+    }
 
-    localStorage.setItem("msShopList", JSON.stringify(carrito));
-  }, [carrito])
+  }, [carrito, authUser, userData, firebaseSetUserCart])
+
 
 
   return (

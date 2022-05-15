@@ -1,6 +1,8 @@
 import React, { createContext, useState, useEffect } from 'react'
 import { getAuth, signOut, signInWithRedirect, GoogleAuthProvider, setPersistence, browserLocalPersistence, onAuthStateChanged } from "firebase/auth";
 import { doc, getDoc, setDoc, collection, getFirestore } from 'firebase/firestore';
+
+
 export const AuthContext = createContext();
 
 
@@ -26,6 +28,7 @@ export default function AuthContextProvider({ children }) {
             email: user.email !== null ? user.email : "",
             phone: user.phoneNumber !== null ? user.phoneNumber : "",
             address: "",
+            userCart: "",
             uid: user.uid,
         }
 
@@ -38,7 +41,7 @@ export default function AuthContextProvider({ children }) {
                 setUserData(userObject);
                 setDoc(doc(usersCollection, user?.uid), userObject).then(() => { setAuthLoading(false); setUserDataLoading(false); }).catch(e => console.log("error creating user: " + e));
             }
-        }).catch(e => console.log("error retrieving user: "+e))
+        }).catch(e => console.log("error retrieving user: " + e))
     }
 
     onAuthStateChanged(auth, (user) => {
@@ -71,6 +74,13 @@ export default function AuthContextProvider({ children }) {
         });
     }
 
+    const firebaseSetUserCart = (user, cart) => {
+        const database = getFirestore();
+        const userDataRef = doc(database, "users", user?.uid);
+
+        setDoc(userDataRef, cart, { merge: true }).catch((e)=>console.log("error setting firebase cart: "+e))
+    }
+
     useEffect(() => {
         if (authUser && authUser.uid) {
             getUserData(authUser);
@@ -79,7 +89,7 @@ export default function AuthContextProvider({ children }) {
 
 
     return (
-        <AuthContext.Provider value={{ authLogIn, authLogOut, authUser, authLoading, userData, setUserData, userDataLoading }}>
+        <AuthContext.Provider value={{ authLogIn, authLogOut, authUser, authLoading, userData, setUserData, userDataLoading, firebaseSetUserCart }}>
             {children}
         </AuthContext.Provider>
     )
