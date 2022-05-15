@@ -37,7 +37,7 @@ npm start
 ><br/>· Modificación de datos de usuario.
 
 
-## Recursos y librerías utilizadas
+## Librerías y recursos utilizados
 
 ```sh
 react
