@@ -8,7 +8,7 @@ export const AuthContext = createContext();
 
 export default function AuthContextProvider({ children }) {
     const [authUser, setAuthUser] = useState(null);
-    const [authLoading, setAuthLoading] = useState(false);
+    const [authLoading, setAuthLoading] = useState(localStorage.getItem("msAuthLoading") === "true"? true : false);
     const [userData, setUserData] = useState({});
     const [userDataLoading, setUserDataLoading] = useState(true);
 
@@ -52,15 +52,19 @@ export default function AuthContextProvider({ children }) {
         setPersistence(auth, browserLocalPersistence)
             .then(() => {
                 setAuthLoading(true);
+                /* seteo authLoading en localStorage para que sea persistente en el redirect del auth */
+                localStorage.setItem("msAuthLoading", "true");
                 return signInWithRedirect(auth, googleProvider).then((result) => {
                     setAuthUser(result.user);
                 }).catch((error) => {
                     setAuthLoading(false);
+                    localStorage.setItem("msAuthLoading", "false");
                     console.log("error in auth sign in: " + error);
                 });
             })
             .catch((error) => {
                 setAuthLoading(false);
+                localStorage.setItem("msAuthLoading", "false");
                 console.log("error setting persistance: " + error);
             });
     }
@@ -68,7 +72,8 @@ export default function AuthContextProvider({ children }) {
     const authLogOut = () => {
         signOut(auth).then(() => {
             setAuthUser(null);
-            setUserData(null)
+            setUserData(null);
+            localStorage.setItem("msAuthLoading", "false");
         }).catch((error) => {
             console.log("error signing out: " + error)
         });
@@ -86,6 +91,8 @@ export default function AuthContextProvider({ children }) {
             getUserData(authUser);
         }
     }, [authUser])
+
+
 
 
     return (
