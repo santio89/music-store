@@ -40,7 +40,7 @@ export default function UserDatos() {
             address: address,
         }
 
-        setDoc(doc(usersCollection, userData.uid), userObject, { merge: true }).then(() => { setUserData(userObject); setSaveLoading(false); setEditMode(false); setSaveConfirm(true); setTimeout(() => setSaveConfirm(false), 4000) }).catch(e => console.log("error saving data: " + e));
+        setDoc(doc(usersCollection, userData.email), userObject, { merge: true }).then(() => { setUserData(userObject); setSaveLoading(false); setEditMode(false); setSaveConfirm(true); setTimeout(() => setSaveConfirm(false), 4000) }).catch(e => console.log("error saving data: " + e));
     }
 
     useEffect(() => {
@@ -70,7 +70,7 @@ export default function UserDatos() {
                     <h1 className='Datos__title'>Mis Datos</h1>
 
                     {userData && userData != null ? <div className='Datos__details'>
-                        <form onSubmit={(e) => e.preventDefault()}>
+                        <form onSubmit={(e) => {e.preventDefault(); editMode && saveData();}}>
                             <div className='Datos__details__pWrapper'>
 
                                 <p>·&nbsp;Nombre Completo:<br/><span>{editMode ? <input type="text" value={name} maxLength={200} pattern="^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$" onChange={(e) => { setName(e.currentTarget.value) }} /> : userData?.name}</span></p>
@@ -83,9 +83,9 @@ export default function UserDatos() {
 
                             </div>
                             <div className='Datos__details__btnContainer'>
-                                <button onClick={() => { if (editMode) { resetInputs() } toggleEditMode() }} className="button is-danger is-size-5 Datos__details__btnContainer__btn">{editMode ? "Cancelar" : "Editar"}</button>
+                                <button type='button' onClick={() => { if (editMode) { resetInputs() }; toggleEditMode() }} className="button is-danger is-size-5 Datos__details__btnContainer__btn">{editMode ? "Cancelar" : "Editar"}</button>
 
-                                <button onClick={() => { editMode && saveData() }} className="button is-danger is-size-5 Datos__details__btnContainer__btn">{saveLoading ? <PuffLoader color={"var(--color-three)"} size={30} speedMultiplier={1.2} /> : (saveConfirm ? "Guardado!" : "Guardar")}</button>
+                                <button type='submit' className="button is-danger is-size-5 Datos__details__btnContainer__btn">{saveLoading ? <PuffLoader color={"var(--color-three)"} size={30} speedMultiplier={1.2} /> : (saveConfirm ? "Guardado!" : "Guardar")}</button>
                             </div>
                         </form>
                     </div> : <div className='Datos__nouser'><p>Debes&nbsp;<button onClick={() => authLogIn()}>Iniciar Sesión</button>&nbsp;para ver tus datos</p></div>}
