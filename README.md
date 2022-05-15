@@ -27,7 +27,7 @@ npm start
 ## Funcionalidades
 
 
-><br/>· Leer productos de una api (Discogs) y crearlos en una base de datos (Firebase). En caso de no exisitir el producto en Firebase lo crea; en caso de ya exisitir, le actualiza el precio según Discogs pero mantiene el stock desde Firebase.
+>· Leer productos de una api (Discogs) y crearlos en una base de datos (Firebase). En caso de no exisitir el producto en Firebase lo crea; en caso de ya exisitir, le actualiza el precio según Discogs pero mantiene el stock desde Firebase.
 ><br/>· Listado de productos (api) actualizados desde api.
 ><br/>· Manejo de stock desde Firebase.
 ><br/>· Conectar con api de Spotify para escuchas los albums (en detalle de item).
