@@ -6,7 +6,7 @@
 </p>
 
 <h2>REACT | PROYECTO FINAL CODERHOUSE</h2>
-<p>E-Commerce desarrollado con React y conectado a Firebase</p>
+<p>E-Commerce desarrollado en React y conectado a Firebase</p>
 
 ### 🏠 [Repo](https://github.com/santio89/music-store)
 ### ✨ [Demo](https://music-store-firebase.web.app/)
