@@ -40,6 +40,8 @@ export default function ItemDetail({ loading, producto, spotifyId }) {
         window.scrollTo(0, 0);
     }, [])
 
+    const modalCloseClick = (e) => { if (e.target === imgModal.current) { imgModal.current.close(); window.removeEventListener("click", modalCloseClick) } };
+    const modalCloseScroll = () => { imgModal.current.close(); window.removeEventListener("scroll", modalCloseScroll) }
 
     return (
         <>
@@ -57,8 +59,8 @@ export default function ItemDetail({ loading, producto, spotifyId }) {
                                     <div className='ItemDetail__detailsWrapper'>
                                         <button onClick={() => {
                                             imgModal.current.showModal();
-                                            window.addEventListener("click", (e) => { if (e.target === imgModal.current) { imgModal.current.close() } });
-                                       /*      window.addEventListener("scroll", ()=>{imgModal.current.close()}) */
+                                            window.addEventListener("click", modalCloseClick);
+                                            window.addEventListener("scroll", modalCloseScroll)
                                         }}>
                                             <img alt={`${producto?.title} - ${producto?.artists_sort}`} src={imgSelected || "https://raw.githubusercontent.com/santio89/music-store/master/src/assets/disc.jpg"} loading="lazy"></img>
                                         </button>
