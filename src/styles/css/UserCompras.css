@@ -48,23 +48,24 @@
   font-weight: bold;
   margin-top: 0.8rem;
 }
-.Compras__nouser {
+.Compras__nouser, .Compras__noorder {
   width: 100%;
   text-align: center;
   text-shadow: none;
   margin-top: 2rem;
   font-weight: bold;
   font-family: "Courier New", Courier, monospace;
-}
-.Compras__nouser button {
   color: var(--color-four);
+}
+.Compras__nouser button, .Compras__nouser a, .Compras__noorder button, .Compras__noorder a {
+  color: var(--color-one);
   will-change: transform;
   transition: transform 200ms;
 }
-.Compras__nouser button:hover, .Compras__nouser button:focus-visible {
+.Compras__nouser button:hover, .Compras__nouser button:focus-visible, .Compras__nouser a:hover, .Compras__nouser a:focus-visible, .Compras__noorder button:hover, .Compras__noorder button:focus-visible, .Compras__noorder a:hover, .Compras__noorder a:focus-visible {
   border-bottom: 2px dashed var(--color-one);
 }
-.Compras__nouser button:active {
+.Compras__nouser button:active, .Compras__nouser a:active, .Compras__noorder button:active, .Compras__noorder a:active {
   transform: translate(2px, 2px);
 }
 .Compras__details {

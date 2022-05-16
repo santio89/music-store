@@ -54,16 +54,17 @@
         margin-top: .8rem;
     }
 
-    &__nouser {
+    &__nouser, &__noorder {
         width: 100%;
         text-align: center;
         text-shadow: none;
         margin-top: 2rem;
         font-weight: bold;
         font-family: 'Courier New', Courier, monospace;
+        color: var(--color-four);
 
-        button {
-            color: var(--color-four);
+        button, a {
+            color: var(--color-one);
             will-change: transform;
             transition: transform 200ms;
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useContext, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import '../styles/css/UserCompras.css'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -48,7 +49,7 @@ export default function UserCompras() {
 
           {authUser && authUser != null ? <div className='Compras__details'>
             {
-              userOrders?.map(order => {
+              userOrders.length === 0 ? <div className='Compras__noorder'><p>Aún no has realizado ninguna compra.<br /><Link to="/">SEGUIR NAVEGANDO</Link></p></div> : userOrders?.map(order => {
                 return (<details key={order.orderId} className='Compras__details__order'>
                   <summary>{(new Date(order.date.seconds * 1000).toLocaleString([], { year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false }))}</summary>
                   <div className='Compras__details__order__items'>
