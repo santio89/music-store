@@ -9,6 +9,7 @@
   border-radius: 0.2em;
   background-color: transparent;
   margin-bottom: 0.2em;
+  margin-right: -0.68rem !important;
 }
 .ThemeButton i {
   line-height: 1;
@@ -26,5 +27,10 @@
     color: var(--color-three);
     outline: 1px dashed var(--color-three);
     background-color: var(--color-one-hover);
+  }
+}
+@media (min-width: 1048px) {
+  .ThemeButton {
+    margin-right: 0 !important;
   }
 }/*# sourceMappingURL=ThemeButton.css.map */
