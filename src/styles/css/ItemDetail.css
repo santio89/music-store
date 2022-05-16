@@ -115,6 +115,7 @@
   outline: 1px dashed var(--color-three-dark);
 }
 .ItemDetail__imgModal {
+  position: fixed !important;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
