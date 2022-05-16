@@ -12,7 +12,7 @@
         font-size: $font-xl;
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             outline: 2px dashed var(--color-three);
             outline-offset: -2px;
             background: var(--color-one-hover) !important;
@@ -24,7 +24,7 @@
         padding: 8px 12px;
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             color: var(--color-one);
             outline: 1px dashed var(--color-three);
             background: var(--color-one-hover) !important;
@@ -101,7 +101,7 @@
             color: var(--color-mobilenavtext);
 
             &:hover,
-            &:focus {
+            &:focus-visible {
                 color: var(--color-one) !important;
                 outline: none;
                 background: var(--color-three-accent) !important;

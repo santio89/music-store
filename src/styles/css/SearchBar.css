@@ -30,7 +30,7 @@
   color: var(--color-three);
   margin-left: 0.32em;
 }
-.searchBar__icon:hover, .searchBar__icon:focus {
+.searchBar__icon:hover, .searchBar__icon:focus-visible {
   color: var(--color-one-dark);
 }
 
@@ -64,22 +64,12 @@
     margin-right: 3.1vw;
     color: var(--color-two);
   }
-  .searchBar__icon:hover, .searchBar__icon:focus {
+  .searchBar__icon:hover, .searchBar__icon:focus-visible {
     color: var(--color-one);
   }
 
   a.navbar-item:hover,
-a.navbar-item:focus {
+a.navbar-item:focus-visible {
     color: var(--color-one-dark);
   }
-}
-/* @media (min-width: 1124px){
-    .searchBar__input{
-        width: 18ch;
-    }
-}
-@media (min-width: 1216px){
-    .searchBar__input{
-        width: fit-content;
-    }
-} *//*# sourceMappingURL=SearchBar.css.map */
+}/*# sourceMappingURL=SearchBar.css.map */

@@ -23,7 +23,7 @@
     }
 
     &:hover,
-    &:focus {
+    &:focus-visible {
         outline: none;
         color: var(--color-one);
         background-color: var(--color-three-accent);
@@ -42,7 +42,7 @@
         border-radius: .2em;
 
         &:hover,
-        &:focus {
+        &:focus-visible {
             outline: 1px dashed var(--color-three);
             color: var(--color-three);
             background: var(--color-one-hover);

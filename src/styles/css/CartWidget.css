@@ -18,7 +18,7 @@
   display: block;
   width: 100%;
 }
-.CartWidget:hover, .CartWidget:focus {
+.CartWidget:hover, .CartWidget:focus-visible {
   outline: none;
   color: var(--color-one);
   background-color: var(--color-three-accent);
@@ -35,7 +35,7 @@
     text-align: center;
     border-radius: 0.2em;
   }
-  .CartWidget:hover, .CartWidget:focus {
+  .CartWidget:hover, .CartWidget:focus-visible {
     outline: 1px dashed var(--color-three);
     color: var(--color-three);
     background: var(--color-one-hover);
