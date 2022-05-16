@@ -28,7 +28,7 @@ npm start
 >· Leer productos de una api y crearlos en una base de datos. En caso de no exisitir el producto en la base de datos, lo crea; en caso de ya exisitir, le actualiza el precio según la api pero mantiene el stock desde la base datos.
 ><br/>· Listado de productos actualizados desde Discogs.
 ><br/>· Manejo de stock desde Firebase.
-><br/>· Conectar con api de Spotify para escuchas los albums (en detalle de item).
+><br/>· Conectar con api de Spotify para escuchar los albums (en detalle de item).
 ><br/>· Manejar carro de compras (agregar, modificar, eliminar) y enviar la información a Firebase.
 ><br/>· Mostrar categorías de productos y navegar entre ellas.
 ><br/>· Filtrado, búsqueda y paginación de productos.
