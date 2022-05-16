@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react'
-import { getAuth, signOut, signInWithRedirect, GoogleAuthProvider, setPersistence, browserLocalPersistence, onAuthStateChanged } from "firebase/auth";
+import { getAuth, signOut, signInWithRedirect, GoogleAuthProvider, setPersistence, browserLocalPersistence, onAuthStateChanged, serverTimestamp } from "firebase/auth";
 import { doc, getDoc, setDoc, collection, getFirestore } from 'firebase/firestore';
 
 
@@ -23,6 +23,7 @@ export default function AuthContextProvider({ children }) {
         const database = getFirestore();
         const userDataRef = doc(database, "users", user?.uid);
         const usersCollection = collection(database, "users");
+
         const userObject = {
             name: user.displayName !== null ? user.displayName : "",
             email: user.email !== null ? user.email : "",
@@ -30,6 +31,7 @@ export default function AuthContextProvider({ children }) {
             address: "",
             userCart: "",
             uid: user.uid,
+            created: serverTimestamp()
         }
 
         getDoc(userDataRef).then(snapshot => {
