@@ -52,6 +52,9 @@
   line-height: 1;
   text-shadow: 2.4px 2.4px 0 var(--color-three), 4px 4px 0 var(--color-one);
   background: var(--color-three-dark);
+  outline: none;
+  border: none;
+  width: 100%;
 }
 .ItemCount__add {
   font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
