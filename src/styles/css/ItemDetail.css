@@ -114,6 +114,45 @@
   border-radius: 0.2em;
   outline: 1px dashed var(--color-three-dark);
 }
+.ItemDetail__imgModal {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 1;
+  border: none;
+  outline: none;
+  border-radius: 0.2em;
+  padding: 2ch;
+  overflow: hidden;
+  background-image: linear-gradient(45deg, var(--color-one-dark) 50%, var(--color-back-dark) 50%);
+  position: relative;
+  font-size: clamp(2rem, 2rem + 2vw, 3.2rem);
+  min-width: 300px;
+  outline: 4px dashed var(--color-back);
+}
+.ItemDetail__imgModal::-webkit-backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.ItemDetail__imgModal::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.ItemDetail__imgModal img {
+  border-radius: 0.1em;
+  outline: none;
+  box-shadow: 0 0 0 4px var(--color-back);
+  background: var(--color-back);
+}
+.ItemDetail__imgModal button {
+  position: absolute;
+  top: -0.4ch;
+  right: 0.4ch;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 var(--color-three-dark);
+}
+.ItemDetail__imgModal button:hover, .ItemDetail__imgModal button:focus-visible {
+  color: var(--color-one);
+}
 .ItemDetail__pWrapper {
   width: 100%;
 }

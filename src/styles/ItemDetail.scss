@@ -128,6 +128,49 @@
         }
     }
 
+    
+
+    &__imgModal{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        aspect-ratio: 1;
+        border: none;
+        outline: none;
+        border-radius: .2em;
+        padding: 2ch;
+        overflow: hidden;
+        background-image: linear-gradient(45deg, var(--color-one-dark) 50%, var(--color-back-dark) 50%);
+        position: relative;
+        font-size: $font-fluid-xl;
+        min-width: 300px;
+        outline: 4px dashed var(--color-back);
+
+        &::backdrop{
+            background-color: rgba(0,0,0,.6);
+        }
+
+        img{
+            border-radius: .1em;
+            outline: none;
+            box-shadow: 0 0 0 4px var(--color-back);
+            background: var(--color-back);
+        }
+
+        button{
+            position: absolute;
+            top: -.4ch;
+            right: .4ch;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 0 var(--color-three-dark);
+
+            &:hover, &:focus-visible{
+                color: var(--color-one);
+            }
+        }
+    }
+
     &__pWrapper {
         width: 100%;
 

@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect, useRef } from 'react';
 import { CartContext } from '../Context/CartContext';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion'
@@ -15,6 +15,7 @@ export default function ItemDetail({ loading, producto, spotifyId }) {
     const [continueCheckout, setContinueCheckout] = useState(false);
     const [imgSelected, setImgSelected] = useState("")
     const { cartAdd } = useContext(CartContext)
+    const imgModal = useRef();
 
 
     const onAdd = (count) => {
@@ -30,12 +31,13 @@ export default function ItemDetail({ loading, producto, spotifyId }) {
         setImgSelected(imgUrl)
     }
 
-
     useEffect(() => {
-        window.scrollTo(0, 0);
         setImgSelected(producto?.cover_image || producto?.images?.[0]?.resource_url)
     }, [producto]);
 
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    }, [])
 
 
     return (
@@ -52,12 +54,15 @@ export default function ItemDetail({ loading, producto, spotifyId }) {
                                 <button onClick={() => { history(-1) }} className='ItemDetail__back'><i className="bi bi-caret-left-fill"></i></button>
                                 <div className='ItemDetail__body'>
                                     <div className='ItemDetail__detailsWrapper'>
-                                        <img alt={`${producto?.title} - ${producto?.artists_sort}`} src={imgSelected || "https://raw.githubusercontent.com/santio89/music-store/master/src/assets/disc.jpg"} loading="lazy"></img>
+                                        <button onClick={()=>{imgModal.current.showModal(); window.addEventListener("click", (e)=>{if (e.target === imgModal.current){imgModal.current.close()}})}}><img alt={`${producto?.title} - ${producto?.artists_sort}`} src={imgSelected || "https://raw.githubusercontent.com/santio89/music-store/master/src/assets/disc.jpg"} loading="lazy"></img></button>
                                         <div className='ItemDetail__imgSelector'>
                                             {producto?.images?.slice(0, 4).map((img) => {
                                                 return <button key={img.resource_url} onClick={() => { changeImgSelected(img.resource_url) }}><img alt="img01" src={img.resource_url} loading="lazy"></img></button>
                                             })}
                                         </div>
+
+                                        <dialog className='ItemDetail__imgModal' ref={imgModal}><button onClick={()=>{imgModal.current.close()}}>X</button><img alt={`${producto?.title} - ${producto?.artists_sort}`} src={imgSelected || "https://raw.githubusercontent.com/santio89/music-store/master/src/assets/disc.jpg"} loading="lazy"></img></dialog>
+
                                         <div className='ItemDetail__pWrapper'>
                                             <p>◖TITULO: {producto?.title?.toUpperCase()}</p>
                                             <p>◖ARTISTA: {producto?.artists_sort?.toUpperCase()}</p>
