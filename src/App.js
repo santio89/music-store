@@ -10,10 +10,12 @@ import UserDatos from './Components/UserDatos';
 import NavBar from './Components/NavBar';
 import Categories from './Components/Categories'
 import Checkout from './Components/Checkout';
+import Wishlist from './Components/Wishlist';
 import Error404 from './Components/Error404';
 import CartContextProvider from './Context/CartContext';
 import ThemeContextProvider from './Context/ThemeContext';
 import AuthContextProvider from './Context/AuthContext'
+import WishlistContextProvider from './Context/WishlistContext';
 
 
 function App() {
@@ -30,22 +32,25 @@ function App() {
       <AuthContextProvider>
         <ThemeContextProvider>
           <CartContextProvider>
-            <BrowserRouter>
-              <NavBar brand={brand} />
-              <TabSelector />
-              <Routes>
-                <Route path="/" element={<ItemListContainer />} />
-                <Route path="/user/compras" element={<UserCompras />} />
-                <Route path="/user/datos" element={<UserDatos />} />
-                <Route path="/item/:productId" element={<ItemDetailContainer />} />
-                <Route path="/categories" element={<Categories />} />
-                <Route path="/categories/:categoryId" element={<ItemListContainer />} />
-                <Route path="/search/:searchId" element={<ItemListContainer />} />
-                <Route path="/checkout" element={<Checkout />} />
-                <Route path="/*" element={<Error404 />} />
-              </Routes>
-              <Footer />
-            </BrowserRouter>
+            <WishlistContextProvider>
+              <BrowserRouter>
+                <NavBar brand={brand} />
+                <TabSelector />
+                <Routes>
+                  <Route path="/" element={<ItemListContainer />} />
+                  <Route path="/user/compras" element={<UserCompras />} />
+                  <Route path="/user/datos" element={<UserDatos />} />
+                  <Route path="/user/wishlist" element={<Wishlist />} />
+                  <Route path="/item/:productId" element={<ItemDetailContainer />} />
+                  <Route path="/categories" element={<Categories />} />
+                  <Route path="/categories/:categoryId" element={<ItemListContainer />} />
+                  <Route path="/search/:searchId" element={<ItemListContainer />} />
+                  <Route path="/checkout" element={<Checkout />} />
+                  <Route path="/*" element={<Error404 />} />
+                </Routes>
+                <Footer />
+              </BrowserRouter>
+            </WishlistContextProvider>
           </CartContextProvider>
         </ThemeContextProvider>
       </AuthContextProvider>

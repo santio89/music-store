@@ -35,7 +35,6 @@ export default function CartContextProvider({ children }) {
 
   const cartRemove = (id) => {
     setCarrito(carrito.filter(item => item.id !== id));
-
   }
 
   const cartClear = () => {

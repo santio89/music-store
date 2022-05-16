@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect, useRef } from 'react';
 import { CartContext } from '../Context/CartContext';
+import { WishlistContext } from '../Context/WishlistContext';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion'
 import PuffLoader from "react-spinners/PuffLoader";
@@ -16,7 +17,9 @@ export default function ItemDetail({ loading, producto, spotifyId }) {
     const [continueCheckout, setContinueCheckout] = useState(false);
     const [imgSelected, setImgSelected] = useState("");
     const { cartAdd } = useContext(CartContext);
+    const {wishlist, wishlistAdd, wishlistRemove, inWishlist} = useContext (WishlistContext);
     const imgModal = useRef();
+    const [wishlistAdded, setWishlistAdded] = useState(inWishlist(producto));
 
 
     const onAdd = (count) => {
@@ -35,6 +38,10 @@ export default function ItemDetail({ loading, producto, spotifyId }) {
     useEffect(() => {
         setImgSelected(producto?.cover_image || producto?.images?.[0]?.resource_url)
     }, [producto]);
+
+    useEffect(()=>{
+        setWishlistAdded(()=>{return inWishlist(producto)})
+    }, [wishlist, producto, inWishlist])
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -101,6 +108,12 @@ export default function ItemDetail({ loading, producto, spotifyId }) {
                                             <div className="ItemDetail__info__main">
                                                 <p className='ItemDetail__subtitle'>{producto?.artists_sort}</p>
                                                 <h2 className='ItemDetail__title'>{producto?.title?.toUpperCase()}</h2>
+
+                                                {wishlistAdded?<button className='ItemDetail__info__wi
+                                                sh' onClick={()=>{wishlistRemove(producto)}}><i className="bi bi-suit-heart-fill"></i></button>:
+                                                <button className='ItemDetail__info__wi
+                                                sh' onClick={()=>{wishlistAdd(producto)}}><i className="bi bi-suit-heart"></i></button>}
+                                               
                                             </div>
                                             <div className='ItemDetail__controlsWrapper'>
                                                 <AnimatePresence>

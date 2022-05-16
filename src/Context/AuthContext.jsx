@@ -30,6 +30,7 @@ export default function AuthContextProvider({ children }) {
             phone: user.phoneNumber !== null ? user.phoneNumber : "",
             address: "",
             userCart: "",
+            userWishlist: "",
             uid: user.uid,
             created: serverTimestamp()
         }
@@ -88,6 +89,13 @@ export default function AuthContextProvider({ children }) {
         setDoc(userDataRef, cart, { merge: true }).catch((e) => console.log("error setting firebase cart: " + e))
     }
 
+    const firebaseSetUserWishlist = (user, wishlist) => {
+        const database = getFirestore();
+        const userDataRef = doc(database, "users", user?.uid);
+
+        setDoc(userDataRef, wishlist, { merge: true }).catch((e) => console.log("error setting firebase wishlist: " + e))
+    }
+
     useEffect(() => {
         if (authUser && authUser.uid) {
             getUserData(authUser);
@@ -97,7 +105,7 @@ export default function AuthContextProvider({ children }) {
 
 
     return (
-        <AuthContext.Provider value={{ authLogIn, authLogOut, authUser, authLoading, userData, setUserData, userDataLoading, firebaseSetUserCart }}>
+        <AuthContext.Provider value={{ authLogIn, authLogOut, authUser, authLoading, userData, setUserData, userDataLoading, firebaseSetUserCart, firebaseSetUserWishlist }}>
             {children}
         </AuthContext.Provider>
     )

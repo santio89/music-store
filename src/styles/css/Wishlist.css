@@ -1,0 +1,75 @@
+.CheckoutWrapper {
+  min-height: calc(100vh - 76px - 60px - 0.2rem);
+  /* container height= 100vh-navHeight-tabsHeight-margins */
+  width: 100%;
+  max-width: 1800px;
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.CheckoutWrapper > span {
+  transform: translateY(-50%);
+}
+
+.Checkout {
+  align-self: start;
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: start;
+  align-items: center;
+  font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
+  color: var(--color-one);
+  text-shadow: 2px 2px 0 var(--color-four);
+  margin-bottom: 8rem;
+}
+.Checkout h1 {
+  font-size: clamp(2rem, 2rem + 2vw, 3.2rem);
+  border-bottom: 2px dashed var(--color-one);
+  width: 100%;
+  font-weight: bold;
+  margin-top: 0.8rem;
+  text-shadow: 2px 2px 0 var(--color-three);
+}
+.Checkout__back {
+  position: absolute;
+  left: min(2%, 1rem);
+  top: min(-20px, -2%);
+  color: var(--color-one-dark);
+  text-shadow: 1px 1px 0 var(--color-four);
+  font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.8rem);
+  font-weight: bold;
+}
+.Checkout__back:hover {
+  color: var(--color-one);
+}
+.Checkout__details {
+  text-shadow: 1px 1px 0 var(--color-back-dark);
+  font-family: var(--font-primary);
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+.Checkout__details h3 {
+  font-family: var(--font-primary);
+  font-weight: bold;
+  font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.8rem);
+  border-bottom: 2px dashed var(--color-one);
+  width: 100%;
+  padding: 0.44em;
+  color: var(--color-one);
+  text-shadow: 1px 1px 0 var(--color-three);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}/*# sourceMappingURL=Wishlist.css.map */
