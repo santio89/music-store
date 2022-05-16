@@ -131,10 +131,10 @@
   outline: 4px dashed var(--color-back);
 }
 .ItemDetail__imgModal::-webkit-backdrop {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 .ItemDetail__imgModal::backdrop {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 .ItemDetail__imgModal img {
   border-radius: 0.1em;
