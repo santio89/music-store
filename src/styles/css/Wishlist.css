@@ -1,4 +1,4 @@
-.CheckoutWrapper {
+.WishlistWrapper {
   min-height: calc(100vh - 76px - 60px - 0.2rem);
   /* container height= 100vh-navHeight-tabsHeight-margins */
   width: 100%;
@@ -10,11 +10,11 @@
   align-items: center;
   position: relative;
 }
-.CheckoutWrapper > span {
+.WishlistWrapper > span {
   transform: translateY(-50%);
 }
 
-.Checkout {
+.Wishlist {
   align-self: start;
   width: 100%;
   height: 100%;
@@ -30,7 +30,7 @@
   text-shadow: 2px 2px 0 var(--color-four);
   margin-bottom: 8rem;
 }
-.Checkout h1 {
+.Wishlist h1 {
   font-size: clamp(2rem, 2rem + 2vw, 3.2rem);
   border-bottom: 2px dashed var(--color-one);
   width: 100%;
@@ -38,7 +38,7 @@
   margin-top: 0.8rem;
   text-shadow: 2px 2px 0 var(--color-three);
 }
-.Checkout__back {
+.Wishlist__back {
   position: absolute;
   left: min(2%, 1rem);
   top: min(-20px, -2%);
@@ -47,10 +47,10 @@
   font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.8rem);
   font-weight: bold;
 }
-.Checkout__back:hover {
+.Wishlist__back:hover {
   color: var(--color-one);
 }
-.Checkout__details {
+.Wishlist__details {
   text-shadow: 1px 1px 0 var(--color-back-dark);
   font-family: var(--font-primary);
   width: 100%;
@@ -61,7 +61,7 @@
   gap: 2rem;
   margin-top: 1rem;
 }
-.Checkout__details h3 {
+.Wishlist__details h3 {
   font-family: var(--font-primary);
   font-weight: bold;
   font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.8rem);

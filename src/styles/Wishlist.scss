@@ -1,6 +1,4 @@
-@import './variables.scss';
-
-.CheckoutWrapper {
+.WishlistWrapper {
     min-height: calc(100vh - 76px - 60px - .2rem);
     /* container height= 100vh-navHeight-tabsHeight-margins */
     width: 100%;
@@ -17,7 +15,7 @@
     }
 }
 
-.Checkout {
+.Wishlist {
     align-self: start;
     width: 100%;
     height: 100%;
