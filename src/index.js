@@ -10,12 +10,12 @@ import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
-  authDomain: "music-store-firebase.firebaseapp.com",
-  projectId: "music-store-firebase",
-  storageBucket: "music-store-firebase.appspot.com",
-  messagingSenderId: "287530167031",
-  appId: "1:287530167031:web:2f8d6107f5ccc1e90901f2",
-  measurementId: "G-69HTNVD24H"
+  authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_FIREBASE_APPID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENTID
 };
 
 // Initialize Firebase

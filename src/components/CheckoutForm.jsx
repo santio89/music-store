@@ -137,7 +137,7 @@ export default function CheckoutForm({ total, toggleCheckoutConfirmation, checko
         <button className='CheckoutForm__send'>
           {loadingCheckout ? <>Procesando<span>.</span><span>.</span><span>.</span></> : <>ENVIAR PEDIDO</>}
         </button>
-        <ReCAPTCHA ref={recaptchaRef} sitekey="6Le4gNAfAAAAALoRTECfoVQlz8IUgGJK766SJ7nD" size="invisible" theme="dark" badge='inline' onChange={() => {
+        <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.REACT_APP_RECAPTCHA_KEY} size="invisible" theme="dark" badge='inline' onChange={() => {
           setRecaptchaValid(true)
         }} />
       </form>
