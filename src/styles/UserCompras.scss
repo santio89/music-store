@@ -191,5 +191,9 @@
 @media (min-width: 1216px) {
     .Compras {
         width: 96%;
+
+        &__details{
+            width: 80%;
+        }
     }
 }
