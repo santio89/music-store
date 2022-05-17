@@ -35,7 +35,7 @@ export default function WishlistContextProvider({ children }) {
         }
     };
 
-    
+
    
 /*    storage persistente entre ventana / bugs 
     useEffect(() => {
@@ -57,7 +57,9 @@ export default function WishlistContextProvider({ children }) {
     useEffect(() => {
         if (userData?.userWishlist != null && userData?.userWishlist !== "") {
             setWishlist(JSON.parse(userData.userWishlist))
-        } 
+        } else if (userData === null){
+            setWishlist([]);
+        }
     }, [userData])
     /* fin logout useEffect */
 
