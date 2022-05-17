@@ -85,7 +85,6 @@
   font-family: "Courier New", Courier, monospace;
   font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
   background: var(--color-back-dark);
-  /*       border-radius: .2em; */
   padding: 1.4em 0.4em;
 }
 .Datos__details__pWrapper {
@@ -173,6 +172,9 @@
   }
   .Datos__details {
     width: 80%;
+  }
+  .Datos__details form {
+    border-radius: 0.2em;
   }
   .Datos__details__btnContainer__btn {
     width: 140px;

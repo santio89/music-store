@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 .WishlistWrapper {
     min-height: calc(100vh - 76px - 60px - .2rem);
     /* container height= 100vh-navHeight-tabsHeight-margins */
@@ -58,11 +60,7 @@
         text-shadow: 1px 1px 0 var(--color-back-dark);
         font-family: var(--font-primary);
         width: 100%;
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: space-between;
-        align-items: stretch;
-        gap: 2rem;
+        margin: auto;
         margin-top: 1rem;
 
         h3 {
@@ -78,5 +76,130 @@
             margin-bottom: .4rem;
         }
 
+        &__list{
+            background: var(--color-back-dark);
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: $font-fluid-smm;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            place-content: center;
+            place-items: center;
+            gap: 2rem;
+            padding: 1em;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+
+            li{
+                padding: .4em;
+                background: linear-gradient(-45deg, var(--color-one-dark) 12%, var(--color-back) 12%, var(--color-back) 90%, var(--color-one-dark) 90%);
+                border-radius: .2em;
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: space-between;
+                align-items: stretch;
+                flex: 1;
+                line-height: 1.2;
+                min-width: clamp(300px, 50%, 500px);
+                will-change: transform;
+            }
+            
+            &__title{
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
+                font-size: 1.2em;
+                text-align: left;
+
+                a{
+                    border: none;
+                    outline: none;
+                }
+
+                span{
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                
+                img{
+                    margin-top: 2rem;
+                    width: 100%;
+                    max-width: 400px;
+                    border-radius: .2em;
+                    background: var(--color-back-dark);
+                    box-shadow: 0 0 0 .2rem var(--color-back-dark);
+                }
+            }
+
+            &__wish{
+                margin: auto;
+                margin-top: 2rem;
+                font-size: $font-fluid-xll;
+                color: var(--color-one);
+                text-shadow: 0 0 8px var(--color-one);
+                width: fit-content;
+
+                &:hover, &:focus{
+                    color: var(--color-three-dark);
+                    text-shadow: 0 0 8px var(--color-three-dark);
+                    text-shadow: none;
+                }
+            }
+
+            &__price{
+                align-self: start;
+                bottom: 1ch;
+                left: 1ch;
+                color: var(--color-three-dark);
+                font-size: $font-fluid-mdd;
+            }
+        }
+    }
+
+    &__nouser, &__noorder {
+        width: 100%;
+        text-align: center;
+        text-shadow: none;
+        margin-top: 2rem;
+        font-weight: bold;
+        font-family: 'Courier New', Courier, monospace;
+        color: var(--color-four);
+
+        button, a {
+            color: var(--color-one);
+            will-change: transform;
+            transition: transform 200ms;
+
+            &:hover,
+            &:focus-visible {
+                border-bottom: 2px dashed var(--color-one);
+            }
+
+            &:active {
+                transform: translate(2px, 2px);
+            }
+        }
+    }
+}
+
+@media (min-width: 1216px) {
+    .Wishlist {
+        width: 96%;
+
+        &__details {
+            width: 80%;
+
+            &__list{
+                border-radius: .2em;
+                padding-top: 2.8rem;
+                padding-bottom: 2.8rem;
+            }
+
+        }
     }
 }

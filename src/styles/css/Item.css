@@ -1,3 +1,50 @@
+.ItemWrapper {
+  position: relative;
+}
+.ItemWrapper__wish {
+  font-size: 1.8rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--color-back-dark);
+  text-shadow: 0 0 3px var(--color-four);
+  transition: 200ms;
+  border: none;
+  outline: none;
+  padding: 0.4em;
+}
+.ItemWrapper__wish:hover, .ItemWrapper__wish:focus-visible {
+  text-shadow: 0 0 6px var(--color-one);
+}
+.ItemWrapper__wish.is-active {
+  color: var(--color-one);
+  text-shadow: 0 0 6px var(--color-one);
+}
+.ItemWrapper__nowish {
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: absolute;
+  top: 50px;
+  right: 0.8rem;
+  padding: 0.1em 0.2em;
+  border-radius: 0.1em;
+  background: rgba(0, 0, 0, 0.4);
+  font-family: "Courier New", Courier, monospace;
+}
+.ItemWrapper__nowish button {
+  color: var(--color-three);
+  text-shadow: 1px 1px 0 var(--color-one);
+  transition: 200ms;
+}
+.ItemWrapper__nowish button:hover, .ItemWrapper__nowish button:focus-visible {
+  color: var(--color-one);
+  text-shadow: 1px 1px 0 var(--color-three);
+}
+.ItemWrapper__nowish:hover, .ItemWrapper__nowish:focus-visible, .ItemWrapper__nowish.is-active {
+  color: var(--color-one);
+  text-shadow: 0 0 6px var(--color-one);
+}
+
 .ItemLink {
   border-radius: 1.6rem;
   transition: box-shadow 100ms;

@@ -70,26 +70,6 @@
   outline: 3px dashed var(--color-one);
 }
 
-.logOutBtn {
-  position: absolute;
-  bottom: -2px;
-  right: -2px;
-  z-index: 1;
-  font-size: 1em;
-  border-radius: 50%;
-  line-height: 1;
-  padding: 4px;
-  background: var(--color-one-dark);
-  will-change: transform;
-  transition: transform 200ms;
-}
-.logOutBtn:hover, .logOutBtn:focus-visible {
-  outline: 2px dashed var(--color-one);
-}
-.logOutBtn:active {
-  transform: translate(1px, 1px);
-}
-
 .userOptions {
   display: flex;
   flex-flow: column wrap;
@@ -122,6 +102,52 @@
   border-radius: 0 0 0 0.2em;
 }
 
+.logOutBtn {
+  position: absolute;
+  bottom: -6px;
+  right: -2px;
+  z-index: 1;
+  font-size: 1em;
+  border-radius: 50%;
+  line-height: 1;
+  padding: 4px;
+  background: var(--color-one-dark);
+  will-change: transform;
+  transition: transform 200ms;
+  outline: 1px dashed var(--color-one-dark);
+  color: var(--color-mobilenavtext);
+}
+.logOutBtn:hover, .logOutBtn:focus-visible {
+  outline: 2px dashed var(--color-one-hover);
+  background: var(--color-one);
+}
+.logOutBtn:active {
+  transform: translate(1px, 1px);
+}
+
+.wishlistBtn {
+  position: absolute;
+  bottom: 64px;
+  right: -2px;
+  z-index: 1;
+  font-size: 1em;
+  border-radius: 50%;
+  line-height: 1;
+  padding: 4px;
+  background: var(--color-one-dark);
+  will-change: transform;
+  transition: transform 200ms;
+  outline: 1px dashed var(--color-one-dark);
+  color: var(--color-mobilenavtext);
+}
+.wishlistBtn:hover, .wishlistBtn:focus-visible {
+  outline: 2px dashed var(--color-one-hover);
+  background: var(--color-one);
+}
+.wishlistBtn:active {
+  transform: translate(1px, 1px);
+}
+
 @media (min-width: 1024px) {
   .LogInButton {
     margin-left: 0;
@@ -130,8 +156,17 @@
 
   .logOutBtn {
     right: -20px;
+    bottom: 0;
   }
   .logOutBtn:hover, .logOutBtn:focus-visible {
+    outline: 2px dashed var(--color-three);
+  }
+
+  .wishlistBtn {
+    right: -20px;
+    bottom: 56px;
+  }
+  .wishlistBtn:hover, .wishlistBtn:focus-visible {
     outline: 2px dashed var(--color-three);
   }
 

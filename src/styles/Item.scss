@@ -1,3 +1,63 @@
+@import './variables.scss';
+
+.ItemWrapper{
+    position: relative;
+
+    &__wish {
+        font-size: $font-mdd;
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: var(--color-back-dark);
+        text-shadow: 0 0 3px var(--color-four);
+        transition: 200ms;
+        border: none;
+        outline: none;
+        padding: .4em;
+
+        &:hover,
+        &:focus-visible{
+            text-shadow: 0 0 6px var(--color-one);
+        }
+        
+        &.is-active {
+            color: var(--color-one);
+            text-shadow: 0 0 6px var(--color-one);
+        }
+    }
+
+    &__nowish {
+        font-size: $font-md;
+        font-weight: bold;
+        position: absolute;
+        top: 50px;
+        right: .8rem;
+        padding: .1em .2em;
+        border-radius: .1em;
+        background: rgba(0, 0, 0, .4);
+        font-family: 'Courier New', Courier, monospace;
+
+        button {
+            color: var(--color-three);
+            text-shadow: 1px 1px 0 var(--color-one);
+            transition: 200ms;
+
+            &:hover,
+            &:focus-visible {
+                color: var(--color-one);
+                text-shadow: 1px 1px 0 var(--color-three);
+            }
+        }
+
+        &:hover,
+        &:focus-visible,
+        &.is-active {
+            color: var(--color-one);
+            text-shadow: 0 0 6px var(--color-one);
+        }
+    }
+}
+
 .ItemLink {
     border-radius: 1.6rem;
     transition: box-shadow 100ms;
@@ -44,7 +104,7 @@
         width: 100%;
         transition: background-image 400ms;
         background: linear-gradient(45deg, var(--color-one), var(--color-one-dark));
-        background-color: var(--color-one);  
+        background-color: var(--color-one);
         background-size: cover;
         font-family: 'Courier New', Courier, monospace;
     }

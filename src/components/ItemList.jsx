@@ -104,7 +104,7 @@ export default function ItemList({ productos, searchId, loading, sortOpen, setSo
                                         <div className="ItemList__content">
                                             {productos.map((producto) => {
                                                 return (
-                                                    <Item key={producto?.id} id={producto?.id} title={producto?.artists_sort ? (`${producto?.artists_sort} - ${producto?.title}`) : producto?.title} img={producto?.cover_image.endsWith("spacer.gif") ? "https://raw.githubusercontent.com/santio89/music-store/master/src/assets/disc.jpg" : (producto?.cover_image || producto?.images?.[0]?.resource_url)} price={producto?.price} />
+                                                    <Item key={producto?.id} id={producto?.id} title={producto?.artists_sort ? (`${producto?.artists_sort} - ${producto?.title}`) : producto?.title} img={producto?.cover_image.endsWith("spacer.gif") ? "https://raw.githubusercontent.com/santio89/music-store/master/src/assets/disc.jpg" : (producto?.cover_image || producto?.images?.[0]?.resource_url)} price={producto?.price} prod={producto} />
                                                 )
                                             })}
                                         </div>

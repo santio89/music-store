@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 .DatosWrapper {
     min-height: calc(100vh - 76px - 60px - .2rem);
     /* container height= 100vh-navHeight-tabsHeight-margins */
@@ -79,7 +81,7 @@
     &__details {
         margin: auto;
         width: 100%;
-        
+
         form {
             margin: auto;
             margin-top: 1.4rem;
@@ -94,7 +96,6 @@
             font-family: 'Courier New', Courier, monospace;
             font-size: $font-fluid-sm;
             background: var(--color-back-dark);
-      /*       border-radius: .2em; */
             padding: 1.4em .4em;
         }
 
@@ -195,6 +196,10 @@
 
         &__details {
             width: 80%;
+
+            form{
+                border-radius: .2em;
+            }
 
             &__btnContainer {
                 &__btn {

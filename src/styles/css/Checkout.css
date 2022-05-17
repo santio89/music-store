@@ -116,6 +116,7 @@
   font-size: 0.6rem;
   position: relative;
   overflow: hidden;
+  will-change: transform;
 }
 .Checkout__details__list li:nth-last-child(1) {
   border-bottom: none;

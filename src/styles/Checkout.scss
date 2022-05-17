@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 .CheckoutWrapper {
     min-height: calc(100vh - 76px - 60px - .2rem);
     /* container height= 100vh-navHeight-tabsHeight-margins */
@@ -123,6 +125,7 @@
                 font-size: $font-xxxs;
                 position: relative;
                 overflow: hidden;
+                will-change: transform;
 
                 &:nth-last-child(1) {
                     border-bottom: none;

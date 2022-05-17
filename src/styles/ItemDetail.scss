@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 .ItemDetailWrapper {
     min-height: calc(100vh - 76px - 60px - .2rem);
     /* container height= 100vh-navHeight-tabsHeight-margins */
@@ -207,7 +209,7 @@
             flex-flow: column wrap;
             justify-content: center;
             align-items: center;
-            padding: 1rem;
+            padding: 1.2rem;
             padding-bottom: 0;
         }
     }
@@ -268,7 +270,7 @@
     &__controlsWrapper {
         width: 100%;
         max-width: 600px;
-        height: 368px;
+        height: calc(300px + 6.4vw);
         margin: auto;
         margin-top: 0;
         position: relative;
@@ -278,15 +280,67 @@
         position: absolute;
         inset: 0;
         width: 100%;
-        height: 368px;
+        height: calc(300px + 6.4vw);
         align-self: stretch;
         display: flex;
         flex-flow: column wrap;
         justify-content: start;
         gap: 1rem;
         padding: 1rem;
-        padding-top: 0;
         will-change: transform;
+
+        &__wish{
+            color: var(--color-two);
+            line-height: 0;
+            padding: .2em;
+            position: absolute;
+            top: -1.4rem;
+            right: 2rem;
+            transition: text-shadow 200ms;
+            
+            &:hover, &:focus-visible{
+                color: var(--color-one);
+                text-shadow: 0 0 4px var(--color-one);
+            }
+
+            &:focus-visible{
+                box-shadow: 0 2px 0 0 var(--color-one);
+            }
+
+            &.is-active{
+                color: var(--color-one);
+                text-shadow: 0 0 4px var(--color-one);
+            }
+        }
+        
+        &__nowish{
+            font-size: $font-fluid-sm;
+            position: absolute;
+            top: -1rem;
+            right: 7.2rem;
+            font-weight: bold;
+
+            button{
+                color: var(--color-one);
+                outline: none;
+                border: none;
+                will-change: transform;
+                transition: text-shadow 200ms, transform 200ms;
+                text-shadow: 0 0 4px var(--color-one);
+
+                &:hover, &:focus-visible{
+                    transform: translate(1px, 1px);
+                }
+
+                &:focus-visible{
+                    box-shadow: 0 2px 0 0 var(--color-one);
+                }
+
+                &:active{
+                    transform: translate(2px, 2px);
+                }
+            }
+        }
 
         &__counter {
             display: flex;
@@ -324,7 +378,7 @@
         width: 100%;
         padding: 1rem;
         padding-top: 0;
-        height: 368px;
+        height: calc(300px + 6.4vw);
         align-self: stretch;
         display: flex;
         flex-flow: column wrap;
@@ -437,6 +491,7 @@
     }
 }
 
+
 @media (max-width: 320px) {
     .ItemDetail {
         &__info {
@@ -461,19 +516,22 @@
 
         &__info {
             &__main {
-                padding: 1.4rem;
+                padding: 1.6rem;
                 padding-bottom: 0;
             }
         }
 
         &__counterWrapper {
             padding: 1.4rem;
-            padding-top: 0;
         }
 
         &__checkout {
             padding: 1.4rem;
             padding-top: 0;
+        }
+
+        &__counterWrapper, &__controlsWrapper, &__checkout{
+            height: calc(300px + 6.4vw);
         }
     }
 }
@@ -504,7 +562,6 @@
 
         &__counterWrapper {
             padding: 2rem;
-            padding-top: 0;
         }
 
         &__checkout {

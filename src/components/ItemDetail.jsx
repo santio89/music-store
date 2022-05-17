@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect, useRef } from 'react';
 import { CartContext } from '../Context/CartContext';
 import { WishlistContext } from '../Context/WishlistContext';
+import { AuthContext } from '../Context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion'
 import PuffLoader from "react-spinners/PuffLoader";
@@ -10,16 +11,19 @@ import '../../src/styles/css/ItemDetail.css';
 
 
 export default function ItemDetail({ loading, producto, spotifyId }) {
-
     const initialCount = 1;
 
+    const { cartAdd } = useContext(CartContext);
+    const { wishlist, wishlistAdd, wishlistRemove, inWishlist, } = useContext(WishlistContext);
+    const { authUser, authLogIn } = useContext(AuthContext);
     const history = useNavigate();
+    const imgModal = useRef();
+    const [wishlistAdded, setWishlistAdded] = useState(inWishlist(producto?.id));
+    const [noWish, setNoWish] = useState(false);
+    const [timeoutId, setTimeoutId] = useState(null);
     const [continueCheckout, setContinueCheckout] = useState(false);
     const [imgSelected, setImgSelected] = useState("");
-    const { cartAdd } = useContext(CartContext);
-    const {wishlist, wishlistAdd, wishlistRemove, inWishlist} = useContext (WishlistContext);
-    const imgModal = useRef();
-    const [wishlistAdded, setWishlistAdded] = useState(inWishlist(producto));
+
 
 
     const onAdd = (count) => {
@@ -39,8 +43,8 @@ export default function ItemDetail({ loading, producto, spotifyId }) {
         setImgSelected(producto?.cover_image || producto?.images?.[0]?.resource_url)
     }, [producto]);
 
-    useEffect(()=>{
-        setWishlistAdded(()=>{return inWishlist(producto)})
+    useEffect(() => {
+        setWishlistAdded(() => { return inWishlist(producto?.id) })
     }, [wishlist, producto, inWishlist])
 
     useEffect(() => {
@@ -108,12 +112,6 @@ export default function ItemDetail({ loading, producto, spotifyId }) {
                                             <div className="ItemDetail__info__main">
                                                 <p className='ItemDetail__subtitle'>{producto?.artists_sort}</p>
                                                 <h2 className='ItemDetail__title'>{producto?.title?.toUpperCase()}</h2>
-
-                                                {wishlistAdded?<button className='ItemDetail__info__wi
-                                                sh' onClick={()=>{wishlistRemove(producto)}}><i className="bi bi-suit-heart-fill"></i></button>:
-                                                <button className='ItemDetail__info__wi
-                                                sh' onClick={()=>{wishlistAdd(producto)}}><i className="bi bi-suit-heart"></i></button>}
-                                               
                                             </div>
                                             <div className='ItemDetail__controlsWrapper'>
                                                 <AnimatePresence>
@@ -133,6 +131,20 @@ export default function ItemDetail({ loading, producto, spotifyId }) {
                                                         <motion.div key="count" initial={{ opacity: 0, x: "-120%" }}
                                                             animate={{ opacity: 1, x: "0%" }}
                                                             exit={{ opacity: 0, x: "120%" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className='ItemDetail__counterWrapper'>
+
+                                                            {noWish && <p className='ItemDetail__counterWrapper__nowish'><button onClick={()=>authLogIn()}>INGRESAR</button></p>}
+
+                                                            {wishlistAdded ? <button className='ItemDetail__counterWrapper__wish is-active'
+                                                                onClick={() => { clearTimeout(timeoutId); if (authUser) { wishlistRemove(producto) } else { setNoWish(true); setTimeoutId(setTimeout(() => { setNoWish(false) }, 4000))}; }
+
+
+                                                                }><i className="bi bi-suit-heart-fill"></i></button> :
+                                                                <button className='ItemDetail__counterWrapper__wish'
+                                                                    onClick={() => { clearTimeout(timeoutId); if (authUser) { wishlistAdd(producto) } else { setNoWish(true); setTimeoutId(setTimeout(() => { setNoWish(false) }, 4000))}; }
+
+
+                                                                    }><i className="bi bi-suit-heart"></i></button>}
+
                                                             <p className='ItemDetail__counterWrapper__price'>{"$" + producto?.price}<span>(USD)</span></p>
                                                             <ItemCount onAdd={onAdd} failToAdd={failToAdd} initial={initialCount} stock={producto?.stock} id={producto?.id} />
                                                         </motion.div>}

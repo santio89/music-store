@@ -52,16 +52,16 @@ export default function CartContextProvider({ children }) {
 
   /* local storage persistent entre ventanas */
   useEffect(() => {
-    const checkStorage = (e) => {
+    const checkStorageCart = (e) => {
       const { key, newValue } = e;
 
-      if (key === "msShopList" || key === `msShopList-${userData.uid}`) {
+      if (key === "msShopList" || key === `msShopList-${userData?.uid}`) {
         setCarrito(JSON.parse(newValue));
       }
     }
-    window.addEventListener("storage", checkStorage)
+    window.addEventListener("storage", checkStorageCart)
 
-    return (() => window.removeEventListener("storage", checkStorage))
+    return (() => window.removeEventListener("storage", checkStorageCart))
   })
   /* fin local storage persistent entre ventanas */
 
@@ -83,7 +83,7 @@ export default function CartContextProvider({ children }) {
 
     if (carrito) {
       if (authUser && userData?.uid != null) {
-        localStorage.setItem(`msShopList-${userData.uid}`, JSON.stringify(carrito))
+        localStorage.setItem(`msShopList-${userData?.uid}`, JSON.stringify(carrito))
         firebaseSetUserCart(authUser, { userCart: JSON.stringify(carrito) })
       } else if (!authUser) {
         localStorage.setItem("msShopList", JSON.stringify(carrito))
