@@ -9,7 +9,7 @@ export const AuthContext = createContext();
 export default function AuthContextProvider({ children }) {
     const [authUser, setAuthUser] = useState(null);
     const [authLoading, setAuthLoading] = useState(localStorage.getItem("msAuthLoading") === "true" ? true : false);
-    const [userData, setUserData] = useState({});
+    const [userData, setUserData] = useState(null);
     const [userDataLoading, setUserDataLoading] = useState(true);
 
     const auth = getAuth();
