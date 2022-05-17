@@ -9,8 +9,9 @@ export const AuthContext = createContext();
 export default function AuthContextProvider({ children }) {
     const [authUser, setAuthUser] = useState(null);
     const [authLoading, setAuthLoading] = useState(localStorage.getItem("msAuthLoading") === "true" ? true : false);
-    const [userData, setUserData] = useState(null);
+    const [userData, setUserData] = useState({});
     const [userDataLoading, setUserDataLoading] = useState(true);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -49,6 +50,11 @@ export default function AuthContextProvider({ children }) {
 
     onAuthStateChanged(auth, (user) => {
         setAuthUser(user);
+        if (user) {
+            setIsLoggedIn(true);
+        } else {
+            setIsLoggedIn(false);
+        }
     })
 
     const authLogIn = () => {
@@ -105,7 +111,7 @@ export default function AuthContextProvider({ children }) {
 
 
     return (
-        <AuthContext.Provider value={{ authLogIn, authLogOut, authUser, authLoading, userData, setUserData, userDataLoading, firebaseSetUserCart, firebaseSetUserWishlist }}>
+        <AuthContext.Provider value={{ authLogIn, authLogOut, authUser, authLoading, userData, setUserData, userDataLoading, firebaseSetUserCart, firebaseSetUserWishlist, isLoggedIn }}>
             {children}
         </AuthContext.Provider>
     )

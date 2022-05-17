@@ -45,7 +45,7 @@ export default function Wishlist() {
 
                                     <ul className='Wishlist__details__list'>
                                         <LayoutGroup>
-                                            {wishlist.map(item => <AnimatePresence key={`wishlist${item.id}`} exitBeforeEnter> <motion.li drag layout initial={{ opacity: 0 }}
+                                            {wishlist.map(item => <AnimatePresence key={`wishlist${item.id}`}> <motion.li drag layout initial={{ opacity: 0 }}
                                                 animate={{ opacity: 1 }}
                                                 exit={{ opacity: 0 }}
                                                 transition={{ duration: .4 }} title={item.artists_sort ? `${item.artists_sort.toUpperCase()} - ${item.title.toUpperCase()}` : item.title.toUpperCase()} >

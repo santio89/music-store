@@ -88,6 +88,7 @@
             background-color: var(--color-back-dark);
             width: 100%;
             font-family: 'Courier New', Courier, monospace;
+            will-change: transform;
 
             &__ul{
                 width: 100%;
@@ -310,6 +311,7 @@
             padding-bottom: 1rem;
             overflow: hidden;
             font-size: $font-fluid-sm;
+            will-change: transform;
 
             &__cleartextContainer{
                 width: 100%;
@@ -408,7 +410,7 @@
                 width: 100%;
                 margin-top: 1rem;
                 overflow: hidden;
-                gap: 1rem;
+                gap: .8rem;
 
                 button,
                 a {
