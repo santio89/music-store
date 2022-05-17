@@ -17,7 +17,7 @@
 git clone https://github.com/santio89/music-store.git
 cs music-store
 npm install
-generar .env file with api keys*
+generar .env file con api keys*
 npm start
 
 *Crear archivo .env en el root del proyecto, con las credenciales indicadas:
