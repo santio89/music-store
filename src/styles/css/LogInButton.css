@@ -156,7 +156,7 @@
 
   .logOutBtn {
     right: -20px;
-    bottom: 0;
+    bottom: -2px;
   }
   .logOutBtn:hover, .logOutBtn:focus-visible {
     outline: 2px dashed var(--color-three);
