@@ -36,7 +36,7 @@ npm start
 ><br/>· Local storage con persistencia entre ventanas.
 ><br/>· Manejo de usuarios desde Firebase con login de Google.
 ><br/>· Carro de compras persistente del usuario.
->>><br/>· Wishlist del usuario.
+><br/>· Wishlist del usuario.
 ><br/>· Modificación de datos de usuario.
 
 
