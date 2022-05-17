@@ -3,6 +3,7 @@
 .ItemListWrapper {
     width: 90%;
     min-height: calc(100vh - 76px - 60px - .2rem);
+    /* container height= 100vh-navHeight-tabsHeight-margins */
     margin: auto;
     max-width: 1800px;
     display: flex;
@@ -12,6 +13,7 @@
 
     >span {
         transform: (translateY(-50%));
+        margin-top: calc(-60px - 2.88rem);
     }
 
     &.paginationLoading {
@@ -45,12 +47,14 @@
         padding-right: 1rem;
         width: 100%;
         max-width: 500px;
+        height: 60px;
         background: var(--color-back-dark);
         word-wrap: break-word;
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
         align-items: center;
+        line-height: 1;
         z-index: 1;
 
         select {

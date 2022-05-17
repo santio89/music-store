@@ -1,16 +1,24 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion'
 import { WishlistContext } from '../Context/WishlistContext';
 import { AuthContext } from '../Context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import PuffLoader from "react-spinners/PuffLoader";
 import "../styles/css/Wishlist.css";
 
 export default function Wishlist() {
     const history = useNavigate();
 
     const { wishlist, wishlistRemove } = useContext(WishlistContext);
-    const { authUser, authLogIn } = useContext(AuthContext);
+    const { authUser, authLogIn, userData } = useContext(AuthContext);
+    const [wishLoading, setWishLoading] = useState(true);
+
+    useEffect(()=>{
+        if (userData.userWishlist != null && userData.userWishlist !== undefined){
+            setWishLoading(false);
+        }
+    }, [userData.userWishlist])
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -18,6 +26,7 @@ export default function Wishlist() {
 
     return (
         <div className='WishlistWrapper'>
+            {wishLoading?<PuffLoader color={"var(--color-one)"} loading={wishLoading} size={200} speedMultiplier={1.2} />:
             <AnimatePresence>
                 <motion.div key="Wishlist" className='Wishlist'
                     initial={{ opacity: 0, x: "-120%" }}
@@ -45,7 +54,7 @@ export default function Wishlist() {
                         <div className='Wishlist__nouser'><p>Debes&nbsp;<button onClick={() => authLogIn()}>Iniciar Sesión</button>&nbsp;para ver tus favoritos</p></div>}
 
                 </motion.div>
-            </AnimatePresence>
+            </AnimatePresence>}
         </div>
     )
 }
