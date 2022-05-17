@@ -11,18 +11,18 @@ export default function Wishlist() {
     const history = useNavigate();
 
     const { wishlist, wishlistRemove } = useContext(WishlistContext);
-    const { authUser, authLogIn, userData } = useContext(AuthContext);
+    const { authUser, authLogIn, userData, isLoggedIn } = useContext(AuthContext);
     const [wishLoading, setWishLoading] = useState(true);
 
     useEffect(() => {
         setTimeout(() => {
             setWishLoading(false);
-            if (userData?.userWishlist == null || userData?.userWishlist === undefined) {
+            if (authUser && !userData.userWishlist) {
                 setWishLoading(true);
             }
         }, 400);
 
-    }, [userData, authUser])
+    }, [userData, authUser, isLoggedIn])
 
     useEffect(() => {
         window.scrollTo(0, 0);
