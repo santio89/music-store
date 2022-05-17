@@ -4,11 +4,9 @@ import { AuthContext } from './AuthContext'
 export const CartContext = createContext();
 
 export default function CartContextProvider({ children }) {
-
-  const { authUser, userData, firebaseSetUserCart, isLoggedIn } = useContext(AuthContext);
-
-  const [carrito, setCarrito] = useState(() => isLoggedIn && localStorage.getItem(`msShopList-${userData?.uid}`) ? JSON.parse(localStorage.getItem(`msShopList-${userData?.uid}`)):[]);
   
+  const { authUser, userData, firebaseSetUserCart } = useContext(AuthContext);
+  const [carrito, setCarrito] = useState(() => localStorage.getItem("msShopList") && localStorage.getItem("msShopList") !== undefined && !authUser ? JSON.parse(localStorage.getItem("msShopList")) : []);
   const [cartItems, setCartItems] = useState(0);
   const [total, setTotal] = useState(0);
 
@@ -52,39 +50,31 @@ export default function CartContextProvider({ children }) {
     return 0;
   }
 
-  /* local storage del user, persistente entre ventanas */
+  /* local storage persistent entre ventanas */
   useEffect(() => {
     const checkStorageCart = (e) => {
       const { key, newValue } = e;
 
-      if (authUser && authUser !== null && userData && userData !== null && userData !== undefined) {
-        if (key === `msShopList-${userData?.uid}`) {
-          if (newValue !== JSON.stringify(carrito)) {
-            setCarrito(JSON.parse(newValue));
-          }
-        }
+      if (key === "msShopList" || key === `msShopList-${userData?.uid}`) {
+        setCarrito(JSON.parse(newValue));
       }
     }
     window.addEventListener("storage", checkStorageCart)
 
     return (() => window.removeEventListener("storage", checkStorageCart))
   })
-  /* fin local storage del user, persistente entre ventanas */
+  /* fin local storage persistent entre ventanas */
 
 
   /* logout useEffect / separar storage usuario o generico */
   useEffect(() => {
-    if (isLoggedIn) {
-      if (userData?.userCart && userData?.userCart != null && userData?.userCart !== undefined) {
-        if (JSON.stringify(userData?.userCart) !== JSON.stringify(carrito)){
-          setCarrito(JSON.parse(userData?.userCart))
-        }
-      }
-    } else{
-      setCarrito([]);
+    if (userData?.userCart != null && userData?.userCart !== "") {
+      setCarrito(JSON.parse(userData.userCart))
+    } else if (userData === null){
+      setCarrito(localStorage.getItem("msShopList") && localStorage.getItem("msShopList") !== undefined ? JSON.parse(localStorage.getItem("msShopList")) : [])
     }
-  }, [isLoggedIn, userData, carrito])
-
+  }, [userData])
+/* fin logout useEffect */
 
 
   useEffect(() => {
@@ -95,6 +85,8 @@ export default function CartContextProvider({ children }) {
       if (authUser && userData?.uid != null) {
         localStorage.setItem(`msShopList-${userData?.uid}`, JSON.stringify(carrito))
         firebaseSetUserCart(authUser, { userCart: JSON.stringify(carrito) })
+      } else if (!authUser) {
+        localStorage.setItem("msShopList", JSON.stringify(carrito))
       }
     }
 
