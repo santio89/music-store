@@ -63,7 +63,7 @@ export default function CartContextProvider({ children }) {
 
     return (() => window.removeEventListener("storage", checkStorageCart))
   })
-  /* fin local storage persistent entre ventanas */
+
 
 
   /* logout useEffect / separar storage usuario o generico */
