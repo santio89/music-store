@@ -38,7 +38,7 @@ export default function Item({ id, title, img, price, prod }) {
     return (
         <>
             <AnimatePresence>
-                <motion.div className="ItemWrapper" layout key={`/item/${id}`}
+                <motion.div className="ItemWrapper" layout 
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
@@ -48,9 +48,6 @@ export default function Item({ id, title, img, price, prod }) {
                             <div className="Item__imgWrapper"><img className="Item__img" src={img} alt={"cover_image_" + id} loading="lazy"></img></div>
                             <div className="Item__content">
                                 <p className="Item__content__price">${price}</p>
-
-
-
                                 <h3 className="Item__content__title">{title}</h3>
                             </div>
                             <div className="Item__details">Detalles</div>

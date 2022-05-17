@@ -90,7 +90,7 @@
 }
 .Wishlist__details__list li {
   padding: 0.4em;
-  background: linear-gradient(-45deg, var(--color-one-dark) 12%, var(--color-back) 12%, var(--color-back) 90%, var(--color-one-dark) 90%);
+  background: linear-gradient(45deg, var(--color-three-dark) 14%, var(--color-back) 14%);
   border-radius: 0.2em;
   display: flex;
   flex-flow: column wrap;
@@ -98,9 +98,14 @@
   align-items: stretch;
   flex: 1;
   line-height: 1.2;
-  min-width: clamp(300px, 50%, 400px);
-  max-width: 400px;
+  min-width: clamp(300px, 50%, 340px);
+  max-width: 340px;
   will-change: transform;
+  box-shadow: 0 -4px 0 0 var(--color-one);
+  transition: box-shadow 200ms;
+}
+.Wishlist__details__list li:hover, .Wishlist__details__list li:focus, .Wishlist__details__list li:focus-within {
+  box-shadow: 0 0 0 4px var(--color-one);
 }
 .Wishlist__details__list__title {
   display: flex;
@@ -143,6 +148,7 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  transition: 200ms;
 }
 .Wishlist__details__list__wish:hover, .Wishlist__details__list__wish:focus {
   color: var(--color-three-dark);
@@ -153,7 +159,8 @@
   align-self: start;
   bottom: 1ch;
   left: 1ch;
-  color: var(--color-three-dark);
+  color: var(--color-three);
+  text-shadow: 2px 2px 0 var(--color-two);
   font-size: clamp(1rem, 1rem + 1.4vw, 2rem);
 }
 .Wishlist__nouser, .Wishlist__noorder {
