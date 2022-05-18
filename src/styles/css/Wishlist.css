@@ -122,6 +122,9 @@
   outline: none;
   text-align: center;
 }
+.Wishlist__details__list__title a:hover img {
+  box-shadow: 0 0 0 0.2rem var(--color-one);
+}
 .Wishlist__details__list__title span {
   display: -webkit-box;
   -webkit-line-clamp: 1;
@@ -138,9 +141,6 @@
   background: var(--color-back-dark);
   box-shadow: 0 0 0 0.2rem var(--color-back-dark);
   transition: 200ms;
-}
-.Wishlist__details__list__title img:hover {
-  box-shadow: 0 0 0 0.2rem var(--color-one);
 }
 .Wishlist__details__list__wish {
   margin: auto;

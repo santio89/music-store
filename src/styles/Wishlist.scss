@@ -130,6 +130,10 @@
                     border: none;
                     outline: none;
                     text-align: center;
+
+                    &:hover img{
+                        box-shadow: 0 0 0 .2rem var(--color-one);
+                    }
                 }
 
                 span{
@@ -149,10 +153,6 @@
                     background: var(--color-back-dark);
                     box-shadow: 0 0 0 .2rem var(--color-back-dark);
                     transition: 200ms;
-
-                    &:hover{
-                        box-shadow: 0 0 0 .2rem var(--color-one);
-                    }
                 }
             }
 
