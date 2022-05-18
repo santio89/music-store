@@ -20,6 +20,7 @@ npm install
 generar .env file con api keys*
 npm start
 
+
 *Crear archivo .env en el root del proyecto, con las claves indicadas:
 
 REACT_APP_FIREBASE_APIKEY
@@ -37,7 +38,6 @@ REACT_APP_SPOTIFY_SECRET
 REACT_APP_SPOTIFY_REFRESH
 REACT_APP_SPOTIFY_TOKEN
 REACT_APP_RECAPTCHA_KEY
-
 
 Para generarlas, ver la documentación: 
 Firebase - (https://firebase.google.com/)
