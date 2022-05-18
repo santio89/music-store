@@ -19,7 +19,7 @@
 
 ```sh
 git clone https://github.com/santio89/music-store.git
-cs music-store
+cd music-store
 npm install
 generar .env file con api keys*
 npm start
