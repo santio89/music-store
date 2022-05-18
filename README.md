@@ -41,10 +41,9 @@ REACT_APP_RECAPTCHA_KEY
 
 Para generarlas, ver la documentación: 
 Firebase - (https://firebase.google.com/)
+Recaptcha - (https://developers.google.com/recaptcha/intro)
 Discogs - (https://www.discogs.com/developers#page:authentication)
 Spotify - (https://developer.spotify.com/documentation/general/guides/authorization/app-settings/)
-Recaptcha - (https://developers.google.com/recaptcha/intro)
-
 ```
 
 ## Funcionalidades
