@@ -70,8 +70,9 @@ react
 react-router-dom
 react-google-recaptcha
 framer-motion
-bulma css/bootstrap icons/google fonts
-google firebase
+bulma css
+bootstrap icons
+google fonts
 ```
 
 
