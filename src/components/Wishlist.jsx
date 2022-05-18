@@ -44,8 +44,9 @@ export default function Wishlist() {
                             <div className='Wishlist__details'>
                                 {wishlist?.length === 0 ? <p className='Wishlist__noorder'>Aún no has agregado favoritos.<br /><Link to="/">SEGUIR NAVEGANDO</Link></p> :
 
-                                    <ul className='Wishlist__details__list'>
+                                    
                                         <LayoutGroup>
+                                            <motion.ul layout className='Wishlist__details__list'>
                                             {wishlist?.map(item => <AnimatePresence key={`wishlist${item.id}`}> <motion.li layout initial={{ opacity: 0 }}
                                                 animate={{ opacity: 1 }}
                                                 exit={{ opacity: 0 }}
@@ -56,9 +57,10 @@ export default function Wishlist() {
                                                 <button className='Wishlist__details__list__wish'><i className="bi bi-suit-heart-fill" onClick={() => wishlistRemove(item)}></i></button>
                                                 <div className='Wishlist__details__list__price'>${item.price}</div>
                                             </motion.li></AnimatePresence>)}
+                                            </motion.ul>
                                         </LayoutGroup>
 
-                                    </ul>
+                                   
 
                                 }
                             </div> :
