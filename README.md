@@ -69,13 +69,12 @@ Spotify - (https://developer.spotify.com/documentation/general/guides/authorizat
 ## Librerías y recursos utilizados
 
 ```sh
-react
-react-router-dom
-react-google-recaptcha
-framer-motion
-bulma css
-bootstrap icons
-google fonts
+react: librería principal
+react-router-dom: navegación spa
+react-google-recaptcha: anti-spam
+framer-motion: animaciones, efectos y transiciones
+firebase: base de datos, control de productos/stock, control de logeo/usuarios
+bulma css, bootstrap icons, google fonts: estilos, íconos y fonts
 ```
 
 
