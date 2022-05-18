@@ -11,6 +11,8 @@
 ### 🏠 [Repo](https://github.com/santio89/music-store)
 ### ✨ [Demo](https://music-store-firebase.web.app/)
 
+![Animation](https://user-images.githubusercontent.com/93352214/169144293-baf1bea6-0d43-4acb-b8a6-05d405492f02.gif)
+
 ## Instalar
 
 ```sh
