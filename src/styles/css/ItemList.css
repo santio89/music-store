@@ -11,7 +11,7 @@
 }
 .ItemListWrapper > span {
   transform: translateY(-50%);
-  margin-top: calc(-60px - 2.88rem);
+  margin-top: calc(-60px - 2.92rem);
 }
 .ItemListWrapper.paginationLoading {
   cursor: wait;
