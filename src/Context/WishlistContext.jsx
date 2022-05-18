@@ -6,7 +6,7 @@ export const WishlistContext = createContext();
 export default function WishlistContextProvider({ children }) {
 
     const { authUser, userData, firebaseSetUserWishlist } = useContext(AuthContext);
-    const [wishlist, setWishlist] = useState(() => localStorage.getItem(`msWishlist-${userData?.uid}`) && localStorage.getItem(`msWishlist-${userData?.uid}`) !== undefined && authUser ? JSON.parse(localStorage.getItem(`msWishlist-${userData?.uid}`)) : []);
+    const [wishlist, setWishlist] = useState(() => localStorage.getItem(`msWishlist-${userData?.uid}`) && localStorage.getItem(`msWishlist-${userData?.uid}`) !== undefined && authUser ? JSON.parse(localStorage.getItem(`msWishlist-${userData?.uid}`)) : null);
 
 
     const wishlistAdd = (item) => {
@@ -27,18 +27,19 @@ export default function WishlistContextProvider({ children }) {
     }
 
     const inWishlist = (id) => {
-        const itemIndex = wishlist.findIndex(producto =>{return (producto.id === id)} );
+        if (wishlist){
+            const itemIndex = wishlist.findIndex(producto =>{return (producto.id === id)} );
         if (itemIndex !== -1) {
             return true
         } else {
             return false
         }
+        }
     };
 
-
    
-   /* storage persistente entre ventana / bugs  */
-/*     useEffect(() => {
+   /* storage persistente entre ventanas */
+    useEffect(() => {
         const checkStorageWish = (e) => {
             const { key, newValue } = e;
 
@@ -49,13 +50,13 @@ export default function WishlistContextProvider({ children }) {
         window.addEventListener("storage", checkStorageWish)
 
         return (() => window.removeEventListener("storage", checkStorageWish))
-    }) */
+    })
   /* fin local storage persistent entre ventanas */
 
 
     /* logout useEffect  */
     useEffect(() => {
-        if (userData?.userWishlist != null && userData?.userWishlist !== "") {
+        if (userData?.userWishlist) {
             setWishlist(JSON.parse(userData.userWishlist))
         } else if (userData === null){
             setWishlist([]);
@@ -66,9 +67,11 @@ export default function WishlistContextProvider({ children }) {
 
     useEffect(() => {
         if (wishlist) {
-            if (authUser && userData?.uid != null) {
-                localStorage.setItem(`msWishlist-${userData?.uid}`, JSON.stringify(wishlist))
-                firebaseSetUserWishlist(authUser, { userWishlist: JSON.stringify(wishlist) })
+            if (authUser && userData && userData.uid) {
+                if (JSON.stringify(wishlist) !== JSON.stringify(localStorage.getItem(`msWishlist-${userData.uid}`))){
+                    localStorage.setItem(`msWishlist-${userData.uid}`, JSON.stringify(wishlist))
+                    firebaseSetUserWishlist(authUser, { userWishlist: JSON.stringify(wishlist) })
+                }
             } 
         }
     }, [wishlist, authUser, userData, firebaseSetUserWishlist])
