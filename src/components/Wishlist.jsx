@@ -16,9 +16,10 @@ export default function Wishlist() {
 
     useEffect(() => {
         setTimeout(() => {
-            setWishLoading(false);
-            if (authUser && !userData.userWishlist) {
+            if (authUser && !userData.userWishlist && userData.Wishlist != null && userData.Wishlist !== undefined) {
                 setWishLoading(true);
+            } else{
+                setWishLoading(false);
             }
         }, 400);
 

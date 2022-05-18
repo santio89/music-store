@@ -38,7 +38,7 @@ export default function WishlistContextProvider({ children }) {
 
    
    /* storage persistente entre ventana / bugs  */
-    useEffect(() => {
+/*     useEffect(() => {
         const checkStorageWish = (e) => {
             const { key, newValue } = e;
 
@@ -49,11 +49,11 @@ export default function WishlistContextProvider({ children }) {
         window.addEventListener("storage", checkStorageWish)
 
         return (() => window.removeEventListener("storage", checkStorageWish))
-    })
+    }) */
   /* fin local storage persistent entre ventanas */
 
 
-    /* logout useEffect / separar storage usuario o generico */
+    /* logout useEffect  */
     useEffect(() => {
         if (userData?.userWishlist != null && userData?.userWishlist !== "") {
             setWishlist(JSON.parse(userData.userWishlist))
