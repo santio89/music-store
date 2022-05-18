@@ -12,6 +12,7 @@
   background: linear-gradient(135deg, var(--color-back-dark) 80%, var(--color-one-dark) 80%);
   margin-top: auto;
   line-height: 1.2;
+  z-index: 1;
 }
 .footer__brand {
   color: var(--color-one);
@@ -50,4 +51,4 @@
   line-height: 1;
   font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
   font-weight: bold;
-}/*# sourceMappingURL=Footer.css.map */
+}/*# sourceMappingURL=footer.css.map */

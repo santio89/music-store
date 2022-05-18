@@ -14,6 +14,7 @@
     background: linear-gradient(135deg, var(--color-back-dark) 80%, var(--color-one-dark) 80%);
     margin-top: auto;
     line-height: 1.2;
+    z-index: 1;
 
     &__brand {
         color: var(--color-one);
