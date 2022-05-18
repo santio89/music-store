@@ -20,7 +20,30 @@ npm install
 generar .env file con api keys*
 npm start
 
-*Crear archivo .env en el root del proyecto, con las credenciales indicadas:
+
+*Crear archivo .env en el root del proyecto, con las claves indicadas:
+
+REACT_APP_FIREBASE_APIKEY
+REACT_APP_FIREBASE_AUTHDOMAIN
+REACT_APP_FIREBASE_PROJECTID
+REACT_APP_FIREBASE_STORAGEBUCKET 
+REACT_APP_FIREBASE_MESSAGINGSENDERID
+REACT_APP_FIREBASE_APPID 
+REACT_APP__FIREBASE_MEASUREMENTID
+REACT_APP_DISCOGS_TOKEN
+REACT_APP_DISCOGS_KEY
+REACT_APP_DISCOGS_SECRET 
+REACT_APP_SPOTIFY_ID
+REACT_APP_SPOTIFY_SECRET
+REACT_APP_SPOTIFY_REFRESH
+REACT_APP_SPOTIFY_TOKEN
+REACT_APP_RECAPTCHA_KEY
+
+Para generarlas, ver la documentación: 
+Firebase - (https://firebase.google.com/)
+Recaptcha - (https://developers.google.com/recaptcha/intro)
+Discogs - (https://www.discogs.com/developers#page:authentication)
+Spotify - (https://developer.spotify.com/documentation/general/guides/authorization/app-settings/)
 ```
 
 ## Funcionalidades
@@ -35,8 +58,7 @@ npm start
 ><br/>· Modo oscuro/claro.
 ><br/>· Local storage con persistencia entre ventanas.
 ><br/>· Manejo de usuarios desde Firebase con login de Google.
-><br/>· Carro de compras persistente del usuario.
-><br/>· Wishlist del usuario.
+><br/>· Carro de compras y Wishlist de usuario.
 ><br/>· Modificación de datos de usuario.
 
 
@@ -47,8 +69,9 @@ react
 react-router-dom
 react-google-recaptcha
 framer-motion
-bulma css/bootstrap icons/google fonts
-google firebase
+bulma css
+bootstrap icons
+google fonts
 ```
 
 
