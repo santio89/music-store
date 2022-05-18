@@ -27,38 +27,40 @@ export default function WishlistContextProvider({ children }) {
     }
 
     const inWishlist = (id) => {
-        if (wishlist){
-            const itemIndex = wishlist.findIndex(producto =>{return (producto.id === id)} );
-        if (itemIndex !== -1) {
-            return true
-        } else {
-            return false
-        }
+        if (wishlist) {
+            const itemIndex = wishlist.findIndex(producto => { return (producto.id === id) });
+            if (itemIndex !== -1) {
+                return true
+            } else {
+                return false
+            }
         }
     };
 
-   
-   /* storage persistente entre ventanas */
+
+    /* storage persistente entre ventanas */
     useEffect(() => {
         const checkStorageWish = (e) => {
             const { key, newValue } = e;
 
-            if (key === `msWishlist-${userData?.uid}`) {
-                setWishlist(JSON.parse(newValue));
+            if (authUser) {
+                if (key === `msWishlist-${userData?.uid}`) {
+                    setWishlist(JSON.parse(newValue));
+                }
             }
         }
         window.addEventListener("storage", checkStorageWish)
 
         return (() => window.removeEventListener("storage", checkStorageWish))
     })
-  /* fin local storage persistent entre ventanas */
+    /* fin local storage persistent entre ventanas */
 
 
     /* logout useEffect  */
     useEffect(() => {
         if (userData?.userWishlist) {
             setWishlist(JSON.parse(userData.userWishlist))
-        } else if (userData === null){
+        } else if (userData === null) {
             setWishlist([]);
         }
     }, [userData])
@@ -68,13 +70,14 @@ export default function WishlistContextProvider({ children }) {
     useEffect(() => {
         if (wishlist) {
             if (authUser && userData && userData.uid) {
-                if (JSON.stringify(wishlist) !== JSON.stringify(localStorage.getItem(`msWishlist-${userData.uid}`))){
+                if (JSON.stringify(wishlist) !== JSON.stringify(localStorage.getItem(`msWishlist-${userData.uid}`))) {
                     localStorage.setItem(`msWishlist-${userData.uid}`, JSON.stringify(wishlist))
                     firebaseSetUserWishlist(authUser, { userWishlist: JSON.stringify(wishlist) })
                 }
-            } 
+            }
         }
-    }, [wishlist, authUser, userData, firebaseSetUserWishlist])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [wishlist/* , authUser, userData, firebaseSetUserWishlist */])
 
 
 

@@ -42,11 +42,11 @@ export default function Wishlist() {
                         <h1>WISHLIST</h1>
                         {authUser && authUser != null ?
                             <div className='Wishlist__details'>
-                                {wishlist.length === 0 ? <p className='Wishlist__noorder'>Aún no has agregado favoritos.<br /><Link to="/">SEGUIR NAVEGANDO</Link></p> :
+                                {wishlist?.length === 0 ? <p className='Wishlist__noorder'>Aún no has agregado favoritos.<br /><Link to="/">SEGUIR NAVEGANDO</Link></p> :
 
                                     <ul className='Wishlist__details__list'>
                                         <LayoutGroup>
-                                            {wishlist.map(item => <AnimatePresence key={`wishlist${item.id}`}> <motion.li layout initial={{ opacity: 0 }}
+                                            {wishlist?.map(item => <AnimatePresence key={`wishlist${item.id}`}> <motion.li layout initial={{ opacity: 0 }}
                                                 animate={{ opacity: 1 }}
                                                 exit={{ opacity: 0 }}
                                                 transition={{ duration: .4 }} title={item.artists_sort ? `${item.artists_sort.toUpperCase()} - ${item.title.toUpperCase()}` : item.title.toUpperCase()} >

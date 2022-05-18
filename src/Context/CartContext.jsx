@@ -68,10 +68,10 @@ export default function CartContextProvider({ children }) {
 
   /* logout useEffect / separar storage usuario o generico */
   useEffect(() => {
-    if (userData?.userCart != null && userData?.userCart !== "") {
+    if (userData?.userCart) {
       setCarrito(JSON.parse(userData.userCart))
-    } else if (userData === null){
-      setCarrito(localStorage.getItem("msShopList") && localStorage.getItem("msShopList") !== undefined ? JSON.parse(localStorage.getItem("msShopList")) : [])
+    } else {
+      setCarrito(localStorage.getItem("msShopList") ? JSON.parse(localStorage.getItem("msShopList")) : [])
     }
   }, [userData])
 /* fin logout useEffect */
@@ -82,15 +82,16 @@ export default function CartContextProvider({ children }) {
     setTotal(carrito?.reduce((total, item) => total + item?.price * item?.count, 0));
 
     if (carrito) {
-      if (authUser && userData?.uid != null) {
-        localStorage.setItem(`msShopList-${userData?.uid}`, JSON.stringify(carrito))
+      if (authUser && userData.uid) {
+        localStorage.setItem(`msShopList-${userData.uid}`, JSON.stringify(carrito))
         firebaseSetUserCart(authUser, { userCart: JSON.stringify(carrito) })
       } else if (!authUser) {
         localStorage.setItem("msShopList", JSON.stringify(carrito))
       }
     }
 
-  }, [carrito, authUser, userData, firebaseSetUserCart])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [carrito/* , authUser, userData, firebaseSetUserCart */])
 
 
 
