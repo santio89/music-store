@@ -1,6 +1,6 @@
 @import './variables.scss';
 
-.ItemWrapper{
+.ItemWrapper {
     position: relative;
 
     &__wish {
@@ -16,10 +16,10 @@
         padding: .4em;
 
         &:hover,
-        &:focus-visible{
+        &:focus-visible {
             text-shadow: 0 0 6px var(--color-one);
         }
-        
+
         &.is-active {
             color: var(--color-one);
             text-shadow: 0 0 6px var(--color-one);
@@ -138,11 +138,6 @@
             font-size: $font-xs;
             line-height: 1.2;
             max-height: 100px;
-            display: -webkit-box;
-            -webkit-line-clamp: 4;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
 
         &__price {

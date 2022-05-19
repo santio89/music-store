@@ -82,7 +82,7 @@
             margin-bottom: .4rem;
         }
 
-        &__list{
+        &__list {
             display: flex;
             flex-flow: column wrap;
             justify-content: space-between;
@@ -92,7 +92,7 @@
             font-family: 'Courier New', Courier, monospace;
             will-change: transform;
 
-            &__ul{
+            &__ul {
                 width: 100%;
                 display: flex;
                 flex-flow: column wrap;
@@ -101,7 +101,7 @@
                 overflow: hidden;
             }
 
-            &__total{
+            &__total {
                 border-top: 2px dashed var(--color-back-dark);
                 padding: .4em;
                 font-family: var(--font-primary);
@@ -177,6 +177,8 @@
                         flex-flow: column wrap;
                         justify-content: center;
                         align-items: start;
+                        min-width: 12ch;
+                        max-width: 12ch;
                     }
                 }
 
@@ -264,7 +266,7 @@
                 }
             }
 
-            &__removeConfirm{
+            &__removeConfirm {
                 position: absolute;
                 right: 1%;
                 top: 2%;
@@ -280,21 +282,22 @@
                 padding: .1em;
                 outline: 1px dashed var(--color-three);
 
-                &__buttons{
+                &__buttons {
                     display: flex;
                     flex-flow: row wrap;
                     justify-content: center;
                     align-items: center;
                     gap: 1.4em;
-                    
-                    button{
+
+                    button {
                         color: var(--color-four);
                         text-shadow: 1px 1px 0 var(--color-back-dark);
                         line-height: 1;
                         padding: .2em;
                         border-radius: .1em;
 
-                        &:hover, &:focus-visible{
+                        &:hover,
+                        &:focus-visible {
                             background: var(--color-one);
                             color: var(--color-four);
                         }
@@ -315,7 +318,7 @@
             font-size: $font-fluid-sm;
             will-change: transform;
 
-            &__cleartextContainer{
+            &__cleartextContainer {
                 width: 100%;
                 height: 120px;
                 display: flex;
@@ -325,7 +328,7 @@
                 position: relative;
             }
 
-            &__clear{
+            &__clear {
                 position: absolute;
                 inset: 0;
                 display: flex;
@@ -335,12 +338,12 @@
                 font-size: $font-fluid-md;
                 will-change: transform;
 
-                p{
+                p {
                     color: var(--color-one);
                     text-shadow: 1px 1px var(--color-three);
                 }
 
-                &__buttons{
+                &__buttons {
                     display: flex;
                     flex-flow: row wrap;
                     justify-content: center;
@@ -348,15 +351,16 @@
                     gap: 2rem;
                     width: 100%;
 
-                    button{
+                    button {
                         color: var(--color-four);
                         text-shadow: 1px 1px var(--color-back);
                         padding: .1em;
                         border-radius: .1em;
                         width: 100%;
                         flex: 1;
-                        
-                        &:hover, &:focus-visible{
+
+                        &:hover,
+                        &:focus-visible {
                             color: var(--color-three);
                             text-shadow: 1px 1px var(--color-back-dark);
                             background: var(--color-one-dark);
@@ -391,10 +395,10 @@
                 align-items: center;
                 will-change: transform;
 
-                p{
+                p {
                     position: relative;
 
-                    span{
+                    span {
                         font-size: .68em;
                         color: var(--color-three-dark);
                         position: absolute;
@@ -469,7 +473,7 @@
                 }
             }
 
-            &__confirm{
+            &__confirm {
                 display: flex;
                 flex-flow: column wrap;
                 justify-content: center;
@@ -489,7 +493,7 @@
         }
     }
 
-    &__success{
+    &__success {
         margin: auto;
         margin-top: 1rem;
         width: 100%;
@@ -501,7 +505,7 @@
         gap: 1.2rem;
         will-change: transform;
 
-        h3{
+        h3 {
             font-family: var(--font-primary);
             font-weight: bold;
             font-size: $font-fluid-lg;
@@ -514,7 +518,7 @@
             margin-bottom: .4rem;
         }
 
-        p{
+        p {
             font-family: 'Courier New', Courier, monospace;
             font-weight: bold;
             font-size: $font-fluid-md;
@@ -523,7 +527,7 @@
             line-height: 1.4;
         }
 
-        &__continue{
+        &__continue {
             align-self: end;
             padding: .4em;
             font-size: $font-fluid-mdd;
@@ -531,13 +535,13 @@
             text-shadow: 1px 1px 0 var(--color-one);
             transition: color 200ms, text-shadow 200ms;
 
-            &:hover{
+            &:hover {
                 color: var(--color-one);
                 text-shadow: 1px 1px 0 var(--color-four);
             }
         }
 
-        &__code{
+        &__code {
             font-family: 'Courier New', Courier, monospace;
             font-weight: bold;
             font-size: $font-fluid-md;
@@ -550,26 +554,27 @@
             margin-left: .4rem;
             margin-right: .4rem;
 
-            i{
+            i {
                 color: var(--color-four);
                 text-shadow: 1px 1px 0 var(--color-one);
             }
 
-            &:hover, &:focus-visible{
+            &:hover,
+            &:focus-visible {
                 outline: 1px dashed var(--color-three-dark);
             }
 
-            &:active{
+            &:active {
                 outline: 2px dashed var(--color-one);
             }
-            
-            &:active i{
+
+            &:active i {
                 color: var(--color-one);
                 text-shadow: 1px 1px 0 var(--color-four);
             }
         }
 
-        &__details{
+        &__details {
             width: calc(100% - 4px);
             text-align: left;
             padding: .6rem 1.2rem;
@@ -581,23 +586,24 @@
             margin-left: 2px;
             margin-right: 2px;
 
-            &:hover, &[open]{
+            &:hover,
+            &[open] {
                 outline: 2px dashed var(--color-one);
             }
-    
-            summary{
+
+            summary {
                 cursor: pointer;
                 border: none;
                 outline: none;
                 border-radius: .1em;
                 padding: .1em;
 
-                &:focus-visible{
+                &:focus-visible {
                     background: var(--color-back)
                 }
             }
 
-            p{
+            p {
                 font-size: $font-fluid-sm;
                 color: var(--color-two);
                 text-shadow: none;
@@ -610,16 +616,16 @@
                 padding: .2em 0;
                 border-bottom: 1px dashed var(--color-two);
 
-                span{
+                span {
                     width: 12ch;
                     flex: 1;
 
-                    &:not(:first-of-type){
+                    &:not(:first-of-type) {
                         text-align: right;
                     }
                 }
 
-                &.Checkout__success__details__total{
+                &.Checkout__success__details__total {
                     justify-content: center;
                     border: none;
                     font-weight: bold;
@@ -627,7 +633,7 @@
                     padding: .4em;
                 }
 
-                &.Checkout__success__details__date{
+                &.Checkout__success__details__date {
                     color: var(--color-three-dark);
                     font-size: .6em;
                     justify-content: end;
@@ -635,14 +641,14 @@
                 }
             }
 
-            &--buyer{
-                p{
+            &--buyer {
+                p {
                     border: none;
                 }
             }
 
-            &__items{
-                &__artist{
+            &__items {
+                &__artist {
                     color: var(--color-three-dark);
                     font-size: .8em;
                 }
@@ -718,7 +724,7 @@
     }
 }
 
-@media (min-width: 1024px){
+@media (min-width: 1024px) {
     .CheckoutWrapper {
         min-height: calc(100vh - 108px - 60px - .4rem - 1rem);
         /* container height= 100vh-navHeight-tabsHeight-margins */
@@ -756,9 +762,10 @@
             }
         }
 
-        &__success{
+        &__success {
             width: 90%;
-            max-width: 1200px;border-radius: .4em;
+            max-width: 1200px;
+            border-radius: .4em;
         }
     }
 }

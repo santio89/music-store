@@ -117,11 +117,6 @@
   font-size: 1rem;
   line-height: 1.2;
   max-height: 100px;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 .Item__content__price {
   font-size: 1.8rem;

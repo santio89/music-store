@@ -162,6 +162,8 @@
   flex-flow: column wrap;
   justify-content: center;
   align-items: start;
+  min-width: 12ch;
+  max-width: 12ch;
 }
 .Checkout__details__list__li input {
   text-align: center;
