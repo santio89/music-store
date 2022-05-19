@@ -6,7 +6,7 @@ export const WishlistContext = createContext();
 export default function WishlistContextProvider({ children }) {
 
     const { authUser, userData, firebaseSetUserWishlist } = useContext(AuthContext);
-    const [wishlist, setWishlist] = useState(() => localStorage.getItem(`msWishlist-${userData?.uid}`) && localStorage.getItem(`msWishlist-${userData?.uid}`) !== undefined && authUser ? JSON.parse(localStorage.getItem(`msWishlist-${userData?.uid}`)) : null);
+    const [wishlist, setWishlist] = useState(() => localStorage.getItem(`msWishList-${userData?.uid}`) && localStorage.getItem(`msWishList-${userData?.uid}`) !== undefined && authUser ? JSON.parse(localStorage.getItem(`msWishList-${userData?.uid}`)) : null);
 
 
     const wishlistAdd = (item) => {
@@ -44,7 +44,7 @@ export default function WishlistContextProvider({ children }) {
             const { key, newValue } = e;
 
             if (authUser) {
-                if (key === `msWishlist-${userData?.uid}`) {
+                if (key === `msWishList-${userData?.uid}`) {
                     setWishlist(JSON.parse(newValue));
                 }
             }
@@ -70,13 +70,13 @@ export default function WishlistContextProvider({ children }) {
     useEffect(() => {
         if (wishlist) {
             if (authUser && userData && userData.uid) {
-                if (JSON.stringify(wishlist) !== JSON.stringify(localStorage.getItem(`msWishlist-${userData.uid}`))) {
-                    localStorage.setItem(`msWishlist-${userData.uid}`, JSON.stringify(wishlist))
+                if (JSON.stringify(wishlist) !== JSON.stringify(localStorage.getItem(`msWishList-${userData.uid}`))) {
+                    localStorage.setItem(`msWishList-${userData.uid}`, JSON.stringify(wishlist))
                     firebaseSetUserWishlist(authUser, { userWishlist: JSON.stringify(wishlist) })
                 }
             }
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [wishlist/* , authUser, userData, firebaseSetUserWishlist */])
 
 

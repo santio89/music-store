@@ -4,7 +4,7 @@ import { addDoc, getDoc, doc, collection, getFirestore, serverTimestamp, writeBa
 import ReCAPTCHA from "react-google-recaptcha";
 import { AuthContext } from '../Context/AuthContext'
 
-export default function CheckoutForm({ total, toggleCheckoutConfirmation, checkoutSuccessTrue, carrito, setCheckoutCode, cartClear }) {
+export default function CheckoutForm({ total, toggleCheckoutConfirmation, checkoutSuccessTrue, cart, setCheckoutCode, cartClear }) {
   const { userData } = useContext(AuthContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -80,7 +80,7 @@ export default function CheckoutForm({ total, toggleCheckoutConfirmation, checko
 
 
   useEffect(() => {
-    const carritoList = carrito.map(item => {
+    const carritoList = cart.map(item => {
       return {
         title: item.title,
         artist: item.artists_sort,
@@ -91,7 +91,7 @@ export default function CheckoutForm({ total, toggleCheckoutConfirmation, checko
     })
 
     setShopList(carritoList);
-  }, [carrito]);
+  }, [cart]);
 
   useEffect(() => {
     recaptchaRef.current.execute();

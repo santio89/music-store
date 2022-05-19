@@ -10,7 +10,7 @@ import "../styles/css/Checkout.css";
 export default function Checkout() {
   const history = useNavigate();
 
-  const { carrito, cartItems, cartClear, cartRemove, total, modifyCount } = useContext(CartContext);
+  const { cart, cartItems, cartClear, cartRemove, total, modifyCount } = useContext(CartContext);
 
   const [removeItemSelected, setRemoveItemSelected] = useState(0);
   const [cartClearConfirm, setCartClearConfirm] = useState(false);
@@ -69,13 +69,13 @@ export default function Checkout() {
                     <motion.ul layout className='Checkout__details__list__ul'>
 
                       <AnimatePresence>
-                        {carrito.length === 0 ? null : <motion.li layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ y: "-120%", opacity: 0 }} className='Checkout__details__list__header' transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}><motion.span layout>TITULO</motion.span><motion.span layout>ARTISTA</motion.span><motion.span layout>PRECIO</motion.span><motion.span layout>CANT.</motion.span><motion.span layout>SUBT.</motion.span></motion.li>}
+                        {cart.length === 0 ? null : <motion.li layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ y: "-120%", opacity: 0 }} className='Checkout__details__list__header' transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}><motion.span layout>TITULO</motion.span><motion.span layout>ARTISTA</motion.span><motion.span layout>PRECIO</motion.span><motion.span layout>CANT.</motion.span><motion.span layout>SUBT.</motion.span></motion.li>}
                       </AnimatePresence>
 
 
                       <AnimatePresence>
                         {
-                          carrito.map((item) => {
+                          cart.map((item) => {
                             return (
 
                               <motion.li key={item?.id} layout initial={{ opacity: 0, x: "-120%" }} animate={{ opacity: 1, x: "0%" }} exit={{ opacity: 0, x: "120%" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className='Checkout__details__list__li'>
@@ -113,7 +113,7 @@ export default function Checkout() {
 
                     <motion.div layout className='Checkout__details__list__total'>
                       <AnimatePresence exitBeforeEnter>
-                        {cartItems === 0 ? <motion.p layout key={"noProducts"} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ y: "120%", opacity: 0 }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>No hay productos en el carrito</motion.p> : <motion.p layout key={"yesProducts"} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ y: "120%", opacity: 0 }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>TOTAL: ${total}</motion.p>}
+                        {cartItems === 0 ? <motion.p layout key={"noProducts"} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ y: "120%", opacity: 0 }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>No hay productos en el cart</motion.p> : <motion.p layout key={"yesProducts"} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ y: "120%", opacity: 0 }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>TOTAL: ${total}</motion.p>}
                       </AnimatePresence>
                     </motion.div>
 
@@ -158,7 +158,7 @@ export default function Checkout() {
                         <motion.div className="Checkout__details__resumen__confirm" key="checkoutConfirm" initial={{ x: "-120%", opacity: 0 }} animate={{ x: "0%", opacity: 1 }} exit={{ x: "120%", opacity: 0 }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
                           <motion.div layout className='Checkout__details__resumen__confirm__form'>
 
-                            <CheckoutForm total={total} cartItems={cartItems} checkoutSuccessTrue={checkoutSuccessTrue} setCheckoutCode={setCheckoutCode} carrito={carrito} cartClear={cartClear} toggleCheckoutConfirmation={toggleCheckoutConfirmation} />
+                            <CheckoutForm total={total} cartItems={cartItems} checkoutSuccessTrue={checkoutSuccessTrue} setCheckoutCode={setCheckoutCode} cart={cart} cartClear={cartClear} toggleCheckoutConfirmation={toggleCheckoutConfirmation} />
 
                           </motion.div>
                         </motion.div>

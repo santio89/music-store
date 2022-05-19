@@ -11,14 +11,14 @@ export default function Wishlist() {
     const history = useNavigate();
 
     const { wishlist, wishlistRemove } = useContext(WishlistContext);
-    const { authUser, authLogIn, userData, isLoggedIn } = useContext(AuthContext);
+    const { authUser, authLogIn, userData, isLoggedIn, userDataLoading } = useContext(AuthContext);
     const [wishLoading, setWishLoading] = useState(true);
 
     useEffect(() => {
         setTimeout(() => {
             if (authUser && !userData.userWishlist && userData.Wishlist != null && userData.Wishlist !== undefined) {
                 setWishLoading(true);
-            } else{
+            } else {
                 setWishLoading(false);
             }
         }, 400);
@@ -40,32 +40,40 @@ export default function Wishlist() {
                         transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
                         <button onClick={() => { history(-1) }} className='Checkout__back'><i className="bi bi-caret-left-fill"></i></button>
                         <h1>WISHLIST</h1>
-                        {authUser && authUser != null ?
-                            <div className='Wishlist__details'>
-                                {wishlist?.length === 0 ? <p className='Wishlist__noorder'>Aún no has agregado favoritos.<br /><Link to="/">SEGUIR NAVEGANDO</Link></p> :
+                        <LayoutGroup>
+                            {authUser ?
+                                <motion.div layout className='Wishlist__details' initial={{ opacity: 0, x: "-120%" }}
+                                    animate={{ opacity: 1, x: "0%" }}
+                                    exit={{ opacity: 0, x: "120%" }}
+                                    transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
+                                    {!userDataLoading && wishlist?.length === 0 ? <motion.p layout className='Wishlist__noorder' initial={{ opacity: 0, x: "-120%" }}
+                                        animate={{ opacity: 1, x: "0%" }}
+                                        exit={{ opacity: 0, x: "120%" }}
+                                        transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>Aún no has agregado favoritos.<br /><Link to="/">SEGUIR NAVEGANDO</Link></motion.p> :
 
-                                    
-                                        <LayoutGroup>
-                                            <motion.ul layout className='Wishlist__details__list'>
+                                        <motion.ul layout className='Wishlist__details__list' initial={{ opacity: 0, x: "-120%" }}
+                                            animate={{ opacity: 1, x: "0%" }}
+                                            exit={{ opacity: 0, x: "120%" }}
+                                            transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
+                                            {userDataLoading && <PuffLoader color={"var(--color-one)"} loading={userDataLoading} size={200} speedMultiplier={1.2} />}
                                             {wishlist?.map(item => <AnimatePresence key={`wishlist${item.id}`}> <motion.li layout initial={{ opacity: 0 }}
                                                 animate={{ opacity: 1 }}
                                                 exit={{ opacity: 0 }}
                                                 transition={{ duration: .4 }} title={item.artists_sort ? `${item.artists_sort.toUpperCase()} - ${item.title.toUpperCase()}` : item.title.toUpperCase()} >
 
-                                                <div className='Wishlist__details__list__title'><span>{item.artists_sort ? `${item.artists_sort.toUpperCase()} - ${item.title.toUpperCase()}` : item.title.toUpperCase()}</span><Link to={`/item/${item?.id}`}><img alt="wishlist img" src={`${item?.cover_image || item?.images?.[0]?.resource_url}`}></img></Link></div>
+                                                <motion.div layout className='Wishlist__details__list__title'><span>{item.artists_sort ? `${item.artists_sort.toUpperCase()} - ${item.title.toUpperCase()}` : item.title.toUpperCase()}</span><Link to={`/item/${item?.id}`}><motion.img layout alt="wishlist img" src={`${item?.cover_image || item?.images?.[0]?.resource_url}`}></motion.img></Link></motion.div>
 
-                                                <button className='Wishlist__details__list__wish'><i className="bi bi-suit-heart-fill" onClick={() => wishlistRemove(item)}></i></button>
-                                                <div className='Wishlist__details__list__price'>${item.price}</div>
+                                                <motion.button layout className='Wishlist__details__list__wish'><motion.i layout className="bi bi-suit-heart-fill" onClick={() => wishlistRemove(item)}></motion.i></motion.button>
+                                                <motion.div layout className='Wishlist__details__list__price'>${item.price}</motion.div>
                                             </motion.li></AnimatePresence>)}
-                                            </motion.ul>
-                                        </LayoutGroup>
-
-                                   
-
-                                }
-                            </div> :
-                            <div className='Wishlist__nouser'><p>Debes&nbsp;<button onClick={() => authLogIn()}>Iniciar Sesión</button>&nbsp;para ver tus favoritos</p></div>}
-
+                                        </motion.ul>
+                                    }
+                                </motion.div> :
+                                <motion.div layout className='Wishlist__nouser' initial={{ opacity: 0, x: "-120%" }}
+                                    animate={{ opacity: 1, x: "0%" }}
+                                    exit={{ opacity: 0, x: "120%" }}
+                                    transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}><motion.p layout>Debes&nbsp;<motion.button layout onClick={() => authLogIn()}>Iniciar Sesión</motion.button>&nbsp;para ver tus favoritos</motion.p></motion.div>}
+                        </LayoutGroup>
                     </motion.div>
                 </AnimatePresence>}
         </div>

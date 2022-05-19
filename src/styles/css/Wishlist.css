@@ -88,6 +88,7 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
   overflow: hidden;
+  will-change: transform;
 }
 .Wishlist__details__list li {
   padding: 0.4em;
@@ -101,9 +102,9 @@
   line-height: 1.2;
   min-width: clamp(300px, 40%, 380px);
   max-width: 380px;
-  will-change: transform;
   box-shadow: 0 -4px 0 0 var(--color-one);
   transition: box-shadow 200ms;
+  will-change: transform;
 }
 .Wishlist__details__list li:hover, .Wishlist__details__list li:focus, .Wishlist__details__list li:focus-within {
   box-shadow: 0 0 0 4px var(--color-one);
@@ -117,11 +118,13 @@
   font-size: 1.2em;
   text-align: left;
   text-shadow: 2px 2px 0 var(--color-back-dark);
+  will-change: transform;
 }
 .Wishlist__details__list__title a {
   border: none;
   outline: none;
   text-align: center;
+  will-change: transform;
 }
 .Wishlist__details__list__title a:hover img {
   box-shadow: 0 0 0 0.2rem var(--color-one);
@@ -175,16 +178,25 @@
   font-weight: bold;
   font-family: "Courier New", Courier, monospace;
   color: var(--color-four);
+  will-change: transform;
 }
-.Wishlist__nouser button, .Wishlist__nouser a, .Wishlist__noorder button, .Wishlist__noorder a {
+.Wishlist__nouser button,
+.Wishlist__nouser a, .Wishlist__noorder button,
+.Wishlist__noorder a {
   color: var(--color-one);
   will-change: transform;
   transition: transform 200ms;
 }
-.Wishlist__nouser button:hover, .Wishlist__nouser button:focus-visible, .Wishlist__nouser a:hover, .Wishlist__nouser a:focus-visible, .Wishlist__noorder button:hover, .Wishlist__noorder button:focus-visible, .Wishlist__noorder a:hover, .Wishlist__noorder a:focus-visible {
+.Wishlist__nouser button:hover, .Wishlist__nouser button:focus-visible,
+.Wishlist__nouser a:hover,
+.Wishlist__nouser a:focus-visible, .Wishlist__noorder button:hover, .Wishlist__noorder button:focus-visible,
+.Wishlist__noorder a:hover,
+.Wishlist__noorder a:focus-visible {
   border-bottom: 2px dashed var(--color-one);
 }
-.Wishlist__nouser button:active, .Wishlist__nouser a:active, .Wishlist__noorder button:active, .Wishlist__noorder a:active {
+.Wishlist__nouser button:active,
+.Wishlist__nouser a:active, .Wishlist__noorder button:active,
+.Wishlist__noorder a:active {
   transform: translate(2px, 2px);
 }
 
