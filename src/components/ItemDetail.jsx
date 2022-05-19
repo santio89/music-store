@@ -112,8 +112,8 @@ export default function ItemDetail({ loading, producto, spotifyId, spotifyLoadin
                                     <div className="ItemDetail__infoWrapper">
                                         <div className="ItemDetail__info">
                                             <div className="ItemDetail__info__main">
-                                                <p className='ItemDetail__subtitle'>{producto?.artists_sort}</p>
-                                                <h2 className='ItemDetail__title'>{producto?.title?.toUpperCase()}</h2>
+                                                <p className='ItemDetail__subtitle' title={producto?.artists_sort}>{producto?.artists_sort}</p>
+                                                <h2 className='ItemDetail__title' title={producto?.title?.toUpperCase()}>{producto?.title?.toUpperCase()}</h2>
                                             </div>
                                             <div className='ItemDetail__controlsWrapper'>
                                                 <AnimatePresence>
