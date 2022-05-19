@@ -10,7 +10,7 @@ import CartWidget from './CartWidget';
 import '../../src/styles/css/ItemDetail.css';
 
 
-export default function ItemDetail({ loading, producto, spotifyId }) {
+export default function ItemDetail({ loading, producto, spotifyId, spotifyLoading, spotifyBadReq }) {
     const initialCount = 1;
 
     const { cartAdd } = useContext(CartContext);
@@ -103,7 +103,9 @@ export default function ItemDetail({ loading, producto, spotifyId }) {
 
                                             <details>
                                                 <summary>Spotify</summary>
-                                                <iframe title='spotify-tracklist' src={`https://open.spotify.com/embed/album/${spotifyId && spotifyId}?utm_source=generator`} width="100%" height="380" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                                                {spotifyLoading && <p>Buscando en Spotify... <PuffLoader color={"var(--color-one)"} size={30} speedMultiplier={1.2} /></p>}
+                                                {spotifyId && !spotifyLoading && !spotifyBadReq && <iframe title='spotify-tracklist' src={`https://open.spotify.com/embed/album/${spotifyId && spotifyId}?utm_source=generator`} width="100%" height="380" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>}
+                                                {(!spotifyId || spotifyBadReq) && !spotifyLoading && <p className='ItemDetail__noSpot'>&nbsp;No pudimos encontrar el álbum en Spotify.</p>}
                                             </details>
                                         </div>
                                     </div>

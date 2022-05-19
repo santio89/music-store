@@ -53,7 +53,7 @@ export default function ItemListContainer() {
                         }
                     ).catch(() => { setPaginationLoading(false) });
                 } else {
-                    navigate("./error404")
+                    console.log("discogs might be down")
                 }
             }
         ).catch(() => { setPaginationLoading(false) })
@@ -116,7 +116,7 @@ export default function ItemListContainer() {
                         }
                     ).catch(() => { setPaginationLoading(false) });
                 } else {
-                    navigate("./error404")
+                    console.log("discogs might be down")
                 }
             }
         ).catch(() => { setPaginationLoading(false) })
@@ -143,7 +143,7 @@ export default function ItemListContainer() {
                         }
                     ).catch(() => { setPaginationLoading(false) });
                 } else {
-                    navigate("./error404")
+                    console.log("discogs might be down")
                 }
             }
         ).catch(() => { setPaginationLoading(false) })
@@ -188,7 +188,7 @@ export default function ItemListContainer() {
                         }
                     ).catch(err => { console.log("error fetching data: ", err) });
                 } else {
-                    navigate("./error404")
+                    console.log("discogs might be down")
                 }
             }
         ).catch(err => { console.log("error fetching data: ", err) })
