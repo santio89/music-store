@@ -41,7 +41,7 @@ export default function LogInButton({ navClosed }) {
                 {authUser ? <motion.div key="profileWrapper"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }} transition={{ duration: .4 }} className='profilePicWrapper'><button title='Ver Opciones' className={`profilePic ${userSettings ? "is-active" : ""}`} onClick={() => toggleUserSettings()}><img alt="Profile Pic" src={authUser.photoURL}></img></button> <Link title="Wishlist" className='wishlistBtn' to="/user/wishlist"><i className="bi bi-suit-heart-fill"></i></Link> <button className='logOutBtn' onClick={() => authLogOut()} title="Cerrar Sesión"><i className="bi bi-box-arrow-right"></i></button></motion.div> :
+                    exit={{ opacity: 0 }} transition={{ duration: .4 }} className='profilePicWrapper'><button title='Ver Opciones' className={`profilePic ${userSettings ? "is-active" : ""}`} onClick={() => toggleUserSettings()}><img alt="Profile Pic" src={authUser.photoURL}></img></button> <Link title="Wishlist" className='wishlistBtn' to="/user/wishlist" onClick={() => { navClosed(); setUserSettings(false) }}><i className="bi bi-suit-heart-fill"></i></Link> <button className='logOutBtn' onClick={() => authLogOut()} title="Cerrar Sesión"><i className="bi bi-box-arrow-right"></i></button></motion.div> :
                     <motion.button key="logInBtn"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
