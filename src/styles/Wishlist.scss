@@ -1,7 +1,7 @@
 @import './variables.scss';
 
 .WishlistWrapper {
-    min-height: calc(100vh - 76px - 60px - .2rem);
+    min-height: calc(100vh - 76px - 60px - 1.1rem);
     /* container height= 100vh-navHeight-tabsHeight-margins */
     width: 100%;
     max-width: 1800px;
@@ -13,7 +13,7 @@
     position: relative;
 
     >span {
-        transform: (translateY(-50%));
+        margin-top: 60px;
     }
 }
 
@@ -206,6 +206,19 @@
             &:active {
                 transform: translate(2px, 2px);
             }
+        }
+    }
+}
+
+@media (min-width: 1024px){
+    .WishlistWrapper{
+        min-height: calc(100vh - 108px - 60px - 1.4rem);
+        /* container height= 100vh-navHeight-titleHeight-margins */
+
+        >span {
+            transform: (translateY(-50%));
+            /* -tabsHeight */
+            margin-top: 60px;
         }
     }
 }

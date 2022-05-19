@@ -2,19 +2,14 @@
 
 .ItemListWrapper {
     width: 90%;
-    min-height: calc(100vh - 76px - 60px - .2rem);
-    /* container height= 100vh-navHeight-tabsHeight-margins */
+    min-height: calc(100vh - 76px - 60px - 60px - 1.1rem);
+    /* container height= 100vh-navHeight-tabsHeight-titleHeight-margins */
     margin: auto;
     max-width: 1800px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-
-    >span {
-        transform: (translateY(-50%));
-        margin-top: calc(-60px - 2.92rem);
-    }
 
     &.paginationLoading {
         cursor: wait;
@@ -325,8 +320,12 @@
 
 @media (min-width:1024px) {
     .ItemListWrapper {
-        min-height: calc(100vh - 108px - 60px - .4rem - 1rem);
-        /* container height= 100vh-navHeight-tabsHeight-margins */
+        min-height: calc(100vh - 108px - 60px - 60px - 1.4rem);
+        /* container height= 100vh-navHeight-tabsHeight-titleHeight-margins */
+
+        >span {
+            transform: (translateY(-50%));
+        }
     }
 
     .ItemList {

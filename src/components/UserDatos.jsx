@@ -60,7 +60,7 @@ export default function UserDatos() {
     }, [userDataLoading])
 
     return (
-        <div className='ComprasWrapper'>
+        <div className='DatosWrapper'>
             {datosLoading ? <PuffLoader color={"var(--color-one)"} loading={datosLoading} size={200} speedMultiplier={1.2} /> : <AnimatePresence>
                 <motion.div className='Datos' key={"Datos"} initial={{ opacity: 0, x: "-120%" }}
                     animate={{ opacity: 1, x: "0%" }}

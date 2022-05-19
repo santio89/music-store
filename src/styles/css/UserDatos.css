@@ -1,5 +1,5 @@
 .DatosWrapper {
-  min-height: calc(100vh - 76px - 60px - 0.2rem);
+  min-height: calc(100vh - 76px - 60px - 1.1rem);
   /* container height= 100vh-navHeight-tabsHeight-margins */
   width: 100%;
   max-width: 1800px;
@@ -10,7 +10,7 @@
   align-items: center;
 }
 .DatosWrapper > span {
-  transform: translateY(-50%);
+  margin-top: 60px;
 }
 
 .Datos {
@@ -163,8 +163,13 @@
 
 @media (min-width: 1024px) {
   .DatosWrapper {
-    min-height: calc(100vh - 108px - 60px - 0.4rem - 1rem);
-    /* container height= 100vh-navHeight-tabsHeight-margins */
+    min-height: calc(100vh - 108px - 60px - 1.4rem);
+    /* container height= 100vh-navHeight-titleHeight-margins */
+  }
+  .DatosWrapper > span {
+    transform: translateY(-50%);
+    /* -tabsHeight */
+    margin-top: 60px;
   }
 }
 @media (min-width: 1216px) {
