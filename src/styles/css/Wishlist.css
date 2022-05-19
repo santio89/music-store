@@ -199,6 +199,9 @@
 .Wishlist__noorder a:active {
   transform: translate(2px, 2px);
 }
+.Wishlist__noorder {
+  margin-top: 0;
+}
 
 @media (min-width: 1024px) {
   .WishlistWrapper {
