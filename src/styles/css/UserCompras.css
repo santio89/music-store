@@ -28,6 +28,7 @@
   font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
   color: var(--color-one);
   text-shadow: 2px 2px 0 var(--color-three);
+  will-change: transform;
 }
 .Compras__back {
   position: absolute;

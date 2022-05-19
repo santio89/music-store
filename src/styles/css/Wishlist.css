@@ -29,6 +29,7 @@
   color: var(--color-one);
   text-shadow: 2px 2px 0 var(--color-four);
   margin-bottom: 8rem;
+  will-change: transform;
 }
 .Wishlist h1 {
   font-size: clamp(2rem, 2rem + 2vw, 3.2rem);

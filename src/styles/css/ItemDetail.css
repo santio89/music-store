@@ -29,6 +29,7 @@
   padding-bottom: 2.8rem;
   margin-bottom: 2.8rem;
   margin-top: 0.8rem;
+  will-change: transform;
 }
 .ItemDetail__body {
   display: flex;

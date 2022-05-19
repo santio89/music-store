@@ -19,6 +19,7 @@
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+    will-change: transform;
 
     h2 {
         font-size: $font-fluid-xl;

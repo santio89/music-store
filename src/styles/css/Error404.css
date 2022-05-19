@@ -17,6 +17,7 @@
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
+  will-change: transform;
 }
 .Error404 h2 {
   font-size: clamp(2rem, 2rem + 2vw, 3.2rem);

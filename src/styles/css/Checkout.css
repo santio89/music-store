@@ -29,6 +29,7 @@
   color: var(--color-one);
   text-shadow: 2px 2px 0 var(--color-four);
   margin-bottom: 8rem;
+  will-change: transform;
 }
 .Checkout h1 {
   font-size: clamp(2rem, 2rem + 2vw, 3.2rem);
@@ -60,6 +61,7 @@
   align-items: stretch;
   gap: 2rem;
   margin-top: 1rem;
+  will-change: transform;
 }
 .Checkout__details h3 {
   font-family: var(--font-primary);
@@ -293,6 +295,7 @@
   justify-content: center;
   align-items: center;
   font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
+  will-change: transform;
 }
 .Checkout__details__resumen__clear p {
   color: var(--color-one);
@@ -327,6 +330,7 @@
   align-items: center;
   padding: 0.4rem;
   padding-top: 0;
+  will-change: transform;
 }
 .Checkout__details__resumen__text {
   position: absolute;
@@ -341,6 +345,7 @@
   flex-flow: row wrap;
   justify-content: start;
   align-items: center;
+  will-change: transform;
 }
 .Checkout__details__resumen__text p {
   position: relative;
@@ -420,6 +425,7 @@
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
+  will-change: transform;
 }
 .Checkout__details__resumen__confirm__form {
   padding: 0 0.8rem 0.8rem 0.8rem;
@@ -439,6 +445,7 @@
   justify-content: center;
   align-items: center;
   gap: 1.2rem;
+  will-change: transform;
 }
 .Checkout__success h3 {
   font-family: var(--font-primary);

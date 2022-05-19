@@ -19,6 +19,7 @@
   margin: auto;
   margin-top: 1rem;
   margin-bottom: 4rem;
+  will-change: transform;
 }
 .Categories * {
   padding: 0.6em;

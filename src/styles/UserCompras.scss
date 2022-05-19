@@ -31,6 +31,7 @@
     font-size: $font-fluid-md;
     color: var(--color-one);
     text-shadow: 2px 2px 0 var(--color-three);
+    will-change: transform;
 
     &__back {
         position: absolute;

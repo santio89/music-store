@@ -32,6 +32,7 @@
     color: var(--color-one);
     text-shadow: 2px 2px 0 var(--color-four);
     margin-bottom: 8rem;
+    will-change: transform;
 
     h1 {
         font-size: $font-fluid-xl;

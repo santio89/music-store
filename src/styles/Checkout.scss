@@ -32,6 +32,7 @@
     color: var(--color-one);
     text-shadow: 2px 2px 0 var(--color-four);
     margin-bottom: 8rem;
+    will-change: transform;
 
     h1 {
         font-size: $font-fluid-xl;
@@ -66,6 +67,7 @@
         align-items: stretch;
         gap: 2rem;
         margin-top: 1rem;
+        will-change: transform;
 
         h3 {
             font-family: var(--font-primary);
@@ -331,6 +333,7 @@
                 justify-content: center;
                 align-items: center;
                 font-size: $font-fluid-md;
+                will-change: transform;
 
                 p{
                     color: var(--color-one);
@@ -370,6 +373,7 @@
                 align-items: center;
                 padding: .4rem;
                 padding-top: 0;
+                will-change: transform;
             }
 
             &__text {
@@ -385,6 +389,7 @@
                 flex-flow: row wrap;
                 justify-content: start;
                 align-items: center;
+                will-change: transform;
 
                 p{
                     position: relative;
@@ -469,6 +474,7 @@
                 flex-flow: column wrap;
                 justify-content: center;
                 align-items: center;
+                will-change: transform;
 
 
                 &__form {
@@ -493,6 +499,7 @@
         justify-content: center;
         align-items: center;
         gap: 1.2rem;
+        will-change: transform;
 
         h3{
             font-family: var(--font-primary);
