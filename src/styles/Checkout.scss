@@ -431,8 +431,8 @@
                     line-height: 1.2;
                     width: 100%;
                     background: transparent;
-                    will-change: transform, background-color;
-                    transition: filter 400ms, color 400ms;
+                    will-change: transform, background-color, color;
+                    
                     filter: grayscale(0);
 
                     i {
@@ -466,6 +466,7 @@
                         color: var(--color-three-dark);
                         pointer-events: none;
                         filter: grayscale(1);
+                        transition: filter 400ms, color 400ms;
                     }
                 }
             }
