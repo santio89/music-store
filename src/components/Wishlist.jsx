@@ -52,7 +52,7 @@ export default function Wishlist() {
                                         animate={{ opacity: 1, x: "0%" }}
                                         exit={{ opacity: 0, x: "120%" }}
                                         transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
-                                        {!userDataLoading && wishlist?.length === 0 ? <motion.p layout className='Wishlist__noorder' initial={{ opacity: 0, x: "-120%" }}
+                                        {!userDataLoading && wishlist?.length === 0 ? <motion.p layout className='Wishlist__nowish' initial={{ opacity: 0, x: "-120%" }}
                                             animate={{ opacity: 1, x: "0%" }}
                                             exit={{ opacity: 0, x: "120%" }}
                                             transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>Aún no has agregado favoritos.<br /><Link to="/">SEGUIR NAVEGANDO</Link></motion.p> : (<>

@@ -170,7 +170,7 @@
   text-shadow: 2px 2px 0 var(--color-two);
   font-size: clamp(1rem, 1rem + 1.4vw, 2rem);
 }
-.Wishlist__nouser, .Wishlist__noorder {
+.Wishlist__nouser, .Wishlist__nowish {
   width: 100%;
   text-align: center;
   text-shadow: none;
@@ -179,27 +179,28 @@
   font-family: "Courier New", Courier, monospace;
   color: var(--color-four);
   will-change: transform;
+  font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
 }
 .Wishlist__nouser button,
-.Wishlist__nouser a, .Wishlist__noorder button,
-.Wishlist__noorder a {
+.Wishlist__nouser a, .Wishlist__nowish button,
+.Wishlist__nowish a {
   color: var(--color-one);
   will-change: transform;
   transition: transform 200ms;
 }
 .Wishlist__nouser button:hover, .Wishlist__nouser button:focus-visible,
 .Wishlist__nouser a:hover,
-.Wishlist__nouser a:focus-visible, .Wishlist__noorder button:hover, .Wishlist__noorder button:focus-visible,
-.Wishlist__noorder a:hover,
-.Wishlist__noorder a:focus-visible {
+.Wishlist__nouser a:focus-visible, .Wishlist__nowish button:hover, .Wishlist__nowish button:focus-visible,
+.Wishlist__nowish a:hover,
+.Wishlist__nowish a:focus-visible {
   border-bottom: 2px dashed var(--color-one);
 }
 .Wishlist__nouser button:active,
-.Wishlist__nouser a:active, .Wishlist__noorder button:active,
-.Wishlist__noorder a:active {
+.Wishlist__nouser a:active, .Wishlist__nowish button:active,
+.Wishlist__nowish a:active {
   transform: translate(2px, 2px);
 }
-.Wishlist__noorder {
+.Wishlist__nowish {
   margin-top: 0;
 }
 

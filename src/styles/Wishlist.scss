@@ -191,7 +191,7 @@
     }
 
     &__nouser,
-    &__noorder {
+    &__nowish {
         width: 100%;
         text-align: center;
         text-shadow: none;
@@ -200,6 +200,7 @@
         font-family: 'Courier New', Courier, monospace;
         color: var(--color-four);
         will-change: transform;
+        font-size: $font-fluid-md;
 
         button,
         a {
@@ -218,7 +219,7 @@
         }
     }
 
-    &__noorder{
+    &__nowish{
         margin-top: 0;
     }
 }
