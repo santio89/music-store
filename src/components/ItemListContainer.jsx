@@ -11,6 +11,7 @@ export default function ItemListContainer() {
     const [loading, setLoading] = useState(false);
     const [paginationLoading, setPaginationLoading] = useState(false);
     const [productos, setProductos] = useState([]);
+    const [isProductos, setIsProductos] = useState(false);
 
     const { categoryId } = useParams();
     const { searchId } = useParams();
@@ -209,10 +210,14 @@ export default function ItemListContainer() {
             }); */
 
     }, [categoryId, searchId, navigate, discogsKey, discogsSecret])
+    
 
+    useEffect(() => {
+        productos.length > 0 ? setIsProductos(true) : setIsProductos(false);
 
+    }, [productos])
 
     return (
-        <ItemList productos={productos} categoryId={categoryId} searchId={searchId} loading={loading} sortOpen={sortOpen} setSortOpen={setSortOpen} sortActive={sortActive} setSortActive={setSortActive} pagination={paginationObject} paginationFetch={paginationFetch} paginationLoading={paginationLoading} sortAllHigh={sortAllHigh} sortAllRelevance={sortAllRelevance} sortAllHot={sortAllHot} />
+        <ItemList productos={productos} isProductos={isProductos} categoryId={categoryId} searchId={searchId} loading={loading} sortOpen={sortOpen} setSortOpen={setSortOpen} sortActive={sortActive} setSortActive={setSortActive} pagination={paginationObject} paginationFetch={paginationFetch} paginationLoading={paginationLoading} sortAllHigh={sortAllHigh} sortAllRelevance={sortAllRelevance} sortAllHot={sortAllHot} />
     )
 }

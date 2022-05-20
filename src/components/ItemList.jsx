@@ -1,24 +1,19 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
 import Item from './Item'
 import '../../src/styles/css/ItemList.css';
 import PuffLoader from "react-spinners/PuffLoader";
 
-export default function ItemList({ productos, searchId, loading, sortOpen, setSortOpen, sortActive, pagination, paginationFetch, paginationLoading, sortAllHigh, sortAllRelevance, sortAllHot }) {
+export default function ItemList({ productos, isProductos, searchId, loading, sortOpen, setSortOpen, sortActive, pagination, paginationFetch, paginationLoading, sortAllHigh, sortAllRelevance, sortAllHot }) {
 
     /*price calculado con una formula a partir de las propiedades de 'community have' y 'community want' (que vienen de la api) */
 
     const { categoryId } = useParams();
-    const [isProductos, setIsProductos] = useState(false);
+    
 
     const history = useNavigate();
     const topPagRef = useRef(null);
-
-    useEffect(() => {
-        productos.length > 0 ? setIsProductos(true) : setIsProductos(false);
-
-    }, [productos])
 
     useEffect(() => {
         window.scrollTo(0, 0);
