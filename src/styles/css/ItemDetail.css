@@ -52,6 +52,11 @@
   width: 100%;
   font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
 }
+.ItemDetail__detailsWrapper button {
+  width: 100%;
+  outline: none;
+  border: none;
+}
 .ItemDetail__detailsWrapper img {
   border-radius: 0.4em;
   width: 100%;
@@ -126,9 +131,10 @@
   border-radius: 0.2em;
   padding: 2ch;
   overflow: hidden;
-  background-image: linear-gradient(45deg, var(--color-one) 50%, var(--color-back-dark) 50%);
+  background-image: linear-gradient(45deg, var(--color-one) 49.8%, var(--color-back-dark) 49.8%);
   position: relative;
   font-size: clamp(2rem, 2rem + 2vw, 3.2rem);
+  width: clamp(300px, 100%, 600px);
   min-width: 300px;
   outline: 4px dashed var(--color-back);
 }
@@ -146,8 +152,8 @@
 }
 .ItemDetail__imgModal button {
   position: absolute;
-  top: -0.4ch;
-  right: 0.4ch;
+  top: -0.5ch;
+  right: -44%;
   color: white;
   font-weight: bold;
   text-shadow: 1px 1px 0 var(--color-three-dark);

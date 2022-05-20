@@ -56,6 +56,12 @@
         width: 100%;
         font-size: $font-fluid-sm;
 
+        button{
+            width: 100%;
+            outline: none;
+            border: none;
+        }
+
         img {
             border-radius: .4em;
             width: 100%;
@@ -142,9 +148,10 @@
         border-radius: .2em;
         padding: 2ch;
         overflow: hidden;
-        background-image: linear-gradient(45deg, var(--color-one) 50%, var(--color-back-dark) 50%);
+        background-image: linear-gradient(45deg, var(--color-one) 49.8%, var(--color-back-dark) 49.8%);
         position: relative;
         font-size: $font-fluid-xl;
+        width: clamp(300px, 100%, 600px);
         min-width: 300px;
         outline: 4px dashed var(--color-back);
 
@@ -161,8 +168,8 @@
 
         button{
             position: absolute;
-            top: -.4ch;
-            right: .4ch;
+            top: -.5ch;
+            right: -44%;
             color: white;
             font-weight: bold;
             text-shadow: 1px 1px 0 var(--color-three-dark);
