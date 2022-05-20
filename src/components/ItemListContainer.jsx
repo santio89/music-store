@@ -26,7 +26,9 @@ export default function ItemListContainer() {
 
     const [paginationObject, setPaginationObject] = useState({});
 
-
+    
+    /*price calculado con una formula a partir de las propiedades de 'community have' y 'community want' (que vienen de la api) */
+    
 
     const sortAllHigh = () => {
         setPaginationLoading(true);
