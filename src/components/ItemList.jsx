@@ -6,10 +6,7 @@ import '../../src/styles/css/ItemList.css';
 import PuffLoader from "react-spinners/PuffLoader";
 
 export default function ItemList({ productos, isProductos, searchId, loading, sortOpen, setSortOpen, sortActive, pagination, paginationFetch, paginationLoading, sortAllHigh, sortAllRelevance, sortAllHot }) {
-
-
     const { categoryId } = useParams();
-    
 
     const history = useNavigate();
     const topPagRef = useRef(null);
@@ -17,8 +14,6 @@ export default function ItemList({ productos, isProductos, searchId, loading, so
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-
-
 
     return (
         <>
