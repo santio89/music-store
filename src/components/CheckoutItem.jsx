@@ -23,7 +23,7 @@ export default function CheckoutItem({item, modifyCount, removeItemSelected, set
                     } else {
                         modifyCount({ ...item, count: Number(e.currentTarget.value) });
                     }
-                }} onKeyDown={(e) => e.key !== "Enter" ? (e.key !== 'Escape' ? null : e.currentTarget.blur()) : e.currentTarget.blur()} /> <motion.span className='Checkout__details__list__li__stock'>Stock: {item.stock}</motion.span></motion.span>
+                }} onKeyDown={(e) => e.key !== "Enter" ? (e.key !== 'Escape' ? null : e.currentTarget.blur()) : e.currentTarget.blur()} /> <motion.span className='Checkout__details__list__li__stock'>Stock:&nbsp;{item.stock}</motion.span></motion.span>
                 <motion.span layout>${item?.price * item?.count}</motion.span>
                 {
                     removeItemSelected === item?.id ? <motion.div layout className='Checkout__details__list__removeConfirm'>

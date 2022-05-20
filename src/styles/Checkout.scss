@@ -119,16 +119,16 @@
 
             li {
                 padding: .2em;
-                display: flex;
-                flex-flow: row wrap;
-                gap: clamp(.1rem, .1rem + 1vw, 2rem);
-                justify-content: space-evenly;
                 border-bottom: 1px dashed var(--color-three-dark);
                 width: 100%;
                 font-size: $font-xxxs;
                 position: relative;
                 overflow: hidden;
                 will-change: transform;
+                display: grid;
+                justify-content: center; 
+                grid-template-columns: repeat(5, 1fr);
+                gap: clamp(.1rem, .1rem + 1vw, 2rem);
 
                 &:nth-last-child(1) {
                     border-bottom: none;
@@ -138,7 +138,7 @@
             &__li {
                 &__title {
                     width: 100% !important;
-                    font-size: .8em;
+                    font-size: .88em;
                     justify-content: start !important;
                     max-width: none !important;
                     padding: 0 !important;
@@ -162,23 +162,20 @@
                 }
 
                 span {
-                    padding: .4em;
+                    padding: .28em;
                     color: var(--color-four);
                     display: flex;
                     flex-flow: row wrap;
                     justify-content: center;
                     align-items: center;
-                    flex: 1;
                     text-align: center;
-                    width: 12ch;
+                    min-width: 8ch;
 
                     &:first-child {
                         display: flex;
                         flex-flow: column wrap;
                         justify-content: center;
                         align-items: start;
-                        min-width: 12ch;
-                        max-width: 12ch;
                     }
                 }
 
@@ -220,7 +217,7 @@
 
                 img {
                     width: 100%;
-                    max-width: 10ch;
+                    max-width: 11.2ch;
                     margin: auto;
                     aspect-ratio: 1;
                     border-radius: .4em;
@@ -239,13 +236,13 @@
                 text-shadow: 1px 1px 0 var(--color-one-dark);
 
                 span {
-                    padding: .4em;
+                    padding: .28em;
                     color: var(--color-three);
                     display: flex;
                     flex-flow: row wrap;
                     justify-content: center;
                     align-items: center;
-                    flex: 1;
+                  /*   flex: 1; */
                     text-align: left;
                 }
             }
@@ -617,9 +614,6 @@
                 border-bottom: 1px dashed var(--color-two);
 
                 span {
-                    width: 12ch;
-                    flex: 1;
-
                     &:not(:first-of-type) {
                         text-align: right;
                     }
@@ -648,6 +642,11 @@
             }
 
             &__items {
+                p{
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                }
+                
                 &__artist {
                     color: var(--color-three-dark);
                     font-size: .8em;
@@ -664,7 +663,7 @@
         &__details {
             &__list {
                 li {
-                    font-size: .5em;
+                    font-size: .4em;
                 }
 
                 &__remove {
@@ -687,7 +686,7 @@
         &__details {
             &__list {
                 li {
-                    font-size: .6em;
+                    font-size: .48em;
                 }
 
                 &__remove {
@@ -703,8 +702,12 @@
         &__details {
             &__list {
                 li {
-                    font-size: .6em;
+                    font-size: .58em;
                     gap: clamp(.2rem, .2rem + 2vw, 4rem);
+
+                    span{
+                        padding: .4em;
+                    }
                 }
             }
 
@@ -717,7 +720,7 @@
         &__details {
             &__list {
                 li {
-                    font-size: .68em;
+                    font-size: .64em;
                 }
             }
         }

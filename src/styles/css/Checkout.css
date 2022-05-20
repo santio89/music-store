@@ -110,23 +110,23 @@
 }
 .Checkout__details__list li {
   padding: 0.2em;
-  display: flex;
-  flex-flow: row wrap;
-  gap: clamp(0.1rem, 0.1rem + 1vw, 2rem);
-  justify-content: space-evenly;
   border-bottom: 1px dashed var(--color-three-dark);
   width: 100%;
   font-size: 0.6rem;
   position: relative;
   overflow: hidden;
   will-change: transform;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(0.1rem, 0.1rem + 1vw, 2rem);
 }
 .Checkout__details__list li:nth-last-child(1) {
   border-bottom: none;
 }
 .Checkout__details__list__li__title {
   width: 100% !important;
-  font-size: 0.8em;
+  font-size: 0.88em;
   justify-content: start !important;
   max-width: none !important;
   padding: 0 !important;
@@ -147,23 +147,20 @@
   position: relative;
 }
 .Checkout__details__list__li span {
-  padding: 0.4em;
+  padding: 0.28em;
   color: var(--color-four);
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  flex: 1;
   text-align: center;
-  width: 12ch;
+  min-width: 8ch;
 }
 .Checkout__details__list__li span:first-child {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-items: start;
-  min-width: 12ch;
-  max-width: 12ch;
 }
 .Checkout__details__list__li input {
   text-align: center;
@@ -196,7 +193,7 @@
 }
 .Checkout__details__list__li img {
   width: 100%;
-  max-width: 10ch;
+  max-width: 11.2ch;
   margin: auto;
   aspect-ratio: 1;
   border-radius: 0.4em;
@@ -212,13 +209,13 @@
   text-shadow: 1px 1px 0 var(--color-one-dark);
 }
 .Checkout__details__list__header span {
-  padding: 0.4em;
+  padding: 0.28em;
   color: var(--color-three);
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  flex: 1;
+  /*   flex: 1; */
   text-align: left;
 }
 .Checkout__details__list__remove {
@@ -546,10 +543,6 @@
   padding: 0.2em 0;
   border-bottom: 1px dashed var(--color-two);
 }
-.Checkout__success__details p span {
-  width: 12ch;
-  flex: 1;
-}
 .Checkout__success__details p span:not(:first-of-type) {
   text-align: right;
 }
@@ -569,6 +562,10 @@
 .Checkout__success__details--buyer p {
   border: none;
 }
+.Checkout__success__details__items p {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
 .Checkout__success__details__items__artist {
   color: var(--color-three-dark);
   font-size: 0.8em;
@@ -576,7 +573,7 @@
 
 @media (min-width: 320px) {
   .Checkout__details__list li {
-    font-size: 0.5em;
+    font-size: 0.4em;
   }
   .Checkout__details__list__remove {
     right: 1%;
@@ -588,7 +585,7 @@
 }
 @media (min-width: 400px) {
   .Checkout__details__list li {
-    font-size: 0.6em;
+    font-size: 0.48em;
   }
   .Checkout__details__list__remove {
     font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
@@ -596,13 +593,16 @@
 }
 @media (min-width: 500px) {
   .Checkout__details__list li {
-    font-size: 0.6em;
+    font-size: 0.58em;
     gap: clamp(0.2rem, 0.2rem + 2vw, 4rem);
+  }
+  .Checkout__details__list li span {
+    padding: 0.4em;
   }
 }
 @media (min-width: 620px) {
   .Checkout__details__list li {
-    font-size: 0.68em;
+    font-size: 0.64em;
   }
 }
 @media (min-width: 1024px) {
