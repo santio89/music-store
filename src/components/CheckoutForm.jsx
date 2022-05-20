@@ -4,7 +4,7 @@ import { addDoc, getDoc, doc, collection, getFirestore, serverTimestamp, writeBa
 import ReCAPTCHA from "react-google-recaptcha";
 import { AuthContext } from '../Context/AuthContext'
 
-export default function CheckoutForm({ total, toggleCheckoutConfirmation, checkoutSuccessTrue, cart, setCheckoutCode, cartClear }) {
+export default function CheckoutForm({ total, toggleCheckoutConfirmation, checkoutSuccessTrue, cart, checkoutCode, setCheckoutCode, cartClear }) {
   const { userData } = useContext(AuthContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -70,7 +70,6 @@ export default function CheckoutForm({ total, toggleCheckoutConfirmation, checko
             cartClear();
             resetInputs();
             setRecaptchaValid(false);
-            setLoadingCheckout(false);
             window.scrollTo(0, 0);
           }).catch(err => console.log("Error sending order: " + err))
         }
@@ -89,13 +88,18 @@ export default function CheckoutForm({ total, toggleCheckoutConfirmation, checko
         count: item.count
       }
     })
-
     setShopList(carritoList);
   }, [cart]);
 
   useEffect(() => {
     recaptchaRef.current.execute();
   }, [recaptchaRef])
+
+  useEffect(()=>{
+    if (checkoutCode !== " "){
+      setLoadingCheckout(false)
+    }
+  }, [checkoutCode])
 
   useEffect(() => {
     setName(userData?.name != null ? userData?.name : "")

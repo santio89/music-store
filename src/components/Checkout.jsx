@@ -131,7 +131,7 @@ export default function Checkout() {
                         <motion.div className="Checkout__details__resumen__confirm" key="checkoutConfirm" initial={{ x: "-120%", opacity: 0 }} animate={{ x: "0%", opacity: 1 }} exit={{ x: "120%", opacity: 0 }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
                           <motion.div layout className='Checkout__details__resumen__confirm__form'>
 
-                            <CheckoutForm total={total} cartItems={cartItems} checkoutSuccessTrue={checkoutSuccessTrue} setCheckoutCode={setCheckoutCode} cart={cart} cartClear={cartClear} toggleCheckoutConfirmation={toggleCheckoutConfirmation} />
+                            <CheckoutForm total={total} cartItems={cartItems} checkoutSuccessTrue={checkoutSuccessTrue} checkoutCode={checkoutCode} setCheckoutCode={setCheckoutCode} cart={cart} cartClear={cartClear} toggleCheckoutConfirmation={toggleCheckoutConfirmation} />
 
                           </motion.div>
                         </motion.div>
