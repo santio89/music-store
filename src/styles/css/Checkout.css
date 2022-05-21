@@ -74,6 +74,7 @@
   text-shadow: 1px 1px 0 var(--color-three);
   line-height: 1;
   margin-bottom: 0.4rem;
+  will-change: transform;
 }
 .Checkout__details__list {
   display: flex;

@@ -12,9 +12,9 @@ export default function CheckoutItem({item, modifyCount, removeItemSelected, set
 
     return (
             <motion.li layout initial={{ opacity: 0, x: "-120%" }} animate={{ opacity: 1, x: "0%" }} exit={{ opacity: 0, x: "120%" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className='Checkout__details__list__li'>
-                <motion.span layout><Link to={`/item/${item?.id}`}><img alt="item" src={item?.images?.[0]?.uri}></img></Link><motion.span className='Checkout__details__list__li__title'>{item?.title}</motion.span></motion.span>
-                <motion.span layout>{item?.artists_sort}</motion.span>
-                <motion.span layout>${item?.price}</motion.span>
+                <motion.span><Link to={`/item/${item?.id}`}><motion.img alt="item" src={item?.images?.[0]?.uri}></motion.img></Link><motion.span className='Checkout__details__list__li__title'>{item?.title}</motion.span></motion.span>
+                <motion.span>{item?.artists_sort}</motion.span>
+                <motion.span>${item?.price}</motion.span>
                 <motion.span className='Checkout__details__list__li__input'><input type="number" min={0} value={activeValue} onChange={(e) => setActiveValue(e.currentTarget.value)} onBlur={e => {
                     e.currentTarget.value = e.currentTarget.value < 0 ? 0 : Math.round(e.currentTarget.value);
                     if (Number(e.currentTarget.value) > Number(item.stock)) {
@@ -24,7 +24,7 @@ export default function CheckoutItem({item, modifyCount, removeItemSelected, set
                         modifyCount({ ...item, count: Number(e.currentTarget.value) });
                     }
                 }} onKeyDown={(e) => e.key !== "Enter" ? (e.key !== 'Escape' ? null : e.currentTarget.blur()) : e.currentTarget.blur()} /> <motion.span className='Checkout__details__list__li__stock'>Stock:&nbsp;{item.stock}</motion.span></motion.span>
-                <motion.span layout>${item?.price * item?.count}</motion.span>
+                <motion.span>${item?.price * item?.count}</motion.span>
                 {
                     removeItemSelected === item?.id ? <motion.div layout className='Checkout__details__list__removeConfirm'>
                         <motion.p layout>ELIMINAR?</motion.p>

@@ -80,6 +80,7 @@
             text-shadow: 1px 1px 0 var(--color-three);
             line-height: 1;
             margin-bottom: .4rem;
+            will-change: transform;
         }
 
         &__list {
