@@ -71,11 +71,11 @@ export default function Checkout() {
                     <motion.ul layout className='Checkout__details__list__ul'>
 
                       <AnimatePresence>
-                        {cart.length === 0 ? null : <motion.li layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ y: "-120%", opacity: 0 }} className='Checkout__details__list__header' transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}><motion.span layout>TITULO</motion.span><motion.span layout>ARTISTA</motion.span><motion.span layout>PRECIO</motion.span><motion.span layout>CANT.</motion.span><motion.span layout>SUBT.</motion.span></motion.li>}
+                        {cart.length === 0 ? null : <motion.li layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ y: "-120%", opacity: 0 }} className='Checkout__details__list__header' transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}><motion.span>TITULO</motion.span><motion.span>ARTISTA</motion.span><motion.span>PRECIO</motion.span><motion.span>CANT.</motion.span><motion.span>SUBT.</motion.span></motion.li>}
                       </AnimatePresence>
 
                       <AnimatePresence>
-                        {
+                        { 
                           cart.map((item) => {
                             return (
                               <CheckoutItem key={item?.id} item={item} modifyCount={modifyCount} removeItemSelected={removeItemSelected} setRemoveItemSelected={setRemoveItemSelected} cartRemove={cartRemove} />
