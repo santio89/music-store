@@ -35,12 +35,19 @@ export default function UserCompras() {
 
   }, [authUser, isLoggedIn])
 
+  useEffect(()=>{
+    setTimeout(()=>{
+        if (!isLoggedIn){
+            setComprasLoading(false)
+        }
+    }, 400)
+}, [isLoggedIn])
+
   useEffect(() => {
     if (userOrders) {
       setComprasLoading(false)
     }
   }, [userOrders])
-
   
   useEffect(() => {
     window.scrollTo(0, 0);

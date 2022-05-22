@@ -7,7 +7,7 @@ import PuffLoader from "react-spinners/PuffLoader";
 import { doc, setDoc, collection, getFirestore } from 'firebase/firestore';
 
 export default function UserDatos() {
-    const { userData, setUserData, authLogIn, userDataLoading } = useContext(AuthContext);
+    const { userData, setUserData, authLogIn, userDataLoading, isLoggedIn } = useContext(AuthContext);
     const [datosLoading, setDatosLoading] = useState(true);
     const [editMode, setEditMode] = useState(false);
     const [saveLoading, setSaveLoading] = useState(false);
@@ -43,9 +43,13 @@ export default function UserDatos() {
         setDoc(doc(usersCollection, userData.uid), userObject, { merge: true }).then(() => { setUserData(userObject); setSaveLoading(false); setEditMode(false); setSaveConfirm(true); setTimeout(() => setSaveConfirm(false), 4000) }).catch(e => console.log("error saving data: " + e));
     }
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+    useEffect(()=>{
+        setTimeout(()=>{
+            if (!isLoggedIn){
+                setDatosLoading(false)
+            }
+        }, 400)
+    }, [isLoggedIn])
 
     useEffect(() => {
         setName(userData?.name);
@@ -59,6 +63,10 @@ export default function UserDatos() {
         }
     }, [userDataLoading])
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className='DatosWrapper'>
             {datosLoading ? <PuffLoader color={"var(--color-one)"} loading={datosLoading} size={200} speedMultiplier={1.2} /> : <AnimatePresence>
@@ -69,7 +77,7 @@ export default function UserDatos() {
                     <button onClick={() => { history(-1) }} className='Datos__back'><i className="bi bi-caret-left-fill"></i></button>
                     <h1 className='Datos__title'>Mis Datos</h1>
 
-                    {userData && userData != null ? <div className='Datos__details'>
+                    {userData && isLoggedIn ? <div className='Datos__details'>
                         <form onSubmit={(e) => {e.preventDefault(); editMode && saveData();}}>
                             <div className='Datos__details__pWrapper'>
 
