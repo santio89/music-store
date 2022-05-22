@@ -7,7 +7,7 @@ import PuffLoader from "react-spinners/PuffLoader";
 import { doc, setDoc, collection, getFirestore } from 'firebase/firestore';
 
 export default function UserDatos() {
-    const { userData, setUserData, authLogIn, userDataLoading, isLoggedIn } = useContext(AuthContext);
+    const { userData, setUserData, authLogIn, authUser, isLoggedIn } = useContext(AuthContext);
     const [datosLoading, setDatosLoading] = useState(true);
     const [editMode, setEditMode] = useState(false);
     const [saveLoading, setSaveLoading] = useState(false);
@@ -43,13 +43,13 @@ export default function UserDatos() {
         setDoc(doc(usersCollection, userData.uid), userObject, { merge: true }).then(() => { setUserData(userObject); setSaveLoading(false); setEditMode(false); setSaveConfirm(true); setTimeout(() => setSaveConfirm(false), 4000) }).catch(e => console.log("error saving data: " + e));
     }
 
-    useEffect(()=>{
-        setTimeout(()=>{
-            if (!isLoggedIn){
+    useEffect(() => {
+        setTimeout(() => {
+            if (!isLoggedIn || !authUser) {
                 setDatosLoading(false)
             }
-        }, 400)
-    }, [isLoggedIn])
+        }, 2000)
+    }, [isLoggedIn, authUser])
 
     useEffect(() => {
         setName(userData?.name);
@@ -58,10 +58,10 @@ export default function UserDatos() {
     }, [userData])
 
     useEffect(() => {
-        if (userDataLoading === false) {
+        if (userData && Object.keys(userData).length > 0) {
             setDatosLoading(false);
         }
-    }, [userDataLoading])
+    }, [userData])
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -77,17 +77,17 @@ export default function UserDatos() {
                     <button onClick={() => { history(-1) }} className='Datos__back'><i className="bi bi-caret-left-fill"></i></button>
                     <h1 className='Datos__title'>Mis Datos</h1>
 
-                    {isLoggedIn && userData && userData !== {} && Object.keys(userData).length > 0? <div className='Datos__details'>
-                        <form onSubmit={(e) => {e.preventDefault(); editMode && saveData();}}>
+                    {isLoggedIn || authUser ? <div className='Datos__details'>
+                        <form onSubmit={(e) => { e.preventDefault(); editMode && saveData(); }}>
                             <div className='Datos__details__pWrapper'>
 
-                                <p>·&nbsp;Nombre Completo:<br/><span>{editMode ? <input type="text" value={name} maxLength={200} pattern="^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$" onChange={(e) => { setName(e.currentTarget.value) }} /> : userData?.name}</span></p>
+                                <p>·&nbsp;Nombre Completo:<br /><span>{editMode ? <input type="text" value={name} maxLength={200} pattern="^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$" onChange={(e) => { setName(e.currentTarget.value) }} /> : userData?.name}</span></p>
 
-                                <p>·&nbsp;Teléfono:<br/><span>{editMode ? <input type="tel" value={phone} pattern="[0-9]{6,20}" maxLength={40} onChange={(e) => { setPhone(e.currentTarget.value) }} /> : userData?.phone}</span></p>
+                                <p>·&nbsp;Teléfono:<br /><span>{editMode ? <input type="tel" value={phone} pattern="[0-9]{6,20}" maxLength={40} onChange={(e) => { setPhone(e.currentTarget.value) }} /> : userData?.phone}</span></p>
 
-                                <p>·&nbsp;Dirección:<br/><span>{editMode ? <input type="text" value={address} maxLength={200} onChange={(e) => { setAddress(e.currentTarget.value) }} /> : userData?.address}</span></p>
+                                <p>·&nbsp;Dirección:<br /><span>{editMode ? <input type="text" value={address} maxLength={200} onChange={(e) => { setAddress(e.currentTarget.value) }} /> : userData?.address}</span></p>
 
-                                <p>·&nbsp;E-Mail:<br/><span className='userEmail'>{userData?.email}</span></p>
+                                <p>·&nbsp;E-Mail:<br /><span className='userEmail'>{userData?.email}</span></p>
 
                             </div>
                             <div className='Datos__details__btnContainer'>
