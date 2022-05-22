@@ -127,6 +127,7 @@
         color: var(--color-back-dark);
         font-family: 'Courier New', Courier, monospace;
         width: 100%;
+        overflow: hidden;
 
         &__title {
             color: var(--color-three);

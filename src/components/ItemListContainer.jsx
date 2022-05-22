@@ -22,7 +22,7 @@ export default function ItemListContainer() {
     const navigate = useNavigate();
 
     const [sortOpen, setSortOpen] = useState(false);
-    const [sortActive, setSortActive] = useState("relevance");
+    const [sortActive, setSortActive] = useState("hot");
 
     const [paginationObject, setPaginationObject] = useState({});
 
@@ -49,7 +49,7 @@ export default function ItemListContainer() {
                             setSortOpen(false);
 
                             res.results.forEach((r) => {
-                                r.price = Math.ceil(Math.abs(100 + (r.community.have / 4000) * 1.56));
+                                r.price = Math.ceil(Math.abs(100 + (r.community.have / 400) * 1.56));
                             });
                             setProductos(res.results);
                             setPaginationLoading(false);
@@ -80,7 +80,7 @@ export default function ItemListContainer() {
                             setSortOpen(false);
 
                             res.results.forEach((r) => {
-                                r.price = Math.ceil(Math.abs(100 + (r.community.have / 4000) * 1.56));
+                                r.price = Math.ceil(Math.abs(100 + (r.community.have / 400) * 1.56));
                             });
                             setProductos(res.results);
                             setPaginationLoading(false);
@@ -112,7 +112,7 @@ export default function ItemListContainer() {
                             setSortOpen(false);
 
                             res.results.forEach((r) => {
-                                r.price = Math.ceil(Math.abs(100 + (r.community.have / 4000) * 1.56));
+                                r.price = Math.ceil(Math.abs(100 + (r.community.have / 400) * 1.56));
                             });
                             setProductos(res.results);
                             setPaginationLoading(false);
@@ -139,7 +139,7 @@ export default function ItemListContainer() {
                             setSortOpen(false);
 
                             res.results.forEach((r) => {
-                                r.price = Math.ceil(Math.abs(100 + (r.community.have / 4000) * 1.56));
+                                r.price = Math.ceil(Math.abs(100 + (r.community.have / 400) * 1.56));
                             });
                             setProductos(res.results);
                             setPaginationLoading(false);
@@ -156,9 +156,9 @@ export default function ItemListContainer() {
     useEffect(() => {
         setLoading(true);
 
-        const hotSearch = "type=release&sort=want"
-        const genreSearch = `genre=${categoryId}&type=release&sort=want`;
-        const manualSearch = `q=${searchId}&type=release&sort=want`
+        const hotSearch = "type=release&sort=hot"
+        const genreSearch = `genre=${categoryId}&type=release&sort=hot`;
+        const manualSearch = `q=${searchId}&type=release&sort=hot`
 
         let fetchApi = fetch(`https://api.discogs.com/database/search?${searchId ? manualSearch : (categoryId ? genreSearch : hotSearch)}&key=${discogsKey}&secret=${discogsSecret}`);
 
@@ -172,11 +172,11 @@ export default function ItemListContainer() {
                     res.json().then(
                         res => {
                             setPaginationObject(res.pagination);
-                            setSortActive("relevance");
+                            setSortActive("hot");
                             setSortOpen(false);
-
+                            
                             res.results.forEach((r) => {
-                                r.price = Math.ceil(Math.abs(100 + (r.community.have / 4000) * 1.56));
+                                r.price = Math.ceil(Math.abs(100 + (r.community.have / 400) * 1.56));
 
                                 /* ESTE CODIGO ES PARA ESCRIBIR ESTOS RESULTADOS DE LA API, EN FIREBASE. lo desactivo de momento ya que resulta en muchas lecturas/escrituras innecesarias (se ejecutaria cada vez que se cargue la lista. esta bueno para cargar la base de datos inicial)
 

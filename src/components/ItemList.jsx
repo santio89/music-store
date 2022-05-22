@@ -56,8 +56,8 @@ export default function ItemList({ productos, isProductos, searchId, loading, so
                                     <div className="ItemList__sortWrapper">
                                         <button className={`ItemList__sort ${sortOpen ? "is-active" : ""}`} onClick={() => setSortOpen((sortOpen) => !sortOpen)}>Ordenar&nbsp;<i className="bi bi-caret-down-fill"></i></button>
                                         <div className={`ItemList__sortOptions ${sortOpen ? "is-visible" : ""}`}>
-                                            <button className={`ItemList__sortOptions__highest ${sortActive === "high" ? "is-active" : null}`} onClick={() => { sortAllHigh() }}>Precio</button>
                                             <button className={`ItemList__sortOptions__hot ${sortActive === "hot" ? "is-active" : null}`} onClick={() => { sortAllHot() }}>Últimos</button>
+                                            <button className={`ItemList__sortOptions__highest ${sortActive === "high" ? "is-active" : null}`} onClick={() => { sortAllHigh() }}>Precio</button>
                                             <button className={`ItemList__sortOptions__relevance ${sortActive === "relevance" ? "is-active" : null}`} onClick={() => { sortAllRelevance() }}>Relevancia</button>
                                         </div>
                                     </div>
