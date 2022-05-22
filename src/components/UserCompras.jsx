@@ -9,9 +9,8 @@ import PuffLoader from "react-spinners/PuffLoader";
 
 export default function UserCompras() {
 
-  const { authUser, authLogIn, isLoggedIn, userData } = useContext(AuthContext);
+  const { authUser, authLogIn, isLoggedIn, userData, authLoading } = useContext(AuthContext);
   const [userOrders, setUserOrders] = useState(null);
-  const [comprasLoading, setComprasLoading] = useState(true)
   const history = useNavigate();
 
 
@@ -34,20 +33,6 @@ export default function UserCompras() {
     }
 
   }, [authUser, isLoggedIn])
-
-  useEffect(()=>{
-    setTimeout(()=>{
-        if (!isLoggedIn){
-            setComprasLoading(false)
-        }
-    }, 400)
-}, [isLoggedIn])
-
-  useEffect(() => {
-    if (userOrders) {
-      setComprasLoading(false)
-    }
-  }, [userOrders])
   
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -55,7 +40,7 @@ export default function UserCompras() {
 
   return (
     <div className='ComprasWrapper'>
-      {comprasLoading ? <PuffLoader color={"var(--color-one)"} loading={comprasLoading} size={200} speedMultiplier={1.2} /> : <AnimatePresence>
+      {authLoading ? <PuffLoader color={"var(--color-one)"} loading={authLoading} size={200} speedMultiplier={1.2} /> : <AnimatePresence>
         <motion.div className='Compras' key={"Compras"} initial={{ x: "-120%" }}
           animate={{ x: "0%" }}
           exit={{ x: "120%" }}

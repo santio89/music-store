@@ -110,7 +110,6 @@ export default function AuthContextProvider({ children }) {
     }, [authUser])
 
 
-
     return (
         <AuthContext.Provider value={{ authLogIn, authLogOut, authUser, authLoading, userData, setUserData, userDataLoading, firebaseSetUserCart, firebaseSetUserWishlist, isLoggedIn }}>
             {children}

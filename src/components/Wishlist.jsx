@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion'
 import { WishlistContext } from '../Context/WishlistContext';
@@ -11,27 +11,16 @@ export default function Wishlist() {
     const history = useNavigate();
 
     const { wishlist, wishlistRemove } = useContext(WishlistContext);
-    const { authUser, authLogIn, userData, isLoggedIn, userDataLoading } = useContext(AuthContext);
-    const [wishLoading, setWishLoading] = useState(true);
-
-    useEffect(() => {
-        setTimeout(() => {
-            if (authUser && !userData.userWishlist && userData.Wishlist != null && userData.Wishlist !== undefined) {
-                setWishLoading(true);
-            } else {
-                setWishLoading(false);
-            }
-        }, 400);
-
-    }, [userData, authUser, isLoggedIn])
+    const { authUser, authLogIn, authLoading, userDataLoading } = useContext(AuthContext);
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
+    
     return (
         <div className='WishlistWrapper'>
-            {wishLoading ? <PuffLoader color={"var(--color-one)"} loading={wishLoading} size={200} speedMultiplier={1.2} /> :
+            {authLoading ? <PuffLoader color={"var(--color-one)"} loading={authLoading} size={200} speedMultiplier={1.2} /> :
                 <AnimatePresence>
                     <motion.div key="Wishlist" className='Wishlist'
                         initial={{ opacity: 0, x: "-120%" }}

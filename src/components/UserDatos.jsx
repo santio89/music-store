@@ -7,8 +7,7 @@ import PuffLoader from "react-spinners/PuffLoader";
 import { doc, setDoc, collection, getFirestore } from 'firebase/firestore';
 
 export default function UserDatos() {
-    const { userData, setUserData, authLogIn, authUser, isLoggedIn } = useContext(AuthContext);
-    const [datosLoading, setDatosLoading] = useState(true);
+    const { userData, setUserData, authLogIn, authUser, isLoggedIn, authLoading } = useContext(AuthContext);
     const [editMode, setEditMode] = useState(false);
     const [saveLoading, setSaveLoading] = useState(false);
     const [saveConfirm, setSaveConfirm] = useState(false);
@@ -44,23 +43,9 @@ export default function UserDatos() {
     }
 
     useEffect(() => {
-        setTimeout(() => {
-            if (!isLoggedIn || !authUser) {
-                setDatosLoading(false)
-            }
-        }, 2000)
-    }, [isLoggedIn, authUser])
-
-    useEffect(() => {
         setName(userData?.name);
         setPhone(userData?.phone);
         setAddress(userData?.address);
-    }, [userData])
-
-    useEffect(() => {
-        if (userData && Object.keys(userData).length > 0) {
-            setDatosLoading(false);
-        }
     }, [userData])
 
     useEffect(() => {
@@ -69,7 +54,7 @@ export default function UserDatos() {
 
     return (
         <div className='DatosWrapper'>
-            {datosLoading ? <PuffLoader color={"var(--color-one)"} loading={datosLoading} size={200} speedMultiplier={1.2} /> : <AnimatePresence>
+            {authLoading ? <PuffLoader color={"var(--color-one)"} loading={authLoading} size={200} speedMultiplier={1.2} /> : <AnimatePresence>
                 <motion.div className='Datos' key={"Datos"} initial={{ x: "-120%" }}
                     animate={{ x: "0%" }}
                     exit={{ x: "120%" }}
@@ -78,23 +63,27 @@ export default function UserDatos() {
                     <h1 className='Datos__title'>Mis Datos</h1>
 
                     {isLoggedIn || authUser ? <div className='Datos__details'>
+
                         <form onSubmit={(e) => { e.preventDefault(); editMode && saveData(); }}>
-                            <div className='Datos__details__pWrapper'>
+                            {authLoading ? <PuffLoader color={"var(--color-one)"} loading={authLoading} size={200} speedMultiplier={1.2} /> : <>
+                                <div className='Datos__details__pWrapper'>
 
-                                <p>·&nbsp;Nombre Completo:<br /><span>{editMode ? <input type="text" value={name} maxLength={200} pattern="^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$" onChange={(e) => { setName(e.currentTarget.value) }} /> : userData?.name}</span></p>
+                                    <p>·&nbsp;Nombre Completo:<br /><span>{editMode ? <input type="text" value={name} maxLength={200} pattern="^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$" onChange={(e) => { setName(e.currentTarget.value) }} /> : userData?.name}</span></p>
 
-                                <p>·&nbsp;Teléfono:<br /><span>{editMode ? <input type="tel" value={phone} pattern="[0-9]{6,20}" maxLength={40} onChange={(e) => { setPhone(e.currentTarget.value) }} /> : userData?.phone}</span></p>
+                                    <p>·&nbsp;Teléfono:<br /><span>{editMode ? <input type="tel" value={phone} pattern="[0-9]{6,20}" maxLength={40} onChange={(e) => { setPhone(e.currentTarget.value) }} /> : userData?.phone}</span></p>
 
-                                <p>·&nbsp;Dirección:<br /><span>{editMode ? <input type="text" value={address} maxLength={200} onChange={(e) => { setAddress(e.currentTarget.value) }} /> : userData?.address}</span></p>
+                                    <p>·&nbsp;Dirección:<br /><span>{editMode ? <input type="text" value={address} maxLength={200} onChange={(e) => { setAddress(e.currentTarget.value) }} /> : userData?.address}</span></p>
 
-                                <p>·&nbsp;E-Mail:<br /><span className='userEmail'>{userData?.email}</span></p>
+                                    <p>·&nbsp;E-Mail:<br /><span className='userEmail'>{userData?.email}</span></p>
 
-                            </div>
-                            <div className='Datos__details__btnContainer'>
-                                <button type='button' onClick={() => { if (editMode) { resetInputs() }; toggleEditMode() }} className="button is-danger is-size-5 Datos__details__btnContainer__btn">{editMode ? "Cancelar" : "Editar"}</button>
+                                </div>
+                                <div className='Datos__details__btnContainer'>
+                                    <button type='button' onClick={() => { if (editMode) { resetInputs() }; toggleEditMode() }} className="button is-danger is-size-5 Datos__details__btnContainer__btn">{editMode ? "Cancelar" : "Editar"}</button>
 
-                                <button type='submit' className="button is-danger is-size-5 Datos__details__btnContainer__btn">{saveLoading ? <PuffLoader color={"var(--color-three)"} size={30} speedMultiplier={1.2} /> : (saveConfirm ? "Guardado!" : "Guardar")}</button>
-                            </div>
+                                    <button type='submit' className="button is-danger is-size-5 Datos__details__btnContainer__btn">{saveLoading ? <PuffLoader color={"var(--color-three)"} size={30} speedMultiplier={1.2} /> : (saveConfirm ? "Guardado!" : "Guardar")}</button>
+                                </div>
+                            </>
+                            }
                         </form>
                     </div> : <div className='Datos__nouser'><p>Debes&nbsp;<button onClick={() => authLogIn()}>Iniciar Sesión</button>&nbsp;para ver tus datos</p></div>}
                 </motion.div>
