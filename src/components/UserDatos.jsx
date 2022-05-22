@@ -99,7 +99,6 @@ export default function UserDatos() {
                     </div> : <div className='Datos__nouser'><p>Debes&nbsp;<button onClick={() => authLogIn()}>Iniciar Sesión</button>&nbsp;para ver tus datos</p></div>}
                 </motion.div>
             </AnimatePresence>}
-
         </div >
     )
 }

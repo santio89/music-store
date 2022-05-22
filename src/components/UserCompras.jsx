@@ -81,10 +81,8 @@ export default function UserCompras() {
             }
 
           </div> : <div className='Compras__nouser'><p>Debes&nbsp;<button onClick={() => authLogIn()}>Iniciar Sesión</button>&nbsp;para ver tus compras</p></div>}
-
         </motion.div>
       </AnimatePresence>}
-
     </div>
   )
 }
