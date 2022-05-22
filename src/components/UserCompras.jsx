@@ -49,9 +49,9 @@ export default function UserCompras() {
   return (
     <div className='ComprasWrapper'>
       {comprasLoading ? <PuffLoader color={"var(--color-one)"} loading={comprasLoading} size={200} speedMultiplier={1.2} /> : <AnimatePresence>
-        <motion.div className='Compras' key={"Compras"} initial={{ opacity: 0, x: "-120%" }}
-          animate={{ opacity: 1, x: "0%" }}
-          exit={{ opacity: 0, x: "120%" }}
+        <motion.div className='Compras' key={"Compras"} initial={{ x: "-120%" }}
+          animate={{ x: "0%" }}
+          exit={{ x: "120%" }}
           transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
           <button onClick={() => { history(-1) }} className='Compras__back'><i className="bi bi-caret-left-fill"></i></button>
           <h1 className='Compras__title'>Mis Compras</h1>

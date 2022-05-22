@@ -62,9 +62,9 @@ export default function UserDatos() {
     return (
         <div className='DatosWrapper'>
             {datosLoading ? <PuffLoader color={"var(--color-one)"} loading={datosLoading} size={200} speedMultiplier={1.2} /> : <AnimatePresence>
-                <motion.div className='Datos' key={"Datos"} initial={{ opacity: 0, x: "-120%" }}
-                    animate={{ opacity: 1, x: "0%" }}
-                    exit={{ opacity: 0, x: "120%" }}
+                <motion.div className='Datos' key={"Datos"} initial={{ x: "-120%" }}
+                    animate={{ x: "0%" }}
+                    exit={{ x: "120%" }}
                     transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
                     <button onClick={() => { history(-1) }} className='Datos__back'><i className="bi bi-caret-left-fill"></i></button>
                     <h1 className='Datos__title'>Mis Datos</h1>

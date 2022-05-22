@@ -42,19 +42,14 @@ export default function Wishlist() {
                         <h1>WISHLIST</h1>
                         <LayoutGroup>
                             {authUser ?
-                                <motion.div layout className='Wishlist__details' initial={{ opacity: 0, x: "-120%" }}
-                                    animate={{ opacity: 1, x: "0%" }}
-                                    exit={{ opacity: 0, x: "120%" }}
-                                    transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
-
-
-                                    <motion.ul layout className='Wishlist__details__list' initial={{ opacity: 0, x: "-120%" }}
-                                        animate={{ opacity: 1, x: "0%" }}
-                                        exit={{ opacity: 0, x: "120%" }}
+                                <motion.div layout className='Wishlist__details'>
+                                    <motion.ul layout className='Wishlist__details__list' initial={{ x: "-120%" }}
+                                        animate={{x: "0%" }}
+                                        exit={{ x: "120%" }}
                                         transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
-                                        {!userDataLoading && wishlist?.length === 0 ? <motion.p layout className='Wishlist__nowish' initial={{ opacity: 0, x: "-120%" }}
-                                            animate={{ opacity: 1, x: "0%" }}
-                                            exit={{ opacity: 0, x: "120%" }}
+                                        {!userDataLoading && wishlist?.length === 0 ? <motion.p layout className='Wishlist__nowish' initial={{ x: "-120%" }}
+                                            animate={{ x: "0%" }}
+                                            exit={{ x: "120%" }}
                                             transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>Aún no has agregado favoritos.<br /><Link to="/">SEGUIR NAVEGANDO</Link></motion.p> : (<>
                                             { userDataLoading && <PuffLoader color={"var(--color-one)"} loading={userDataLoading} size={200} speedMultiplier={1.2} />}
                                         {wishlist?.map(item => <AnimatePresence key={`wishlist${item.id}`}> <motion.li layout initial={{ opacity: 0 }}
@@ -69,10 +64,10 @@ export default function Wishlist() {
                                         </motion.li></AnimatePresence>)}</>)}
                                     </motion.ul>
                                 </motion.div> :
-                                <div className='Wishlist__nouser' initial={{ opacity: 0, x: "-120%" }}
+                                <motion.div className='Wishlist__nouser' initial={{ opacity: 0, x: "-120%" }}
                                     animate={{ opacity: 1, x: "0%" }}
                                     exit={{ opacity: 0, x: "120%" }}
-                                    transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}><p layout>Debes&nbsp;<button onClick={() => authLogIn()}>Iniciar Sesión</button>&nbsp;para ver tus favoritos</p></div>}
+                                    transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}><p layout>Debes&nbsp;<button onClick={() => authLogIn()}>Iniciar Sesión</button>&nbsp;para ver tus favoritos</p></motion.div>}
                         </LayoutGroup>
                     </motion.div>
                 </AnimatePresence>}
