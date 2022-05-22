@@ -77,7 +77,7 @@ export default function UserDatos() {
                     <button onClick={() => { history(-1) }} className='Datos__back'><i className="bi bi-caret-left-fill"></i></button>
                     <h1 className='Datos__title'>Mis Datos</h1>
 
-                    {userData && isLoggedIn ? <div className='Datos__details'>
+                    {isLoggedIn && userData && userData !== {} ? <div className='Datos__details'>
                         <form onSubmit={(e) => {e.preventDefault(); editMode && saveData();}}>
                             <div className='Datos__details__pWrapper'>
 
