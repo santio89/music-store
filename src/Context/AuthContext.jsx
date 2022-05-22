@@ -82,6 +82,7 @@ export default function AuthContextProvider({ children }) {
         signOut(auth).then(() => {
             setAuthUser(null);
             setUserData(null);
+            setUserDataLoading(false);
             localStorage.setItem("msAuthLoading", "false");
         }).catch((error) => {
             console.log("error signing out: " + error)
