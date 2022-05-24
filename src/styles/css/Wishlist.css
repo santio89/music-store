@@ -137,6 +137,7 @@
   text-overflow: ellipsis;
 }
 .Wishlist__details__list__title img {
+  aspect-ratio: 1;
   margin: auto;
   margin-top: 2rem;
   width: 100%;
