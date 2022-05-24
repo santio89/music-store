@@ -88,7 +88,7 @@ export default function UserDatos() {
                         <form onSubmit={(e) => { e.preventDefault(); editMode && saveData(); }}>
                             {authLoading ? <PuffLoader color={"var(--color-one)"} loading={authLoading} size={200} speedMultiplier={1.2} /> : <>
                                 <div className='Datos__details__pWrapper'>
-                                    <p>·&nbsp;Foto de perfil:<br /><span><img className={editMode ? "is-edit" : ""} alt='profilePic' src={profilePic}></img>{editMode && <label>&nbsp;<i className="bi bi-upload" aria-label='uploadImg'></i> <input type="file" name="profilepic" accept="image/png, image/jpeg"
+                                    <p>·&nbsp;Foto de perfil:<br /><span><img className={editMode ? "is-edit" : ""} alt='profilePic' src={profilePic}></img>{editMode && <label>&nbsp;<i className="bi bi-upload" aria-label="cargar imagen" title="Cargar Imagen"></i> <input type="file" name="profilepic" accept="image/png, image/jpeg"
                                         onChange={(e) => {
                                             setProfilePic(URL.createObjectURL(e.currentTarget.files[0]))
                                             setPicUpload(e.currentTarget.files[0]);
