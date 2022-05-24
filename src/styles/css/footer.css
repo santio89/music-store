@@ -10,7 +10,7 @@
   gap: 0.2em;
   font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2.2rem);
   background: linear-gradient(135deg, var(--color-back-dark) 80%, var(--color-one-dark) 80%);
-  margin-top: auto;
+  margin-top: min(6rem, 6vw);
   line-height: 1.2;
   z-index: 1;
 }
@@ -51,4 +51,4 @@
   line-height: 1;
   font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
   font-weight: bold;
-}/*# sourceMappingURL=Footer.css.map */
+}/*# sourceMappingURL=footer.css.map */
