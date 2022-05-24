@@ -7,7 +7,7 @@ import PuffLoader from "react-spinners/PuffLoader";
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function LogInButton({ navClosed }) {
-    const { authLogIn, authLogOut, authUser, authLoading } = useContext(AuthContext);
+    const { authLogIn, authLogOut, authUser, authLoading, userData } = useContext(AuthContext);
     const [userSettings, setUserSettings] = useState(false);
     const [btnClicked, setBtnClicked] = useState(false);
     const [btnClickedX, setBtnClickedX] = useState("");
@@ -38,10 +38,10 @@ export default function LogInButton({ navClosed }) {
         <>
             {userSettings && <div className='userOptions'><Link to="/user/compras" onClick={() => { navClosed(); setUserSettings(false) }} >Compras</Link><Link to="/user/datos" onClick={() => { navClosed(); setUserSettings(false) }} >Datos</Link></div>}
             <AnimatePresence exitBeforeEnter>
-                {authUser ? <motion.div key="profileWrapper"
+                {authUser && userData.profilePic ? <motion.div key="profileWrapper"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }} transition={{ duration: .4 }} className='profilePicWrapper'><button title='Ver Opciones' className={`profilePic ${userSettings ? "is-active" : ""}`} onClick={() => toggleUserSettings()}><img alt="Profile Pic" src={authUser.photoURL}></img></button> <Link title="Wishlist" className='wishlistBtn' to="/user/wishlist" onClick={() => { navClosed(); setUserSettings(false) }}><i className="bi bi-suit-heart-fill"></i></Link> <button className='logOutBtn' onClick={() => authLogOut()} title="Cerrar Sesión"><i className="bi bi-box-arrow-right"></i></button></motion.div> :
+                    exit={{ opacity: 0 }} transition={{ duration: .4 }} className='profilePicWrapper'><button title='Ver Opciones' className={`profilePic ${userSettings ? "is-active" : ""}`} onClick={() => toggleUserSettings()}><motion.img initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ oapcity: 0 }} transition={{ duration: .4 }} alt="Profile Pic" src={userData.profilePic}></motion.img></button> <Link title="Wishlist" className='wishlistBtn' to="/user/wishlist" onClick={() => { navClosed(); setUserSettings(false) }}><i className="bi bi-suit-heart-fill"></i></Link> <button className='logOutBtn' onClick={() => authLogOut()} title="Cerrar Sesión"><i className="bi bi-box-arrow-right"></i></button></motion.div> :
                     <motion.button key="logInBtn"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}

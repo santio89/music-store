@@ -32,6 +32,7 @@ export default function AuthContextProvider({ children }) {
             address: "",
             userCart: "",
             userWishlist: "",
+            profilePic: user.photoURL ? user.photoURL : null,
             uid: user.uid,
             created: serverTimestamp()
         }

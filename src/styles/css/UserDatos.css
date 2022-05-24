@@ -98,6 +98,44 @@
   gap: 1rem;
   align-self: start;
 }
+.Datos__details__pWrapper img {
+  aspect-ratio: 1;
+  width: 96px;
+  min-width: 96px;
+  max-width: 96px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.1em;
+  margin-left: 2ch;
+  margin-top: 1ch;
+  margin-right: 1ch;
+  outline: 2px solid var(--color-one);
+  overflow: hidden;
+  background-color: var(--color-one);
+}
+.Datos__details__pWrapper img.is-edit {
+  outline: 2px dashed var(--color-one);
+}
+.Datos__details__pWrapper i {
+  outline: none;
+  border: none;
+  color: var(--color-one);
+  font-weight: bold;
+  border-radius: 2px;
+  display: inline;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+  font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.8rem);
+  cursor: pointer;
+}
+.Datos__details__pWrapper i:focus-visible {
+  outline: 2px dashed var(--color-one);
+  outline-offset: 6px;
+}
+.Datos__details__pWrapper input[type=file] {
+  display: none;
+}
 .Datos__details__pWrapper span {
   font-weight: bold;
   margin-left: 2ch;
@@ -110,8 +148,9 @@
   outline: none;
   border: none;
   color: inherit;
-  box-shadow: 0 2px 0 0 var(--color-one);
+  border-bottom: 2px dashed var(--color-one);
   margin: auto;
+  margin-bottom: -2px;
   width: calc(100% - 4ch);
 }
 .Datos__details__pWrapper span input::-webkit-outer-spin-button,

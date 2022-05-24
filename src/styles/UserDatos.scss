@@ -110,6 +110,49 @@
             gap: 1rem;
             align-self: start;
 
+            img {
+                aspect-ratio: 1;
+                width: 96px;
+                min-width: 96px;
+                max-width: 96px;
+                object-fit: cover;
+                border-radius: .1em;
+                margin-left: 2ch;
+                margin-top: 1ch;
+                margin-right: 1ch;
+                outline: 2px solid var(--color-one);
+                overflow: hidden;
+                background-color: var(--color-one);
+
+                &.is-edit {
+                    outline: 2px dashed var(--color-one);
+                }
+            }
+
+            i {
+                outline: none;
+                border: none;
+                color: var(--color-one);
+                font-weight: bold;
+                border-radius: 2px;
+                display: inline;
+                line-height: 0;
+                margin: 0;
+                padding: 0;
+                font-size: $font-fluid-lg;
+                cursor: pointer;
+
+                &:focus-visible {
+                    outline: 2px dashed var(--color-one);
+                    outline-offset: 6px;
+                }
+            }
+
+
+            input[type=file] {
+                display: none;
+            }
+
             span {
                 font-weight: bold;
                 margin-left: 2ch;
@@ -120,8 +163,9 @@
                     outline: none;
                     border: none;
                     color: inherit;
-                    box-shadow: 0 2px 0 0 var(--color-one);
+                    border-bottom: 2px dashed var(--color-one);
                     margin: auto;
+                    margin-bottom: -2px;
                     width: calc(100% - 4ch);
                 }
 
@@ -206,7 +250,7 @@
         &__details {
             width: 80%;
 
-            form{
+            form {
                 border-radius: .2em;
             }
 

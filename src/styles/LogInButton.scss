@@ -5,7 +5,8 @@
     font-family: inherit;
     position: relative;
     overflow: hidden;
-    margin-bottom: 0 !important; /* override bulma style */
+    margin-bottom: 0 !important;
+    /* override bulma style */
     margin-left: auto;
     margin-right: 1vw;
     transition: 200ms;
@@ -19,7 +20,7 @@
     font-family: 'Courier New', Courier, monospace;
     text-shadow: 1px 1px 0 var(--color-one);
 
-    &:active{
+    &:active {
         transform: translate(2px, 2px)
     }
 
@@ -64,9 +65,11 @@
     position: relative;
 
     img {
+        aspect-ratio: 1;
         width: 100%;
         max-height: none;
         object-fit: cover;
+        background: linear-gradient(45deg, var(--color-back) 50%, var(--color-back-dark) 50%);
     }
 
     &:hover,
@@ -141,7 +144,7 @@
     }
 }
 
-.wishlistBtn{
+.wishlistBtn {
     position: absolute;
     bottom: 64px;
     right: -2px;
@@ -176,16 +179,17 @@
     .logOutBtn {
         right: -20px;
         bottom: -2px;
-        
+
         &:hover,
         &:focus-visible {
             outline: 2px dashed var(--color-three);
         }
     }
+
     .wishlistBtn {
         right: -20px;
         bottom: 56px;
-        
+
         &:hover,
         &:focus-visible {
             outline: 2px dashed var(--color-three);

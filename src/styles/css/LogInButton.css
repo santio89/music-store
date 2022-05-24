@@ -61,10 +61,12 @@
   position: relative;
 }
 .profilePic img {
+  aspect-ratio: 1;
   width: 100%;
   max-height: none;
   -o-object-fit: cover;
      object-fit: cover;
+  background: linear-gradient(45deg, var(--color-back) 50%, var(--color-back-dark) 50%);
 }
 .profilePic:hover, .profilePic:focus-visible, .profilePic.is-active {
   outline: 3px dashed var(--color-one);
