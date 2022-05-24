@@ -106,7 +106,6 @@
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 0.1em;
-  margin-left: 2ch;
   margin-top: 1ch;
   margin-right: 1ch;
   outline: 2px solid var(--color-one);
