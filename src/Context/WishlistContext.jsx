@@ -6,7 +6,7 @@ export const WishlistContext = createContext();
 export default function WishlistContextProvider({ children }) {
 
     const { authUser, userData, firebaseSetUserWishlist } = useContext(AuthContext);
-    const [wishlist, setWishlist] = useState(() => localStorage.getItem(`msWishList-${userData?.uid}`) && localStorage.getItem(`msWishList-${userData?.uid}`) !== undefined && authUser ? JSON.parse(localStorage.getItem(`msWishList-${userData?.uid}`)) : null);
+    const [wishlist, setWishlist] = useState([]);
 
 
     const wishlistAdd = (item) => {
