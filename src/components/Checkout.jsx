@@ -88,7 +88,7 @@ export default function Checkout() {
 
                     <motion.div layout className='Checkout__details__list__total'>
                       <AnimatePresence exitBeforeEnter>
-                        {cartItems === 0 ? <motion.p layout key={"noProducts"} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ y: "120%", opacity: 0 }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>No hay productos en el carrito</motion.p> : <motion.p layout key={"yesProducts"} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ y: "120%", opacity: 0 }} transition={{ type: 'tween', duration: .2, ease: "easeInOut" }}>TOTAL: ${total}</motion.p>}
+                        {cartItems === 0 ? <p>No hay productos en el carrito</p> : <p>TOTAL: ${total}</p>}
                       </AnimatePresence>
                     </motion.div>
                   </motion.div>
