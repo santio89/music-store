@@ -137,8 +137,12 @@
                     text-align: center;
                     will-change: transform;
 
-                    &:hover img {
+                    &:hover .Wishlist__details__list__title__imgContainer {
                         box-shadow: 0 0 0 .2rem var(--color-one);
+                    }
+
+                    &:hover img {
+                        transform: scale(1);
                     }
                 }
 
@@ -150,16 +154,32 @@
                     text-overflow: ellipsis;
                 }
 
-                img {
+                &__imgContainer {
                     aspect-ratio: 1;
                     margin: auto;
                     margin-top: 2rem;
+                    margin-bottom: .4rem;
                     width: 100%;
                     max-width: 80%;
                     border-radius: .2em;
-                    background: var(--color-back-dark);
                     box-shadow: 0 0 0 .2rem var(--color-back-dark);
-                    transition: 200ms;
+                    overflow: hidden;
+                    transition: box-shadow 400ms;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                img {
+                    aspect-ratio: 1;
+                    width: 100%;
+                    min-width: 112%;
+                    transform: scale(.9);
+                    background: var(--color-back-dark);
+                    transition: transform 400ms;
+                    box-shadow: 0 0 0 .2rem var(--color-back-dark);
+                    border-radius: .2em;
+                    will-change: transform;
                 }
             }
 

@@ -49,7 +49,7 @@ export default function Wishlist() {
                                                     exit={{ opacity: 0 }}
                                                     transition={{ duration: .4 }} title={item.artists_sort ? `${item.artists_sort.toUpperCase()} - ${item.title.toUpperCase()}` : item.title.toUpperCase()} >
 
-                                                    <motion.div className='Wishlist__details__list__title'><span>{item.artists_sort ? `${item.artists_sort.toUpperCase()} - ${item.title.toUpperCase()}` : item.title.toUpperCase()}</span><Link to={`/item/${item?.id}`}><motion.img alt="wishlist img" src={`${item?.cover_image || item?.images?.[0]?.resource_url}`}></motion.img></Link></motion.div>
+                                                    <motion.div className='Wishlist__details__list__title'><span>{item.artists_sort ? `${item.artists_sort.toUpperCase()} - ${item.title.toUpperCase()}` : item.title.toUpperCase()}</span><Link to={`/item/${item?.id}`}><div className='Wishlist__details__list__title__imgContainer'><motion.img alt="wishlist img" src={`${item?.cover_image || item?.images?.[0]?.resource_url}`}></motion.img></div></Link></motion.div>
 
                                                     <motion.button className='Wishlist__details__list__wish'><motion.i className="bi bi-suit-heart-fill" onClick={() => wishlistRemove(item)}></motion.i></motion.button>
                                                     <motion.div className='Wishlist__details__list__price'>${item.price}</motion.div>
