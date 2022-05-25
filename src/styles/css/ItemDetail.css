@@ -51,6 +51,7 @@
   outline: 1px dashed var(--color-three-dark);
   width: 100%;
   font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
+  will-change: transform;
 }
 .ItemDetail__detailsWrapper button {
   width: 100%;
@@ -180,6 +181,7 @@
   background: var(--color-back-dark);
   outline: 1px dashed var(--color-three-dark);
   overflow: hidden;
+  will-change: transform;
 }
 .ItemDetail__info {
   width: 100%;

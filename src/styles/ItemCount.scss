@@ -35,7 +35,7 @@
       font-size: $font-fluid-xl;
       padding: .4rem;
       flex: 1;
-     /*  transition: 200ms; */
+      /*  transition: 200ms; */
       will-change: transform;
 
       &:hover,
@@ -83,7 +83,7 @@
 
     &:hover,
     &:focus-visible {
-      
+
       outline: 2px dashed var(--color-three);
       color: var(--color-one);
     }
@@ -116,7 +116,7 @@
   .ItemCount {
     margin-top: 12%;
 
-    &__add{
+    &__add {
       text-shadow: 2px 2px 0 var(--color-back-dark), 2.4px 2.4px 0 var(--color-one);
     }
   }

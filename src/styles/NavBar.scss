@@ -11,7 +11,7 @@
         text-shadow: 2px 2px 0 var(--color-two);
         font-size: $font-xl;
 
-        &:focus{
+        &:focus {
             background: var(--color-one) !important;
         }
 
@@ -27,7 +27,7 @@
         color: var(--color-mobilenavtext);
         padding: 8px 12px;
 
-        &:focus{
+        &:focus {
             background: var(--color-one) !important;
         }
 
@@ -108,7 +108,7 @@
         &__home {
             color: var(--color-mobilenavtext);
 
-            &:focus{
+            &:focus {
                 background: var(--color-one) !important;
             }
 
@@ -218,17 +218,19 @@
 
 
 @media (min-width: 1216px) {
-    .navbar-start, .navbar-end {
+
+    .navbar-start,
+    .navbar-end {
         font-size: $font-md;
     }
 
-    .navbar-start{
+    .navbar-start {
         margin-left: calc(50% - 120px);
         transform: translateX(-50%);
     }
 
-    .navbar-end{
-        .buttons{
+    .navbar-end {
+        .buttons {
             gap: 1rem;
         }
     }

@@ -55,7 +55,8 @@
         margin-top: .8rem;
     }
 
-    &__nouser, &__noorder {
+    &__nouser,
+    &__noorder {
         width: 100%;
         text-align: center;
         text-shadow: none;
@@ -65,7 +66,8 @@
         font-size: $font-fluid-md;
         color: var(--color-four);
 
-        button, a {
+        button,
+        a {
             color: var(--color-one);
             will-change: transform;
             transition: transform 200ms;
@@ -200,7 +202,7 @@
     .Compras {
         width: 96%;
 
-        &__details{
+        &__details {
             width: 80%;
             border-radius: .2em;
         }

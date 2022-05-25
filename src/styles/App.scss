@@ -13,7 +13,6 @@
   }
 }
 
-
 @keyframes bounceInDown {
   0% {
     transform: translateY(-100%);
@@ -33,24 +32,25 @@
 }
 
 @keyframes spanLoad {
-  0%{
+  0% {
     opacity: 1;
   }
-  100%{
+
+  100% {
     opacity: 0;
   }
 }
 
 @keyframes ripples {
   0% {
-      width: 0px;
-      height: 0px;
-      opacity: 0.4;
+    width: 0px;
+    height: 0px;
+    opacity: 0.4;
   }
 
   100% {
-      width: 500px;
-      height: 500px;
-      opacity: 0;
+    width: 500px;
+    height: 500px;
+    opacity: 0;
   }
 }

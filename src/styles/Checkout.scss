@@ -127,7 +127,7 @@
                 overflow: hidden;
                 will-change: transform;
                 display: grid;
-                justify-content: center; 
+                justify-content: center;
                 grid-template-columns: repeat(5, 1fr);
                 gap: clamp(.1rem, .1rem + 1vw, 2rem);
 
@@ -243,7 +243,7 @@
                     flex-flow: row wrap;
                     justify-content: center;
                     align-items: center;
-                  /*   flex: 1; */
+                    /*   flex: 1; */
                     text-align: left;
                 }
             }
@@ -433,7 +433,7 @@
                     width: 100%;
                     background: transparent;
                     will-change: transform, background-color, color;
-                    
+
                     filter: grayscale(0);
 
                     i {
@@ -487,6 +487,7 @@
                     flex-flow: column wrap;
                     justify-content: center;
                     align-items: center;
+                    will-change: transform;
                 }
             }
         }
@@ -644,11 +645,11 @@
             }
 
             &__items {
-                p{
+                p {
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);
                 }
-                
+
                 &__artist {
                     color: var(--color-three-dark);
                     font-size: .8em;
@@ -707,7 +708,7 @@
                     font-size: .58em;
                     gap: clamp(.2rem, .2rem + 2vw, 4rem);
 
-                    span{
+                    span {
                         padding: .4em;
                     }
                 }

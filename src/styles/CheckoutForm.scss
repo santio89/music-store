@@ -7,7 +7,7 @@
     align-items: stretch;
     gap: 1.2rem;
 
-    h4{
+    h4 {
         font-size: $font-fluid-md;
         font-weight: bold;
         font-family: 'Courier New', Courier, monospace;
@@ -16,15 +16,15 @@
         margin-bottom: .4rem;
     }
 
-    &__fields{
+    &__fields {
         display: flex;
         flex-flow: column wrap;
         justify-content: center;
         align-items: center;
         gap: 1rem;
     }
-    
-    fieldset{
+
+    fieldset {
         max-width: 100%;
         font-family: 'Courier New', Courier, monospace;
         color: var(--color-one);
@@ -38,12 +38,14 @@
         font-size: $font-fluid-xs;
         transition: color 400ms, border-color 400ms;
 
-        &:focus, &:focus-within, &:valid{
+        &:focus,
+        &:focus-within,
+        &:valid {
             border: 1px dashed var(--color-one);
             color: var(--color-one);
         }
 
-        legend{
+        legend {
             margin: 0 0 0 .4em;
             padding: 0 .1em;
         }
@@ -64,12 +66,12 @@
         padding: .1em .2em;
         font-weight: normal;
 
-        &:focus{
+        &:focus {
             background-size: 100% 2px;
         }
     }
 
-    &__total{
+    &__total {
         font-family: 'Courier New', Courier, monospace;
         font-weight: bold;
         font-size: $font-fluid-smm;
@@ -82,7 +84,7 @@
         text-align: center;
     }
 
-    &__send{
+    &__send {
         color: var(--color-four);
         text-shadow: 1px 1px 0 var(--color-five);
         font-size: $font-fluid-mdd;
@@ -97,54 +99,57 @@
         letter-spacing: .01em;
         margin-bottom: 1.2rem;
 
-        &:hover, &:focus-visible{
+        &:hover,
+        &:focus-visible {
             color: var(--color-five);
             text-shadow: 1px 1px 0 var(--color-four);
             background-color: var(--color-one);
             outline: 2px dashed var(--color-three);
         }
 
-        &:active{
+        &:active {
             transform: translate(2px, 2px)
         }
 
-        span{
+        span {
             animation: spanLoad 800ms alternate infinite;
             letter-spacing: .02em;
 
-            &:nth-child(2){
+            &:nth-child(2) {
                 animation-delay: 200ms;
             }
-            &:nth-child(3){
+
+            &:nth-child(3) {
                 animation-delay: 400ms;
             }
         }
     }
 
-    &__back{
+    &__back {
         font-family: 'Courier New', Courier, monospace;
         font-weight: bold;
         align-self: start;
         color: var(--color-one-dark);
         font-size: $font-fluid-md;
         line-height: 1;
-        
-        &:hover{
+
+        &:hover {
             color: var(--color-one);
         }
     }
 }
 
-.grecaptcha-badge{
+.grecaptcha-badge {
     margin: auto;
 }
 
-@media (min-width: 1216px){
-    .CheckoutForm{
-        &__send{
+@media (min-width: 1216px) {
+    .CheckoutForm {
+        &__send {
             text-shadow: 2px 2px 0 var(--color-five);
 
-            &:hover, &:focus-visible{
+            &:hover,
+            &:focus-visible {
                 text-shadow: 2px 2px 0 var(--color-four);
             }
         }

@@ -180,7 +180,8 @@ a.navbar-item:focus {
   }
 }
 @media (min-width: 1216px) {
-  .navbar-start, .navbar-end {
+  .navbar-start,
+.navbar-end {
     font-size: 1.5rem;
   }
 

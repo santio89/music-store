@@ -55,8 +55,9 @@
         outline: 1px dashed var(--color-three-dark);
         width: 100%;
         font-size: $font-fluid-sm;
+        will-change: transform;
 
-        button{
+        button {
             width: 100%;
             outline: none;
             border: none;
@@ -135,9 +136,9 @@
         }
     }
 
-    
 
-    &__imgModal{
+
+    &__imgModal {
         position: fixed !important;
         top: 50%;
         left: 50%;
@@ -155,18 +156,18 @@
         min-width: 300px;
         outline: 4px dashed var(--color-back);
 
-        &::backdrop{
-            background-color: rgba(0,0,0,.8);
+        &::backdrop {
+            background-color: rgba(0, 0, 0, .8);
         }
 
-        img{
+        img {
             border-radius: .1em;
             outline: none;
             box-shadow: 0 0 0 4px var(--color-back);
             background: var(--color-back);
         }
 
-        button{
+        button {
             position: absolute;
             top: -.5ch;
             right: -44%;
@@ -174,7 +175,8 @@
             font-weight: bold;
             text-shadow: 1px 1px 0 var(--color-three-dark);
 
-            &:hover, &:focus-visible{
+            &:hover,
+            &:focus-visible {
                 color: var(--color-one);
             }
         }
@@ -201,6 +203,7 @@
         background: var(--color-back-dark);
         outline: 1px dashed var(--color-three-dark);
         overflow: hidden;
+        will-change: transform;
     }
 
     &__info {
@@ -297,7 +300,7 @@
         padding: 1rem;
         will-change: transform;
 
-        &__wish{
+        &__wish {
             color: var(--color-two);
             line-height: 0;
             padding: .2em;
@@ -305,30 +308,31 @@
             top: -1.4rem;
             right: 2rem;
             transition: text-shadow 200ms;
-            
-            &:hover, &:focus-visible{
+
+            &:hover,
+            &:focus-visible {
                 color: var(--color-one);
                 text-shadow: 0 0 4px var(--color-one);
             }
 
-            &:focus-visible{
+            &:focus-visible {
                 box-shadow: 0 2px 0 0 var(--color-one);
             }
 
-            &.is-active{
+            &.is-active {
                 color: var(--color-one);
                 text-shadow: 0 0 4px var(--color-one);
             }
         }
-        
-        &__nowish{
+
+        &__nowish {
             font-size: $font-fluid-sm;
             position: absolute;
             top: -1rem;
             right: 7.2rem;
             font-weight: bold;
 
-            button{
+            button {
                 color: var(--color-one);
                 outline: none;
                 border: none;
@@ -336,15 +340,16 @@
                 transition: text-shadow 200ms, transform 200ms;
                 text-shadow: 0 0 4px var(--color-one);
 
-                &:hover, &:focus-visible{
+                &:hover,
+                &:focus-visible {
                     transform: translate(1px, 1px);
                 }
 
-                &:focus-visible{
+                &:focus-visible {
                     box-shadow: 0 2px 0 0 var(--color-one);
                 }
 
-                &:active{
+                &:active {
                     transform: translate(2px, 2px);
                 }
             }
@@ -538,7 +543,9 @@
             padding-top: 0;
         }
 
-        &__counterWrapper, &__controlsWrapper, &__checkout{
+        &__counterWrapper,
+        &__controlsWrapper,
+        &__checkout {
             height: calc(300px + 6.4vw);
         }
     }

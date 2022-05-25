@@ -434,6 +434,7 @@
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
+  will-change: transform;
 }
 .Checkout__success {
   margin: auto;
