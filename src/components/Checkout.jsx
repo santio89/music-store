@@ -88,7 +88,7 @@ export default function Checkout() {
 
                     <motion.div layout className='Checkout__details__list__total'>
                       <AnimatePresence exitBeforeEnter>
-                        {cartItems === 0 ? <p>No hay productos en el carrito</p> : <p>TOTAL: ${total}</p>}
+                        {cartItems === 0 ? <motion.p layout>No hay productos en el carrito</motion.p> : <motion.p layout>TOTAL: ${total}</motion.p>}
                       </AnimatePresence>
                     </motion.div>
                   </motion.div>
