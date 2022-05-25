@@ -29,11 +29,11 @@ export default function UserCompras() {
           orders = [...orders, docObj]
         })
         setUserOrders(orders);
-      }).catch((e)=>console.log("error fetching orders: ", e))
+      }).catch((e) => console.log("error fetching orders: ", e))
     }
 
   }, [authUser, isLoggedIn])
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -50,19 +50,20 @@ export default function UserCompras() {
 
           {authUser || isLoggedIn ? <div className='Compras__details'>
             {
-              userData && userOrders && userOrders.length === 0 ? <div className='Compras__noorder'><p>Aún no has realizado ninguna compra.<br /><Link to="/">SEGUIR NAVEGANDO</Link></p></div> : userData && userOrders && userOrders.map(order => {
-                return (<details key={order.orderId} className='Compras__details__order'>
-                  <summary>{(new Date(order.date.seconds * 1000).toLocaleString([], { year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false }))}</summary>
-                  <div className='Compras__details__order__items'>
-                    {order.shopList.map((item) => {
-                      return <p key={item.id}><span><span className='Compras__details__order__items__artist'>{item.artist}</span><br /><span>{item.title.toUpperCase()}</span></span><span>${item.price}</span><span>(x{item.count})</span></p>
-                    })}
-                  </div>
-                  <p className='Compras__details__total'>TOTAL: ${order.total}</p>
-                  <p className='Compras__details__id'>ID de compra: {order.orderId}</p>
-                </details>)
-              })
-
+              !userOrders ? <PuffLoader color={"var(--color-one)"} loading={!userOrders} size={200} speedMultiplier={1.2} /> : (
+                userData && userOrders && userOrders.length === 0 ? <div className='Compras__noorder'><p>Aún no has realizado ninguna compra.<br /><Link to="/">SEGUIR NAVEGANDO</Link></p></div> : userData && userOrders && userOrders.map(order => {
+                  return (<details key={order.orderId} className='Compras__details__order'>
+                    <summary>{(new Date(order.date.seconds * 1000).toLocaleString([], { year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false }))}</summary>
+                    <div className='Compras__details__order__items'>
+                      {order.shopList.map((item) => {
+                        return <p key={item.id}><span><span className='Compras__details__order__items__artist'>{item.artist}</span><br /><span>{item.title.toUpperCase()}</span></span><span>${item.price}</span><span>(x{item.count})</span></p>
+                      })}
+                    </div>
+                    <p className='Compras__details__total'>TOTAL: ${order.total}</p>
+                    <p className='Compras__details__id'>ID de compra: {order.orderId}</p>
+                  </details>)
+                })
+              )
             }
 
           </div> : <div className='Compras__nouser'><p>Debes&nbsp;<button onClick={() => authLogIn()}>Iniciar Sesión</button>&nbsp;para ver tus compras</p></div>}
