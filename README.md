@@ -68,14 +68,13 @@ Spotify - (https://developer.spotify.com/documentation/general/guides/authorizat
 
 ## Librerías y recursos utilizados
 
-```sh
-react: librería principal
-react-router-dom: navegación spa
-react-google-recaptcha: anti-spam
-framer-motion: animaciones, efectos y transiciones
-firebase: base de datos, control de productos/stock, control de logeo/usuarios
-bulma css, bootstrap icons, google fonts: estilos, íconos y fonts
-```
+>· [react](https://www.npmjs.com/package/react), [create-react-app](https://www.npmjs.com/package/create-react-app): librería principal
+><br/>· [react-router-dom](https://www.npmjs.com/package/react-router-dom): navegación spa
+><br/>· [react-google-recaptcha](https://www.npmjs.com/package/react-google-recaptcha): anti-spam
+><br/>· [framer-motion](https://www.npmjs.com/package/framer-motion): animaciones, efectos y transiciones
+><br/>· [firebase](https://www.npmjs.com/package/firebase): base de datos, control de productos/stock, control de logeo/usuarios
+><br/>· [firebase-tools](https://www.npmjs.com/package/firebase-tools): deploy
+><br/>· [bulma css](https://www.npmjs.com/package/bulma), [react-spinners](https://www.npmjs.com/package/react-spinners), [bootstrap icons](https://icons.getbootstrap.com/), [google fonts](https://fonts.google.com/): estilos, loaders, íconos y fonts
 
 
 ## Autor
