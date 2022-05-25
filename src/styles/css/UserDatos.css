@@ -88,6 +88,7 @@
   font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
   background: var(--color-back-dark);
   padding: 1.4em 0.4em;
+  will-change: transform;
 }
 .Datos__details__pWrapper {
   width: 100%;

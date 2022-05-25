@@ -82,8 +82,8 @@
   gap: 1rem;
   width: 100%;
   background: var(--color-back-dark);
-  border-radius: 0.2em;
   padding: 0.4em 0;
+  will-change: transform;
 }
 .Compras__details__order {
   width: calc(100% - 4px);
@@ -175,5 +175,6 @@
   }
   .Compras__details {
     width: 80%;
+    border-radius: 0.2em;
   }
 }/*# sourceMappingURL=UserCompras.css.map */

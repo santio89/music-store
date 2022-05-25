@@ -83,7 +83,7 @@
     &__details {
         margin: auto;
         width: 100%;
-
+        
         form {
             margin: auto;
             margin-top: 1.4rem;
@@ -99,6 +99,7 @@
             font-size: $font-fluid-sm;
             background: var(--color-back-dark);
             padding: 1.4em .4em;
+            will-change: transform;
         }
 
         &__pWrapper {
