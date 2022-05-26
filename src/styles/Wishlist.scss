@@ -257,10 +257,12 @@
                     justify-content: center;
                     align-items: center;
                     gap: 1em;
+                    filter: grayscale(0) !important;
 
                     button {
-                        color: var(--color-one-dark);
+                        color: var(--color-three-dark);
                         padding: .2em;
+                        filter: grayscale(0) !important;
 
                         &:hover,
                         &:focus-visible {

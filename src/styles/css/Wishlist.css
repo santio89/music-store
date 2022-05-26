@@ -225,10 +225,12 @@
   justify-content: center;
   align-items: center;
   gap: 1em;
+  filter: grayscale(0) !important;
 }
 .Wishlist__details__list__remove__buttons button {
-  color: var(--color-one-dark);
+  color: var(--color-three-dark);
   padding: 0.2em;
+  filter: grayscale(0) !important;
 }
 .Wishlist__details__list__remove__buttons button:hover, .Wishlist__details__list__remove__buttons button:focus-visible {
   color: var(--color-one);
