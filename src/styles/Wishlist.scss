@@ -120,8 +120,31 @@
                 &:focus-within {
                     box-shadow: 0 0 0 4px var(--color-one);
                 }
-                &.Wishlist__details__list__filter *{
-                    filter:grayscale(1);
+
+                &.Wishlist__details__list__filter * {
+                    filter: grayscale(1);
+                }
+
+                &.Wishlist__details__list__filter a {
+
+                    &:hover .Wishlist__details__list__title__imgContainer,
+                    &:focus-visible .Wishlist__details__list__title__imgContainer {
+                        box-shadow: 0 0 0 .2rem var(--color-back-dark);
+                    }
+
+                    &:hover img,
+                    &:focus-visible img {
+                        transform: scale(.9);
+                    }
+                }
+
+                &.Wishlist__details__list__filter .Wishlist__details__list__wish {
+                    color: var(--color-three-dark);
+                    text-shadow: 0 0 4px var(--color-three-dark);
+                }
+
+                * {
+                    transition: filter 200ms;
                 }
             }
 
@@ -142,11 +165,13 @@
                     text-align: center;
                     will-change: transform;
 
-                    &:hover .Wishlist__details__list__title__imgContainer {
+                    &:hover .Wishlist__details__list__title__imgContainer,
+                    &:focus-visible .Wishlist__details__list__title__imgContainer {
                         box-shadow: 0 0 0 .2rem var(--color-one);
                     }
 
-                    &:hover img {
+                    &:hover img,
+                    &:focus-visible img {
                         transform: scale(1);
                     }
                 }
@@ -169,7 +194,7 @@
                     border-radius: .2em;
                     box-shadow: 0 0 0 .2rem var(--color-back-dark);
                     overflow: hidden;
-                    transition: box-shadow 400ms;
+                    transition: box-shadow 400ms, filter 200ms;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -181,7 +206,7 @@
                     min-width: 112%;
                     transform: scale(.9);
                     background: var(--color-back-dark);
-                    transition: transform 400ms;
+                    transition: transform 400ms, filter 200ms;
                     box-shadow: 0 0 0 .2rem var(--color-back-dark);
                     border-radius: .2em;
                     will-change: transform;
@@ -200,8 +225,7 @@
                 &:hover,
                 &:focus {
                     color: var(--color-three-dark);
-                    text-shadow: 0 0 8px var(--color-three-dark);
-                    text-shadow: none;
+                    text-shadow: 0 0 4px var(--color-three-dark);
                 }
             }
 
@@ -214,7 +238,7 @@
                 font-size: $font-fluid-mdd;
             }
 
-            &__remove{
+            &__remove {
                 position: absolute;
                 top: 50%;
                 left: 50%;
@@ -227,18 +251,19 @@
                 color: var(--color-three);
                 filter: grayscale(0) !important;
 
-                &__buttons{
+                &__buttons {
                     display: flex;
                     flex-flow: row wrap;
                     justify-content: center;
                     align-items: center;
                     gap: 1em;
 
-                    button{
+                    button {
                         color: var(--color-one-dark);
                         padding: .2em;
-                        
-                        &:hover, &:focus-visible{
+
+                        &:hover,
+                        &:focus-visible {
                             color: var(--color-one);
                         }
                     }
