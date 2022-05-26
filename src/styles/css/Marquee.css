@@ -29,8 +29,8 @@
   justify-content: space-evenly;
   align-items: center;
   line-height: 1;
-  -webkit-animation: marquee 120s linear infinite;
-          animation: marquee 120s linear infinite;
+  -webkit-animation: marquee 60s linear infinite;
+          animation: marquee 60s linear infinite;
   will-change: transform;
 }
 .Marquee__linkContainer a {
@@ -46,7 +46,7 @@
 
 @media (min-width: 1024px) {
   .Marquee__linkContainer {
-    -webkit-animation: marquee 240s linear infinite;
-            animation: marquee 240s linear infinite;
+    -webkit-animation: marquee 120s linear infinite;
+            animation: marquee 120s linear infinite;
   }
 }/*# sourceMappingURL=Marquee.css.map */

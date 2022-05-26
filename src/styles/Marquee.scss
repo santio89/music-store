@@ -31,7 +31,7 @@
         justify-content: space-evenly;
         align-items: center;
         line-height: 1;
-        animation: marquee 120s linear infinite;
+        animation: marquee 60s linear infinite;
         will-change: transform;
 
         a {
@@ -46,11 +46,10 @@
             }
         }
     }
-
 }
 
-@media (min-width: 1024px){
-    .Marquee__linkContainer{
-        animation: marquee 240s linear infinite;
+@media (min-width: 1024px) {
+    .Marquee__linkContainer {
+        animation: marquee 120s linear infinite;
     }
 }

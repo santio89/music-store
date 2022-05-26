@@ -24,7 +24,7 @@
     transform: translateX(100%);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-130%);
   }
 }
 @keyframes marquee {
@@ -32,7 +32,7 @@
     transform: translateX(100%);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-130%);
   }
 }
 @-webkit-keyframes bounceInDown {
