@@ -111,10 +111,10 @@
   margin-right: 1ch;
   outline: 2px solid var(--color-one);
   overflow: hidden;
-  background-color: var(--color-one);
+  background: linear-gradient(45deg, var(--color-back) 50%, var(--color-back-dark) 50%);
 }
 .Datos__details__pWrapper img.is-edit {
-  outline: 2px dashed var(--color-one);
+  outline: 2px dashed vars(--color-one);
 }
 .Datos__details__pWrapper i {
   outline: none;
