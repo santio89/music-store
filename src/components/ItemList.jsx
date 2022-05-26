@@ -10,11 +10,18 @@ export default function ItemList({ productos, isProductos, searchId, loading, so
 
     const history = useNavigate();
     const topPagRef = useRef(null);
+    const selectCategory = useRef();
+
+    useEffect(()=>{
+        if (categoryId){
+            selectCategory.current.value = categoryId;
+        }
+    }, [categoryId])
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-
+    
     return (
         <>
             <AnimatePresence>
@@ -23,7 +30,7 @@ export default function ItemList({ productos, isProductos, searchId, loading, so
                     exit={{ opacity: 0, x: "120%" }} key="ItemList__title__search" className='ItemList__title'>
 
                     {
-                        searchId ? <div>BUSCANDO: {searchId.replace(/\+/g, " ").toUpperCase()}</div> : (categoryId ? (<div>VIENDO: <select name="categorias" defaultValue={categoryId} onChange={(e) => { history(`../categories/${e.target.value.replace(/\s/g, "+")}`) }}>
+                        searchId ? <div>BUSCANDO: {searchId.replace(/\+/g, " ").toUpperCase()}</div> : (categoryId ? (<div>VIENDO: <select ref={selectCategory} name="categorias" defaultValue={categoryId} onChange={(e) => { history(`../categories/${e.target.value.replace(/\s/g, "+")}`) }}>
                             <option value={"categories"} disabled>CATEGORIAS</option>
                             <option value={"rock"}>ROCK</option>
                             <option value={"pop"}>POP</option>

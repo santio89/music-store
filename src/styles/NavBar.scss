@@ -5,6 +5,56 @@
     z-index: 2;
     font-size: 1rem;
     background: var(--color-one) !important;
+    position: relative;
+
+    &__marquee {
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        font-size: $font-fluid-xs;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: normal;
+        color: var(--color-two);
+        background: linear-gradient(45deg, var(--color-back-dark) 10%, var(--color-one) 10%, var(--color-one) 90%, var(--color-back-dark) 90%);
+        z-index: -1;
+        height: 19px;
+        border-bottom: 1px solid var(--color-three);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        overflow: hidden;
+        padding-top: 2px;
+
+        &:hover>* {
+            animation-play-state: paused;
+        }
+
+        &__linkContainer {
+            width: 100%;
+            height: 100%;
+            white-space: nowrap;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            line-height: 1;
+            animation: marquee 30s linear infinite;
+            will-change: transform;
+
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                white-space: nowrap;
+                color: var(--color-two);
+
+                &:focus-visible{
+                    outline: 1px dashed var(--color-three);
+                }
+            }
+        }
+
+    }
 
     &__logo {
         font-weight: 800;

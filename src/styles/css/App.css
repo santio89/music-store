@@ -19,6 +19,22 @@
     opacity: 1;
   }
 }
+@-webkit-keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 @-webkit-keyframes bounceInDown {
   0% {
     transform: translateY(-100%);

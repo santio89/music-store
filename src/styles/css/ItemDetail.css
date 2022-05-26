@@ -1,6 +1,6 @@
 .ItemDetailWrapper {
-  min-height: calc(100vh - 76px - 60px - 1.1rem);
-  /* container height= 100vh-navHeight-tabsHeight-margins */
+  min-height: calc(100vh - 20px - 76px - 60px - 1.1rem);
+  /* container height= 100vh-navHeight-marqueeHeight-tabsHeight-margins */
   width: 100%;
   max-width: 1800px;
   margin: auto;

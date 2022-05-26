@@ -1,6 +1,6 @@
 .Error404Wrapper {
-  min-height: calc(100vh - 76px - 60px - 0.2rem);
-  /* container height= 100vh-navHeight-tabsHeight-margins */
+  min-height: calc(100vh - 76px - 20px - 60px - 0.2rem);
+  /* container height= 100vh-navHeight-marqueeHeight-tabsHeight-margins */
   display: flex;
   justify-content: center;
   align-items: start;
@@ -54,7 +54,7 @@
 
 @media (min-width: 1024px) {
   .Error404Wrapper {
-    min-height: calc(100vh - 108px - 60px - 0.4rem - 1rem);
-    /* container height= 100vh-navHeight-tabsHeight-margins */
+    min-height: calc(100vh - 108px - 20px - 60px - 0.4rem - 1rem);
+    /* container height= 100vh-navHeight-marqueeHeight-tabsHeight-margins */
   }
 }/*# sourceMappingURL=Error404.css.map */

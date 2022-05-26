@@ -13,6 +13,15 @@
   }
 }
 
+@keyframes marquee{
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
+}
+
 @keyframes bounceInDown {
   0% {
     transform: translateY(-100%);

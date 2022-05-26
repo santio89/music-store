@@ -2,8 +2,8 @@
 
 .ItemListWrapper {
     width: 90%;
-    min-height: calc(100vh - 76px - 60px - 60px - 1.1rem);
-    /* container height= 100vh-navHeight-tabsHeight-titleHeight-margins */
+    min-height: calc(100vh - 76px - 20px - 60px - 60px - 1.1rem);
+    /* container height= 100vh-navHeight-marqueeHeight-tabsHeight-titleHeight-margins */
     margin: auto;
     max-width: 1800px;
     display: flex;
@@ -320,8 +320,8 @@
 
 @media (min-width:1024px) {
     .ItemListWrapper {
-        min-height: calc(100vh - 108px - 60px - 60px - 1.4rem);
-        /* container height= 100vh-navHeight-tabsHeight-titleHeight-margins */
+        min-height: calc(100vh - 108px -20px - 60px - 60px - 1.4rem);
+        /* container height= 100vh-navHeight-marqueeHeight-tabsHeight-titleHeight-margins */
 
         >span {
             transform: (translateY(-50%));
