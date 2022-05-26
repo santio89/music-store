@@ -14,6 +14,7 @@ export default function ItemList({ productos, isProductos, searchId, loading, so
 
     useEffect(()=>{
         if (categoryId){
+            window.scrollTo(0,0);
             selectCategory.current.value = categoryId;
         }
     }, [categoryId])
