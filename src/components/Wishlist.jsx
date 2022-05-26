@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion'
 import { WishlistContext } from '../Context/WishlistContext';
@@ -12,12 +12,13 @@ export default function Wishlist() {
 
     const { wishlist, wishlistRemove } = useContext(WishlistContext);
     const { authUser, authLogIn, authLoading, userDataLoading } = useContext(AuthContext);
+    const [removeItem, setRemoveItem] = useState("");
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
-    
+
     return (
         <div className='WishlistWrapper'>
             {authLoading ? <PuffLoader color={"var(--color-one)"} loading={authLoading} size={200} speedMultiplier={1.2} /> :
@@ -47,12 +48,21 @@ export default function Wishlist() {
                                                 {wishlist?.map(item => <AnimatePresence key={`wishlist${item.id}`}> <motion.li layout initial={{ opacity: 0 }}
                                                     animate={{ opacity: 1 }}
                                                     exit={{ opacity: 0 }}
-                                                    transition={{ duration: .4 }} title={item.artists_sort ? `${item.artists_sort.toUpperCase()} - ${item.title.toUpperCase()}` : item.title.toUpperCase()} >
+                                                    transition={{ duration: .4 }} title={item.artists_sort ? `${item.artists_sort.toUpperCase()} - ${item.title.toUpperCase()}` : item.title.toUpperCase()} className={removeItem === item.id ? "Wishlist__details__list__filter" : ""}>
 
                                                     <motion.div className='Wishlist__details__list__title'><span>{item.artists_sort ? `${item.artists_sort.toUpperCase()} - ${item.title.toUpperCase()}` : item.title.toUpperCase()}</span><Link to={`/item/${item?.id}`}><div className='Wishlist__details__list__title__imgContainer'><motion.img alt="wishlist img" src={`${item?.cover_image || item?.images?.[0]?.resource_url}`}></motion.img></div></Link></motion.div>
 
-                                                    <motion.button className='Wishlist__details__list__wish'><motion.i className="bi bi-suit-heart-fill" onClick={() => wishlistRemove(item)}></motion.i></motion.button>
+                                                    <motion.button className='Wishlist__details__list__wish'><motion.i className="bi bi-suit-heart-fill" onClick={() => setRemoveItem(item.id)}></motion.i></motion.button>
+
                                                     <motion.div className='Wishlist__details__list__price'>${item.price}</motion.div>
+                                                    {removeItem === item.id && <motion.div className='Wishlist__details__list__remove' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: .2 }}>
+                                                        <p>ELIMINAR?</p>
+                                                        <div className='Wishlist__details__list__remove__buttons'>
+                                                            <button onClick={() => wishlistRemove(item)}>SI</button>
+                                                            <button onClick={() => setRemoveItem("")}>NO</button>
+                                                        </div>
+                                                    </motion.div>}
+
                                                 </motion.li></AnimatePresence>)}</>)}
                                     </motion.ul>
                                 </motion.div> :

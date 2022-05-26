@@ -89,6 +89,7 @@
   padding-bottom: 2rem;
   overflow: hidden;
   will-change: transform;
+  position: relative;
 }
 .Wishlist__details__list li {
   padding: 0.4em;
@@ -105,9 +106,13 @@
   box-shadow: 0 -4px 0 0 var(--color-one);
   transition: box-shadow 200ms;
   will-change: transform;
+  overflow: hidden;
 }
 .Wishlist__details__list li:hover, .Wishlist__details__list li:focus, .Wishlist__details__list li:focus-within {
   box-shadow: 0 0 0 4px var(--color-one);
+}
+.Wishlist__details__list li.Wishlist__details__list__filter * {
+  filter: grayscale(1);
 }
 .Wishlist__details__list__title {
   display: flex;
@@ -188,6 +193,33 @@
   color: var(--color-three);
   text-shadow: 2px 2px 0 var(--color-two);
   font-size: clamp(1rem, 1rem + 1.4vw, 2rem);
+}
+.Wishlist__details__list__remove {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--color-back-dark);
+  padding: 1.4em;
+  width: 120%;
+  border: 4px dashed var(--color-one);
+  font-size: clamp(1.8rem, 1.8rem + 1.8vw, 2.8rem);
+  color: var(--color-three);
+  filter: grayscale(0) !important;
+}
+.Wishlist__details__list__remove__buttons {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.Wishlist__details__list__remove__buttons button {
+  color: var(--color-one-dark);
+  padding: 0.2em;
+}
+.Wishlist__details__list__remove__buttons button:hover, .Wishlist__details__list__remove__buttons button:focus-visible {
+  color: var(--color-one);
 }
 .Wishlist__nouser, .Wishlist__nowish {
   width: 100%;

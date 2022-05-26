@@ -96,6 +96,7 @@
             padding-bottom: 2rem;
             overflow: hidden;
             will-change: transform;
+            position: relative;
 
             li {
                 padding: .4em;
@@ -112,11 +113,15 @@
                 box-shadow: 0 -4px 0 0 var(--color-one);
                 transition: box-shadow 200ms;
                 will-change: transform;
+                overflow: hidden;
 
                 &:hover,
                 &:focus,
                 &:focus-within {
                     box-shadow: 0 0 0 4px var(--color-one);
+                }
+                &.Wishlist__details__list__filter *{
+                    filter:grayscale(1);
                 }
             }
 
@@ -207,6 +212,37 @@
                 color: var(--color-three);
                 text-shadow: 2px 2px 0 var(--color-two);
                 font-size: $font-fluid-mdd;
+            }
+
+            &__remove{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: var(--color-back-dark);
+                padding: 1.4em;
+                width: 120%;
+                border: 4px dashed var(--color-one);
+                font-size: $font-fluid-lg;
+                color: var(--color-three);
+                filter: grayscale(0) !important;
+
+                &__buttons{
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 1em;
+
+                    button{
+                        color: var(--color-one-dark);
+                        padding: .2em;
+                        
+                        &:hover, &:focus-visible{
+                            color: var(--color-one);
+                        }
+                    }
+                }
             }
         }
     }
