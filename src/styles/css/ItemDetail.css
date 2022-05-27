@@ -476,8 +476,8 @@
 }
 @media (min-width: 1024px) {
   .ItemDetailWrapper {
-    min-height: calc(100vh - 108px - 60px - 1.4rem);
-    /* container height= 100vh-navHeight-titleHeight-margins */
+    min-height: calc(100vh - 108px - 20px - 60px - 1.4rem);
+    /* container height= 100vh-navHeight-marqueeHeight-titleHeight-margins */
   }
   .ItemDetailWrapper > span {
     transform: translateY(-50%);
