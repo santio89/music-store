@@ -76,7 +76,7 @@
   font-weight: bold;
   font-size: clamp(1.1rem, 1.1rem + 1.1vw, 1.8rem);
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   place-content: center;
   place-items: center;
   display: flex;
@@ -101,8 +101,8 @@
   align-items: stretch;
   flex: 1;
   line-height: 1.2;
-  min-width: clamp(300px, 40%, 380px);
-  max-width: 380px;
+  min-width: clamp(300px, 20%, 340px);
+  max-width: 340px;
   box-shadow: 0 -4px 0 0 var(--color-one);
   transition: box-shadow 200ms;
   will-change: transform;
@@ -204,7 +204,7 @@
   left: 1ch;
   color: var(--color-three);
   text-shadow: 2px 2px 0 var(--color-two);
-  font-size: clamp(1rem, 1rem + 1.4vw, 2rem);
+  font-size: clamp(1.1rem, 1.1rem + 1.1vw, 1.8rem);
 }
 .Wishlist__details__list__remove {
   position: absolute;
