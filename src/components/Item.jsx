@@ -36,19 +36,19 @@ export default function Item({ id, title, img, price, prod, listStyle }) {
 
     return (
         <>
-                    <div className={listStyle === "grid" ? "ItemWrapper" : "ItemWrapperB"}>
-                        <Link to={`/item/${id}`} className={listStyle === "grid" ? "ItemWrapper__ItemLink" : "ItemWrapperB__ItemLink"}>
-                            <div className={listStyle === "grid" ? "Item" : "ItemB"} >
-                                <div className={listStyle === "grid" ? "Item__imgWrapper" : "ItemB__imgWrapper"}><img className={listStyle === "grid" ? "Item__img" : "ItemB__img"} src={img} alt={"cover_image_" + id} loading="lazy"></img></div>
-                                <div className={listStyle === "grid" ? "Item__content" : "ItemB__content"}>
-                                    <p className={listStyle === "grid" ? "Item__content__price" : "ItemB__content__price"}>${price}</p>
-                                    <h3 className={listStyle === "grid" ? "Item__content__title" : "ItemB__content__title"} title={title}>{title}</h3>
-                                </div>
-                                <div className={listStyle === "grid" ? "Item__details" : "ItemB__details"}>Detalles</div>
-                            </div>
-                        </Link>
-                        <ItemWishBtn id={id} />
+            <div className={listStyle === "grid" ? "ItemWrapper" : "ItemWrapperB"}>
+                <Link to={`/item/${id}`} className={listStyle === "grid" ? "ItemWrapper__ItemLink" : "ItemWrapperB__ItemLink"}>
+                    <div className={listStyle === "grid" ? "Item" : "ItemB"} >
+                        <div className={listStyle === "grid" ? "Item__imgWrapper" : "ItemB__imgWrapper"}><img className={listStyle === "grid" ? "Item__img" : "ItemB__img"} src={img} alt={"cover_image_" + id} loading="lazy"></img></div>
+                        <div className={listStyle === "grid" ? "Item__content" : "ItemB__content"}>
+                            <p className={listStyle === "grid" ? "Item__content__price" : "ItemB__content__price"}>${price}</p>
+                            <h3 className={listStyle === "grid" ? "Item__content__title" : "ItemB__content__title"} title={title}>{title}</h3>
+                        </div>
+                        <div className={listStyle === "grid" ? "Item__details" : "ItemB__details"}>Detalles</div>
                     </div>
+                </Link>
+                <ItemWishBtn id={id} />
+            </div>
         </>
     )
 }
