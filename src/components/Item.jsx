@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import '../styles/css/Item.css';
 import { WishlistContext } from '../Context/WishlistContext'
 import { AuthContext } from '../Context/AuthContext'
-import { motion, AnimatePresence, LayoutGroup } from 'framer-motion'
 
 
 export default function Item({ id, title, img, price, prod, listStyle }) {
@@ -19,7 +18,7 @@ export default function Item({ id, title, img, price, prod, listStyle }) {
 
         return (
             <>
-                {noWish && <motion.p layout className={listStyle === "grid" ? 'ItemWrapper__nowish' : 'ItemWrapperB__nowish'}><button onClick={() => authLogIn()}>INGRESAR</button></motion.p>}
+                {noWish && <p layout className={listStyle === "grid" ? 'ItemWrapper__nowish' : 'ItemWrapperB__nowish'}><button onClick={() => authLogIn()}>INGRESAR</button></p>}
 
                 <button onClick={() => {
                     clearTimeout(timeoutId);
@@ -30,7 +29,7 @@ export default function Item({ id, title, img, price, prod, listStyle }) {
                         if (!wishActive) { wishlistAdd(prod); setWishActive(true) } else { wishlistRemove(prod); setWishActive(false) }
                     }
 
-                }} className={`${listStyle === "grid" ? "ItemWrapper__wish" : "ItemWrapperB__wish"} ${wishActive ? "is-active" : ""}`}><motion.i layout className="bi bi-suit-heart-fill"></motion.i></button>
+                }} className={`${listStyle === "grid" ? "ItemWrapper__wish" : "ItemWrapperB__wish"} ${wishActive ? "is-active" : ""}`}><i layout className="bi bi-suit-heart-fill"></i></button>
             </>
         )
     }
