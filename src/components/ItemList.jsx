@@ -114,6 +114,8 @@ export default function ItemList({ productos, isProductos, searchId, loading, so
                                     <div className="ItemList__pagination">
 
                                         <div className="ItemList__pagination__startend">
+                                            <button onClick={() => { setListStyle("grid"); localStorage.setItem("msListStyle", "grid") }} className={listStyle === "grid" ? "is-active" : ""}><i className="bi bi-grid-3x3-gap-fill"></i></button>
+                                            <button onClick={() => { setListStyle("list"); localStorage.setItem("msListStyle", "list") }} className={listStyle === "list" ? "is-active" : ""}><i className="bi bi-list-ul"></i></button>
                                             <button onClick={() => {
                                                 topPagRef.current.scrollIntoView();
                                                 paginationFetch(pagination.urls.first);
