@@ -37,27 +37,19 @@ export default function Item({ id, title, img, price, prod, listStyle }) {
 
     return (
         <>
-            <AnimatePresence>
-                <LayoutGroup>
-                    <motion.div layout className={listStyle === "grid" ? "ItemWrapper" : "ItemWrapperB"}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: .4 }}>
+                    <div className={listStyle === "grid" ? "ItemWrapper" : "ItemWrapperB"}>
                         <Link to={`/item/${id}`} className={listStyle === "grid" ? "ItemWrapper__ItemLink" : "ItemWrapperB__ItemLink"}>
-                            <motion.div layout className={listStyle === "grid" ? "Item" : "ItemB"} >
-                                <motion.div layout className={listStyle === "grid" ? "Item__imgWrapper" : "ItemB__imgWrapper"}><motion.img layout className={listStyle === "grid" ? "Item__img" : "ItemB__img"} src={img} alt={"cover_image_" + id} loading="lazy"></motion.img></motion.div>
-                                <motion.div layout className={listStyle === "grid" ? "Item__content" : "ItemB__content"}>
-                                    <motion.p layout className={listStyle === "grid" ? "Item__content__price" : "ItemB__content__price"}>${price}</motion.p>
-                                    <motion.h3 layout className={listStyle === "grid" ? "Item__content__title" : "ItemB__content__title"} title={title}>{title}</motion.h3>
-                                </motion.div>
-                                <motion.div layout className={listStyle === "grid" ? "Item__details" : "ItemB__details"}>Detalles</motion.div>
-                            </motion.div>
+                            <div className={listStyle === "grid" ? "Item" : "ItemB"} >
+                                <div className={listStyle === "grid" ? "Item__imgWrapper" : "ItemB__imgWrapper"}><img className={listStyle === "grid" ? "Item__img" : "ItemB__img"} src={img} alt={"cover_image_" + id} loading="lazy"></img></div>
+                                <div className={listStyle === "grid" ? "Item__content" : "ItemB__content"}>
+                                    <p className={listStyle === "grid" ? "Item__content__price" : "ItemB__content__price"}>${price}</p>
+                                    <h3 className={listStyle === "grid" ? "Item__content__title" : "ItemB__content__title"} title={title}>{title}</h3>
+                                </div>
+                                <div className={listStyle === "grid" ? "Item__details" : "ItemB__details"}>Detalles</div>
+                            </div>
                         </Link>
                         <ItemWishBtn id={id} />
-                    </motion.div>
-                </LayoutGroup>
-            </AnimatePresence>
+                    </div>
         </>
     )
 }
