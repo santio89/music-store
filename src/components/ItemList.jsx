@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
 import Item from './Item'
@@ -11,10 +11,11 @@ export default function ItemList({ productos, isProductos, searchId, loading, so
     const history = useNavigate();
     const topPagRef = useRef(null);
     const selectCategory = useRef();
+    const [listStyle, setListStyle] = useState(localStorage.getItem("msListStyle")?localStorage.getItem("msListStyle"):"grid");
 
-    useEffect(()=>{
-        if (categoryId){
-            window.scrollTo(0,0);
+    useEffect(() => {
+        if (categoryId) {
+            window.scrollTo(0, 0);
             selectCategory.current.value = categoryId;
         }
     }, [categoryId])
@@ -23,6 +24,7 @@ export default function ItemList({ productos, isProductos, searchId, loading, so
         window.scrollTo(0, 0);
     }, []);
     
+
     return (
         <>
             <AnimatePresence>
@@ -72,6 +74,8 @@ export default function ItemList({ productos, isProductos, searchId, loading, so
                                     <div className="ItemList__pagination">
 
                                         <div className="ItemList__pagination__startend">
+                                            <button onClick={()=>{setListStyle("grid"); localStorage.setItem("msListStyle","grid")}} className={listStyle === "grid"?"is-active":""}><i className="bi bi-grid-3x3-gap-fill"></i></button>
+                                            <button onClick={()=>{setListStyle("list"); localStorage.setItem("msListStyle","list")}} className={listStyle === "list"?"is-active":""}><i className="bi bi-list-ul"></i></button>
                                             <button onClick={() => {
                                                 paginationFetch(pagination.urls.first)
                                             }}>Inicio</button>
@@ -98,13 +102,13 @@ export default function ItemList({ productos, isProductos, searchId, loading, so
                                         </div>
                                     </div>
                                     <LayoutGroup>
-                                        <div className="ItemList__content">
+                                        <motion.div layout className={listStyle==="grid"?"ItemList__content":"ItemList__contentB"}>
                                             {productos.map((producto) => {
                                                 return (
-                                                    <Item key={producto?.id} id={producto?.id} title={producto?.artists_sort ? (`${producto?.artists_sort} - ${producto?.title}`) : producto?.title} img={producto?.cover_image.endsWith("spacer.gif") ? "https://raw.githubusercontent.com/santio89/music-store/master/src/assets/disc.jpg" : (producto?.cover_image || producto?.images?.[0]?.resource_url)} price={producto?.price} prod={producto} />
+                                                    <Item key={producto?.id} id={producto?.id} title={producto?.artists_sort ? (`${producto?.artists_sort} - ${producto?.title}`) : producto?.title} img={producto?.cover_image.endsWith("spacer.gif") ? "https://raw.githubusercontent.com/santio89/music-store/master/src/assets/disc.jpg" : (producto?.cover_image || producto?.images?.[0]?.resource_url)} price={producto?.price} prod={producto} listStyle={listStyle}/>
                                                 )
                                             })}
-                                        </div>
+                                        </motion.div>
                                     </LayoutGroup>
 
                                     <div className="ItemList__pagination">

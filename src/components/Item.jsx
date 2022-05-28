@@ -1,13 +1,13 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from 'react-router-dom';
 import '../styles/css/Item.css';
 import { WishlistContext } from '../Context/WishlistContext'
 import { AuthContext } from '../Context/AuthContext'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, LayoutGroup } from 'framer-motion'
 
 
-export default function Item({ id, title, img, price, prod }) {
+export default function Item({ id, title, img, price, prod, listStyle }) {
     const { wishlistAdd, wishlistRemove, inWishlist } = useContext(WishlistContext);
 
 
@@ -19,18 +19,18 @@ export default function Item({ id, title, img, price, prod }) {
 
         return (
             <>
-                {noWish && <p className='ItemWrapper__nowish'><button onClick={() => authLogIn()}>INGRESAR</button></p>}
+                {noWish && <motion.p layout className={listStyle === "grid" ? 'ItemWrapper__nowish' : 'ItemWrapperB__nowish'}><button onClick={() => authLogIn()}>INGRESAR</button></motion.p>}
 
                 <button onClick={() => {
                     clearTimeout(timeoutId);
-                    if (!authUser) { 
+                    if (!authUser) {
                         setNoWish(true);
                         setTimeoutId(setTimeout(() => setNoWish(false), 4000))
                     } else {
                         if (!wishActive) { wishlistAdd(prod); setWishActive(true) } else { wishlistRemove(prod); setWishActive(false) }
                     }
 
-                }} className={`ItemWrapper__wish ${wishActive ? "is-active" : ""}`}><i className="bi bi-suit-heart-fill"></i></button>
+                }} className={`${listStyle === "grid" ? "ItemWrapper__wish" : "ItemWrapperB__wish"} ${wishActive ? "is-active" : ""}`}><motion.i layout className="bi bi-suit-heart-fill"></motion.i></button>
             </>
         )
     }
@@ -38,23 +38,25 @@ export default function Item({ id, title, img, price, prod }) {
     return (
         <>
             <AnimatePresence>
-                <motion.div className="ItemWrapper" layout 
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: .4 }}>
-                    <Link to={`/item/${id}`} className="ItemLink">
-                        <div className="Item" >
-                            <div className="Item__imgWrapper"><img className="Item__img" src={img} alt={"cover_image_" + id} loading="lazy"></img></div>
-                            <div className="Item__content">
-                                <p className="Item__content__price">${price}</p>
-                                <h3 className="Item__content__title">{title}</h3>
-                            </div>
-                            <div className="Item__details">Detalles</div>
-                        </div>
-                    </Link>
-                    <ItemWishBtn id={id} />
-                </motion.div>
+                <LayoutGroup>
+                    <motion.div layout className={listStyle === "grid" ? "ItemWrapper" : "ItemWrapperB"}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: .4 }}>
+                        <Link to={`/item/${id}`} className={listStyle === "grid" ? "ItemWrapper__ItemLink" : "ItemWrapperB__ItemLink"}>
+                            <motion.div layout className={listStyle === "grid" ? "Item" : "ItemB"} >
+                                <motion.div layout className={listStyle === "grid" ? "Item__imgWrapper" : "ItemB__imgWrapper"}><motion.img layout className={listStyle === "grid" ? "Item__img" : "ItemB__img"} src={img} alt={"cover_image_" + id} loading="lazy"></motion.img></motion.div>
+                                <motion.div layout className={listStyle === "grid" ? "Item__content" : "ItemB__content"}>
+                                    <motion.p layout className={listStyle === "grid" ? "Item__content__price" : "ItemB__content__price"}>${price}</motion.p>
+                                    <motion.h3 layout className={listStyle === "grid" ? "Item__content__title" : "ItemB__content__title"} title={title}>{title}</motion.h3>
+                                </motion.div>
+                                <motion.div layout className={listStyle === "grid" ? "Item__details" : "ItemB__details"}>Detalles</motion.div>
+                            </motion.div>
+                        </Link>
+                        <ItemWishBtn id={id} />
+                    </motion.div>
+                </LayoutGroup>
             </AnimatePresence>
         </>
     )

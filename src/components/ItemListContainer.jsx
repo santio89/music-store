@@ -220,6 +220,6 @@ export default function ItemListContainer() {
     }, [productos])
 
     return (
-        <ItemList productos={productos} isProductos={isProductos} categoryId={categoryId} searchId={searchId} loading={loading} sortOpen={sortOpen} setSortOpen={setSortOpen} sortActive={sortActive} setSortActive={setSortActive} pagination={paginationObject} paginationFetch={paginationFetch} paginationLoading={paginationLoading} sortAllHigh={sortAllHigh} sortAllRelevance={sortAllRelevance} sortAllHot={sortAllHot} />
+        <ItemList productos={productos} isProductos={isProductos} categoryId={categoryId} searchId={searchId} loading={loading} sortOpen={sortOpen} setSortOpen={setSortOpen} sortActive={sortActive} setSortActive={setSortActive} pagination={paginationObject} paginationFetch={paginationFetch} paginationLoading={paginationLoading} sortAllHigh={sortAllHigh} sortAllRelevance={sortAllRelevance} sortAllHot={sortAllHot}/>
     )
 }
