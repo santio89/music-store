@@ -275,4 +275,5 @@
   font-size: clamp(1rem, 1rem + 1vw, 1.6rem);
   bottom: 0;
   right: 0.4em;
+  color: var(--color-three-dark);
 }/*# sourceMappingURL=Item.css.map */
