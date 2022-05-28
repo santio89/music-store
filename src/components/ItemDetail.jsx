@@ -137,12 +137,12 @@ export default function ItemDetail({ loading, producto, spotifyId, spotifyLoadin
                                                             {noWish && <p className='ItemDetail__counterWrapper__nowish'><button onClick={()=>authLogIn()}>INGRESAR</button></p>}
 
                                                             {wishlistAdded ? <button className='ItemDetail__counterWrapper__wish is-active'
-                                                                onClick={() => { clearTimeout(timeoutId); if (authUser) { wishlistRemove(producto) } else { setNoWish(true); setTimeoutId(setTimeout(() => { setNoWish(false) }, 4000))}; }
+                                                                onClick={() => { clearTimeout(timeoutId); if (authUser) { wishlistRemove(producto) } else { setNoWish(true); setTimeoutId(setTimeout(() => { setNoWish(false) }, 2000))}; }
 
 
                                                                 }><i className="bi bi-suit-heart-fill"></i></button> :
                                                                 <button className='ItemDetail__counterWrapper__wish'
-                                                                    onClick={() => { clearTimeout(timeoutId); if (authUser) { wishlistAdd(producto) } else { setNoWish(true); setTimeoutId(setTimeout(() => { setNoWish(false) }, 4000))}; }
+                                                                    onClick={() => { clearTimeout(timeoutId); if (authUser) { wishlistAdd(producto) } else { setNoWish(true); setTimeoutId(setTimeout(() => { setNoWish(false) }, 2000))}; }
 
 
                                                                     }><i className="bi bi-suit-heart"></i></button>}

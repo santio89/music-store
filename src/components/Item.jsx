@@ -24,7 +24,7 @@ export default function Item({ id, title, img, price, prod, listStyle }) {
                     clearTimeout(timeoutId);
                     if (!authUser) {
                         setNoWish(true);
-                        setTimeoutId(setTimeout(() => setNoWish(false), 4000))
+                        setTimeoutId(setTimeout(() => setNoWish(false), 2000))
                     } else {
                         if (!wishActive) { wishlistAdd(prod); setWishActive(true) } else { wishlistRemove(prod); setWishActive(false) }
                     }
