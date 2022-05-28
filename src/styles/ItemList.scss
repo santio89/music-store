@@ -287,6 +287,7 @@
         align-content: center;
         gap: 1.4rem;
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        margin-bottom: 1.6rem;
     }
 
     &__noProducts {
@@ -385,4 +386,5 @@
     justify-content: center;
     align-items: stretch;
     gap: .8rem;
+    margin-bottom: 1.6rem;
 }
