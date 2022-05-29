@@ -74,12 +74,12 @@ export default function ItemList({ productos, isProductos, searchId, loading, so
                                     <div className="ItemList__pagination">
 
                                         <div className="ItemList__pagination__startend">
-                                            <button onClick={() => { setListStyle("grid"); localStorage.setItem("msListStyle", "grid") }} className={listStyle === "grid" ? "is-active" : ""}><i className="bi bi-grid-3x3-gap-fill"></i></button>
-                                            <button onClick={() => { setListStyle("list"); localStorage.setItem("msListStyle", "list") }} className={listStyle === "list" ? "is-active" : ""}><i className="bi bi-list-ul"></i></button>
-                                            <button onClick={() => {
+                                            <button aria-label="grilla" onClick={() => { setListStyle("grid"); localStorage.setItem("msListStyle", "grid") }} className={listStyle === "grid" ? "is-active" : ""}><i className="bi bi-grid-3x3-gap-fill"></i></button>
+                                            <button aria-label="lista" onClick={() => { setListStyle("list"); localStorage.setItem("msListStyle", "list") }} className={listStyle === "list" ? "is-active" : ""}><i className="bi bi-list-ul"></i></button>
+                                            <button aria-label="inicio" onClick={() => {
                                                 paginationFetch(pagination.urls.first)
                                             }}>Inicio</button>
-                                            <button onClick={() => {
+                                            <button aria-label="final" onClick={() => {
                                                 paginationFetch(pagination.urls.last)
                                             }}>Final</button>
                                         </div>
@@ -114,13 +114,13 @@ export default function ItemList({ productos, isProductos, searchId, loading, so
                                     <div className="ItemList__pagination">
 
                                         <div className="ItemList__pagination__startend">
-                                            <button onClick={() => { setListStyle("grid"); localStorage.setItem("msListStyle", "grid") }} className={listStyle === "grid" ? "is-active" : ""}><i className="bi bi-grid-3x3-gap-fill"></i></button>
-                                            <button onClick={() => { setListStyle("list"); localStorage.setItem("msListStyle", "list") }} className={listStyle === "list" ? "is-active" : ""}><i className="bi bi-list-ul"></i></button>
-                                            <button onClick={() => {
+                                            <button aria-label="grilla" onClick={() => { setListStyle("grid"); localStorage.setItem("msListStyle", "grid") }} className={listStyle === "grid" ? "is-active" : ""}><i className="bi bi-grid-3x3-gap-fill"></i></button>
+                                            <button aria-label="lista" onClick={() => { setListStyle("list"); localStorage.setItem("msListStyle", "list") }} className={listStyle === "list" ? "is-active" : ""}><i className="bi bi-list-ul"></i></button>
+                                            <button aria-label="inicio" onClick={() => {
                                                 topPagRef.current.scrollIntoView();
                                                 paginationFetch(pagination.urls.first);
                                             }}>Inicio</button>
-                                            <button onClick={() => {
+                                            <button aria-label="final" onClick={() => {
                                                 topPagRef.current.scrollIntoView();
                                                 paginationFetch(pagination.urls.last);
                                             }}>Final</button>
