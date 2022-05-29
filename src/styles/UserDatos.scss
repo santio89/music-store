@@ -112,10 +112,13 @@
             align-self: start;
 
             img {
+                font-size: $font-xxs;
                 aspect-ratio: 1;
                 width: 96px;
                 min-width: 96px;
                 max-width: 96px;
+                min-height: 96px;
+                max-height: 96px;
                 object-fit: cover;
                 border-radius: .1em;
                 margin-top: 1ch;

@@ -100,10 +100,13 @@
   align-self: start;
 }
 .Datos__details__pWrapper img {
+  font-size: 0.75rem;
   aspect-ratio: 1;
   width: 96px;
   min-width: 96px;
   max-width: 96px;
+  min-height: 96px;
+  max-height: 96px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 0.1em;
