@@ -19,7 +19,7 @@ export default function Checkout() {
   const [checkoutSuccess, setCheckoutSuccess] = useState(false);
   const [copyCheckoutCode, setCopyCheckoutCode] = useState(false);
   const [copyTimeoutId, setCopyTimeoutId] = useState(null);
-  
+
   const checkoutSuccessTrue = () => setCheckoutSuccess(true);
 
   const [checkoutConfirmation, setCheckoutConfirmation] = useState(false)
@@ -65,7 +65,7 @@ export default function Checkout() {
               <LayoutGroup>
                 <motion.div layout className='Checkout__details' key="checkoutDetails" initial={{ opacity: 0, x: "-120%" }}
                   animate={{ opacity: 1, x: "0%" }}
-                  exit={{ opacity: 0, y: "120%" }}
+                  exit={{ opacity: 0 }}
                   transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
 
                   <motion.div layout className='Checkout__details__list'>
@@ -78,7 +78,7 @@ export default function Checkout() {
                       </AnimatePresence>
 
                       <AnimatePresence>
-                        { 
+                        {
                           cart.map((item) => {
                             return (
                               <CheckoutItem key={item?.id} item={item} modifyCount={modifyCount} removeItemSelected={removeItemSelected} setRemoveItemSelected={setRemoveItemSelected} cartRemove={cartRemove} />
@@ -149,7 +149,7 @@ export default function Checkout() {
                 exit={{ opacity: 0, x: "120%" }}
                 transition={{ type: 'tween', duration: .4, ease: "easeInOut" }}>
                 <h3>Compra realizada con éxito!</h3>
-                <p>Tu código de compra es:<br /><button onClick={() => {clearTimeout(copyTimeoutId);navigator.clipboard.writeText(checkoutCode); setCopyCheckoutCode(true); setCopyTimeoutId(setTimeout(()=>setCopyCheckoutCode(false), 2000))}} title="Copiar al portapapeles" className='Checkout__success__code'>{checkoutCode} {copyCheckoutCode?<i class="bi bi-check-lg"></i>:<i className="bi bi-clipboard"></i>}</button></p>
+                <p>Tu código de compra es:<br /><button onClick={() => { clearTimeout(copyTimeoutId); navigator.clipboard.writeText(checkoutCode); setCopyCheckoutCode(true); setCopyTimeoutId(setTimeout(() => setCopyCheckoutCode(false), 2000)) }} title="Copiar al portapapeles" className='Checkout__success__code'>{checkoutCode} {copyCheckoutCode ? <i class="bi bi-check-lg"></i> : <i className="bi bi-clipboard"></i>}</button></p>
                 <details className='Checkout__success__details Checkout__success__details--detail'>
                   <summary>Detalle de compra</summary>
                   <div className='Checkout__success__details__items'>
