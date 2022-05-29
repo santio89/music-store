@@ -62,7 +62,7 @@
         font-family: var(--font-primary);
         width: 100%;
         margin: auto;
-        margin-top: 1rem;
+        margin-top: 1.4rem;
 
         h3 {
             font-family: var(--font-primary);
@@ -83,13 +83,11 @@
             font-weight: bold;
             font-size: $font-fluid-smm;
             display: grid;
-            grid-template-columns: repeat(auto-fit , minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             place-content: center;
             place-items: center;
             gap: 2rem;
-            padding: 1em;
-            padding-top: 2rem;
-            padding-bottom: 2rem;
+            padding: 2.4rem 1.2rem;
             overflow: hidden;
             will-change: transform;
             position: relative;
@@ -278,9 +276,9 @@
         margin-top: 2rem;
         font-weight: bold;
         font-family: 'Courier New', Courier, monospace;
+        font-size: $font-fluid-md;
         color: var(--color-four);
         will-change: transform;
-        font-size: $font-fluid-md;
 
         button,
         a {
@@ -326,8 +324,6 @@
 
             &__list {
                 border-radius: .2em;
-                padding-top: 2.8rem;
-                padding-bottom: 2.8rem;
             }
 
         }
