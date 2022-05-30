@@ -114,7 +114,7 @@ export default function CheckoutForm({ total, toggleCheckoutConfirmation, checko
       <button onClick={() => toggleCheckoutConfirmation()} className='CheckoutForm__back'><i className="bi bi-caret-left-fill"></i></button>
       <form className='CheckoutForm' onSubmit={(e) => {
         e.preventDefault();
-        if (recaptchaValid) {
+        if (recaptchaValid && !loadingCheckout) {
           sendOrder();
         }
       }}>
