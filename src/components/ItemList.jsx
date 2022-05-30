@@ -102,7 +102,7 @@ export default function ItemList({ productos, isProductos, searchId, loading, so
                                         </div>
                                     </div>
 
-                                    <div layout className={listStyle === "grid" ? "ItemList__content" : "ItemList__contentB"}>
+                                    <div className={listStyle === "grid" ? "ItemList__content" : "ItemList__contentB"}>
                                         {productos.map((producto) => {
                                             return (
                                                 <Item key={producto?.id} id={producto?.id} title={producto?.artists_sort ? (`${producto?.artists_sort} - ${producto?.title}`) : producto?.title} img={producto?.cover_image.endsWith("spacer.gif") ? "https://raw.githubusercontent.com/santio89/music-store/master/src/assets/disc.jpg" : (producto?.cover_image || producto?.images?.[0]?.resource_url)} price={producto?.price} prod={producto} listStyle={listStyle} />
