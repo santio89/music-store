@@ -54,6 +54,10 @@
         z-index: 1;
         will-change: transform;
 
+        div{
+            will-change: transform;
+        }
+
         select {
             background: none;
             border: none;
@@ -104,8 +108,8 @@
             padding: .4em;
             background: var(--color-back-dark);
             transition: transform 200ms, color 200ms;
-            will-change: transform;
             flex: 1;
+            will-change: transform;
 
             &:hover {
                 color: var(--color-one);
@@ -205,6 +209,7 @@
         justify-content: center;
         align-items: center;
         transition: color 200ms, text-shadow 200ms;
+        will-change: transform;
 
         i {
             font-size: .8em;

@@ -18,7 +18,7 @@ export default function Item({ id, title, img, price, prod, listStyle }) {
 
         return (
             <>
-                {noWish && <p layout className={listStyle === "grid" ? 'ItemWrapper__nowish' : 'ItemWrapperB__nowish'}><button onClick={() => authLogIn()}>INGRESAR</button></p>}
+                {noWish && <p className={listStyle === "grid" ? 'ItemWrapper__nowish' : 'ItemWrapperB__nowish'}><button onClick={() => authLogIn()}>INGRESAR</button></p>}
 
                 <button onClick={() => {
                     clearTimeout(timeoutId);
@@ -29,7 +29,7 @@ export default function Item({ id, title, img, price, prod, listStyle }) {
                         if (!wishActive) { wishlistAdd(prod); setWishActive(true) } else { wishlistRemove(prod); setWishActive(false) }
                     }
 
-                }} className={`${listStyle === "grid" ? "ItemWrapper__wish" : "ItemWrapperB__wish"} ${wishActive ? "is-active" : ""}`}><i layout className="bi bi-suit-heart-fill"></i></button>
+                }} className={`${listStyle === "grid" ? "ItemWrapper__wish" : "ItemWrapperB__wish"} ${wishActive ? "is-active" : ""}`}><i className="bi bi-suit-heart-fill"></i></button>
             </>
         )
     }
