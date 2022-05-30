@@ -147,7 +147,6 @@
         border: none;
         outline: none;
         border-radius: .2em;
-        padding: 1ch;
         overflow: hidden;
         background-image: linear-gradient(45deg, var(--color-one) 49.8%, var(--color-back-dark) 49.8%);
         font-size: $font-fluid-xl;
@@ -175,7 +174,7 @@
         button {
             position: absolute;
             top: -.72ch;
-            right: -45.4%;
+            right: -44.4%;
             font-weight: bold;
             text-shadow: 1px 1px 0 var(--color-three);
             color: var(--color-three-dark);

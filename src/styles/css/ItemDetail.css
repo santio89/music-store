@@ -130,7 +130,6 @@
   border: none;
   outline: none;
   border-radius: 0.2em;
-  padding: 1ch;
   overflow: hidden;
   background-image: linear-gradient(45deg, var(--color-one) 49.8%, var(--color-back-dark) 49.8%);
   font-size: clamp(2rem, 2rem + 2vw, 3.2rem);
@@ -159,7 +158,7 @@
 .ItemDetail__imgModal button {
   position: absolute;
   top: -0.72ch;
-  right: -45.4%;
+  right: -44.4%;
   font-weight: bold;
   text-shadow: 1px 1px 0 var(--color-three);
   color: var(--color-three-dark);
