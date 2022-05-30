@@ -61,15 +61,15 @@
             width: 100%;
             outline: none;
             border: none;
-        }
 
-        img {
-            border-radius: .4em;
-            width: 100%;
-            max-width: 500px;
-            aspect-ratio: 1;
-            object-fit: cover;
-            outline: 4px dashed var(--color-one);
+            img {
+                border-radius: .4em;
+                width: 100%;
+                max-width: 500px;
+                aspect-ratio: 1;
+                object-fit: cover;
+                outline: 4px dashed var(--color-one);
+            }
         }
 
         details {
@@ -147,13 +147,13 @@
         border: none;
         outline: none;
         border-radius: .2em;
-        padding: 2ch;
+        padding: 1ch;
         overflow: hidden;
         background-image: linear-gradient(45deg, var(--color-one) 49.8%, var(--color-back-dark) 49.8%);
         font-size: $font-fluid-xl;
         width: clamp(300px, 100%, 600px);
         min-width: 300px;
-        outline: 4px dashed var(--color-back);
+        outline: 4px dashed var(--color-one);
 
         &::backdrop {
             background-color: rgba(0, 0, 0, .8);
@@ -164,15 +164,22 @@
             outline: none;
             box-shadow: 0 0 0 4px var(--color-back);
             background: var(--color-back);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: clamp(300px, 100%, 600px);
+            min-width: 300px;
         }
 
         button {
             position: absolute;
-            top: -.5ch;
-            right: -44%;
+            top: -.72ch;
+            right: -45.4%;
             font-weight: bold;
             text-shadow: 1px 1px 0 var(--color-three);
             color: var(--color-three-dark);
+            z-index: 1;
 
             &:hover,
             &:focus-visible {
@@ -658,7 +665,7 @@
         &__detailsWrapper {
             width: 600px;
 
-            img {
+            button img {
                 max-width: 600px;
             }
         }
