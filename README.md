@@ -54,14 +54,13 @@ Spotify - (https://developer.spotify.com/documentation/general/guides/authorizat
 
 >· Leer productos de una api y crearlos en una base de datos. En caso de no exisitir el producto en la base de datos, lo crea; en caso de ya exisitir, le actualiza el precio según la api pero mantiene el stock desde la base datos.
 ><br/>· Listado de productos actualizados desde Discogs.
-><br/>· Manejo de stock desde Firebase.
+><br/>· Manejo de stock, storage, usuarios y login desde Firebase.
 ><br/>· Conectar dinámicamente con api de Spotify para escuchar los albums (en detalle de item).
 ><br/>· Manejar carro de compras (agregar, modificar, eliminar) y enviar la información a Firebase.
 ><br/>· Mostrar categorías de productos y navegar entre ellas.
 ><br/>· Filtrado, búsqueda y paginación de productos.
 ><br/>· Modo oscuro/claro.
 ><br/>· Local storage con persistencia entre ventanas.
-><br/>· Manejo de usuario, storage y login desde Firebase.
 ><br/>· Carro de compras y Wishlist de usuario.
 ><br/>· Modificación de datos de usuario.
 
