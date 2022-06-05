@@ -61,7 +61,7 @@ Spotify - (https://developer.spotify.com/documentation/general/guides/authorizat
 ><br/>· Filtrado, búsqueda y paginación de productos.
 ><br/>· Modo oscuro/claro.
 ><br/>· Local storage con persistencia entre ventanas.
-><br/>· Manejo de usuarios desde Firebase con login de Google.
+><br/>· Manejo de usuario, storage y login desde Firebase.
 ><br/>· Carro de compras y Wishlist de usuario.
 ><br/>· Modificación de datos de usuario.
 
