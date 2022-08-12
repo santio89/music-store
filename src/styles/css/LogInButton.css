@@ -155,7 +155,6 @@
     margin-left: 0;
     margin-right: 0;
   }
-
   .logOutBtn {
     right: -20px;
     bottom: -2px;
@@ -163,7 +162,6 @@
   .logOutBtn:hover, .logOutBtn:focus-visible {
     outline: 2px dashed var(--color-three);
   }
-
   .wishlistBtn {
     right: -20px;
     bottom: 56px;
@@ -171,14 +169,12 @@
   .wishlistBtn:hover, .wishlistBtn:focus-visible {
     outline: 2px dashed var(--color-three);
   }
-
   .profilePic {
     margin-right: 12px;
   }
   .profilePic:hover, .profilePic:focus-visible, .profilePic.is-active {
     outline: 3px dashed var(--color-three);
   }
-
   .userOptions {
     margin-left: 0;
   }

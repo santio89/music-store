@@ -139,9 +139,13 @@
 }
 .ItemDetail__imgModal::-webkit-backdrop {
   background-color: rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
 }
 .ItemDetail__imgModal::backdrop {
   background-color: rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
 }
 .ItemDetail__imgModal img {
   border-radius: 0.1em;
@@ -489,7 +493,6 @@
     /* -tabsHeight */
     margin-top: 60px;
   }
-
   .ItemDetail {
     margin-top: 1.4rem;
   }

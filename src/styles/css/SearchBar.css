@@ -67,7 +67,6 @@
   .searchBar__icon:hover, .searchBar__icon:focus-visible {
     color: var(--color-one);
   }
-
   a.navbar-item:hover,
 a.navbar-item:focus-visible {
     color: var(--color-one-dark);
