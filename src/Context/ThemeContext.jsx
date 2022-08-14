@@ -20,7 +20,7 @@ export default function ThemeContextProvider({ children }) {
 
         window.addEventListener("storage", checkStorage)
         return (() => window.removeEventListener("storage", checkStorage))
-    })
+    }, [])
 
     useEffect(() => {
         localStorage.setItem("msDarkTheme", JSON.stringify(darkTheme));
