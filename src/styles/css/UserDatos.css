@@ -143,8 +143,6 @@
   font-weight: bold;
   margin-left: 2ch;
   margin-right: 2ch;
-  /* Chrome, Safari, Edge, Opera */
-  /* Firefox */
 }
 .Datos__details__pWrapper span input {
   background: none;
@@ -158,11 +156,16 @@
 }
 .Datos__details__pWrapper span input::-webkit-outer-spin-button,
 .Datos__details__pWrapper span input::-webkit-inner-spin-button {
+  -moz-appearance: none;
   -webkit-appearance: none;
+  appearance: none;
   margin: 0;
 }
 .Datos__details__pWrapper span input[type=number] {
   -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  appearance: textfield;
+  margin: 0;
 }
 .Datos__details p {
   width: 100%;
@@ -201,8 +204,7 @@
   transform: translate(-50%, -50%);
   pointer-events: none;
   border-radius: 50%;
-  -webkit-animation: ripples 1000ms linear infinite;
-          animation: ripples 1000ms linear infinite;
+  animation: ripples 1000ms linear infinite;
 }
 
 @media (min-width: 1024px) {

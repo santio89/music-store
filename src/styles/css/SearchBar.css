@@ -19,9 +19,6 @@
 .searchBar__input::-moz-placeholder {
   color: var(--color-one-dark);
 }
-.searchBar__input:-ms-input-placeholder {
-  color: var(--color-one-dark);
-}
 .searchBar__input::placeholder {
   color: var(--color-one-dark);
 }
@@ -54,9 +51,6 @@
   .searchBar__input::-moz-placeholder {
     color: var(--color-one-dark);
   }
-  .searchBar__input:-ms-input-placeholder {
-    color: var(--color-one-dark);
-  }
   .searchBar__input::placeholder {
     color: var(--color-one-dark);
   }
@@ -68,7 +62,7 @@
     color: var(--color-one);
   }
   a.navbar-item:hover,
-a.navbar-item:focus-visible {
+  a.navbar-item:focus-visible {
     color: var(--color-one-dark);
   }
 }/*# sourceMappingURL=SearchBar.css.map */

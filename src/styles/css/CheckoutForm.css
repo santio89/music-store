@@ -97,17 +97,14 @@
   transform: translate(2px, 2px);
 }
 .CheckoutForm__send span {
-  -webkit-animation: spanLoad 800ms alternate infinite;
-          animation: spanLoad 800ms alternate infinite;
+  animation: spanLoad 800ms alternate infinite;
   letter-spacing: 0.02em;
 }
 .CheckoutForm__send span:nth-child(2) {
-  -webkit-animation-delay: 200ms;
-          animation-delay: 200ms;
+  animation-delay: 200ms;
 }
 .CheckoutForm__send span:nth-child(3) {
-  -webkit-animation-delay: 400ms;
-          animation-delay: 400ms;
+  animation-delay: 400ms;
 }
 .CheckoutForm__back {
   font-family: "Courier New", Courier, monospace;

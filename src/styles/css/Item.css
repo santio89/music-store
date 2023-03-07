@@ -81,6 +81,7 @@
   transition: box-shadow 400ms;
   width: 100%;
   margin: auto;
+  height: 100%;
 }
 .Item__imgWrapper {
   width: 100%;
@@ -132,7 +133,6 @@
   font-weight: bold;
   color: var(--color-three);
   text-shadow: 1px 1px var(--color-one-dark), 2px 2px var(--color-back-dark);
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin-left: 2%;

@@ -137,11 +137,6 @@
   min-width: 300px;
   outline: 4px dashed var(--color-one);
 }
-.ItemDetail__imgModal::-webkit-backdrop {
-  background-color: rgba(0, 0, 0, 0.8);
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
-}
 .ItemDetail__imgModal::backdrop {
   background-color: rgba(0, 0, 0, 0.8);
   -webkit-backdrop-filter: blur(2px);
@@ -246,7 +241,6 @@
   text-shadow: 1px 1px 0 var(--color-three);
   font-weight: bold;
   color: var(--color-one-dark);
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   position: absolute;
@@ -334,7 +328,6 @@
   margin-bottom: 1rem;
   text-shadow: 2px 2px var(--color-one-dark);
   line-height: 1.2;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   letter-spacing: 0.04em;

@@ -183,7 +183,6 @@
   font-size: clamp(2.4rem, 2.4rem + 2.4vw, 4rem);
   color: var(--color-one);
   text-shadow: 0 0 8px var(--color-one);
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   transition: 200ms;

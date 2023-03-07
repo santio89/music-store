@@ -271,12 +271,10 @@
 @media (min-width: 500px) {
   .ItemList__title {
     border-radius: 0 0.2em 0.2em 0;
-    max-width: -webkit-fit-content;
     max-width: -moz-fit-content;
     max-width: fit-content;
   }
   .ItemList__sortWrapper {
-    width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
     margin-left: -6%;

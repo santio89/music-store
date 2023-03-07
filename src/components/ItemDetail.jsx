@@ -73,15 +73,24 @@ export default function ItemDetail({ loading, producto, spotifyId, spotifyLoadin
                                             window.addEventListener("click", modalCloseClick);
                                             window.addEventListener("scroll", modalCloseScroll)
                                         }}>
-                                            <img alt={`${producto?.title} - ${producto?.artists_sort}`} src={imgSelected || "https://raw.githubusercontent.com/santio89/music-store/master/src/assets/disc.jpg"} loading="lazy"></img>
+                                            <img alt={`${producto?.title} - ${producto?.artists_sort}`} src={imgSelected || "/back.jpg"} loading="lazy" onError={({ currentTarget }) => {
+                                            currentTarget.onerror = null; // prevents looping
+                                            currentTarget.src = "/back.jpg";
+                                        }}></img>
                                         </button>
                                         <div className='ItemDetail__imgSelector'>
                                             {producto?.images?.slice(0, 4).map((img) => {
-                                                return <button key={img.resource_url} onClick={() => { changeImgSelected(img.resource_url) }}><img alt="img01" src={img.resource_url} loading="lazy"></img></button>
+                                                return <button key={img.resource_url} onClick={() => { changeImgSelected(img.resource_url) }}><img alt="img01" src={img.resource_url || "/back.jpg"} onError={({ currentTarget }) => {
+                                                    currentTarget.onerror = null; // prevents looping
+                                                    currentTarget.src = "/back.jpg";
+                                                }} loading="lazy"></img></button>
                                             })}
                                         </div>
 
-                                        <dialog className='ItemDetail__imgModal' ref={imgModal}><button onClick={() => { imgModal.current.close() }}>X</button><img alt={`${producto?.title} - ${producto?.artists_sort}`} src={imgSelected || "https://raw.githubusercontent.com/santio89/music-store/master/src/assets/disc.jpg"} loading="lazy"></img></dialog>
+                                        <dialog className='ItemDetail__imgModal' ref={imgModal}><button onClick={() => { imgModal.current.close() }}>X</button><img alt={`${producto?.title} - ${producto?.artists_sort}`} src={imgSelected || "/back.jpg"} loading="lazy" onError={({ currentTarget }) => {
+                                            currentTarget.onerror = null; // prevents looping
+                                            currentTarget.src = "/back.jpg";
+                                        }}></img></dialog>
 
                                         <div className='ItemDetail__pWrapper'>
                                             <p>◖TITULO: {producto?.title?.toUpperCase()}</p>
@@ -134,15 +143,15 @@ export default function ItemDetail({ loading, producto, spotifyId, spotifyLoadin
                                                             animate={{ opacity: 1, x: "0%" }}
                                                             exit={{ opacity: 0, x: "120%" }} transition={{ type: 'tween', duration: .4, ease: "easeInOut" }} className='ItemDetail__counterWrapper'>
 
-                                                            {noWish && <p className='ItemDetail__counterWrapper__nowish'><button onClick={()=>authLogIn()}>INGRESAR</button></p>}
+                                                            {noWish && <p className='ItemDetail__counterWrapper__nowish'><button onClick={() => authLogIn()}>INGRESAR</button></p>}
 
                                                             {wishlistAdded ? <button className='ItemDetail__counterWrapper__wish is-active'
-                                                                onClick={() => { clearTimeout(timeoutId); if (authUser) { wishlistRemove(producto) } else { setNoWish(true); setTimeoutId(setTimeout(() => { setNoWish(false) }, 2000))}; }
+                                                                onClick={() => { clearTimeout(timeoutId); if (authUser) { wishlistRemove(producto) } else { setNoWish(true); setTimeoutId(setTimeout(() => { setNoWish(false) }, 2000)) }; }
 
 
                                                                 }><i className="bi bi-suit-heart-fill"></i></button> :
                                                                 <button className='ItemDetail__counterWrapper__wish'
-                                                                    onClick={() => { clearTimeout(timeoutId); if (authUser) { wishlistAdd(producto) } else { setNoWish(true); setTimeoutId(setTimeout(() => { setNoWish(false) }, 2000))}; }
+                                                                    onClick={() => { clearTimeout(timeoutId); if (authUser) { wishlistAdd(producto) } else { setNoWish(true); setTimeoutId(setTimeout(() => { setNoWish(false) }, 2000)) }; }
 
 
                                                                     }><i className="bi bi-suit-heart"></i></button>}
