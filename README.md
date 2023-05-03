@@ -1,9 +1,4 @@
 <h1 align="center">MUSIC-STORE | REACT PROJECT 👋</h1>
-<p>
-  <a href="https://www.npmjs.com/package/music-store" target="_blank">
-    <img alt="Version" src="https://img.shields.io/npm/v/music-store.svg">
-  </a>
-</p>
 
 <h2>REACT | PROYECTO FINAL CODERHOUSE</h2>
 <p>E-Commerce desarrollado en React y conectado a Firebase</p>
