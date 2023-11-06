@@ -1,5 +1,6 @@
 .Marquee {
   width: 100%;
+  max-width: 100%;
   position: absolute;
   top: 100%;
   left: 0;
@@ -14,14 +15,17 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  overflow: hidden;
   padding-top: 2px;
+  overflow: hidden;
 }
 .Marquee:hover > * {
   animation-play-state: paused;
 }
 .Marquee__linkContainer {
-  width: 100%;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
   height: 100%;
   white-space: nowrap;
   display: flex;
@@ -40,10 +44,4 @@
 }
 .Marquee__linkContainer a:focus-visible {
   outline: 1px dashed var(--color-three);
-}
-
-@media (min-width: 1024px) {
-  .Marquee__linkContainer {
-    animation: marquee 120s linear infinite;
-  }
 }/*# sourceMappingURL=Marquee.css.map */

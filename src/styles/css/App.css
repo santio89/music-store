@@ -10,11 +10,8 @@
   }
 }
 @keyframes marquee {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-130%);
+  to {
+    transform: translateX(-25%);
   }
 }
 @keyframes bounceInDown {
